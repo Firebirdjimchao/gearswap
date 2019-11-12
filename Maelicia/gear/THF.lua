@@ -898,19 +898,19 @@ end
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff, gain)
-		if state.Buff[buff] ~= nil then
-				if not midaction() then
-						handle_equipping_gear(player.status)
-				end
+	if state.Buff[buff] ~= nil then
+		if not midaction() then
+			handle_equipping_gear(player.status)
 		end
+	end
 
 		-- If we gain or lose any haste buffs, adjust which gear set we target.
-		if S{'haste', 'march', 'mighty guard', 'embrava', 'haste samba', 'geo-haste', 'indi-haste'}:contains(buff:lower()) then
-				determine_haste_group()
-				if not midaction() then
-						handle_equipping_gear(player.status)
-				end
+	if S{'haste', 'march', 'mighty guard', 'embrava', 'haste samba', 'geo-haste', 'indi-haste'}:contains(buff:lower()) then
+		determine_haste_group()
+		if not midaction() then
+				handle_equipping_gear(player.status)
 		end
+	end
 end
 
 -------------------------------------------------------------------------------------------------------------------
