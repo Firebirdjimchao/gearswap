@@ -1,24 +1,57 @@
 function user_setup()
 	state.IdleMode:options('CP', 'Normal', 'Regen', 'CPPDT', 'CPMDT')
-	state.OffenseMode:options('Normal', 'CappedDelay', 'MidAcc', 'MidAccCappedDelay', 'HighAcc', 'HighAccCappedDelay', 'FullAcc')
+	state.OffenseMode:options('Normal', 'MidAcc', 'HighAcc', 'FullAcc')
 	state.HybridMode:options('Normal', 'Evasion', 'PDT')
 	state.RangedMode:options('Normal', 'Acc')
 	state.WeaponskillMode:options('Normal', 'MidAcc', 'HighAcc', 'FullAcc')
 	state.PhysicalDefenseMode:options('Evasion', 'PDT')
+
+	state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi'}
+	state.BehindMode = M{['description']='Behind Mode', 'None', 'Normal'}
 	
 	gear.default.weaponskill_neck = "Asperity Necklace"
 	gear.default.weaponskill_waist = "Windbuffet Belt +1"
 
 	gear.CannyDW = { name="Canny Cape", augments={'DEX+2','AGI+3','"Dual Wield"+3',}}
 	
+	-------------------------------------------------
+	-- Default bindings
+	--
+	-- F9 - Cycle Offense Mode (the offensive half of all 'hybrid' melee modes).
+	-- Ctrl-F9 - Cycle Hybrid Mode (the defensive half of all 'hybrid' melee modes).
+	-- Alt-F9 - Cycle Ranged Mode.
+	-- Win-F9 - Cycle Weaponskill Mode.
+	-- F10 - Activate emergency Physical Defense Mode. Replaces Magical Defense Mode, if that was active.
+	-- F11 - Activate emergency Magical Defense Mode. Replaces Physical Defense Mode, if that was active.
+	-- Ctrl-F10 - Cycle type of Physical Defense Mode in use.
+	-- Alt-F12 - Turns off any emergency defense mode.
+	-- Alt-F10 - Toggles Kiting Mode.
+	-- Ctrl-F11 - Cycle Casting Mode.
+	-- F12 - Update currently equipped gear, and report current status.
+	-- Ctrl-F12 - Cycle Idle Mode.
+	-------------------------------------------------
+	
+	-- "CTRL: ^ ALT: ! Windows Key: @ Apps Key: #"
+	
 	-- Additional local binds
 	send_command('bind ^` input /ja "Flee" <me>')
 	send_command('bind ^= gs c cycle treasuremode')
 	send_command('bind !- gs c cycle targetmode')
+	send_command('bind @` gs c cycle HasteMode')
+	send_command('bind !` gs c cycle BehindMode')
 
 	global_aliases()
 	
 	select_default_macro_book()
+end
+
+-- Called when this job file is unloaded (eg: job change)
+function user_unload()
+	send_command('unbind ^`')
+	send_command('unbind ^=')
+	send_command('unbind !-')
+	send_command('unbind @`')
+	send_command('unbind !`')
 end
 
 -- Define sets and vars used by this job file.
@@ -453,16 +486,10 @@ function init_gear_sets()
 		legs="Samnuha Tights",
 		feet="Plun. Poulaines"
 	}
-	-- assuming Haste II and March 2
-	sets.engaged.CappedDelay = set_combine(sets.engaged,{
-	})
 	sets.engaged.MidAcc = set_combine(sets.engaged,{
 		body="Meg. Cuirie +2",
 		waist="Hurch'lan Sash",
 		feet="Mummu Gamash. +2",
-	})
-	-- assuming Haste II and March 2
-	sets.engaged.MidAccCappedDelay = set_combine(sets.engaged.MidAcc,{
 	})
 	sets.engaged.HighAcc = set_combine(sets.engaged,{
 		head="Skormoth Mask",
@@ -472,9 +499,6 @@ function init_gear_sets()
 		waist="Hurch'lan Sash",
 		legs="Meg. Chausses +2",
 		feet="Mummu Gamash. +2",
-	})
-	-- assuming Haste II and March 2
-	sets.engaged.HighAccCappedDelay = set_combine(sets.engaged.HighAcc,{
 	})
 	sets.engaged.FullAcc = set_combine(sets.engaged,{
 		head="Meghanada Visor +2",
@@ -507,12 +531,224 @@ function init_gear_sets()
 		legs="Meg. Chausses +2",
 		feet="Meg. Jam. +2",
 	})
+	sets.engaged.MidAcc.PDT = set_combine(sets.engaged.PDT,{
+	})
+	sets.engaged.HighAcc.PDT = set_combine(sets.engaged.MidAcc.PDT,{
+	})
+	sets.engaged.FullAcc.PDT = set_combine(sets.engaged.HighAcc.PDT,{
+	})
 	sets.engaged.MDT = set_combine(sets.engaged.Evasion,{
 		head="Skormoth Mask",
 		ear2="Etiolation Earring",
 		ring1="Shadow Ring",
 	})
+	sets.engaged.MidAcc.MDT = set_combine(sets.engaged.MDT,{
+	})
+	sets.engaged.HighAcc.MDT = set_combine(sets.engaged.MidAcc.MDT,{
+	})
+	sets.engaged.FullAcc.MDT = set_combine(sets.engaged.HighAcc.MDT,{
+	})
 
+	-- ==== Haste sets ================
+
+	-- Normal -------
+	-- DW needed: 42 (37 with gift)
+	-- 32 Gear DW
+	sets.engaged.Haste_15 = set_combine(sets.engaged,{
+		ear1="Sherida Earring",
+		ear2="Suppanomimi",
+	})
+	-- DW needed: 31 (26 with gift)
+	-- 32 Gear DW
+	sets.engaged.Haste_30 = set_combine(sets.engaged,{
+		ear1="Sherida Earring",
+		ear2="Suppanomimi",
+	})
+	-- DW needed: 26 (21 with gift)
+	-- 17 Gear DW
+	sets.engaged.Haste_35 = set_combine(sets.engaged,{
+		ear1="Sherida Earring",
+		ear2="Suppanomimi",
+		legs="Meg. Chausses +2",
+	})
+	-- DW needed: 11 (6 with gift)
+	-- 10 Gear DW
+	sets.engaged.MaxHaste = set_combine(sets.engaged,{
+		ear1="Sherida Earring",
+		waist="Windbuffet Belt +1",
+		legs="Meg. Chausses +2",
+	})
+
+	sets.engaged.MidAcc.Haste_15 = set_combine(sets.engaged.MidAcc,{
+		ear1="Sherida Earring",
+		ear2="Suppanomimi",
+	})
+	sets.engaged.MidAcc.Haste_30 = set_combine(sets.engaged.MidAcc,{
+		ear1="Sherida Earring",
+		ear2="Suppanomimi",
+	})
+	sets.engaged.MidAcc.Haste_35 = set_combine(sets.engaged.MidAcc,{
+		ear1="Sherida Earring",
+		ear2="Suppanomimi",
+		back=gear.jsecape_dex_crit,
+	})
+	sets.engaged.MidAcc.MaxHaste = set_combine(sets.engaged.MidAcc,{
+		ear1="Sherida Earring",
+		waist="Windbuffet Belt +1",
+	})
+
+	sets.engaged.HighAcc.Haste_15 = set_combine(sets.engaged.HighAcc,{
+	})
+	sets.engaged.HighAcc.Haste_30 = set_combine(sets.engaged.HighAcc,{
+	})
+	sets.engaged.HighAcc.Haste_35 = set_combine(sets.engaged.HighAcc,{
+	})
+	sets.engaged.HighAcc.MaxHaste = set_combine(sets.engaged.HighAcc,{
+	})
+
+	sets.engaged.FullAcc.Haste_15 = set_combine(sets.engaged.FullAcc,{
+	})
+	sets.engaged.FullAcc.Haste_30 = set_combine(sets.engaged.FullAcc,{
+	})
+	sets.engaged.FullAcc.Haste_35 = set_combine(sets.engaged.FullAcc,{
+	})
+	sets.engaged.FullAcc.MaxHaste = set_combine(sets.engaged.FullAcc,{
+	})
+
+	-- Evasion -------
+	sets.engaged.Evasion.Haste_15 = set_combine(sets.engaged.Evasion,{
+	})
+	sets.engaged.Evasion.Haste_30 = set_combine(sets.engaged.Evasion,{
+	})
+	sets.engaged.Evasion.Haste_35 = set_combine(sets.engaged.Evasion,{
+	})
+	sets.engaged.Evasion.MaxHaste = set_combine(sets.engaged.Evasion,{
+	})
+
+	sets.engaged.MidAcc.Evasion.Haste_15 = set_combine(sets.engaged.MidAcc.Evasion,{
+	})
+	sets.engaged.MidAcc.Evasion.Haste_30 = set_combine(sets.engaged.MidAcc.Evasion,{
+	})
+	sets.engaged.MidAcc.Evasion.Haste_35 = set_combine(sets.engaged.MidAcc.Evasion,{
+	})
+	sets.engaged.MidAcc.Evasion.MaxHaste = set_combine(sets.engaged.MidAcc.Evasion,{
+	})
+
+	sets.engaged.HighAcc.Evasion.Haste_15 = set_combine(sets.engaged.HighAcc.Evasion,{
+	})
+	sets.engaged.HighAcc.Evasion.Haste_30 = set_combine(sets.engaged.HighAcc.Evasion,{
+	})
+	sets.engaged.HighAcc.Evasion.Haste_35 = set_combine(sets.engaged.HighAcc.Evasion,{
+	})
+	sets.engaged.HighAcc.Evasion.MaxHaste = set_combine(sets.engaged.HighAcc.Evasion,{
+	})
+
+	sets.engaged.FullAcc.Evasion.Haste_15 = set_combine(sets.engaged.FullAcc.Evasion,{
+	})
+	sets.engaged.FullAcc.Evasion.Haste_30 = set_combine(sets.engaged.FullAcc.Evasion,{
+	})
+	sets.engaged.FullAcc.Evasion.Haste_35 = set_combine(sets.engaged.FullAcc.Evasion,{
+	})
+	sets.engaged.FullAcc.Evasion.MaxHaste = set_combine(sets.engaged.FullAcc.Evasion,{
+	})
+
+	-- PDT -------
+	sets.engaged.PDT.Haste_15 = set_combine(sets.engaged.PDT,{
+	})
+	sets.engaged.PDT.Haste_30 = set_combine(sets.engaged.PDT,{
+	})
+	sets.engaged.PDT.Haste_35 = set_combine(sets.engaged.PDT,{
+	})
+	sets.engaged.PDT.MaxHaste = set_combine(sets.engaged.PDT,{
+	})
+
+	sets.engaged.MidAcc.PDT.Haste_15 = set_combine(sets.engaged.MidAcc,{
+	})
+	sets.engaged.MidAcc.PDT.Haste_30 = set_combine(sets.engaged.MidAcc.PDT,{
+	})
+	sets.engaged.MidAcc.PDT.Haste_35 = set_combine(sets.engaged.MidAcc.PDT,{
+	})
+	sets.engaged.MidAcc.PDT.MaxHaste = set_combine(sets.engaged.MidAcc.PDT,{
+	})
+
+	sets.engaged.HighAcc.PDT.Haste_15 = set_combine(sets.engaged.HighAcc,{
+	})
+	sets.engaged.HighAcc.PDT.Haste_30 = set_combine(sets.engaged.HighAcc.PDT,{
+	})
+	sets.engaged.HighAcc.PDT.Haste_35 = set_combine(sets.engaged.HighAcc.PDT,{
+	})
+	sets.engaged.HighAcc.PDT.MaxHaste = set_combine(sets.engaged.HighAcc.PDT,{
+	})
+
+	sets.engaged.FullAcc.PDT.Haste_15 = set_combine(sets.engaged.FullAcc,{
+	})
+	sets.engaged.FullAcc.PDT.Haste_30 = set_combine(sets.engaged.FullAcc.PDT,{
+	})
+	sets.engaged.FullAcc.PDT.Haste_35 = set_combine(sets.engaged.FullAcc.PDT,{
+	})
+	sets.engaged.FullAcc.PDT.MaxHaste = set_combine(sets.engaged.FullAcc.PDT,{
+	})
+
+	-- MDT -------
+	sets.engaged.MDT.Haste_15 = set_combine(sets.engaged,{
+	})
+	sets.engaged.MDT.Haste_30 = set_combine(sets.engaged.MDT,{
+	})
+	sets.engaged.MDT.Haste_35 = set_combine(sets.engaged.MDT,{
+	})
+	sets.engaged.MDT.MaxHaste = set_combine(sets.engaged.MDT,{
+	})
+
+	sets.engaged.MidAcc.MDT.Haste_15 = set_combine(sets.engaged.MidAcc.MDT,{
+	})
+	sets.engaged.MidAcc.MDT.Haste_30 = set_combine(sets.engaged.MidAcc.MDT,{
+	})
+	sets.engaged.MidAcc.MDT.Haste_35 = set_combine(sets.engaged.MidAcc.MDT,{
+	})
+	sets.engaged.MidAcc.MDT.MaxHaste = set_combine(sets.engaged.MidAcc.MDT,{
+	})
+
+	sets.engaged.HighAcc.MDT.Haste_15 = set_combine(sets.engaged.HighAcc.MDT,{
+	})
+	sets.engaged.HighAcc.MDT.Haste_30 = set_combine(sets.engaged.HighAcc.MDT,{
+	})
+	sets.engaged.HighAcc.MDT.Haste_35 = set_combine(sets.engaged.HighAcc.MDT,{
+	})
+	sets.engaged.HighAcc.MDT.MaxHaste = set_combine(sets.engaged.HighAcc.MDT,{
+	})
+
+	sets.engaged.FullAcc.MDT.Haste_15 = set_combine(sets.engaged.FullAcc.MDT,{
+	})
+	sets.engaged.FullAcc.MDT.Haste_30 = set_combine(sets.engaged.FullAcc.MDT,{
+	})
+	sets.engaged.FullAcc.MDT.Haste_35 = set_combine(sets.engaged.FullAcc.MDT,{
+	})
+	sets.engaged.FullAcc.MDT.MaxHaste = set_combine(sets.engaged.FullAcc.MDT,{
+	})
+
+end
+
+-------------------------------------------------------------------------------------------------------------------
+-- Job-specific hooks for non-casting events.
+-------------------------------------------------------------------------------------------------------------------
+
+-- Called when a player gains or loses a buff.
+-- buff == buff gained or lost
+-- gain == true if the buff was gained, false if it was lost.
+function job_buff_change(buff, gain)
+	if state.Buff[buff] ~= nil then
+		if not midaction() then
+			handle_equipping_gear(player.status)
+		end
+	end
+
+		-- If we gain or lose any haste buffs, adjust which gear set we target.
+	if S{'haste', 'march', 'mighty guard', 'embrava', 'haste samba', 'geo-haste', 'indi-haste'}:contains(buff:lower()) then
+		determine_haste_group()
+		if not midaction() then
+				handle_equipping_gear(player.status)
+		end
+	end
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -533,4 +769,97 @@ function select_default_macro_book()
 	else
 		set_macro_page(1, 1)
 	end
+end
+
+function determine_haste_group()
+
+	classes.CustomMeleeGroups:clear()
+	-- assuming +4 for marches (ghorn has +5)
+	-- Haste (white magic) 15%
+	-- Haste Samba (Sub) 5%
+	-- Haste (Merited DNC) 10% (never account for this)
+	-- Victory March +0/+3/+4/+5    9.4/14%/15.6%/17.1% +0
+	-- Advancing March +0/+3/+4/+5  6.3/10.9%/12.5%/14%  +0
+	-- Embrava 30% with 500 enhancing skill
+	-- Mighty Guard - 15%
+	-- buffactive[580] = geo haste
+	-- buffactive[33] = regular haste
+	-- buffactive[604] = mighty guard
+	-- state.HasteMode = toggle for when you know Haste II is being cast on you
+	-- Hi = Haste II is being cast. This is clunky to use when both haste II and haste I are being cast
+	if state.HasteMode.value == 'Hi' then
+		if ( ( (buffactive[33] or buffactive[580] or buffactive.embrava) and (buffactive.march or buffactive[604]) ) or
+			( buffactive[33] and (buffactive[580] or buffactive.embrava) ) or
+			( buffactive.march == 2 and buffactive[604] ) ) then
+			add_to_chat(8, '-------------Max-Haste Mode Enabled--------------')
+			classes.CustomMeleeGroups:append('MaxHaste')
+		elseif ( (buffactive[33] or buffactive.march == 2 or buffactive[580]) and buffactive['haste samba'] ) then
+			add_to_chat(8, '-------------Haste 35%-------------')
+			classes.CustomMeleeGroups:append('Haste_35')
+		elseif ( ( buffactive[580] or buffactive[33] or buffactive.march == 2 ) or
+			( buffactive.march == 1 and buffactive[604] ) ) then
+			add_to_chat(8, '-------------Haste 30%-------------')
+			classes.CustomMeleeGroups:append('Haste_30')
+		elseif ( buffactive.march == 1 or buffactive[604] ) then
+			add_to_chat(8, '-------------Haste 15%-------------')
+			classes.CustomMeleeGroups:append('Haste_15')
+		end
+	else
+		if ( buffactive[580] and ( buffactive.march or buffactive[33] or buffactive.embrava or buffactive[604]) ) or  -- geo haste + anything
+			( buffactive.embrava and (buffactive.march or buffactive[33] or buffactive[604]) ) or  -- embrava + anything
+			( buffactive.march == 2 and (buffactive[33] or buffactive[604]) ) or  -- two marches + anything
+			( buffactive[33] and buffactive[604] and buffactive.march ) then -- haste + mighty guard + any marches
+			add_to_chat(8, '-------------Max Haste Mode Enabled--------------')
+			classes.CustomMeleeGroups:append('MaxHaste')
+		elseif ( (buffactive[604] or buffactive[33]) and buffactive['haste samba'] and buffactive.march == 1) or -- MG or haste + samba with 1 march
+			( buffactive.march == 2 and buffactive['haste samba'] ) or
+			( buffactive[580] and buffactive['haste samba'] ) then 
+			add_to_chat(8, '-------------Haste 35%-------------')
+			classes.CustomMeleeGroups:append('Haste_35')
+		elseif ( buffactive.march == 2 ) or -- two marches from ghorn
+			( (buffactive[33] or buffactive[604]) and buffactive.march == 1 ) or  -- MG or haste + 1 march
+			( buffactive[580] ) or  -- geo haste
+			( buffactive[33] and buffactive[604] ) then  -- haste with MG
+			add_to_chat(8, '-------------Haste 30%-------------')
+			classes.CustomMeleeGroups:append('Haste_30')
+		elseif buffactive[33] or buffactive[604] or buffactive.march == 1 then
+			add_to_chat(8, '-------------Haste 15%-------------')
+			classes.CustomMeleeGroups:append('Haste_15')
+		end
+	end
+end
+
+-------------------------------------------------------------------------------------------------------------------
+-- User code that supplements standard library decisions.
+-------------------------------------------------------------------------------------------------------------------
+
+function customize_idle_set(idleSet)
+	if not buffactive['Protect'] then
+		idleSet = set_combine(idleSet, sets.noprotect)
+	end
+	if state.Buff.Doom then
+		idleSet = set_combine(idleSet, sets.buff.Doom)
+	end
+	return idleSet
+end
+
+-- Modify the default melee set after it was constructed.
+function customize_melee_set(meleeSet)
+	if state.TreasureMode.value == 'Fulltime' then
+		meleeSet = set_combine(meleeSet, sets.TreasureHunter)
+	end
+	if state.BehindMode.value == 'Normal' then
+		meleeSet = set_combine(meleeSet, sets.Behind)
+	end
+	if state.Buff.Doom then
+		meleeSet = set_combine(meleeSet, sets.buff.Doom)
+	end
+	return meleeSet
+end
+
+function customize_defense_set(defenseSet)    
+	if state.Buff.Doom then
+		defenseSet = set_combine(defenseSet, sets.buff.Doom)
+	end
+	return defenseSet
 end
