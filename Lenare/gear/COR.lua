@@ -61,8 +61,8 @@ function init_gear_sets()
 		back="Camulus's Mantle",
 	}
 	sets.precast.LuzafRing = set_combine(sets.precast.CorsairRoll,{
-    ring1="Luzaf's Ring"
-  })
+		ring1="Luzaf's Ring"
+	})
 	
 	sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {
 		ring1="Dark Ring",
@@ -89,7 +89,7 @@ function init_gear_sets()
 		legs="Meg. Chausses +2",
 		feet="Meg. Jam. +2"
 	}
-        
+		
 	-- Don't need any special gear for Healing Waltz.
 	sets.precast.Waltz['Healing Waltz'] = {}
 	
@@ -119,7 +119,7 @@ function init_gear_sets()
 		legs="Nahtirah Trousers"
 		feet="Meg. Jam. +2",
 	}
-       
+	   
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
@@ -157,8 +157,8 @@ function init_gear_sets()
 	})
 
 	sets.precast.WS.RA = set_combine(sets.precast.WS,{
-	  ammo=gear.WSbullet,
-	  head="Lanun Tricorne +1",
+		ammo=gear.WSbullet,
+		head="Lanun Tricorne +1",
 		neck="Sanctity Necklace",
 		ear2="Volley Earring",
 		body="Nisroch Jerkin",
@@ -199,7 +199,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Wildfire'].Brew = set_combine(sets.precast.WS['Wildfire'], {
 	})
-    
+	
 	sets.precast.WS['Leaden Salute'] = set_combine(sets.precast.WS.MAB,{
 	  ammo=gear.MAbullet
 	})
@@ -213,7 +213,7 @@ function init_gear_sets()
 		legs="Taeon Tights",
 		feet="Iuitl Gaiters"
 	});
-        
+		
 	-- Specific spells
 	sets.midcast.Utsusemi = set_combine(sets.midcast.FastRecast, {
 	})
@@ -271,7 +271,7 @@ function init_gear_sets()
 		hands="Buremte Gloves"
 	})
 
-    
+	
 	-- Sets to return to when not performing an action.
 	
 	-- Resting sets
@@ -289,7 +289,7 @@ function init_gear_sets()
 		ring1=gear.DarkRing.physical,
 		ring2="Defending Ring",
 		--back="Solemnity Cape",
-    back="Mecisto. Mantle",
+		back="Mecisto. Mantle",
 		waist="Windbuffet Belt +1",
 		legs="Mummu Kecks +2",
 		feet="Skd. Jambeaux +1"
@@ -298,7 +298,7 @@ function init_gear_sets()
 	sets.idle.Town = set_combine(sets.idle, {
 		body="Councilor's Garb"
 	})
-    
+	
 	-- Defense sets
 	
 	-- Total: 41%
@@ -324,77 +324,77 @@ function init_gear_sets()
 		--feet="Lanun Boots +1"
 	})
 
-  -- MDT: 18%
-  -- MDB: 26
-  -- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
-  sets.defense.MDT = set_combine(sets.idle,{
-    --
-    head="Meghanada Visor +2",
-    -- 8
-    neck="Inq. Bead Necklace",
-    -- 6
-    body="Meg. Cuirie +2",
-    -- 2
-    hands="Meg. Gloves +2",
-    -- 4%
-	ring1=gear.DarkRing.physical,
-	-- 10%
-	ring2="Defending Ring",
-    -- 5
-    legs="Mummu Kecks +2",
-    -- 4%
-    back="Solemnity Cape",
-    -- 5
-    feet="Meg. Jam. +2",
-  })
-    
-  sets.Kiting = {feet="Skd. Jambeaux +1"}
+	-- MDT: 18%
+	-- MDB: 26
+	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
+	sets.defense.MDT = set_combine(sets.idle,{
+		--
+		head="Meghanada Visor +2",
+		-- 8
+		neck="Inq. Bead Necklace",
+		-- 6
+		body="Meg. Cuirie +2",
+		-- 2
+		hands="Meg. Gloves +2",
+		-- 4%
+		ring1=gear.DarkRing.physical,
+		-- 10%
+		ring2="Defending Ring",
+		-- 5
+		legs="Mummu Kecks +2",
+		-- 4%
+		back="Solemnity Cape",
+		-- 5
+		feet="Meg. Jam. +2",
+	})
+	
+	sets.Kiting = {feet="Skd. Jambeaux +1"}
 
-  -- Engaged sets
-  
-  -- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
-  -- sets if more refined versions aren't defined.
-  -- If you create a set with both offense and defense modes, the offense mode should be first.
-  -- EG: sets.engaged.Dagger.Accuracy.Evasion
-    
-  -- Normal melee group
-  sets.engaged.Melee = {
-    ammo=gear.RAbullet,
-    head="Uk'uxkaj Cap",
-    neck="Asperity Necklace",
-    ear1="Bladeborn Earring",
-    ear2="Steelflash Earring",
-    body="Thaumas Coat",
-    hands="Buremte Gloves",
-    ring1="Rajas Ring",
-    ring2="Demonry Ring",
-    back="Atheling Mantle",
-    waist="Windbuffet Belt +1",
-    legs="Taeon Tights",
-    feet="Iuitl Gaiters"
-  }
-    
-  sets.engaged.Acc = set_combine(sets.engaged.Melee,{
-    head="Meghanada Visor +2",
-    ear1="Zennaroi Earring",
-    neck="Sanctity Necklace",
-    body="Mekosu. Harness",
-    hands="Buremte Gloves",
-    ring2="Cacoethic Ring"
-  })
+	-- Engaged sets
 
-  sets.engaged.Melee.DW = set_combine(sets.engaged.Melee,{
-    ear1="Dudgeon Earring",
-    ear2="Heartseeker Earring"
-  })
-    
-  sets.engaged.Acc.DW = set_combine(sets.engaged.Acc,{
-    ear1="Zennaroi Earring",
-    ear2="Heartseeker Earring"
-  })
+	-- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
+	-- sets if more refined versions aren't defined.
+	-- If you create a set with both offense and defense modes, the offense mode should be first.
+	-- EG: sets.engaged.Dagger.Accuracy.Evasion
 
-  sets.engaged.Ranged = set_combine(sets.defense.PDT,{
-  })
+	-- Normal melee group
+	sets.engaged.Melee = {
+		ammo=gear.RAbullet,
+		head="Uk'uxkaj Cap",
+		neck="Asperity Necklace",
+		ear1="Bladeborn Earring",
+		ear2="Steelflash Earring",
+		body="Thaumas Coat",
+		hands="Buremte Gloves",
+		ring1="Rajas Ring",
+		ring2="Demonry Ring",
+		back="Atheling Mantle",
+		waist="Windbuffet Belt +1",
+		legs="Taeon Tights",
+		feet="Iuitl Gaiters"
+	}
+
+	sets.engaged.Acc = set_combine(sets.engaged.Melee,{
+		head="Meghanada Visor +2",
+		ear1="Zennaroi Earring",
+		neck="Sanctity Necklace",
+		body="Mekosu. Harness",
+		hands="Buremte Gloves",
+		ring2="Cacoethic Ring"
+	})
+
+	sets.engaged.Melee.DW = set_combine(sets.engaged.Melee,{
+		ear1="Dudgeon Earring",
+		ear2="Heartseeker Earring"
+	})
+
+	sets.engaged.Acc.DW = set_combine(sets.engaged.Acc,{
+		ear1="Zennaroi Earring",
+		ear2="Heartseeker Earring"
+	})
+
+	sets.engaged.Ranged = set_combine(sets.defense.PDT,{
+	})
 
 end
 
@@ -404,14 +404,14 @@ end
  
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
-  -- Default macro set/book
-  if player.sub_job == 'DNC' then
-    set_macro_page(1, 10)
-  elseif player.sub_job == 'NIN' then
-    set_macro_page(1, 10)
-  elseif player.sub_job == 'RUN' then
-    set_macro_page(1, 10)
-  else
-    set_macro_page(1, 10)
-  end
+	-- Default macro set/book
+	if player.sub_job == 'DNC' then
+		set_macro_page(1, 10)
+	elseif player.sub_job == 'NIN' then
+		set_macro_page(1, 10)
+	elseif player.sub_job == 'RUN' then
+		set_macro_page(1, 10)
+	else
+		set_macro_page(1, 10)
+	end
 end

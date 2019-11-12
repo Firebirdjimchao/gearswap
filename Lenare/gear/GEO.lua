@@ -286,7 +286,7 @@ function init_gear_sets()
 		back="Altruistic Cape",
 		feet=gear.Vanya_feet_B
 	}
-    
+	
 	-- 53% Total
 	sets.midcast.Cure = set_combine(sets.midcast['Healing Magic'],{
 		-- 22%
@@ -818,35 +818,35 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_state_change(stateField, newValue, oldValue)
-    if stateField == 'Offense Mode' then
-        if (newValue == 'Normal' or newValue == 'Acc') then
-            disable('main','sub','range')
-        else
-            enable('main','sub','range')
-        end
-    end
+	if stateField == 'Offense Mode' then
+		if (newValue == 'Normal' or newValue == 'Acc') then
+			disable('main','sub','range')
+		else
+			enable('main','sub','range')
+		end
+	end
 end
 
 function job_get_spell_map(spell, default_spell_map)
-    if spell.action_type == 'Magic' then
-        if spell.skill == 'Enfeebling Magic' then
-            if spell.type == 'WhiteMagic' then
-                return 'MndEnfeebles'
-            else
-                return 'IntEnfeebles'
-            end
-        elseif spell.skill == 'Geomancy' then
-            if spell.english:startswith('Indi') then
-                return 'Indi'
-            end
-        elseif spell.skill == 'Elemental Magic' and default_spell_map ~= 'ElementalEnfeeble' then
-	        if LowTierNukes:contains(spell.english) then
-	            return 'LowTierNuke'
-	        else
-	            return 'HighTierNuke'
-	        end
-    		end
-    end
+	if spell.action_type == 'Magic' then
+		if spell.skill == 'Enfeebling Magic' then
+			if spell.type == 'WhiteMagic' then
+				return 'MndEnfeebles'
+			else
+				return 'IntEnfeebles'
+			end
+		elseif spell.skill == 'Geomancy' then
+			if spell.english:startswith('Indi') then
+				return 'Indi'
+			end
+		elseif spell.skill == 'Elemental Magic' and default_spell_map ~= 'ElementalEnfeeble' then
+			if LowTierNukes:contains(spell.english) then
+				return 'LowTierNuke'
+			else
+				return 'HighTierNuke'
+			end
+			end
+	end
 end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)

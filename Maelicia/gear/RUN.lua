@@ -634,7 +634,7 @@ function customize_melee_set(meleeSet)
 	return meleeSet
 end
 
-function customize_defense_set(defenseSet)    
+function customize_defense_set(defenseSet)
 	if state.Buff.Doom then
 		defenseSet = set_combine(defenseSet, sets.buff.Doom)
 		party_alert()

@@ -110,7 +110,7 @@ function init_gear_sets()
 		waist="Chaac Belt",
 		feet="Rawhide Boots"
 	}
-        
+		
 	-- Don't need any special gear for Healing Waltz.
 	sets.precast.Waltz['Healing Waltz'] = {}
 	
@@ -119,30 +119,30 @@ function init_gear_sets()
 	sets.precast.FC = {
 		ammo="Impatiens",
 		head=gear.Herculean_head_RA,
-	  neck="Voltsurge Torque",
-	  ear1="Loquacious Earring",
+		neck="Voltsurge Torque",
+		ear1="Loquacious Earring",
 		ear2="Etiolation Earring",
-	  body="Taeon Tabard",
-	  hands="Leyline Gloves",
-    ring1="Prolix Ring",
-    ring2="Kishar Ring",
-    legs=gear.Herculean_legs_Magic,
+		body="Taeon Tabard",
+		hands="Leyline Gloves",
+		ring1="Prolix Ring",
+		ring2="Kishar Ring",
+		legs=gear.Herculean_legs_Magic,
 	}
 	
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
 
-  sets.precast.RA = {
+	sets.precast.RA = {
 		ammo=gear.RAbullet,
-	  head="Uk'uxkaj Cap",
-	  body="Lak. Frac +1",
-	  hands="Carmine Fin. Ga. +1",
-	  ring1="Haverton Ring",
-	  back="Navarch's Mantle",
-	  waist="Impulse Belt",
-	  legs="Pursuer's Pants",
-	  feet=gear.Adhemar_feet_D
+		head="Uk'uxkaj Cap",
+		body="Lak. Frac +1",
+		hands="Carmine Fin. Ga. +1",
+		ring1="Haverton Ring",
+		back="Navarch's Mantle",
+		waist="Impulse Belt",
+		legs="Pursuer's Pants",
+		feet=gear.Adhemar_feet_D
 	}
-       
+	   
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
@@ -178,8 +178,8 @@ function init_gear_sets()
 	})
 
 	sets.precast.WS.RA = set_combine(sets.precast.WS,{
-	  ammo=gear.WSbullet,
-	  head="Pursuer's Beret",
+		ammo=gear.WSbullet,
+		head="Pursuer's Beret",
 		neck="Fotia Gorget",
 		ear1="Telos Earring",
 		ear2="Enervating Earring",
@@ -216,10 +216,10 @@ function init_gear_sets()
 
 	sets.precast.WS['Wildfire'].Brew = set_combine(sets.precast.WS['Wildfire'], {
 	})
-    
+	
 	sets.precast.WS['Leaden Salute'] = set_combine(sets.precast.WS.MAB,{
-	  ammo=gear.MAbullet,
-	  head="Pixie Hairpin +1"
+		ammo=gear.MAbullet,
+		head="Pixie Hairpin +1"
 	})
 
 	-- Midcast Sets
@@ -254,7 +254,7 @@ function init_gear_sets()
 
 	sets.midcast.CorsairShot.Acc = set_combine(sets.midcast.CorsairShot, {
 		ear1="Hermetic Earring",
-    ear2="Digni. Earring",
+		ear2="Digni. Earring",
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
 	})
@@ -286,7 +286,7 @@ function init_gear_sets()
 		ammo=gear.RAbullet,
 		neck="Marked Gorget"
 	})
-    
+	
 	-- Sets to return to when not performing an action.
 	
 	-- Resting sets
@@ -340,38 +340,38 @@ function init_gear_sets()
 		feet="Lanun Boots +1"
 	})
 
-  -- MDT: 19%
-  -- MDB: 29
-  -- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
-  sets.defense.MDT = set_combine(sets.idle,{
-    -- 2
-    head="Blistering Sallet +1",
-    -- 8
-    neck="Inq. Bead Necklace",
-    -- 6
-    body="Lanun Frac +1",
-    -- 5% 4
-    hands="Malignance Gloves",
-    ring1="Shadow Ring",
-    -- 10%
-    ring2="Defending Ring",
-    -- 5%
+	-- MDT: 19%
+	-- MDB: 29
+	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
+	sets.defense.MDT = set_combine(sets.idle,{
+		-- 2
+		head="Blistering Sallet +1",
+		-- 8
+		neck="Inq. Bead Necklace",
+		-- 6
+		body="Lanun Frac +1",
+		-- 5% 4
+		hands="Malignance Gloves",
+		ring1="Shadow Ring",
+		-- 10%
+		ring2="Defending Ring",
+		-- 5%
 		back="Moonbeam Cape",
-    -- 5
-    legs="Herculean Trousers",
-    -- 5
-    feet="Lanun Boots +1"
-  })
+		-- 5
+		legs="Herculean Trousers",
+		-- 5
+		feet="Lanun Boots +1"
+	})
 
-  sets.Kiting = {feet="Skd. Jambeaux +1"}
+	sets.Kiting = {feet="Skd. Jambeaux +1"}
 
-  -- Engaged sets
+	-- Engaged sets
 
-  -- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
-  -- sets if more refined versions aren't defined.
-  -- If you create a set with both offense and defense modes, the offense mode should be first.
-  -- EG: sets.engaged.Dagger.Accuracy.Evasion
-    
+	-- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
+	-- sets if more refined versions aren't defined.
+	-- If you create a set with both offense and defense modes, the offense mode should be first.
+	-- EG: sets.engaged.Dagger.Accuracy.Evasion
+
 	-- Normal melee group
 	sets.engaged.Melee = {
 		ammo=gear.RAbullet,
@@ -382,11 +382,11 @@ function init_gear_sets()
 		body="Thaumas Coat",
 		hands=gear.Adhemar_hands_B,
 		ring1="Epona's Ring",
-	  ring1="Rajas Ring",
-	  back="Atheling Mantle",
-	  waist="Windbuffet Belt +1",
-	  legs="Samnuha Tights",
-	  feet="Rawhide Boots"
+		ring1="Rajas Ring",
+		back="Atheling Mantle",
+		waist="Windbuffet Belt +1",
+		legs="Samnuha Tights",
+		feet="Rawhide Boots"
 	}
 	
 	sets.engaged.Acc = set_combine(sets.engaged.Melee,{
@@ -405,7 +405,7 @@ function init_gear_sets()
 		ear2="Heartseeker Earring",
 		ring2="Haverton Ring"
 	})
-    
+	
 	sets.engaged.Acc.DW = set_combine(sets.engaged.Acc,{
 		ear1="Dudgeon Earring",
 		ear2="Heartseeker Earring",
@@ -432,8 +432,8 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function customize_idle_set(idleSet)
-		if not buffactive['Protect'] then
-				idleSet = set_combine(idleSet, sets.noprotect)
-    end
-    return idleSet
+	if not buffactive['Protect'] then
+		idleSet = set_combine(idleSet, sets.noprotect)
+	end
+	return idleSet
 end

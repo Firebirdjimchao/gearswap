@@ -50,8 +50,8 @@ function init_gear_sets()
 		waist="Witful Belt",
 		-- 5%
 		--legs="Lengo Pants",
-    -- 6%
-    legs="Aya. Cosciales +2",
+	-- 6%
+	legs="Aya. Cosciales +2",
 		-- 3% + 1%~3%
 		feet="Regal Pumps +1"
 	}
@@ -81,7 +81,7 @@ function init_gear_sets()
 		sub="Culminus",
 		head="Theo. Cap +2",
 		ear1="Nourish. Earring +1",
-    ear2="Mendi. Earring",
+		ear2="Mendi. Earring",
 		legs="Ebers Pant. +1",
 		feet=gear.Vanya_feet_B
 	})
@@ -127,7 +127,7 @@ function init_gear_sets()
 	}
 	sets.precast.WS.MAB = set_combine(sets.precast.WS,{
 		head="Buremte Hat",
-    neck="Baetyl Pendant",
+		neck="Baetyl Pendant",
 		ear1="Friomisi Earring",
 		ear2="Crematio Earring",
 		body="Count's Garb",
@@ -227,9 +227,9 @@ function init_gear_sets()
 		head="Ebers Cap +1",
 		-- 3%
 		--ear1="Nourish. Earring +1",
-    ear1="Lifestorm Earring",
-    -- 2% II
-    ear2="Glorious Earring",
+		ear1="Lifestorm Earring",
+		-- 2% II
+		ear2="Glorious Earring",
 		body="Ebers Bliaud +1",
 		-- 16%
 		hands=gear.Telchine_hands_cure,
@@ -239,18 +239,18 @@ function init_gear_sets()
 		feet=gear.Vanya_feet_B
 	})
 	
-  -- 34% + 4% II Total + 5% gift + 18% Afflatus Solace (2 x 9 JP)
+	-- 34% + 4% II Total + 5% gift + 18% Afflatus Solace (2 x 9 JP)
 	sets.midcast.CureSolace = set_combine(sets.midcast.Cure,{
-    hands="Inyan. Dastanas +2",
+		hands="Inyan. Dastanas +2",
 		back="Alaunus's Cape"
 	})
 
 	sets.midcast.Curaga = set_combine(sets.midcast.Cure,{
 		body="Count's Garb"
 	})
-  sets.midcast.CureSelf = set_combine(sets.midcast.Cure,{
-    waist="Gishdubar Sash",
-  })
+	sets.midcast.CureSelf = set_combine(sets.midcast.Cure,{
+		waist="Gishdubar Sash",
+	})
 
 	sets.midcast.CureMelee = set_combine(sets.midcast.Cure,{
 	})
@@ -264,9 +264,9 @@ function init_gear_sets()
 		legs="Theo. Pant. +2",
 		feet="Gende. Galoshes"
 	})
-  sets.midcast.CursnaSelf = set_combine(sets.midcast.Cursna,{
-    waist="Gishdubar Sash",
-  })
+	sets.midcast.CursnaSelf = set_combine(sets.midcast.Cursna,{
+		waist="Gishdubar Sash",
+	})
 
 	sets.midcast.StatusRemoval = set_combine(sets.midcast['Healing Magic'],{
 		head="Ebers Cap +1",
@@ -275,8 +275,8 @@ function init_gear_sets()
 				
 	sets.midcast['Enhancing Magic'] = {
 		--main="Ababinili +1",
-    -- 5 DUR
-    main="Grioavolr",
+		-- 5 DUR
+		main="Grioavolr",
 		sub="Niobid Strap",
 		head="Befouled Crown",
 		neck="Incanter's Torque",
@@ -320,10 +320,10 @@ function init_gear_sets()
 		legs="Theo. Pant. +2"
 	})
 
-  sets.midcast.RefreshSelf = set_combine(sets.midcast['Enhancing Magic'],{
-    waist="Gishdubar Sash",
-    feet="Inspirited Boots",
-  })
+	sets.midcast.RefreshSelf = set_combine(sets.midcast['Enhancing Magic'],{
+		waist="Gishdubar Sash",
+		feet="Inspirited Boots",
+	})
 
 	sets.midcast.Protectra = set_combine(sets.midcast['Enhancing Magic'],{
 		feet="Piety Duckbills"
@@ -401,13 +401,13 @@ function init_gear_sets()
 	sets.idle.PDT = set_combine(sets.idle,{
 		main=gear.Staff.PDT,
 		sub="Niobid Strap",
-    -- 2%
-    ammo="Staunch Tathlum",
+		-- 2%
+		ammo="Staunch Tathlum",
 		-- 3%
 		head="Blistering Sallet +1",
 		-- 5%
 		neck="Twilight Torque",
-    -- 6%
+		-- 6%
 		body="Ayanmo Corazza +2",
 		hands="Inyan. Dastanas +2",
 		-- 4%
@@ -424,8 +424,8 @@ function init_gear_sets()
 	-- MDB: 41
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.idle.MDT = set_combine(sets.idle,{
-    -- 2%
-    ammo="Staunch Tathlum",
+		-- 2%
+		ammo="Staunch Tathlum",
 		-- 5% 8
 		head="Inyanga Tiara +2",
 		-- 5%
@@ -495,9 +495,9 @@ function init_gear_sets()
 		back="Mending Cape"
 	}
 
-  sets.buff.Doom = {
-    waist="Gishdubar Sash",
-  }
+	sets.buff.Doom = {
+		waist="Gishdubar Sash",
+	}
 
 end
 
@@ -506,15 +506,15 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
-  if spell.skill == 'Enhancing Magic' then
-    if spellMap == 'Refresh' and spell.target.type == 'SELF' then
-      equip(sets.midcast.RefreshSelf)
-    end
-  elseif spellMap == 'Cursna' and spell.target.type == 'SELF' then
-    equip(sets.midcast.CursnaSelf)
-  elseif spellMap == 'Cure' and spell.target.type == 'SELF' then
-    equip(sets.midcast.CureSelf)
-  end
+	if spell.skill == 'Enhancing Magic' then
+		if spellMap == 'Refresh' and spell.target.type == 'SELF' then
+			equip(sets.midcast.RefreshSelf)
+		end
+	elseif spellMap == 'Cursna' and spell.target.type == 'SELF' then
+		equip(sets.midcast.CursnaSelf)
+	elseif spellMap == 'Cure' and spell.target.type == 'SELF' then
+		equip(sets.midcast.CureSelf)
+	end
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -522,30 +522,30 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function customize_idle_set(idleSet)
-  if pet.isvalid then
-    idleSet = set_combine(idleSet, sets.idle.Pet)
-  elseif not buffactive['Protect'] then
-    idleSet = set_combine(idleSet, sets.noprotect)
-  elseif not pet.isvalid and (player.mpp < 51) then
-    idleSet = set_combine(idleSet, sets.latent_refresh)
-  end
-  if state.Buff.Doom then
-    idleSet = set_combine(idleSet, sets.buff.Doom)
-  end
-  return idleSet
+	if pet.isvalid then
+		idleSet = set_combine(idleSet, sets.idle.Pet)
+	elseif not buffactive['Protect'] then
+		idleSet = set_combine(idleSet, sets.noprotect)
+	elseif not pet.isvalid and (player.mpp < 51) then
+		idleSet = set_combine(idleSet, sets.latent_refresh)
+	end
+	if state.Buff.Doom then
+		idleSet = set_combine(idleSet, sets.buff.Doom)
+	end
+	return idleSet
 end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-  if state.Buff.Doom then
-    meleeSet = set_combine(meleeSet, sets.buff.Doom)
-  end
-  return meleeSet
+	if state.Buff.Doom then
+		meleeSet = set_combine(meleeSet, sets.buff.Doom)
+	end
+	return meleeSet
 end
 
 function customize_defense_set(defenseSet)    
-  if state.Buff.Doom then
-    defenseSet = set_combine(defenseSet, sets.buff.Doom)
-  end
-  return defenseSet
+	if state.Buff.Doom then
+		defenseSet = set_combine(defenseSet, sets.buff.Doom)
+	end
+	return defenseSet
 end

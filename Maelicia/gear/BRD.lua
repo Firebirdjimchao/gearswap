@@ -259,7 +259,7 @@ function init_gear_sets()
 
 	-- General set for recast times.
 	sets.midcast.FastRecast = set_combine(sets.precast.FC,{
-	  -- 5% 5RC
+		-- 5% 5RC
 		head="Nahtirah Hat",
 		-- 2% 7RC
 		body="Inyanga Jubbah +2",
@@ -521,8 +521,8 @@ function init_gear_sets()
 	})
 	
 	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'],{
-  	head="Chironic Hat"
-  })
+		head="Chironic Hat"
+	})
 	
 	sets.midcast.Protectra = set_combine(sets.midcast['Enhancing Magic'],{
 		ring1="Sheltered Ring"

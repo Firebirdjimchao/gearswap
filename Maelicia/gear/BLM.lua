@@ -133,9 +133,9 @@ function init_gear_sets()
 	})
 	
 	sets.precast.FC.Impact = set_combine(sets.precast.FC, {
-    head=empty,
-    body="Twilight Cloak"
-  })
+		head=empty,
+		body="Twilight Cloak"
+	})
 	
 	sets.precast.FC.Curaga = sets.precast.FC.Cure
 	
@@ -237,20 +237,20 @@ function init_gear_sets()
 	--------------------------------------
 	
 	sets.midcast.FastRecast = set_combine(sets.precast.FC,{
-	  -- 5% 5RC
-    head="Nahtirah Hat",
-    ear2="Gifted Earring",
-    -- 3% 4RC
-    body="Shango Robe",
-    -- 3%
-    hands="Amalric Gages",
-    ring2="Defending Ring",
-    -- 3% 1RC
-    waist="Witful Belt",
-    -- 5% 3RC
-    legs="Psycloth Lappas",
-    -- 3% 2RC ~ 1RC
-    feet="Regal Pumps +1"
+		-- 5% 5RC
+		head="Nahtirah Hat",
+		ear2="Gifted Earring",
+		-- 3% 4RC
+		body="Shango Robe",
+		-- 3%
+		hands="Amalric Gages",
+		ring2="Defending Ring",
+		-- 3% 1RC
+		waist="Witful Belt",
+		-- 5% 3RC
+		legs="Psycloth Lappas",
+		-- 3% 2RC ~ 1RC
+		feet="Regal Pumps +1"
 	})
 	
 	sets.midcast.MACC = {
@@ -323,7 +323,7 @@ function init_gear_sets()
 		-- 5%
 		feet=gear.Vanya_feet_B
 	});
-		  
+			
 	sets.midcast.Curaga = set_combine(sets.midcast.Cure,{
 		body="Vrikodara Jupon"
 	})
@@ -823,7 +823,7 @@ function init_gear_sets()
 		neck="Bathy Choker +1",
 		ring1="Sheltered Ring"
 	})
-  
+	
 	-- Defense sets
 	
 	sets.defense.PDT = set_combine(sets.idle.PDT,{
@@ -1048,8 +1048,8 @@ function customize_idle_set(idleSet)
 		idleSet = set_combine(idleSet, sets.latent_refresh)
 	end
 	if state.Buff.Doom then
-    idleSet = set_combine(idleSet, sets.buff.Doom)
-  end
+		idleSet = set_combine(idleSet, sets.buff.Doom)
+	end
 	return idleSet
 end
 

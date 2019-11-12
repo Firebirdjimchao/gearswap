@@ -737,7 +737,7 @@ function init_gear_sets()
 		main=gear.Staff.PDT,
 		sub="Niobid Strap",
 		-- 2%
-    ammo="Staunch Tathlum",
+		ammo="Staunch Tathlum",
 		-- 3%
 		head="Blistering Sallet +1",
 		-- 5%
@@ -763,7 +763,7 @@ function init_gear_sets()
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.idle.MDT = set_combine(sets.idle,{
 		-- 2%
-    ammo="Staunch Tathlum",
+		ammo="Staunch Tathlum",
 		-- 5
 		head="Hagondes Hat +1",
 		-- 5%

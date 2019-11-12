@@ -140,9 +140,9 @@ function init_gear_sets()
 	})
 	
 	sets.precast.FC.Impact = set_combine(sets.precast.FC, {
-    head=empty,
-    body="Twilight Cloak"
-  })
+		head=empty,
+		body="Twilight Cloak"
+	})
 	
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined

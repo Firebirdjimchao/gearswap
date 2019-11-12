@@ -40,7 +40,7 @@ function init_gear_sets()
 	}
 	sets.ExtraRegen = {}
 	sets.Kiting = {
-	  feet="Skd. Jambeaux +1"
+		feet="Skd. Jambeaux +1"
 	}
 
 	sets.buff['Sneak Attack'] = {
@@ -139,7 +139,7 @@ function init_gear_sets()
 		feet="Meg. Jam. +2"
 	}
 
-	   
+
 	-- Weaponskill sets
 	
 	-- Default set for any weaponskill that isn't any more specifically defined

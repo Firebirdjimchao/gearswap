@@ -466,9 +466,9 @@ function init_gear_sets()
 		legs="Arc. Braccae +3",
 	})
 	sets.precast.WS['Wildfire'].MidAcc = set_combine(sets.precast.WS['Wildfire'], {
-  	})
-  	sets.precast.WS['Wildfire'].HighAcc = set_combine(sets.precast.WS['Wildfire'], {
-  	})
+	})
+	sets.precast.WS['Wildfire'].HighAcc = set_combine(sets.precast.WS['Wildfire'], {
+	})
 	sets.precast.WS['Wildfire'].FullAcc = set_combine(sets.precast.WS['Wildfire'], {
 	})
 	sets.precast.WS['Wildfire'].Encumbered = set_combine(sets.midcast.RA.FullAcc,{
@@ -1051,7 +1051,7 @@ function job_precast(spell, action, spellMap, eventArgs)
 	end
 
 	if spell.action_type == 'Ranged Attack' or
-	  (spell.type == 'WeaponSkill' and (spell.skill == 'Marksmanship' or spell.skill == 'Archery')) then
+		(spell.type == 'WeaponSkill' and (spell.skill == 'Marksmanship' or spell.skill == 'Archery')) then
 		check_ammo(spell, action, spellMap, eventArgs)
 	end
 	
@@ -1063,55 +1063,55 @@ end
 
 -- Run after the general precast() is done.
 function job_post_precast(spell, action, spellMap, eventArgs)
-    if spell.type == 'WeaponSkill' and state.DefenseMode.current ~= 'None' then        
-        -- Replace Moonshade Earring if we're at cap TP
-        if player.tp >= 2750 then
-            equip(sets.precast.WS.MaxTP)
-        end
-    end
+	if spell.type == 'WeaponSkill' and state.DefenseMode.current ~= 'None' then        
+		-- Replace Moonshade Earring if we're at cap TP
+		if player.tp >= 2750 then
+			equip(sets.precast.WS.MaxTP)
+		end
+	end
 
-    if spell.action_type == 'Ranged Attack' then
-    	if buffactive['Flurry'] then
-    		-- buffactive table cannot distinguish between different tiers of buffs, use toggle to manually set
-    		if state.FlurryTier.value == "Flurry II" then
-    			equip(sets.precast.RA.FlurryII)
-    		else
-    			equip(sets.precast.RA.Flurry)
-    		end
-    	else
-    		if buffactive['Velocity Shot'] then
-    			equip(sets.precast.RA.VS)
-    		else
-    			equip(sets.precast.RA)
-    		end
-    	end
-    end
+	if spell.action_type == 'Ranged Attack' then
+		if buffactive['Flurry'] then
+			-- buffactive table cannot distinguish between different tiers of buffs, use toggle to manually set
+			if state.FlurryTier.value == "Flurry II" then
+				equip(sets.precast.RA.FlurryII)
+			else
+				equip(sets.precast.RA.Flurry)
+			end
+		else
+			if buffactive['Velocity Shot'] then
+				equip(sets.precast.RA.VS)
+			else
+				equip(sets.precast.RA)
+			end
+		end
+	end
 end
 
 -- Run after the general midcast() set is constructed.
 function job_post_midcast(spell, action, spellMap, eventArgs)
-    if spell.action_type == 'Ranged Attack' then
-    	if (player.equipment.range == "Armageddon" and (buffactive['Aftermath: Lv.1'] or buffactive['Aftermath: Lv.2'] or buffactive['Aftermath: Lv.3'])) then
-    		--add_to_chat(7, "--- Armageddon Aftermath Active ---")
-    		if state.RangedMode.current == 'Normal' then
-    			--add_to_chat(7, "Equipping sets.buff.ArmaAftermath")
-    			equip(sets.buff.ArmaAftermath)
-    		else
-    			--add_to_chat(7, "Equipping sets.buff.ArmaAftermath["..state.RangedMode.current.."]")
+	if spell.action_type == 'Ranged Attack' then
+		if (player.equipment.range == "Armageddon" and (buffactive['Aftermath: Lv.1'] or buffactive['Aftermath: Lv.2'] or buffactive['Aftermath: Lv.3'])) then
+			--add_to_chat(7, "--- Armageddon Aftermath Active ---")
+			if state.RangedMode.current == 'Normal' then
+				--add_to_chat(7, "Equipping sets.buff.ArmaAftermath")
+				equip(sets.buff.ArmaAftermath)
+			else
+				--add_to_chat(7, "Equipping sets.buff.ArmaAftermath["..state.RangedMode.current.."]")
 				equip(sets.buff.ArmaAftermath[state.RangedMode.current])
 			end
-        end
-    	if buffactive['Double Shot'] then
-    		--add_to_chat(7, "--- Doubleshot Active ---")
-    		if state.RangedMode.current == 'Normal' then
-    			--add_to_chat(7, "Equipping sets.buff.Doubleshot")
-    			equip(sets.buff.Doubleshot)
-    		else
-    			--add_to_chat(7, "Equipping sets.buff.Doubleshot["..state.RangedMode.current.."]")
+		end
+		if buffactive['Double Shot'] then
+			--add_to_chat(7, "--- Doubleshot Active ---")
+			if state.RangedMode.current == 'Normal' then
+				--add_to_chat(7, "Equipping sets.buff.Doubleshot")
+				equip(sets.buff.Doubleshot)
+			else
+				--add_to_chat(7, "Equipping sets.buff.Doubleshot["..state.RangedMode.current.."]")
 				equip(sets.buff.Doubleshot[state.RangedMode.current])
 			end
-        end
-    end
+		end
+	end
 end
 
 -------------------------------------------------------------------------------------------------------------------

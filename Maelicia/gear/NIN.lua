@@ -803,9 +803,9 @@ end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_midcast(spell, action, spellMap, eventArgs)
-		--if spell.english == "Monomi: Ichi" then
-				--if buffactive['Sneak'] then
-						--send_command('@wait 1.7;cancel sneak')
-				--end
+	--if spell.english == "Monomi: Ichi" then
+		--if buffactive['Sneak'] then
+			--send_command('@wait 1.7;cancel sneak')
 		--end
+	--end
 end

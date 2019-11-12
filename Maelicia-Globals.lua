@@ -91,7 +91,7 @@ function define_global_sets()
 	gear.Valorous_feet_WS = { name="Valorous Greaves", augments={'Accuracy+25','Weapon skill damage +5%','VIT+10',}}
 
 	gear.lustratio_legs_hq_B ={ name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}}
-  gear.lustratio_feet_hq_D ={ name="Lustra. Leggings +1", augments={'HP+65','STR+15','DEX+15',}}
+	gear.lustratio_feet_hq_D ={ name="Lustra. Leggings +1", augments={'HP+65','STR+15','DEX+15',}}
 	
 	gear.Rao_head_hq_B = { name="Rao Kabuto +1", augments={'STR+12','DEX+12','Attack+20',}}
 	gear.Rao_body_B = { name="Rao Togi", augments={'STR+10','DEX+10','Attack+15',}}
@@ -236,7 +236,7 @@ function precast(spell, action, spellMap, eventArgs)
 	end
 
 	cancel_conflicting_buffs(spell, action, spellMap, eventArgs)
-  refine_waltz(spell, action, spellMap, eventArgs)
+	refine_waltz(spell, action, spellMap, eventArgs)
 end
 
 -------------------------------------------------------------------------------------------------------------------
