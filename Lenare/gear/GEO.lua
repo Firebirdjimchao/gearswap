@@ -11,7 +11,7 @@ function user_setup()
 	gear.Nanto_luopan = { name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Pet: Damage taken -5%',}}
 	gear.default.obi_back = gear.Nanto_nuke
 
-	state.OffenseMode:options('None', 'Normal', 'Acc')
+	state.OffenseMode:options('None', 'Normal', 'MidAcc', 'Acc')
 	--state.OffenseMode:options('None')
 	state.CastingMode:options('Normal', 'Resistant', 'Proc', 'Naked')
 	state.IdleMode:options('Normal', 'Encumbered', 'PDT', 'MDT', 'MDTOnca', 'CP', 'CPPDT', 'CPMDT')
@@ -45,6 +45,7 @@ function user_setup()
 	-- "CTRL: ^ ALT: ! Windows Key: @ Apps Key: #"
 	
 	-- Additional local binds
+
 	send_command('bind @` gs c cycle MagicBurst')
 	send_command('bind ^` input /ma Stun <stnpc>; input /echo ------ Stun <t> -----')
 
@@ -151,6 +152,10 @@ function init_gear_sets()
 		legs="Jhakri Slops +2",
 		feet="Jhakri Pigaches +2"
 	}
+	sets.precast.WS.MidAcc = set_combine(sets.precast.WS, {
+		neck="Sanctity Necklace",
+		ear1="Zennaroi Earring",
+	})
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
 		neck="Sanctity Necklace",
 		ear1="Zennaroi Earring",
@@ -250,6 +255,8 @@ function init_gear_sets()
 	-- Set total: 81
 	-- Total: 877
 	sets.midcast.Geomancy = set_combine(sets.midcast.ConserveMP,{
+		main="Idris",
+		sub="Culminus",
 		range=gear.GeoBell,
 		-- 15
 		head="Azimuth Hood +1",
@@ -267,6 +274,8 @@ function init_gear_sets()
 		back=gear.AugLifestreamIndi
 	})
 	sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy,{
+		main="Idris",
+		sub="Culminus",
 		-- +20
 		back=gear.AugLifestreamIndi,
 		-- +15
@@ -682,6 +691,8 @@ function init_gear_sets()
 	})
 
 	sets.idle.Town = set_combine(sets.idle,{
+		main="Idris",
+		sub="Culminus",
 		body="Councilor's Garb"
 	})
 
@@ -701,9 +712,11 @@ function init_gear_sets()
 	--
 	-- Pet DT cap: 87.5%
 	-- Luopan innate DT: 50%
-	-- Pet DT: -34% (37.5% to cap)
+	-- Pet DT: -33% (37.5% to cap)
 	-- Pet regen: +20
 	sets.idle.Pet = set_combine(sets.idle,{
+		-- Pet: DT 25%
+		main="Idris",
 		-- Pet: regen +3
 		head="Azimuth Hood +1",
 		-- DT: 5%
@@ -713,9 +726,9 @@ function init_gear_sets()
 		-- Pet: regen +2
 		body=gear.Telchine_body_pet,
 		-- Pet: DT 11%
-		hands="Geo. Mitaines +1",
+		--hands="Geo. Mitaines +1",
 		-- Pet: regen +3
-		--hands=gear.Telchine_hands_pet,
+		hands=gear.Telchine_hands_pet,
 		-- PDT 4%
 		-- MDT 3%
 		ring1=gear.DarkRing.physical,
