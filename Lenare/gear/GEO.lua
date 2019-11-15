@@ -596,8 +596,8 @@ function init_gear_sets()
 		hands="Bagua Mitaines +1",
 		ring1=gear.DarkRing.physical,
 		ring2="Defending Ring",
-		back="Moonbeam Cape",
-		--back="Mecistopins Mantle",
+		--back="Moonbeam Cape",
+		back="Mecistopins Mantle",
 		waist="Fucho-no-Obi",
 		--legs="Lengo Pants",
 		legs=gear.Merlinic_legs_idle,
@@ -735,7 +735,8 @@ function init_gear_sets()
 		-- DT: 10%
 		ring2="Defending Ring",
 		-- Pet: regen +10, DT 5%
-		back=gear.Nanto_luopan,
+		--back=gear.Nanto_luopan,
+		back="Mecistopins Mantle",
 		-- Pet: DT 1%
 		--back="Lifestream Cape",
 		-- Pet: DT 3%, regen +1
