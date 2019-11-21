@@ -82,7 +82,7 @@ function init_gear_sets()
 	sets.precast.JA['Radial Arcana'] = {feet="Bagua Sandals +3"}
 	
 	-- Fast cast sets for spells
-	-- 71%/35% Total (80/40 cap) + 15% (if RDM sub)
+	-- 77%/38% Total (80/40 cap) + 15% (if RDM sub)
 	sets.precast.FC = {
 		-- 3%
 		--main=gear.FastcastStaff,
@@ -98,8 +98,8 @@ function init_gear_sets()
 		ear1="Malignance Earring",
 		-- 2%
 		ear2="Loquacious Earring",
-		-- 8%
-		body="Shango Robe",
+		-- 14%
+		body="Zendik Robe",
 		-- 3%
 		hands="Otomi Gloves",
 		-- 4%
@@ -215,7 +215,7 @@ function init_gear_sets()
 		neck="Voltsurge Torque",
 		ear1="Gifted Earring",
 		ear2="Loquacious Earring",
-		body="Shango Robe",
+		body="Zendik Robe",
 		hands="Geo. Mitaines +2",
 		back="Lifestream Cape",
 		waist="Witful Belt",
@@ -616,7 +616,6 @@ function init_gear_sets()
 		main="Rubicundity",
 		sub="Ammurapi Shield",
 		neck="Erra Pendant",
-		body="Shango Robe",
 		ring1="Evanescence Ring",
 		ring2="Stikini Ring",
 		legs="Azimuth Tights +1"

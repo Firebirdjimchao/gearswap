@@ -24,7 +24,7 @@ function init_gear_sets()
 
 	-- Fast cast sets for spells
 	
-	-- 60%/30% Total (80/40 cap) + 15% (if RDM sub)
+	-- 61%/30% Total (80/40 cap) + 15% (if RDM sub)
 	sets.precast.FC = {
 		-- 3%
 		main=gear.FastcastStaff,
@@ -38,7 +38,7 @@ function init_gear_sets()
 		ear1="Loquacious Earring",
 		-- 4%
 		ear2="Malignance Earring",
-		-- 13%
+		-- 14%
 		body="Inyanga Jubbah +2",
 		-- 7%
 		hands="Fanatic Gloves",
@@ -367,7 +367,6 @@ function init_gear_sets()
 
 	sets.midcast['Dark Magic'] = set_combine(sets.midcast.MACC,{
 		neck="Erra Pendant",
-		body="Shango Robe",
 		hands="Inyan. Dastanas +2",
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",

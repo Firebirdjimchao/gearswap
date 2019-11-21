@@ -75,7 +75,7 @@ function init_gear_sets()
 	-- Fast cast sets for spells
 	
 	-- Fast cast sets for spells
-	-- 54%/27% + 1%~3% Total (80/40 cap) + 15% (if RDM sub)
+	-- 60%/30% + 1%~3% Total (80/40 cap) + 15% (if RDM sub)
 	sets.precast.FC = {
 		ammo="Impatiens",
 		-- 10%
@@ -86,8 +86,8 @@ function init_gear_sets()
 		ear1="Malignance Earring",
 		-- 2%
 		ear2="Loquacious Earring",
-		-- 8%
-		body="Shango Robe",
+		-- 14%
+		body="Zendik Robe",
 		-- 3%
 		hands="Otomi Gloves",
 		-- 4%
@@ -240,8 +240,8 @@ function init_gear_sets()
 		-- 5% 5RC
 		head="Nahtirah Hat",
 		ear2="Gifted Earring",
-		-- 3% 4RC
-		body="Shango Robe",
+		-- 4% 6RC
+		body="Zendik Robe",
 		-- 3%
 		hands="Amalric Gages",
 		ring2="Defending Ring",
@@ -516,7 +516,6 @@ function init_gear_sets()
 	
 	sets.midcast['Dark Magic'] = set_combine(sets.midcast.MACC,{
 		neck="Erra Pendant",
-		body="Shango Robe",
 		hands="Arch. Gloves +1",
 		ring1="Evanescence Ring",
 		ring2="Stikini Ring",
