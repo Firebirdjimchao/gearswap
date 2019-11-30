@@ -224,7 +224,8 @@ function init_gear_sets()
 		--ammo="Regal Gem",
 		range="Ullr",
 		--head=gear.Chironic_head_nuke,
-		head="Viti. Chapeau +3",
+		--head="Viti. Chapeau +3",
+		head="Atro. Chapeau +2",
 		--head="Atro. Chapeau +3",
 		neck="Dls. Torque +1",
 		--neck="Incanter's Torque",
@@ -273,7 +274,7 @@ function init_gear_sets()
 		feet=gear.Vanya_feet_B
 	}
 	
-	-- 50% Total
+	-- 51% Total
 	sets.midcast.Cure = set_combine(sets.midcast['Healing Magic'],{
 		-- 22%
 		main="Tamaxchi",
@@ -293,8 +294,8 @@ function init_gear_sets()
 		hands=gear.Vanya_hands_B,
 		back=gear.sucellos_mnd,
 		waist="Luminary Sash",
-		-- 10%
-		legs="Atrophy Tights +1",
+		-- 11%
+		legs="Atrophy Tights +2",
 		-- 5%
 		feet=gear.Vanya_feet_B
 	});
@@ -336,10 +337,8 @@ function init_gear_sets()
 		ring2="Stikini Ring",
 		-- 20 DUR
 		back=gear.sucellos_mnd,
-		-- 17
-		--legs="Atrophy Tights +1",
-		-- 18
-		legs="Carmine Cuisses +1",
+		-- 19
+		legs="Atrophy Tights +2",
 		-- 25 30 DUR
 		feet="Leth. Houseaux +1"
 	}
