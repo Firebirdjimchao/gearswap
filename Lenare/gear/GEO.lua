@@ -72,7 +72,7 @@ function init_gear_sets()
 	-- Precast sets to enhance JAs
 	sets.precast.JA.Bolster = {body="Bagua Tunic"}
 	sets.precast.JA['Life cycle'] = {
-		body="Geo. Tunic +1",
+		body="Geomancy Tunic +2",
 		back="Nantosuelta's Cape",
 	}
 	sets.precast.JA['Primeaval Zeal'] = {head="Bagua Galero"}
@@ -107,7 +107,7 @@ function init_gear_sets()
 		-- 3%
 		waist="Witful Belt",
 		-- 13%
-		legs="Geo. Pants +2",
+		legs="Geomancy Pants +2",
 		-- 3% + 1%~3%
 		feet="Regal Pumps +1"      
 	}
@@ -209,19 +209,23 @@ function init_gear_sets()
 		main=gear.MaccStaff,
 		sub="Kaja Grip",
 		range="Aureole",
-		head="Jhakri Coronal +2",
+		--head="Jhakri Coronal +2",
+		head="Geo. Galero +2",
 		neck="Erra Pendant",
 		--neck="Sanctity Necklace",
 		ear1="Barkaro. Earring",
 		ear2="Gwati Earring",
-		body="Jhakri Robe +2",
-		hands="Jhakri Cuffs +2",
+		--body="Jhakri Robe +2",
+		body="Geomancy Tunic +2",
+		--hands="Jhakri Cuffs +2",
+		hands="Geo. Mitaines +2",
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
 		back=gear.Nanto_nuke,
 		waist="Rumination Sash",
-		legs=gear.Merlinic_legs_nuke,
-		feet="Jhakri Pigaches +2"
+		--legs=gear.Merlinic_legs_nuke,
+		legs="Geomancy Pants +2",
+		feet="Geo. Sandals +2"
 	}
 	
 	sets.midcast.MAB = {
@@ -251,9 +255,9 @@ function init_gear_sets()
 	
 	-- 373 + 373 + 16 + 16 = 778 base (900 to cap all spell potency)
 	-- 13 Geomancy Gift
-	-- 5 Handbell Gift
-	-- Set total: 81
-	-- Total: 877
+	-- 13 Handbell Gift
+	-- Set total: 83
+	-- Total: 887
 	sets.midcast.Geomancy = set_combine(sets.midcast.ConserveMP,{
 		main="Idris",
 		sub="Culminus",
@@ -264,8 +268,8 @@ function init_gear_sets()
 		neck="Incanter's Torque",
 		-- 10
 		body="Bagua Tunic",
-		-- 15
-		hands="Geo. Mitaines +1",
+		-- 17
+		hands="Geo. Mitaines +2",
 		-- 5
 		ring1="Stikini Ring",
 		-- 5
@@ -554,7 +558,7 @@ function init_gear_sets()
 	
 	sets.midcast['Dark Magic'] = set_combine(sets.midcast.MACC,{
 		neck="Erra Pendant",
-		body="Geo. Tunic +1",
+		body="Geomancy Tunic +2",
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
 		legs="Azimuth Tights +1",
@@ -621,7 +625,7 @@ function init_gear_sets()
 		neck="Twilight Torque",
 		body="Jhakri Robe +2",
 		-- 1%
-		hands="Geo. Mitaines +1",
+		hands="Geo. Mitaines +2",
 		-- 4%
 		ring1=gear.DarkRing.physical,
 		-- 10%
@@ -648,7 +652,7 @@ function init_gear_sets()
 		-- 7
 		body="Azimuth Coat +1",
 		-- 3
-		hands="Geo. Mitaines +1",
+		hands="Geo. Mitaines +2",
 		ring1="Shadow Ring",
 		-- 10%
 		ring2="Defending Ring",
@@ -726,7 +730,7 @@ function init_gear_sets()
 		-- Pet: regen +2
 		body=gear.Telchine_body_pet,
 		-- Pet: DT 11%
-		--hands="Geo. Mitaines +1",
+		--hands="Geo. Mitaines +2",
 		-- Pet: regen +3
 		hands=gear.Telchine_hands_pet,
 		-- PDT 4%
