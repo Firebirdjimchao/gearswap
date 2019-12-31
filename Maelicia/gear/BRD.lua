@@ -105,7 +105,7 @@ function init_gear_sets()
 	-- Precast Sets
 
 	-- Fast cast sets for spells
-	-- 68%/34% Total (80/40 cap) + 15% (if RDM sub)
+	-- 70%/35% Total (80/40 cap) + 15% (if RDM sub)
 	sets.precast.FC = {
 		-- 7%
 		main="Kali",
@@ -130,7 +130,9 @@ function init_gear_sets()
 		-- 3%
 		back="Swith Cape",
 		-- 3%
-		waist="Witful Belt",
+		--waist="Witful Belt",
+		-- 5%
+		waist="Embla Sash",
 		-- 5%
 		--legs="Lengo Pants",
 		-- 6%
@@ -156,7 +158,7 @@ function init_gear_sets()
 		legs="Doyen Pants",
 	})
 
-	-- Total:45%/27% (cap 80/40) + 24% FC gear + 15% (if RDM sub)
+	-- Total:47%/28% (cap 80/40) + 24% FC gear + 15% (if RDM sub)
 	sets.precast.FC.BardSong = set_combine(sets.precast.FC,{
 		-- 7% FC
 		main="Kali",
@@ -174,8 +176,8 @@ function init_gear_sets()
 		hands="Gendewitha Gages",
 		-- 3% FC
 		back="Swith Cape",
-		-- 3% FC
-		waist="Witful Belt",
+		-- 5% FC
+		waist="Embla Sash",
 		-- 6%
 		legs="Doyen Pants",
 		-- 8%
@@ -189,6 +191,9 @@ function init_gear_sets()
 	sets.precast.JA.Nightingale = {feet="Bihu Slippers +1"}
 	sets.precast.JA.Troubadour = {body="Bihu Jstcorps +1"}
 	sets.precast.JA['Soul Voice'] = {legs="Bihu Cannions +1"}
+	sets.precast.JA.Sublimination = {
+		waist="Embla Sash"
+	}
 
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {
@@ -266,8 +271,8 @@ function init_gear_sets()
 		-- 7RC
 		hands="Gendewitha Gages",
 		ring2="Defending Ring",
-		-- 3% 1RC
-		waist="Witful Belt",
+		-- 5% 2RC
+		waist="Embla Sash",
 		-- 5% 2RC
 		legs="Lengo Pants",
 		-- 3%
@@ -339,7 +344,7 @@ function init_gear_sets()
 		body="Vrikodara Jupon",
 		hands="Gendewitha Gages",
 		back="Swith Cape",
-		waist="Witful Belt",
+		waist="Embla Sash",
 		legs="Lengo Pants",
 		feet="Chelona Boots"
 	}
@@ -499,7 +504,7 @@ function init_gear_sets()
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
 		back="Fi Follet Cape +1",
-		waist="Siegel Sash",
+		waist="Embla Sash",
 		legs="Inyanga Shalwar +2",
 		feet="Inyan. Crackows +2"
 	}

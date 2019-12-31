@@ -80,9 +80,12 @@ function init_gear_sets()
 	sets.precast.JA['Full Circle'] = {head="Azimuth Hood +1",hands="Bagua Mitaines +3"}
 	sets.precast.JA['Mending Halation'] = {legs="Bagua Pants +3"}
 	sets.precast.JA['Radial Arcana'] = {feet="Bagua Sandals +3"}
+	sets.precast.JA.Sublimination = {
+		waist="Embla Sash"
+	}
 	
 	-- Fast cast sets for spells
-	-- 77%/38% Total (80/40 cap) + 15% (if RDM sub)
+	-- 79%/39% Total (80/40 cap) + 15% (if RDM sub)
 	sets.precast.FC = {
 		-- 3%
 		--main=gear.FastcastStaff,
@@ -109,7 +112,9 @@ function init_gear_sets()
 		-- 7%
 		back="Lifestream Cape",
 		-- 3%
-		waist="Witful Belt",
+		--waist="Witful Belt",
+		-- 5%
+		waist="Embla Sash",
 		-- 13%
 		legs="Geomancy Pants +2",
 		-- 4% + 1%~3%
@@ -218,7 +223,7 @@ function init_gear_sets()
 		body="Zendik Robe",
 		hands="Geo. Mitaines +2",
 		back="Lifestream Cape",
-		waist="Witful Belt",
+		waist="Embla Sash",
 		legs="Geomancy Pants +2",
 		feet="Regal Pumps +1"
 	})
@@ -379,7 +384,7 @@ function init_gear_sets()
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
 		back="Fi Follet Cape +1",
-		waist="Witful Belt",
+		waist="Embla Sash",
 		legs="Geomancy Pants +2",
 		feet="Regal Pumps +1"		
 	}

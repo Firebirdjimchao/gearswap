@@ -71,11 +71,15 @@ function init_gear_sets()
 	
 	-- equip to maximize HP (for Tarus) and minimize MP loss before using convert
 	sets.precast.JA.Convert = {}
+
+	sets.precast.JA.Sublimination = {
+		waist="Embla Sash"
+	}
 	
 	-- Fast cast sets for spells
 	
 	-- Fast cast sets for spells
-	-- 60%/30% + 1%~3% Total (80/40 cap) + 15% (if RDM sub)
+	-- 62%/31% + 1%~3% Total (80/40 cap) + 15% (if RDM sub)
 	sets.precast.FC = {
 		ammo="Impatiens",
 		-- 10%
@@ -97,7 +101,9 @@ function init_gear_sets()
 		-- 3%
 		back="Swith Cape",
 		-- 3%
-		waist="Witful Belt",
+		--waist="Witful Belt",
+		-- 5%
+		waist="Embla Sash",
 		-- 7%
 		legs="Psycloth Lappas",
 		-- 4% + 1%~3%
@@ -245,8 +251,8 @@ function init_gear_sets()
 		-- 3%
 		hands="Amalric Gages",
 		ring2="Defending Ring",
-		-- 3% 1RC
-		waist="Witful Belt",
+		-- 5% 2RC
+		waist="Embla Sash",
 		-- 5% 3RC
 		legs="Psycloth Lappas",
 		-- 3% 2RC ~ 1RC
@@ -352,7 +358,7 @@ function init_gear_sets()
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
 		back="Fi Follet Cape +1",
-		waist="Siegel Sash",
+		waist="Embla Sash",
 		feet="Regal Pumps +1"
 	}
 	

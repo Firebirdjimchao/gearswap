@@ -24,7 +24,7 @@ function init_gear_sets()
 
 	-- Fast cast sets for spells
 	
-	-- 61%/30% Total (80/40 cap) + 15% (if RDM sub)
+	-- 63%/31% Total (80/40 cap) + 15% (if RDM sub)
 	sets.precast.FC = {
 		-- 3%
 		main=gear.FastcastStaff,
@@ -49,7 +49,9 @@ function init_gear_sets()
 		-- 3%
 		back="Swith Cape",
 		-- 3%
-		waist="Witful Belt",
+		--waist="Witful Belt",
+		-- 5%
+		waist="Embla Sash",
 		-- 5%
 		--legs="Lengo Pants",
 		-- 6%
@@ -97,6 +99,9 @@ function init_gear_sets()
 	-- Precast sets to enhance JAs
 	sets.precast.JA.Benediction = {
 		body="Piety Briault +1"
+	}
+	sets.precast.JA.Sublimination = {
+		waist="Embla Sash"
 	}
 
 	-- Waltz set (chr and vit)
@@ -166,7 +171,7 @@ function init_gear_sets()
 		ring1="Prolix Ring",
 		ring2="Defending Ring",
 		back="Swith Cape",
-		waist="Witful Belt",
+		waist="Embla Sash",
 		legs="Theo. Pant. +1",
 		feet="Regal Pumps +1"
 	}
@@ -300,7 +305,7 @@ function init_gear_sets()
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
 		back="Mending Cape",
-		waist="Siegel Sash",
+		waist="Embla Sash",
 		legs="Piety Pantaln. +1",
 		feet="Ebers Duckbills +1"
 	}

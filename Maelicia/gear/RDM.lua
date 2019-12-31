@@ -81,7 +81,9 @@ function init_gear_sets()
 	
 	-- Precast sets to enhance JAs
 	sets.precast.JA['Chainspell'] = {body="Viti. Tabard +3"}
-	
+	sets.precast.JA.Sublimination = {
+		waist="Embla Sash"
+	}
 	
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {
@@ -98,7 +100,7 @@ function init_gear_sets()
 	
 	-- Fast cast sets for spells
 	
-	-- 78%/39% Total + 8% (JP) + 30% (RDM) (80/40 cap)
+	-- 80%/40% Total + 8% (JP) + 30% (RDM) (80/40 cap)
 	sets.precast.FC = {
 		-- 4%
 		main="Grioavolr",
@@ -123,7 +125,9 @@ function init_gear_sets()
 		-- 10%
 		back=gear.sucellos_mnd,
 		-- 3%
-		waist="Witful Belt",
+		--waist="Witful Belt",
+		-- 5%
+		waist="Embla Sash",
 		-- 7%
 		legs="Psycloth Lappas",
 		-- 4%
@@ -364,6 +368,7 @@ function init_gear_sets()
 		ring2="Stikini Ring",
 		-- 20 DUR
 		back=gear.sucellos_mnd,
+		waist="Embla Sash",
 		legs="Leth. Fuseau +1",
 		-- 25 30 DUR
 		feet="Leth. Houseaux +1"
