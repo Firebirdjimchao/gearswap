@@ -86,7 +86,7 @@ function init_gear_sets()
 		waist="K. Kachina Belt +1",
 		legs="Arc. Braccae +3",
 		--feet=gear.Herculean_feet_RA
-		feet="Oshosi Leggings",
+		feet="Osh. Leggings +1",
 	}
 	
 	-- Waltz set (chr and vit)
@@ -717,7 +717,7 @@ function init_gear_sets()
 		ring2="Garuda Ring +1",
 		legs="Mummu Kecks +2",
 		waist="K. Kachina Belt +1",
-		feet="Oshosi Leggings",
+		feet="Osh. Leggings +1",
 	})
 
 	sets.midcast.RA.Annihilator.Crit = set_combine(sets.midcast.RA.Crit, {
@@ -993,26 +993,26 @@ function init_gear_sets()
 		--body="Oshosi Vest",
 		body="Arc. Jerkin +3",
 		hands="Oshosi Gloves",
-		legs="Oshosi Trousers",
-		feet="Oshosi Leggings",
+		legs="Osh. Trousers +1",
+		feet="Osh. Leggings +1",
 	}
 	sets.buff.Doubleshot.MidAcc = set_combine(sets.buff.Doubleshot, {
 		--body="Amini Caban +1",
 		body="Arc. Jerkin +3",
 		hands="Mummu Wrists +2",
-		feet="Arcadian Socks +3",
+		--feet="Arcadian Socks +3",
 	})
 	sets.buff.Doubleshot.HighAcc = set_combine(sets.buff.Doubleshot, {
 		body="Arc. Jerkin +3",
 		--waist="Yemaya Belt",
 		waist="K. Kachina Belt +1",
-		feet="Arcadian Socks +3",
+		--feet="Arcadian Socks +3",
 	})
 	sets.buff.Doubleshot.FullAcc = set_combine(sets.buff.Doubleshot, {
 		body="Arc. Jerkin +3",
 		--waist="Yemaya Belt",
 		waist="K. Kachina Belt +1",
-		feet="Arcadian Socks +3",
+		--feet="Arcadian Socks +3",
 	})
 end
 
