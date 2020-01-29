@@ -261,6 +261,7 @@ function init_gear_sets()
 	})
 
 	sets.precast.FC.Cure = set_combine(sets.precast.FC['Healing Magic'], {
+		ear2="Mendi. Earring",
 		back="Pahtli Cape",
 		waist="Acerbic Sash +1",
 		legs="Doyen Pants",

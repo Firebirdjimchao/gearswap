@@ -122,6 +122,7 @@ function init_gear_sets()
 	}
 	
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {
+		ear2="Mendi. Earring",
 		back="Pahtli Cape",
 		hands=gear.Vanya_hands_B,
 		waist="Acerbic Sash +1",

@@ -68,6 +68,7 @@ function init_gear_sets()
 		main="Queller Rod",
 		sub="Ammurapi Shield",
 		head="Theo. Cap +1",
+		ear1="Mendi. Earring",
 		ear2="Nourish. Earring +1",
 		back="Pahtli Cape",
 		waist="Acerbic Sash +1",

@@ -111,6 +111,7 @@ function init_gear_sets()
 	}
 	
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {
+		ear2="Mendi. Earring",
 		back="Pahtli Cape",
 		hands=gear.Vanya_hands_B,
 		waist="Acerbic Sash +1",
@@ -313,13 +314,14 @@ function init_gear_sets()
 		feet=gear.Vanya_feet_B
 	}
 	
-	-- 43% Total
+	-- 48% Total
 	sets.midcast.Cure = set_combine(sets.midcast['Healing Magic'],{
 		head="Befouled Crown",
 		neck="Incanter's Torque",
 		-- 5%
 		ear1="Roundel Earring",
-		ear2="Regal Earring",
+		-- 5%
+		ear2="Mendi. Earring",
 		-- 13%
 		body="Vrikodara Jupon",
 		-- 10%
