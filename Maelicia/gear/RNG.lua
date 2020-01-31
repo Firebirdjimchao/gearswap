@@ -747,7 +747,7 @@ function init_gear_sets()
 	sets.midcast.RA['Fail-Not'].HighAcc = set_combine(sets.midcast.RA.HighAcc, {
 		-- 9 STP
 		--hands="Amini Glove. +1",
-		hands="Oshosi Gloves",
+		hands="Oshosi Glove +1",
 	})
 	-- Gear: 43 STP
 	-- Perun +1: 4 STP
@@ -992,7 +992,7 @@ function init_gear_sets()
 		head="Arcadian Beret +3",
 		--body="Oshosi Vest",
 		body="Arc. Jerkin +3",
-		hands="Oshosi Gloves",
+		hands="Oshosi Gloves +1",
 		legs="Osh. Trousers +1",
 		feet="Osh. Leggings +1",
 	}

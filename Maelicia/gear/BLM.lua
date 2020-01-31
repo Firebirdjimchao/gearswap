@@ -865,9 +865,12 @@ function init_gear_sets()
 		-- 10% INT 29 MACC 22 MAB 40
 		--head=gear.Merlinic_head_burst,
 		-- 6% II 6% INT 38 MACC 40 MAB 33
-		head="Ea Hat",
+		--head="Ea Hat",
+		head=gear.Merlinic_head_nuke,
 		-- 10% INT 4 MAB 8
 		neck="Mizu. Kubikazari",
+		-- MAB 10 MACC 10
+		--neck="Sanctity Necklace",
 		-- INT 3 MACC 8 MAB 8
 		--ear1="Barkaro. Earring",
 		-- INT 8 MACC 10 MAB 8
@@ -886,11 +889,11 @@ function init_gear_sets()
 		-- 5% II
 		ring1="Mujin Band",
 		-- 2% MACC 6 MAB 3
-		ring2="Jhakri Ring",
+		--ring2="Jhakri Ring",
 		-- 5% Mcrit 5%
 		-- ring2="Locus Ring",
 		-- MACC 2 MAB 4
-		-- ring2="Strendu Ring",
+		ring2="Strendu Ring",
 		-- 5% 30 INT MACC 20 MAB 10 MDmg 20
 		back="Taranus's Cape",
 		waist=gear.ElementalObi,

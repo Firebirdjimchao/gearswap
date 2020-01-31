@@ -487,14 +487,15 @@ function init_gear_sets()
 		neck="Loricate Torque +1",
 		ear1="Odnowa Earring +1",
 		ear2="Etiolation Earring",
-		body="Meg. Cuirie +2",
-		hands="Meg. Gloves +2",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
 		waist="Flume Belt +1",
 		legs="Mummu Kecks +2",
-		feet="Skd. Jambeaux +1"
+		--feet="Skd. Jambeaux +1"
+		feet="Malignance Boots",
 	}
 	
 	sets.noprotect = {ring1="Sheltered Ring"}
@@ -531,14 +532,14 @@ function init_gear_sets()
 		feet="Herculean Boots"
 	})
 
-	-- PDT: 53%
+	-- PDT: 57%
 	sets.defense.PDT = set_combine(sets.idle,{
 		-- PDT 4%
 		head="Meghanada Visor +2",
 		-- DT 6%
 		neck="Loricate Torque +1",
-		-- PDT 8%
-		body="Meg. Cuirie +2",
+		-- DT 9%
+		body="Malignance Tabard",
 		-- DT 5%
 		hands="Malignance Gloves",
 		-- PDT 5% MDT 5%
@@ -551,13 +552,13 @@ function init_gear_sets()
 		waist="Flume Belt +1",
 		-- DT 4%
 		legs="Mummu Kecks +2",
-		-- PDT 2%
-		feet="Meg. Jam. +2",
+		-- DT 4%
+		feet="Malignance Boots",
 	})
 
-	-- PDT: 29%
-	-- MDT: 28%
-	-- MDB: 28
+	-- PDT: 32%
+	-- MDT: 41%
+	-- MDB: 30
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.defense.MDT = set_combine(sets.idle,{
 		-- MDT 4% MDB 4
@@ -568,8 +569,8 @@ function init_gear_sets()
 		ear2="Etiolation Earring",
 		-- MDB 8
 		neck="Inq. Bead Necklace",
-		-- PDT 8% MDB 6
-		body="Meg. Cuirie +2",
+		-- DT 9% MDB 8
+		body="Malignance Tabard",
 		ring1="Shadow Ring",
 		-- DT 10%
 		ring2="Defending Ring",
@@ -577,8 +578,8 @@ function init_gear_sets()
 		back="Moonbeam Cape",
 		-- DT: 4% MDB 5
 		legs="Mummu Kecks +2",
-		-- PDT 2% MDB 5
-		feet="Meg. Jam. +2",
+		-- DT 4% MDB 5
+		feet="Malignance Boots",
 	})
 
 
@@ -652,12 +653,12 @@ function init_gear_sets()
 	
 	sets.engaged.Evasion = set_combine(sets.engaged,{
 		head="Pill. Bonnet +3",
-		body="Pillager's Vest +3",
-		hands="Pill. Armlets +3",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
 		ring2="Ilabrat Ring",
 		back=gear.jsecape_dex_dw,
 		legs="Pill. Culottes +3",
-		feet="Plun. Poulaines +3"
+		feet="Malignance Boots",
 	})
 	sets.engaged.MidAcc.Evasion = set_combine(sets.engaged.MidAcc,sets.engaged.Evasion,{
 	})
@@ -668,14 +669,14 @@ function init_gear_sets()
 	sets.engaged.PDT = set_combine(sets.engaged.Evasion,{
 		head="Meghanada Visor +2",
 		neck="Loricate Torque +1",
-		body="Meg. Cuirie +2",
-		hands="Meg. Gloves +2",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
 		waist="Flume Belt +1",
 		legs="Meg. Chausses +2",
-		feet="Meg. Jam. +2",
+		feet="Malignance Boots",
 	})
 	sets.engaged.MidAcc.PDT = set_combine(sets.engaged.PDT,{
 	})
@@ -686,12 +687,12 @@ function init_gear_sets()
 	sets.engaged.MDT = set_combine(sets.engaged.Evasion,{
 		head="Skormoth Mask",
 		neck="Inq. Bead Necklace",
-		body="Meg. Cuirie +2",
-		hands="Meg. Gloves +2",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
 		ring1="Shadow Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
-		feet="Meg. Jam. +2",
+		feet="Malignance Boots",
 	})
 	sets.engaged.MidAcc.MDT = set_combine(sets.engaged.MDT,{
 	})
