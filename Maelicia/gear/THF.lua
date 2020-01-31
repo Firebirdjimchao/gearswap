@@ -1,5 +1,5 @@
 function user_setup()	
-	state.IdleMode:options('CP', 'Normal', 'Regen', 'CPPDT', 'CPMDT')
+	state.IdleMode:options('CP', 'Normal', 'StoreTP', 'Regen', 'CPPDT', 'CPMDT')
 	state.OffenseMode:options('Normal', 'MidAcc', 'HighAcc', 'FullAcc')
 	state.HybridMode:options('Normal', 'Evasion', 'PDT')
 	state.RangedMode:options('Normal', 'Acc')
@@ -494,8 +494,7 @@ function init_gear_sets()
 		back="Moonbeam Cape",
 		waist="Flume Belt +1",
 		legs="Mummu Kecks +2",
-		--feet="Skd. Jambeaux +1"
-		feet="Malignance Boots",
+		feet="Skd. Jambeaux +1"
 	}
 	
 	sets.noprotect = {ring1="Sheltered Ring"}
@@ -514,6 +513,12 @@ function init_gear_sets()
 	
 	sets.idle.CP = set_combine(sets.idle,{
 		back="Mecisto. Mantle"
+	})
+
+	sets.idle.StoreTP = set_combine(sets.idle,{
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		feet="Malignance Boots",
 	})
 	
 	sets.idle.CPPDT = set_combine(sets.defense.PDT,{
