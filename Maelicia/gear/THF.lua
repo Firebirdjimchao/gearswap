@@ -516,6 +516,8 @@ function init_gear_sets()
 	})
 
 	sets.idle.StoreTP = set_combine(sets.idle,{
+		head="Pursuer's Beret",
+		ammo="Yamarang",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		feet="Malignance Boots",
