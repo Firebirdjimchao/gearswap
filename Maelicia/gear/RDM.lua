@@ -237,8 +237,7 @@ function init_gear_sets()
 		ear1="Malignance Earring",
 		--ear2="Hermetic Earring",
 		ear2="Regal Earring",
-		--body="Jhakri Robe +2",
-		body="Atrophy Tabard +2",
+		body="Atrophy Tabard +3",
 		hands="Jhakri Cuffs +2",
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
@@ -396,7 +395,7 @@ function init_gear_sets()
 	
 	-- Static value (Use Duration+ and Potency+ gear) --
 	sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration,{
-		body="Atrophy Tabard +2",
+		body="Atrophy Tabard +3",
 		legs="Leth. Fuseau +1"
 	})
 
@@ -452,8 +451,8 @@ function init_gear_sets()
 	-- 16 merits
 	-- 36 gifts
 	-- 476 Initial
-	-- 87 gear
-	-- 563 total
+	-- 89 gear
+	-- 565 total
 	sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.MACC,{
 		main=gear.MainStaff,
 		sub="Enki Strap",
@@ -465,8 +464,8 @@ function init_gear_sets()
 		-- 10
 		--neck="Incanter's Torque",
 		neck="Dls. Torque +1",
-		-- 19
-		body="Atrophy Tabard +2",
+		-- 21
+		body="Atrophy Tabard +3",
 		-- effect +14
 		--body="Lethargy Sayon +1",
 		-- 19, Saboteur +12
@@ -496,7 +495,7 @@ function init_gear_sets()
 	-- 584 total
 	sets.midcast.enfeebFullSkill = set_combine(sets.midcast['Enfeebling Magic'], {
 		-- 21
-		--body="Atrophy Tabard +3",
+		body="Atrophy Tabard +3",
 		-- 5
 		ring1="Stikini Ring",
 	})
@@ -526,7 +525,7 @@ function init_gear_sets()
 	sets.midcast.enfeebStatic = set_combine(sets.midcast['Enfeebling Magic'], {
 		--head="Atro. Chapeau +3",
 		neck="Dls. Torque +1",
-		--body="Atrophy Tabard +3",
+		body="Atrophy Tabard +3",
 		-- Duration +20%
 		-- hands="Regal Cuffs",
 		-- Duration +10%
@@ -794,8 +793,6 @@ function init_gear_sets()
 		head="Chironic Hat",
 		-- 6%
 		neck="Loricate Torque +1",
-		-- 7
-		--body="Atrophy Tabard +3",
 		-- 6% 6
 		body="Ayanmo Corazza +2",
 		-- 2 2%
