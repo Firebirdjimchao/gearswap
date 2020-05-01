@@ -168,7 +168,8 @@ function init_gear_sets()
 		ear1="Brutal Earring",
 		ear2="Moonshade Earring",
 		body="Ayanmo Corazza +2",
-		hands="Jhakri Cuffs +2",
+		--hands="Jhakri Cuffs +2",
+		hands="Atrophy Gloves +3",
 		ring1="Rajas Ring",
 		ring2="Petrov Ring",
 		back="Atheling Mantle",
@@ -333,8 +334,8 @@ function init_gear_sets()
 		ear2="Andoaa Earring",
 		-- 23 15 DUR
 		body="Viti. Tabard +3",
-		-- 18 DUR
-		hands="Atrophy Gloves +2",
+		-- 20 DUR
+		hands="Atrophy Gloves +3",
 		-- 5
 		ring1="Stikini Ring",
 		-- 5
@@ -360,8 +361,8 @@ function init_gear_sets()
 		--body="Lethargy Sayon +1",
 		-- 23 15 DUR
 		body="Viti. Tabard +3",
-		-- 18 DUR
-		hands="Atrophy Gloves +2",
+		-- 20 DUR
+		hands="Atrophy Gloves +3",
 		-- 5
 		ring1="Stikini Ring",
 		-- 5
@@ -894,7 +895,7 @@ function init_gear_sets()
 		-- 4%
 		body="Ayanmo Corazza +2",
 		-- 3%
-		hands="Atrophy Gloves +2",
+		hands="Atrophy Gloves +3",
 		ring1="Rajas Ring",
 		ring2="Cacoethic Ring",
 		back="Atheling Mantle",
