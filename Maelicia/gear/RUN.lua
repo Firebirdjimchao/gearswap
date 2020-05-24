@@ -139,7 +139,7 @@ function init_gear_sets()
 	--------------------------------------
 
 	-- Precast sets to enhance JAs
-	sets.precast.JA['Vallation'] = {body="Runeist's coat +3",legs="Futhark Trousers +1"} 
+	sets.precast.JA['Vallation'] = {body="Runeist's coat +3",legs="Futhark Trousers +3"} 
 	sets.precast.JA['Valiance'] = sets.precast.JA['Vallation'] 
 	sets.precast.JA['Pflug'] = {feet="Runeist bottes +1"} 
 	sets.precast.JA['Battuta'] = {head="Futhark Bandeau +1"}
@@ -186,8 +186,8 @@ function init_gear_sets()
 		waist="Eschan Stone",
 		-- 55 HP
 		--waist="Oneiros belt",
-		-- 87 HP
-		legs="Futhark trousers +1",
+		-- 107 HP
+		legs="Futhark Trousers +3",
 		-- 43 HP
 		feet="Runeist bottes +1"
 	}
@@ -248,7 +248,7 @@ function init_gear_sets()
 	}
 	sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
 		waist="Siegel Sash", 
-		legs="Futhark Trousers +1"
+		legs="Futhark Trousers +3"
 	})
 	sets.precast.FC['Utsusemi: Ichi'] = set_combine(sets.precast.FC, {neck='Magoraga beads'})
 	sets.precast.FC['Utsusemi: Ni'] = set_combine(sets.precast.FC['Utsusemi: Ichi'], {})
@@ -378,8 +378,8 @@ function init_gear_sets()
 		head="Erilaz galea +1",
 		-- 20 DUR
 		--hands="Regal Gauntlets",
-		-- 20 DUR
-		legs="Futhark Trousers +1"
+		-- 30 DUR
+		legs="Futhark Trousers +3"
 	})
 
 	sets.midcast['Temper'] = set_combine(sets.midcast['Enhancing Magic'], {
