@@ -4,7 +4,7 @@
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-	gear.GeoBell = "Nepote Bell"
+	gear.GeoBell = "Dunna"
 	
 	gear.AugLifestreamIndi = { name="Lifestream Cape", augments={'Geomancy Skill +6','Indi. eff. dur. +20','Pet: Damage taken -1%',}}
 	gear.Nanto_nuke = { name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
@@ -70,7 +70,7 @@ function init_gear_sets()
 	--------------------------------------
 	
 	-- Precast sets to enhance JAs
-	sets.precast.JA.Bolster = {body="Bagua Tunic"}
+	sets.precast.JA.Bolster = {body="Bagua Tunic +1"}
 	sets.precast.JA['Life cycle'] = {
 		body="Geomancy Tunic +2",
 		back="Nantosuelta's Cape",
@@ -256,18 +256,19 @@ function init_gear_sets()
 	-- 373 + 373 + 16 + 16 = 778 base (900 to cap all spell potency)
 	-- 13 Geomancy Gift
 	-- 13 Handbell Gift
-	-- Set total: 83
-	-- Total: 887
+	-- Set total: 113
+	-- Total: 917
 	sets.midcast.Geomancy = set_combine(sets.midcast.ConserveMP,{
 		main="Idris",
 		sub="Culminus",
+		-- 18
 		range=gear.GeoBell,
 		-- 15
 		head="Azimuth Hood +1",
 		-- 20
 		neck="Incanter's Torque",
-		-- 10
-		body="Bagua Tunic",
+		-- 12
+		body="Bagua Tunic +1",
 		-- 17
 		hands="Geo. Mitaines +2",
 		-- 5
@@ -721,6 +722,8 @@ function init_gear_sets()
 	sets.idle.Pet = set_combine(sets.idle,{
 		-- Pet: DT 25%
 		main="Idris",
+		-- Luopan: DT 5%
+		range=gear.GeoBell,
 		-- Pet: regen +3
 		head="Azimuth Hood +1",
 		-- DT: 5%
