@@ -142,7 +142,7 @@ function init_gear_sets()
 	sets.precast.JA['Vallation'] = {body="Runeist's coat +3",legs="Futhark Trousers +3"} 
 	sets.precast.JA['Valiance'] = sets.precast.JA['Vallation'] 
 	sets.precast.JA['Pflug'] = {feet="Runeist bottes +1"} 
-	sets.precast.JA['Battuta'] = {head="Futhark Bandeau +1"}
+	sets.precast.JA['Battuta'] = {head="Fu. Bandeau +3"}
 	sets.precast.JA['Liement'] = {body="Futhark Coat +3"}
  	sets.precast.JA['Gambit'] = {hands="Runeist mitons +1"} 
 	sets.precast.JA['Rayke'] = {feet="Futhark Bottes +1"} 
@@ -389,7 +389,7 @@ function init_gear_sets()
 	})
 	
 	sets.midcast['Phalanx'] = set_combine(sets.midcast['Enhancing Magic'], {
-		head="Futhark Bandeau +1",
+		head="Fu. Bandeau +3",
 	})
 		
 	sets.midcast['Stoneskin'] = set_combine(sets.midcast['Enhancing Magic'], {
@@ -477,7 +477,7 @@ function init_gear_sets()
 	})
 		
 	sets.engaged.Hybrid = set_combine(sets.DT, {
-		head="Meghanada visor +2",
+		head="Fu. Bandeau +3",
 		ear2="Sherida earring",
 		back=gear.aug_ogma_dex_da,
 		waist="Ioskeha belt",
@@ -619,7 +619,7 @@ function customize_idle_set(idleSet)
 	if not buffactive['Protect'] then
 		idleSet = set_combine(idleSet, sets.noprotect)
 	end
-	if state.Buff.Doom then
+	if state.buff.Doom then
 		idleSet = set_combine(idleSet, sets.buff.Doom)
 		party_alert()
 	end
@@ -628,7 +628,7 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-	if state.Buff.Doom then
+	if state.buff.Doom then
 		meleeSet = set_combine(meleeSet, sets.buff.Doom)
 		party_alert()
 	end
@@ -636,7 +636,7 @@ function customize_melee_set(meleeSet)
 end
 
 function customize_defense_set(defenseSet)
-	if state.Buff.Doom then
+	if state.buff.Doom then
 		defenseSet = set_combine(defenseSet, sets.buff.Doom)
 		party_alert()
 	end
@@ -645,7 +645,7 @@ end
 
 function party_alert()
 	if state.PartyAlertMode.value == 'true' then
-		if state.Buff.Doom then
+		if state.buff.Doom then
 			send_command('input /p <------ Doomed ---- <call14>')
 		end
 	end
