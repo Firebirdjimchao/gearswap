@@ -158,6 +158,12 @@ function define_global_sets()
 	sets.reive = {
 		--neck="Ygna's Resolve +1"
 	}
+	sets.buff.Doom = {
+		neck="Nicander's Necklace",
+		ring1="Purity Ring",
+		ring2="Saida Ring",
+		waist="Gishdubar Sash",
+	}
 
 end
 

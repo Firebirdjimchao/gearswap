@@ -102,9 +102,6 @@ function init_gear_sets()
 		legs="Pill. Culottes +3",
 		feet="Plun. Poulaines +3"
 	}
-	sets.buff.Doom = {
-		waist="Gishdubar Sash",
-	}
 	sets.Behind = {
 		body="Plunderer's Vest +3",
 	}

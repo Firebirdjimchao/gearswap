@@ -688,10 +688,6 @@ function init_gear_sets()
 
 	-- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
 
-	sets.buff.Doom = {
-		waist="Gishdubar Sash",
-	}
-
 	-- Engaged sets
 
 	-- Variations for TP weapon and (optional) offense/defense modes.	Code will fall back on previous

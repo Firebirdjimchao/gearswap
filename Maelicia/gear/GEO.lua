@@ -677,7 +677,7 @@ function init_gear_sets()
 	sets.idle.Encumbered = set_combine(sets.midcast.MAB,{
 	})
 
-	-- Total: 40% + 20% (PDT Staff)
+	-- Total: 42% + 20% (PDT Staff)
 	-- <36%: use Shadow Mantle
 	sets.idle.PDT = set_combine(sets.idle,{
 		main=gear.Staff.PDT,
@@ -686,6 +686,8 @@ function init_gear_sets()
 		head="Blistering Sallet +1",
 		-- 6%
 		neck="Loricate Torque +1",
+		-- 2%
+		ear1="Genmei Earring",
 		-- 10%
 		body="Shamash Robe",
 		-- 1%
@@ -912,9 +914,6 @@ function init_gear_sets()
 		-- 6%
 		feet=gear.Merlinic_feet_burst
 	})
-	sets.buff.Doom = {
-		waist="Gishdubar Sash",
-	}
 
 end
 

@@ -350,7 +350,7 @@ function init_gear_sets()
 		back="Moonbeam Cape",
 		waist="Flume Belt +1",
 		legs="Mummu Kecks +2",
-		feet="Amm Greaves"
+		feet="Malignance Boots"
 	}
 
 	sets.defense.MDT = set_combine(sets.defense.PDT, {
@@ -363,7 +363,7 @@ function init_gear_sets()
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
 		legs="Mummu Kecks +2",
-		feet="Amm Greaves"
+		feet="Malignance Boots"
 	})
 
 	sets.DayMovement = {feet="Danzo sune-ate"}
@@ -719,10 +719,6 @@ function init_gear_sets()
 	--------------------------------------
 	
 	sets.buff.Migawari = {body="Hattori Ningi +1"}
-	sets.buff.Doom = {
-		ring2="Saida Ring",
-		waist="Gishdubar Sash",
-	}
 	sets.buff.Yonin = {}
 	sets.buff.Innin = {}
 	sets.buff.Madrigal = {

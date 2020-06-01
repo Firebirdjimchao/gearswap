@@ -782,9 +782,6 @@ function init_gear_sets()
 	--------------------------------------
 	-- Mighty Strikes TP Gear, combines with current melee set.
 	sets.buff.MS = {}
-	sets.buff.Doom = {
-		waist="Gishdubar Sash",
-	}
 	sets.buff.Madrigal = {
 		--hands="Composer's Mitts",
 	}

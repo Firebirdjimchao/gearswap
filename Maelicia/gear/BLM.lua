@@ -849,9 +849,6 @@ function init_gear_sets()
 		back="Taranus's Cape",
 		feet="Wicce Sabots +1"
 	}
-	sets.buff.Doom = {
-		waist="Gishdubar Sash",
-	}
 	
 	-- Magic Burst Damage: 40% (40 cap) + 28% II
 	-- INT: 215

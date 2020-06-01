@@ -975,9 +975,6 @@ function init_gear_sets()
 	sets.buff.Barrage.Phaosphaelia = set_combine(sets.buff.Barrage.Archery, {
 	})
 	sets.buff.Camouflage = {body="Orion Jerkin +3"}	
-	sets.buff.Doom = {
-		waist="Gishdubar Sash",
-	}
 	sets.buff.ArmaAftermath = {
 		body="Nisroch Jerkin",
 	}

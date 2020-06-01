@@ -346,8 +346,7 @@ function init_gear_sets()
 		body="Tartarus Platemail",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
-		waist="Flume Belt +1",
-		feet="Amm Greaves"
+		waist="Flume Belt +1"
 	})
 	
 	sets.midcast.RA = {
@@ -784,9 +783,6 @@ function init_gear_sets()
 	sets.buff.Sekkanoki = {hands="Kasuga Kote +1"}
 	sets.buff.Sengikori = {hands="Kas. Sune-Ate +1"}
 	sets.buff['Meikyo Shisui'] = {feet="Sakonji Sune-ate"}
-	sets.buff.Doom = {
-		waist="Gishdubar Sash",
-	}
 end
 
 -------------------------------------------------------------------------------------------------------------------
