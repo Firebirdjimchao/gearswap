@@ -262,7 +262,7 @@ function init_gear_sets()
 		--ear2="Mendi. Earring",
 		body="Viti. Tabard +3",
 		-- 16%
-			hands=gear.Telchine_hands_cure,
+		hands=gear.Telchine_hands_cure,
 		back=gear.sucellos_mnd,
 		waist="Cascade Belt",
 		-- 10%

@@ -301,20 +301,21 @@ function init_gear_sets()
 		feet=gear.Vanya_feet_B
 	}
 	
-	-- 53% Total
+	-- 55% Total
 	sets.midcast.Cure = set_combine(sets.midcast['Healing Magic'],{
 		-- 22%
 		main="Tamaxchi",
 		sub="Genbu's Shield",
 		head="Befouled Crown",
 		neck="Incanter's Torque",
-		--ear1="Novia Earring",
-		--ear2="Lifestorm Earring",
+		ear1="Novia Earring",
+		ear2="Lifestorm Earring",
 		-- 5%
-		ear1="Mendi. Earring",
+		--ear1="Mendi. Earring",
 		-- 5%
-		ear2="Roundel Earring",
-		body="Vanir Cotehardie",
+		--ear2="Roundel Earring",
+		-- 12%
+		body="Annoint. Kalasiris"
 		-- 16%
 		hands=gear.Telchine_hands_cure,
 		back="Aurist's Cape +1",

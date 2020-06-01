@@ -246,7 +246,7 @@ function init_gear_sets()
 	})
 
 	sets.midcast.Curaga = set_combine(sets.midcast.Cure,{
-		body="Count's Garb"
+		body="Annoint. Kalasiris"
 	})
 	sets.midcast.CureSelf = set_combine(sets.midcast.Cure,{
 		waist="Gishdubar Sash",
