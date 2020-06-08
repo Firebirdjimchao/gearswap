@@ -23,7 +23,7 @@ function init_gear_sets()
 
 	-- Fast cast sets for spells
 	
-	-- 74%/37% Total (80/40 cap) + 15% (if RDM sub) 
+	-- 77%/38% Total (80/40 cap) + 15% (if RDM sub) 
 	sets.precast.FC = {
 		-- 4%
 		main=gear.default.fastcast_staff,
@@ -34,8 +34,8 @@ function init_gear_sets()
 		neck="Orison Locket",
 		-- 2%
 		ear1="Loquacious Earring",
-		-- 1%
-		ear2="Etiolation Earring",
+		-- 4%
+		ear2="Malignance Earring",
 		-- 14%
 		body="Inyanga Jubbah +2",
 		-- 7%
@@ -50,8 +50,8 @@ function init_gear_sets()
 		waist="Witful Belt",
 		-- 5%
 		--legs="Lengo Pants",
-	-- 6%
-	legs="Aya. Cosciales +2",
+		-- 6%
+		legs="Aya. Cosciales +2",
 		-- 3% + 1%~3%
 		feet="Regal Pumps +1"
 	}
@@ -129,13 +129,13 @@ function init_gear_sets()
 		head="Buremte Hat",
 		neck="Baetyl Pendant",
 		ear1="Friomisi Earring",
-		ear2="Crematio Earring",
+		ear2="Malignance Earring",
 		body="Count's Garb",
 		hands="Otomi Gloves",
 		ring1="Acumen Ring",
 		ring2="Arvina Ringlet +1",
 		back="Toro Cape",
-		waist="Sekhmet Corset",
+		waist=gear.ElementalObi,
 		legs=gear.Chironic_legs_nuke,
 		feet=gear.Chironic_feet_nuke,
 	})
@@ -170,13 +170,13 @@ function init_gear_sets()
 		head="Inyanga Tiara +2",
 		neck="Erra Pendant",
 		ear1="Lifestorm Earring",
-		ear2="Gwati Earring",
+		ear2="Malignance Earring",
 		body="Inyanga Jubbah +2",
 		hands="Inyan. Dastanas +2",
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
 		back="Aurist's Cape +1",
-		waist="Rumination Sash",
+		waist="Luminary Sash",
 		legs="Chironic Hose",
 		feet="Inyan. Crackows +2"
 	}
@@ -188,13 +188,13 @@ function init_gear_sets()
 		head="Buremte Hat",
 		neck="Sanctity Necklace",
 		ear1="Friomisi Earring",
-		ear2="Crematio Earring",
+		ear2="Malignance Earring",
 		body="Count's Garb",
 		hands="Otomi Gloves",
 		ring1="Acumen Ring",
 		ring2="Arvina Ringlet +1",
 		back="Toro Cape",
-		waist="Sekhmet Corset",
+		waist=gear.ElementalObi,
 		legs=gear.Chironic_legs_nuke,
 		feet=gear.Chironic_feet_nuke,
 	}
@@ -383,7 +383,7 @@ function init_gear_sets()
 		head="Befouled Crown",
 		neck="Twilight Torque",
 		ear1="Ethereal Earring",
-		ear2="Glorious Earring",
+		ear2="Etiolation Earring",
 		body="Witching Robe",
 		hands="Inyan. Dastanas +2",
 		ring1=gear.DarkRing.physical,
@@ -407,6 +407,8 @@ function init_gear_sets()
 		head="Blistering Sallet +1",
 		-- 5%
 		neck="Twilight Torque",
+		ear1="Ethereal Earring",
+		ear2="Etiolation Earring",
 		-- 6%
 		body="Ayanmo Corazza +2",
 		hands="Inyan. Dastanas +2",
@@ -420,7 +422,7 @@ function init_gear_sets()
 		feet="Inyan. Crackows +2"
 	})
 	
-	-- MDT: 51%
+	-- MDT: 54%
 	-- MDB: 41
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.idle.MDT = set_combine(sets.idle,{
@@ -430,6 +432,9 @@ function init_gear_sets()
 		head="Inyanga Tiara +2",
 		-- 5%
 		neck="Twilight Torque",
+		ear1="Ethereal Earring",
+		-- 3%
+		ear2="Etiolation Earring",
 		-- 8% 11
 		body="Inyanga Jubbah +2",
 		-- 4% 5

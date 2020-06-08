@@ -82,7 +82,7 @@ function init_gear_sets()
 	sets.precast.JA['Radial Arcana'] = {feet="Bagua Sandals"}
 	
 	-- Fast cast sets for spells
-	-- 64%/32% Total (80/40 cap) + 15% (if RDM sub)
+	-- 67%/33% Total (80/40 cap) + 15% (if RDM sub)
 	sets.precast.FC = {
 		-- 4%
 		main=gear.default.fastcast_staff,
@@ -90,10 +90,10 @@ function init_gear_sets()
 		head="Nahtirah Hat",
 		-- 4%
 		neck="Baetyl Pendant",
-		-- 1%
-		ear1="Etiolation Earring",
 		-- 2%
-		ear2="Loquacious Earring",
+		ear1="Loquacious Earring",
+		-- 4%
+		ear2="Malignance Earring",
 		-- 5%
 		body="Vanir Cotehardie",
 		-- 3%
@@ -168,13 +168,13 @@ function init_gear_sets()
 		head="Jhakri Coronal +2",
 		neck="Baetyl Pendant",
 		ear1="Barkaro. Earring",
-		ear2="Friomisi Earring",
+		ear2="Malignance Earring",
 		body=gear.Merlinic_body_nuke,
 		hands="Jhakri Cuffs +2",
 		ring1="Acumen Ring",
 		ring2="Jhakri Ring",
 		back=gear.Nanto_nuke,
-		waist="Sekhmet Corset",
+		waist=gear.ElementalObi,
 		legs=gear.Merlinic_legs_nuke,
 		feet="Jhakri Pigaches +2"
 	})
@@ -214,7 +214,7 @@ function init_gear_sets()
 		neck="Erra Pendant",
 		--neck="Sanctity Necklace",
 		ear1="Barkaro. Earring",
-		ear2="Gwati Earring",
+		ear2="Malignance Earring",
 		--body="Jhakri Robe +2",
 		body="Geomancy Tunic +2",
 		--hands="Jhakri Cuffs +2",
@@ -222,7 +222,7 @@ function init_gear_sets()
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
 		back=gear.Nanto_nuke,
-		waist="Rumination Sash",
+		waist="Luminary Sash",
 		--legs=gear.Merlinic_legs_nuke,
 		legs="Geomancy Pants +2",
 		feet="Geo. Sandals +2"
@@ -235,7 +235,7 @@ function init_gear_sets()
 		head="Merlinic Hood",
 		neck="Sanctity Necklace",
 		ear1="Barkaro. Earring",
-		ear2="Friomisi Earring",
+		ear2="Malignance Earring",
 		body=gear.Merlinic_body_nuke,
 		hands="Amalric Gages",
 		ring1="Acumen Ring",
@@ -308,14 +308,14 @@ function init_gear_sets()
 		sub="Genbu's Shield",
 		head="Befouled Crown",
 		neck="Incanter's Torque",
-		ear1="Novia Earring",
-		ear2="Lifestorm Earring",
+		ear1="Lifestorm Earring",
+		ear2="Novia Earring",
 		-- 5%
 		--ear1="Mendi. Earring",
 		-- 5%
 		--ear2="Roundel Earring",
 		-- 12%
-		body="Annoint. Kalasiris"
+		body="Annoint. Kalasiris",
 		-- 16%
 		hands=gear.Telchine_hands_cure,
 		back="Aurist's Cape +1",
@@ -519,14 +519,14 @@ function init_gear_sets()
 	sets.midcast['Elemental Magic'].Proc = {
 		head=empty,
 		neck=empty,
-		ear1="Etiolation Earring",
-		ear2="Loquac. Earring",
+		ear1="Loquac. Earring",
+		ear2="Etiolation Earring",
 		body=empty,
 		hands="Amalric Gages",
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
 		back=empty,
-		waist="Rumination Sash",
+		waist="Luminary Sash",
 		legs=empty,
 		feet=empty
 	}
@@ -596,8 +596,8 @@ function init_gear_sets()
 		range=gear.GeoBell,
 		head="Befouled Crown",
 		neck="Twilight Torque",
-		ear1="Novia Earring",
-		ear2="Ethereal Earring",
+		ear1="Ethereal Earring",
+		ear2="Novia Earring",
 		body="Jhakri Robe +2",
 		hands="Bagua Mitaines +1",
 		ring1=gear.DarkRing.physical,
@@ -615,12 +615,12 @@ function init_gear_sets()
 	sets.idle.Encumbered = set_combine(sets.midcast.MAB,{
 	})
 
-	-- Total: 33% + 20% (PDT Staff)
+	-- Total: 34% + 20% (PDT Staff)
 	-- <36%: use Shadow Mantle
 	sets.idle.PDT = set_combine(sets.idle,{
 		main=gear.Staff.PDT,
-		-- 4% DT
-		sub="Eletta Strap",
+		-- 5% DT
+		sub="Kaja Grip",
 		-- 3%
 		head="Blistering Sallet +1",
 		-- 5%
@@ -640,17 +640,19 @@ function init_gear_sets()
 		feet="Geo. Sandals +2"
 	})
 			
-	-- MDT: 27%
+	-- MDT: 31%
 	-- MDB: 26
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.idle.MDT = set_combine(sets.idle,{
 		main=gear.Staff.PDT,
-		-- 4% DT
-		sub="Eletta Strap",
+		-- 5% DT
+		sub="Kaja Grip",
 		-- 5
 		head="Hagondes Hat +1",
 		-- 5%
 		neck="Twilight Torque",
+		-- 3%
+		ear2="Etiolation Earring",
 		-- 7
 		body="Azimuth Coat +1",
 		-- 3
@@ -672,8 +674,7 @@ function init_gear_sets()
 		-- 6%
 		neck="Loricate Torque +1",
 		-- 3%
-		ear1="Etiolation Earring",
-		ear2="Arete del Luna",
+		ear2="Etiolation Earring",
 		-- 12
 		body="Onca Suit",
 		hands=empty,
@@ -729,8 +730,8 @@ function init_gear_sets()
 		head="Azimuth Hood +1",
 		-- DT: 5%
 		neck="Twilight Torque",
-		ear1="Etiolation Earring",
-		ear2="Ethereal Earring",
+		ear1="Ethereal Earring",
+		ear2="Etiolation Earring",
 		-- Pet: regen +2
 		body=gear.Telchine_body_pet,
 		-- Pet: DT 11%
@@ -810,6 +811,7 @@ function init_gear_sets()
 		ear1="Zennaroi Earring",
 		ring2="Cacoethic Ring",
 		back="Aurist's Cape +1",
+		waist="Eschan Stone",
 	})
 
 	--------------------------------------

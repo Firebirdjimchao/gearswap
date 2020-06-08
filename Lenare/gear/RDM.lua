@@ -10,7 +10,7 @@ function user_setup()
 
 	gear.sucellos_mab = { name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
 	gear.sucellos_mnd = { name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10',}}
-	gear.default.obi_waist = "Sekhmet Corset"
+	gear.default.obi_waist = "Eschan Stone"
 	gear.default.obi_back = gear.sucellos_mab
 
 	-- list of spell that has its own sets defined below and should not default to using EnhancingDuration midcast set
@@ -82,7 +82,7 @@ function init_gear_sets()
 	
 	-- Fast cast sets for spells
 	
-	-- 88%/44% Total + 8% (JP) + 30% (RDM) (80/40 cap)
+	-- 91%/45% Total + 8% (JP) + 30% (RDM) (80/40 cap)
 	sets.precast.FC = {
 		-- 10%
 		--main="Emissary",
@@ -95,8 +95,8 @@ function init_gear_sets()
 		neck="Baetyl Pendant",
 		-- 2%
 		ear1="Loquac. Earring",
-		-- 1%
-		ear2="Etiolation Earring",
+		-- 4%
+		ear2="Malignance Earring",
 		-- 15%
 		body="Viti. Tabard +3",
 		-- 7%
@@ -116,7 +116,7 @@ function init_gear_sets()
 	}
 	
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {
-		ear2="Mendi. Earring",
+		ear1="Mendi. Earring",
 		back="Pahtli Cape",
 		feet=gear.Vanya_feet_B
 	})
@@ -161,7 +161,7 @@ function init_gear_sets()
 		ring1="Acumen Ring",
 		ring2="Jhakri Ring",
 		back=gear.sucellos_mab,
-		waist="Sekhmet Corset",
+		waist="Eschan Stone",
 		legs=gear.Merlinic_legs_nuke,
 		feet="Jhakri Pigaches +2"
 	})
@@ -206,7 +206,7 @@ function init_gear_sets()
 		head="Atro. Chapeau +3",
 		neck="Dls. Torque +1",
 		ear1="Lifestorm Earring",
-		ear2="Gwati Earring",
+		ear2="Malignance Earring",
 		body="Atrophy Tabard +3",
 		hands="Jhakri Cuffs +2",
 		ring1="Stikini Ring",
@@ -225,7 +225,7 @@ function init_gear_sets()
 		head=gear.Merlinic_head_burst,
 		neck="Sanctity Necklace",
 		ear1="Friomisi Earring",
-		ear2="Crematio Earring",
+		ear2="Malignance Earring",
 		body=gear.Merlinic_body_nuke,
 		hands="Amalric Gages",
 		ring1="Acumen Ring",
@@ -256,10 +256,10 @@ function init_gear_sets()
 		neck="Incanter's Torque",
 		ear1="Lifestorm Earring",
 		-- 5%
+		--ear1="Mendi. Earring",
+		-- 5%
 		--ear2="Roundel Earring",
 		ear2="Novia Earring",
-		-- 5%
-		--ear2="Mendi. Earring",
 		body="Viti. Tabard +3",
 		-- 16%
 		hands=gear.Telchine_hands_cure,
@@ -758,7 +758,7 @@ function init_gear_sets()
 		feet="Aya. Gambieras +2",
 	})
 	
-	-- MDT: 42%
+	-- MDT: 45%
 	-- MDB: 23
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.idle.MDT = set_combine(sets.idle,{
@@ -768,6 +768,8 @@ function init_gear_sets()
 		head="Hagondes Hat +1",
 		-- 5%
 		neck="Twilight Torque",
+		-- 3%
+		ear2="Etiolation Earring",
 		-- 7
 		--body="Atrophy Tabard +3",
 		-- 6% 6
@@ -861,6 +863,7 @@ function init_gear_sets()
 		ear2="Steelflash Earring",
 		-- 2%
 		back="Ground. Mantle +1",
+		waist="Eschan Stone",
 	})
 	
 	sets.engaged.Defense = set_combine(sets.engaged,{

@@ -120,7 +120,7 @@ function init_gear_sets()
 		hands="Meg. Gloves +2",
 		ring2="Cacoethic Ring",
 		back=gear.Senuna_DexDa,
-		waist="Hurch'lan Sash",
+		waist="Eschan Stone",
 		legs="Meg. Chausses +2",
 		feet="Meg. Jam. +2"
 	}
@@ -128,11 +128,11 @@ function init_gear_sets()
 		head="Mummu Bonnet +2",
 		neck="Sanctity Necklace",
 		ear1="Lifestorm Earring",
-		ear2="Gwati Earring",
 		body="Mummu Jacket +2",
 		hands="Mummu Wrists +2",
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
+		waist="Eschan Stone",
 		legs="Mummu Kecks +2",
 		feet="Mummu Gamash. +2",
 	}
@@ -208,7 +208,7 @@ function init_gear_sets()
 	})
 	sets.precast.WS.FullAcc = set_combine(sets.precast.WS.HighAcc, {
 		neck="Sanctity Necklace",
-		waist="Hurch'lan Sash",
+		waist="Eschan Stone",
 	})
 	sets.precast.WS.MAB = set_combine(sets.precast.WS, {
 		head=gear.Herculean_head_mab,
@@ -221,6 +221,7 @@ function init_gear_sets()
 		ring1="Acumen Ring",
 		ring2="Arvina Ringlet +1",
 		back="Toro Cape",
+		waist="Eschan Stone",
 		--legs="Shned. Tights +1",
 		legs=gear.Herculean_legs_WSD,
 		feet="Meg. Jam. +2",
@@ -427,7 +428,7 @@ function init_gear_sets()
 	})
 	sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc,{
 		ear2="Zennaroi Earring",
-		waist="Hurch'lan Sash",
+		waist="Eschan Stone",
 	})
 	sets.engaged.FullAcc = set_combine(sets.engaged.HighAcc,{
 	})

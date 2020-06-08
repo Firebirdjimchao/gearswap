@@ -150,7 +150,7 @@ function init_gear_sets()
 		ring1="Acumen Ring",
 		ring2="Arvina Ringlet +1",
 		back=gear.pr_gunslinger,
-		waist="Aquiline Belt",
+		waist="Eschan Stone",
 		legs="Shned. Tights +1",
 		feet="Lanun Boots"
 		--feet="Lanun Boots +1"
@@ -229,7 +229,7 @@ function init_gear_sets()
 		ring1="Acumen Ring",
 		ring2="Arvina Ringlet +1",
 		back=gear.pr_gunslinger,
-		waist="Aquiline Belt",
+		waist="Eschan Stone",
 		legs="Shned. Tights +1",
 		feet="Lanun Bottes"
 		--feet="Lanun Bottes +1"
@@ -237,7 +237,6 @@ function init_gear_sets()
 
 	sets.midcast.CorsairShot.Acc = set_combine(sets.midcast.CorsairShot, {
 		ear1="Lifestorm Earring",
-		ear2="Gwati Earring",
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
 	})

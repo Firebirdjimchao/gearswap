@@ -86,7 +86,7 @@ function init_gear_sets()
 		ring1="Rajas Ring",
 		ring2="Apate Ring",
 		back="Canny Cape",
-		waist="Hurch'lan Sash",
+		waist="Eschan Stone",
 		legs="Samnuha Tights",
 		feet="Meg. Jam. +2"
 	}
@@ -101,7 +101,7 @@ function init_gear_sets()
 		ring1="Garuda Ring",
 		ring2="Garuda Ring",
 		back="Canny Cape",
-		waist="Hurch'lan Sash",
+		waist="Eschan Stone",
 		legs="Samnuha Tights",
 		feet="Meg. Jam. +2"
 	}
@@ -198,7 +198,7 @@ function init_gear_sets()
 		head="Meghanada Visor +2",
 		body="Meg. Cuirie +2",
 		hands="Meg. Gloves +2",
-		waist="Hurch'lan Sash",
+		waist="Eschan Stone",
 		--legs="Meg. Chausses +2",
 		feet="Meg. Jam. +2",
 	})
@@ -207,7 +207,7 @@ function init_gear_sets()
 		neck="Sanctity Necklace",
 		body="Meg. Cuirie +2",
 		hands="Meg. Gloves +2",
-		waist="Hurch'lan Sash",
+		waist="Eschan Stone",
 		back="Canny Cape",
 		--legs="Meg. Chausses +2",
 		feet="Meg. Jam. +2",
@@ -223,6 +223,7 @@ function init_gear_sets()
 		ring1="Acumen Ring",
 		ring2="Arvina Ringlet +1",
 		back="Toro Cape",
+		waist="Eschan Stone",
 		--legs="Shned. Tights +1",
 		legs=gear.Herculean_legs_WSD,
 	})
@@ -369,7 +370,7 @@ function init_gear_sets()
 		head="Blistering Sallet +1",
 		body="Mekosu. Harness",
 		back="Shadow Mantle",
-		waist="Hurch'lan Sash",
+		waist="Eschan Stone",
 		feet="Pillager's Poulaines"
 	});
 		
@@ -488,7 +489,7 @@ function init_gear_sets()
 	}
 	sets.engaged.MidAcc = set_combine(sets.engaged,{
 		body="Meg. Cuirie +2",
-		waist="Hurch'lan Sash",
+		waist="Eschan Stone",
 		feet="Mummu Gamash. +2",
 	})
 	sets.engaged.HighAcc = set_combine(sets.engaged,{
@@ -496,7 +497,7 @@ function init_gear_sets()
 		neck="Sanctity Necklace",
 		body="Meg. Cuirie +2",
 		hands="Meg. Gloves +2",
-		waist="Hurch'lan Sash",
+		waist="Eschan Stone",
 		legs="Meg. Chausses +2",
 		feet="Mummu Gamash. +2",
 	})
@@ -506,7 +507,7 @@ function init_gear_sets()
 		body="Meg. Cuirie +2",
 		hands="Meg. Gloves +2",
 		ring2="Cacoethic Ring",
-		waist="Hurch'lan Sash",
+		waist="Eschan Stone",
 		legs="Meg. Chausses +2",
 		feet="Meg. Jam. +2",
 	})
