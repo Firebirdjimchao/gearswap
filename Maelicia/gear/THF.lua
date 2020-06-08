@@ -1,10 +1,10 @@
 function user_setup()	
 	state.IdleMode:options('CP', 'Normal', 'StoreTP', 'Regen', 'CPPDT', 'CPMDT')
 	state.OffenseMode:options('Normal', 'MidAcc', 'HighAcc', 'FullAcc')
-	state.HybridMode:options('Normal', 'Evasion', 'PDT')
+	state.HybridMode:options('Normal', 'HybridTH', 'Evasion', 'PDT')
 	state.RangedMode:options('Normal', 'Acc')
 	state.WeaponskillMode:options('Normal', 'MidAcc', 'HighAcc', 'FullAcc')
-	state.PhysicalDefenseMode:options('Evasion', 'PDT')
+	state.PhysicalDefenseMode:options('HybridTH', 'Evasion', 'PDT')
 
 	state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi'}
 	state.BehindMode = M{['description']='Behind Mode', 'None', 'Normal'}
@@ -65,8 +65,8 @@ function init_gear_sets()
 	--------------------------------------
 
 	sets.TreasureHunter = {
-		hands="Plunderer's Armlets +1",
-		feet="Skulk. Poulaines +1"
+		hands="Plun. Armlets +3",
+		--feet="Skulk. Poulaines +1"
 	}
 	sets.ExtraRegen = {}
 	sets.Kiting = {
@@ -119,7 +119,7 @@ function init_gear_sets()
 	sets.precast.JA['Conspirator'] = {body="Skulker's Vest +1"}
 	sets.precast.JA['Steal'] = {neck="Rabbit Charm",hands="Pill. Armlets +3",legs="Pill. Culottes +3",feet="Pill. Poulaines +1"}
 	sets.precast.JA['Despoil'] = {legs="Skulk. Culottes +1",feet="Skulk. Poulaines +1"}
-	sets.precast.JA['Perfect Dodge'] = {hands="Plunderer's Armlets +1"}
+	sets.precast.JA['Perfect Dodge'] = {hands="Plun. Armlets +3"}
 	sets.precast.JA['Feint'] = {
 		legs="Plun. Culottes +3"
 	}
@@ -222,7 +222,7 @@ function init_gear_sets()
 		ring1="Regal Ring",
 		ring2="Ilabrat Ring",
 		back=gear.jsecape_dex_crit,
-		waist="Hurch'lan Sash",
+		waist="Eschan Stone",
 		legs="Pill. Culottes +3",
 		feet="Meg. Jam. +2",
 	})
@@ -641,7 +641,7 @@ function init_gear_sets()
 		ear2="Telos Earring",
 		ring1="Cacoethic Ring +1",
 		ring2="Ramuh Ring +1",
-		waist="Hurch'lan Sash",
+		waist="Eschan Stone",
 		legs="Pill. Culottes +3",
 	})
 
@@ -703,6 +703,39 @@ function init_gear_sets()
 	sets.engaged.HighAcc.MDT = set_combine(sets.engaged.MidAcc.MDT,{
 	})
 	sets.engaged.FullAcc.MDT = set_combine(sets.engaged.HighAcc.MDT,{
+	})
+	-- Use Sandung, Chaac Belt, or Perfect Taming Sari to cap TH at 8
+	sets.engaged.HybridTH = set_combine(sets.engaged.PDT, sets.TreasureHunter,{
+		-- DT 3%
+		--ammo="Staunch Tathlum +1",
+		ammo="Yamarang",
+		-- PDT 5%
+		head="Meghanada Visor +2",
+		-- DT 6%
+		neck="Loricate Torque +1",
+		ear1="Sherida Earring",
+		-- MDT 3%
+		ear2="Etiolation Earring",
+		-- DT 9%
+		body="Malignance Tabard",
+		hands="Plun. Armlets +3",
+		-- DT 5%
+		ring1="Dark Ring",
+		-- DT 10%
+		ring2="Defending Ring",
+		-- DT 5%
+		back="Moonbeam Cape",
+		waist="Reiki Yotai",
+		-- PDT 6%
+		legs="Meg. Chausses +2",
+		-- DT 4%
+		feet="Malignance Boots",
+	})
+	sets.engaged.MidAcc.HybridTH = set_combine(sets.engaged.HybridTH,{
+	})
+	sets.engaged.HighAcc.HybridTH = set_combine(sets.engaged.MidAcc.HybridTH,{
+	})
+	sets.engaged.FullAcc.HybridTH = set_combine(sets.engaged.HighAcc.HybridTH,{
 	})
 
 	-- ==== Haste sets ================
@@ -891,6 +924,43 @@ function init_gear_sets()
 	sets.engaged.FullAcc.MDT.Haste_35 = set_combine(sets.engaged.FullAcc.MDT,{
 	})
 	sets.engaged.FullAcc.MDT.MaxHaste = set_combine(sets.engaged.FullAcc.MDT,{
+	})
+
+	-- HybridTH -------
+	sets.engaged.HybridTH.Haste_15 = set_combine(sets.engaged,{
+	})
+	sets.engaged.HybridTH.Haste_30 = set_combine(sets.engaged.HybridTH,{
+	})
+	sets.engaged.HybridTH.Haste_35 = set_combine(sets.engaged.HybridTH,{
+	})
+	sets.engaged.HybridTH.MaxHaste = set_combine(sets.engaged.HybridTH,{
+	})
+
+	sets.engaged.MidAcc.HybridTH.Haste_15 = set_combine(sets.engaged.MidAcc.HybridTH,{
+	})
+	sets.engaged.MidAcc.HybridTH.Haste_30 = set_combine(sets.engaged.MidAcc.HybridTH,{
+	})
+	sets.engaged.MidAcc.HybridTH.Haste_35 = set_combine(sets.engaged.MidAcc.HybridTH,{
+	})
+	sets.engaged.MidAcc.HybridTH.MaxHaste = set_combine(sets.engaged.MidAcc.HybridTH,{
+	})
+
+	sets.engaged.HighAcc.HybridTH.Haste_15 = set_combine(sets.engaged.HighAcc.HybridTH,{
+	})
+	sets.engaged.HighAcc.HybridTH.Haste_30 = set_combine(sets.engaged.HighAcc.HybridTH,{
+	})
+	sets.engaged.HighAcc.HybridTH.Haste_35 = set_combine(sets.engaged.HighAcc.HybridTH,{
+	})
+	sets.engaged.HighAcc.HybridTH.MaxHaste = set_combine(sets.engaged.HighAcc.HybridTH,{
+	})
+
+	sets.engaged.FullAcc.HybridTH.Haste_15 = set_combine(sets.engaged.FullAcc.HybridTH,{
+	})
+	sets.engaged.FullAcc.HybridTH.Haste_30 = set_combine(sets.engaged.FullAcc.HybridTH,{
+	})
+	sets.engaged.FullAcc.HybridTH.Haste_35 = set_combine(sets.engaged.FullAcc.HybridTH,{
+	})
+	sets.engaged.FullAcc.HybridTH.MaxHaste = set_combine(sets.engaged.FullAcc.HybridTH,{
 	})
 
 end

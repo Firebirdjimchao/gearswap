@@ -517,7 +517,7 @@ function init_gear_sets()
 		ear2="Digni. Earring",
 		ring1="Cacoethic ring +1",
 		ring2="Regal Ring",
-		waist="Hurch'lan Sash",
+		waist="Eschan Stone",
 		legs="Rune. Trousers +3",
 		feet="Meg. Jam. +2",
 	})

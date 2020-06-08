@@ -937,7 +937,7 @@ function init_gear_sets()
 		body="Meg. Cuirie +2",
 		hands="Meg. Gloves +2",
 		ring2="Cacoethic Ring +1",
-		waist="Hurch'lan Sash",
+		waist="Eschan Stone",
 		legs="Meg. Chausses +2",
 		feet="Meg. Jam. +2",
 	})

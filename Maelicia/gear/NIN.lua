@@ -466,7 +466,7 @@ function init_gear_sets()
 		body="Mochi. Chainmail +3",
 		ring1="Ramuh Ring +1",
 		ring2="Cacoethic Ring +1",
-		waist="Hurch'lan Sash",
+		waist="Eschan Stone",
 	})
 	sets.engaged.Innin.MaxHaste	 = set_combine(sets.engaged.MaxHaste, {
 	})
