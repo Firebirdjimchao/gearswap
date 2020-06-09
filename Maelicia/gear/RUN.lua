@@ -615,7 +615,7 @@ function customize_idle_set(idleSet)
 	if not buffactive['Protect'] then
 		idleSet = set_combine(idleSet, sets.noprotect)
 	end
-	if state.buff.Doom then
+	if state.Buff.Doom then
 		idleSet = set_combine(idleSet, sets.buff.Doom)
 		party_alert()
 	end
