@@ -624,7 +624,7 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-	if state.buff.Doom then
+	if state.Buff.Doom then
 		meleeSet = set_combine(meleeSet, sets.buff.Doom)
 		party_alert()
 	end
@@ -632,7 +632,7 @@ function customize_melee_set(meleeSet)
 end
 
 function customize_defense_set(defenseSet)
-	if state.buff.Doom then
+	if state.Buff.Doom then
 		defenseSet = set_combine(defenseSet, sets.buff.Doom)
 		party_alert()
 	end
@@ -641,7 +641,7 @@ end
 
 function party_alert()
 	if state.PartyAlertMode.value == 'true' then
-		if state.buff.Doom then
+		if state.Buff.Doom then
 			send_command('input /p <------ Doomed ---- <call14>')
 		end
 	end
