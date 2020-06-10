@@ -207,7 +207,7 @@ function init_gear_sets()
 	
 	sets.midcast.MACC = {
 		main=gear.MaccStaff,
-		sub="Kaja Grip",
+		sub="Khonsu",
 		range="Aureole",
 		--head="Jhakri Coronal +2",
 		head="Geo. Galero +2",
@@ -501,7 +501,7 @@ function init_gear_sets()
 	})
 	
 	sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'],{
-		sub="Enki Strap",
+		sub="Khonsu",
 		head="Jhakri Coronal +2",
 		body="Jhakri Robe +2",
 		ring1="Stikini Ring",
@@ -569,7 +569,7 @@ function init_gear_sets()
 	
 	sets.midcast.Stun = set_combine(sets.midcast.FastRecast, {
 		main=gear.MaccStaff,
-		sub="Enki Strap"
+		sub="Khonsu"
 	})
 	
 	sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
@@ -615,12 +615,12 @@ function init_gear_sets()
 	sets.idle.Encumbered = set_combine(sets.midcast.MAB,{
 	})
 
-	-- Total: 34% + 20% (PDT Staff)
+	-- Total: 35% + 20% (PDT Staff)
 	-- <36%: use Shadow Mantle
 	sets.idle.PDT = set_combine(sets.idle,{
 		main=gear.Staff.PDT,
-		-- 5% DT
-		sub="Kaja Grip",
+		-- 6% DT
+		sub="Khonsu",
 		-- 3%
 		head="Blistering Sallet +1",
 		-- 5%
@@ -640,13 +640,13 @@ function init_gear_sets()
 		feet="Geo. Sandals +2"
 	})
 			
-	-- MDT: 31%
+	-- MDT: 32%
 	-- MDB: 26
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.idle.MDT = set_combine(sets.idle,{
 		main=gear.Staff.PDT,
-		-- 5% DT
-		sub="Kaja Grip",
+		-- 6% DT
+		sub="Khonsu",
 		-- 5
 		head="Hagondes Hat +1",
 		-- 5%
