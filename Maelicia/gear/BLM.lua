@@ -143,6 +143,8 @@ function init_gear_sets()
 		head=empty,
 		body="Twilight Cloak"
 	})
+
+	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {main="Daybreak"})
 	
 	sets.precast.FC.Curaga = sets.precast.FC.Cure
 	
@@ -520,6 +522,10 @@ function init_gear_sets()
 	sets.midcast['Frazzle'] = set_combine(sets.midcast.MACC, {
 	})
 
+	sets.midcast['Dispelga'] =  set_combine(sets.midcast.MACC,{
+		main="Daybreak",
+	})
+
 	-- === Dark Magic =========================================
 	
 	sets.midcast['Dark Magic'] = set_combine(sets.midcast.MACC,{
@@ -680,8 +686,7 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle = {
 		main=gear.MainStaff,
-		--sub="Enki Strap",
-		sub="Eletta Grip",
+		sub="Khonsu",
 		ammo="Staunch Tathlum +1",
 		head="Amalric Coif",
 		neck="Loricate Torque +1",

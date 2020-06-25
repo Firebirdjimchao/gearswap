@@ -103,8 +103,8 @@ function init_gear_sets()
 	-- 80%/40% Total + 8% (JP) + 30% (RDM) (80/40 cap)
 	sets.precast.FC = {
 		-- 4%
-		main="Grioavolr",
-		sub="Enki Strap",
+		--main="Grioavolr",
+		--sub="Enki Strap",
 		--ammo="Impatiens",
 		-- 12%
 		head="Atro. Chapeau +1",
@@ -141,6 +141,8 @@ function init_gear_sets()
 	})
 	
 	sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty,body="Twilight Cloak"})
+
+	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {main="Daybreak"})
 	
 	sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
 		waist="Siegel Sash"
@@ -225,8 +227,10 @@ function init_gear_sets()
 	
 	sets.midcast.MACC = {
 		--main=gear.MainStaff,
-		main="Grioavolr",
-		sub="Enki Strap",
+		--main="Grioavolr",
+		--sub="Enki Strap",
+		main="Daybreak",
+		sub="Ammurapi Shield",
 		--ammo="Regal Gem",
 		range="Ullr",
 		--head=gear.Chironic_head_nuke,
@@ -250,8 +254,10 @@ function init_gear_sets()
 	
 	sets.midcast.MAB = {
 		--main=gear.MainStaff,
-		main="Grioavolr",
-		sub="Enki Strap",
+		--main="Grioavolr",
+		--sub="Enki Strap",
+		main="Daybreak",
+		sub="Ammurapi Shield",
 		range="Ullr",
 		--ammo="Ghastly Tathlum",
 		head=gear.Merlinic_head_nuke,
@@ -279,10 +285,10 @@ function init_gear_sets()
 		feet=gear.Vanya_feet_B
 	}
 	
-	-- 51% Total
+	-- 59% Total
 	sets.midcast.Cure = set_combine(sets.midcast['Healing Magic'],{
-		-- 22%
-		main="Tamaxchi",
+		-- 30%
+		main="Daybreak",
 		sub="Ammurapi Shield",
 		ammo="Regal Gem",
 		head="Befouled Crown",
@@ -669,6 +675,10 @@ function init_gear_sets()
 		ring1="Stikini Ring",
 	})
 	-----------------------
+
+	sets.midcast['Dispelga'] =  set_combine(sets.midcast.MACC,{
+		main="Daybreak",
+	})
 	
 	sets.midcast['Elemental Magic'] = set_combine(sets.midcast.MAB,{
 	})
@@ -730,7 +740,7 @@ function init_gear_sets()
 	
 	-- Idle sets
 	sets.idle = {
-		main="Bolelabunga",
+		main="Daybreak",
 		sub="Genmei Shield",
 		ammo="Homiliary",
 		head="Viti. Chapeau +3",

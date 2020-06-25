@@ -27,8 +27,8 @@ function init_gear_sets()
 	-- 63%/31% Total (80/40 cap) + 15% (if RDM sub)
 	sets.precast.FC = {
 		-- 3%
-		main=gear.FastcastStaff,
-		--sub="Mephitis Grip",
+		--main=gear.FastcastStaff,
+		--sub="Enki Strap",
 		ammo="Impatiens",
 		-- 10%
 		head="Nahtirah Hat",
@@ -92,6 +92,8 @@ function init_gear_sets()
 		head=empty,
 		body="Twilight Cloak"
 	})
+
+	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {main="Daybreak"})
 	
 	sets.precast.FC.Curaga = sets.precast.FC.Cure
 	sets.precast.FC.CureSolace = sets.precast.FC.Cure
@@ -178,8 +180,10 @@ function init_gear_sets()
 	}
 		
 	sets.midcast.MACC = {
-		main=gear.MaccStaff,
-		sub="Mephitis Grip",
+		--main=gear.MaccStaff,
+		--sub="Enki Strap",
+		main="Daybreak",
+		sub="Ammurapi Shield",
 		range="Aureole",
 		head="Chironic Hat",
 		neck="Incanter's Torque",
@@ -198,7 +202,7 @@ function init_gear_sets()
 	sets.midcast.MAB = {
 		--main=gear.MainStaff,
 		--sub="Enki Strap",
-		main="Rubicundity",
+		main="Daybreak",
 		sub="Ammurapi Shield",
 		ammo="Ombre Tathlum +1",
 		head="Chironic Hat",
@@ -216,7 +220,7 @@ function init_gear_sets()
 	}
 		
 	-- Cure sets
-	gear.default.obi_waist = "Cleric's Belt"
+	gear.default.obi_waist = "Luminary Sash"
 	gear.default.obi_back = "Mending Cape"
 		
 	sets.midcast['Healing Magic'] = {
@@ -229,7 +233,7 @@ function init_gear_sets()
 		ring1="Sirona's Ring",
 		ring2="Ephedra Ring",
 		back="Mending Cape",
-		waist="Cleric's Belt",
+		waist="Luminary Sash",
 		legs="Piety Pantaln. +1",
 		feet=gear.Vanya_feet_B
 	}

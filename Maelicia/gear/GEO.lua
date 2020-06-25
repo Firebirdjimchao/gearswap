@@ -149,6 +149,8 @@ function init_gear_sets()
 		head=empty,
 		body="Twilight Cloak"
 	})
+
+	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {main="Daybreak"})
 	
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
@@ -250,10 +252,10 @@ function init_gear_sets()
 	}
 	
 	sets.midcast.MAB = {
-		--main="Idris",
-		--sub="Ammurapi Shield",
-		main=gear.MainStaff,
-		sub="Enki Strap",
+		main="Idris",
+		sub="Ammurapi Shield",
+		--main=gear.MainStaff,
+		--sub="Enki Strap",
 		ammo="Pemphredo Tathlum",
 		head=gear.Merlinic_head_nuke,
 		neck="Sanctity Necklace",
@@ -549,6 +551,10 @@ function init_gear_sets()
 	sets.midcast['Frazzle'] = set_combine(sets.midcast.MACC, {
 	})
 
+	sets.midcast['Dispelga'] =  set_combine(sets.midcast.MACC,{
+		main="Daybreak",
+	})
+
 	-- === Elemental Magic =========================================
 	
 	sets.midcast['Elemental Magic'] = set_combine(sets.midcast.MAB,{
@@ -654,7 +660,7 @@ function init_gear_sets()
 
 	-- Idle sets
 	sets.idle = {
-		main="Bolelabunga",
+		main="Daybreak",
 		--main="Idris",
 		sub="Genmei Shield",				
 		range=gear.GeoBell,

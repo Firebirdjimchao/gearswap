@@ -196,6 +196,8 @@ function init_gear_sets()
 		waist="Embla Sash"
 	}
 
+	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {main="Daybreak"})
+
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {
 		range="Gjallarhorn",
@@ -281,8 +283,10 @@ function init_gear_sets()
 	})
 	
 	sets.midcast.MACC = {
-		main=gear.MaccStaff,
-		sub="Enki Strap",
+		--main=gear.MaccStaff,
+		--sub="Enki Strap",
+		main="Daybreak",
+		sub="Ammurapi Shield",
 		head="Chironic Hat",
 		--neck="Incanter's Torque",
 		neck="Moonbow Whistle",
@@ -302,8 +306,10 @@ function init_gear_sets()
 	}
 	
 	sets.midcast.MAB = {
-		main=gear.MainStaff,
-		sub="Enki Strap",
+		--main=gear.MainStaff,
+		--sub="Enki Strap",
+		main="Daybreak",
+		sub="Ammurapi Shield",
 		ammo="Ombre Tathlum +1",
 		head="Chironic Hat",
 		neck="Sanctity Necklace",
@@ -495,7 +501,8 @@ function init_gear_sets()
 	})
 	
 	sets.midcast['Enhancing Magic'] = {
-		main="Serenity",
+		--main="Serenity",
+		sub="Ammurapi Shield",
 		head="Umuthi Hat",
 		neck="Incanter's Torque",
 		ear1="Regal Earring",
@@ -539,7 +546,6 @@ function init_gear_sets()
 	})
 	
 	sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.MACC,{
-		sub="Mephitis Grip",
 		--neck="Incanter's Torque",
 		neck="Moonbow Whistle",
 		body="Vanya Robe",
@@ -550,6 +556,10 @@ function init_gear_sets()
 		waist="Rumination Sash",
 		legs="Chironic Hose",
 		feet="Skaoi Boots",
+	})
+
+	sets.midcast['Dispelga'] =  set_combine(sets.midcast.MACC,{
+		main="Daybreak",
 	})
 	
 	sets.midcast['Elemental Magic'] = set_combine(sets.midcast.MAB,{
@@ -573,7 +583,8 @@ function init_gear_sets()
 	sets.idle = {
 		--main=gear.Staff.PDT, 
 		--sub="Enki Strap",
-		main="Sangoma",
+		--main="Sangoma",
+		main="Daybreak",
 		sub="Genmei Shield",
 		--range=gear.AllSongs,
 		range="Marsyas",
