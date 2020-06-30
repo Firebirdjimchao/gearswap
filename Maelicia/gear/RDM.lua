@@ -385,9 +385,9 @@ function init_gear_sets()
 	-- ~105 +208 INT
 	sets.midcast.spikes = set_combine(sets.midcast.EnhancingDuration,{
 		-- 19 INT
-		main=gear.MainStaff,
+		--main=gear.MainStaff,
 		-- 10 INT
-		sub="Enki Strap",
+		--sub="Enki Strap",
 		-- 10 INT
 		ear2="Regal Earring",
 		-- 12 INT
@@ -461,8 +461,8 @@ function init_gear_sets()
 	-- 89 gear
 	-- 565 total
 	sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.MACC,{
-		main=gear.MainStaff,
-		sub="Enki Strap",
+		--main=gear.MainStaff,
+		--sub="Enki Strap",
 		range="Ullr",
 		-- effect +10
 		--ammo="Regal Gem",
@@ -684,7 +684,7 @@ function init_gear_sets()
 	})
 	
 	sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'],{
-		sub="Enki Strap",
+		--sub="Enki Strap",
 		range="Ullr",
 		head="Jhakri Coronal +2",
 		ring1="Stikini Ring",
