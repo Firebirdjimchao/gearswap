@@ -191,7 +191,7 @@ function init_gear_sets()
 		back=gear.sucellos_mab,
 		--waist="Yamabuki-no-Obi",
 		legs=gear.Merlinic_legs_nuke,
-		feet=gear.Merlinic_feet_burst,
+		feet="Vitiation Boots +3",
 	})
 	
 	-- Specific weaponskill sets.	Uses the base set if an appropriate WSMod version isn't found.
@@ -249,7 +249,7 @@ function init_gear_sets()
 		back=gear.sucellos_mnd,
 		waist="Luminary Sash",
 		legs="Chironic Hose",
-		feet="Jhakri Pigaches +2"
+		feet="Vitiation Boots +3",
 	}
 	
 	sets.midcast.MAB = {
@@ -271,7 +271,7 @@ function init_gear_sets()
 		back=gear.sucellos_mab,
 		waist=gear.ElementalObi,
 		legs=gear.Merlinic_legs_nuke,
-		feet=gear.Merlinic_feet_burst,
+		feet="Vitiation Boots +3",
 	}
 	
 	sets.midcast['Healing Magic'] = {
@@ -458,8 +458,8 @@ function init_gear_sets()
 	-- 16 merits
 	-- 36 gifts
 	-- 476 Initial
-	-- 89 gear
-	-- 565 total
+	-- 88 gear
+	-- 564 total
 	sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.MACC,{
 		--main=gear.MainStaff,
 		--sub="Enki Strap",
@@ -490,10 +490,8 @@ function init_gear_sets()
 		waist="Rumination Sash",
 		-- 13 Immunobreak +1
 		legs=gear.Chironic_legs_nuke,
-		-- 17
-		feet="Skaoi Boots",
-		-- 14
-		--feet="Vitiation Boots +2"
+		-- 16
+		feet="Vitiation Boots +3",
 	})
 
 	-- For enfeebs with no known skill caps
@@ -524,8 +522,7 @@ function init_gear_sets()
 		ring2="Persis Ring",
 		back=gear.sucellos_mab,
 		legs=gear.Merlinic_legs_nuke,
-		feet="Jhakri Pigaches +2",
-		--feet="Vitiation Boots +3",
+		feet="Vitiation Boots +3",
 	})
 
 	-- For enfeebs with static values (use duration+ gear)
@@ -537,19 +534,19 @@ function init_gear_sets()
 		-- hands="Regal Cuffs",
 		-- Duration +10%
 		ring1="Kishar Ring",
-		--feet="Vitiation Boots +2",
+		feet="Vitiation Boots +3",
 	})
 
 	-- For enfeebs with 500 skill caps
 	-- 476 Initial
-	-- 28 gear
-	-- 504 total
+	-- 46 gear
+	-- 520 total
 	sets.midcast.enfeebSkillCap = set_combine(sets.midcast['Enfeebling Magic'], {
 		--head="Atro. Chapeau +3",
 		neck="Dls. Torque +1",
 		hands="Jhakri Cuffs +2",
 		waist="Luminary Sash",
-		feet="Jhakri Pigaches +2",
+		feet="Vitiation Boots +3",
 	})
 
 	-- Static value (use duration+ gear)
