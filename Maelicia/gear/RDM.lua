@@ -539,7 +539,7 @@ function init_gear_sets()
 
 	-- For enfeebs with 500 skill caps
 	-- 476 Initial
-	-- 46 gear
+	-- 44 gear
 	-- 520 total
 	sets.midcast.enfeebSkillCap = set_combine(sets.midcast['Enfeebling Magic'], {
 		--head="Atro. Chapeau +3",
