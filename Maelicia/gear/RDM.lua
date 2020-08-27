@@ -87,7 +87,7 @@ function init_gear_sets()
 	
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {
-		head="Atro. Chapeau +1",
+		head="Atro. Chapeau +3",
 		ear1="Roundel Earring",
 		body="Viti. Tabard +3",
 		hands="Lurid Mitts",
@@ -106,8 +106,8 @@ function init_gear_sets()
 		--main="Grioavolr",
 		--sub="Enki Strap",
 		--ammo="Impatiens",
-		-- 12%
-		head="Atro. Chapeau +1",
+		-- 16%
+		head="Atro. Chapeau +3",
 		-- 4%
 		neck="Voltsurge Torque", 
 		-- 4 %
@@ -235,8 +235,7 @@ function init_gear_sets()
 		range="Ullr",
 		--head=gear.Chironic_head_nuke,
 		--head="Viti. Chapeau +3",
-		head="Atro. Chapeau +2",
-		--head="Atro. Chapeau +3",
+		head="Atro. Chapeau +3",
 		neck="Dls. Torque +1",
 		--neck="Incanter's Torque",
 		ear1="Malignance Earring",
@@ -527,7 +526,7 @@ function init_gear_sets()
 
 	-- For enfeebs with static values (use duration+ gear)
 	sets.midcast.enfeebStatic = set_combine(sets.midcast['Enfeebling Magic'], {
-		--head="Atro. Chapeau +3",
+		head="Atro. Chapeau +3",
 		neck="Dls. Torque +1",
 		body="Atrophy Tabard +3",
 		-- Duration +20%
@@ -542,7 +541,7 @@ function init_gear_sets()
 	-- 44 gear
 	-- 520 total
 	sets.midcast.enfeebSkillCap = set_combine(sets.midcast['Enfeebling Magic'], {
-		--head="Atro. Chapeau +3",
+		head="Atro. Chapeau +3",
 		neck="Dls. Torque +1",
 		hands="Jhakri Cuffs +2",
 		waist="Luminary Sash",
@@ -658,11 +657,11 @@ function init_gear_sets()
 
 	-- Frazzle I (caps 135 skill for -25 meva, -35 meva cap with MND)
 	sets.midcast['Frazzle'] = set_combine(sets.midcast['Enfeebling Magic'], {
-		--head="Atro. Chapeau +3",
+		head="Atro. Chapeau +3",
 	})
 	-- Frazzle II (caps 365 skill for -40 meva, -50 meva cap with MND)
 	sets.midcast['Frazzle II'] = set_combine(sets.midcast['Enfeebling Magic'], {
-		--head="Atro. Chapeau +3",
+		head="Atro. Chapeau +3",
 	})
 	-- Frazzle III (caps 625 skill for -120 meva, -130 meva cap with MND)
 	-- 476 Initial
