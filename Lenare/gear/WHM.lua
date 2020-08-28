@@ -23,15 +23,15 @@ function init_gear_sets()
 
 	-- Fast cast sets for spells
 	
-	-- 77%/38% Total (80/40 cap) + 15% (if RDM sub) 
+	-- 76%/38% Total (80/40 cap) + 15% (if RDM sub) 
 	sets.precast.FC = {
 		-- 4%
 		main=gear.default.fastcast_staff,
 		ammo="Impatiens",
 		-- 10%
 		head="Nahtirah Hat",
-		-- 5%
-		neck="Orison Locket",
+		-- 4%
+		neck="Baetyl Pendant",
 		-- 2%
 		ear1="Loquacious Earring",
 		-- 4%
