@@ -271,7 +271,8 @@ function init_gear_sets()
 		back=gear.Nanto_nuke,
 		waist=gear.ElementalObi,
 		legs="Merlinic Shalwar",
-		feet=gear.Merlinic_feet_burst
+		--feet=gear.Merlinic_feet_burst
+		feet="Bagua Sandals +3"
 	}
 	
 	sets.midcast.ConserveMP = set_combine(sets.midcast.FastRecast,{
