@@ -75,11 +75,11 @@ function init_gear_sets()
 		body="Geomancy Tunic +2",
 		back="Nantosuelta's Cape",
 	}
-	sets.precast.JA['Primeaval Zeal'] = {head="Bagua Galero"}
+	sets.precast.JA['Primeaval Zeal'] = {head="Bagua Galero +1"}
 	-- AF2 hands enhances Curative Recantation
 	sets.precast.JA['Full Circle'] = {head="Azimuth Hood +1",hands="Bagua Mitaines +1"}
-	sets.precast.JA['Mending Halation'] = {legs="Bagua Pants +1"}
-	sets.precast.JA['Radial Arcana'] = {feet="Bagua Sandals"}
+	sets.precast.JA['Mending Halation'] = {legs="Bagua Pants +3"}
+	sets.precast.JA['Radial Arcana'] = {feet="Bagua Sandals +3"}
 	
 	-- Fast cast sets for spells
 	-- 67%/33% Total (80/40 cap) + 15% (if RDM sub)
@@ -149,8 +149,8 @@ function init_gear_sets()
 		ring2="Apate Ring",
 		back="Buquwik Cape",
 		waist="Windbuffet Belt +1",
-		legs="Jhakri Slops +2",
-		feet="Jhakri Pigaches +2"
+		legs="Bagua Pants +3",
+		feet="Bagua Sandals +3"
 	}
 	sets.precast.WS.MidAcc = set_combine(sets.precast.WS, {
 		neck="Sanctity Necklace",
@@ -161,8 +161,6 @@ function init_gear_sets()
 		ear1="Zennaroi Earring",
 		waist="Cetl Belt",
 		back="Aurist's Cape +1",
-		legs="Jhakri Slops +2",
-		feet="Jhakri Pigaches +2"
 	})
 	sets.precast.WS.MAB = set_combine(sets.precast.WS,{
 		head="Jhakri Coronal +2",
@@ -175,8 +173,9 @@ function init_gear_sets()
 		ring2="Jhakri Ring",
 		back=gear.Nanto_nuke,
 		waist=gear.ElementalObi,
-		legs=gear.Merlinic_legs_nuke,
-		feet="Jhakri Pigaches +2"
+		--legs=gear.Merlinic_legs_nuke,
+		legs="Bagua Pants +3",
+		feet="Bagua Sandals +3"
 	})
 	
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -243,7 +242,7 @@ function init_gear_sets()
 		back=gear.Nanto_nuke,
 		waist=gear.ElementalObi,
 		legs=gear.Merlinic_legs_nuke,
-		feet="Jhakri Pigaches +2"
+		feet="Bagua Sandals +3"
 	}
 	
 	sets.midcast.ConserveMP = set_combine(sets.midcast.FastRecast,{
@@ -283,8 +282,8 @@ function init_gear_sets()
 		sub="Culminus",
 		-- +20
 		back=gear.AugLifestreamIndi,
-		-- +15
-		legs="Bagua Pants +1",
+		-- +21
+		legs="Bagua Pants +3",
 		-- +20
 		feet="Azimuth Gaiters +1"
 	})
@@ -385,8 +384,8 @@ function init_gear_sets()
 	-- 378 Base
 	-- 16 merits
 	-- 394 Initial
-	-- 119 gear
-	-- 513 total
+	-- 125 gear
+	-- 519 total
 	sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.MACC,{
 		-- 16
 		head="Befouled Crown",
@@ -406,8 +405,8 @@ function init_gear_sets()
 		waist="Rumination Sash",
 		-- 18
 		legs="Psycloth Lappas",
-		-- 15
-		feet="Bagua Sandals"
+		-- 21
+		feet="Bagua Sandals +3"
 	})
 
 	-- For enfeebs with no known skill caps
@@ -573,7 +572,7 @@ function init_gear_sets()
 	})
 	
 	sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
-		head="Bagua Galero",
+		head="Bagua Galero +1",
 		neck="Erra Pendant",
 		waist="Fucho-no-Obi",
 	})
@@ -615,7 +614,7 @@ function init_gear_sets()
 	sets.idle.Encumbered = set_combine(sets.midcast.MAB,{
 	})
 
-	-- Total: 35% + 20% (PDT Staff)
+	-- Total: 34% + 20% (PDT Staff)
 	-- <36%: use Shadow Mantle
 	sets.idle.PDT = set_combine(sets.idle,{
 		main=gear.Staff.PDT,
@@ -635,13 +634,12 @@ function init_gear_sets()
 		-- 5%
 		back="Moonbeam Cape",
 		--back="Mecistopins Mantle",
-		-- 1%
-		legs="Hagondes Pants +1",
+		legs="Bagua Pants +3",
 		feet="Geo. Sandals +2"
 	})
 			
 	-- MDT: 32%
-	-- MDB: 26
+	-- MDB: 28
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.idle.MDT = set_combine(sets.idle,{
 		main=gear.Staff.PDT,
@@ -662,8 +660,8 @@ function init_gear_sets()
 		ring2="Defending Ring",
 		-- 5%
 		back="Moonbeam Cape",
-		-- 6
-		legs="Hagondes Pants +1",
+		-- 8
+		legs="Bagua Pants +3",
 		-- 5 3%
 		feet=gear.Vanya_feet_B
 	})
@@ -720,7 +718,7 @@ function init_gear_sets()
 	-- Pet DT cap: 87.5%
 	-- Luopan innate DT: 50%
 	-- Pet DT: -33% (37.5% to cap)
-	-- Pet regen: +20
+	-- Pet regen: +23
 	sets.idle.Pet = set_combine(sets.idle,{
 		-- Pet: DT 25%
 		main="Idris",
@@ -752,8 +750,8 @@ function init_gear_sets()
 		waist="Isa Belt",
 		-- Pet: regen +2
 		legs=gear.Telchine_legs_pet,
-		-- Pet: regen +2
-		feet="Bagua Sandals",
+		-- Pet: regen +5
+		feet="Bagua Sandals +3",
 	})
 	
 	sets.idle.PDT.Pet = set_combine(sets.idle.PDT,{
