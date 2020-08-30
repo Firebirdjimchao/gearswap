@@ -758,13 +758,13 @@ function init_gear_sets()
 	})
 	
 	-- MDT: 45%
-	-- MDB: 23
+	-- MDB: 25
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.idle.MDT = set_combine(sets.idle,{
 		-- 2%
 		ammo="Staunch Tathlum",
-		-- 5
-		head="Hagondes Hat +1",
+		-- 7
+		head="Atrophy Chapeau +3",
 		-- 5%
 		neck="Twilight Torque",
 		-- 3%

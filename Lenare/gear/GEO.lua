@@ -70,14 +70,14 @@ function init_gear_sets()
 	--------------------------------------
 	
 	-- Precast sets to enhance JAs
-	sets.precast.JA.Bolster = {body="Bagua Tunic +1"}
+	sets.precast.JA.Bolster = {body="Bagua Tunic +3"}
 	sets.precast.JA['Life cycle'] = {
 		body="Geomancy Tunic +2",
 		back="Nantosuelta's Cape",
 	}
 	sets.precast.JA['Primeaval Zeal'] = {head="Bagua Galero +1"}
 	-- AF2 hands enhances Curative Recantation
-	sets.precast.JA['Full Circle'] = {head="Azimuth Hood +1",hands="Bagua Mitaines +1"}
+	sets.precast.JA['Full Circle'] = {head="Azimuth Hood +1",hands="Bagua Mitaines +3"}
 	sets.precast.JA['Mending Halation'] = {legs="Bagua Pants +3"}
 	sets.precast.JA['Radial Arcana'] = {feet="Bagua Sandals +3"}
 	
@@ -128,7 +128,7 @@ function init_gear_sets()
 	
 	sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {
 		ear1="Barkaro. Earring",
-		hands="Bagua Mitaines +1"
+		hands="Bagua Mitaines +3"
 	})
 	
 	sets.precast.FC.Impact = set_combine(sets.precast.FC, {
@@ -143,7 +143,7 @@ function init_gear_sets()
 		neck="Asperity Necklace",
 		ear1="Brutal Earring",
 		ear2="Moonshade Earring",
-		body="Jhakri Robe +2",
+		body="Bagua Tunic +3",
 		hands="Jhakri Cuffs +2",
 		ring1="Rajas Ring",
 		ring2="Apate Ring",
@@ -167,7 +167,7 @@ function init_gear_sets()
 		neck="Baetyl Pendant",
 		ear1="Barkaro. Earring",
 		ear2="Malignance Earring",
-		body=gear.Merlinic_body_nuke,
+		body="Bagua Tunic +3",
 		hands="Jhakri Cuffs +2",
 		ring1="Acumen Ring",
 		ring2="Jhakri Ring",
@@ -229,14 +229,15 @@ function init_gear_sets()
 	
 	sets.midcast.MAB = {
 		main=gear.MainStaff,
-		sub="Niobid Strap",
+		--sub="Niobid Strap",
+		sub="Khonsu",
 		ammo="Ghastly Tathlum",
 		head="Merlinic Hood",
 		neck="Sanctity Necklace",
 		ear1="Barkaro. Earring",
 		ear2="Malignance Earring",
-		body=gear.Merlinic_body_nuke,
-		hands="Amalric Gages",
+		body="Bagua Tunic +3",
+		hands="Bagua Mitaines +3",
 		ring1="Acumen Ring",
 		ring2="Jhakri Ring",
 		back=gear.Nanto_nuke,
@@ -255,8 +256,8 @@ function init_gear_sets()
 	-- 373 + 373 + 16 + 16 = 778 base (900 to cap all spell potency)
 	-- 13 Geomancy Gift
 	-- 13 Handbell Gift
-	-- Set total: 113
-	-- Total: 917
+	-- Set total: 117
+	-- Total: 922
 	sets.midcast.Geomancy = set_combine(sets.midcast.ConserveMP,{
 		main="Idris",
 		sub="Culminus",
@@ -266,8 +267,8 @@ function init_gear_sets()
 		head="Azimuth Hood +1",
 		-- 20
 		neck="Incanter's Torque",
-		-- 12
-		body="Bagua Tunic +1",
+		-- 16
+		body="Bagua Tunic +3",
 		-- 17
 		hands="Geo. Mitaines +2",
 		-- 5
@@ -598,7 +599,7 @@ function init_gear_sets()
 		ear1="Ethereal Earring",
 		ear2="Novia Earring",
 		body="Jhakri Robe +2",
-		hands="Bagua Mitaines +1",
+		hands="Bagua Mitaines +3",
 		ring1=gear.DarkRing.physical,
 		ring2="Defending Ring",
 		--back="Moonbeam Cape",
@@ -639,20 +640,20 @@ function init_gear_sets()
 	})
 			
 	-- MDT: 32%
-	-- MDB: 28
+	-- MDB: 29
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.idle.MDT = set_combine(sets.idle,{
 		main=gear.Staff.PDT,
 		-- 6% DT
 		sub="Khonsu",
 		-- 5
-		head="Hagondes Hat +1",
+		head="Geo. Galero +2",
 		-- 5%
 		neck="Twilight Torque",
 		-- 3%
 		ear2="Etiolation Earring",
-		-- 7
-		body="Azimuth Coat +1",
+		-- 8
+		body="Bagua Tunic +3",
 		-- 3
 		hands="Geo. Mitaines +2",
 		ring1="Shadow Ring",
