@@ -280,11 +280,12 @@ function init_gear_sets()
 		hands=gear.Vanya_hands_B,
 		ring1="Sirona's Ring",
 		ring2="Ephedra Ring",
-		legs="Carmine Cuisses +1",
+		--legs="Carmine Cuisses +1",
+		legs="Atrophy Tights +3",
 		feet=gear.Vanya_feet_B
 	}
 	
-	-- 59% Total
+	-- 52% Total
 	sets.midcast.Cure = set_combine(sets.midcast['Healing Magic'],{
 		-- 30%
 		main="Daybreak",
@@ -295,17 +296,17 @@ function init_gear_sets()
 		ear1="Malignance Earring",
 		-- 5%
 		--ear2="Roundel Earring",
-		ear2="Novia Earring",
+		--ear2="Novia Earring",
 		-- 5%
-		--ear2="Mendi. Earring",
+		ear2="Mendi. Earring",
 		-- 13%
-		body="Vrikodara Jupon",
-		--body="Viti. Tabard +3",
+		--body="Vrikodara Jupon",
+		body="Viti. Tabard +3",
 		hands=gear.Vanya_hands_B,
 		back=gear.sucellos_mnd,
 		waist="Luminary Sash",
-		-- 11%
-		legs="Atrophy Tights +2",
+		-- 12%
+		legs="Atrophy Tights +3",
 		-- 5%
 		feet=gear.Vanya_feet_B
 	});
@@ -347,8 +348,8 @@ function init_gear_sets()
 		ring2="Stikini Ring",
 		-- 20 DUR
 		back=gear.sucellos_mnd,
-		-- 19
-		legs="Atrophy Tights +2",
+		-- 21
+		legs="Atrophy Tights +3",
 		-- 25 30 DUR
 		feet="Leth. Houseaux +1"
 	}
