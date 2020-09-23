@@ -132,17 +132,19 @@ function init_gear_sets()
 	
 	-- == Snapshot: 70% cap ==
 	-- Merits: 10%
-	-- Gear: 67%
-	-- Total: 77%
+	-- Gear: 60% + (2% Perun +1 augments)
+	-- Total: 70% + (2% Perun +1 augments)
 	--
 	-- == Rapid Shot ==
 	-- Merits: 5%
-	-- Gear: 21%
-	-- Total: 26%;
+	-- Gear: 39%
+	-- Total: 44%;
 	--
 	sets.precast.RA = {
 		-- 7% SS
-		head="Amini Gapette +1",
+		--head="Amini Gapette +1",
+		-- 18% RS
+		head="Orion Beret +3",
 		-- 4% SS
 		neck="Scout's Gorget +2",
 		-- 12% SS
@@ -163,8 +165,8 @@ function init_gear_sets()
 
 	-- == Snapshot: 70% cap ==
 	-- Merits: 10%
-	-- Gear: 55%
-	-- Total: 67%
+	-- Gear: 57% + (2% Perun +1 augments)
+	-- Total: 67% + (2% Perun +1 augments)
 	--
 	-- == Rapid Shot ==
 	-- Merits: 5%
@@ -202,13 +204,13 @@ function init_gear_sets()
 	-- == Snapshot: 70% cap ==
 	-- Merits: 10%
 	-- Flurry: 15%
-	-- Gear: 54%
-	-- Total: 79%
+	-- Gear: 47% + (2% Perun +1 augments)
+	-- Total: 72% + (2% Perun +1 augments)
 	--
 	-- == Rapid Shot ==
 	-- Merits: 5%
-	-- Gear: 26%
-	-- Total: 31%;
+	-- Gear: 44%
+	-- Total: 49%;
 	--
 	-- == Velocity Shot ==
 	-- JA: 15%
@@ -218,7 +220,9 @@ function init_gear_sets()
 	--
 	sets.precast.RA.Flurry = set_combine(sets.precast.RA,{
 		-- 7% SS
-		head="Amini Gapette +1",
+		--head="Amini Gapette +1",
+		-- 18% RS
+		head="Orion Beret +3",
 		-- 4% SS
 		neck="Scout's Gorget +2",
 		-- 7% VS
@@ -240,13 +244,13 @@ function init_gear_sets()
 	-- == Snapshot: 70% cap ==
 	-- Merits: 10%
 	-- Flurry II: 30%
-	-- Gear: 37%
-	-- Total: 77%
+	-- Gear: 37% + (2% Perun +1 augments)
+	-- Total: 77% + (2% Perun +1 augments)
 	--
 	-- == Rapid Shot ==
 	-- Merits: 5%
-	-- Gear: 50%
-	-- Total: 57%;
+	-- Gear: 52%
+	-- Total: 59%;
 	--
 	-- == Velocity Shot ==
 	-- JA: 15%
@@ -255,7 +259,7 @@ function init_gear_sets()
 	-- Total: 34%
 	--
 	sets.precast.RA.FlurryII = set_combine(sets.precast.RA,{
-		-- 16% RS
+		-- 18% RS
 		head="Orion Beret +3",
 		-- 4% SS
 		neck="Scout's Gorget +2",
@@ -279,7 +283,7 @@ function init_gear_sets()
 	sets.precast.RA.Overkill = set_combine(sets.precast.RA,{
 		-- 14% RS
 		head="Arcadian Beret +3",
-		-- 16% RS
+		-- 18% RS
 		--head="Orion Beret +3",
 		-- 4% SS
 		neck="Scout's Gorget +2",
