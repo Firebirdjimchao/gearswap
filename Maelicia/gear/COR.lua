@@ -138,7 +138,7 @@ function init_gear_sets()
 		hands="Carmine Fin. Ga. +1",
 		ring1="Haverton Ring",
 		back="Navarch's Mantle",
-		waist="Impulse Belt",
+		waist="Yemaya Belt",
 		legs="Pursuer's Pants",
 		feet=gear.Adhemar_feet_D
 	}

@@ -132,8 +132,8 @@ function init_gear_sets()
 	
 	-- == Snapshot: 70% cap ==
 	-- Merits: 10%
-	-- Gear: 60% + (2% Perun +1 augments)
-	-- Total: 70% + (2% Perun +1 augments)
+	-- Gear: 57% + (5% Perun +1 augments)
+	-- Total: 67% + (5% Perun +1 augments)
 	--
 	-- == Rapid Shot ==
 	-- Merits: 5%
@@ -156,7 +156,9 @@ function init_gear_sets()
 		-- 10% SS + 2% VS
 		back=gear.aug_belenus_snapshot,
 		-- 3% SS
-		waist="Impulse Belt",
+		--waist="Impulse Belt",
+		-- 5% RS
+		waist="Yemaya Belt",
 		-- 9% SS + 10% RS
 		legs=gear.Adhemar_legs_D,
 		-- 10% SS
@@ -165,13 +167,13 @@ function init_gear_sets()
 
 	-- == Snapshot: 70% cap ==
 	-- Merits: 10%
-	-- Gear: 57% + (2% Perun +1 augments)
-	-- Total: 67% + (2% Perun +1 augments)
+	-- Gear: 54% + (5% Perun +1 augments)
+	-- Total: 64% + (5% Perun +1 augments)
 	--
 	-- == Rapid Shot ==
 	-- Merits: 5%
-	-- Gear: 21%
-	-- Total: 26%;
+	-- Gear: 26%
+	-- Total: 31%;
 	--
 	-- Note: Snapshot+ is not the same as Velocity Shot+
 	-- == Velocity Shot ==
@@ -194,7 +196,9 @@ function init_gear_sets()
 		-- 10% SS + 2% VS
 		back=gear.aug_belenus_snapshot,
 		-- 3% SS
-		waist="Impulse Belt",
+		--waist="Impulse Belt",
+		-- 5% RS
+		waist="Yemaya Belt",
 		-- 9% SS + 10% RS
 		legs=gear.Adhemar_legs_D,
 		-- 10% SS
@@ -204,8 +208,8 @@ function init_gear_sets()
 	-- == Snapshot: 70% cap ==
 	-- Merits: 10%
 	-- Flurry: 15%
-	-- Gear: 47% + (2% Perun +1 augments)
-	-- Total: 72% + (2% Perun +1 augments)
+	-- Gear: 47% + (5% Perun +1 augments)
+	-- Total: 72% + (5% Perun +1 augments)
 	--
 	-- == Rapid Shot ==
 	-- Merits: 5%

@@ -184,7 +184,7 @@ function init_gear_sets()
 		body=gear.pursuer_body_D,
 		hands="Mrigavyadha Gloves",
 		ring2="Haverton Ring",
-		waist="Impulse Belt",
+		waist="Yemaya Belt",
 		legs=gear.Adhemar_legs_D,
 		feet="Meg. Jam. +2"
 	}
