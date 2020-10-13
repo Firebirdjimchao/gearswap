@@ -243,7 +243,8 @@ function init_gear_sets()
 		ear2="Regal Earring",
 		body="Geomancy Tunic +2",
 		hands="Geo. Mitaines +2",
-		ring1="Stikini Ring",
+		--ring1="Stikini Ring",
+		ring1="Metamor. Ring +1",
 		ring2="Stikini Ring",
 		back=gear.Nanto_nuke,
 		waist="Luminary Sash",
@@ -470,13 +471,15 @@ function init_gear_sets()
 	-- For MND potency based enfeebs
 	sets.midcast.enfeebMND = set_combine(sets.midcast['Enfeebling Magic'], {
 		--neck="Imbodla Necklace",
-		ring1="Stikini Ring",
+		--ring1="Stikini Ring",
+		ring1="Metamor. Ring +1",
 	})
 
 	-- For INT potency based enfeebs
 	sets.midcast.enfeebINT = set_combine(sets.midcast['Enfeebling Magic'], {
 		head="Ea Hat",
 		--neck="Imbodla Necklace",
+		ring2="Metamor. Ring +1",
 		back=gear.Nanto_nuke,
 		legs=gear.Merlinic_legs_nuke,
 		feet="Jhakri Pigaches +2",
@@ -487,6 +490,7 @@ function init_gear_sets()
 		neck="Erra Pendant",
 		-- Duration +10%
 		ring1="Kishar Ring",
+		ring2="Metamor. Ring +1",
 	})
 
 	-- For enfeebs with 500 skill caps
@@ -567,7 +571,8 @@ function init_gear_sets()
 	
 	sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'],{
 		head=gear.Merlinic_head_nuke,
-		ring1="Stikini Ring",
+		--ring1="Stikini Ring",
+		ring1="Metamor. Ring +1",
 		ring2="Stikini Ring",
 		legs="Merlinic Shalwar",
 		feet=gear.Merlinic_feet_burst
@@ -630,7 +635,8 @@ function init_gear_sets()
 		sub="Ammurapi Shield",
 		neck="Erra Pendant",
 		ring1="Evanescence Ring",
-		ring2="Stikini Ring",
+		--ring2="Stikini Ring",
+		ring2="Metamor. Ring +1",
 		legs="Azimuth Tights +1"
 	})
 	

@@ -903,14 +903,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         if state.CapacityMode.value then
             equip(sets.CapacityMantle)
         end
-        -- Gavialis Helm rule
-        if is_sc_element_today(spell) then
-            if wsList:contains(spell.english) then
-                -- do nothing
-            else
-                equip(sets.WSDayBonus)
-            end
-        end
         -- Swap in special ammo for WS in high Acc mode
         if state.OffenseMode.value == 'Acc' then
             equip(select_ws_ammo())
@@ -935,11 +927,11 @@ end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_midcast(spell, action, spellMap, eventArgs)
-    if spell.english == "Monomi: Ichi" then
-        if buffactive['Sneak'] then
-            send_command('@wait 1.7;cancel sneak')
-        end
-    end
+    --if spell.english == "Monomi: Ichi" then
+        --if buffactive['Sneak'] then
+            --send_command('@wait 1.7;cancel sneak')
+        --end
+    --end
 end
 
 -- Run after the general midcast() is done.

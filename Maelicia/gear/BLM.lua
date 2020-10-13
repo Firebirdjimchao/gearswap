@@ -271,7 +271,8 @@ function init_gear_sets()
 		ear2="Regal Earring", -- use with use of any AF1+2
 		body="Spaekona's Coat +3",
 		hands="Spae. Gloves +3",
-		ring1="Stikini Ring",
+		--ring1="Stikini Ring",
+		ring1="Metamor. Ring +1",
 		ring2="Stikini Ring",
 		back="Taranus's Cape",
 		waist="Eschan Stone",
@@ -441,7 +442,8 @@ function init_gear_sets()
 	-- For MND potency based enfeebs
 	sets.midcast.enfeebMND = set_combine(sets.midcast['Enfeebling Magic'], {
 		--neck="Imbodla Necklace",
-		ring1="Stikini Ring",
+		--ring1="Stikini Ring",
+		ring2="Metamor. Ring +1",
 	})
 
 	-- For INT potency based enfeebs
@@ -532,7 +534,8 @@ function init_gear_sets()
 		neck="Erra Pendant",
 		hands="Arch. Gloves +1",
 		ring1="Evanescence Ring",
-		ring2="Stikini Ring",
+		--ring2="Stikini Ring",
+		ring2="Metamor. Ring +1",
 		waist="Rumination Sash",
 		legs="Psycloth Lappas",
 		feet="Wicce Sabots +1"
@@ -564,7 +567,8 @@ function init_gear_sets()
 		--hands="Amalric Gages",
 		body="Spaekona's Coat +3",
 		hands="Spae. Gloves +3",
-		ring1="Stikini Ring",
+		--ring1="Stikini Ring",
+		ring1="Metamor. Ring +1",
 		ring2="Stikini Ring",
 		feet=gear.Merlinic_feet_burst
 	})
@@ -622,7 +626,8 @@ function init_gear_sets()
 		ear2="Regal Earring",
 		body="Spaekona's Coat +3",
 		hands="Spae. Gloves +3",
-		ring1="Stikini Ring",
+		--ring1="Stikini Ring",
+		ring1="Metamor. Ring +1",
 		ring2="Stikini Ring",
 		back="Taranus's Cape",
 		feet="Jhakri Pigaches +2",

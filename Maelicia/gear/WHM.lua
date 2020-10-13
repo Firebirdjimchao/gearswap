@@ -191,7 +191,8 @@ function init_gear_sets()
 		ear2="Malignance Earring",
 		body="Inyanga Jubbah +2",
 		hands="Inyan. Dastanas +2",
-		ring1="Stikini Ring",
+		--ring1="Stikini Ring",
+		ring1="Metamor. Ring +1",
 		ring2="Stikini Ring",
 		back="Aurist's Cape +1",
 		waist="Eschan Stone",
@@ -378,7 +379,8 @@ function init_gear_sets()
 	sets.midcast['Dark Magic'] = set_combine(sets.midcast.MACC,{
 		neck="Erra Pendant",
 		hands="Inyan. Dastanas +2",
-		ring1="Stikini Ring",
+		--ring1="Stikini Ring",
+		ring1="Metamor. Ring +1",
 		ring2="Stikini Ring",
 	})
 
@@ -397,7 +399,8 @@ function init_gear_sets()
 		neck="Incanter's Torque",
 		body="Vanya Robe",
 		hands="Inyan. Dastanas +2",
-		ring1="Stikini Ring",
+		--ring1="Stikini Ring",
+		ring1="Metamor. Ring +1",
 		ring2="Kishar Ring",
 		--ring2="Stikini Ring",
 		waist="Rumination Sash",
@@ -410,7 +413,8 @@ function init_gear_sets()
 	
 	sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'],{
 		body="Witching Robe",
-		ring1="Stikini Ring",
+		--ring1="Stikini Ring",
+		ring1="Metamor. Ring +1",
 		ring2="Stikini Ring",
 	})
 			

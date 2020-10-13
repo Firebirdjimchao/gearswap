@@ -237,11 +237,12 @@ function init_gear_sets()
 		ear1="Digni. Earring",
 		ear2="Hermetic Earring",
 		neck="Incanter's Torque",
-		body="Mummu Jacket +2",
+		body="Malignance Tabard",
 		--hands="Mochizuki Tekko +1",
-		hands="Mummu Wrists +2",
+		hands="Malignance Gloves",
 		--ring1="Haverton Ring",
-		ring1="Stikini Ring",
+		--ring1="Stikini Ring",
+		ring1="Metamor. Ring +1",
 		ring2="Stikini Ring",
 		back="Yokaze Mantle",
 		waist="Eschan Stone",
@@ -283,7 +284,8 @@ function init_gear_sets()
 	}
 
 	sets.midcast.ElementalNinjutsu.Resistant = set_combine(sets.midcast.ElementalNinjutsu, {
-		body="Mummu Jacket +2",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
 		ear1="Digni. Earring",
 		ear2="Hermetic Earring",
 		back="Yokaze Mantle",
@@ -309,7 +311,7 @@ function init_gear_sets()
 		ear1="Odnowa Earring +1",
 		ear2="Etiolation Earring",
 		--body="Mekosu. Harness",
-		body="Emet Harness +1",
+		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
@@ -343,7 +345,7 @@ function init_gear_sets()
 	sets.defense.PDT = {
 		head="Blistering Sallet +1",
 		neck="Loricate Torque +1",
-		body="Emet Harness +1",
+		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		ring1="Patricius Ring",
 		ring2="Defending Ring",
