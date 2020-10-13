@@ -140,7 +140,7 @@ function init_gear_sets()
 	sets.precast.Step = set_combine(sets.precast.Acc,{
 	})
 	sets.precast.Step['Feather Step'] = set_combine(sets.precast.Step,{
-		feet="Macu. Toeshoes +1"
+		feet="Macu. Toe Shoes +1"
 	})
 
 	sets.precast.Flourish1 = {}
@@ -416,7 +416,7 @@ function init_gear_sets()
 		back=gear.Senuna_DexDa,
 		waist="Patentia Sash",
 		legs="Meg. Chausses +2",
-		feet="Macu. Toeshoes +1",
+		feet="Macu. Toe Shoes +1",
 	}
 	sets.engaged.MidAcc = set_combine(sets.engaged,{
 		ammo="Honed Tathlum",
