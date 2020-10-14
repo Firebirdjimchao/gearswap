@@ -33,7 +33,7 @@ function init_gear_sets()
 
 	-- Chi Blast - MND
 	sets.precast.JA['Chi Blast'] = {
-		head="Skormoth Mask",
+		head="Dampening Tam",
 		neck="Phalaina Locket",
 		body="Anch. Cyclas +1",
 		hands=gear.Adhemar_hands_B,
@@ -47,7 +47,7 @@ function init_gear_sets()
 	-- Chakra - VIT
 	sets.precast.JA['Chakra'] = {
 		ammo="Tantra Tathlum",
-		head="Skormoth Mask",
+		head="Rao Kabuto +1",
 		body="Anch. Cyclas +1",
 		hands="Hes. Gloves +1",
 		ring1="Dark Ring",

@@ -117,7 +117,7 @@ function init_gear_sets()
 	sets.precast.JA['Flee'] = {feet="Pill. Poulaines +1"}
 	sets.precast.JA['Hide'] = {body="Pillager's Vest +3"}
 	sets.precast.JA['Conspirator'] = {body="Skulker's Vest +1"}
-	sets.precast.JA['Steal'] = {neck="Rabbit Charm",hands="Pill. Armlets +3",legs="Pill. Culottes +3",feet="Pill. Poulaines +1"}
+	sets.precast.JA['Steal'] = {head="Plun. Bonnet +3",neck="Rabbit Charm",hands="Pill. Armlets +3",legs="Pill. Culottes +3",feet="Pill. Poulaines +1"}
 	sets.precast.JA['Despoil'] = {legs="Skulk. Culottes +1",feet="Skulk. Poulaines +1"}
 	sets.precast.JA['Perfect Dodge'] = {hands="Plun. Armlets +3"}
 	sets.precast.JA['Feint'] = {
@@ -605,7 +605,7 @@ function init_gear_sets()
 	-- DW needed: 49 (44 with gift)
 	-- 35 Gear DW
 	sets.engaged = {
-		head=gear.Adhemar_head_B,
+		head="Plun. Bonnet +3",
 		neck="Iskur Gorget",
 		-- 7 DW (set)
 		ear1="Dudgeon Earring",
@@ -628,7 +628,6 @@ function init_gear_sets()
 
 	sets.engaged.MidAcc = set_combine(sets.engaged,{
 		ammo="Yamarang",
-		head="Mummu Bonnet +2",
 		neck="Lissome Necklace",
 		body="Pillager's Vest +3",
 		hands="Pill. Armlets +3",
@@ -636,7 +635,6 @@ function init_gear_sets()
 	})
 
 	sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc,{
-		head="Pill. Bonnet +3",
 		ear1="Digni. Earring",
 		ear2="Telos Earring",
 		ring1="Cacoethic Ring +1",
@@ -689,7 +687,7 @@ function init_gear_sets()
 	sets.engaged.FullAcc.PDT = set_combine(sets.engaged.HighAcc.PDT,{
 	})
 	sets.engaged.MDT = set_combine(sets.engaged.Evasion,{
-		head="Skormoth Mask",
+		head="Dampening Tam",
 		neck="Inq. Bead Necklace",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
