@@ -817,7 +817,7 @@ function init_gear_sets()
 	-- Custom buff sets
 	--------------------------------------
 
-	-- 21% (40 cap) + 5% II
+	-- 33% (40 cap) + 0% II
 	sets.magic_burst = set_combine(sets.midcast.MAB, {
 		-- 9%
 		head=gear.Merlinic_head_burst,
@@ -826,7 +826,11 @@ function init_gear_sets()
 		--body="Amalric Doublet",
 		body=gear.Merlinic_body_nuke,
 		-- 5% II
-		hands="Amalric Gages",
+		--hands="Amalric Gages",
+		-- 5% 5% II
+		--hands="Ea Cuffs",
+		-- 12%
+		hands="Bagua Mitaines +3",
 		-- 2%
 		ring2="Jhakri Ring",
 	})

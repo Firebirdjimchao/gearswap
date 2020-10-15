@@ -801,7 +801,7 @@ function init_gear_sets()
 	
 	sets.latent_refresh = {waist="Fucho-no-obi"}
 
-	-- 21% (40 cap) + 5% II
+	-- 26% (40 cap) + 5% II
 	sets.magic_burst = set_combine(sets.midcast.MAB, {
 		-- 9%
 		head=gear.Merlinic_head_burst,
@@ -810,7 +810,9 @@ function init_gear_sets()
 		--body="Amalric Doublet",
 		body=gear.Merlinic_body_nuke,
 		-- 5% II
-		hands="Amalric Gages",
+		--hands="Amalric Gages",
+		-- 5% 5% II
+		hands="Ea Cuffs",
 		-- 2%
 		ring2="Jhakri Ring",
 		feet=gear.Chironic_feet_nuke,
