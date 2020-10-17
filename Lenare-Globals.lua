@@ -73,6 +73,10 @@ function define_global_sets()
 		legs="Nisse Slacks",
 		feet="Chelona Boots"
 	}
+
+	sets.precast.JA.Sublimation = {
+		waist="Embla Sash"
+	}
 	
 	sets.midcast.Sneak = {
 		feet="Dream Boots +1"

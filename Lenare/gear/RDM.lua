@@ -220,7 +220,8 @@ function init_gear_sets()
 	sets.midcast.MAB = {
 		--main=gear.MainStaff,
 		main="Grioavolr",
-		sub="Niobid Strap",
+		--sub="Niobid Strap",
+		sub="Enki Strap",
 		ammo="Ghastly Tathlum",
 		head=gear.Merlinic_head_burst,
 		neck="Sanctity Necklace",
@@ -734,7 +735,7 @@ function init_gear_sets()
 	-- <36%: use Shadow Mantle
 	sets.idle.PDT = set_combine(sets.idle,{
 		main=gear.Staff.PDT,
-		sub="Niobid Strap",
+		sub="Enki Strap",
 		-- 2%
 		ammo="Staunch Tathlum",
 		-- 3%

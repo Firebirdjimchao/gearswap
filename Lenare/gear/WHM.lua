@@ -183,7 +183,8 @@ function init_gear_sets()
 	
 	sets.midcast.MAB = {
 		main=gear.MainStaff,
-		sub="Niobid Strap",
+		--sub="Niobid Strap",
+		sub="Enki Strap",
 		ammo="Ghastly Tathlum",
 		head="Buremte Hat",
 		neck="Sanctity Necklace",
@@ -277,7 +278,7 @@ function init_gear_sets()
 		--main="Ababinili +1",
 		-- 5 DUR
 		main="Grioavolr",
-		sub="Niobid Strap",
+		sub="Enki Strap",
 		head="Befouled Crown",
 		neck="Incanter's Torque",
 		--ear2="Andoaa Earring",
@@ -400,7 +401,7 @@ function init_gear_sets()
 	-- <36%: use Shadow Mantle
 	sets.idle.PDT = set_combine(sets.idle,{
 		main=gear.Staff.PDT,
-		sub="Niobid Strap",
+		sub="Enki Strap",
 		-- 2%
 		ammo="Staunch Tathlum",
 		-- 3%

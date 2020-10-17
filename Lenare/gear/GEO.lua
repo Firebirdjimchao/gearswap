@@ -230,6 +230,7 @@ function init_gear_sets()
 	sets.midcast.MAB = {
 		main=gear.MainStaff,
 		--sub="Niobid Strap",
+		--sub="Enki Strap",
 		sub="Khonsu",
 		ammo="Ghastly Tathlum",
 		head="Merlinic Hood",
