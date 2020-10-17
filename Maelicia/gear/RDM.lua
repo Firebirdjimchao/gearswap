@@ -235,7 +235,7 @@ function init_gear_sets()
 		head="Atro. Chapeau +3",
 		neck="Dls. Torque +1",
 		--neck="Incanter's Torque",
-		ear1="Malignance Earring",
+		ear1="Snotra Earring",
 		--ear2="Hermetic Earring",
 		ear2="Regal Earring",
 		body="Atrophy Tabard +3",
@@ -346,6 +346,8 @@ function init_gear_sets()
 		ring2="Stikini Ring",
 		-- 20 DUR
 		back=gear.sucellos_mnd,
+		-- 10 DUR
+		waist="Embla Sash",
 		-- 21
 		legs="Atrophy Tights +3",
 		-- 25 30 DUR
@@ -474,6 +476,7 @@ function init_gear_sets()
 		-- 10
 		--neck="Incanter's Torque",
 		neck="Dls. Torque +1",
+		ear1="Snotra Earring",
 		-- 21
 		body="Atrophy Tabard +3",
 		-- effect +14
@@ -533,6 +536,7 @@ function init_gear_sets()
 	sets.midcast.enfeebStatic = set_combine(sets.midcast['Enfeebling Magic'], {
 		head="Atro. Chapeau +3",
 		neck="Dls. Torque +1",
+		ear1="Snotra Earring",
 		body="Atrophy Tabard +3",
 		-- Duration +20%
 		-- hands="Regal Cuffs",
