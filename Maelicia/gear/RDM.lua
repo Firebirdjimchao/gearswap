@@ -81,9 +81,6 @@ function init_gear_sets()
 	
 	-- Precast sets to enhance JAs
 	sets.precast.JA['Chainspell'] = {body="Viti. Tabard +3"}
-	sets.precast.JA.Sublimination = {
-		waist="Embla Sash"
-	}
 	
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {
@@ -238,7 +235,7 @@ function init_gear_sets()
 		head="Atro. Chapeau +3",
 		neck="Dls. Torque +1",
 		--neck="Incanter's Torque",
-		ear1="Malignance Earring",
+		ear1="Snotra Earring",
 		--ear2="Hermetic Earring",
 		ear2="Regal Earring",
 		body="Atrophy Tabard +3",
@@ -349,13 +346,15 @@ function init_gear_sets()
 		ring2="Stikini Ring",
 		-- 20 DUR
 		back=gear.sucellos_mnd,
+		-- 10 DUR
+		waist="Embla Sash",
 		-- 21
 		legs="Atrophy Tights +3",
 		-- 25 30 DUR
 		feet="Leth. Houseaux +1"
 	}
 	
-	-- 502 total, 69 Gear + 433 (420 base + 13 Gift), 123 DUR (105 + 18 JP)
+	-- 502 total, 69 Gear + 433 (420 base + 13 Gift), 143 DUR (125 + 18 JP)
 	-- Using as many of Empy pieces as possible to maximize Composure bonus
 	sets.midcast.EnhancingDuration = set_combine(sets.midcast['Enhancing Magic'],{
 		-- 10 DUR
@@ -365,6 +364,7 @@ function init_gear_sets()
 		head="Befouled Crown",
 		-- 10 
 		--neck="Incanter's Torque",
+		-- 20 DUR
 		neck="Dls. Torque +1",
 		ear1="Malignance Earring",
 		--body="Lethargy Sayon +1",
@@ -476,6 +476,7 @@ function init_gear_sets()
 		-- 10
 		--neck="Incanter's Torque",
 		neck="Dls. Torque +1",
+		ear1="Snotra Earring",
 		-- 21
 		body="Atrophy Tabard +3",
 		-- effect +14
@@ -535,6 +536,7 @@ function init_gear_sets()
 	sets.midcast.enfeebStatic = set_combine(sets.midcast['Enfeebling Magic'], {
 		head="Atro. Chapeau +3",
 		neck="Dls. Torque +1",
+		ear1="Snotra Earring",
 		body="Atrophy Tabard +3",
 		-- Duration +20%
 		-- hands="Regal Cuffs",

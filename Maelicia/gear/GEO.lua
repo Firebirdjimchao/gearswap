@@ -80,9 +80,6 @@ function init_gear_sets()
 	sets.precast.JA['Full Circle'] = {head="Azimuth Hood +1",hands="Bagua Mitaines +3"}
 	sets.precast.JA['Mending Halation'] = {legs="Bagua Pants +3"}
 	sets.precast.JA['Radial Arcana'] = {feet="Bagua Sandals +3"}
-	sets.precast.JA.Sublimination = {
-		waist="Embla Sash"
-	}
 	
 	-- Fast cast sets for spells
 	-- 79%/39% Total (80/40 cap) + 15% (if RDM sub)

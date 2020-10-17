@@ -192,9 +192,6 @@ function init_gear_sets()
 	sets.precast.JA.Nightingale = {feet="Bihu Slippers +1"}
 	sets.precast.JA.Troubadour = {body="Bihu Jstcorps +1"}
 	sets.precast.JA['Soul Voice'] = {legs="Bihu Cannions +1"}
-	sets.precast.JA.Sublimination = {
-		waist="Embla Sash"
-	}
 
 	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {main="Daybreak"})
 
