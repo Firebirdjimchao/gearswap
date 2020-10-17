@@ -23,7 +23,7 @@ function init_gear_sets()
 
 	-- Fast cast sets for spells
 	
-	-- 76%/38% Total (80/40 cap) + 15% (if RDM sub) 
+	-- 78%/39% Total (80/40 cap) + 15% (if RDM sub) 
 	sets.precast.FC = {
 		-- 4%
 		main=gear.default.fastcast_staff,
@@ -47,7 +47,9 @@ function init_gear_sets()
 		-- 10%
 		back="Alaunus's Cape",
 		-- 3%
-		waist="Witful Belt",
+		--waist="Witful Belt",
+		-- 5%
+		waist="Embla Sash",
 		-- 5%
 		--legs="Lengo Pants",
 		-- 6%
@@ -159,7 +161,7 @@ function init_gear_sets()
 		ear1="Loquacious Earring",
 		body="Inyanga Jubbah +2",
 		back="Swith Cape",
-		waist="Cetl Belt",
+		waist="Embla Sash",
 		feet="Regal Pumps +1"
 	});
 
@@ -286,7 +288,7 @@ function init_gear_sets()
 		hands="Dynasty Mitts",
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
-		waist="Cascade Belt",
+		waist="Embla Sash",
 		back="Fi Follet Cape +1",
 		legs="Clr. Pantaln. +2",
 		feet="Ebers Duckbills +1"

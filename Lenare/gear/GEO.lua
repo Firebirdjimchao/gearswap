@@ -82,7 +82,7 @@ function init_gear_sets()
 	sets.precast.JA['Radial Arcana'] = {feet="Bagua Sandals +3"}
 	
 	-- Fast cast sets for spells
-	-- 67%/33% Total (80/40 cap) + 15% (if RDM sub)
+	-- 69%/34% Total (80/40 cap) + 15% (if RDM sub)
 	sets.precast.FC = {
 		-- 4%
 		main=gear.default.fastcast_staff,
@@ -105,7 +105,9 @@ function init_gear_sets()
 		-- 7%
 		back="Lifestream Cape",
 		-- 3%
-		waist="Witful Belt",
+		--waist="Witful Belt",
+		-- 5%
+		waist="Embla Sash",
 		-- 13%
 		legs="Geomancy Pants +2",
 		-- 3% + 1%~3%
@@ -351,7 +353,7 @@ function init_gear_sets()
 		body="Telchine Chas.",
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
-		waist="Cascade Belt",
+		waist="Embla Sash",
 		back="Fi Follet Cape +1",
 		legs="Psycloth Lappas",
 		feet="Regal Pumps +1"		

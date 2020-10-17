@@ -267,7 +267,7 @@ function init_gear_sets()
 		-- 16%
 		hands=gear.Telchine_hands_cure,
 		back=gear.sucellos_mnd,
-		waist="Cascade Belt",
+		waist="Luminary Sash",
 		-- 10%
 		legs="Atrophy Tights +1",
 		-- 5%
@@ -291,7 +291,7 @@ function init_gear_sets()
 		waist="Gishdubar Sash",
 	})
 	
-	-- 561 total, 102 Gear + 456 (420 base + 36 Gift), 103 DUR (83 + 20 JP) + 5 DUR (Grioavolr aug)
+	-- 558 total, 99 Gear + 456 (420 base + 36 Gift), 113 DUR (93 + 20 JP) + 5 DUR (Grioavolr aug)
 	sets.midcast['Enhancing Magic'] = {
 		-- 5 DUR
 		main="Grioavolr",
@@ -312,8 +312,8 @@ function init_gear_sets()
 		ring1="Stikini Ring",
 		-- 5
 		ring2="Stikini Ring",
-		-- 3
-		waist="Cascade Belt",
+		-- 10 DUR
+		waist="Embla Sash",
 		-- 20 DUR
 		back=gear.sucellos_mnd,
 		-- 17
