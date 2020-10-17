@@ -71,10 +71,6 @@ function init_gear_sets()
 	
 	-- equip to maximize HP (for Tarus) and minimize MP loss before using convert
 	sets.precast.JA.Convert = {}
-
-	sets.precast.JA.Sublimination = {
-		waist="Embla Sash"
-	}
 	
 	-- Fast cast sets for spells
 	
