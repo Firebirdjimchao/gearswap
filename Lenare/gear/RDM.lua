@@ -82,14 +82,14 @@ function init_gear_sets()
 	
 	-- Fast cast sets for spells
 	
-	-- 91%/45% Total + 8% (JP) + 30% (RDM) (80/40 cap)
+	-- 83%/41% Total + 8% (JP) + 30% (RDM) (80/40 cap)
 	sets.precast.FC = {
 		-- 10%
 		--main="Emissary",
 		main="Grioavolr",
 		sub="Enki Strap",
 		--ammo="Impatiens",
-		-- 14%
+		-- 16%
 		head="Atro. Chapeau +3",
 		-- 4%
 		neck="Baetyl Pendant",
@@ -108,7 +108,9 @@ function init_gear_sets()
 		-- 10%
 		back=gear.sucellos_mnd,
 		-- 3%
-		waist="Witful Belt",
+		--waist="Witful Belt",
+		-- 5%
+		waist="Embla Sash",
 		-- 7%
 		legs="Psycloth Lappas",
 		-- 4%
@@ -322,7 +324,7 @@ function init_gear_sets()
 		feet="Leth. Houseaux +1"
 	}
 	
-	-- 517 total, 58 Gear + 456 (420 base + 36 Gift), 88 DUR (68 + 20 JP) + 5 DUR (Grioavolr aug)
+	-- 514 total, 58 Gear + 456 (420 base + 36 Gift), 133 DUR (113 + 20 JP) + 5 DUR (Grioavolr aug)
 	-- Using as many of Empy pieces as possible to maximize Composure bonus
 	sets.midcast.EnhancingDuration = set_combine(sets.midcast['Enhancing Magic'],{
 		-- 5 DUR
@@ -333,6 +335,7 @@ function init_gear_sets()
 		head="Leth. Chappel +1",
 		-- 10 
 		--neck="Incanter's Torque",
+		-- 20 DUR
 		neck="Dls. Torque +1",
 		ear1="Lifestorm Earring",
 		--body="Lethargy Sayon +1",
@@ -346,8 +349,8 @@ function init_gear_sets()
 		ring2="Stikini Ring",
 		-- 20 DUR
 		back=gear.sucellos_mnd,
-		-- 3 
-		waist="Cascade Belt",
+		-- 10 DUR
+		waist="Embla Sash",
 		legs="Leth. Fuseau +1",
 		-- 25 30 DUR
 		feet="Leth. Houseaux +1"
