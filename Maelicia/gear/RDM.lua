@@ -352,7 +352,7 @@ function init_gear_sets()
 		feet="Leth. Houseaux +1"
 	}
 	
-	-- 502 total, 69 Gear + 433 (420 base + 13 Gift), 123 DUR (105 + 18 JP)
+	-- 502 total, 69 Gear + 433 (420 base + 13 Gift), 143 DUR (125 + 18 JP)
 	-- Using as many of Empy pieces as possible to maximize Composure bonus
 	sets.midcast.EnhancingDuration = set_combine(sets.midcast['Enhancing Magic'],{
 		-- 10 DUR
@@ -362,6 +362,7 @@ function init_gear_sets()
 		head="Befouled Crown",
 		-- 10 
 		--neck="Incanter's Torque",
+		-- 20 DUR
 		neck="Dls. Torque +1",
 		ear1="Malignance Earring",
 		--body="Lethargy Sayon +1",
