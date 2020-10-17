@@ -207,7 +207,7 @@ function init_gear_sets()
 		--ammo="Regal Gem",
 		head="Atro. Chapeau +3",
 		neck="Dls. Torque +1",
-		ear1="Lifestorm Earring",
+		ear1="Snotra Earring",
 		ear2="Malignance Earring",
 		body="Atrophy Tabard +3",
 		hands="Jhakri Cuffs +2",
@@ -444,6 +444,7 @@ function init_gear_sets()
 		--neck="Incanter's Torque",
 		neck="Dls. Torque +1",
 		--neck="Imbodla Necklace",
+		ear1="Snotra Earring",
 		-- 21
 		body="Atrophy Tabard +3",
 		-- effect +14
@@ -483,6 +484,7 @@ function init_gear_sets()
 		--ammo="Regal Gem",
 		head="Atro. Chapeau +3",
 		--neck="Imbodla Necklace",
+		ear1="Snotra Earring",
 		neck="Dls. Torque +1",
 		waist="Luminary Sash",
 	})
@@ -500,6 +502,7 @@ function init_gear_sets()
 	sets.midcast.enfeebStatic = set_combine(sets.midcast['Enfeebling Magic'], {
 		head="Atro. Chapeau +3",
 		neck="Dls. Torque +1",
+		ear1="Snotra Earring",
 		body="Atrophy Tabard +3",
 		-- Duration +20%
 		-- hands="Regal Cuffs",
