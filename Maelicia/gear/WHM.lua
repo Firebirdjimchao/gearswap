@@ -103,9 +103,6 @@ function init_gear_sets()
 	sets.precast.JA.Benediction = {
 		body="Piety Briault +1"
 	}
-	sets.precast.JA.Sublimination = {
-		waist="Embla Sash"
-	}
 
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {
