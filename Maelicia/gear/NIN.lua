@@ -118,7 +118,8 @@ function init_gear_sets()
 		ring2="Sirona's Ring",
 		back="Tantalic Cape",
 		waist="Chaac Belt",
-		legs="Hiza. Hizayoroi +2",
+		--legs="Hiza. Hizayoroi +2",
+		legs="Mochi. Hakama +3",
 		feet="Hiza. Sune-Ate +2",
 		--feet="Rawhide Boots",
 	}
@@ -238,7 +239,7 @@ function init_gear_sets()
 		ear2="Hermetic Earring",
 		neck="Incanter's Torque",
 		body="Malignance Tabard",
-		--hands="Mochizuki Tekko +1",
+		--hands="Mochizuki Tekko +3",
 		hands="Malignance Gloves",
 		--ring1="Haverton Ring",
 		--ring1="Stikini Ring",
@@ -250,9 +251,11 @@ function init_gear_sets()
 		feet="Mummu Gamash. +2",
 	}
 	-- any ninjutsu cast on self
-	sets.midcast.SelfNinjutsu = sets.midcast.Ninjutsu
+	sets.midcast.SelfNinjutsu = set_combine(sets.midcast.Ninjutsu, {
+		hands="Mochizuki Tekko +3",
+	})
 	sets.midcast.Utsusemi = set_combine(sets.midcast.Ninjutsu, {
-		hands="Mochizuki Tekko +1", 
+		hands="Mochizuki Tekko +3", 
 		back=Andartia.AGI,
 		feet="Hattori Kyahan +1",
 	})
@@ -601,7 +604,7 @@ function init_gear_sets()
 		ring2="Regal Ring",
 		back=Andartia.DEX,
 		waist="Fotia Belt",
-		legs="Hiza. Hizayoroi +2",
+		legs="Mochi. Hakama +3",
 		feet="Mummu Gamash. +2",
 	}
 	sets.precast.WS.Mid = set_combine(sets.precast.WS, {
@@ -647,7 +650,8 @@ function init_gear_sets()
 		ring2="Regal Ring",
 		back=Andartia.AGI,
 		waist="Windbuffet Belt +1",
-		legs="Mummu Kecks +2",
+		--legs="Mummu Kecks +2",
+		legs="Mochi. Hakama +3",
 		feet="Mummu Gamash. +2",
 	})
 	
@@ -694,7 +698,7 @@ function init_gear_sets()
 		ring2="Regal Ring",
 		back=Andartia.DEX,
 		waist="Grunfeld Rope",
-		legs="Hiza. Hizayoroi +2",
+		legs="Mochi. Hakama +3",
 		feet=gear.Adhemar_feet_B,
 	})
 	
