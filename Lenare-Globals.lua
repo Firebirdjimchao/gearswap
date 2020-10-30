@@ -15,6 +15,7 @@ function define_global_sets()
 	gear.Staff.Cure = {name="Arka IV"}
 	gear.Staff.HMP = {name="Chatoyant Staff"}
 	gear.Staff.PDT = {name="Terra's Staff"}
+	gear.Staff.DT = {name="Malignance Pole"}
 	
 	-- Dark Rings
 	gear.DarkRing = {}

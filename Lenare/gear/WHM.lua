@@ -399,10 +399,10 @@ function init_gear_sets()
 		--feet="Inyan. Crackows +2"
 	}
 
-	-- Total: 35% + 20% (PDT Staff)
+	-- Total: 35% + 20% (DT Staff)
 	-- <36%: use Shadow Mantle
 	sets.idle.PDT = set_combine(sets.idle,{
-		main=gear.Staff.PDT,
+		main=gear.Staff.DT,
 		sub="Enki Strap",
 		-- 2%
 		ammo="Staunch Tathlum",
@@ -429,6 +429,8 @@ function init_gear_sets()
 	-- MDB: 41
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.idle.MDT = set_combine(sets.idle,{
+		main=gear.Staff.DT,
+		sub="Enki Strap",
 		-- 2%
 		ammo="Staunch Tathlum",
 		-- 5% 8
