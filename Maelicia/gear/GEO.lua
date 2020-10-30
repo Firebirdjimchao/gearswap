@@ -639,7 +639,7 @@ function init_gear_sets()
 	
 	sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'], {
 		main=gear.MainStaff,
-		sub="Enki Strap",
+		sub="Khonsu",
 	})
 	
 	sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
