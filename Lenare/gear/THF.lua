@@ -474,11 +474,11 @@ function init_gear_sets()
 	
 	-- Normal melee group
 	sets.engaged = {
-		head="Skormoth Mask",
+		head=gear.Adhemar_head_B,
 		neck="Asperity Necklace",
 		ear1="Dudgeon Earring",
 		ear2="Heartseeker Earring",
-		body="Thaumas Coat",
+		body="Mummu Jacket +2",
 		hands="Mummu Wrists +2",
 		ring1="Rajas Ring",
 		ring2="K'ayres Ring",
