@@ -458,8 +458,8 @@ function init_gear_sets()
 	-- MDB: 41 
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.idle.DT = set_combine(sets.idle,{
-		-- 20% PDT
-		main=gear.Staff.PDT,
+		-- 20% DT
+		main=gear.Staff.DT,
 		-- 2% DT
 		ammo="Staunch Tathlum +1",
 		-- 8 MDB 5% MDT
@@ -492,6 +492,8 @@ function init_gear_sets()
 	})
 	
 	sets.idle.MDTOnca = {
+		-- 20% DT
+		main=gear.Staff.DT,
 		-- 2%
 		ammo="Staunch Tathlum +1",
 		-- 8 5%

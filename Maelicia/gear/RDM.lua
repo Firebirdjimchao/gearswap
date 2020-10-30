@@ -778,7 +778,7 @@ function init_gear_sets()
 	-- Total: 48% + 20% (PDT Staff)
 	-- <36%: use Shadow Mantle
 	sets.idle.PDT = set_combine(sets.idle,{
-		main=gear.Staff.PDT,
+		--main=gear.Staff.PDT,
 		-- 3%
 		ammo="Staunch Tathlum +1",
 		-- 3%

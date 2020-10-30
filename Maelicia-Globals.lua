@@ -15,6 +15,7 @@ function define_global_sets()
 	gear.Staff.Cure = {name="Serenity"}
 	gear.Staff.HMP = {name="Chatoyant Staff"}
 	gear.Staff.PDT = {name="Terra's Staff"}
+	gear.Staff.DT = {name="Malignance Pole"}
 	
 	-- Dark Rings
 	gear.DarkRing = { name="Dark Ring", augments={'Spell interruption rate down -3%','Magic dmg. taken -5%','Phys. dmg. taken -5%',}}
