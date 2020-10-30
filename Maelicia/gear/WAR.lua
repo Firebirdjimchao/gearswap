@@ -105,7 +105,6 @@ function init_gear_sets()
 		ear1="Moonshade Earring",
 		ear2="Brutal Earring",
 		body="Dagon Breastplate",
-		--hands="Sulev. Gauntlets +2",
 		hands=gear.Argosy_hands_hq_D,
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
@@ -157,7 +156,8 @@ function init_gear_sets()
 		ear1="Moonshade Earring",
 		ear2="Brutal Earring",
 		body="Pumm. Lorica +3",
-		hands="Sulev. Gauntlets +2",
+		hands="Volte Moufles",
+		--hands="Odyssean Gauntlets",
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
 		back=gear.Cichol_StrWSD,
@@ -305,7 +305,7 @@ function init_gear_sets()
 		ear1="Moonshade Earring",
 		ear2="Brutal Earring",
 		body="Pumm. Lorica +3",
-		hands="Sulev. Gauntlets +2",
+		hands="Volte Moufles",
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
 		back=gear.Cichol_StrWSD,
@@ -381,7 +381,8 @@ function init_gear_sets()
 		head="Jumalik Helm",
 		ear2="Ishvara Earring",
 		body="Dagon Breastplate",
-		hands="Sulev. Gauntlets +2",
+		hands="Volte Moufles",
+		--hands="Odyssean Gauntlets",
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
 		back=gear.Cichol_StrWSD,
@@ -457,12 +458,12 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle = {
 		ammo="Staunch Tathlum +1",
-		head="Sulevia's Mask +2",
+		head="Volte Salade",
 		neck="Loricate Torque +1",
 		ear1="Odnowa Earring +1",
 		ear2="Etiolation Earring",
 		body="Tartarus Platemail",
-		hands="Sulev. Gauntlets +2",
+		hands="Volte Moufles",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
@@ -483,7 +484,9 @@ function init_gear_sets()
 	})
 			 
 	sets.idle.Regen = set_combine(sets.idle,{
+		head="Volte Salade",
 		neck="Bathy Choker +1",
+		hands="Volte Moufles",
 		ring1="Sheltered Ring",
 	})
 			 
@@ -505,13 +508,13 @@ function init_gear_sets()
 	})
 			 
 	-- Defense sets
-	-- Total: 49% DT 58% PDT 54% MDT MDB 12
+	-- Total: 43% DT 18% PDT 14% MDT MDB 21
 	-- <36%: use Shadow Mantle
 	sets.defense.PDT = set_combine(sets.idle,{
 		-- 3% DT
 		ammo="Staunch Tathlum +1",
-		-- 6% DT 1 MDB
-		head="Sulevia's Mask +2",
+		-- 3% PDT 7% MDT 6 MDB
+		head="Volte Salade",
 		-- 6% DT
 		neck="Loricate Torque +1",
 		-- 2% MDT
@@ -520,8 +523,8 @@ function init_gear_sets()
 		ear2="Etiolation Earring",
 		-- 10% DT 6 MDB
 		body="Tartarus Platemail",
-		-- 5% DT
-		hands="Sulev. Gauntlets +2",
+		-- 6% PDT 2% MDT 4 MDB
+		hands="Volte Moufles",
 		-- 5% DT
 		--ring1="Dark Ring",
 		ring1="Shadow Ring",
@@ -538,13 +541,13 @@ function init_gear_sets()
 	})
 	sets.defense.Reraise = set_combine(sets.defense.PDT, {head="Twilight Helm",body="Twilight Mail"})
 	
-	-- Total: 49% DT 58% PDT 54% MDT MDB 12
+	-- Total: 43% DT 18% PDT 14% MDT MDB 21
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.defense.MDT = set_combine(sets.idle,{
 		-- 3% DT
 		ammo="Staunch Tathlum +1",
-		-- 6% DT 1 MDB
-		head="Sulevia's Mask +2",
+		-- 3% PDT 7% MDT 6 MDB
+		head="Volte Salade",
 		-- 6% DT
 		neck="Loricate Torque +1",
 		-- 2% MDT
@@ -553,8 +556,8 @@ function init_gear_sets()
 		ear2="Etiolation Earring",
 		-- 10% DT 6 MDB
 		body="Tartarus Platemail",
-		-- 5% DT
-		hands="Sulev. Gauntlets +2",
+		-- 6% PDT 2% MDT 4 MDB
+		hands="Volte Moufles",
 		-- 5% DT
 		--ring1="Dark Ring",
 		ring1="Shadow Ring",
@@ -713,8 +716,8 @@ function init_gear_sets()
 		neck="Loricate Torque +1",
 		-- 10% DT 6 MDB
 		body="Tartarus Platemail",
-		-- 5% DT
-		hands="Sulev. Gauntlets +2",
+		-- 6% PDT 2% MDT 4 MDB
+		hands="Volte Moufles",
 		-- 3% DT
 		--ring1="Sulevia's Ring",
 		ring1="Niqmaddu Ring",
