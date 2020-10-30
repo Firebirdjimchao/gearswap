@@ -738,10 +738,10 @@ function init_gear_sets()
 	sets.idle.Encumbered = set_combine(sets.midcast.MAB,{
 	})
 	
-	-- Total: 37% + 20% (PDT Staff) + 6% (Khonsu)
+	-- Total: 37% + 20% (DT Staff) + 6% (Khonsu)
 	-- <36%: use Shadow Mantle
 	sets.idle.PDT = set_combine(sets.idle,{
-		--main=gear.Staff.PDT,
+		--main=gear.Staff.DT,
 		-- 6% DT
 		--sub="Khonsu",
 		-- 2%

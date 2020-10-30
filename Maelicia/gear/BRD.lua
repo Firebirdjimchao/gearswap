@@ -604,13 +604,14 @@ function init_gear_sets()
 	
 	sets.noprotect = {ring1="Sheltered Ring"}
 
-	-- PDT: 50%
-	-- MDT: 56%
+	-- DT: 21% DT
+	-- PDT: 9%
+	-- MDT: 35%
 	-- MDB: 41 
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.idle.DT = set_combine(sets.idle,{		
 		-- 20% PDT
-		main=gear.Staff.PDT,
+		--main=gear.Staff.PDT,
 		-- 8 MDB 5% MDT
 		head="Inyanga Tiara +2",
 		-- 6% DT

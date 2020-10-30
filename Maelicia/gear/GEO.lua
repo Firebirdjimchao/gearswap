@@ -690,8 +690,8 @@ function init_gear_sets()
 	-- Total: 42% + 20% (PDT Staff)
 	-- <36%: use Shadow Mantle
 	sets.idle.PDT = set_combine(sets.idle,{
-		main=gear.Staff.PDT,
-		sub="Enki Strap",
+		main=gear.Staff.DT,
+		sub="Khonsu",
 		-- 3%
 		head="Blistering Sallet +1",
 		-- 6%
@@ -717,6 +717,8 @@ function init_gear_sets()
 	-- MDB: 26
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.idle.MDT = set_combine(sets.idle,{
+		main=gear.Staff.DT,
+		sub="Khonsu",
 		-- 6
 		head="Azimuth Hood +1",
 		-- 6%
@@ -741,6 +743,8 @@ function init_gear_sets()
 	})
 	
 	sets.idle.MDTOnca = {
+		main=gear.Staff.DT,
+		sub="Khonsu",
 		-- 6
 		head="Azimuth Hood +1",
 		-- 6%
