@@ -75,7 +75,8 @@ function init_gear_sets()
 		body="Geomancy Tunic +2",
 		back="Nantosuelta's Cape",
 	}
-	sets.precast.JA['Primeaval Zeal'] = {head="Bagua Galero +1"}
+	sets.precast.JA['Primeaval Zeal'] = {head="Bagua Galero +3"}
+	sets.precast.JA['Concentric Pulse'] = {head="Bagua Galero +3"}
 	-- AF2 hands enhances Curative Recantation
 	sets.precast.JA['Full Circle'] = {head="Azimuth Hood +1",hands="Bagua Mitaines +3"}
 	sets.precast.JA['Mending Halation'] = {legs="Bagua Pants +3"}
@@ -562,6 +563,7 @@ function init_gear_sets()
 	-- === Dark Magic =========================================
 	
 	sets.midcast['Dark Magic'] = set_combine(sets.midcast.MACC,{
+		main="Rubicundity",
 		neck="Erra Pendant",
 		body="Geomancy Tunic +2",
 		ring1="Stikini Ring",
@@ -576,7 +578,8 @@ function init_gear_sets()
 	})
 	
 	sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
-		head="Bagua Galero +1",
+		main="Rubicundity",
+		head="Bagua Galero +3",
 		neck="Erra Pendant",
 		waist="Fucho-no-Obi",
 	})
