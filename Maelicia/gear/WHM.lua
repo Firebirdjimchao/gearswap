@@ -409,7 +409,7 @@ function init_gear_sets()
 	})
 	
 	sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'],{
-		body="Witching Robe",
+		body="Shamash Robe",
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
 		ring2="Stikini Ring",
