@@ -702,6 +702,8 @@ function init_gear_sets()
 	})
 	sets.engaged.FullAcc.MDT = set_combine(sets.engaged.HighAcc.MDT,{
 	})
+	-- To activate, must cycle both HybridMode and PhysicalDefenseMode to HybridTH
+	-- gs c cycle PhysicalDefenseMode + gs c cycle HybridMode
 	-- Use Sandung, Chaac Belt, or Perfect Taming Sari to cap TH at 8
 	sets.engaged.HybridTH = set_combine(sets.engaged.PDT, sets.TreasureHunter,{
 		-- DT 3%
