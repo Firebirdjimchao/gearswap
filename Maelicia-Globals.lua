@@ -250,6 +250,46 @@ function precast(spell, action, spellMap, eventArgs)
 	refine_waltz(spell, action, spellMap, eventArgs)
 end
 
+function cancel_conflicting_buffs(spell, action, spellMap, eventArgs)
+    if cancel_spells_to_check:contains(spell.english) or cancel_types_to_check:contains(spell.type) then
+        if spell.action_type == 'Ability' then
+            local abil_recasts = windower.ffxi.get_ability_recasts()
+            if abil_recasts[spell.recast_id] > 0 then
+                add_to_chat(123,'Abort: Ability waiting on recast.')
+                eventArgs.cancel = true
+                return
+            end
+        elseif spell.action_type == 'Magic' then
+            local spell_recasts = windower.ffxi.get_spell_recasts()
+            if spell_recasts[spell.recast_id] > 0 then
+                add_to_chat(123,'Abort: Spell waiting on recast.')
+                eventArgs.cancel = true
+                return
+            end
+        end
+        
+        if spell.english == 'Spectral Jig' and buffactive.sneak then
+            cast_delay(0.2)
+            send_command('cancel sneak')
+        elseif spell.english == 'Sneak' and spell.target.type == 'SELF' and buffactive.sneak then
+            send_command('cancel sneak')
+        elseif spell.english == ('Stoneskin') then
+            send_command('@wait 1.0;cancel stoneskin')
+        elseif spell.english:startswith('Monomi') and buffactive.sneak then
+        		cast_delay(1.7)
+            send_command('@wait 1.7;cancel sneak')
+        elseif spell.english == 'Utsusemi: Ichi' then
+            send_command('@wait 1.7;cancel copy image,copy image (2)')
+        elseif (spell.english == 'Trance' or spell.type=='Waltz') and buffactive['saber dance'] then
+            cast_delay(0.2)
+            send_command('cancel saber dance')
+        elseif spell.type=='Samba' and buffactive['fan dance'] then
+            cast_delay(0.2)
+            send_command('cancel fan dance')
+        end
+    end
+end
+
 -------------------------------------------------------------------------------------------------------------------
 -- Test function to use to avoid modifying library files.
 -------------------------------------------------------------------------------------------------------------------

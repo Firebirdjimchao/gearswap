@@ -221,6 +221,9 @@ function init_gear_sets()
 	}
 	sets.precast.FC.Ninjutsu = set_combine(sets.precast.FC, {feet="Mochi. Kyahan +2"})
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads", body="Mochi. Chainmail +3" })
+	sets.precast.FC.Monomi = {
+    hands="Mochizuki Tekko +3",
+  }
 
 	-- Midcast Sets
 	sets.midcast.FastRecast = set_combine(sets.precast.FC,{
@@ -805,9 +808,8 @@ end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_midcast(spell, action, spellMap, eventArgs)
-	--if spell.english == "Monomi: Ichi" then
-		--if buffactive['Sneak'] then
-			--send_command('@wait 1.7;cancel sneak')
-		--end
-	--end
+    if spell.english == "Monomi: Ichi" and buffactive['Sneak'] then
+    	cast_delay(1.7)
+      send_command('@wait 1.7;cancel sneak')
+    end
 end
