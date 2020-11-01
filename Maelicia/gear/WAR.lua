@@ -156,8 +156,7 @@ function init_gear_sets()
 		ear1="Moonshade Earring",
 		ear2="Brutal Earring",
 		body="Pumm. Lorica +3",
-		hands="Volte Moufles",
-		--hands="Odyssean Gauntlets",
+		hands=gear.Odyssean_hands_WS,
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
 		back=gear.Cichol_StrWSD,
@@ -251,6 +250,7 @@ function init_gear_sets()
 			 
 	sets.precast.WS['Fell Cleave'] = set_combine(sets.precast.WS, {
 		body="Pumm. Lorica +3",
+		hands=gear.Odyssean_hands_WS,
 		feet="Sulev. Leggings +2",
 	})
 	sets.precast.WS['Fell Cleave'].AccLow = set_combine(sets.precast.WS.AccLow, {
@@ -305,7 +305,7 @@ function init_gear_sets()
 		ear1="Moonshade Earring",
 		ear2="Brutal Earring",
 		body="Pumm. Lorica +3",
-		hands="Volte Moufles",
+		hands=gear.Odyssean_hands_WS,
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
 		back=gear.Cichol_StrWSD,
@@ -381,8 +381,7 @@ function init_gear_sets()
 		head="Jumalik Helm",
 		ear2="Ishvara Earring",
 		body="Dagon Breastplate",
-		hands="Volte Moufles",
-		--hands="Odyssean Gauntlets",
+		hands=gear.Odyssean_hands_WS,
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
 		back=gear.Cichol_StrWSD,
@@ -475,11 +474,11 @@ function init_gear_sets()
 	sets.noprotect = {ring1="Sheltered Ring"}
  
 	sets.idle.Town = set_combine(sets.idle, {
-		head=gear.Argosy_head_hq_A,
+		--head=gear.Argosy_head_hq_A,
 		--body="Councilor's Garb",
-		--body="Dagon Breastplate",
-		body=gear.Argosy_body_hq_D,
-		hands=gear.Argosy_hands_hq_D,
+		body="Dagon Breastplate",
+		--body=gear.Argosy_body_hq_D,
+		--hands=gear.Argosy_hands_hq_D,
 		legs=gear.Argosy_legs_hq_D,
 	})
 			 
