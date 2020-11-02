@@ -41,7 +41,7 @@ function init_gear_sets()
 		feet="Agoge Calligae +1",
 	}
 	sets.precast.JA['Aggressor'] = {
-		head="Pummeler's Mask +2",
+		head="Pummeler's Mask +3",
 		body="Agoge Lorica +1",
 	}
 	sets.precast.JA['Mighty Strikes'] = {hands="Agoge Mufflers +1"}
@@ -120,7 +120,7 @@ function init_gear_sets()
 		back=gear.Cichol_AccDA,
 	})
 	sets.precast.WS.AccHigh = set_combine(sets.precast.WS.AccLow, {
-		head="Pummeler's Mask +2",
+		head="Pummeler's Mask +3",
 		body="Pumm. Lorica +3",
 		back=gear.Cichol_AccDA,
 		legs="Pumm. Cuisses +3",
@@ -169,7 +169,7 @@ function init_gear_sets()
 		feet="Sulev. Leggings +2",
 	})
 	sets.precast.WS["Upheaval"].AccHigh = set_combine(sets.precast.WS['Upheaval'], {
-		head="Pummeler's Mask +2",
+		head="Pummeler's Mask +3",
 		body="Pumm. Lorica +3",
 		back=gear.Cichol_AccDA,
 		legs="Pumm. Cuisses +3",
@@ -202,7 +202,7 @@ function init_gear_sets()
 		body="Pumm. Lorica +3",
 	})
 	sets.precast.WS["Ukko's Fury"].AccHigh = set_combine(sets.precast.WS["Ukko's Fury"], {
-		head="Pummeler's Mask +2",
+		head="Pummeler's Mask +3",
 		body="Pumm. Lorica +3",
 		back=gear.Cichol_AccDA,
 		legs="Pumm. Cuisses +3",
@@ -235,7 +235,7 @@ function init_gear_sets()
 		--head="Agoge Mask +3",
 	})
 	sets.precast.WS["King's Justice"].AccHigh = set_combine(sets.precast.WS["King's Justice"], {
-		head="Pummeler's Mask +2",
+		head="Pummeler's Mask +3",
 		body="Pumm. Lorica +3",
 		back=gear.Cichol_AccDA,
 		legs="Pumm. Cuisses +3",
@@ -286,7 +286,7 @@ function init_gear_sets()
 		feet=gear.Argosy_feet_hq_A,
 	})
 	sets.precast.WS['Resolution'].AccHigh = set_combine(sets.precast.WS['Resolution'], {
-		head="Pummeler's Mask +2",
+		head="Pummeler's Mask +3",
 		body="Pumm. Lorica +3",
 		back=gear.Cichol_AccDA,
 		legs="Pumm. Cuisses +3",
@@ -318,7 +318,7 @@ function init_gear_sets()
 		legs="Sulevi. Cuisses +2",
 	})
 	sets.precast.WS['Scourge'].AccHigh = set_combine(sets.precast.WS['Scourge'], {
-		head="Pummeler's Mask +2",
+		head="Pummeler's Mask +3",
 		body="Pumm. Lorica +3",
 		back=gear.Cichol_AccDA,
 		legs="Pumm. Cuisses +3",
@@ -361,7 +361,7 @@ function init_gear_sets()
 	sets.precast.WS['Decimation'].AccLow = set_combine(sets.precast.WS['Decimation'], {
 	})
 	sets.precast.WS['Decimation'].AccHigh = set_combine(sets.precast.WS['Decimation'], {
-		head="Pummeler's Mask +2",
+		head="Pummeler's Mask +3",
 		body="Pumm. Lorica +3",
 		back=gear.Cichol_AccDA,
 		legs="Pumm. Cuisses +3",
@@ -630,7 +630,7 @@ function init_gear_sets()
 	})
 	-- Use Utu Grip
 	sets.engaged.AccHigh = set_combine(sets.engaged.AccLow, {
-		head="Pummeler's Mask +2",
+		head="Pummeler's Mask +3",
 		body="Pumm. Lorica +3",
 	})
 
