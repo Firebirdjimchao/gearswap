@@ -164,8 +164,8 @@ function init_gear_sets()
 	sets.precast.WS = {
 		head="Viti. Chapeau +3",
 		neck="Fotia Gorget",
-		ear1="Brutal Earring",
-		ear2="Moonshade Earring",
+		ear1="Moonshade Earring",
+		ear2="Sherida Earring",
 		body="Ayanmo Corazza +2",
 		--hands="Jhakri Cuffs +2",
 		hands="Atrophy Gloves +3",
@@ -202,7 +202,16 @@ function init_gear_sets()
 	})
 	
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
+		ammo="Regal Gem",
+		head="Viti. Chapeau +3",
 		neck="Fotia Gorget",
+		ear1="Moonshade Earring",
+		ear2="Regal Earring",
+		body="Viti. Tabard +3",
+		hands="Atrophy Gloves +3",
+		waist="Metalsinger Belt",
+		legs="Jhakri Slops +2",
+		feet="Vitiation Boots +3",
 	})
 	sets.precast.WS['Death Blossom'] = set_combine(sets.precast.WS, {
 		neck="Fotia Gorget",
@@ -755,14 +764,14 @@ function init_gear_sets()
 		ear1="Ethereal Earring",
 		ear2="Novia Earring",
 		body="Jhakri Robe +2",
-		hands="Aya. Manopolas +2",
+		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		back="Mecisto. Mantle",
 		--back="Moonbeam Cape",
 		waist="Fucho-no-Obi",
 		legs="Carmine Cuisses +1",
-		feet=gear.Vanya_feet_B
+		feet="Malignance Boots",
 	}
 	
 	sets.idle.Town = set_combine(sets.idle,{
@@ -775,56 +784,57 @@ function init_gear_sets()
 	sets.idle.Weak = set_combine(sets.idle,{
 	})
 	
-	-- Total: 48% + 20% (PDT Staff)
+	-- Total: DT 48%, PDT 8% + 20% (PDT Staff)
 	-- <36%: use Shadow Mantle
 	sets.idle.PDT = set_combine(sets.idle,{
 		--main=gear.Staff.PDT,
-		-- 3%
+		-- DT 3%
 		ammo="Staunch Tathlum +1",
 		-- 3%
 		head="Blistering Sallet +1",
-		-- 6%
+		-- DT 6%
 		neck="Loricate Torque +1",
-		-- 6%
-		body="Ayanmo Corazza +2",
-		-- 2%
-		hands="Aya. Manopolas +2",
-		-- 4%
-		ring1=gear.DarkRing.physical,
-		-- 10%
-		ring2="Defending Ring",
+		-- DT 9%
+		body="Malignance Tabard",
+		-- DT 5%
+		hands="Malignance Gloves",
 		-- 5%
+		ring1="Dark Ring",
+		-- DT 10%
+		ring2="Defending Ring",
+		-- DT 5%
 		back="Moonbeam Cape",
-		-- 6%
+		-- DT 6%
 		legs="Aya. Cosciales +2",
-		-- 3%
-		feet="Aya. Gambieras +2",
+		-- DT 4%
+		feet="Malignance Boots",
 	})
 	
-	-- MDT: 46%
-	-- MDB: 23
+	-- DT: 48%
+	-- MDT: 7%
+	-- MDB: 28
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.idle.MDT = set_combine(sets.idle,{
-		-- 3%
+		-- DT 3%
 		ammo="Staunch Tathlum +1",
 		-- 6 2%
 		head="Chironic Hat",
-		-- 6%
+		-- DT 6%
 		neck="Loricate Torque +1",
-		-- 6% 6
-		body="Ayanmo Corazza +2",
-		-- 2 2%
-		hands="Aya. Manopolas +2",
-		-- 3%
-		ring1=gear.DarkRing.physical,
-		-- 10%
-		ring2="Defending Ring",
+		-- 8 DT 9%
+		body="Malignance Tabard",
+		-- 4 DT 5%
+		hands="Malignance Gloves",
 		-- 5%
+		ring1="Dark Ring",
+		-- DT 10%
+		ring2="Defending Ring",
+		-- DT 5%
 		back="Moonbeam Cape",
-		-- 5 6%
+		-- 5 DT 6%
 		legs="Aya. Cosciales +2",
-		-- 5 3%
-		feet="Aya. Gambieras +2",
+		-- 5 DT 4%
+		feet="Malignance Boots",
 	})
 	
 	
@@ -902,20 +912,20 @@ function init_gear_sets()
 	-- EG: sets.engaged.Dagger.Accuracy.Evasion
 	
 	-- Normal melee group
-	-- Haste: 25%
+	-- Haste: 28%
 	sets.engaged = {
 		ammo="Ginsen",
-		-- 6%
-		head="Aya. Zucchetto +2",
+		-- 8%
+		head="Blistering Sallet +1",
 		neck="Asperity Necklace",
 		ear1="Brutal Earring",
 		ear2="Sherida Earring",
 		-- 4%
 		body="Ayanmo Corazza +2",
-		-- 3%
-		hands="Atrophy Gloves +3",
-		ring1="Rajas Ring",
-		ring2="Cacoethic Ring",
+		-- 4%
+		hands="Malignance Gloves",
+		ring1="Ilabrat Ring",
+		ring2="Hetairoi Ring",
 		back="Atheling Mantle",
 		waist="Windbuffet Belt +1",
 		-- 9%
@@ -924,7 +934,7 @@ function init_gear_sets()
 		feet="Aya. Gambieras +2"
 	}
 	
-	-- Haste: 27%
+	-- Haste: 30%
 	sets.engaged.Acc = set_combine(sets.engaged,{
 		ammo="Ginsen",
 		neck="Subtlety Spec.",
@@ -932,18 +942,20 @@ function init_gear_sets()
 		ear2="Telos Earring",
 		-- 2%
 		back="Ground. Mantle +1",
+		waist="Reiki Yotai",
 	})
 	
 	sets.engaged.Defense = set_combine(sets.engaged,{
-		head="Aya. Zucchetto +2",
+		head="Blistering Sallet +1",
 		neck="Loricate Torque +1",
 		body="Ayanmo Corazza +2",
+		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
 		waist="Flume Belt +1",
 		legs="Aya. Cosciales +2",
-		feet="Aya. Gambieras +2"
+		feet="Malignance Boots",
 	})
 
 end

@@ -142,10 +142,11 @@ function init_gear_sets()
 	sets.precast.WS = {
 		head="Jhakri Coronal +2",
 		neck="Asperity Necklace",
-		ear1="Brutal Earring",
-		ear2="Moonshade Earring",
+		ear1="Moonshade Earring",
+		ear2="Sherida Earring",
 		body="Ayanmo Corazza +2",
 		hands="Jhakri Cuffs +2",
+		--hands="Atrophy Gloves +3",
 		ring1="Rajas Ring",
 		ring2="Cacoethic Ring",
 		back="Atheling Mantle",
@@ -179,7 +180,15 @@ function init_gear_sets()
 	})
 	
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
-		neck=gear.ElementalGorget
+		ammo="Regal Gem",
+		--head="Viti. Chapeau +3",
+		neck=gear.ElementalGorget,
+		ear1="Moonshade Earring",
+		body="Viti. Tabard +3",
+		hands="Jhakri Cuffs +2",
+		--hands="Atrophy Gloves +3",
+		legs="Jhakri Slops +2",
+		feet="Vitiation Boots +3",
 	})
 	sets.precast.WS['Death Blossom'] = set_combine(sets.precast.WS, {
 		neck=gear.ElementalGorget
@@ -357,7 +366,7 @@ function init_gear_sets()
 	})
 
 	-- INT potency mod for spikes
-	-- ~105 +196 INT
+	-- ~104 +196 INT
 	sets.midcast.spikes = set_combine(sets.midcast.EnhancingDuration,{
 		-- 19 INT
 		main=gear.MainStaff,
@@ -368,8 +377,6 @@ function init_gear_sets()
 		neck="Dls. Torque +1",
 		-- 2 INT
 		ring1="Acumen Ring",
-		-- 1 INT
-		ring2="Dark Ring",
 		-- 30 INT 20 DUR
 		back=gear.sucellos_mab,
 	})
@@ -717,7 +724,7 @@ function init_gear_sets()
 		ear1="Ethereal Earring",
 		ear2="Novia Earring",
 		body="Jhakri Robe +2",
-		hands="Aya. Manopolas +2",
+		hands="Malignance Gloves",
 		ring1=gear.DarkRing.physical,
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
@@ -737,7 +744,7 @@ function init_gear_sets()
 	sets.idle.Weak = set_combine(sets.idle,{
 	})
 	
-	-- Total: 46% + 20% (PDT Staff)
+	-- Total: 49% + 20% (PDT Staff)
 	-- <36%: use Shadow Mantle
 	sets.idle.PDT = set_combine(sets.idle,{
 		--main=gear.Staff.PDT,
@@ -750,8 +757,8 @@ function init_gear_sets()
 		neck="Twilight Torque",
 		-- 6%
 		body="Ayanmo Corazza +2",
-		-- 2%
-		hands="Aya. Manopolas +2",
+		-- 5%
+		hands="Malignance Gloves",
 		-- 4%
 		ring1=gear.DarkRing.physical,
 		-- 10%
@@ -764,8 +771,8 @@ function init_gear_sets()
 		feet="Aya. Gambieras +2",
 	})
 	
-	-- MDT: 45%
-	-- MDB: 25
+	-- MDT: 48%
+	-- MDB: 27
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.idle.MDT = set_combine(sets.idle,{
 		-- 2%
@@ -780,8 +787,8 @@ function init_gear_sets()
 		--body="Atrophy Tabard +3",
 		-- 6% 6
 		body="Ayanmo Corazza +2",
-		-- 2 2%
-		hands="Aya. Manopolas +2",
+		-- 4 5%
+		hands="Malignance Gloves",
 		-- 3%
 		ring1=gear.DarkRing.physical,
 		-- 10%
@@ -841,18 +848,18 @@ function init_gear_sets()
 	-- EG: sets.engaged.Dagger.Accuracy.Evasion
 	
 	-- Normal melee group
-	-- Haste: 25%
+	-- Haste: 27%
 	sets.engaged = {
 		ammo="Amar Cluster",
-		-- 6%
-		head="Aya. Zucchetto +2",
+		-- 8%
+		head="Blistering Sallet +1",
 		neck="Asperity Necklace",
 		ear1="Brutal Earring",
 		ear2="Sherida Earring",
 		-- 4%
 		body="Ayanmo Corazza +2",
-		-- 3%
-		hands="Atrophy Gloves +2",
+		-- 4%
+		hands="Malignance Gloves",
 		ring1="Rajas Ring",
 		ring2="Cacoethic Ring",
 		back="Atheling Mantle",
