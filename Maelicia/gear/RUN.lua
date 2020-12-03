@@ -404,15 +404,20 @@ function init_gear_sets()
 	sets.midcast['Refresh'] = set_combine(sets.midcast.EnhancingDuration, {
 		waist="Gishdubar Sash"
 	})
- 	sets.midcast['Flash'] = set_combine(sets.enmity, {})
- 	sets.midcast['Stun'] = set_combine(sets.enmity, {})
- 	sets.midcast['Poisonga'] = set_combine(sets.enmity, {})
+
+	sets.midcast['Healing Magic'] = set_combine(sets.enmity, {})
+	sets.midcast.Cure = set_combine(sets.midcast['Headling Magic'], {
+		ear1="Mendi. Earring",
+		body="Vrikodara Jupon",
+	})
+
+ 	sets.midcast['Divine Magic'] = set_combine(sets.enmity, {})
+ 	sets.midcast['Elemental Magic'] = set_combine(sets.enmity, {})
+ 	sets.midcast['Enfeebing Magic'] = set_combine(sets.enmity, {})
+ 	sets.midcast['Dark Magic'] = set_combine(sets.enmity, {})
  	sets.midcast['Foil'] = set_combine(sets.enmity, {})
-	sets.midcast['Blank Gaze'] = set_combine(sets.enmity, {})
-	sets.midcast['Geist Wall'] = set_combine(sets.enmity, {})
-	sets.midcast['Jettatura'] = set_combine(sets.enmity, {})
-	sets.midcast['Wild Carrot'] = set_combine(sets.enmity, {})
-	sets.midcast.Cure = set_combine(sets.enmity, {}) 
+	sets.midcast['Blue Magic'] = set_combine(sets.enmity, {})
+	sets.midcast['Wild Carrot'] = set_combine(sets.midcast.Cure, {})
 
 	--------------------------------------
 	-- Idle/resting/defense/etc sets
@@ -541,6 +546,10 @@ function job_precast(spell, action, spellMap, eventArgs)
 		state.OffenseMode.value == 'Hybrid' then
 		state.CombatWeapon:set(player.equipment.range)
 
+		if not buffactive['Runes'] or buffactive['Runes'] < 3 then
+			add_to_chat(122,"--- [Runes Count] less than 3 ---")
+		end
+
 		if not buffactive['Aquaveil'] then
 			add_to_chat(122,"--- [Aquaveil] x ---")
 		end
@@ -617,7 +626,11 @@ function customize_idle_set(idleSet)
 	end
 	if state.Buff.Doom then
 		idleSet = set_combine(idleSet, sets.buff.Doom)
-		party_alert()
+		if state.PartyAlertMode.value == 'true' then
+			if state.Buff.Doom then
+				send_command('input /p <------ Doomed ---- <call14>')
+			end
+		end
 	end
 	return idleSet
 end
@@ -626,7 +639,11 @@ end
 function customize_melee_set(meleeSet)
 	if state.Buff.Doom then
 		meleeSet = set_combine(meleeSet, sets.buff.Doom)
-		party_alert()
+		if state.PartyAlertMode.value == 'true' then
+			if state.Buff.Doom then
+				send_command('input /p <------ Doomed ---- <call14>')
+			end
+		end
 	end
 	return meleeSet
 end
@@ -634,15 +651,11 @@ end
 function customize_defense_set(defenseSet)
 	if state.Buff.Doom then
 		defenseSet = set_combine(defenseSet, sets.buff.Doom)
-		party_alert()
-	end
-	return defenseSet
-end
-
-function party_alert()
-	if state.PartyAlertMode.value == 'true' then
-		if state.Buff.Doom then
-			send_command('input /p <------ Doomed ---- <call14>')
+		if state.PartyAlertMode.value == 'true' then
+			if state.Buff.Doom then
+				send_command('input /p <------ Doomed ---- <call14>')
+			end
 		end
 	end
+	return defenseSet
 end
