@@ -619,13 +619,13 @@ function init_gear_sets()
 	-- STP Calculator Spreadsheet Results -----------------
 	--
 	-- TP/hit = floor( Base TP/hit × (100 + Store TP Total)÷100 , 1)
-	-- Delay: 582 (Annihilator) + 240 (Eradicating Bullets) = 822
+	-- Delay: 582 (Annihilator) + 240 (Chrono or Eradicating Bullets) = 822
 	-- Base TP/hit for Delay 721~900: 161+[(Delay-720)×24÷360] = 167.8
 	--
 	-- Gear STP Needed:
 	-- 5 hit: 20 STP
 	-- 4 hit: 49 STP, 17 (lucky SAM Roll), 9 (11 SAM Roll), 45 (unlucky SAM Roll)
-	-- 3 hit: 100 STP
+	-- 3 hit: 100 STP, 68 (lucky SAM Roll), 60 (11 SAM Roll), 96 (unlucky SAM Roll)
 	-- 2 hit: 198 STP
 	--
 	-- Delay: 600 (Fail-Not) + 90 (Chrono Arrows) = 690
@@ -676,23 +676,30 @@ function init_gear_sets()
 		feet="Arcadian Socks +3",
 	}
 	
-	-- 39 STP + 4 STP (Perun +1) + 3 STP (Nusku Shield)
-	-- Gear Total: 46 STP
+	-- 60 STP + 4 STP (Perun +1) + 3 STP (Nusku Shield)
+	-- Gear Total: 67 STP
 	sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA,{
 		--body="Amini Caban +1",
+		-- 7 STP
 		body="Nisroch Jerkin",
-		hands="Mummu Wrists +2",
+		-- 12 STP
+		hands="Malignance Gloves",
 		ring2="Regal Ring",
 		legs="Arc. Braccae +3",
+		-- 9 STP
+		feet="Malignance Boots",
 	})
 
-	-- 32 STP + 4 STP (Perun +1) + 3 STP (Nusku Shield)
-	-- Gear Total: 39 STP
+	-- 53 STP + 4 STP (Perun +1) + 3 STP (Nusku Shield)
+	-- Gear Total: 60 STP
 	sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA,{
 		body="Amini Caban +1",
-		hands="Mummu Wrists +2",
+		-- 12 STP
+		hands="Malignance Gloves",
 		ring2="Regal Ring",
 		legs="Arc. Braccae +3",
+		-- 9 STP
+		feet="Malignance Boots",
 	})
 	
 	-- 35 STP + 4 STP (Perun +1) + 3 STP (Nusku Shield)
