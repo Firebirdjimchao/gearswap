@@ -487,6 +487,7 @@ function init_gear_sets()
 		neck="Bathy Choker +1",
 		hands="Volte Moufles",
 		ring1="Sheltered Ring",
+		feet="Volte Sollerets",
 	})
 			 
 	sets.idle.Weak = set_combine(sets.idle,{
@@ -507,7 +508,7 @@ function init_gear_sets()
 	})
 			 
 	-- Defense sets
-	-- Total: 43% DT 18% PDT 14% MDT MDB 21
+	-- Total: 39% DT 22% PDT 20% MDT MDB 27
 	-- <36%: use Shadow Mantle
 	sets.defense.PDT = set_combine(sets.idle,{
 		-- 3% DT
@@ -536,11 +537,13 @@ function init_gear_sets()
 		-- 5% PDT 4 MDB
 		legs="Pumm. Cuisses +3",
 		-- 4% DT 1 MDB
-		feet="Sulev. Leggings +2"
+		--feet="Sulev. Leggings +2",
+		-- 4% PDT 6% MDT 6 MDB
+		feet="Volte Sollerets",
 	})
 	sets.defense.Reraise = set_combine(sets.defense.PDT, {head="Twilight Helm",body="Twilight Mail"})
 	
-	-- Total: 43% DT 18% PDT 14% MDT MDB 21
+	-- Total: 39% DT 22% PDT 20% MDT MDB 27
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.defense.MDT = set_combine(sets.idle,{
 		-- 3% DT
@@ -569,7 +572,9 @@ function init_gear_sets()
 		-- 5% PDT 4 MDB
 		legs="Pumm. Cuisses +3",
 		-- 4% DT 1 MDB
-		feet="Sulev. Leggings +2"
+		--feet="Sulev. Leggings +2",
+		-- 4% PDT 6% MDT 6 MDB
+		feet="Volte Sollerets",
 	})
  
 	-- Gear to wear for kiting
@@ -703,7 +708,7 @@ function init_gear_sets()
 		waist="Reiki Yotai",
 	})
 
-	-- 41% DT 51% PDT 41% MDT 15 MDB (47% DT if using Khonsu)
+	-- 41% DT 55% PDT 47% MDT 17 MDB (53% DT if using Khonsu)
 	sets.engaged.PDT = set_combine(sets.engaged, {
 		-- 6& DT
 		--sub="Khonsu",
@@ -727,7 +732,9 @@ function init_gear_sets()
 		-- 7% DT 2 MDB
 		legs="Sulevi. Cuisses +2",
 		-- 4 MDB
-		feet="Pumm. Calligae +3"
+		--feet="Pumm. Calligae +3",
+		-- 4% PDT 6% MDT 6 MDB
+		feet="Volte Sollerets",
 	})
 	sets.engaged.AccLow.PDT = set_combine(sets.engaged.PDT, {})
 	sets.engaged.AccHigh.PDT = set_combine(sets.engaged.AccLow.PDT, {})
