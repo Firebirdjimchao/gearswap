@@ -546,10 +546,6 @@ function job_precast(spell, action, spellMap, eventArgs)
 		state.OffenseMode.value == 'Hybrid' then
 		state.CombatWeapon:set(player.equipment.range)
 
-		if not buffactive['Runes'] or buffactive['Runes'] < 3 then
-			add_to_chat(122,"--- [Runes Count] less than 3 ---")
-		end
-
 		if not buffactive['Aquaveil'] then
 			add_to_chat(122,"--- [Aquaveil] x ---")
 		end
@@ -565,8 +561,8 @@ function job_precast(spell, action, spellMap, eventArgs)
 		if not buffactive['Phalanx'] then
 			add_to_chat(122,"--- [Phalanx] x ---")
 		end
-		if not buffactive['Ice Spikes'] then
-			add_to_chat(122,"--- [Ice Spikes] x ---")
+		if not buffactive['Ice Spikes'] and not buffactive['Shock Spikes'] then
+			add_to_chat(122,"--- [Ice Spikes or Shock Spikes] x ---")
 		end
 
 		if player.sub_job == 'BLU' then
