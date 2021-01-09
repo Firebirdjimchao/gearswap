@@ -715,9 +715,6 @@ function init_gear_sets()
 	sets.buff['Climactic Flourish'] = {
 		head="Maculele Tiara +1"
 	}
-	sets.buff.Doom = {
-		waist="Gishdubar Sash",
-	}
 end
 
 -------------------------------------------------------------------------------------------------------------------

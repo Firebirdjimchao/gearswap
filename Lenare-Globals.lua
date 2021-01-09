@@ -104,6 +104,11 @@ function define_global_sets()
 	sets.reive = {
 		neck="Arciela's Grace +1"
 	}
+	sets.buff.Doom = {
+		neck="Nicander's Necklace",
+		ring1="Purity Ring",
+		waist="Gishdubar Sash",
+	}
 	
 end
 

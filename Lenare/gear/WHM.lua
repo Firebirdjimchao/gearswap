@@ -504,11 +504,6 @@ function init_gear_sets()
 		hands="Ebers Mitts +1",
 		back="Mending Cape"
 	}
-
-	sets.buff.Doom = {
-		waist="Gishdubar Sash",
-	}
-
 end
 
 -------------------------------------------------------------------------------------------------------------------

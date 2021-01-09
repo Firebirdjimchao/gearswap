@@ -840,9 +840,6 @@ function init_gear_sets()
 		-- 2%
 		ring2="Jhakri Ring",
 	})
-	sets.buff.Doom = {
-		waist="Gishdubar Sash",
-	}
 
 end
 
