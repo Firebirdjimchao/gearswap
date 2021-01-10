@@ -32,6 +32,8 @@ function init_gear_sets()
 		head="Nahtirah Hat",
 		-- 4%
 		neck="Baetyl Pendant",
+		-- 6%
+		--neck="Cleric's Torque",
 		-- 2%
 		ear1="Loquacious Earring",
 		-- 4%
@@ -338,6 +340,10 @@ function init_gear_sets()
 	
 	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'],{
 		main="Vadose Rod"
+	})
+
+	sets.midcast.Erase = set_combine(sets.midcast['Enhancing Magic'],{
+		neck="Cleric's Torque",
 	})
 
 	sets.midcast['Divine Magic'] = set_combine(sets.midcast.MACC,{
