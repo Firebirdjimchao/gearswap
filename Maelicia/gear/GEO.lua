@@ -5,8 +5,8 @@
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()	
 	gear.GeoBell = "Dunna"
-	
-	gear.AugLifestreamIndi = {name="Lifestream Cape",augments={'Geomancy Skill +8','Ind. eff. dur. +20','Damage taken -2%','Pet: Damage taken -5%'}}
+
+	gear.AugLifestreamIndi = { name="Lifestream Cape", augments={'Geomancy Skill +8','Indi. eff. dur. +20','Pet: Damage taken -5%','Damage taken-2%',}}
 	gear.Nanto_nuke = { name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
 	gear.Nanto_luopan = { name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Pet: "Regen"+5',}}
 	gear.default.obi_back = gear.Nanto_nuke
@@ -235,7 +235,7 @@ function init_gear_sets()
 		sub="Khonsu",
 		range=gear.GeoBell,
 		head="Geo. Galero +2",
-		neck="Incanter's Torque",
+		neck="Bagua Charm",
 		ear1="Malignance Earring",
 		ear2="Regal Earring",
 		body="Geomancy Tunic +2",
@@ -289,8 +289,9 @@ function init_gear_sets()
 	-- === Geomancy =========================================
 	
 	-- 373 + 373 + 16 + 16 = 778 + with gifts (36 Geomancy, 36 Handbell) = 850 (900 to cap all spell potency)
-	-- Set total: 53
-	-- Total: 903
+	-- Set total: 62
+	-- Total: 912
+	-- ConserveMP total: 20
 	sets.midcast.Geomancy = set_combine(sets.midcast.ConserveMP,{
 		main="Idris",
 		sub="Genmei Shield",
@@ -298,21 +299,32 @@ function init_gear_sets()
 		range=gear.GeoBell,
 		-- 15
 		head="Azimuth Hood +1",
-		-- 20
-		neck="Incanter's Torque",
-		-- 5
-		-- neck="Reti Pendant",
+		neck="Bagua Charm",
+		-- ConserveMP +3
 		ear1="Gifted Earring",
 		-- 16
 		body="Bagua Tunic +3",
 		hands="Azimuth Gloves +1",
-		back="Moonbeam Cape",
+		ring1="Metamor. Ring +1",
+		ring2="Persis Ring",
+		-- 13
+		back=gear.AugLifestreamIndi,
+		-- ConserveMP +9
 		waist="Austerity Belt",
+		-- ConserveMP +4
 		legs="Miasmic Pants",
+		-- ConserveMP +4
+		feet="Merlinic Crackows",
 	})
+	-- Set total: 54
+	-- Total: 904
+	-- ConserveMP total: 15
 	sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy,{
 		main="Idris",
 		sub="Genmei Shield",
+		-- ConserveMP +3
+		head=gear.Merlinic_head_nuke,
+		neck="Incanter's Torque",
 		-- +20
 		back=gear.Nanto_luopan,
 		-- +21
@@ -800,7 +812,7 @@ function init_gear_sets()
 	--
 	-- Pet DT cap: 87.5%
 	-- Luopan innate DT: 50%
-	-- Pet DT: -49% (37.5% to cap)
+	-- Pet DT: -39% (37.5% to cap)
 	-- Pet regen: +30
 	sets.idle.Pet = set_combine(sets.idle,{
 		-- Pet: DT 25%
@@ -812,8 +824,8 @@ function init_gear_sets()
 		-- Pet: regen +3
 		--head="Azimuth Hood +1",
 		head="Bagua Galero +3",
-		-- DT: 6%
-		neck="Loricate Torque +1",
+		-- Pet: DT 6%
+		neck="Bagua Charm",
 		ear1="Etiolation Earring",
 		ear2="Ethereal Earring",
 		-- Pet: regen +3
