@@ -1,6 +1,6 @@
 function user_setup()
 
-	state.OffenseMode:options('None', 'Normal', 'Acc')
+	state.OffenseMode:options('None', 'Normal', 'Acc', 'enspell','enspellDW','enspell.Acc','enspellDW.Acc')
 	--state.OffenseMode:options('None')
 	state.HybridMode:options('Normal', 'PhysicalDef', 'MagicalDef')
 	state.CastingMode:options('Normal', 'Resistant')
@@ -940,9 +940,31 @@ function init_gear_sets()
 		neck="Subtlety Spec.",
 		ear1="Digni. Earring",
 		ear2="Telos Earring",
+		ring1="Cacoethic Ring +1",
+		ring2="Jhakri Ring",
 		-- 2%
 		back="Ground. Mantle +1",
 		waist="Reiki Yotai",
+	})
+	sets.engaged.enspell = set_combine(sets.engaged,{
+		range="Ullr",
+		head="Umuthi Hat",
+		neck="Sanctity Necklace",
+		body="Ayanmo Corazza +2",
+		ear2="Regal Earring",
+		hands="Aya. Manopolas +2",
+		ring1="Ilabrat Ring",
+		ring2="Jhakri Ring",
+		back="Ghostfyre Cape",
+	})
+	sets.engaged.enspellDW = set_combine(sets.engaged.enspell,{
+		ear1="Suppanomimi",
+		ring1="Haverton Ring",
+		waist="Reiki Yotai",
+	})
+	sets.engaged.enspell.Acc = set_combine(sets.engaged.Acc, sets.engaged.enspell,{
+	})
+	sets.engaged.enspellDW.Acc = set_combine(sets.engaged.Acc, sets.engaged.enspell,sets.engaged.enspellDW,{
 	})
 	
 	sets.engaged.Defense = set_combine(sets.engaged,{
