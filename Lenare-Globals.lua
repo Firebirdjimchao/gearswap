@@ -47,7 +47,7 @@ function define_global_sets()
 	gear.Telchine_body_pet = { name="Telchine Chas.", augments={'Pet: "Regen"+3','STR+1 CHR+1',}}
 	gear.Telchine_hands_cure = { name="Telchine Gloves", augments={'"Cure" potency +6%',}}
 	gear.Telchine_hands_pet = { name="Telchine Gloves", augments={'Pet: "Regen"+3',}}
-	gear.Telchine_legs_pet = { name="Telchine Braconi", augments={'Pet: "Regen"+2',}}
+	gear.Telchine_legs_pet = { name="Telchine Braconi", augments={'Pet: "Regen"+3',}}
 	
 	-- Default items for utility gear values.
 	gear.default.weaponskill_neck = "Asperity Gorget"

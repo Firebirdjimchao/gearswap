@@ -213,8 +213,7 @@ function init_gear_sets()
 		range="Aureole",
 		--head="Jhakri Coronal +2",
 		head="Geo. Galero +2",
-		neck="Erra Pendant",
-		--neck="Sanctity Necklace",
+		neck="Bagua Charm",
 		ear1="Barkaro. Earring",
 		ear2="Malignance Earring",
 		--body="Jhakri Robe +2",
@@ -251,17 +250,27 @@ function init_gear_sets()
 	}
 	
 	sets.midcast.ConserveMP = set_combine(sets.midcast.FastRecast,{
-		back="Aurist's Cape +1",
-		waist="Austerity Belt",
+		-- 2
+		ear1="Mendi. Earring",
+		-- 5
+		back="Fi Follet Cape +1",
+		-- 4
+		waist="Luminary Sash",
+		-- 5
+		legs="Lengo Pants",
+		-- 4
+		feet="Merlinic Crackows",
 	})
 	
 	-- === Geomancy =========================================
 	
 	-- 373 + 373 + 16 + 16 = 778 base (900 to cap all spell potency)
-	-- 13 Geomancy Gift
-	-- 13 Handbell Gift
-	-- Set total: 117
-	-- Total: 922
+	-- 23 Geomancy Gift
+	-- 23 Handbell Gift
+	-- 824 Subtotal
+	-- Set total: 76
+	-- Total: 900
+	-- ConserveMP total: 20
 	sets.midcast.Geomancy = set_combine(sets.midcast.ConserveMP,{
 		main="Idris",
 		sub="Culminus",
@@ -269,8 +278,10 @@ function init_gear_sets()
 		range=gear.GeoBell,
 		-- 15
 		head="Azimuth Hood +1",
-		-- 20
-		neck="Incanter's Torque",
+		neck="Bagua Charm",
+		-- ConserveMP +2
+		ear1="Mendi. Earring",
+		ear2="Etiolation Earring",
 		-- 16
 		body="Bagua Tunic +3",
 		-- 17
@@ -280,8 +291,19 @@ function init_gear_sets()
 		-- 5
 		ring2="Stikini Ring",
 		-- 5 + 6
-		back=gear.AugLifestreamIndi
+		--back=gear.AugLifestreamIndi,
+		-- ConserveMP +5
+		back="Fi Follet Cape +1",
+		-- ConserveMP +4
+		waist="Luminary Sash",
+		-- ConserveMP +5
+		legs="Lengo Pants",
+		-- ConserveMP +4
+		feet="Merlinic Crackows",
 	})
+	-- Set total: 76
+	-- Total: 900
+	-- ConserveMP total: 6
 	sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy,{
 		main="Idris",
 		sub="Culminus",
@@ -724,8 +746,8 @@ function init_gear_sets()
 	--
 	-- Pet DT cap: 87.5%
 	-- Luopan innate DT: 50%
-	-- Pet DT: -33% (37.5% to cap)
-	-- Pet regen: +23
+	-- Pet DT: -39% (37.5% to cap)
+	-- Pet regen: +18
 	sets.idle.Pet = set_combine(sets.idle,{
 		-- Pet: DT 25%
 		main="Idris",
@@ -733,11 +755,11 @@ function init_gear_sets()
 		range=gear.GeoBell,
 		-- Pet: regen +3
 		head="Azimuth Hood +1",
-		-- DT: 5%
-		neck="Twilight Torque",
+		-- Pet DT: 6%
+		neck="Bagua Charm",
 		ear1="Ethereal Earring",
 		ear2="Etiolation Earring",
-		-- Pet: regen +2
+		-- Pet: regen +3
 		body=gear.Telchine_body_pet,
 		-- Pet: DT 11%
 		--hands="Geo. Mitaines +2",
@@ -755,7 +777,7 @@ function init_gear_sets()
 		--back="Lifestream Cape",
 		-- Pet: DT 3%, regen +1
 		waist="Isa Belt",
-		-- Pet: regen +2
+		-- Pet: regen +3
 		legs=gear.Telchine_legs_pet,
 		-- Pet: regen +5
 		feet="Bagua Sandals +3",
