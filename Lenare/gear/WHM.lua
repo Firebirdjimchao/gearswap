@@ -173,7 +173,7 @@ function init_gear_sets()
 		range="Aureole",
 		head="Inyanga Tiara +2",
 		neck="Erra Pendant",
-		ear1="Lifestorm Earring",
+		ear1="Hermetic Earring",
 		ear2="Malignance Earring",
 		body="Inyanga Jubbah +2",
 		hands="Inyan. Dastanas +2",
@@ -230,11 +230,11 @@ function init_gear_sets()
 		sub="Culminus",
 		-- 16%
 		head="Ebers Cap +1",
-		-- 3%
-		--ear1="Nourish. Earring +1",
-		ear1="Lifestorm Earring",
 		-- 2% II
-		ear2="Glorious Earring",
+		ear1="Glorious Earring",
+		-- 3%
+		--ear2="Nourish. Earring +1",
+		ear2="Malignance Earring",
 		body="Ebers Bliaud +1",
 		-- 16%
 		hands=gear.Telchine_hands_cure,

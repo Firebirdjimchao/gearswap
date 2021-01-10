@@ -271,7 +271,7 @@ function init_gear_sets()
 		--ear1="Mendi. Earring",
 		-- 5%
 		--ear2="Roundel Earring",
-		ear2="Novia Earring",
+		ear2="Malignance Earring",
 		body="Viti. Tabard +3",
 		-- 16%
 		hands=gear.Telchine_hands_cure,
@@ -313,6 +313,7 @@ function init_gear_sets()
 		neck="Incanter's Torque",
 		ear1="Lifestorm Earring",
 		-- ear2="Andoaa Earring", -- don't have
+		ear2="Malignance Earring",
 		-- 23 15 DUR
 		body="Viti. Tabard +3",
 		-- 18 DUR
@@ -346,7 +347,6 @@ function init_gear_sets()
 		--neck="Incanter's Torque",
 		-- 20 DUR
 		neck="Dls. Torque +1",
-		ear1="Lifestorm Earring",
 		--body="Lethargy Sayon +1",
 		-- 23 15 DUR
 		body="Viti. Tabard +3",
