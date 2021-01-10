@@ -236,7 +236,7 @@ function init_gear_sets()
 	}
 
 	sets.midcast.CorsairShot.Acc = set_combine(sets.midcast.CorsairShot, {
-		ear1="Lifestorm Earring",
+		ear1="Hermetic Earring",
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
 	})

@@ -127,7 +127,7 @@ function init_gear_sets()
 	sets.precast.Macc = {
 		head="Mummu Bonnet +2",
 		neck="Sanctity Necklace",
-		ear1="Lifestorm Earring",
+		ear1="Hermetic Earring",
 		body="Mummu Jacket +2",
 		hands="Mummu Wrists +2",
 		ring1="Stikini Ring",

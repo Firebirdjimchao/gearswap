@@ -313,7 +313,7 @@ function init_gear_sets()
 		head="Befouled Crown",
 		neck="Incanter's Torque",
 		ear1="Lifestorm Earring",
-		ear2="Novia Earring",
+		ear2="Malignance Earring",
 		-- 5%
 		--ear1="Mendi. Earring",
 		-- 5%

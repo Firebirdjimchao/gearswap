@@ -32,6 +32,8 @@ function init_gear_sets()
 		head="Nahtirah Hat",
 		-- 4%
 		neck="Baetyl Pendant",
+		-- 6%
+		--neck="Cleric's Torque",
 		-- 2%
 		ear1="Loquacious Earring",
 		-- 4%
@@ -171,7 +173,7 @@ function init_gear_sets()
 		range="Aureole",
 		head="Inyanga Tiara +2",
 		neck="Erra Pendant",
-		ear1="Lifestorm Earring",
+		ear1="Hermetic Earring",
 		ear2="Malignance Earring",
 		body="Inyanga Jubbah +2",
 		hands="Inyan. Dastanas +2",
@@ -228,11 +230,11 @@ function init_gear_sets()
 		sub="Culminus",
 		-- 16%
 		head="Ebers Cap +1",
-		-- 3%
-		--ear1="Nourish. Earring +1",
-		ear1="Lifestorm Earring",
 		-- 2% II
-		ear2="Glorious Earring",
+		ear1="Glorious Earring",
+		-- 3%
+		--ear2="Nourish. Earring +1",
+		ear2="Malignance Earring",
 		body="Ebers Bliaud +1",
 		-- 16%
 		hands=gear.Telchine_hands_cure,
@@ -338,6 +340,10 @@ function init_gear_sets()
 	
 	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'],{
 		main="Vadose Rod"
+	})
+
+	sets.midcast.Erase = set_combine(sets.midcast['Enhancing Magic'],{
+		neck="Cleric's Torque",
 	})
 
 	sets.midcast['Divine Magic'] = set_combine(sets.midcast.MACC,{
