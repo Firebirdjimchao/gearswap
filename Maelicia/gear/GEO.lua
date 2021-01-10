@@ -279,19 +279,21 @@ function init_gear_sets()
 		-- 3
 		ear1="Gifted Earring",
 		-- 5
-		back="Moonbeam Cape",
+		back="Fi Follet Cape +1",
 		-- 8
 		waist="Austerity Belt",
+		-- 5
+		legs="Lengo Pants",
 		-- 4
-		legs="Miasmic Pants",
+		feet="Merlinic Crackows",
 	})
 
 	-- === Geomancy =========================================
 	
 	-- 373 + 373 + 16 + 16 = 778 + with gifts (36 Geomancy, 36 Handbell) = 850 (900 to cap all spell potency)
-	-- Set total: 62
-	-- Total: 912
-	-- ConserveMP total: 20
+	-- Set total: 54
+	-- Total: 904
+	-- ConserveMP total: 25
 	sets.midcast.Geomancy = set_combine(sets.midcast.ConserveMP,{
 		main="Idris",
 		sub="Genmei Shield",
@@ -306,25 +308,27 @@ function init_gear_sets()
 		body="Bagua Tunic +3",
 		hands="Azimuth Gloves +1",
 		ring1="Metamor. Ring +1",
-		ring2="Persis Ring",
-		-- 13
-		back=gear.AugLifestreamIndi,
-		-- ConserveMP +9
+		-- 5
+		ring2="Stikini Ring",
+		-- ConserveMP +5
+		back="Fi Follet Cape +1",
+		-- ConserveMP +8
 		waist="Austerity Belt",
-		-- ConserveMP +4
-		legs="Miasmic Pants",
+		-- ConserveMP +5
+		legs="Lengo Pants",
 		-- ConserveMP +4
 		feet="Merlinic Crackows",
 	})
 	-- Set total: 54
 	-- Total: 904
-	-- ConserveMP total: 15
+	-- ConserveMP total: 14
 	sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy,{
 		main="Idris",
 		sub="Genmei Shield",
 		-- ConserveMP +3
 		head=gear.Merlinic_head_nuke,
 		neck="Incanter's Torque",
+		ring2="Persis Ring",
 		-- +20
 		back=gear.Nanto_luopan,
 		-- +21
