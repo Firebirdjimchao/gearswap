@@ -354,13 +354,13 @@ function init_gear_sets()
 		neck="Marked Gorget",
 		ear1="Telos Earring",
 		ear2="Enervating Earring",
-		body="Ken. Samue",
+		body="Ken. Samue +1",
 		hands="Kobo Kote",
 		ring1="Ilabrat Ring",
 		ring2="Garuda Ring +1",
 		back=gear.Smertrio_STP,
 		waist="Yemaya Belt",
-		legs="Ken. Hakama",
+		legs="Ken. Hakama +1",
 		feet="Wakido Sune. +3"
 	}
 	
@@ -589,8 +589,8 @@ function init_gear_sets()
 		ring2="Hetairoi Ring",
 		-- 10 STP
 		back=gear.Smertrio_STP,
-		-- 7%
-		waist="Ioskeha Belt",
+		-- 8%
+		waist="Ioskeha Belt +1",
 		-- 9 STP 5% Hasso +3
 		legs="Kasuga Haidate +1",
 		-- 5 STP 2%
@@ -601,7 +601,7 @@ function init_gear_sets()
 	-- 40 gear STP + 10 (Dojikiri Yasutsuna) = total: 50
 	-- Must use Utu Grip
 	--
-	-- Gear Haste: 24%
+	-- Gear Haste: 25%
 	-- JA Haste (Hasso): 10 base + 6 gear = 16%
 	sets.engaged.MidAcc = set_combine(sets.engaged,{
 		-- 3 STP
@@ -620,8 +620,8 @@ function init_gear_sets()
 		ring2="Hetairoi Ring",
 		-- 10 STP
 		back=gear.Smertrio_STP,
-		-- 7%
-		waist="Ioskeha Belt",
+		-- 8%
+		waist="Ioskeha Belt +1",
 		-- 9 STP 5%
 		legs="Wakido Haidate +3",
 		-- 3% Hasso +2
@@ -646,7 +646,7 @@ function init_gear_sets()
 		-- 1%
 		--body="Dagon Breastplate",
 		-- 4%
-		body="Ken. Samue",
+		body="Ken. Samue +1",
 		--hands=gear.Ryuo_hands_D,
 		-- 7 STP 4% Hasso +4
 		hands="Wakido Kote +3",
@@ -656,13 +656,13 @@ function init_gear_sets()
 		ring2="Regal Ring",
 		-- 10 STP
 		back=gear.Smertrio_STP_DEX,
-		-- 7%
-		--waist="Ioskeha Belt",
+		-- 8%
+		--waist="Ioskeha Belt +1",
 		waist="Windbuffet Belt +1",
 		-- 9 STP 5%
 		--legs="Wakido Haidate +3",
 		-- 9%
-		legs="Ken. Hakama",
+		legs="Ken. Hakama +1",
 		-- 5 STP 2%
 		--feet="Flam. Gambieras +1",
 		-- 3% Hasso +2
@@ -671,7 +671,7 @@ function init_gear_sets()
 	-- 42 gear STP + 10 (Dojikiri Yasutsuna) = total: 52
 	-- Must use Utu Grip
 	--
-	-- Gear Haste: 27%
+	-- Gear Haste: 28%
 	-- JA Haste (Hasso): 10 base + 6 gear = 16%
 	sets.engaged.FullAcc = set_combine(sets.engaged,{
 		-- 3 STP
@@ -692,8 +692,8 @@ function init_gear_sets()
 		back=gear.Smertrio_STP_DEX,
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
-		-- 7%
-		waist="Ioskeha Belt",
+		-- 8%
+		waist="Ioskeha Belt +1",
 		-- 9 STP 5%
 		legs="Wakido Haidate +3",
 		-- 5 STP

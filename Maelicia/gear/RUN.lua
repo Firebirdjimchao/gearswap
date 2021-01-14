@@ -485,7 +485,7 @@ function init_gear_sets()
 		head="Fu. Bandeau +3",
 		ear2="Sherida earring",
 		back=gear.aug_ogma_dex_da,
-		waist="Ioskeha belt",
+		waist="Ioskeha Belt +1",
 		legs="Meg. Chausses +2",
 	})
 		 
@@ -501,7 +501,7 @@ function init_gear_sets()
 		ring1="Niqmaddu Ring",
 		ring2="Epona's Ring",
 		back=gear.aug_ogma_dex_da,
-		waist="Ioskeha belt",
+		waist="Ioskeha Belt +1",
 		legs="Samnuha tights",
 		feet="Aya. Gambieras +2",
 	}

@@ -152,27 +152,25 @@ function init_gear_sets()
 	sets.precast.WS["Upheaval"] = set_combine(sets.precast.WS,{
 		ammo="Knobkierrie",
 		head="Agoge Mask +3",
-		neck="Fotia Gorget",
+		neck="War. Beads +2",
 		ear1="Moonshade Earring",
-		ear2="Brutal Earring",
+		ear2="Ishvara Earring",
 		body="Pumm. Lorica +3",
 		hands=gear.Odyssean_hands_WS,
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
 		back=gear.Cichol_StrWSD,
-		waist="Fotia Belt",
+		waist="Ioskeha Belt +1",
 		legs="Sulevi. Cuisses +2",
-		feet="Pumm. Calligae +3"
-	})
-	sets.precast.WS["Upheaval"].AccLow = set_combine(sets.precast.WS['Upheaval'], {
-		body="Pumm. Lorica +3",
+		--legs=gear.Odyssean_legs_WS,
 		feet="Sulev. Leggings +2",
 	})
-	sets.precast.WS["Upheaval"].AccHigh = set_combine(sets.precast.WS['Upheaval'], {
-		head="Pummeler's Mask +3",
-		body="Pumm. Lorica +3",
-		back=gear.Cichol_AccDA,
+	sets.precast.WS["Upheaval"].AccLow = set_combine(sets.precast.WS['Upheaval'], {
+		ear2="Brutal Earring",
 		legs="Pumm. Cuisses +3",
+	})
+	sets.precast.WS["Upheaval"].AccHigh = set_combine(sets.precast.WS['Upheaval'], {
+		back=gear.Cichol_AccDA,
 		feet="Pumm. Calligae +3"
 	})
 	sets.precast.WS["Upheaval"].MS = set_combine(sets.precast.WS['Upheaval'], {
@@ -475,10 +473,12 @@ function init_gear_sets()
  
 	sets.idle.Town = set_combine(sets.idle, {
 		--head=gear.Argosy_head_hq_A,
+		neck="War. Beads +2",
 		--body="Councilor's Garb",
 		body="Dagon Breastplate",
 		--body=gear.Argosy_body_hq_D,
 		--hands=gear.Argosy_hands_hq_D,
+		waist="Ioskeha Belt +1",
 		legs=gear.Argosy_legs_hq_D,
 	})
 			 
@@ -595,14 +595,15 @@ function init_gear_sets()
 	--
 	-- Use Duplus Grip
 	--
-	-- Gear: 39 STP
+	-- Gear: 36 STP
 	sets.engaged = set_combine(sets.idle,{
 		-- 3 STP
 		ammo="Ginsen",
 		-- 6 STP
 		head="Flam. Zucchetto +2",
 		-- 3 STP
-		neck="Asperity Necklace",
+		--neck="Asperity Necklace",
+		neck="War. Beads +2",
 		-- 5 STP
 		ear1="Telos Earring",
 		-- 1 STP
@@ -615,7 +616,7 @@ function init_gear_sets()
 		-- 5 STP
 		ring2="Petrov Ring",
 		back=gear.Cichol_AccDA,
-		waist="Ioskeha Belt",
+		waist="Ioskeha Belt +1",
 		legs="Pumm. Cuisses +3",
 		-- 4 STP
 		feet="Pumm. Calligae +3"
@@ -630,6 +631,7 @@ function init_gear_sets()
 		-- 6 STP
 		--body=gear.Argosy_body_hq_D,
 		body="Dagon Breastplate",
+		hands="Flam. Manopolas +2",
 		-- 5 STP
 		ring2="Flamma Ring",
 	})

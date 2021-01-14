@@ -391,7 +391,7 @@ function init_gear_sets()
 		ring2="Epona's Ring",
 		back=Andartia.DEX,
 		waist="Reiki Yotai",
-		legs="Ken. Hakama",
+		legs="Ken. Hakama +1",
 		feet="Hiza. Sune-Ate +2",
 	}
 	-- assumptions made about target
@@ -455,7 +455,7 @@ function init_gear_sets()
 	sets.engaged.MaxHaste = set_combine(sets.engaged, {
 		head=gear.Adhemar_head_B,
 		ear2="Telos Earring",
-		body="Ken. Samue",
+		body="Ken. Samue +1",
 		ring1="Gere Ring",
 		waist="Windbuffet Belt +1",
 		legs="Samnuha Tights",
@@ -467,7 +467,7 @@ function init_gear_sets()
 	sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
 		head="Mummu Bonnet +2",
 		hands="Mummu Wrists +2",
-		legs="Ken. Hakama",
+		legs="Ken. Hakama +1",
 	})
 	sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
 		ear1="Digni. Earring",
@@ -498,7 +498,7 @@ function init_gear_sets()
 	sets.engaged.Haste_35 = set_combine(sets.engaged.MaxHaste, {
 		body="Mochi. Chainmail +3",
 		waist="Reiki Yotai",
-		legs="Ken. Hakama",
+		legs="Ken. Hakama +1",
 	})
 	sets.engaged.Low.Haste_35 = set_combine(sets.engaged.Low.MaxHaste, {
 	})
@@ -530,7 +530,7 @@ function init_gear_sets()
 	-- DW needed: 21
 	sets.engaged.Haste_30 = set_combine(sets.engaged.Haste_35, {
 		ring1="Haverton Ring",
-		legs="Ken. Hakama",
+		legs="Ken. Hakama +1",
 	})
 	-- This can alternatively be used for high-def targets. 
 	sets.engaged.Low.Haste_30 = set_combine(sets.engaged.Haste_30, {
@@ -673,7 +673,7 @@ function init_gear_sets()
 		neck="Fotia Gorget",
 		ear1="Brutal Earring",
 		ear2="Moonshade Earring",
-		body="Ken. Samue",
+		body="Ken. Samue +1",
 		hands=gear.Adhemar_hands_B,
 		ring1="Gere Ring",
 		ring2="Regal Ring",
