@@ -140,7 +140,7 @@ function init_gear_sets()
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
-		head="Jhakri Coronal +2",
+		head="Viti. Chapeau +3",
 		neck="Asperity Necklace",
 		ear1="Moonshade Earring",
 		ear2="Sherida Earring",
@@ -181,7 +181,7 @@ function init_gear_sets()
 	
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
 		ammo="Regal Gem",
-		--head="Viti. Chapeau +3",
+		head="Viti. Chapeau +3",
 		neck=gear.ElementalGorget,
 		ear1="Moonshade Earring",
 		body="Viti. Tabard +3",
@@ -437,16 +437,16 @@ function init_gear_sets()
 	-- 16 merits
 	-- 36 gifts
 	-- 476 Initial
-	-- 76 gear
-	-- 552 total
+	-- 83 gear
+	-- 564 total
 	sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.MACC,{
-		main=gear.MainStaff,
-		sub="Enki Strap",
+		--main=gear.MainStaff,
+		--sub="Enki Strap",
 		range="Ullr",
 		-- effect +10
 		--ammo="Regal Gem",
-		-- 16
-		head="Befouled Crown",
+		-- 26 3s x # Merit DUR
+		head="Viti. Chapeau +3",
 		-- 10
 		--neck="Incanter's Torque",
 		neck="Dls. Torque +1",
@@ -489,8 +489,7 @@ function init_gear_sets()
 	-- For MND potency based enfeebs
 	sets.midcast.enfeebMND = set_combine(sets.midcast['Enfeebling Magic'], {
 		--ammo="Regal Gem",
-		head="Atro. Chapeau +3",
-		--neck="Imbodla Necklace",
+		head="Viti. Chapeau +3",
 		ear1="Snotra Earring",
 		neck="Dls. Torque +1",
 		waist="Luminary Sash",
@@ -498,7 +497,6 @@ function init_gear_sets()
 
 	-- For INT potency based enfeebs
 	sets.midcast.enfeebINT = set_combine(sets.midcast['Enfeebling Magic'], {
-		--neck="Imbodla Necklace",
 		neck="Dls. Torque +1",
 		back=gear.sucellos_mab,
 		legs=gear.Merlinic_legs_nuke,
@@ -719,7 +717,7 @@ function init_gear_sets()
 		main="Bolelabunga",
 		sub="Culminus",
 		ammo="Homiliary",
-		head="Viti. Chapeau +1",
+		head="Viti. Chapeau +3",
 		neck="Twilight Torque",
 		ear1="Ethereal Earring",
 		ear2="Novia Earring",
