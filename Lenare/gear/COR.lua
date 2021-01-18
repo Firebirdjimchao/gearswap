@@ -116,7 +116,7 @@ function init_gear_sets()
 		--hands="Lanun Gants +1",
 		back="Navarch's Mantle",
 		waist="Impulse Belt",
-		legs="Nahtirah Trousers"
+		legs="Nahtirah Trousers",
 		feet="Meg. Jam. +2",
 	}
 	   
