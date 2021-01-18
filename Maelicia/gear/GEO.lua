@@ -82,15 +82,15 @@ function init_gear_sets()
 	sets.precast.JA['Radial Arcana'] = {feet="Bagua Sandals +3"}
 	
 	-- Fast cast sets for spells
-	-- 79%/39% Total (80/40 cap) + 15% (if RDM sub)
+	-- 81%/40% Total (80/40 cap) + 15% (if RDM sub)
 	sets.precast.FC = {
 		-- 3%
 		--main=gear.FastcastStaff,
 		--sub="Enki Strap",
 		--ammo="Impatiens",
-		-- 10%
 		-- 6%
 		main="Gada",
+		-- 10%
 		head="Nahtirah Hat",
 		-- 4%
 		neck="Voltsurge Torque",
@@ -246,7 +246,7 @@ function init_gear_sets()
 		back=gear.Nanto_nuke,
 		waist="Luminary Sash",
 		legs="Geomancy Pants +2",
-		feet="Geo. Sandals +2"
+		feet="Geo. Sandals +3"
 	}
 	
 	sets.midcast.MAB = {
@@ -695,7 +695,7 @@ function init_gear_sets()
 		back="Moonbeam Cape",
 		waist="Fucho-no-Obi",
 		legs="Lengo Pants",
-		feet="Geo. Sandals +2"
+		feet="Geo. Sandals +3"
 	}
 	
 	sets.noprotect = {ring1="Sheltered Ring"}
@@ -795,7 +795,7 @@ function init_gear_sets()
 		sub="Ammurapi Shield",
 		--body="Councilor's Garb",
 		body="Shamash Robe",
-		feet="Geo. Sandals +2"
+		feet="Geo. Sandals +3"
 	})
 	
 	sets.idle.Weak = set_combine(sets.idle,{
@@ -872,7 +872,7 @@ function init_gear_sets()
 	sets.defense.MDT = set_combine(sets.idle.MDT,{
 	})
 
-	sets.Kiting = {feet="Geo. Sandals +2"}
+	sets.Kiting = {feet="Geo. Sandals +3"}
 	
 	sets.latent_refresh = {waist="Fucho-no-obi"}
 
