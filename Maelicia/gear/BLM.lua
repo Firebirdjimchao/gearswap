@@ -270,7 +270,7 @@ function init_gear_sets()
 		back="Taranus's Cape",
 		waist="Eschan Stone",
 		legs="Merlinic Shalwar",
-		feet="Ea Pigaches",
+		feet="Jhakri Pigaches +2",
 	}
 	
 	sets.midcast.MAB = {
@@ -857,10 +857,10 @@ function init_gear_sets()
 		feet="Wicce Sabots +1"
 	}
 	
-	-- Magic Burst Damage: 49% (40 cap) + 16% II
-	-- INT: 246
-	-- MACC: 240
-	-- MAB: 289
+	-- Magic Burst Damage: 40% (40 cap) + 16% II
+	-- INT: 251
+	-- MACC: 259
+	-- MAB: 288
 	-- MDmg: 20
 	-- Elem: 44
 	sets.magic_burst = set_combine(sets.midcast.MAB, {
@@ -892,10 +892,10 @@ function init_gear_sets()
 		-- MB 10%
 		-- INT 4
 		-- MAB 8
-		neck="Mizu. Kubikazari",
+		--neck="Mizu. Kubikazari",
 		-- MACC 10
 		-- MAB 10 
-		--neck="Sanctity Necklace",
+		neck="Sanctity Necklace",
 		-- INT 3
 		-- MACC 8
 		-- MAB 8
@@ -977,7 +977,12 @@ function init_gear_sets()
 		-- INT 24
 		-- MACC 33
 		-- MAB 42
-		feet=gear.Merlinic_feet_burst,
+		--feet=gear.Merlinic_feet_burst,
+		-- MB 7%
+		-- INT 33
+		-- MACC 42
+		-- MAB 39
+		feet="Jhakri Pigaches +2",
 		-- MB 4% II
 		-- MB 4%
 		-- MACC 38
@@ -985,10 +990,10 @@ function init_gear_sets()
 		--feet="Ea Pigaches",
 	})
 
-	-- Magic Burst Damage: 35% (40 cap) + 30% II
-	-- INT: 258
-	-- MACC: 251 + 15 * 1 (AF bonus) = 266
-	-- MAB: 217
+	-- Magic Burst Damage: 36% (40 cap) + 30% II
+	-- INT: 267
+	-- MACC: 260 + 15 * 1 (AF bonus) = 275
+	-- MAB: 214
 	-- MDmg: 64
 	-- Elem: 21
 	sets.magic_burst.Resistant = set_combine(sets.magic_burst, {
@@ -1069,7 +1074,12 @@ function init_gear_sets()
 		-- INT 24
 		-- MACC 33
 		-- MAB 42
-		feet=gear.Merlinic_feet_burst,
+		--feet=gear.Merlinic_feet_burst,
+		-- MB 7%
+		-- INT 33
+		-- MACC 42
+		-- MAB 39
+		feet="Jhakri Pigaches +2",
 		-- MB 4% II
 		-- MB 4%
 		-- MACC 38

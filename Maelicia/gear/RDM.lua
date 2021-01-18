@@ -893,7 +893,11 @@ function init_gear_sets()
 		back=gear.sucellos_mab,
 		legs=gear.Merlinic_legs_nuke,
 		-- 4% II 4% MACC 38 MAB 27
-		feet="Ea Pigaches",
+		--feet="Ea Pigaches",
+		-- INT 30 MACC 43 MAB 55
+		--feet="Vitiation Boots +3"
+		-- 7% INT 44 MACC 42 MAB 39
+		feet="Jhakri Pigaches +2",
 	})
 
 	sets.magic_burst.Resistant = set_combine(sets.magic_burst,{
