@@ -67,7 +67,7 @@ function init_gear_sets()
 	-- Precast sets to enhance JAs
 	sets.precast.JA['Mana Wall'] = {feet="Wicce Sabots +1"}
 	
-	sets.precast.JA.Manafont = {body="Arch. Coat +1"}
+	sets.precast.JA.Manafont = {body="Arch. Coat +3"}
 	
 	-- equip to maximize HP (for Tarus) and minimize MP loss before using convert
 	sets.precast.JA.Convert = {}
@@ -131,10 +131,6 @@ function init_gear_sets()
 		ear1="Malignance Earring",
 	})
 	
-	sets.precast.FC.AncientMagic = set_combine(sets.precast.FC['Elemental Magic'], {
-		hands="Arch. Gloves +1",
-	})
-	
 	sets.precast.FC.Impact = set_combine(sets.precast.FC, {
 		head=empty,
 		body="Twilight Cloak"
@@ -159,10 +155,10 @@ function init_gear_sets()
 		body="Amalric Doublet",
 		-- 44 MP
 		hands="Telchine Gloves",
-		-- 80 MP
-		ring1="Persis Ring",
 		-- 110 MP
-		ring2="Mephitas's Ring +1",
+		ring1="Mephitas's Ring +1",
+		-- 80 MP
+		ring2="Persis Ring",
 		-- 90 MP
 		back="Bane Cape",
 		-- 30 MP
@@ -205,7 +201,8 @@ function init_gear_sets()
 		ring2="Strendu Ring",
 		back="Taranus's Cape",
 		--waist="Yamabuki-no-Obi",
-		legs="Merlinic Shalwar",
+		--legs=gear.Merlinic_legs_nuke,
+		legs="Arch. Tonban +3",
 		feet=gear.Merlinic_feet_burst
 	})  
 	
@@ -285,12 +282,14 @@ function init_gear_sets()
 		ear2="Regal Earring",
 		body="Ea Houppelande",
 		--hands="Amalric Gages",
-		hands="Ea Cuffs",
+		--hands="Ea Cuffs",
+		hands="Arch. Gloves +3",
 		ring1="Freke Ring",
 		ring2="Strendu Ring",
 		back=gear.ElementalCape,
 		waist=gear.ElementalObi,
-		legs="Merlinic Shalwar",
+		--legs="Merlinic Shalwar",
+		legs="Arch. Tonban +3",
 		feet=gear.Merlinic_feet_burst,
 	}
 	
@@ -528,7 +527,7 @@ function init_gear_sets()
 	
 	sets.midcast['Dark Magic'] = set_combine(sets.midcast.MACC,{
 		neck="Erra Pendant",
-		hands="Arch. Gloves +1",
+		hands="Arch. Gloves +3",
 		ring1="Evanescence Ring",
 		--ring2="Stikini Ring",
 		ring2="Metamor. Ring +1",
@@ -601,9 +600,10 @@ function init_gear_sets()
 		--ear2="Loquac. Earring",
 		--body="Amalric Doublet",
 		body="Ea Houppelande",
-		hands="Amalric Gages",
-		ring1="Mujin Band",
-		ring2="Mephitas's Ring +1",
+		--hands="Amalric Gages",
+		hands="Arch. Gloves +3",
+		ring1="Mephitas's Ring +1",
+		ring2="Mujin Band",
 		back="Bane Cape",
 		waist=gear.ElementalObi,
 		legs=gear.Amalric_legs_D,
@@ -626,6 +626,7 @@ function init_gear_sets()
 		ring1="Metamor. Ring +1",
 		ring2="Stikini Ring",
 		back="Taranus's Cape",
+		legs="Arch. Tonban +3",
 		feet="Jhakri Pigaches +2",
 	})
 
@@ -694,7 +695,7 @@ function init_gear_sets()
 		ear1="Etiolation Earring",
 		ear2="Odnowa Earring +1",
 		body="Jhakri Robe +2",
-		hands="Amalric Gages",
+		hands="Arch. Gloves +3",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
@@ -720,10 +721,10 @@ function init_gear_sets()
 		body="Amalric Doublet",
 		-- 44 MP
 		hands="Telchine Gloves",
-		-- 80 MP
-		ring1="Persis Ring",
 		-- 110 MP
-		ring2="Mephitas's Ring +1",
+		ring1="Mephitas's Ring +1",
+		-- 80 MP
+		ring2="Persis Ring",
 		-- 90 MP
 		-- back="Bane Cape",
 		back="Tantalic Cape",
@@ -762,7 +763,7 @@ function init_gear_sets()
 	})
 	
 	-- MDT: 37% + 6% (Khonsu)
-	-- MDB: 25
+	-- MDB: 27
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.idle.MDT = set_combine(sets.idle,{
 		-- 6% DT
@@ -779,8 +780,8 @@ function init_gear_sets()
 		ear2="Odnowa Earring +1",
 		-- 6 1% DT 3%
 		body=gear.Vanya_body_B,
-		-- 3
-		hands="Amalric Gages",
+		-- 5
+		hands="Arch. Gloves +3",
 		ring1="Shadow Ring",
 		-- 10%
 		ring2="Defending Ring",
@@ -856,94 +857,224 @@ function init_gear_sets()
 		feet="Wicce Sabots +1"
 	}
 	
-	-- Magic Burst Damage: 40% (40 cap) + 28% II
-	-- INT: 215
-	-- MACC: 256
-	-- MAB: 231
-	-- MDmg: 33
-	-- Elem: 0
+	-- Magic Burst Damage: 49% (40 cap) + 16% II
+	-- INT: 246
+	-- MACC: 240
+	-- MAB: 289
+	-- MDmg: 20
+	-- Elem: 44
 	sets.magic_burst = set_combine(sets.midcast.MAB, {
-		-- INT 4 MACC 8 MAB 4
+		-- INT 4
+		-- MACC 8
+		-- MAB 4
 		ammo="Pemphredo Tathlum",
-		-- 10% INT 29 MACC 22 MAB 40
+		-- MB 10%
+		-- INT 29
+		-- MACC 22
+		-- MAB 40
 		--head=gear.Merlinic_head_burst,
-		-- 6% II 6% INT 38 MACC 40 MAB 33
+		-- MB 6% II
+		-- MB 6%
+		-- INT 38
+		-- MACC 40
+		-- MAB 33
 		--head="Ea Hat",
-		head=gear.Merlinic_head_nuke,
-		-- 10% INT 4 MAB 8
+		-- INT 29
+		-- MACC 53
+		-- MAB 47
+		--head=gear.Merlinic_head_nuke,
+		-- INT 34
+		-- MACC 43
+		-- MAB 55
+		-- Elem 21
+		-- AncientMagic Bonus
+		head="Arch. Petasos +3",
+		-- MB 10%
+		-- INT 4
+		-- MAB 8
 		neck="Mizu. Kubikazari",
-		-- MAB 10 MACC 10
+		-- MACC 10
+		-- MAB 10 
 		--neck="Sanctity Necklace",
-		-- INT 3 MACC 8 MAB 8
+		-- INT 3
+		-- MACC 8
+		-- MAB 8
 		--ear1="Barkaro. Earring",
-		-- INT 8 MACC 10 MAB 8
+		-- INT 8
+		-- MACC 10
+		-- MAB 8
 		ear1="Malignance Earring",
-		-- INT 10 MAB 7
+		-- INT 10
+		-- MAB 7
 		ear2="Regal Earring",
+		-- INT 38
+		-- MACC 38
+		-- MAB 38
+		-- Mcrit 8%
 		--body="Amalric Doublet",
-		-- 7% INT 40 MACC 17 MAB 13
+		-- MB 7%
+		-- INT 40
+		-- MACC 17
+		-- MAB 13
 		--body=gear.Merlinic_body_burst,
-		-- 8% II 8% INT 43 MACC 42 MAB 39
+		-- MB 8% II
+		-- MB 8%
+		-- INT 43
+		-- MACC 42
+		-- MAB 39
 		body="Ea Houppelande",
-		-- 5% II INT 34 MACC 15 MAB 38 Elem 13
+		-- MB 5% II
+		-- INT 34
+		-- MACC 15
+		-- MAB 38
+		-- Elem 13
 		--hands="Amalric Gages",
-		-- 5% II 5% INT 35 MACC 39 MAB 30
-		hands="Ea Cuffs",
-		-- 5% II
-		ring1="Mujin Band",
-		-- 2% MACC 6 MAB 3
+		-- MB 5% II
+		-- MB 5%
+		-- INT 35
+		-- MACC 39
+		-- MAB 30
+		--hands="Ea Cuffs",
+		-- MB 20%
+		-- INT 36
+		-- MACC 38
+		-- MAB 50
+		-- Elem 23
+		hands="Arch. Gloves +3",
+		-- INT 10
+		-- MAB 8
+		ring1="Freke Ring",
+		-- MB 5% II
+		ring2="Mujin Band",
+		-- MB 2%
+		-- MACC 6
+		-- MAB 3
 		--ring2="Jhakri Ring",
-		-- 5% Mcrit 5%
+		-- MB 5%
+		-- Mcrit 5%
 		-- ring2="Locus Ring",
-		-- MACC 2 MAB 4
-		ring2="Strendu Ring",
-		-- 5% 30 INT MACC 20 MAB 10 MDmg 20
+		-- MACC 2
+		-- MAB 4
+		--ring2="Strendu Ring",
+		-- MB 5%
+		-- INT 30
+		-- MACC 20
+		-- MAB 10
+		-- MDmg 20
 		back="Taranus's Cape",
 		waist=gear.ElementalObi,
-		-- INT 43 MACC 49 MAB 52 MDmg 13
-		legs="Merlinic Shalwar",
-		-- 6% INT 24 MACC 33 MAB 42
-		--feet=gear.Merlinic_feet_burst,
-		-- 4% II 4% MACC 38 MAB 27
-		feet="Ea Pigaches",
+		-- INT 43
+		-- MACC 49
+		-- MAB 52
+		-- MDmg 13
+		--legs="Merlinic Shalwar",
+		-- MB 3% II
+		-- INT 50
+		-- MACC 46
+		-- MAB 58
+		legs="Arch. Tonban +3",
+		-- MB 6%
+		-- INT 24
+		-- MACC 33
+		-- MAB 42
+		feet=gear.Merlinic_feet_burst,
+		-- MB 4% II
+		-- MB 4%
+		-- MACC 38
+		-- MAB 27
+		--feet="Ea Pigaches",
 	})
 
-	-- Magic Burst Damage: 35% (40 cap) + 31% II
-	-- INT: 217
-	-- MACC: 267 + 15 * 1 (AF bonus) = 282
-	-- MAB: 203
-	-- MDmg: 77
+	-- Magic Burst Damage: 35% (40 cap) + 30% II
+	-- INT: 258
+	-- MACC: 251 + 15 * 1 (AF bonus) = 266
+	-- MAB: 217
+	-- MDmg: 64
 	-- Elem: 21
 	sets.magic_burst.Resistant = set_combine(sets.magic_burst, {
-		-- INT 4 MACC 8 MAB 4
+		-- INT 4
+		-- MACC 8
+		-- MAB 4
 		ammo="Pemphredo Tathlum",
-		-- 6% II 6% INT 38 MACC 40 MAB 33
+		-- MB 6% II
+		-- MB 6%
+		-- INT 38
+		-- MACC 40
+		-- MAB 33
 		head="Ea Hat",
-		-- 10% INT 4 MAB 8
+		-- MB 10%
+		-- INT 4
+		-- MAB 8
 		neck="Mizu. Kubikazari",
-		-- INT 3 MACC 8 MAB 8
+		-- INT 3
+		-- MACC 8
+		-- MAB 8
 		--ear1="Barkaro. Earring",
-		-- INT 8 MACC 10 MAB 8
+		-- INT 8
+		-- MACC 10
+		-- MAB 8
 		ear1="Malignance Earring",
-		-- INT 10 MAB 7
+		-- INT 10
+		-- MAB 7
 		ear2="Regal Earring",
-		-- INT 39 MACC 55 MDmg 48
+		-- INT 39
+		-- MACC 55
+		-- MDmg 48
 		--body="Spaekona's Coat +3",
-		-- 8% II 8% INT 43 MACC 42 MAB 39
+		-- MB 8% II
+		-- MB 8%
+		-- INT 43
+		-- MACC 42
+		-- MAB 39
 		body="Ea Houppelande",
-		-- 8% II INT 37 MACC 52 MDmg 44 Elem 21
+		-- MB 8% II
+		-- INT 37
+		-- MACC 52
+		-- MDmg 44
+		-- Elem 21
 		hands="Spae. Gloves +3",
-		-- 5% II
-		ring1="Mujin Band",
-		-- 2% MACC 6 MAB 3
-		ring2="Jhakri Ring",
-		-- 5% 30 INT MACC 20 MAB 10 MDmg 20
+		-- INT 10
+		-- MAB 8
+		ring1="Freke Ring",
+		-- MB 5% II
+		ring2="Mujin Band",
+		-- MB 2%
+		-- MACC 6
+		-- MAB 3
+		--ring2="Jhakri Ring",
+		-- MB 5%
+		-- Mcrit 5%
+		-- ring2="Locus Ring",
+		-- MACC 2
+		-- MAB 4
+		--ring2="Strendu Ring",
+		-- MB 5%
+		-- INT 30
+		-- MACC 20
+		-- MAB 10
+		-- MDmg 20
 		back="Taranus's Cape",
 		waist=gear.ElementalObi,
-		-- INT 43 MACC 49 MAB 52 MDmg 13
-		legs="Merlinic Shalwar",
-		-- 4% II 4% MACC 38 MAB 27
-		feet="Ea Pigaches",
+		-- INT 43
+		-- MACC 49
+		-- MAB 52
+		-- MDmg 13
+		--legs="Merlinic Shalwar",
+		-- MB 3% II
+		-- INT 50
+		-- MACC 46
+		-- MAB 58
+		legs="Arch. Tonban +3",
+		-- MB 6%
+		-- INT 24
+		-- MACC 33
+		-- MAB 42
+		feet=gear.Merlinic_feet_burst,
+		-- MB 4% II
+		-- MB 4%
+		-- MACC 38
+		-- MAB 27
+		--feet="Ea Pigaches",
 	})
 
 	sets.magic_burst.Death = set_combine(sets.midcast.Death, {
