@@ -23,7 +23,7 @@ function init_gear_sets()
 
 	-- Fast cast sets for spells
 	
-	-- 78%/39% Total (80/40 cap) + 15% (if RDM sub) 
+	--80%/40% Total (80/40 cap) + 15% (if RDM sub) 
 	sets.precast.FC = {
 		-- 4%
 		main=gear.default.fastcast_staff,
@@ -31,9 +31,9 @@ function init_gear_sets()
 		-- 10%
 		head="Nahtirah Hat",
 		-- 4%
-		neck="Baetyl Pendant",
+		--neck="Baetyl Pendant",
 		-- 6%
-		--neck="Cleric's Torque",
+		neck="Cleric's Torque",
 		-- 2%
 		ear1="Loquacious Earring",
 		-- 4%
@@ -95,7 +95,7 @@ function init_gear_sets()
 	
 	-- Precast sets to enhance JAs
 	sets.precast.JA.Benediction = {
-		body="Piety Briault +1"
+		body="Piety Briault +3"
 	}
 
 	-- Waltz set (chr and vit)
@@ -171,18 +171,20 @@ function init_gear_sets()
 		main=gear.MainStaff,
 		sub="Enki Strap",
 		range="Aureole",
-		head="Inyanga Tiara +2",
+		head="Theophany Cap +2",
 		neck="Erra Pendant",
 		ear1="Hermetic Earring",
 		ear2="Malignance Earring",
-		body="Inyanga Jubbah +2",
-		hands="Inyan. Dastanas +2",
+		body="Theo. Briault +2",
+		--hands="Inyan. Dastanas +2",
+		hands="Theophany Mitts +2",
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
 		back="Aurist's Cape +1",
 		waist="Luminary Sash",
-		legs="Chironic Hose",
-		feet="Inyan. Crackows +2"
+		--legs="Chironic Hose",
+		legs="Th. Pant. +3",
+		feet="Theo. Duckbills +2",
 	}
 	
 	sets.midcast.MAB = {
@@ -219,11 +221,11 @@ function init_gear_sets()
 		ring2="Ephedra Ring",
 		back="Mending Cape",
 		waist="Luminary Sash",
-		legs="Clr. Pantaln. +2",
+		legs="Piety Pantaln. +1",
 		feet=gear.Vanya_feet_B
 	}
 
-	-- 47% + 4% II Total + 5% gift
+	-- 47% + 4% II Total + 10% gift
 	sets.midcast.Cure = set_combine(sets.midcast['Healing Magic'],{
 		-- 10% + 2% II
 		main="Queller Rod",
@@ -238,15 +240,20 @@ function init_gear_sets()
 		body="Ebers Bliaud +1",
 		-- 16%
 		hands=gear.Telchine_hands_cure,
+		-- 2% II
+		--hands="Theophany Mitts +2",
 		waist=gear.ElementalObi,
 		legs="Ebers Pant. +1",
 		-- 5%
 		feet=gear.Vanya_feet_B
 	})
 	
-	-- 34% + 4% II Total + 5% gift + 18% Afflatus Solace (2 x 9 JP)
+	-- 31% + 4% II Total + 10% gift + 28% Afflatus Solace (2 x 14 JP)
 	sets.midcast.CureSolace = set_combine(sets.midcast.Cure,{
+		-- 14% Afflatus Solace
+		body="Ebers Bliaud +1",
 		hands="Inyan. Dastanas +2",
+		-- 10% Afflatus Solace
 		back="Alaunus's Cape"
 	})
 
@@ -266,7 +273,7 @@ function init_gear_sets()
 		ring1="Ephedra Ring",
 		ring2="Ephedra Ring",
 		back="Alaunus's Cape",
-		legs="Theo. Pant. +2",
+		legs="Th. Pant. +3",
 		feet="Gende. Galoshes"
 	})
 	sets.midcast.CursnaSelf = set_combine(sets.midcast.Cursna,{
@@ -292,7 +299,7 @@ function init_gear_sets()
 		ring2="Stikini Ring",
 		waist="Embla Sash",
 		back="Fi Follet Cape +1",
-		legs="Clr. Pantaln. +2",
+		legs="Piety Pantaln. +1",
 		feet="Ebers Duckbills +1"
 	}
 
@@ -312,7 +319,7 @@ function init_gear_sets()
 		head="Ebers Cap +1",
 		body="Ebers Bliaud +1",
 		hands="Ebers Mitts +1",
-		legs="Clr. Pantaln. +2",
+		legs="Piety Pantaln. +1",
 		feet="Ebers Duckbills +1"
 	})
 				
@@ -320,9 +327,9 @@ function init_gear_sets()
 		main="Bolelabunga",
 		sub="Culminus",
 		head="Inyanga Tiara +2",
-		body="Piety Briault +1",
+		body="Piety Briault +3",
 		hands="Ebers Mitts +1",
-		legs="Theo. Pant. +2"
+		legs="Th. Pant. +3"
 	})
 
 	sets.midcast.RefreshSelf = set_combine(sets.midcast['Enhancing Magic'],{
@@ -331,11 +338,9 @@ function init_gear_sets()
 	})
 
 	sets.midcast.Protectra = set_combine(sets.midcast['Enhancing Magic'],{
-		feet="Piety Duckbills"
 	})
 
 	sets.midcast.Shellra = set_combine(sets.midcast['Enhancing Magic'],{
-		legs="Clr. Pantaln. +2"
 	})
 	
 	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'],{
@@ -349,9 +354,16 @@ function init_gear_sets()
 	sets.midcast['Divine Magic'] = set_combine(sets.midcast.MACC,{
 		neck="Incanter's Torque",
 		--neck="Imbodla Necklace",
-		hands="Clr. Mitts +2",
+		hands="Piety Mitts",
 		ring2="Weather. Ring",
-		legs="Chironic Hose",
+	})
+
+	sets.midcast['Banish*'] = set_combine(sets.midcast.MAB,{
+		ring2="Weather. Ring",
+	})
+
+	sets.midcast['Holy*'] = set_combine(sets.midcast.MAB,{
+		ring2="Weather. Ring",
 	})
 
 	sets.midcast['Dark Magic'] = set_combine(sets.midcast.MACC,{
@@ -393,7 +405,7 @@ function init_gear_sets()
 		neck="Twilight Torque",
 		ear1="Ethereal Earring",
 		ear2="Etiolation Earring",
-		body="Witching Robe",
+		body="Piety Briault +3",
 		hands="Inyan. Dastanas +2",
 		ring1=gear.DarkRing.physical,
 		ring2="Defending Ring",
