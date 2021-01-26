@@ -480,7 +480,8 @@ function init_gear_sets()
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 
 	sets.idle = {
-		head="Meghanada Visor +2",
+		--head="Meghanada Visor +2",
+		head="Turms Cap",
 		neck="Loricate Torque +1",
 		ear1="Odnowa Earring +1",
 		ear2="Etiolation Earring",
@@ -504,6 +505,7 @@ function init_gear_sets()
 	})
 	
 	sets.idle.Regen = set_combine(sets.idle,{
+		head="Turms Cap",
 		neck="Bathy Choker +1",
 		ring1="Sheltered Ring",
 	})
