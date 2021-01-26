@@ -151,7 +151,7 @@ function init_gear_sets()
 		ring2="Cacoethic Ring",
 		back="Atheling Mantle",
 		waist="Windbuffet Belt +1",
-		legs="Atrophy Tights +1",
+		legs="Atrophy Tights +2",
 		feet="Jhakri Pigaches +2"
 	}
 	sets.precast.WS.MAB = set_combine(sets.precast.WS,{
@@ -258,7 +258,7 @@ function init_gear_sets()
 		feet=gear.Vanya_feet_B
 	}
 	
-	-- 53% Total
+	-- 55% Total
 	sets.midcast.Cure = set_combine(sets.midcast['Healing Magic'],{
 		-- 22%
 		main="Tamaxchi",
@@ -277,8 +277,8 @@ function init_gear_sets()
 		hands=gear.Telchine_hands_cure,
 		back=gear.sucellos_mnd,
 		waist="Luminary Sash",
-		-- 10%
-		legs="Atrophy Tights +1",
+		-- 12%
+		legs="Atrophy Tights +2",
 		-- 5%
 		feet=gear.Vanya_feet_B
 	});
@@ -300,7 +300,7 @@ function init_gear_sets()
 		waist="Gishdubar Sash",
 	})
 	
-	-- 558 total, 99 Gear + 456 (420 base + 36 Gift), 113 DUR (93 + 20 JP) + 5 DUR (Grioavolr aug)
+	-- 562 total, 103 Gear + 456 (420 base + 36 Gift), 113 DUR (93 + 20 JP) + 5 DUR (Grioavolr aug)
 	sets.midcast['Enhancing Magic'] = {
 		-- 5 DUR
 		main="Grioavolr",
@@ -326,10 +326,10 @@ function init_gear_sets()
 		waist="Embla Sash",
 		-- 20 DUR
 		back=gear.sucellos_mnd,
-		-- 17
-		--legs="Atrophy Tights +1",
+		-- 21
+		legs="Atrophy Tights +2",
 		-- 18
-		legs="Carmine Cuisses +1",
+		--legs="Carmine Cuisses +1",
 		-- 25 30 DUR
 		feet="Leth. Houseaux +1"
 	}
