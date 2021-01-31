@@ -958,12 +958,13 @@ function init_gear_sets()
 		ear2="Regal Earring",
 		hands="Aya. Manopolas +2",
 		ring1="Ilabrat Ring",
-		ring2="Jhakri Ring",
 		back="Ghostfyre Cape",
+		legs="Jhakri Slops +2",
 	})
 	sets.engaged.enspellDW = set_combine(sets.engaged.enspell,{
 		ear1="Suppanomimi",
-		ring1="Haverton Ring",
+		ring1="Freke Ring",
+		ring2="Haverton Ring",
 		waist="Reiki Yotai",
 	})
 	sets.engaged.enspell.Acc = set_combine(sets.engaged.Acc, sets.engaged.enspell,{
