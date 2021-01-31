@@ -170,7 +170,10 @@ function init_gear_sets()
 		legs="Pumm. Cuisses +3",
 	})
 	sets.precast.WS["Upheaval"].AccHigh = set_combine(sets.precast.WS['Upheaval'], {
+		ear1="Telos Earring",
+		ear2="Moonshade Earring",
 		back=gear.Cichol_AccDA,
+		legs="Pumm. Cuisses +3",
 		feet="Pumm. Calligae +3"
 	})
 	sets.precast.WS["Upheaval"].MS = set_combine(sets.precast.WS['Upheaval'], {
@@ -459,7 +462,7 @@ function init_gear_sets()
 		neck="Loricate Torque +1",
 		ear1="Odnowa Earring +1",
 		ear2="Etiolation Earring",
-		body="Tartarus Platemail",
+		body="Hjarrandi Breast.",
 		hands="Volte Moufles",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
@@ -496,19 +499,19 @@ function init_gear_sets()
 	})
 	
 	sets.idle.CP = set_combine(sets.idle,{
-		back="Mecisto. Mantle"
+		--back="Mecisto. Mantle"
 	})
 	
 	sets.idle.CPPDT = set_combine(sets.defense.PDT,{
-		back="Mecisto. Mantle"
+		--back="Mecisto. Mantle"
 	})
 	
 	sets.idle.CPMDT = set_combine(sets.defense.MDT,{
-		back="Mecisto. Mantle"
+		--back="Mecisto. Mantle"
 	})
 			 
 	-- Defense sets
-	-- Total: 39% DT 22% PDT 20% MDT MDB 27
+	-- Total: 41% DT 22% PDT 20% MDT MDB 31
 	-- <36%: use Shadow Mantle
 	sets.defense.PDT = set_combine(sets.idle,{
 		-- 3% DT
@@ -521,8 +524,8 @@ function init_gear_sets()
 		ear1="Odnowa Earring +1",
 		-- 3% MDT
 		ear2="Etiolation Earring",
-		-- 10% DT 6 MDB
-		body="Tartarus Platemail",
+		-- 12% DT 10 MDB
+		body="Hjarrandi Breast.",
 		-- 6% PDT 2% MDT 4 MDB
 		hands="Volte Moufles",
 		-- 5% DT
@@ -543,7 +546,7 @@ function init_gear_sets()
 	})
 	sets.defense.Reraise = set_combine(sets.defense.PDT, {head="Twilight Helm",body="Twilight Mail"})
 	
-	-- Total: 39% DT 22% PDT 20% MDT MDB 27
+	-- Total: 41% DT 22% PDT 20% MDT MDB 31
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.defense.MDT = set_combine(sets.idle,{
 		-- 3% DT
@@ -556,8 +559,8 @@ function init_gear_sets()
 		ear1="Odnowa Earring +1",
 		-- 3% MDT
 		ear2="Etiolation Earring",
-		-- 10% DT 6 MDB
-		body="Tartarus Platemail",
+		-- 12% DT 10 MDB
+		body="Hjarrandi Breast.",
 		-- 6% PDT 2% MDT 4 MDB
 		hands="Volte Moufles",
 		-- 5% DT
@@ -624,21 +627,26 @@ function init_gear_sets()
 	
 	-- Use Utu Grip
 	--
-	-- Gear: 40 STP
+	-- Gear: 32 STP
 	sets.engaged.AccLow = set_combine(sets.engaged, {
 		-- 4 STP
-		neck="Lissome Necklace",
+		--neck="Lissome Necklace",
 		-- 6 STP
 		--body=gear.Argosy_body_hq_D,
 		body="Dagon Breastplate",
+		-- 6 STP
 		hands="Flam. Manopolas +2",
 		-- 5 STP
 		ring2="Flamma Ring",
 	})
 	-- Use Utu Grip
 	sets.engaged.AccHigh = set_combine(sets.engaged.AccLow, {
-		head="Pummeler's Mask +3",
-		body="Pumm. Lorica +3",
+		--head="Pummeler's Mask +3",
+		--body="Pumm. Lorica +3",
+		ear1="Telos Earring",
+		ear2="Digni. Earring",
+		ring1="Flamma Ring",
+		ring2="Regal Ring",
 	})
 
 	-- Haste Mode used when Dual Wielding. See job_buff_change() below for specific conditions
@@ -710,19 +718,34 @@ function init_gear_sets()
 		waist="Reiki Yotai",
 	})
 
-	-- 41% DT 55% PDT 47% MDT 17 MDB (53% DT if using Khonsu)
+	-- 37% DT 23% PDT 15% MDT 24 MDB (43% DT if using Khonsu)
 	sets.engaged.PDT = set_combine(sets.engaged, {
-		-- 6& DT
+		-- 6% DT
 		--sub="Khonsu",
 		-- 2% DT
 		ammo="Staunch Tathlum +1",
 		-- 3 MDB
-		head="Flam. Zucchetto +2",
+		-- 53 MEAV
+		--head="Flam. Zucchetto +2",
+		-- 3% PDT
+		-- 7% MDT
+		-- 6 MDB
+		-- 99 MEAV
+		head="Volte Salade",
+		-- 10% DT
+		-- 8 MDB
+		-- 53 MEAV
+		--head="Hjarrandi Helm",
 		-- 6% DT
 		neck="Loricate Torque +1",
-		-- 10% DT 6 MDB
-		body="Tartarus Platemail",
-		-- 6% PDT 2% MDT 4 MDB
+		-- 12% DT 
+		-- 10 MDB
+		-- 69 MEAV
+		body="Hjarrandi Breast.",
+		-- 6% PDT 
+		-- 2% MDT 
+		-- 4 MDB
+		-- 91 MEAV
 		hands="Volte Moufles",
 		-- 3% DT
 		--ring1="Sulevia's Ring",
@@ -731,15 +754,30 @@ function init_gear_sets()
 		ring2="Defending Ring",
 		-- 10% PDT
 		back=gear.Cichol_AccDA,
-		-- 7% DT 2 MDB
+		-- 7% DT
+		-- 2 MDB
+		-- 75 MEAV
 		legs="Sulevi. Cuisses +2",
+		-- 7% PDT
+		-- 3% MDT
+		-- 8 MDB
+		-- 137 MEAV
+		--legs="Volte Brayettes",
 		-- 4 MDB
 		--feet="Pumm. Calligae +3",
-		-- 4% PDT 6% MDT 6 MDB
+		-- 4% PDT 
+		-- 6% MDT 
+		-- 6 MDB
+		-- 137 MEAV
 		feet="Volte Sollerets",
 	})
 	sets.engaged.AccLow.PDT = set_combine(sets.engaged.PDT, {})
 	sets.engaged.AccHigh.PDT = set_combine(sets.engaged.AccLow.PDT, {})
+
+	sets.engaged.MDT = set_combine(sets.engaged.PDT, {
+	})
+	sets.engaged.AccLow.MDT = set_combine(sets.engaged.MDT, {})
+	sets.engaged.AccHigh.MDT = set_combine(sets.engaged.AccLow.MDT, {})
 			 
 	sets.engaged.Conqueror = {}
 	sets.engaged.Conqueror.AccLow = set_combine(sets.engaged.Conqueror, {})
