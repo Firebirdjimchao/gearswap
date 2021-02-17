@@ -484,7 +484,8 @@ function init_gear_sets()
 	
 	-- 100% AGI
 	sets.precast.WS['Trueflight'] = set_combine(sets.precast.WS.MABRA, {
-		neck="Sanctity Necklace",
+		--neck="Sanctity Necklace",
+		neck="Scout's Gorget +2",
 		ear1="Moonshade Earring",
 		ring1="Ilabrat Ring",
 		ring2="Dingir Ring",
