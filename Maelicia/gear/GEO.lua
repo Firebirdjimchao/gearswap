@@ -18,6 +18,7 @@ function user_setup()
 	state.WeaponskillMode:options('Normal', 'Acc')
 
 	state.MagicBurst = M(false, 'Magic Burst')
+	state.WeaponLock = M(false, 'Weapon Lock')
 
 	LowTierNukes = S{'Stone', 'Water', 'Aero', 'Fire', 'Blizzard', 'Thunder',
 		'Stone II', 'Water II', 'Aero II', 'Fire II', 'Blizzard II', 'Thunder II',
@@ -48,6 +49,7 @@ function user_setup()
 	
 	send_command('bind @` gs c cycle MagicBurst')
 	send_command('bind ^` input /ma Stun <stnpc>; input /echo ------ Stun <t> -----')
+	send_command('bind !` gs c toggle WeaponLock; input /echo --- Weapons Lock ---')
 
 	-- Default macro set/book
 	set_macro_page(1, 13)
@@ -59,6 +61,7 @@ end
 function user_unload()
   send_command('unbind @`')
   send_command('unbind ^`')
+  send_command('unbind !`')
 end
 
 -- Define sets and vars used by this job file.
@@ -952,12 +955,10 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_state_change(stateField, newValue, oldValue)
-	if stateField == 'Offense Mode' then
-		if (newValue == 'Normal' or newValue == 'Acc') then
-			disable('main','sub','range')
-		else
-			enable('main','sub','range')
-		end
+	if state.WeaponLock.value == true then
+		disable('main','sub','range','ammo')
+	else
+		enable('main','sub','range','ammo')
 	end
 end
 
