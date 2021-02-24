@@ -7,6 +7,7 @@ function user_setup()
 	state.OffenseMode:options('None', 'Normal')
 	state.CastingMode:options('Normal', 'Resistant')
 	state.IdleMode:options('CP', 'Normal', 'PDT', 'MDT', 'MDTOnca', 'CPPDT', 'CPMDT')
+	gear.default.obi_waist = "Sacro Cord"
 
 	-- Default macro set/book
 	set_macro_page(1, 2)

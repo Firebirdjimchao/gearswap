@@ -21,6 +21,7 @@ function user_setup()
 
 	--gear.MainStaff = {name="Lathi"}
 	gear.MainStaff = {name="Grioavolr"}
+	gear.default.obi_waist = "Sacro Cord"
 	gear.default.obi_back = "Taranus's Cape"
 	
 	-------------------------------------------------

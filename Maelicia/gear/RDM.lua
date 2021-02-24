@@ -9,6 +9,7 @@ function user_setup()
 	state.MagicBurst = M(false, 'Magic Burst')
 	state.WeaponLock = M(false, 'Weapon Lock')
 
+	gear.default.obi_waist = "Sacro Cord"
 	gear.sucellos_mab = { name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
 	gear.sucellos_mnd = { name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10',}}
 	gear.default.obi_back = gear.sucellos_mab
