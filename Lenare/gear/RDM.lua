@@ -7,6 +7,7 @@ function user_setup()
 	state.IdleMode:options('Normal', 'PDT', 'MDT')
 
 	state.MagicBurst = M(false, 'Magic Burst')
+	state.WeaponLock = M(false, 'Weapon Lock')
 
 	gear.sucellos_mab = { name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
 	gear.sucellos_mnd = { name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10',}}
@@ -40,6 +41,7 @@ function user_setup()
 
 	-- Additional local binds
 	send_command('bind @` gs c cycle MagicBurst')
+	send_command('bind !` gs c toggle WeaponLock; input /echo --- Weapons Lock ---')
 
 	send_command('alias rdmfulldebuff input /ma "Inundation" <t>;wait 5;input /ma "Distract III" <t>;wait 5;input /ma "Frazzle III" <t>;wait 5;input /ma "Dia III" <t>;wait 5;input /ma "Paralyze II" <t>;wait 5;input /ma "Slow II" <t>;wait 5;input /ma "Blind II" <t>;wait 5;input /ma "Poison II" <t>;wait 5;input /ma "Addle II" <t>;')
 	send_command('alias rdmdddebuff input /ma "Inundation" <t>;wait 5;input /ma "Distract III" <t>;wait 5;input /ma "Dia III" <t>;wait 5;input /ma "Poison II" <t>;')
@@ -53,6 +55,7 @@ end
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
 	send_command('unbind @`')
+	send_command('unbind !`')
 end
 
 -- Define sets and vars used by this job file.
@@ -729,7 +732,8 @@ function init_gear_sets()
 		waist="Fucho-no-Obi",
 		--legs=gear.Merlinic_legs_idle,
 		legs="Carmine Cuisses +1",
-		feet=gear.Vanya_feet_B
+		--feet=gear.Vanya_feet_B
+		feet="Malignance Boots",
 	}
 	
 	sets.idle.Town = set_combine(sets.idle,{
@@ -742,7 +746,7 @@ function init_gear_sets()
 	sets.idle.Weak = set_combine(sets.idle,{
 	})
 	
-	-- Total: 49% + 20% (PDT Staff)
+	-- Total: 50% + 20% (PDT Staff)
 	-- <36%: use Shadow Mantle
 	sets.idle.PDT = set_combine(sets.idle,{
 		--main=gear.Staff.PDT,
@@ -766,10 +770,12 @@ function init_gear_sets()
 		-- 6%
 		legs="Aya. Cosciales +2",
 		-- 3%
-		feet="Aya. Gambieras +2",
+		--feet="Aya. Gambieras +2",
+		-- 4%
+		feet="Malignance Boots",
 	})
 	
-	-- MDT: 48%
+	-- MDT: 49%
 	-- MDB: 27
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.idle.MDT = set_combine(sets.idle,{
@@ -796,7 +802,9 @@ function init_gear_sets()
 		-- 5 6%
 		legs="Aya. Cosciales +2",
 		-- 5 3%
-		feet="Aya. Gambieras +2",
+		--feet="Aya. Gambieras +2",
+		-- 5 4%
+		feet="Malignance Boots",
 	})
 	
 	
@@ -846,7 +854,7 @@ function init_gear_sets()
 	-- EG: sets.engaged.Dagger.Accuracy.Evasion
 	
 	-- Normal melee group
-	-- Haste: 27%
+	-- Haste: 28%
 	sets.engaged = {
 		ammo="Amar Cluster",
 		-- 8%
@@ -865,7 +873,9 @@ function init_gear_sets()
 		-- 9%
 		legs="Aya. Cosciales +2",
 		-- 3%
-		feet="Aya. Gambieras +2"
+		--feet="Aya. Gambieras +2",
+		-- 4%
+		feet="Malignance Boots",
 	}
 	
 	-- Haste: 27%
@@ -889,6 +899,7 @@ function init_gear_sets()
 		--ring1="Ilabrat Ring",
 		ring2="Jhakri Ring",
 		back="Ghostfyre Cape",
+		legs="Jhakri Slops +2",
 	})
 	sets.engaged.enspellDW = set_combine(sets.engaged.enspell,{
 		--ear1="Suppanomimi",
@@ -917,6 +928,14 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
+
+function job_state_change(stateField, newValue, oldValue)
+	if state.WeaponLock.value == true then
+		disable('main','sub','range','ammo')
+	else
+		enable('main','sub','range','ammo')
+	end
+end
 
 -- Run after the default midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.

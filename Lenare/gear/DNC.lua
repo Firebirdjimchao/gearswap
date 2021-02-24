@@ -341,7 +341,7 @@ function init_gear_sets()
 		ear1="Novia Earring",
 		ear2="Etiolation Earring",
 		body="Meg. Cuirie +2",
-		hands="Meg. Gloves +2",
+		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		--back="Moonbeam Cape",
@@ -371,7 +371,7 @@ function init_gear_sets()
 		head="Meghanada Visor +2",
 		neck="Twilight Torque",
 		body="Meg. Cuirie +2",
-		hands="Meg. Gloves +2",
+		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
@@ -385,7 +385,7 @@ function init_gear_sets()
 		ear2="Etiolation Earring",
 		neck="Twilight Torque",
 		body="Meg. Cuirie +2",
-		hands="Meg. Gloves +2",
+		hands="Malignance Gloves",
 		ring1="Shadow Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
@@ -428,7 +428,9 @@ function init_gear_sets()
 	})
 	sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc,{
 		ear2="Zennaroi Earring",
+		hands="Malignance Gloves",
 		waist="Eschan Stone",
+		feet="Malignance Boots",
 	})
 	sets.engaged.FullAcc = set_combine(sets.engaged.HighAcc,{
 	})
@@ -450,12 +452,12 @@ function init_gear_sets()
 		head="Meghanada Visor +2",
 		neck="Twilight Torque",
 		body="Meg. Cuirie +2",
-		hands="Meg. Gloves +2",
+		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
 		legs="Mummu Kecks +2",
-		feet="Meg. Jam. +2"
+		feet="Malignance Boots",
 	})
 	sets.engaged.MidAcc.PDT = set_combine(sets.engaged.PDT,{
 	})
@@ -469,12 +471,12 @@ function init_gear_sets()
 		neck="Twilight Torque",
 		ear2="Etiolation Earring",
 		body="Meg. Cuirie +2",
-		hands="Meg. Gloves +2",
+		hands="Malignance Gloves",
 		ring1="Shadow Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
 		legs="Mummu Kecks +2",
-		feet="Meg. Jam. +2"
+		feet="Malignance Boots",
 	})
 	sets.engaged.MidAcc.MDT = set_combine(sets.engaged.MDT,{
 	})
