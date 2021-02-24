@@ -112,13 +112,14 @@ function init_gear_sets()
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
 		ammo="Knobkierrie",
-		head=gear.Rao_head_hq_B,
+		--head=gear.Rao_head_hq_B,
+		head=gear.Valorous_head_Magic,
 		neck="Fotia Gorget",
 		ear1="Ishvara Earring",
 		ear2="Moonshade Earring",
 		body="Sakonji Domaru +3",
 		--hands=gear.Valorous_hand_TP,
-		hands="Wakido Kote +3",
+		hands=gear.Valorous_hand_WS,
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
 		back=gear.Smertrio_WS,
@@ -170,7 +171,7 @@ function init_gear_sets()
 	-- 80% STR (1-hit)
 	sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {
 		body="Sakonji Domaru +3",
-		hands="Wakido Kote +3",
+		hands=gear.Valorous_hand_WS,
 		waist="Metalsinger Belt"
 	})
 	sets.precast.WS['Tachi: Fudo'].MidAcc = set_combine(sets.precast.WS['Tachi: Fudo'], {

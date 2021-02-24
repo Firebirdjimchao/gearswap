@@ -484,7 +484,8 @@ function init_gear_sets()
 	
 	-- 100% AGI
 	sets.precast.WS['Trueflight'] = set_combine(sets.precast.WS.MABRA, {
-		neck="Sanctity Necklace",
+		--neck="Sanctity Necklace",
+		neck="Scout's Gorget +2",
 		ear1="Moonshade Earring",
 		ring1="Ilabrat Ring",
 		ring2="Dingir Ring",
@@ -685,7 +686,8 @@ function init_gear_sets()
 		-- 12 STP
 		hands="Malignance Gloves",
 		ring2="Regal Ring",
-		legs="Arc. Braccae +3",
+		legs=gear.Herculean_legs_RA,
+		--legs="Arc. Braccae +3",
 		-- 9 STP
 		feet="Malignance Boots",
 	})
@@ -693,7 +695,9 @@ function init_gear_sets()
 	-- 53 STP + 4 STP (Perun +1) + 3 STP (Nusku Shield)
 	-- Gear Total: 60 STP
 	sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA,{
-		body="Amini Caban +1",
+		--body="Amini Caban +1",
+		-- 7 STP
+		body="Nisroch Jerkin",
 		-- 12 STP
 		hands="Malignance Gloves",
 		ring2="Regal Ring",

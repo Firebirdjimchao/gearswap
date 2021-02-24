@@ -7,6 +7,7 @@ function user_setup()
 	state.IdleMode:options('Normal', 'PDT', 'MDT')
 
 	state.MagicBurst = M(false, 'Magic Burst')
+	state.WeaponLock = M(false, 'Weapon Lock')
 
 	gear.sucellos_mab = { name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
 	gear.sucellos_mnd = { name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10',}}
@@ -56,6 +57,7 @@ function user_setup()
 
 	-- Additional local binds
 	send_command('bind @` gs c cycle MagicBurst')
+	send_command('bind !` gs c toggle WeaponLock; input /echo --- Weapons Lock ---')
 
 	send_command('alias rdmfulldebuff input /ma "Inundation" <t>;wait 5;input /ma "Distract II" <t>;wait 5;input /ma "Frazzle II" <t>;wait 5;input /ma "Dia III" <t>;wait 5;input /ma "Paralyze II" <t>;wait 5;input /ma "Slow II" <t>;wait 5;input /ma "Blind II" <t>;wait 5;input /ma "Poison II" <t>;wait 5;input /ma "Addle" <t>;')
 	send_command('alias rdmdddebuff input /ma "Inundation" <t>;wait 5;input /ma "Distract II" <t>;wait 5;input /ma "Dia III" <t>;wait 5;input /ma "Poison II" <t>;')
@@ -69,6 +71,7 @@ end
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
 	send_command('unbind @`')
+	send_command('unbind !`')
 end
 
 -- Define sets and vars used by this job file.
@@ -990,6 +993,14 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
+
+function job_state_change(stateField, newValue, oldValue)
+	if state.WeaponLock.value == true then
+		disable('main','sub','range','ammo')
+	else
+		enable('main','sub','range','ammo')
+	end
+end
 
 -- Run after the default midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.

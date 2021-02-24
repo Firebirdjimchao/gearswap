@@ -57,7 +57,7 @@ function init_gear_sets()
 	}
 	-- Sets to apply to any actions of spell.type
 	sets.precast.Waltz = {
-		body="Dagon Breastplate",
+		body="Pumm. Lorica +3",
 		back="Tantalic Cape",
 		waist="Flume Belt +1"
 	}
@@ -104,7 +104,7 @@ function init_gear_sets()
 		neck="Fotia Gorget",
 		ear1="Moonshade Earring",
 		ear2="Brutal Earring",
-		body="Dagon Breastplate",
+		body="Pumm. Lorica +3",
 		hands=gear.Argosy_hands_hq_D,
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
@@ -143,7 +143,8 @@ function init_gear_sets()
 		back="Toro Cape",
 		legs="Limbo Trousers",
 		--feet="Founder's Greaves"
-		feet=gear.Valorous_feet_WS,
+		--feet=gear.Valorous_feet_WS,
+		feet="Sulev. Leggings +2",
 	})
 			 
 	----- Specific weaponskill sets. -----
@@ -154,9 +155,10 @@ function init_gear_sets()
 		head="Agoge Mask +3",
 		neck="War. Beads +2",
 		ear1="Moonshade Earring",
-		ear2="Ishvara Earring",
+		--ear2="Ishvara Earring",
+		ear2="Brutal Earring",
 		body="Pumm. Lorica +3",
-		hands=gear.Odyssean_hands_WS,
+		hands="Tatena. Gote +1",
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
 		back=gear.Cichol_StrWSD,
@@ -166,7 +168,6 @@ function init_gear_sets()
 		feet="Sulev. Leggings +2",
 	})
 	sets.precast.WS["Upheaval"].AccLow = set_combine(sets.precast.WS['Upheaval'], {
-		ear2="Brutal Earring",
 		legs="Pumm. Cuisses +3",
 	})
 	sets.precast.WS["Upheaval"].AccHigh = set_combine(sets.precast.WS['Upheaval'], {
@@ -185,18 +186,20 @@ function init_gear_sets()
 	sets.precast.WS["Ukko's Fury"] = set_combine(sets.precast.WS,{
 		ammo="Yetshila",
 		head="Flam. Zucchetto +2",
-		neck="Fotia Gorget",
+		neck="War. Beads +2",
 		ear1="Moonshade Earring",
 		ear2="Brutal Earring",
-		body="Dagon Breastplate",
+		--body="Dagon Breastplate",
+		body="Tatena. Harama. +1",
 		hands=gear.Argosy_hands_hq_D,
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
 		back=gear.Cichol_StrWSD,
-		waist="Fotia Belt",
+		waist="Ioskeha Belt +1",
 		legs=gear.Argosy_legs_hq_D,
 		--feet="Pumm. Calligae +3",
-		feet="Sulev. Leggings +2",
+		--feet="Sulev. Leggings +2",
+		feet="Boii Calligae +1",
 	})
 	sets.precast.WS["Ukko's Fury"].AccLow = set_combine(sets.precast.WS["Ukko's Fury"], {
 		head="Flam. Zucchetto +2",
@@ -379,16 +382,16 @@ function init_gear_sets()
 	-- 40% STR / 40% MND
 	sets.precast.WS['Cloudsplitter'] = set_combine(sets.precast.WS.MAB, {
 		ammo="Knobkierrie",
-		head="Jumalik Helm",
+		--head="Jumalik Helm",
+		head="Agoge Mask +3",
 		ear2="Ishvara Earring",
-		body="Dagon Breastplate",
+		--body="Dagon Breastplate",
 		hands=gear.Odyssean_hands_WS,
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
 		back=gear.Cichol_StrWSD,
 		legs="Limbo Trousers",
-		--feet="Founder's Greaves"
-		feet=gear.Valorous_feet_WS,
+		feet="Sulev. Leggings +2",
 	})
 	sets.precast.WS['Cloudsplitter'].AccLow = set_combine(sets.precast.WS['Cloudsplitter'], {
 	})
@@ -431,6 +434,80 @@ function init_gear_sets()
 	sets.precast.WS['Cataclysm'].AccHigh = set_combine(sets.precast.WS['Cataclysm'], {
 	})
 	sets.precast.WS['Cataclysm'].MS = set_combine(sets.precast.WS['Cataclysm'], {
+	})
+
+	sets.precast.WS["Raging Fists"] = set_combine(sets.precast.WS,{
+		ammo="Seeth. Bomblet +1",
+		head="Flam. Zucchetto +2",
+		neck="Fotia Gorget",
+		ear1="Ishvara Earring",
+		ear2="Brutal Earring",
+		body="Tatena. Harama. +1",
+		hands="Tatena. Gote +1",
+		ring1="Niqmaddu Ring",
+		ring2="Regal Ring",
+		back=gear.Cichol_StrWSD,
+		waist="Fotia Belt",
+		feet="Pumm. Calligae +3",
+		feet="Pumm. Calligae +3",
+	})
+	sets.precast.WS['Raging Fists'].AccLow = set_combine(sets.precast.WS['Raging Fists'], {
+	})
+	sets.precast.WS['Raging Fists'].AccHigh = set_combine(sets.precast.WS['Raging Fists'], {
+	})
+	sets.precast.WS['Raging Fists'].MS = set_combine(sets.precast.WS['Raging Fists'], {
+	})
+
+	-- 50% STR, Acc varies with TP
+	sets.precast.WS["Asuran Fists"] = set_combine(sets.precast.WS,{
+	})
+	sets.precast.WS['Asuran Fists'].AccLow = set_combine(sets.precast.WS['Asuran Fists'], {
+	})
+	sets.precast.WS['Asuran Fists'].AccHigh = set_combine(sets.precast.WS['Asuran Fists'], {
+	})
+	sets.precast.WS['Asuran Fists'].MS = set_combine(sets.precast.WS['Asuran Fists'], {
+	})
+
+	-- 30% STR / 30% MND, Crit varies with TP
+	sets.precast.WS["Hexa Strike"] = set_combine(sets.precast.WS,{
+		ammo="Knobkierrie",
+		head="Flam. Zucchetto +2",
+		neck="Fotia Gorget",
+		ear1="Ishvara Earring",
+		ear2="Brutal Earring",
+		body=gear.Argosy_body_hq_D,
+		hands=gear.Argosy_hands_hq_D,
+		ring1="Niqmaddu Ring",
+		ring2="Regal Ring",
+		back=gear.Cichol_StrWSD,
+		waist="Fotia Belt",
+		legs=gear.Argosy_legs_hq_D,
+		feet="Pumm. Calligae +3",
+		--feet="Flam. Gambieras +2",
+	})
+	sets.precast.WS['Hexa Strike'].AccLow = set_combine(sets.precast.WS['Hexa Strike'], {
+	})
+	sets.precast.WS['Hexa Strike'].AccHigh = set_combine(sets.precast.WS['Hexa Strike'], {
+		head="Pummeler's Mask +3",
+		body="Pumm. Lorica +3",
+		back=gear.Cichol_AccDA,
+		legs="Pumm. Cuisses +3",
+	})
+	sets.precast.WS['Hexa Strike'].MS = set_combine(sets.precast.WS['Hexa Strike'], {
+		ammo="Yetshila",
+		head="Agoge Mask +3",
+		body=gear.Argosy_body_hq_D,
+		feet="Boii Calligae +1",
+	})
+
+	-- 100% STR, Acc varies with TP
+	sets.precast.WS["True Strike"] = set_combine(sets.precast.WS,{
+	})
+	sets.precast.WS['True Strike'].AccLow = set_combine(sets.precast.WS['True Strike'], {
+	})
+	sets.precast.WS['True Strike'].AccHigh = set_combine(sets.precast.WS['True Strike'], {
+	})
+	sets.precast.WS['True Strike'].MS = set_combine(sets.precast.WS['True Strike'], {
 	})
  
 	--------------------------------------
@@ -477,10 +554,13 @@ function init_gear_sets()
 	sets.idle.Town = set_combine(sets.idle, {
 		--head=gear.Argosy_head_hq_A,
 		neck="War. Beads +2",
+		ear1="Telos Earring",
 		--body="Councilor's Garb",
-		body="Dagon Breastplate",
+		--body="Dagon Breastplate",
+		body="Tatena. Harama. +1",
 		--body=gear.Argosy_body_hq_D,
 		--hands=gear.Argosy_hands_hq_D,
+		hands="Tatena. Gote +1",
 		waist="Ioskeha Belt +1",
 		legs=gear.Argosy_legs_hq_D,
 	})
@@ -627,15 +707,18 @@ function init_gear_sets()
 	
 	-- Use Utu Grip
 	--
-	-- Gear: 32 STP
+	-- Gear: 24 STP
 	sets.engaged.AccLow = set_combine(sets.engaged, {
 		-- 4 STP
 		--neck="Lissome Necklace",
 		-- 6 STP
 		--body=gear.Argosy_body_hq_D,
-		body="Dagon Breastplate",
+		body="Tatena. Harama. +1",
 		-- 6 STP
-		hands="Flam. Manopolas +2",
+		--hands="Flam. Manopolas +2",
+		-- 6 STP
+		--hands=gear.Argosy_hands_hq_D,
+		hands="Tatena. Gote +1",
 		-- 5 STP
 		ring2="Flamma Ring",
 	})
@@ -731,6 +814,7 @@ function init_gear_sets()
 		-- 7% MDT
 		-- 6 MDB
 		-- 99 MEAV
+		-- 6% Haste
 		head="Volte Salade",
 		-- 10% DT
 		-- 8 MDB
@@ -741,6 +825,8 @@ function init_gear_sets()
 		-- 12% DT 
 		-- 10 MDB
 		-- 69 MEAV
+		-- 47 ACC
+		-- 53 ATK
 		body="Hjarrandi Breast.",
 		-- 6% PDT 
 		-- 2% MDT 
@@ -820,8 +906,7 @@ function init_gear_sets()
 
 	sets.engaged.Crit = set_combine(sets.engaged, {
 		ammo="Yetshila",
-		head=gear.Valorous_head_DA,
-		body="Dagon Breastplate",
+		body="Tatena. Harama. +1",
 		hands="Flam. Manopolas +2",
 		legs="Jokushu Haidate",
 	})
