@@ -418,7 +418,7 @@ function init_gear_sets()
 		ear1="Dudgeon Earring",
 		ear2="Heartseeker Earring",
 		body="Meg. Cuirie +2",
-		hands="Meg. Gloves +2",
+		hands="Malignance Gloves",
 		ring1=gear.DarkRing.physical,
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
@@ -457,7 +457,7 @@ function init_gear_sets()
 	})
 
 	sets.defense.PDT = set_combine(sets.idle,{
-		feet="Meg. Jam. +2",
+		feet="Malignance Boots",
 	})
 
 	sets.defense.MDT = set_combine(sets.idle,{
@@ -465,7 +465,7 @@ function init_gear_sets()
 		neck="Inq. Bead Necklace",
 		ear2="Etiolation Earring",
 		ring1="Shadow Ring",
-		feet="Meg. Jam. +2",
+		feet="Malignance Boots",
 	})
 
 	--------------------------------------
@@ -496,24 +496,26 @@ function init_gear_sets()
 		head="Skormoth Mask",
 		neck="Sanctity Necklace",
 		body="Meg. Cuirie +2",
-		hands="Meg. Gloves +2",
+		hands="Malignance Gloves",
 		waist="Eschan Stone",
 		legs="Meg. Chausses +2",
-		feet="Mummu Gamash. +2",
+		feet="Malignance Boots",
 	})
 	sets.engaged.FullAcc = set_combine(sets.engaged,{
 		head="Meghanada Visor +2",
 		ear1="Zennaroi Earring",
 		body="Meg. Cuirie +2",
-		hands="Meg. Gloves +2",
+		hands="Malignance Gloves",
 		ring2="Cacoethic Ring",
 		waist="Eschan Stone",
 		legs="Meg. Chausses +2",
-		feet="Meg. Jam. +2",
+		feet="Malignance Boots",
 	})
 	sets.engaged.Evasion = set_combine(sets.engaged,{
 		body="Mekosu. Harness",
+		hands="Malignance Gloves",
 		back="Canny Cape",
+		feet="Malignance Boots",
 	})
 	sets.engaged.MidAcc.Evasion = set_combine(sets.engaged.MidAcc,{
 	})
@@ -525,12 +527,12 @@ function init_gear_sets()
 		head="Meghanada Visor +2",
 		neck="Twilight Torque",
 		body="Meg. Cuirie +2",
-		hands="Meg. Gloves +2",
+		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Dark Ring",
 		back="Shadow Mantle",
 		legs="Meg. Chausses +2",
-		feet="Meg. Jam. +2",
+		feet="Malignance Boots",
 	})
 	sets.engaged.MidAcc.PDT = set_combine(sets.engaged.PDT,{
 	})

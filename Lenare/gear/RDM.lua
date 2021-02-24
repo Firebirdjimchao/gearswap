@@ -729,7 +729,8 @@ function init_gear_sets()
 		waist="Fucho-no-Obi",
 		--legs=gear.Merlinic_legs_idle,
 		legs="Carmine Cuisses +1",
-		feet=gear.Vanya_feet_B
+		--feet=gear.Vanya_feet_B
+		feet="Malignance Boots",
 	}
 	
 	sets.idle.Town = set_combine(sets.idle,{
@@ -742,7 +743,7 @@ function init_gear_sets()
 	sets.idle.Weak = set_combine(sets.idle,{
 	})
 	
-	-- Total: 49% + 20% (PDT Staff)
+	-- Total: 50% + 20% (PDT Staff)
 	-- <36%: use Shadow Mantle
 	sets.idle.PDT = set_combine(sets.idle,{
 		--main=gear.Staff.PDT,
@@ -766,10 +767,12 @@ function init_gear_sets()
 		-- 6%
 		legs="Aya. Cosciales +2",
 		-- 3%
-		feet="Aya. Gambieras +2",
+		--feet="Aya. Gambieras +2",
+		-- 4%
+		feet="Malignance Boots",
 	})
 	
-	-- MDT: 48%
+	-- MDT: 49%
 	-- MDB: 27
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.idle.MDT = set_combine(sets.idle,{
@@ -796,7 +799,9 @@ function init_gear_sets()
 		-- 5 6%
 		legs="Aya. Cosciales +2",
 		-- 5 3%
-		feet="Aya. Gambieras +2",
+		--feet="Aya. Gambieras +2",
+		-- 5 4%
+		feet="Malignance Boots",
 	})
 	
 	
@@ -846,7 +851,7 @@ function init_gear_sets()
 	-- EG: sets.engaged.Dagger.Accuracy.Evasion
 	
 	-- Normal melee group
-	-- Haste: 27%
+	-- Haste: 28%
 	sets.engaged = {
 		ammo="Amar Cluster",
 		-- 8%
@@ -865,7 +870,9 @@ function init_gear_sets()
 		-- 9%
 		legs="Aya. Cosciales +2",
 		-- 3%
-		feet="Aya. Gambieras +2"
+		--feet="Aya. Gambieras +2",
+		-- 4%
+		feet="Malignance Boots",
 	}
 	
 	-- Haste: 27%
@@ -889,6 +896,7 @@ function init_gear_sets()
 		--ring1="Ilabrat Ring",
 		ring2="Jhakri Ring",
 		back="Ghostfyre Cape",
+		legs="Jhakri Slops +2",
 	})
 	sets.engaged.enspellDW = set_combine(sets.engaged.enspell,{
 		--ear1="Suppanomimi",
