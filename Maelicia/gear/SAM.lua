@@ -96,9 +96,15 @@ function init_gear_sets()
 		ear1="Loquac. Earring",
 		-- 1%
 		ear2="Etiolation Earring",
+		-- 10%
+		body="Sacro Breastplate",
+		-- 5% + 3%
 		hands="Leyline Gloves",
 		-- 2%
 		ring1="Prolix Ring",
+		-- 2%
+		--ring2="Rahab Ring",
+		-- 3%
 		legs="Limbo Trousers"
 	}
 	
@@ -113,9 +119,10 @@ function init_gear_sets()
 	sets.precast.WS = {
 		ammo="Knobkierrie",
 		--head=gear.Rao_head_hq_B,
-		head=gear.Valorous_head_Magic,
+		head=gear.Valorous_head_WS,
 		neck="Fotia Gorget",
 		ear1="Ishvara Earring",
+		--ear1="Thrud Earring",
 		ear2="Moonshade Earring",
 		body="Sakonji Domaru +3",
 		--hands=gear.Valorous_hand_TP,
@@ -146,7 +153,7 @@ function init_gear_sets()
 		--neck="Sanctity Necklace",
 		ear1="Crematio Earring",
 		ear2="Friomisi Earring",
-		body="Found. Breastplate",
+		body="Sacro Breastplate",
 		hands="Leyline Gloves",
 		ring1="Acumen Ring",
 		back=gear.Smertrio_WS,
@@ -170,6 +177,7 @@ function init_gear_sets()
 	
 	-- 80% STR (1-hit)
 	sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {
+		head=gear.Valorous_head_WS,
 		body="Sakonji Domaru +3",
 		hands=gear.Valorous_hand_WS,
 		waist="Metalsinger Belt"
@@ -395,7 +403,8 @@ function init_gear_sets()
 	
 	sets.idle = {
 		ammo="Staunch Tathlum +1",
-		head="Loess Barbuta +1",
+		--head="Loess Barbuta +1",
+		head=gear.Valorous_head_WS,
 		neck="Loricate Torque +1",
 		ear1="Odnowa Earring +1",
 		ear2="Etiolation Earring",
@@ -413,7 +422,8 @@ function init_gear_sets()
 	
 	sets.idle.Town = set_combine(sets.idle,{
 		ammo="Knobkierrie",
-		head="Rao Kabuto +1",
+		--head="Rao Kabuto +1",
+		head=gear.Valorous_head_WS,
 		neck="Moonbeam Nodowa",
 		--body="Councilor's Garb"
 		body="Dagon Breastplate",

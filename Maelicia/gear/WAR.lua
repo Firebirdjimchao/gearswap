@@ -73,22 +73,33 @@ function init_gear_sets()
 	sets.precast.Waltz['Healing Waltz'] = {}
  
 	-- Sets for fast cast gear for spells
+	-- 40%/20% Total
 	sets.precast.FC = {
 		-- 5%
 		head="Cizin Helm",
+		-- 8%
+		--head="Sakpata's Helm",
 		ammo="Impatiens",
+		-- 2%
+		--ammo="Sapience Orb",
 		-- 4%
 		neck="Voltsurge Torque",
 		-- 2%
 		ear1="Loquac. Earring",
 		-- 1%
 		ear2="Etiolation Earring",
-		-- 5%
-		body="Odyss. Chestplate",
+		-- 10%
+		body="Sacro Breastplate",
+		-- 5% + 3%
 		hands="Leyline Gloves",
 		-- 2%
 		ring1="Prolix Ring",
+		-- 2%
+		--ring2="Rahab Ring",
+		-- 3%
 		legs="Limbo Trousers",
+		-- 4%
+		--legs="Arjuna Breeches",
 		-- 5%
 		feet="Odyssean Greaves",
 	}
@@ -133,11 +144,11 @@ function init_gear_sets()
 	})
 	
 	sets.precast.WS.MAB = set_combine(sets.precast.WS,{
-		head="Jumalik Helm",
+		head=gear.Valorous_head_Magic,
 		--neck="Sanctity Necklace",
 		ear1="Crematio Earring",
 		ear2="Friomisi Earring",
-		body="Found. Breastplate",
+		body="Sacro Breastplate",
 		hands="Leyline Gloves",
 		ring1="Acumen Ring",
 		back="Toro Cape",
@@ -157,6 +168,7 @@ function init_gear_sets()
 		ear1="Moonshade Earring",
 		--ear2="Ishvara Earring",
 		ear2="Brutal Earring",
+		--ear2="Thrud Earring",
 		body="Pumm. Lorica +3",
 		hands="Tatena. Gote +1",
 		ring1="Niqmaddu Ring",
@@ -385,7 +397,7 @@ function init_gear_sets()
 		--head="Jumalik Helm",
 		head="Agoge Mask +3",
 		ear2="Ishvara Earring",
-		--body="Dagon Breastplate",
+		body="Sacro Breastplate",
 		hands=gear.Odyssean_hands_WS,
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
@@ -535,7 +547,8 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle = {
 		ammo="Staunch Tathlum +1",
-		head="Volte Salade",
+		--head="Volte Salade",
+		head=gear.Valorous_head_WS,
 		neck="Loricate Torque +1",
 		ear1="Odnowa Earring +1",
 		ear2="Etiolation Earring",
@@ -568,6 +581,7 @@ function init_gear_sets()
 	sets.idle.Regen = set_combine(sets.idle,{
 		head="Volte Salade",
 		neck="Bathy Choker +1",
+		body="Sacro Breastplate",
 		hands="Volte Moufles",
 		ring1="Sheltered Ring",
 		feet="Volte Sollerets",
@@ -591,72 +605,127 @@ function init_gear_sets()
 	})
 			 
 	-- Defense sets
-	-- Total: 41% DT 22% PDT 20% MDT MDB 31
+	-- Total: 
+	-- 24% DT 
+	-- 27% PDT 
+	-- 25% MDT 
+	-- 30 MDB
+	-- 496 MEVA
 	-- <36%: use Shadow Mantle
 	sets.defense.PDT = set_combine(sets.idle,{
 		-- 3% DT
 		ammo="Staunch Tathlum +1",
-		-- 3% PDT 7% MDT 6 MDB
+		-- 3% PDT
+		-- 7% MDT
+		-- 6 MDB
+		-- 99 MEVA
 		head="Volte Salade",
+		-- 10% DT
+		-- 8 MDB
+		-- 53 MEVA
+		--head="Hjarrandi Helm",
 		-- 6% DT
 		neck="Loricate Torque +1",
 		-- 2% MDT
 		ear1="Odnowa Earring +1",
 		-- 3% MDT
 		ear2="Etiolation Earring",
-		-- 12% DT 10 MDB
-		body="Hjarrandi Breast.",
-		-- 6% PDT 2% MDT 4 MDB
+		-- 12% DT 
+		-- 10 MDB
+		-- 69 MEVA
+		--body="Hjarrandi Breast.",
+		-- 12 MDB
+		-- 129 MEVA
+		body="Sacro Breastplate",
+		-- 6% PDT 
+		-- 2% MDT 
+		-- 4 MDB
+		-- 91 MEVA
 		hands="Volte Moufles",
 		-- 5% DT
-		--ring1="Dark Ring",
-		ring1="Shadow Ring",
+		ring1="Dark Ring",
 		-- 10% DT
 		ring2="Defending Ring",
 		-- 5% DT
 		back="Moonbeam Cape",
 		-- 4% PDT
 		waist="Flume Belt +1",
-		-- 5% PDT 4 MDB
+		-- 5% PDT 
+		-- 4 MDB
+		-- 100 MEVA
 		legs="Pumm. Cuisses +3",
-		-- 4% DT 1 MDB
-		--feet="Sulev. Leggings +2",
-		-- 4% PDT 6% MDT 6 MDB
+		-- 7% PDT
+		-- 3% MDT
+		-- 8 MDB
+		-- 137 MEVA
+		--legs="Volte Brayettes",
+		-- 4% PDT 
+		-- 6% MDT 
+		-- 6 MDB
+		-- 137 MEVA
 		feet="Volte Sollerets",
 	})
 	sets.defense.Reraise = set_combine(sets.defense.PDT, {head="Twilight Helm",body="Twilight Mail"})
 	
-	-- Total: 41% DT 22% PDT 20% MDT MDB 31
+	-- Total: 
+	-- 24% DT 
+	-- 27% PDT 
+	-- 25% MDT 
+	-- 32 MDB
+	-- 556 MEVA
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.defense.MDT = set_combine(sets.idle,{
 		-- 3% DT
 		ammo="Staunch Tathlum +1",
-		-- 3% PDT 7% MDT 6 MDB
+		-- 3% PDT
+		-- 7% MDT
+		-- 6 MDB
+		-- 99 MEVA
 		head="Volte Salade",
+		-- 10% DT
+		-- 8 MDB
+		-- 53 MEVA
+		--head="Hjarrandi Helm",
 		-- 6% DT
 		neck="Loricate Torque +1",
 		-- 2% MDT
 		ear1="Odnowa Earring +1",
 		-- 3% MDT
 		ear2="Etiolation Earring",
-		-- 12% DT 10 MDB
-		body="Hjarrandi Breast.",
-		-- 6% PDT 2% MDT 4 MDB
+		-- 12% DT 
+		-- 10 MDB
+		-- 69 MEVA
+		--body="Hjarrandi Breast.",
+		-- 12 MDB
+		-- 129 MEVA
+		body="Sacro Breastplate",
+		-- 6% PDT 
+		-- 2% MDT 
+		-- 4 MDB
+		-- 91 MEVA
 		hands="Volte Moufles",
-		-- 5% DT
-		--ring1="Dark Ring",
-		ring1="Shadow Ring",
+		-- 5% PDT
+		-- 5% MDT
+		ring1="Dark Ring",
 		-- 10% DT
 		ring2="Defending Ring",
 		-- 5% DT
 		back="Moonbeam Cape",
 		-- 4% PDT
 		waist="Flume Belt +1",
-		-- 5% PDT 4 MDB
+		-- 5% PDT 
+		-- 4 MDB
+		-- 100 MEVA
 		legs="Pumm. Cuisses +3",
-		-- 4% DT 1 MDB
-		--feet="Sulev. Leggings +2",
-		-- 4% PDT 6% MDT 6 MDB
+		-- 7% PDT
+		-- 3% MDT
+		-- 8 MDB
+		-- 137 MEVA
+		--legs="Volte Brayettes",
+		-- 4% PDT 
+		-- 6% MDT 
+		-- 6 MDB
+		-- 137 MEVA
 		feet="Volte Sollerets",
 	})
  
@@ -808,30 +877,30 @@ function init_gear_sets()
 		-- 2% DT
 		ammo="Staunch Tathlum +1",
 		-- 3 MDB
-		-- 53 MEAV
+		-- 53 MEVA
 		--head="Flam. Zucchetto +2",
 		-- 3% PDT
 		-- 7% MDT
 		-- 6 MDB
-		-- 99 MEAV
+		-- 99 MEVA
 		-- 6% Haste
 		head="Volte Salade",
 		-- 10% DT
 		-- 8 MDB
-		-- 53 MEAV
+		-- 53 MEVA
 		--head="Hjarrandi Helm",
 		-- 6% DT
 		neck="Loricate Torque +1",
 		-- 12% DT 
 		-- 10 MDB
-		-- 69 MEAV
+		-- 69 MEVA
 		-- 47 ACC
 		-- 53 ATK
 		body="Hjarrandi Breast.",
 		-- 6% PDT 
 		-- 2% MDT 
 		-- 4 MDB
-		-- 91 MEAV
+		-- 91 MEVA
 		hands="Volte Moufles",
 		-- 3% DT
 		--ring1="Sulevia's Ring",
@@ -842,19 +911,19 @@ function init_gear_sets()
 		back=gear.Cichol_AccDA,
 		-- 7% DT
 		-- 2 MDB
-		-- 75 MEAV
+		-- 75 MEVA
 		legs="Sulevi. Cuisses +2",
 		-- 7% PDT
 		-- 3% MDT
 		-- 8 MDB
-		-- 137 MEAV
+		-- 137 MEVA
 		--legs="Volte Brayettes",
 		-- 4 MDB
 		--feet="Pumm. Calligae +3",
 		-- 4% PDT 
 		-- 6% MDT 
 		-- 6 MDB
-		-- 137 MEAV
+		-- 137 MEVA
 		feet="Volte Sollerets",
 	})
 	sets.engaged.AccLow.PDT = set_combine(sets.engaged.PDT, {})

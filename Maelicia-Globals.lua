@@ -86,7 +86,8 @@ function define_global_sets()
 	gear.Chironic_feet_nuke = { name="Chironic Slippers", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','MND+2','Mag. Acc.+1','"Mag.Atk.Bns."+14',}}
 	
 	gear.Valorous_head_DA = { name="Valorous Mask", augments={'Accuracy+17 Attack+17','"Dbl.Atk."+1','DEX+3','Accuracy+9','Attack+13',}}
-	gear.Valorous_head_Magic = { name="Valorous Mask", augments={'Pet: Attack+15 Pet: Rng.Atk.+15','Weapon skill damage +4%','Accuracy+14 Attack+14','Mag. Acc.+12 "Mag.Atk.Bns."+12',}}
+	gear.Valorous_head_WS = { name="Valorous Mask", augments={'Rng.Atk.+1','Magic dmg. taken -5%','Weapon skill damage +9%','Accuracy+13 Attack+13','Mag. Acc.+17 "Mag.Atk.Bns."+17',}}
+	gear.Valorous_head_Magic = { name="Valorous Mask", augments={'Rng.Atk.+1','Magic dmg. taken -5%','Weapon skill damage +9%','Accuracy+13 Attack+13','Mag. Acc.+17 "Mag.Atk.Bns."+17',}}
 	gear.Valorous_body_TP = { name="Valorous Mail", augments={'Accuracy+14 Attack+14','"Store TP"+7',}}
 	gear.Valorous_hand_TP = { name="Valorous Mitts", augments={'Accuracy+8 Attack+8','"Store TP"+6','STR+9','Accuracy+11',}}
 	gear.Valorous_hand_WS = { name="Valorous Mitts", augments={'Accuracy+13','Weapon skill damage +3%','Attack+15',}}
