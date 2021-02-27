@@ -167,8 +167,8 @@ function init_gear_sets()
 		neck="War. Beads +2",
 		ear1="Moonshade Earring",
 		--ear2="Ishvara Earring",
-		ear2="Brutal Earring",
-		--ear2="Thrud Earring",
+		--ear2="Brutal Earring",
+		ear2="Thrud Earring",
 		body="Pumm. Lorica +3",
 		hands="Tatena. Gote +1",
 		ring1="Niqmaddu Ring",
@@ -363,7 +363,7 @@ function init_gear_sets()
 		head="Flam. Zucchetto +2",
 		neck="Fotia Gorget",
 		ear1="Ishvara Earring",
-		ear2="Brutal Earring",
+		ear2="Thrud Earring",
 		body=gear.Argosy_body_hq_D,
 		hands=gear.Argosy_hands_hq_D,
 		ring1="Niqmaddu Ring",
@@ -396,7 +396,7 @@ function init_gear_sets()
 		ammo="Knobkierrie",
 		--head="Jumalik Helm",
 		head="Agoge Mask +3",
-		ear2="Ishvara Earring",
+		ear2="Thrud Earring",
 		body="Sacro Breastplate",
 		hands=gear.Odyssean_hands_WS,
 		ring1="Niqmaddu Ring",
@@ -452,7 +452,7 @@ function init_gear_sets()
 		ammo="Seeth. Bomblet +1",
 		head="Flam. Zucchetto +2",
 		neck="Fotia Gorget",
-		ear1="Ishvara Earring",
+		ear1="Thrud Earring",
 		ear2="Brutal Earring",
 		body="Tatena. Harama. +1",
 		hands="Tatena. Gote +1",
@@ -485,7 +485,6 @@ function init_gear_sets()
 		ammo="Knobkierrie",
 		head="Flam. Zucchetto +2",
 		neck="Fotia Gorget",
-		ear1="Ishvara Earring",
 		ear2="Brutal Earring",
 		body=gear.Argosy_body_hq_D,
 		hands=gear.Argosy_hands_hq_D,
@@ -520,6 +519,23 @@ function init_gear_sets()
 	sets.precast.WS['True Strike'].AccHigh = set_combine(sets.precast.WS['True Strike'], {
 	})
 	sets.precast.WS['True Strike'].MS = set_combine(sets.precast.WS['True Strike'], {
+	})
+
+		-- 50% STR / 50% MND, Damage varies with TP
+	sets.precast.WS["Judgment"] = set_combine(sets.precast.WS,{
+		ammo="Knobkierrie",
+		head="Agoge Mask +3",
+		ear2="Thrud Earring",
+		body="Pumm. Lorica +3",
+		hands=gear.Odyssean_hands_WS,
+		back=gear.Cichol_StrWSD,
+		feet="Sulev. Leggings +2",
+	})
+	sets.precast.WS['Judgment'].AccLow = set_combine(sets.precast.WS['Judgment'], {
+	})
+	sets.precast.WS['Judgment'].AccHigh = set_combine(sets.precast.WS['Judgment'], {
+	})
+	sets.precast.WS['Judgment'].MS = set_combine(sets.precast.WS['Judgment'], {
 	})
  
 	--------------------------------------

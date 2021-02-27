@@ -121,8 +121,7 @@ function init_gear_sets()
 		--head=gear.Rao_head_hq_B,
 		head=gear.Valorous_head_WS,
 		neck="Fotia Gorget",
-		ear1="Ishvara Earring",
-		--ear1="Thrud Earring",
+		ear1="Thrud Earring",
 		ear2="Moonshade Earring",
 		body="Sakonji Domaru +3",
 		--hands=gear.Valorous_hand_TP,
@@ -330,8 +329,6 @@ function init_gear_sets()
 	})
 	-- 40% STR 40% AGI
 	sets.precast.WS['Namas Arrow'] = set_combine(sets.precast.WS.RA, {
-		ear1="Vulcan's Pearl",
-		ear2="Vulcan's Pearl",
 		ring1="Ilabrat Ring",
 		ring2="Regal Ring"
 	})
@@ -408,7 +405,8 @@ function init_gear_sets()
 		neck="Loricate Torque +1",
 		ear1="Odnowa Earring +1",
 		ear2="Etiolation Earring",
-		body="Tartarus Platemail",
+		--body="Tartarus Platemail",
+		body="Sacro Breastplate",
 		hands="Sakonji Kote +1",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
@@ -491,6 +489,7 @@ function init_gear_sets()
 	
 	sets.defense.MDT = set_combine(sets.defense.DT,{
 		--neck="Inq. Bead Necklace",
+		body="Sacro Breastplate",
 		hands="Leyline Gloves",
 		ring1="Shadow Ring",
 	})
