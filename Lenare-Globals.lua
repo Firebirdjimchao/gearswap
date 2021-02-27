@@ -136,8 +136,10 @@ function global_aliases()
 	MagicalTank = 'Amchuchu'
 	BlinkTank = 'Gessho'
 	RedMage = 'Arciela II'
+	Alchemist = 'Monberaux'
 	RedMageWkr = 'Koru-Moru'
 	Bard = 'Joachim'
+	Bard2 = 'Ulmia'
 	RegenBuff = 'Sakura'
 	RefreshBuff = 'Moogle'
 	AccBuff = 'Kuyin Hathdenna'
@@ -152,6 +154,8 @@ function global_aliases()
 	Healer2 = 'Cherukiki'
 	RangeDD = 'Semih Lafihna'
 	RangeDD2 = 'Elivira'
+	HasteBuff = 'Cornelia'
+	Cor = 'Qultada'
 	
 	-- with UC and Tank
 	send_command('alias pdttanktrust input /ma "' .. UnityConcord .. '" <me>;wait 5;input /ma "' .. PhysicalTank .. '" <me>;wait 5;input /ma "' .. RedMage .. '" <me>;wait 5;input /ma "' .. MeleeDD .. '" <me>;wait 5;input /ma "' .. Bard .. '" <me>;')
@@ -159,8 +163,11 @@ function global_aliases()
 	send_command('alias blinktanktrust input /ma "' .. UnityConcord .. '" <me>;wait 5;input /ma "' .. BlinkTank .. '" <me>;wait 5;input /ma "' .. RedMage .. '" <me>;wait 5;input /ma "' .. MeleeDD .. '" <me>;wait 5;input /ma "' .. Bard .. '" <me>;')
 	
 	-- special content
-	send_command('alias dragontrust input /ma "' .. UnityConcord .. '" <me>;wait 5;input /ma "' .. RedMage .. '" <me>;wait 5;input /ma "' ..  MeleeDD .. '" <me>;wait 5;input /ma "' .. MeleeDD2 .. '" <me>;wait 5;input /ma "' .. Bard .. '" <me>;')
+	send_command('alias dragontrust input /ma "' .. UnityConcord .. '" <me>;wait 5;input /ma "' .. RedMage .. '" <me>;wait 5;input /ma "' ..  Alchemist .. '" <me>;wait 5;input /ma "' .. Cor .. '" <me>;wait 5;input /ma "' .. Bard .. '" <me>;')
+	send_command('alias dragontrust2 input /ma "' .. MagicalTank .. '" <me>;wait 5;input /ma "' .. UnityConcord .. '" <me>;wait 5;input /ma "' ..  Alchemist .. '" <me>;wait 5;input /ma "' .. RedMage .. '" <me>;wait 5;input /ma "' .. Bard .. '" <me>;')
 	send_command('alias wkrtrust input /ma "' .. Healer .. '" <me>;wait 5;input /ma "' .. Healer2 .. '" <me>;wait 5;input /ma "' .. RedMageWkr .. '" <me>;wait 5;input /ma "' .. MeleeDD .. '" <me>;wait 5;input /ma "' .. Bard .. '" <me>;')
+	send_command('alias maidentrust input /ma "' .. MagicalTank .. '" <me>;wait 5;input /ma "' .. UnityConcord .. '" <me>;wait 5;input /ma "' ..  Alchemist .. '" <me>;wait 5;input /ma "' .. RedMageWkr .. '" <me>;wait 5;input /ma "' .. Bard .. '" <me>;')
+	send_command('alias divinerust input /ma "' .. UnityConcord .. '" <me>;wait 5;input /ma "' .. Cor .. '" <me>;wait 5;input /ma "' ..  Alchemist .. '" <me>;wait 5;input /ma "' .. Bard2 .. '" <me>;wait 5;input /ma "' .. MeleeDD .. '" <me>;')
 
 	-- DD specific
 	send_command('alias nuketrust input /ma "' .. UnityConcord .. '" <me>;wait 5;input /ma "' .. RedMage .. '" <me>;wait 5;input /ma "' ..  MeleeDD .. '" <me>;wait 5;input /ma "' .. MeleeDD2 .. '" <me>;wait 5;input /ma "' .. Bard .. '" <me>;')
