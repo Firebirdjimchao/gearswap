@@ -75,13 +75,10 @@ function init_gear_sets()
 		neck="Iskur Gorget",
 		ear1="Telos Earring",
 		ear2="Enervating Earring",
-		--body="Amini Caban +1",
-		--body="Meg. Cuirie +2",
-		--body="Mummu Jacket +2",
 		body="Nisroch Jerkin",
-		hands="Kobo Kote",
+		hands="Mummu Wrists +2",
 		ring1="Ilabrat Ring",
-		ring2="Garuda Ring +1",
+		ring2="Mummu Ring",
 		back=gear.aug_belenus_ws_agi,
 		waist="K. Kachina Belt +1",
 		legs="Arc. Braccae +3",
@@ -321,8 +318,8 @@ function init_gear_sets()
 		ear2="Moonshade Earring",
 		body=gear.Adhemar_body_B,
 		hands="Meg. Gloves +2",
-		ring1="Rajas Ring",
-		ring2="Apate Ring",
+		ring1="Apate Ring",
+		ring2="Rajas Ring",
 		back=gear.aug_belenus_ws,
 		waist="Fotia Belt",
 		legs="Samnuha Tights",
@@ -436,20 +433,27 @@ function init_gear_sets()
 		feet="Arcadian Socks +3",
 	})
 	
-	-- 40% AGI/ 40% DEX (Use STR though)
+	-- 40% AGI/ 40% DEX, Static fTP 3.0
 	sets.precast.WS['Coronach'] = set_combine(sets.precast.WS.RA, {
-		back=gear.aug_belenus_ws,
-		--legs=pursuer_legs_D,
+		head="Orion Beret +3",
+		neck="Scout's Gorget +2",
+		ear1="Ishvara Earring",
+		ear2="Sherida Earring",
+		body=gear.Herculean_body_RA_WS,
+		hands="Meg. Gloves +2",
+		ring1="Dingir Ring",
+		ring2="Regal Ring",
+		--back=gear.aug_belenus_ws,
+		back=gear.aug_belenus_ws_ag,
+		waist="Fotia Belt",
 		legs="Arc. Braccae +3",
 		feet=gear.Herculean_feet_RA
 	})
 	sets.precast.WS['Coronach'].MidAcc = set_combine(sets.precast.WS['Coronach'], {
 		body="Arc. Jerkin +3",
-		legs="Arc. Braccae +3",
 	})
 	sets.precast.WS['Coronach'].HighAcc = set_combine(sets.precast.WS['Coronach'], {
 		body="Arc. Jerkin +3",
-		legs="Arc. Braccae +3",
 		feet="Arcadian Socks +3",
 	})
 	sets.precast.WS['Coronach'].FullAcc = set_combine(sets.precast.WS['Coronach'], {
@@ -650,23 +654,27 @@ function init_gear_sets()
 		--head="Meghanada Visor +2",
 		head="Arcadian Beret +3",
 		-- 8 STP
-		--neck="Iskur Gorget",
-		neck="Scout's Gorget +2",
+		neck="Iskur Gorget",
+		-- 7 STP
+		--neck="Scout's Gorget +2",
 		-- 5 STP
 		ear1="Telos Earring",
 		-- 4 STP
-		ear2="Enervating Earring",
+		--ear2="Enervating Earring",
+		-- 8 STP
+		ear2="Dedition Earring",
 		-- 6 STP
 		--body="Mummu Jacket +2",
 		-- 7 STP
 		body="Nisroch Jerkin",
 		-- 9 STP
 		--hands="Amini Glove. +1",
-		hands="Kobo Kote",
+		-- 12 STP
+		hands="Malignance Gloves",
 		-- 5 STP
 		ring1="Ilabrat Ring",
-		-- 3 STP
-		ring2="Apate Ring",
+		-- 5 STP
+		ring2="Rajas Ring",
 		-- 10 STP
 		back=gear.aug_belenus_stp_agi,
 		waist="K. Kachina Belt +1",
@@ -682,7 +690,9 @@ function init_gear_sets()
 	sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA,{
 		--body="Amini Caban +1",
 		-- 7 STP
-		body="Nisroch Jerkin",
+		--body="Nisroch Jerkin",
+		-- 11 STP
+		body="Malignance Tabard",
 		-- 12 STP
 		hands="Malignance Gloves",
 		ring2="Regal Ring",
@@ -731,9 +741,9 @@ function init_gear_sets()
 	sets.midcast.RA.Crit = set_combine(sets.midcast.RA.FullAcc, {
 		head=gear.Herculean_head_RA,
 		body="Nisroch Jerkin",
-		hands="Kobo Kote",
+		hands="Mummu Wrists +2",
 		ring1="Ilabrat Ring",
-		ring2="Garuda Ring +1",
+		ring2="Mummu Ring",
 		legs="Mummu Kecks +2",
 		waist="K. Kachina Belt +1",
 		feet="Osh. Leggings +1",

@@ -193,7 +193,7 @@ function init_gear_sets()
 		--body=gear.Herculean_body_RA,
 		body="Mochi. Chainmail +3",
 		--hands="Hachiya Tekko +1",
-		hands="Kobo Kote",
+		hands="Malignance Gloves",
 		ring1="Haverton Ring",
 		--ring2="Cacoethic Ring +1",
 		ring1="Dingir Ring",

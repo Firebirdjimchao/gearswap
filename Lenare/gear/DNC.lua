@@ -229,10 +229,10 @@ function init_gear_sets()
 
 	-- 73~85% AGI
 	sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
-		ring1="Garuda Ring",
+		ring1="Garuda Ring +1",
 	})
 	sets.precast.WS['Exenterator'].MidAcc = set_combine(sets.precast.WS.MidAcc, {
-		ring1="Garuda Ring",
+		ring1="Garuda Ring +1",
 	})
 	sets.precast.WS['Exenterator'].HighAcc = set_combine(sets.precast.WS.HighAcc, {
 	})

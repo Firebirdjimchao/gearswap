@@ -163,11 +163,7 @@ function init_gear_sets()
 	sets.precast.RA = set_combine(sets.precast.WS,{
 		ear1="Telos Earring",
 		ear2="Moonshade Earring",
-		--body="Kyujutsugi",
 		body="Sakonji Domaru +3",
-		hands="Kobo Kote",
-		ring1="Garuda Ring +1",
-		ring2="Garuda Ring +1",
 		legs="Wakido Haidate +3",
 		feet="Wakido Sune. +3"
 	})
@@ -361,9 +357,9 @@ function init_gear_sets()
 		ear1="Telos Earring",
 		ear2="Enervating Earring",
 		body="Ken. Samue +1",
-		hands="Kobo Kote",
+		hands="Wakido Kote +3",
 		ring1="Ilabrat Ring",
-		ring2="Garuda Ring +1",
+		ring2="Regal Ring",
 		back=gear.Smertrio_STP,
 		waist="Yemaya Belt",
 		legs="Ken. Hakama +1",

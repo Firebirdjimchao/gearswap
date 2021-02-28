@@ -164,7 +164,7 @@ function init_gear_sets()
 		body="Nisroch Jerkin",
 		hands="Iuitl Wristband +1",
 		ring1="Arewe Ring",
-		ring2="Garuda Ring",
+		ring2="Garuda Ring +1",
 		back=gear.pr_gunslinger,
 		legs="Meg. Chausses +2",
 		feet="Meg. Jam. +2",
@@ -185,7 +185,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS.RA, {
 		neck=gear.ElementalGorget,
-		ring1="Garuda Ring",
+		ring1="Garuda Ring +1",
 		waist=gear.ElementalBelt,
 	})
 
