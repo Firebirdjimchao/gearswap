@@ -179,7 +179,8 @@ function init_gear_sets()
 		head=gear.Valorous_head_WS,
 		body="Sakonji Domaru +3",
 		hands=gear.Valorous_hand_WS,
-		waist="Metalsinger Belt"
+		waist="Metalsinger Belt",
+		feet=gear.Valorous_feet_WS,
 	})
 	sets.precast.WS['Tachi: Fudo'].MidAcc = set_combine(sets.precast.WS['Tachi: Fudo'], {
 	  body="Sakonji Domaru +3",
@@ -349,7 +350,6 @@ function init_gear_sets()
 	
 	sets.midcast.FastRecast = set_combine(sets.precast.FC,{
 		head="Rao Kabuto +1",
-		body="Tartarus Platemail",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
 		waist="Flume Belt +1"
@@ -388,24 +388,14 @@ function init_gear_sets()
 	
 	-- Sets to return to when not performing an action.
 	
-	-- Resting sets
-	sets.resting = {
-		head="Rao Kabuto +1",
-		neck="Bathy Choker +1",
-		body="Hiza. Haramaki +2",
-		ring1="Sheltered Ring"
-	}
-	
 	-- Idle sets
 	
 	sets.idle = {
 		ammo="Staunch Tathlum +1",
-		--head="Loess Barbuta +1",
 		head=gear.Valorous_head_WS,
 		neck="Loricate Torque +1",
 		ear1="Odnowa Earring +1",
 		ear2="Etiolation Earring",
-		--body="Tartarus Platemail",
 		body="Sacro Breastplate",
 		hands="Sakonji Kote +1",
 		ring1="Dark Ring",
@@ -424,7 +414,7 @@ function init_gear_sets()
 		head=gear.Valorous_head_WS,
 		neck="Moonbeam Nodowa",
 		--body="Councilor's Garb"
-		body="Dagon Breastplate",
+		body="Tartarus Platemail",
 		hands="Wakido Kote +3",
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
@@ -441,21 +431,25 @@ function init_gear_sets()
 	sets.idle.Regen = set_combine(sets.idle,{
 		head="Rao Kabuto +1",
 		neck="Bathy Choker +1",
-		body="Hiza. Haramaki +2",
+		body="Sacro Breastplate",
 		ring1="Sheltered Ring",
 		feet="Rao Sune-Ate +1",
+	})
+
+		-- Resting sets
+	sets.resting = set_combine(sets.idle.Regen,{
 	})
 	
 	-- Defense sets
 
-	-- 42% DT 52% PDT 52% MDT 12 MDB (48% DT if using Khonsu)
+	-- 37% DT 11% PDT 15% MDT 12 MDB (43% DT if using Khonsu)
 	sets.defense.DT = set_combine(sets.idle,{
 		-- 6& DT
 		sub="Khonsu",
 		-- 2% DT
 		ammo="Staunch Tathlum +1",
-		-- 10% DT
-		head="Loess Barbuta +1",
+		-- 5% MDT
+		head=gear.Valorous_head_WS,
 		-- 2% MDT
 		ear1="Odnowa Earring +1",
 		-- 3% MDT
@@ -590,7 +584,7 @@ function init_gear_sets()
 		-- 12 STP 3%
 		--body="Kasuga Domaru +1",
 		-- 1%
-		body="Dagon Breastplate",
+		body="Tatena. Harama. +1",
 		-- 7 STP 4% Hasso +4
 		hands="Wakido Kote +3",
 		ring1="Niqmaddu Ring",

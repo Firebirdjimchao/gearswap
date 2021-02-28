@@ -9,11 +9,11 @@ function define_global_sets()
 	-- Staffs
 	gear.Staff = {}
 	gear.MainStaff = {name="Grioavolr"}
-	gear.MaccStaff = {name="Serenity"}
+	gear.MaccStaff = {name="Contemplator +1"}
 	gear.FastcastStaff = {name="Grioavolr"}
 	gear.RecastStaff = {name="Serenity"}
 	gear.Staff.Cure = {name="Serenity"}
-	gear.Staff.HMP = {name="Chatoyant Staff"}
+	gear.Staff.HMP = {name="Contemplator +1"}
 	gear.Staff.PDT = {name="Terra's Staff"}
 	gear.Staff.DT = {name="Malignance Pole"}
 	
@@ -90,7 +90,7 @@ function define_global_sets()
 	gear.Valorous_head_Magic = { name="Valorous Mask", augments={'Rng.Atk.+1','Magic dmg. taken -5%','Weapon skill damage +9%','Accuracy+13 Attack+13','Mag. Acc.+17 "Mag.Atk.Bns."+17',}}
 	gear.Valorous_body_TP = { name="Valorous Mail", augments={'Accuracy+14 Attack+14','"Store TP"+7',}}
 	gear.Valorous_hand_TP = { name="Valorous Mitts", augments={'Accuracy+8 Attack+8','"Store TP"+6','STR+9','Accuracy+11',}}
-	gear.Valorous_hand_WS = { name="Valorous Mitts", augments={'Accuracy+13','Weapon skill damage +3%','Attack+15',}}
+	gear.Valorous_hand_WS = { name="Valorous Mitts", augments={'Pet: Mag. Acc.+8','MND+7','Weapon skill damage +6%','Accuracy+13 Attack+13','Mag. Acc.+2 "Mag.Atk.Bns."+2',}}
 	gear.Valorous_legs_TP = { name="Valorous Hose", augments={'Accuracy+12 Attack+12','Weapon Skill Acc.+9','DEX+1','Accuracy+15','Attack+13',}}
 	gear.Valorous_feet_TP = { name="Valorous Greaves", augments={'Accuracy+25 Attack+25','DEX+4','Accuracy+5','Attack+4',}}
 	gear.Valorous_feet_WS = { name="Valorous Greaves", augments={'Accuracy+25','Weapon skill damage +5%','VIT+10',}}

@@ -788,21 +788,21 @@ function init_gear_sets()
 	sets.idle.Weak = set_combine(sets.idle,{
 	})
 	
-	-- Total: DT 48%, PDT 8% + 20% (PDT Staff)
+	-- Total: DT 54%, PDT 5% + 20% (PDT Staff), MDT 5%
 	-- <36%: use Shadow Mantle
 	sets.idle.PDT = set_combine(sets.idle,{
 		--main=gear.Staff.PDT,
 		-- DT 3%
 		ammo="Staunch Tathlum +1",
-		-- 3%
-		head="Blistering Sallet +1",
+		-- DT 6%
+		head="Malignance Chapeau",
 		-- DT 6%
 		neck="Loricate Torque +1",
 		-- DT 9%
 		body="Malignance Tabard",
 		-- DT 5%
 		hands="Malignance Gloves",
-		-- 5%
+		-- PDT 5% MDT 5%
 		ring1="Dark Ring",
 		-- DT 10%
 		ring2="Defending Ring",
@@ -814,30 +814,30 @@ function init_gear_sets()
 		feet="Malignance Boots",
 	})
 	
-	-- DT: 48%
+	-- DT: 54%
 	-- MDT: 7%
-	-- MDB: 28
+	-- MDB: 27
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.idle.MDT = set_combine(sets.idle,{
 		-- DT 3%
 		ammo="Staunch Tathlum +1",
-		-- 6 2%
-		head="Chironic Hat",
+		-- DT 6% MDB 5
+		head="Malignance Chapeau",
 		-- DT 6%
 		neck="Loricate Torque +1",
-		-- 8 DT 9%
+		-- DT 9% MDB 8
 		body="Malignance Tabard",
-		-- 4 DT 5%
+		-- DT 5% MDB 4
 		hands="Malignance Gloves",
-		-- 5%
+		-- PDT 5% MDT 5%
 		ring1="Dark Ring",
 		-- DT 10%
 		ring2="Defending Ring",
 		-- DT 5%
 		back="Moonbeam Cape",
-		-- 5 DT 6%
+		-- DT 6% MDB 5
 		legs="Aya. Cosciales +2",
-		-- 5 DT 4%
+		-- DT 4% MDB 5
 		feet="Malignance Boots",
 	})
 	
@@ -852,8 +852,8 @@ function init_gear_sets()
 	})
 
 	sets.idle.MDTOnca = {
-		-- 6 2%
-		head="Chironic Hat",
+		-- 6% 5
+		head="Malignance Chapeau",
 		-- 5%
 		neck="Loricate Torque +1",
 		-- 3%
@@ -939,7 +939,8 @@ function init_gear_sets()
 		-- 9%
 		legs="Aya. Cosciales +2",
 		-- 3%
-		feet="Aya. Gambieras +2"
+		--feet="Aya. Gambieras +2",
+		feet="Malignance Boots",
 	}
 	
 	-- Haste: 30%
@@ -977,7 +978,7 @@ function init_gear_sets()
 	})
 	
 	sets.engaged.Defense = set_combine(sets.engaged,{
-		head="Blistering Sallet +1",
+		head="Malignance Chapeau",
 		neck="Loricate Torque +1",
 		body="Ayanmo Corazza +2",
 		hands="Malignance Gloves",

@@ -190,15 +190,6 @@ function init_gear_sets()
 	}
 	
 	-- Sets to return to when not performing an action.
-	
-	-- Resting sets
-	sets.resting = {
-		head="Rao Kabuto +1",
-		neck="Bathy Choker +1",
-		body="Hiza. Haramaki +2",
-		ring1="Sheltered Ring"
-	}
-
 	-- Idle sets
 	sets.idle = {
 		ammo="Staunch Tathlum +1",
@@ -206,7 +197,6 @@ function init_gear_sets()
 		neck="Loricate Torque +1",
 		ear1="Odnowa Earring +1",
 		ear2="Etiolation Earring",
-		--body="Hiza. Haramaki +2",
 		body="Emet Harness +1",
 		hands=gear.Adhemar_hands_B,
 		ring1="Dark Ring",
@@ -230,9 +220,14 @@ function init_gear_sets()
 	sets.idle.Regen = set_combine(sets.idle,{
 		head="Rao Kabuto +1",
 		neck="Bathy Choker +1",
-		body="Hiza. Haramaki +2",
+		--body="Hiza. Haramaki +2",
 		ring1="Sheltered Ring"
 	})
+
+	-- Resting sets
+	sets.resting = set_combine(sets.idle.Regen,{
+	})
+
 
 	-- PDT: 46%
 	sets.idle.PDT = set_combine(sets.idle,{
@@ -291,7 +286,7 @@ function init_gear_sets()
 
 	sets.defense.HP = set_combine(sets.idle, {
 		head="Blistering Sallet +1",
-		body="Hiza. Haramaki +2",
+		--body="Hiza. Haramaki +2",
 		hands=gear.Adhemar_hands_B,
 		ring1="K'ayres Ring",
 		back="Moonbeam Cape",
@@ -308,7 +303,7 @@ function init_gear_sets()
 	})
 
 	sets.ExtraRegen = set_combine(sets.idle, {
-		body="Hiza. Haramaki +2",
+		--body="Hiza. Haramaki +2",
 		neck="Bathy Choker +1",
 		ring1="Sheltered Ring"
 	})

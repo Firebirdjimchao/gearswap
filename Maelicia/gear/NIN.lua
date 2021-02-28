@@ -111,17 +111,18 @@ function init_gear_sets()
 
 	-- Waltz (chr and vit)
 	sets.precast.Waltz = {
-		head="Mummu Bonnet +2",
-		body="Mochi. Chainmail +3",
-		hands="Malignance Gloves",
+		head="Malignance Chapeau",
+		body="Tatena. Harama. +1",
+		hands="Tatena. Gote +1",
 		ring1="Dark Ring",
 		ring2="Sirona's Ring",
 		back="Tantalic Cape",
 		waist="Chaac Belt",
 		--legs="Hiza. Hizayoroi +2",
 		legs="Mochi. Hakama +3",
-		feet="Hiza. Sune-Ate +2",
+		--feet="Hiza. Sune-Ate +2",
 		--feet="Rawhide Boots",
+		feet="Malignance Boots",
 	}
 	-- Don't need any special gear for Healing Waltz.
 	sets.precast.Waltz['Healing Waltz'] = {}
@@ -130,19 +131,19 @@ function init_gear_sets()
 	})
 	-- Set for acc on steps, since Yonin drops acc a fair bit
 	sets.precast.Step = {
-		head="Mummu Bonnet +2",
+		head="Malignance Chapeau",
 		neck="Moonbeam Nodowa",
-		body="Mummu Jacket +2",
+		body="Malignance Tabard",
 		ear1="Digni. Earring",
 		ear2="Telos Earring",
-		hands="Mummu Wrists +2",
+		hands="Malignance Gloves",
 		ring1="Patricius Ring",
 		ring2="Cacoethic Ring +1",
 		back=Andartia.DEX,
 		waist="Eschan Stone",
 		legs="Mummu Kecks +2",
 		--legs="Herculean Trousers",
-		feet="Mummu Gamash. +2"
+		feet="Malignance Boots"
 	}
 	sets.midcast.Trust =  set_combine(sets.defense.Evasion,{
 	})
@@ -312,7 +313,7 @@ function init_gear_sets()
 
 	sets.idle = {
 		ammo="Staunch Tathlum +1",
-		head="Blistering Sallet +1",
+		head="Malignance Chapeau",
 		neck="Loricate Torque +1",
 		ear1="Odnowa Earring +1",
 		ear2="Etiolation Earring",
@@ -333,7 +334,7 @@ function init_gear_sets()
 	sets.idle.Regen = set_combine(sets.idle, {
 		head="Rao Kabuto +1",
 		neck="Bathy Choker +1",
-		body="Hiza. Haramaki +2",
+		--body="Hiza. Haramaki +2",
 		ring1="Sheltered Ring"
 	})
 	sets.Adoulin = {
@@ -349,7 +350,7 @@ function init_gear_sets()
 
 	-- Defense sets
 	sets.defense.PDT = {
-		head="Blistering Sallet +1",
+		head="Malignance Chapeau",
 		neck="Loricate Torque +1",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
@@ -362,7 +363,7 @@ function init_gear_sets()
 	}
 
 	sets.defense.MDT = set_combine(sets.defense.PDT, {
-		head="Dampening Tam",
+		head="Malignance Chapeau",
 		--neck="Inq. Bead Necklace",
 		neck="Loricate Torque +1",
 		ear1="Odnowa Earring +1",
@@ -420,10 +421,18 @@ function init_gear_sets()
 	sets.engaged.Innin.Acc = sets.engaged.Acc
 
 	-- Defenseive sets
+	-- TODO: add Malignance Tights and remove Loricate Torque +1
 	sets.NormalPDT = {
+		head="Malignance Chapeau",
+		neck="Loricate Torque +1",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		ring1="Dark Ring",
+		ring2="Defending Ring",
+		feet="Malignance Boots"
 	}
-	sets.AccPDT = {
-	}
+	sets.AccPDT = set_combine(sets.NormalPDT,{
+	})
 
 	sets.engaged.PDT = set_combine(sets.engaged, sets.NormalPDT)
 	sets.engaged.Low.PDT = set_combine(sets.engaged.Low, sets.NormalPDT)

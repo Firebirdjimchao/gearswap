@@ -480,7 +480,7 @@ function init_gear_sets()
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 
 	sets.idle = {
-		--head="Meghanada Visor +2",
+		--head="Malignance Chapeau",
 		head="Turms Cap",
 		neck="Loricate Torque +1",
 		ear1="Odnowa Earring +1",
@@ -515,7 +515,7 @@ function init_gear_sets()
 	})
 
 	sets.idle.StoreTP = set_combine(sets.idle,{
-		head="Pursuer's Beret",
+		head="Malignance Chapeau",
 		ammo="Yamarang",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
@@ -533,15 +533,17 @@ function init_gear_sets()
 	-- Defense sets
 
 	sets.defense.Evasion = set_combine(sets.idle,{
-		hands="Herculean Gloves",
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
 		legs="Herculean Trousers",
-		feet="Herculean Boots"
+		feet="Malignance Boots",
 	})
 
-	-- PDT: 57%
+	-- DT: 49% PDT: 9% MDT: 5%
 	sets.defense.PDT = set_combine(sets.idle,{
-		-- PDT 4%
-		head="Meghanada Visor +2",
+		-- DT 6%
+		head="Malignance Chapeau",
 		-- DT 6%
 		neck="Loricate Torque +1",
 		-- DT 9%
@@ -562,26 +564,33 @@ function init_gear_sets()
 		feet="Malignance Boots",
 	})
 
-	-- PDT: 32%
-	-- MDT: 41%
-	-- MDB: 30
+	-- DT: 42%
+	-- PDT: 9%
+	-- MDT: 10%
+	-- MDB: 23
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.defense.MDT = set_combine(sets.idle,{
-		-- MDT 4% MDB 4
-		head="Dampening Tam",
+		-- DT 6% MDB 5
+		head="Malignance Chapeau",
 		-- 2% MDT
 		ear1="Odnowa Earring +1",
-		-- MDT 3%
+		-- 3% MDT
 		ear2="Etiolation Earring",
 		-- MDB 8
-		neck="Inq. Bead Necklace",
+		--neck="Inq. Bead Necklace",
+		-- DT 6%
+		neck="Loricate Torque +1",
 		-- DT 9% MDB 8
 		body="Malignance Tabard",
-		ring1="Shadow Ring",
+		-- PDT 5% MDT 5%
+		ring1="Dark Ring",
+		--ring1="Shadow Ring",
 		-- DT 10%
 		ring2="Defending Ring",
 		-- DT 5%
 		back="Moonbeam Cape",
+		-- PDT 4%
+		waist="Flume Belt +1",
 		-- DT: 4% MDB 5
 		legs="Mummu Kecks +2",
 		-- DT 4% MDB 5
@@ -670,16 +679,14 @@ function init_gear_sets()
 	})
 	sets.engaged.FullAcc.Evasion = set_combine(sets.engaged.FullAcc,sets.engaged.Evasion,{
 	})
+	-- TODO: add Malignance Tights and remove Loricate Torque +1
 	sets.engaged.PDT = set_combine(sets.engaged.Evasion,{
-		head="Meghanada Visor +2",
+		head="Malignance Chapeau",
 		neck="Loricate Torque +1",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
-		back="Moonbeam Cape",
-		waist="Flume Belt +1",
-		legs="Meg. Chausses +2",
 		feet="Malignance Boots",
 	})
 	sets.engaged.MidAcc.PDT = set_combine(sets.engaged.PDT,{
@@ -688,14 +695,14 @@ function init_gear_sets()
 	})
 	sets.engaged.FullAcc.PDT = set_combine(sets.engaged.HighAcc.PDT,{
 	})
+	-- TODO: add Malignance Tights and remove Loricate Torque +1
 	sets.engaged.MDT = set_combine(sets.engaged.Evasion,{
-		head="Dampening Tam",
-		neck="Inq. Bead Necklace",
+		head="Malignance Chapeau",
+		neck="Loricate Torque +1",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
-		ring1="Shadow Ring",
+		ring1="Dark Ring",
 		ring2="Defending Ring",
-		back="Moonbeam Cape",
 		feet="Malignance Boots",
 	})
 	sets.engaged.MidAcc.MDT = set_combine(sets.engaged.MDT,{
@@ -711,8 +718,8 @@ function init_gear_sets()
 		-- DT 3%
 		--ammo="Staunch Tathlum +1",
 		ammo="Yamarang",
-		-- PDT 5%
-		head="Meghanada Visor +2",
+		-- DT 6%
+		head="Malignance Chapeau",
 		-- DT 6%
 		neck="Loricate Torque +1",
 		ear1="Sherida Earring",
