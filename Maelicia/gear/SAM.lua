@@ -593,7 +593,8 @@ function init_gear_sets()
 		-- 8%
 		waist="Ioskeha Belt +1",
 		-- 9 STP 5% Hasso +3
-		legs="Kasuga Haidate +1",
+		--legs="Kasuga Haidate +1",
+		legs="Wakido Haidate +3",
 		-- 5 STP 2%
 		--feet="Flam. Gambieras +1",
 		-- 3% Hasso +2
