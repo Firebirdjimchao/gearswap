@@ -13,6 +13,7 @@ function user_setup()
 
 	--Augmented Gear Definitions--
 	gear.Cichol_StrWSD = { name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
+	gear.Cichol_VitWSD = { name="Cichol's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%',}}
 	gear.Cichol_AccDA = { name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
  
 	update_combat_weapon()
@@ -173,9 +174,9 @@ function init_gear_sets()
 		hands="Tatena. Gote +1",
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
-		back=gear.Cichol_StrWSD,
+		back=gear.Cichol_VitWSD,
 		waist="Ioskeha Belt +1",
-		legs="Sulevi. Cuisses +2",
+		legs=gear.Valorous_legs_WS,
 		--legs=gear.Odyssean_legs_WS,
 		feet="Sulev. Leggings +2",
 	})
@@ -525,10 +526,12 @@ function init_gear_sets()
 	sets.precast.WS["Judgment"] = set_combine(sets.precast.WS,{
 		ammo="Knobkierrie",
 		head="Agoge Mask +3",
+		ear1="Moonshade Earring",
 		ear2="Thrud Earring",
 		body="Pumm. Lorica +3",
 		hands=gear.Odyssean_hands_WS,
 		back=gear.Cichol_StrWSD,
+		legs=gear.Valorous_legs_WS,
 		feet="Sulev. Leggings +2",
 	})
 	sets.precast.WS['Judgment'].AccLow = set_combine(sets.precast.WS['Judgment'], {
@@ -536,6 +539,44 @@ function init_gear_sets()
 	sets.precast.WS['Judgment'].AccHigh = set_combine(sets.precast.WS['Judgment'], {
 	})
 	sets.precast.WS['Judgment'].MS = set_combine(sets.precast.WS['Judgment'], {
+	})
+
+	-- 100% STR, Damage varies with TP
+	sets.precast.WS["Impulse Drive"] = set_combine(sets.precast.WS,{
+		ammo="Knobkierrie",
+		head="Agoge Mask +3",
+		ear1="Moonshade Earring",
+		ear2="Thrud Earring",
+		body="Pumm. Lorica +3",
+		hands=gear.Odyssean_hands_WS,
+		back=gear.Cichol_StrWSD,
+		legs=gear.Valorous_legs_WS,
+		feet="Sulev. Leggings +2",
+	})
+	sets.precast.WS["Impulse Drive"].AccLow = set_combine(sets.precast.WS["Impulse Drive"], {
+	})
+	sets.precast.WS["Impulse Drive"].AccHigh = set_combine(sets.precast.WS["Impulse Drive"], {
+	})
+	sets.precast.WS["Impulse Drive"].MS = set_combine(sets.precast.WS["Impulse Drive"], {
+	})
+
+	-- 73-85% STR, Damage varies with TP
+	sets.precast.WS["Stardiver"] = set_combine(sets.precast.WS,{
+		ammo="Knobkierrie",
+		head="Agoge Mask +3",
+		ear1="Moonshade Earring",
+		ear2="Thrud Earring",
+		body="Pumm. Lorica +3",
+		hands=gear.Odyssean_hands_WS,
+		back=gear.Cichol_StrWSD,
+		legs=gear.Valorous_legs_WS,
+		feet="Sulev. Leggings +2",
+	})
+	sets.precast.WS["Stardiver"].AccLow = set_combine(sets.precast.WS["Stardiver"], {
+	})
+	sets.precast.WS["Stardiver"].AccHigh = set_combine(sets.precast.WS["Stardiver"], {
+	})
+	sets.precast.WS["Stardiver"].MS = set_combine(sets.precast.WS["Stardiver"], {
 	})
  
 	--------------------------------------

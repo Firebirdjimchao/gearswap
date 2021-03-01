@@ -91,7 +91,7 @@ function define_global_sets()
 	gear.Valorous_body_TP = { name="Valorous Mail", augments={'Accuracy+14 Attack+14','"Store TP"+7',}}
 	gear.Valorous_hand_TP = { name="Valorous Mitts", augments={'Accuracy+8 Attack+8','"Store TP"+6','STR+9','Accuracy+11',}}
 	gear.Valorous_hand_WS = { name="Valorous Mitts", augments={'Pet: Mag. Acc.+8','MND+7','Weapon skill damage +6%','Accuracy+13 Attack+13','Mag. Acc.+2 "Mag.Atk.Bns."+2',}}
-	gear.Valorous_legs_TP = { name="Valorous Hose", augments={'Accuracy+12 Attack+12','Weapon Skill Acc.+9','DEX+1','Accuracy+15','Attack+13',}}
+	gear.Valorous_legs_WS = { name="Valorous Hose", augments={'Attack+15','Weapon skill damage +4%','DEX+7','Accuracy+10',}}
 	gear.Valorous_feet_TP = { name="Valorous Greaves", augments={'Accuracy+25 Attack+25','DEX+4','Accuracy+5','Attack+4',}}
 	gear.Valorous_feet_WS = { name="Valorous Greaves", augments={'Accuracy+25','Weapon skill damage +5%','VIT+10',}}
 

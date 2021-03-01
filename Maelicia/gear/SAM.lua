@@ -438,7 +438,7 @@ function init_gear_sets()
 	
 	-- Defense sets
 
-	-- 37% DT 11% PDT 15% MDT 12 MDB (43% DT if using Khonsu)
+	-- 37% DT 9% PDT 15% MDT 17 MDB (43% DT if using Khonsu)
 	sets.defense.DT = set_combine(sets.idle,{
 		-- 6& DT
 		sub="Khonsu",
@@ -463,8 +463,8 @@ function init_gear_sets()
 		ring2="Defending Ring",
 		-- 5% DT
 		back=gear.Smertrio_STP,
-		-- 2% PDT 3 MDB
-		legs="Valorous Hose",
+		-- 8 MDB
+		legs="Ken. Hakama +1",
 		-- 4% DT 2 MDB
 		feet="Amm Greaves"
 	})
@@ -569,6 +569,7 @@ function init_gear_sets()
 	-- http://www.ffxiah.com/forum/topic/41903/bushido-the-way-of-the-samurai-a-guide-v-20/49#2866879
 	--
 	sets.engaged = {
+		sub="Duplus Grip",
 		-- 3 STP
 		ammo="Ginsen",
 		-- 5 STP 4%
@@ -604,6 +605,7 @@ function init_gear_sets()
 	-- Gear Haste: 25%
 	-- JA Haste (Hasso): 10 base + 6 gear = 16%
 	sets.engaged.MidAcc = set_combine(sets.engaged,{
+		sub="Utu Grip",
 		-- 3 STP
 		ammo="Ginsen",
 		-- 5 STP 4%
@@ -633,6 +635,7 @@ function init_gear_sets()
 	-- Gear Haste: 27%
 	-- JA Haste (Hasso): 10 base + 6 gear = 16%
 	sets.engaged.HighAcc = set_combine(sets.engaged,{
+		sub="Utu Grip",
 		-- 3 STP
 		ammo="Ginsen",
 		-- 5 STP 4%
@@ -674,6 +677,7 @@ function init_gear_sets()
 	-- Gear Haste: 28%
 	-- JA Haste (Hasso): 10 base + 6 gear = 16%
 	sets.engaged.FullAcc = set_combine(sets.engaged,{
+		sub="Utu Grip",
 		-- 3 STP
 		ammo="Ginsen",
 		-- 7%
@@ -703,6 +707,13 @@ function init_gear_sets()
 		feet="Wakido Sune. +3",
 	})
 	sets.engaged.PDT = set_combine(sets.engaged,sets.defense.PDT,{
+		sub="Utu Grip",
+		-- 8 STP
+		neck="Moonbeam Nodowa",
+		body="Sacro Breastplate",
+		back=gear.Smertrio_STP_DEX,
+		waist="Ioskeha Belt +1",
+		legs="Ken. Hakama +1",
 	})
 	sets.engaged.MidAcc.PDT = set_combine(sets.engaged,MidAcc,sets.defense.PDT,{
 	})
@@ -711,20 +722,19 @@ function init_gear_sets()
 	sets.engaged.FullAcc.PDT = set_combine(sets.engaged,FullAcc,sets.defense.PDT,{
 	})
 	sets.engaged.MDT = set_combine(sets.engaged,sets.defense.MDT,{
+		sub="Utu Grip",
+		-- 8 STP
+		neck="Moonbeam Nodowa",
+		body="Sacro Breastplate",
+		back=gear.Smertrio_STP_DEX,
+		waist="Ioskeha Belt +1",
+		legs="Ken. Hakama +1",
 	})
 	sets.engaged.MidAcc.MDT = set_combine(sets.engaged,MidAcc,sets.defense.MDT,{
-		ring1="Patricius Ring",
-		legs=gear.Valorous_legs_TP,
 	})
 	sets.engaged.HighAcc.MDT = set_combine(sets.engaged,HighAcc,{
-		head="Founder's Corona",
-		ring1="Patricius Ring",
-		legs=gear.Valorous_legs_TP,
 	})
 	sets.engaged.FullAcc.MDT = set_combine(sets.engaged,FullAcc,{
-		head="Founder's Corona",
-		ring1="Patricius Ring",
-		legs=gear.Valorous_legs_TP,
 	})
 	sets.engaged.Reraise = set_combine(sets.engaged,{
 		head="Twilight Helm",
