@@ -471,8 +471,17 @@ function init_gear_sets()
 	sets.precast.WS['Raging Fists'].MS = set_combine(sets.precast.WS['Raging Fists'], {
 	})
 
-	-- 50% STR, Acc varies with TP
+	-- 15% STR / 15% VIT, Acc varies with TP
 	sets.precast.WS["Asuran Fists"] = set_combine(sets.precast.WS,{
+		ammo="Knobkierrie",
+		head="Agoge Mask +3",
+		ear1="Moonshade Earring",
+		ear2="Thrud Earring",
+		body="Pumm. Lorica +3",
+		hands=gear.Odyssean_hands_WS,
+		back=gear.Cichol_StrWSD,
+		legs=gear.Valorous_legs_WS,
+		feet="Sulev. Leggings +2",
 	})
 	sets.precast.WS['Asuran Fists'].AccLow = set_combine(sets.precast.WS['Asuran Fists'], {
 	})
