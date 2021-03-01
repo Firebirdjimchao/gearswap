@@ -441,7 +441,7 @@ function init_gear_sets()
 	-- 37% DT 9% PDT 15% MDT 17 MDB (43% DT if using Khonsu)
 	sets.defense.DT = set_combine(sets.idle,{
 		-- 6& DT
-		sub="Khonsu",
+		--sub="Khonsu",
 		-- 2% DT
 		ammo="Staunch Tathlum +1",
 		-- 5% MDT
@@ -569,7 +569,7 @@ function init_gear_sets()
 	-- http://www.ffxiah.com/forum/topic/41903/bushido-the-way-of-the-samurai-a-guide-v-20/49#2866879
 	--
 	sets.engaged = {
-		sub="Duplus Grip",
+		--sub="Duplus Grip",
 		-- 3 STP
 		ammo="Ginsen",
 		-- 5 STP 4%
@@ -605,7 +605,7 @@ function init_gear_sets()
 	-- Gear Haste: 25%
 	-- JA Haste (Hasso): 10 base + 6 gear = 16%
 	sets.engaged.MidAcc = set_combine(sets.engaged,{
-		sub="Utu Grip",
+		--sub="Utu Grip",
 		-- 3 STP
 		ammo="Ginsen",
 		-- 5 STP 4%
@@ -635,7 +635,7 @@ function init_gear_sets()
 	-- Gear Haste: 27%
 	-- JA Haste (Hasso): 10 base + 6 gear = 16%
 	sets.engaged.HighAcc = set_combine(sets.engaged,{
-		sub="Utu Grip",
+		--sub="Utu Grip",
 		-- 3 STP
 		ammo="Ginsen",
 		-- 5 STP 4%
@@ -677,7 +677,7 @@ function init_gear_sets()
 	-- Gear Haste: 28%
 	-- JA Haste (Hasso): 10 base + 6 gear = 16%
 	sets.engaged.FullAcc = set_combine(sets.engaged,{
-		sub="Utu Grip",
+		--sub="Utu Grip",
 		-- 3 STP
 		ammo="Ginsen",
 		-- 7%
@@ -707,7 +707,7 @@ function init_gear_sets()
 		feet="Wakido Sune. +3",
 	})
 	sets.engaged.PDT = set_combine(sets.engaged,sets.defense.PDT,{
-		sub="Utu Grip",
+		--sub="Utu Grip",
 		-- 8 STP
 		neck="Moonbeam Nodowa",
 		body="Sacro Breastplate",
@@ -722,7 +722,7 @@ function init_gear_sets()
 	sets.engaged.FullAcc.PDT = set_combine(sets.engaged,FullAcc,sets.defense.PDT,{
 	})
 	sets.engaged.MDT = set_combine(sets.engaged,sets.defense.MDT,{
-		sub="Utu Grip",
+		--sub="Utu Grip",
 		-- 8 STP
 		neck="Moonbeam Nodowa",
 		body="Sacro Breastplate",
