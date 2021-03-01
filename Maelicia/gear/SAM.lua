@@ -38,8 +38,9 @@ function user_setup()
 	-- "CTRL: ^ ALT: ! Windows Key: @ Apps Key: #"
 	
 	-- Additional local binds
-	send_command('bind ^` input /ja "Hasso" <me>')
+	send_command('bind @` input /ja "Hasso" <me>')
 	send_command('bind !` input /ja "Seigan" <me>')
+	send_command('bind ^` gs equip sets.Twilight; input /echo --- Twilight Set On ---')
 	
 	select_default_macro_book()
 
@@ -49,6 +50,7 @@ end
 
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
+	send_command('unbind @`')
 	send_command('unbind ^`')
 	send_command('unbind !`')
 end
@@ -383,6 +385,11 @@ function init_gear_sets()
 	})
 	
 	-- Sets to return to when not performing an action.
+
+	sets.Twilight = {
+		head="Twilight Helm",
+		body="Twilight Mail"
+	}
 	
 	-- Idle sets
 	
@@ -472,10 +479,8 @@ function init_gear_sets()
 	sets.defense.PDT = set_combine(sets.defense.DT,{
 	})
 	
-	sets.defense.Reraise = {
-		head="Twilight Helm",
-		body="Twilight Mail"
-	}
+	sets.defense.Reraise = set_combine(sets.Twilight,{
+	})
 	
 	sets.defense.MDT = set_combine(sets.defense.DT,{
 		--neck="Inq. Bead Necklace",
@@ -486,7 +491,8 @@ function init_gear_sets()
 	
 	sets.Kiting = {feet="Danzo Sune-ate"}
 	
-	sets.Reraise = {head="Twilight Helm",body="Twilight Mail"}
+	sets.Reraise = set_combine(sets.Twilight,{
+	})
 	
 	-- Engaged sets
 	
