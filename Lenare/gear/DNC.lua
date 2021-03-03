@@ -112,29 +112,29 @@ function init_gear_sets()
 
 	sets.precast.Acc = {
 		--ammo="Jukukik Feather",
-		head="Meghanada Visor +2",
+		head="Malignance Chapeau",
 		ear1="Heartseeker Earring",
 		ear2="Steelflash Earring",
 		neck="Sanctity Necklace",
 		body="Meg. Cuirie +2",
-		hands="Meg. Gloves +2",
+		hands="Malignance Gloves",
 		ring2="Cacoethic Ring",
 		back=gear.Senuna_DexDa,
 		waist="Eschan Stone",
 		legs="Meg. Chausses +2",
-		feet="Meg. Jam. +2"
+		feet="Malignance Boots",
 	}
 	sets.precast.Macc = {
-		head="Mummu Bonnet +2",
+		head="Malignance Chapeau",
 		neck="Sanctity Necklace",
 		ear1="Hermetic Earring",
 		body="Mummu Jacket +2",
-		hands="Mummu Wrists +2",
+		hands="Malignance Gloves",
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
 		waist="Eschan Stone",
 		legs="Mummu Kecks +2",
-		feet="Mummu Gamash. +2",
+		feet="Malignance Boots",
 	}
 
 	sets.precast.Step = set_combine(sets.precast.Acc,{
@@ -314,7 +314,6 @@ function init_gear_sets()
 	--------------------------------------
 
 	sets.midcast.FastRecast = set_combine(sets.precast.FC,{
-		head="Skormoth Mask",
 		body="Mekosu. Harness",
 		back="Shadow Mantle",
 		waist="Cetl Belt",
@@ -334,7 +333,7 @@ function init_gear_sets()
 	}
 
 	sets.idle = {
-		head="Meghanada Visor +2",
+		head="Malignance Chapeau",
 		--ammo="Charis Feather",
 		ammo="Staunch Tathlum",
 		neck="Twilight Torque",
@@ -368,7 +367,7 @@ function init_gear_sets()
 
 	sets.defense.PDT = set_combine(sets.idle,{
 		ammo="Staunch Tathlum",
-		head="Meghanada Visor +2",
+		head="Malignance Chapeau",
 		neck="Twilight Torque",
 		body="Meg. Cuirie +2",
 		hands="Malignance Gloves",
@@ -381,7 +380,7 @@ function init_gear_sets()
 
 	sets.defense.MDT = set_combine(sets.idle,{
 		ammo="Staunch Tathlum",
-		head="Skormoth Mask",
+		head="Malignance Chapeau",
 		ear2="Etiolation Earring",
 		neck="Twilight Torque",
 		body="Meg. Cuirie +2",
@@ -420,13 +419,15 @@ function init_gear_sets()
 	}
 	sets.engaged.MidAcc = set_combine(sets.engaged,{
 		ammo="Honed Tathlum",
-		head="Mummu Bonnet +2",
+		head="Malignance Chapeau",
 		neck="Defiant Collar",
 		body="Mummu Jacket +2",
+		hands="Malignance Gloves",
 		ring2="Cacoethic Ring",
-		feet="Mummu Gamash. +2",
+		feet="Malignance Boots",
 	})
 	sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc,{
+		head="Malignance Chapeau",
 		ear2="Zennaroi Earring",
 		hands="Malignance Gloves",
 		waist="Eschan Stone",
@@ -449,7 +450,7 @@ function init_gear_sets()
 	})
 
 	sets.engaged.PDT = set_combine(sets.engaged.Evasion,{
-		head="Meghanada Visor +2",
+		head="Malignance Chapeau",
 		neck="Twilight Torque",
 		body="Meg. Cuirie +2",
 		hands="Malignance Gloves",
@@ -467,7 +468,7 @@ function init_gear_sets()
 	})
 
 	sets.engaged.MDT = set_combine(sets.engaged.Evasion,{
-		head="Skormoth Mask",
+		head="Malignance Chapeau",
 		neck="Twilight Torque",
 		ear2="Etiolation Earring",
 		body="Meg. Cuirie +2",

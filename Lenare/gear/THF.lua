@@ -413,7 +413,7 @@ function init_gear_sets()
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 
 	sets.idle = {
-		head="Meghanada Visor +2",
+		head="Malignance Chapeau",
 		neck="Twilight Torque",
 		ear1="Dudgeon Earring",
 		ear2="Heartseeker Earring",
@@ -461,7 +461,7 @@ function init_gear_sets()
 	})
 
 	sets.defense.MDT = set_combine(sets.idle,{
-		head="Skormoth Mask",
+		head="Malignance Chapeau",
 		neck="Inq. Bead Necklace",
 		ear2="Etiolation Earring",
 		ring1="Shadow Ring",
@@ -493,7 +493,7 @@ function init_gear_sets()
 		feet="Mummu Gamash. +2",
 	})
 	sets.engaged.HighAcc = set_combine(sets.engaged,{
-		head="Skormoth Mask",
+		head="Malignance Chapeau",
 		neck="Sanctity Necklace",
 		body="Meg. Cuirie +2",
 		hands="Malignance Gloves",
@@ -502,7 +502,7 @@ function init_gear_sets()
 		feet="Malignance Boots",
 	})
 	sets.engaged.FullAcc = set_combine(sets.engaged,{
-		head="Meghanada Visor +2",
+		head="Malignance Chapeau",
 		ear1="Zennaroi Earring",
 		body="Meg. Cuirie +2",
 		hands="Malignance Gloves",
@@ -512,6 +512,7 @@ function init_gear_sets()
 		feet="Malignance Boots",
 	})
 	sets.engaged.Evasion = set_combine(sets.engaged,{
+		head="Malignance Chapeau",
 		body="Mekosu. Harness",
 		hands="Malignance Gloves",
 		back="Canny Cape",
@@ -524,7 +525,7 @@ function init_gear_sets()
 	sets.engaged.FullAcc.Evasion = set_combine(sets.engaged.FullAcc,{
 	})
 	sets.engaged.PDT = set_combine(sets.engaged.Evasion,{
-		head="Meghanada Visor +2",
+		head="Malignance Chapeau",
 		neck="Twilight Torque",
 		body="Meg. Cuirie +2",
 		hands="Malignance Gloves",
@@ -541,7 +542,7 @@ function init_gear_sets()
 	sets.engaged.FullAcc.PDT = set_combine(sets.engaged.HighAcc.PDT,{
 	})
 	sets.engaged.MDT = set_combine(sets.engaged.Evasion,{
-		head="Skormoth Mask",
+		head="Malignance Chapeau",
 		ear2="Etiolation Earring",
 		ring1="Shadow Ring",
 	})
