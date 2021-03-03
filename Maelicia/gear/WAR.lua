@@ -21,12 +21,14 @@ function user_setup()
 	select_default_macro_book()
 
 	send_command('bind @` gs c cycle HasteMode')
+	send_command('bind ^` gs equip sets.Twilight; input /echo --- Twilight Set On ---')
 
 	global_aliases()
 end
 
 function file_unload()
 	send_command('unbind @`')
+	send_command('unbind ^`')
 end
 
 function init_gear_sets()
@@ -610,6 +612,11 @@ function init_gear_sets()
 	-- Resting sets
 	sets.resting = {}
 
+	sets.Twilight = {
+		head="Twilight Helm",
+		body="Twilight Mail"
+	}
+
 	-- Idle sets
 	sets.idle = {
 		ammo="Staunch Tathlum +1",
@@ -653,9 +660,7 @@ function init_gear_sets()
 		feet="Volte Sollerets",
 	})
 			 
-	sets.idle.Weak = set_combine(sets.idle,{
-		head="Twilight Helm",
-		body="Twilight Mail"
+	sets.idle.Weak = set_combine(sets.idle,sets.Twilight,{
 	})
 	
 	sets.idle.CP = set_combine(sets.idle,{
@@ -731,7 +736,8 @@ function init_gear_sets()
 		-- 137 MEVA
 		feet="Volte Sollerets",
 	})
-	sets.defense.Reraise = set_combine(sets.defense.PDT, {head="Twilight Helm",body="Twilight Mail"})
+	sets.defense.Reraise = set_combine(sets.defense.PDT,sets.Twilight,{
+	})
 	
 	-- Total: 
 	-- 24% DT 
