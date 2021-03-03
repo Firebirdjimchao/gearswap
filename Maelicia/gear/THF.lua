@@ -511,7 +511,7 @@ function init_gear_sets()
 	})
 	
 	sets.idle.CP = set_combine(sets.idle,{
-		back="Mecisto. Mantle"
+		--back="Mecisto. Mantle"
 	})
 
 	sets.idle.StoreTP = set_combine(sets.idle,{
@@ -523,11 +523,11 @@ function init_gear_sets()
 	})
 	
 	sets.idle.CPPDT = set_combine(sets.defense.PDT,{
-		back="Mecisto. Mantle"
+		--back="Mecisto. Mantle"
 	})
 	
 	sets.idle.CPMDT = set_combine(sets.defense.MDT,{
-		back="Mecisto. Mantle"
+		--back="Mecisto. Mantle"
 	})
 
 	-- Defense sets
