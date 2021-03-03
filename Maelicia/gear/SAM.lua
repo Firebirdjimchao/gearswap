@@ -681,7 +681,7 @@ function init_gear_sets()
 	-- 42 gear STP + 10 (Dojikiri Yasutsuna) = total: 52
 	-- Must use Utu Grip
 	--
-	-- Gear Haste: 28%
+	-- Gear Haste: 30%
 	-- JA Haste (Hasso): 10 base + 6 gear = 16%
 	sets.engaged.FullAcc = set_combine(sets.engaged,{
 		--sub="Utu Grip",
@@ -694,8 +694,8 @@ function init_gear_sets()
 		-- 5 STP
 		ear1="Telos Earring",
 		ear2="Digni. Earring",
-		-- 1%
-		body="Dagon Breastplate",
+		-- 3%
+		body="Wakido Domaru +2",
 		--hands=gear.Ryuo_hands_D,
 		-- 7 STP 4% Hasso +4
 		hands="Wakido Kote +3",
@@ -717,7 +717,7 @@ function init_gear_sets()
 		--sub="Utu Grip",
 		-- 8 STP
 		neck="Moonbeam Nodowa",
-		body="Sacro Breastplate",
+		body="Wakido Domaru +2",
 		back=gear.Smertrio_STP_DEX,
 		waist="Ioskeha Belt +1",
 		legs="Ken. Hakama +1",
