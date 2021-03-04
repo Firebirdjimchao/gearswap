@@ -220,7 +220,7 @@ function init_gear_sets()
 		--legs="Gyve Trousers",
 		legs=gear.Herculean_legs_Magic,
 	}
-	sets.precast.FC.Ninjutsu = set_combine(sets.precast.FC, {feet="Mochi. Kyahan +2"})
+	sets.precast.FC.Ninjutsu = set_combine(sets.precast.FC, {})
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, { neck="Magoraga Beads", body="Mochi. Chainmail +3" })
 	sets.precast.FC.Monomi = {
     hands="Mochizuki Tekko +3",
@@ -252,7 +252,7 @@ function init_gear_sets()
 		back="Yokaze Mantle",
 		waist="Eschan Stone",
 		legs="Mummu Kecks +2",
-		feet="Mummu Gamash. +2",
+		feet="Mochi. Kyahan +3",
 	}
 	-- any ninjutsu cast on self
 	sets.midcast.SelfNinjutsu = set_combine(sets.midcast.Ninjutsu, {
@@ -287,7 +287,8 @@ function init_gear_sets()
 		ring2="Dingir Ring",
 		waist="Eschan Stone",
 		legs=gear.Herculean_legs_Magic,
-		feet="Adhemar Gamashes"
+		--feet="Adhemar Gamashes",
+		feet="Mochi. Kyahan +3",
 	}
 
 	sets.midcast.ElementalNinjutsu.Resistant = set_combine(sets.midcast.ElementalNinjutsu, {
@@ -297,6 +298,7 @@ function init_gear_sets()
 		ear2="Hermetic Earring",
 		back="Yokaze Mantle",
 		legs="Mummu Kecks +2",
+		feet="Mochi. Kyahan +3",
 	})
 
 	sets.magic_burst = set_combine(sets.midcast.ElementalNinjutsu, {
@@ -468,7 +470,8 @@ function init_gear_sets()
 		ring1="Gere Ring",
 		waist="Windbuffet Belt +1",
 		legs="Samnuha Tights",
-		feet="Mummu Gamash. +2",
+		--feet="Mummu Gamash. +2",
+		feet="Mochi. Kyahan +3",
 	})
 	-- Base set for hard content
 	sets.engaged.Low.MaxHaste = set_combine(sets.engaged.MaxHaste, {
@@ -479,11 +482,14 @@ function init_gear_sets()
 		legs="Ken. Hakama +1",
 	})
 	sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
+		head="Malignance Chapeau",
 		ear1="Digni. Earring",
 		body="Mochi. Chainmail +3",
+		hands="Malignance Gloves",
 		ring1="Ramuh Ring +1",
 		ring2="Cacoethic Ring +1",
 		waist="Eschan Stone",
+		feet="Malignance Boots",
 	})
 	sets.engaged.Innin.MaxHaste	 = set_combine(sets.engaged.MaxHaste, {
 	})
