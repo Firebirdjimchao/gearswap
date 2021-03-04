@@ -39,9 +39,9 @@ function init_gear_sets()
 		hands=gear.Adhemar_hands_B,
 		ring2="Dark Ring",
 		back="Tuilha Cape",
-		waist="Rumination Sash",
+		waist="Luminary Sash",
 		legs="Anch. Hose +1",
-		feet="Anch. Gaiters +1"
+		feet="Malignance Boots",
 	}
 
 	-- Chakra - VIT
@@ -193,19 +193,19 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle = {
 		ammo="Staunch Tathlum +1",
-		head="Blistering Sallet +1",
+		head="Malignance Chapeau",
 		neck="Loricate Torque +1",
 		ear1="Odnowa Earring +1",
 		ear2="Etiolation Earring",
-		body="Emet Harness +1",
-		hands=gear.Adhemar_hands_B,
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		--back="Moonbeam Cape",
 		back="Mecisto. Mantle",
 		waist="Black Belt",
-		legs="Herculean Trousers",
-		feet="Hermes' Sandals"
+		legs="Mummu Kecks +2",
+		feet="Herald's Gaiters"
 	}
 	
 	sets.noprotect = {ring1="Sheltered Ring"}
@@ -229,15 +229,19 @@ function init_gear_sets()
 	})
 
 
-	-- PDT: 46%
+	-- DT: 44% PDT: 10% MDT: 10%
 	sets.idle.PDT = set_combine(sets.idle,{
-		-- PDT 3%
-		head="Blistering Sallet +1",
+		-- DT 6%
+		head="Malignance Chapeau",
+		-- MDT 2%
+		ear1="Odnowa Earring +1",
+		-- MDT 3%
+		ear2="Etiolation Earring",
 		-- DT 6%
 		neck="Loricate Torque +1",
-		-- PDT 6%
-		body="Emet Harness +1",
-		hands=gear.Adhemar_hands_B,
+		-- DT 9%
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
 		-- PDT 5% MDT 5%
 		ring1="Dark Ring",
 		-- DT 10%
@@ -248,36 +252,36 @@ function init_gear_sets()
 		waist="Black Belt",
 		-- DT 4%
 		legs="Mummu Kecks +2",
-		-- PDT 2%
-		feet="Herculean Boots"
+		-- DT 4%
+		feet="Malignance Boots"
 	})
 
-	-- PDT: 32%
-	-- MDT: 28%
-	-- MDB: 28
+	-- DT: 44% PDT: 10% MDT: 10%
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.idle.MDT = set_combine(sets.idle, {
-		-- MDT 4% MDB 4
-		head="Dampening Tam",
-		-- 2% MDT
+		-- DT 6%
+		head="Malignance Chapeau",
+		-- MDT 2%
 		ear1="Odnowa Earring +1",
 		-- MDT 3%
 		ear2="Etiolation Earring",
-		-- MDB 8
-		neck="Inq. Bead Necklace",
-		-- PDT 6% MDB 6
-		body="Emet Harness +1",
-		ring1="Shadow Ring",
+		-- DT 6%
+		neck="Loricate Torque +1",
+		-- DT 9%
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		-- PDT 5% MDT 5%
+		ring1="Dark Ring",
 		-- DT 10%
 		ring2="Defending Ring",
 		-- DT 5%
 		back="Moonbeam Cape",
-		-- PDT: 5%
+		-- PDT 5%
 		waist="Black Belt",
-		-- DT: 4% MDB 5
+		-- DT 4%
 		legs="Mummu Kecks +2",
-		-- PDT 2% MDB 5
-		feet="Herculean Boots"
+		-- DT 4%
+		feet="Malignance Boots"
 	})
 	
 	-- Defense sets
@@ -285,21 +289,22 @@ function init_gear_sets()
 	})
 
 	sets.defense.HP = set_combine(sets.idle, {
-		head="Blistering Sallet +1",
-		--body="Hiza. Haramaki +2",
-		hands=gear.Adhemar_hands_B,
-		ring1="K'ayres Ring",
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		ring1="Dark Ring",
+		ring2="Defending Ring",
 		back="Moonbeam Cape",
 		waist="Black Belt",
 		legs="Herculean Trousers",
-		feet="Mel. Gaiters +1"
+		feet="Malignance Boots"
 	})
 
 	sets.defense.MDT = set_combine(sets.idle.MDT, {
 	})
 
 	sets.Kiting = set_combine(sets.idle, {
-		feet="Hermes' Sandals"
+		feet="Herald's Gaiters"
 	})
 
 	sets.ExtraRegen = set_combine(sets.idle, {
@@ -322,18 +327,17 @@ function init_gear_sets()
 		neck="Asperity Necklace",
 		ear1="Telos Earring",
 		ear2="Sherida Earring",
-		body="Thaumas Coat",
+		body="Ken. Samue +1",
 		hands=gear.Adhemar_hands_B,
-		ring1="Epona's Ring",
-		ring2="Petrov Ring",
+		ring1="Gere Ring",
+		ring2="Niqmaddu Ring",
 		back="Atheling Mantle",
 		waist="Windbuffet Belt +1",
-		legs="Bhikku Hose +1",
+		legs="Ken. Hakama +1",
 		feet="Soku. Sune-Ate"
 	}
 	sets.engaged.SomeAcc = set_combine(sets.engaged,{
-		body=gear.Adhemar_body_B,
-		legs="Samnuha Tights"
+		
 	})
 	sets.engaged.Acc = set_combine(sets.engaged,{
 		ammo="Falcon Eye",
