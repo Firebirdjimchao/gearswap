@@ -498,20 +498,38 @@ function init_gear_sets()
 		waist="Gishdubar Sash",
 	})
 	
+	-- 139 WHM sub
+	-- 16 merits
+	-- 59 gear
+	-- 214 WHM sub
+	-- 47% DUR
 	sets.midcast['Enhancing Magic'] = {
 		--main="Serenity",
+		-- 10% DUR
 		sub="Ammurapi Shield",
+		-- 13
 		head="Umuthi Hat",
+		-- 10
 		neck="Incanter's Torque",
 		ear1="Regal Earring",
+		-- 5
 		ear2="Andoaa Earring",
-		body="Telchine Chas.",
-		hands="Inyan. Dastanas +2",
+		-- 12 10% DUR
+		body=Telchine_body_pet,
+		-- 20
+		--hands="Inyan. Dastanas +2",
+		-- 9% DUR
+		hands=gear.Telchine_hands_pet,
+		-- 5
 		ring1="Stikini Ring",
+		-- 5
 		ring2="Stikini Ring",
+		-- 9
 		back="Fi Follet Cape +1",
+		-- 10% DUR
 		waist="Embla Sash",
-		legs="Inyanga Shalwar +2",
+		-- 8% DUR
+		legs=gear.Telchine_legs_pet,
 		feet="Inyan. Crackows +2"
 	}
 
@@ -552,7 +570,7 @@ function init_gear_sets()
 		ring1="Metamor. Ring +1",
 		ring2="Kishar Ring",
 		--ring2="Stikini Ring",
-		waist="Rumination Sash",
+		--waist="Rumination Sash",
 		legs="Chironic Hose",
 		feet="Skaoi Boots",
 	})

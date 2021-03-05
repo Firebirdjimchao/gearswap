@@ -349,18 +349,37 @@ function init_gear_sets()
 
 	-- === Enhancing Magic =========================================
 	
+	-- 300 Base
+	-- 16 merits
+	-- 73 gear
+	-- 389 Total
+	-- 37% DUR
 	sets.midcast['Enhancing Magic'] = {
+		-- 16
 		head="Befouled Crown",
+		-- 10
 		neck="Incanter's Torque",
+		-- 5
 		ear1="Andoaa Earring",
 		ear2="Regal Earring",
-		body="Telchine Chas.",
-		hands="Ayao's Gages",
+		-- 12 10% DUR
+		body=Telchine_body_pet,
+		-- 10
+		-- hands="Ayao's Gages",
+		-- 9% DUR
+		hands=gear.Telchine_hands_pet,
+		-- 5
 		ring1="Stikini Ring",
+		-- 5
 		ring2="Stikini Ring",
+		-- 9
 		back="Fi Follet Cape +1",
+		-- 10% DUR
 		waist="Embla Sash",
-		feet="Regal Pumps +1"
+		-- 8% DUR
+		legs=gear.Telchine_legs_pet,
+		-- 11
+		feet="Regal Pumps +1"		
 	}
 	
 	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'],{
@@ -371,7 +390,7 @@ function init_gear_sets()
 	})
 	
 	sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'],{
-		body="Telchine Chas."
+		body=Telchine_body_pet
 	})
 	
 	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'],{
@@ -399,27 +418,27 @@ function init_gear_sets()
 	-- 378 Base
 	-- 16 merits
 	-- 394 Initial
-	-- 121 gear
-	-- 515 total
+	-- 87 gear
+	-- 481 total
 	sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.MACC,{
 		-- 16
 		head="Befouled Crown",
 		-- 10
 		neck="Incanter's Torque",
-		-- 20
-		body="Vanya Robe",
+		-- 21
+		body="Spaekona's Coat",
 		-- 18
-		hands="Lurid Mitts",
+		--hands="Lurid Mitts",
+		-- 15
+		--hands="Ayao's Gages",
 		-- 5
 		--ring1="Stikini Ring",
 		-- Duration +10%
 		ring1="Kishar Ring",
 		-- 5
 		ring2="Stikini Ring",
-		-- 10
-		back="Lifestream Cape",
 		-- 7
-		waist="Rumination Sash",
+		--waist="Rumination Sash",
 		-- 18
 		legs="Psycloth Lappas",
 		-- 17
@@ -428,8 +447,8 @@ function init_gear_sets()
 
 	-- For enfeebs with no known skill caps
 	-- 394 Initial
-	-- 124 gear
-	-- 518 total
+	-- 92 gear
+	-- 486 total
 	sets.midcast.enfeebFullSkill = set_combine(sets.midcast['Enfeebling Magic'], {
 		-- 5
 		ring1="Stikini Ring",
@@ -460,12 +479,11 @@ function init_gear_sets()
 
 	-- For enfeebs with 500 skill caps
 	-- 394 Initial
-	-- 101 gear
-	-- 500 total
+	-- 92 gear
+	-- 486 total
 	sets.midcast.enfeebSkillCap = set_combine(sets.midcast['Enfeebling Magic'], {
 		-- 5
 		ring1="Stikini Ring",
-		hands="Spae. Gloves +3",
 	})
 
 	-- Static value (use duration+ gear)
@@ -532,7 +550,6 @@ function init_gear_sets()
 		ring1="Evanescence Ring",
 		--ring2="Stikini Ring",
 		ring2="Metamor. Ring +1",
-		waist="Rumination Sash",
 		legs="Psycloth Lappas",
 		feet="Wicce Sabots +1"
 	})
@@ -643,7 +660,7 @@ function init_gear_sets()
 		ring1="Stikini Ring",
 		ring2="Persis Ring",
 		back="Moonbeam Cape",
-		waist="Rumination Sash",
+		waist="Luminary Sash",
 		legs=empty,
 		feet=empty
 	}

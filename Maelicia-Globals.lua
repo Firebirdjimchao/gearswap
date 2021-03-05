@@ -107,9 +107,9 @@ function define_global_sets()
 
 	gear.Carmine_hands_D = { name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}}
 
-	gear.Telchine_body_pet = { name="Telchine Chas.", augments={'Pet: "Regen"+3',}}
-	gear.Telchine_hands_pet = { name="Telchine Gloves", augments={'Pet: "Regen"+3',}}
-	gear.Telchine_legs_pet = { name="Telchine Braconi", augments={'Pet: "Regen"+3',}}
+	gear.Telchine_body_pet = { name="Telchine Chas.", augments={'Mag. Evasion+22','Pet: "Regen"+3','Enh. Mag. eff. dur. +10',}}
+	gear.Telchine_hands_pet = { name="Telchine Gloves", augments={'Mag. Evasion+21','Pet: "Regen"+3','Enh. Mag. eff. dur. +9',}}
+	gear.Telchine_legs_pet = { name="Telchine Braconi", augments={'Mag. Evasion+23','Pet: "Regen"+3','Enh. Mag. eff. dur. +8',}}
 	
 	-- Default items for utility gear values.
 	gear.default.weaponskill_neck = "Fotia Gorget"

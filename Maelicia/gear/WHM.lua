@@ -295,22 +295,43 @@ function init_gear_sets()
 		head="Ebers Cap +1",
 		legs="Ebers Pant. +1"
 	})
-				
+
+	-- 378 Base
+	-- 16 merits
+	-- 110 gear
+	-- 504 Total
+	-- 39% DUR
 	sets.midcast['Enhancing Magic'] = {
-		--main="Serenity",
+		-- 18
 		main="Gada",
+		-- 10% DUR
 		sub="Ammurapi Shield",
+		-- 16
 		head="Befouled Crown",
+		-- 10
 		neck="Incanter's Torque",
 		ear1="Regal Earring",
+		-- 5
 		ear2="Andoaa Earring",
-		body="Telchine Chas.",
-		hands="Dynasty Mitts",
+		-- 12 10% DUR
+		body=Telchine_body_pet,
+		-- 18 5% DUR
+		--hands="Dynasty Mitts",
+		-- 9% DUR
+		hands=gear.Telchine_hands_pet,
+		-- 5
 		ring1="Stikini Ring",
+		-- 5
 		ring2="Stikini Ring",
+		-- 10
 		back="Mending Cape",
+		-- 10% DUR
 		waist="Embla Sash",
+		-- 8% DUR
+		--legs=gear.Telchine_legs_pet,
+		-- 22
 		legs="Piety Pantaln. +1",
+		-- 25
 		feet="Ebers Duckbills +1"
 	}
 
@@ -322,7 +343,19 @@ function init_gear_sets()
 	})
 
 	sets.midcast.Auspice = {
-		hands="Dynasty Mitts",
+		main="Gada",
+		-- 10% DUR
+		sub="Ammurapi Shield",
+		-- 10% DUR
+		body=Telchine_body_pet,
+		-- 5% DUR
+		--hands="Dynasty Mitts",
+		-- 9% DUR
+		hands=gear.Telchine_hands_pet,
+		-- 10% DUR
+		waist="Embla Sash",
+		-- 8% DUR
+		legs=gear.Telchine_legs_pet,
 		feet="Ebers Duckbills +1"
 	}
 
@@ -401,7 +434,7 @@ function init_gear_sets()
 		ring1="Metamor. Ring +1",
 		ring2="Kishar Ring",
 		--ring2="Stikini Ring",
-		waist="Rumination Sash",
+		--waist="Rumination Sash",
 		legs="Chironic Hose",
 		feet="Skaoi Boots",
 	})

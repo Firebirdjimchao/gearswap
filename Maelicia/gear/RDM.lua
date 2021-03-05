@@ -91,9 +91,9 @@ function init_gear_sets()
 		head="Atro. Chapeau +3",
 		ear1="Roundel Earring",
 		body="Viti. Tabard +3",
-		hands="Lurid Mitts",
+		hands="Atrophy Gloves +3",
 		legs="Gyve Trousers",
-		feet="Vanya Clogs"
+		feet="Malignance Boots"
 	}
 			
 	-- Don't need any special gear for Healing Waltz.
@@ -476,8 +476,8 @@ function init_gear_sets()
 	-- 16 merits
 	-- 36 gifts
 	-- 476 Initial
-	-- 83 gear
-	-- 564 total
+	-- 77 gear
+	-- 557 total
 	sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.MACC,{
 		--main=gear.MainStaff,
 		--sub="Enki Strap",
@@ -507,7 +507,7 @@ function init_gear_sets()
 		ring2="Kishar Ring",
 		back=gear.sucellos_mnd,
 		-- 7
-		waist="Rumination Sash",
+		--waist="Rumination Sash",
 		-- 13 Immunobreak +1
 		legs=gear.Chironic_legs_nuke,
 		-- 16
