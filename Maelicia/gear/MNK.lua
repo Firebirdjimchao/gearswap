@@ -142,7 +142,7 @@ function init_gear_sets()
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS["Victory Smite"]     = set_combine(sets.precast.WS, {
-		head=gear.Adhemar_head_B
+		head=gear.Adhemar_head_B,
 		body="Ken. Samue +1",
 		ring1="Gere Ring",
 		ring2="Niqmaddu Ring",
