@@ -566,7 +566,7 @@ function init_gear_sets()
 	--
 	-- SAM Roll: Lucky (2) 32 STP, Eleven 40 STP, Unlucky (6) 4 STP
 	--
-	-- 35 gear STP + 10 (Dojikiri Yasutsuna) = total: 45
+	-- 54~59 gear STP + 10 (Dojikiri Yasutsuna) = total: 54~59
 	-- Must use Duplus Grip
 	--
 	-- Gear Haste: 24%
@@ -580,13 +580,14 @@ function init_gear_sets()
 		ammo="Ginsen",
 		-- 5 STP 4%
 		head="Flam. Zucchetto +2",
-		neck="Ganesha's Mala",
+		-- STP 7 + 7 aug
+		neck="Sam. Nodowa +2",
 		ear1="Trux Earring",
 		-- 1 STP
 		ear2="Brutal Earring",
 		-- 12 STP 3%
 		--body="Kasuga Domaru +1",
-		-- 1%
+		-- STP 5~9
 		body="Tatena. Harama. +1",
 		-- 7 STP 4% Hasso +4
 		hands="Wakido Kote +3",
@@ -606,7 +607,7 @@ function init_gear_sets()
 		-- 3% Hasso +2
 		feet="Wakido Sune. +3",
 	}
-	-- 40 gear STP + 10 (Dojikiri Yasutsuna) = total: 50
+	-- 59~63 gear STP + 10 (Dojikiri Yasutsuna) = total: 69~73
 	-- Must use Utu Grip
 	--
 	-- Gear Haste: 25%
@@ -617,12 +618,15 @@ function init_gear_sets()
 		ammo="Ginsen",
 		-- 5 STP 4%
 		head="Flam. Zucchetto +2",
-		neck="Ganesha's Mala",
+		-- STP 7 + 7 aug
+		neck="Sam. Nodowa +2",
 		ear1="Trux Earring",
 		-- 1 STP
 		ear2="Brutal Earring",
 		-- 1%
-		body="Dagon Breastplate",
+		--body="Dagon Breastplate",
+		-- STP 5~9
+		body="Tatena. Harama. +1",
 		-- 7 STP 4% Hasso +4
 		hands="Wakido Kote +3",
 		ring1="Niqmaddu Ring",
@@ -636,7 +640,7 @@ function init_gear_sets()
 		-- 3% Hasso +2
 		feet="Wakido Sune. +3",
 	})
-	-- 48 gear STP + 10 (Dojikiri Yasutsuna) = total: 58
+	-- 66~70 gear STP + 10 (Dojikiri Yasutsuna) = total: 76~80
 	-- Must use Utu Grip
 	--
 	-- Gear Haste: 27%
@@ -647,16 +651,16 @@ function init_gear_sets()
 		ammo="Ginsen",
 		-- 5 STP 4%
 		head="Flam. Zucchetto +2",
-		-- 8 STP
-		neck="Moonbeam Nodowa",
+		-- STP 7 + 7 aug
+		neck="Sam. Nodowa +2",
 		-- 5 STP
 		ear1="Telos Earring",
 		-- 1 STP
 		ear2="Brutal Earring",
 		-- 1%
 		--body="Dagon Breastplate",
-		-- 4%
-		body="Ken. Samue +1",
+		-- STP 5~9
+		body="Tatena. Harama. +1",
 		--hands=gear.Ryuo_hands_D,
 		-- 7 STP 4% Hasso +4
 		hands="Wakido Kote +3",
@@ -667,8 +671,8 @@ function init_gear_sets()
 		-- 10 STP
 		back=gear.Smertrio_STP_DEX,
 		-- 8%
-		--waist="Ioskeha Belt +1",
-		waist="Windbuffet Belt +1",
+		waist="Ioskeha Belt +1",
+		--waist="Windbuffet Belt +1",
 		-- 9 STP 5%
 		--legs="Wakido Haidate +3",
 		-- 9%
@@ -678,7 +682,7 @@ function init_gear_sets()
 		-- 3% Hasso +2
 		feet="Wakido Sune. +3",
 	})
-	-- 42 gear STP + 10 (Dojikiri Yasutsuna) = total: 52
+	-- 55 gear STP + 10 (Dojikiri Yasutsuna) = total: 65
 	-- Must use Utu Grip
 	--
 	-- Gear Haste: 30%
@@ -689,8 +693,8 @@ function init_gear_sets()
 		ammo="Ginsen",
 		-- 7%
 		head="Wakido kabuto +3",
-		-- 8 STP
-		neck="Moonbeam Nodowa",
+		-- STP 7 + 7 aug
+		neck="Sam. Nodowa +2",
 		-- 5 STP
 		ear1="Telos Earring",
 		ear2="Digni. Earring",
@@ -715,8 +719,8 @@ function init_gear_sets()
 	})
 	sets.engaged.PDT = set_combine(sets.engaged,sets.defense.PDT,{
 		--sub="Utu Grip",
-		-- 8 STP
-		neck="Moonbeam Nodowa",
+		-- STP 7 + 7 aug
+		neck="Sam. Nodowa +2",
 		body="Wakido Domaru +2",
 		back=gear.Smertrio_STP_DEX,
 		waist="Ioskeha Belt +1",
@@ -730,8 +734,8 @@ function init_gear_sets()
 	})
 	sets.engaged.MDT = set_combine(sets.engaged,sets.defense.MDT,{
 		--sub="Utu Grip",
-		-- 8 STP
-		neck="Moonbeam Nodowa",
+		-- STP 7 + 7 aug
+		neck="Sam. Nodowa +2",
 		body="Sacro Breastplate",
 		back=gear.Smertrio_STP_DEX,
 		waist="Ioskeha Belt +1",
