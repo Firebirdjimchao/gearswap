@@ -217,7 +217,7 @@ function init_gear_sets()
 		ring2="Defending Ring",
 		--back="Moonbeam Cape",
 		back="Mecisto. Mantle",
-		waist="Moonshade Belt",
+		waist="Moonbow Belt",
 		legs="Malignance Tights",
 		feet="Herald's Gaiters"
 	}
