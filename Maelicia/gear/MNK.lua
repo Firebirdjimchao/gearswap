@@ -35,12 +35,12 @@ function init_gear_sets()
 	sets.precast.JA['Chi Blast'] = {
 		head="Dampening Tam",
 		neck="Phalaina Locket",
-		body="Anch. Cyclas +1",
-		hands=gear.Adhemar_hands_B,
+		body="Tatena. Harama. +1",
+		hands="Malignance Gloves",
 		ring2="Dark Ring",
 		back="Tuilha Cape",
 		waist="Luminary Sash",
-		legs="Anch. Hose +1",
+		legs="Malignance Tights",
 		feet="Malignance Boots",
 	}
 
@@ -48,26 +48,26 @@ function init_gear_sets()
 	sets.precast.JA['Chakra'] = {
 		ammo="Tantra Tathlum",
 		head="Rao Kabuto +1",
-		body="Anch. Cyclas +1",
-		hands="Hes. Gloves +1",
+		body="Tatena. Harama. +1",
+		hands="Tatena. Gote +1",
 		ring1="Dark Ring",
 		back="Anchoret's Mantle",
 		waist="Flume Belt +1",
 		legs="Anch. Hose +1",
-		feet="Soku. Sune-Ate"
+		feet="Malignance Boots",
 	}
 
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {
-		head="Mummu Bonnet +2",
-		body="Anch. Cyclas +1",
-		hands=gear.Adhemar_hands_B,
+		head="Malignance Chapeau",
+		body="Tatena. Harama. +1",
+		hands="Tatena. Gote +1",
 		ring1="Dark Ring",
 		ring1="Sirona's Ring",
 		back="Anchoret's Mantle",
 		waist="Flume Belt +1",
 		legs="Anch. Hose +1",
-		feet="Rawhide Boots"
+		feet="Malignance Boots",
 	}
 		
 	-- Don't need any special gear for Healing Waltz.
@@ -104,10 +104,10 @@ function init_gear_sets()
 		--ear1="Brutal Earring",
 		ear1="Sherida Earring",
 		ear2="Moonshade Earring",
-		body="Abnoba Kaftan",
+		body="Ken. Samue +1",
 		hands=gear.Adhemar_hands_B,
-		ring1="Epona's Ring",
-		ring2="Apate Ring",
+		ring1="Gere Ring",
+		ring2="Niqmaddu Ring",
 		back="Atheling Mantle",
 		waist="Fotia Belt",
 		legs="Hiza. Hizayoroi +2",
@@ -142,19 +142,29 @@ function init_gear_sets()
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS["Victory Smite"]     = set_combine(sets.precast.WS, {
-		back="Buquwik Cape"
+		head=gear.Adhemar_head_B
+		body="Ken. Samue +1",
+		ring1="Gere Ring",
+		ring2="Niqmaddu Ring",
+		waist="Moonbow Belt",
+		legs="Ken. Hakama +1",
+		back="Buquwik Cape",
 	})
 	sets.precast.WS["Victory Smite"].Acc = set_combine(sets.precast.WS.Acc, {
-		ear1="Telos Earring",
-		ear2="Digni. Earring",
 	})
 	sets.precast.WS["Victory Smite"].SomeAcc = set_combine(sets.precast.WS["Victory Smite"], {})
 
 	sets.precast.WS['Shijin Spiral']     = set_combine(sets.precast.WS, {
-		ammo="Falcon Eye",
-		feet=gear.Adhemar_feet_B
+		head=gear.Rao_head_hq_B,
+		ear2="Brutal Earring",
+		neck="Caro Necklace",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		legs="Jokushu Haidate",
+		feet=gear.Rao_feet_hq_B,
 	})
 	sets.precast.WS['Shijin Spiral'].Acc = set_combine(sets.precast.WS.Acc, {
+		ear2="Telos Earring",
 	})
 	sets.precast.WS['Shijin Spiral'].SomeAcc = set_combine(sets.precast.WS['Shijin Spiral'], {
 	})
@@ -178,10 +188,14 @@ function init_gear_sets()
 	
 	-- Midcast Sets
 	sets.midcast.FastRecast = set_combine(sets.precast.FC,{
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		ring1="Dark Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
-		waist="Black Belt",
-		feet="Herculean Boots"
+		legs="Malignance Tights",
+		feet="Malignance Boots"
 	})
 		
 	-- Specific spells
@@ -203,8 +217,8 @@ function init_gear_sets()
 		ring2="Defending Ring",
 		--back="Moonbeam Cape",
 		back="Mecisto. Mantle",
-		waist="Black Belt",
-		legs="Mummu Kecks +2",
+		waist="Moonshade Belt",
+		legs="Malignance Tights",
 		feet="Herald's Gaiters"
 	}
 	
@@ -229,7 +243,7 @@ function init_gear_sets()
 	})
 
 
-	-- DT: 44% PDT: 10% MDT: 10%
+	-- DT: 57% PDT: 5% MDT: 10%
 	sets.idle.PDT = set_combine(sets.idle,{
 		-- DT 6%
 		head="Malignance Chapeau",
@@ -241,6 +255,7 @@ function init_gear_sets()
 		neck="Loricate Torque +1",
 		-- DT 9%
 		body="Malignance Tabard",
+		-- DT 5%
 		hands="Malignance Gloves",
 		-- PDT 5% MDT 5%
 		ring1="Dark Ring",
@@ -248,15 +263,15 @@ function init_gear_sets()
 		ring2="Defending Ring",
 		-- DT 5%
 		back="Moonbeam Cape",
-		-- PDT 5%
-		waist="Black Belt",
-		-- DT 4%
-		legs="Mummu Kecks +2",
+		-- DT 5%
+		waist="Moonbow Belt",
+		-- DT 7%
+		legs="Malignance Tights",
 		-- DT 4%
 		feet="Malignance Boots"
 	})
 
-	-- DT: 44% PDT: 10% MDT: 10%
+	-- DT: 57% PDT: 5% MDT: 10%
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.idle.MDT = set_combine(sets.idle, {
 		-- DT 6%
@@ -269,6 +284,7 @@ function init_gear_sets()
 		neck="Loricate Torque +1",
 		-- DT 9%
 		body="Malignance Tabard",
+		-- DT 5%
 		hands="Malignance Gloves",
 		-- PDT 5% MDT 5%
 		ring1="Dark Ring",
@@ -276,10 +292,10 @@ function init_gear_sets()
 		ring2="Defending Ring",
 		-- DT 5%
 		back="Moonbeam Cape",
-		-- PDT 5%
-		waist="Black Belt",
-		-- DT 4%
-		legs="Mummu Kecks +2",
+		-- DT 5%
+		waist="Moonbow Belt",
+		-- DT 7%
+		legs="Malignance Tights",
 		-- DT 4%
 		feet="Malignance Boots"
 	})
@@ -295,8 +311,7 @@ function init_gear_sets()
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
-		waist="Black Belt",
-		legs="Herculean Trousers",
+		legs="Malignance Tights",
 		feet="Malignance Boots"
 	})
 
@@ -323,55 +338,61 @@ function init_gear_sets()
 	-- Normal melee sets
 	sets.engaged = {
 		ammo="Ginsen",
-		head=gear.Adhemar_head_B,
-		neck="Asperity Necklace",
-		ear1="Telos Earring",
-		ear2="Sherida Earring",
+		--head=gear.Adhemar_head_B,
+		head="Dampening Tam",
+		neck="Moonbeam Nodowa",
+		ear1="Sherida Earring",
+		ear2="Dedition Earring",
 		body="Ken. Samue +1",
-		hands=gear.Adhemar_hands_B,
+		hands="Tatena. Gote +1",
 		ring1="Gere Ring",
 		ring2="Niqmaddu Ring",
 		back="Atheling Mantle",
-		waist="Windbuffet Belt +1",
+		waist="Moonbow Belt",
 		legs="Ken. Hakama +1",
-		feet="Soku. Sune-Ate"
+		feet="Malignance Boots",
 	}
 	sets.engaged.SomeAcc = set_combine(sets.engaged,{
-		
+		ear2="Telos Earring",
+		body="Tatena. Harama. +1",
 	})
 	sets.engaged.Acc = set_combine(sets.engaged,{
 		ammo="Falcon Eye",
-		head="Rao Kabuto +1",
-		neck="Moonbeam Nodowa",
-		ear1="Telos Earring",
-		ear2="Digni. Earring",
-		body=gear.Adhemar_body_B,
-		hands=gear.Adhemar_hands_B,
+		head="Malignance Chapeau",
+		body="Tatena. Harama. +1",
+		ear1="Digni. Earring",
+		ear2="Telos Earring",
 		ring2="Cacoethic Ring +1",
 		back="Ground. Mantle +1",
-		waist="Grunfeld Rope",
-		legs="Samnuha Tights",
-		--feet="Hiza. Sune-Ate +2"
-		feet="Soku. Sune-Ate"
 	})
 
 	-- Defensive melee hybrid sets
-	sets.engaged.PDT = set_combine(sets.defense.PDT,{
-		legs="Samnuha Tights"
+	sets.engaged.PDT = set_combine(sets.engaged,{
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		ring2="Defending Ring",
+		waist="Moonbow Belt",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
 	})
-	sets.engaged.SomeAcc.PDT = set_combine(sets.engaged.PDT,{
-		ammo="Falcon Eye",
-		head="Blistering Sallet +1",
-		back="Anchoret's Mantle",
-		legs="Samnuha Tights",
-		feet="Soku. Sune-Ate"
+	sets.engaged.SomeAcc.PDT = set_combine(sets.engaged.SomeAcc,{
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		ring2="Defending Ring",
+		waist="Moonbow Belt",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
 	})
-	sets.engaged.Acc.PDT = set_combine(sets.engaged.PDT,{
-		ammo="Falcon Eye",
-		head=gear.Adhemar_head_B,
-		hands=gear.Adhemar_hands_B,
-		ring1="Patricius Ring",
-		feet="Hiza. Sune-Ate +2"
+	sets.engaged.Acc.PDT = set_combine(sets.engaged.Acc,{
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		ring2="Defending Ring",
+		waist="Moonbow Belt",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
 	})
 	sets.engaged.Counter = set_combine(sets.engaged,{
 		legs="Anch. Hose +1",
@@ -396,15 +417,15 @@ function init_gear_sets()
 
 	-- Footwork combat form
 	sets.engaged.Footwork = set_combine(sets.engaged,{
-		feet="Soku. Sune-Ate"
+		feet="Anch. Gaiters +1"
 	})
 	sets.engaged.Footwork.Acc = set_combine(sets.engaged.Acc,{
-		feet="Soku. Sune-Ate"
+		feet="Anch. Gaiters +1"
 	})
 		
 	-- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.
 	sets.impetus_body = {body="Bhikku Cyclas +1"}
-	sets.footwork_kick_feet = {feet="Soku. Sune-Ate"}
+	sets.footwork_kick_feet = {feet="Anch. Gaiters +1"}
 end
 
 -------------------------------------------------------------------------------------------------------------------

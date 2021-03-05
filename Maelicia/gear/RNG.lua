@@ -650,6 +650,7 @@ function init_gear_sets()
 	-- Perun +1: 4 STP
 	-- Nusku Shield: 3 STP
 	-- Gear Total: 81 STP
+	-- /war stat:
 	-- Base RACC 1414
 	-- Base RATK 1466
 	sets.midcast.RA = {
@@ -692,6 +693,7 @@ function init_gear_sets()
 	-- Perun +1: 4 STP
 	-- Nusku Shield: 3 STP
 	-- Gear Total: 79 STP
+	-- /war stat:
 	-- Base RACC 1473
 	-- Base RATK 1389
 	sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA,{
@@ -702,12 +704,13 @@ function init_gear_sets()
 		feet="Malignance Boots",
 	})
 
-	-- Gear: 68 STP
+	-- Gear: 78 STP
 	-- Perun +1: 4 STP
 	-- Nusku Shield: 3 STP
-	-- Gear Total: 75 STP
-	-- Base RACC 1507
-	-- Base RATK 1358
+	-- Gear Total: 85 STP
+	-- /war stat:
+	-- Base RACC 1517
+	-- Base RATK 1266
 	sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA,{
 		--body="Amini Caban +1",
 		-- 7 STP
@@ -718,7 +721,8 @@ function init_gear_sets()
 		hands="Malignance Gloves",
 		ring1="Haverton Ring",
 		waist="K. Kachina Belt +1",
-		legs="Arc. Braccae +3",
+		-- 10 STP
+		legs="Malignance Tights",
 		-- 9 STP
 		feet="Malignance Boots",
 	})
@@ -727,6 +731,7 @@ function init_gear_sets()
 	-- Perun +1: 4 STP
 	-- Nusku Shield: 3 STP
 	-- Gear Total: 42 STP
+	-- /war stat:
 	-- Base RACC 1628
 	-- Base RATK 1397
 	sets.midcast.RA.FullAcc = set_combine(sets.midcast.RA,{
@@ -836,7 +841,7 @@ function init_gear_sets()
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
 		waist="Flume Belt +1",
-		legs="Mummu Kecks +2",
+		legs="Malignance Tights",
 		feet="Orion Socks +3",
 	}
 	
@@ -882,7 +887,7 @@ function init_gear_sets()
 	})
 	
 	-- Defense sets
-	-- DT: 49%
+	-- DT: 52%
 	-- PDT: 9%
 	-- MDT: 10%
 	sets.defense.PDT = set_combine(sets.idle,{
@@ -906,16 +911,16 @@ function init_gear_sets()
 		back="Moonbeam Cape",
 		-- PDT 4%
 		waist="Flume Belt +1",
-		-- DT 4%
-		legs="Mummu Kecks +2",
+		-- DT 7%
+		legs="Malignance Tights",
 		-- DT 4%
 		feet="Malignance Boots",
 	})
 
-	-- DT: 49%
+	-- DT: 52%
 	-- PDT: 9%
 	-- MDT: 10%
-	-- MDB: 35
+	-- MDB: 37
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.defense.MDT = set_combine(sets.idle,{
 		-- DT 6% MDB 5
@@ -941,8 +946,8 @@ function init_gear_sets()
 		back="Moonbeam Cape",
 		-- PDT 4%
 		waist="Flume Belt +1",
-		-- DT: 4% MDB 5
-		legs="Mummu Kecks +2",
+		-- DT: 7% MDB 7
+		legs="Malignance Tights",
 		-- DT 4%
 		feet="Malignance Boots",
 	})
@@ -963,8 +968,10 @@ function init_gear_sets()
 		neck="Asperity Necklace",
 		ear1="Telos Earring",
 		ear2="Brutal Earring",
-		body=gear.Adhemar_body_B,
-		hands=gear.Adhemar_hands_B,
+		--body=gear.Adhemar_body_B,
+		body="Tatena. Harama. +1",
+		--hands=gear.Adhemar_hands_B,
+		hands="Tatena. Gote +1",
 		ring1="Ilabrat Ring",
 		ring2="Epona's Ring",
 		back="Atheling Mantle",
@@ -983,6 +990,7 @@ function init_gear_sets()
 		ear1="Telos Earring",
 		ear2="Digni. Earring",
 		ring1="Cacoethic Ring +1",
+		legs="Malignance Tights",
 		feet="Malignance Boots",
 	})
 
@@ -991,55 +999,51 @@ function init_gear_sets()
 		neck="Subtlety Spec.",
 		ear1="Telos Earring",
 		ear2="Digni. Earring",
-		body="Malignance Tabard",
-		hands="Malignance Gloves",
+		body="Tatena. Harama. +1",
+		hands="Tatena. Gote +1",
 		ring1="Cacoethic Ring +1",
 		waist="Eschan Stone",
-		legs="Meg. Chausses +2",
+		legs="Malignance Tights",
 		feet="Malignance Boots",
 	})
 
-	-- TODO: add Malignance Tights and remove Loricate Torque +1
 	sets.engaged.DT = set_combine(sets.engaged,{
 		head="Malignance Chapeau",
-		neck="Loricate Torque +1",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
+		legs="Malignance Tights",
 		feet="Malignance Boots",
 	})
 
-	-- TODO: add Malignance Tights and remove Loricate Torque +1
 	sets.engaged.DT.MidAcc = set_combine(sets.engaged.Melee.MidAcc,{
 		head="Malignance Chapeau",
-		neck="Loricate Torque +1",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
+		legs="Malignance Tights",
 		feet="Malignance Boots",
 	})
 
-	-- TODO: add Malignance Tights and remove Loricate Torque +1
 	sets.engaged.DT.HighAcc = set_combine(sets.engaged.Melee.HighAcc,{
 		head="Malignance Chapeau",
-		neck="Loricate Torque +1",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
+		legs="Malignance Tights",
 		feet="Malignance Boots",
 	})
 
-	-- TODO: add Malignance Tights and remove Loricate Torque +1
 	sets.engaged.DT.FullAcc = set_combine(sets.engaged.Melee.FullAcc,{
 		head="Malignance Chapeau",
-		neck="Loricate Torque +1",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
+		legs="Malignance Tights",
 		feet="Malignance Boots",
 	})
 	
@@ -1092,22 +1096,12 @@ function init_gear_sets()
 		feet="Osh. Leggings +1",
 	}
 	sets.buff.Doubleshot.MidAcc = set_combine(sets.buff.Doubleshot, {
-		--body="Amini Caban +1",
-		body="Arc. Jerkin +3",
-		hands="Mummu Wrists +2",
-		--feet="Arcadian Socks +3",
 	})
 	sets.buff.Doubleshot.HighAcc = set_combine(sets.buff.Doubleshot, {
-		body="Arc. Jerkin +3",
-		--waist="Yemaya Belt",
 		waist="K. Kachina Belt +1",
-		--feet="Arcadian Socks +3",
 	})
 	sets.buff.Doubleshot.FullAcc = set_combine(sets.buff.Doubleshot, {
-		body="Arc. Jerkin +3",
-		--waist="Yemaya Belt",
 		waist="K. Kachina Belt +1",
-		--feet="Arcadian Socks +3",
 	})
 end
 

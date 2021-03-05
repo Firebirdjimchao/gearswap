@@ -102,8 +102,6 @@ function init_gear_sets()
 		back=gear.aug_ogma_dt,
 		-- 3 Enmity
 		waist="Goading Belt",
-		-- 11 Enmity
-		legs="Eri. Leg Guards +1",
 		-- 7 Enmity
 		feet="Ahosi Leggings"
 	}
@@ -141,7 +139,7 @@ function init_gear_sets()
 		ring2="Cacoethic Ring +1",
 		back=Andartia.DEX,
 		waist="Eschan Stone",
-		legs="Mummu Kecks +2",
+		legs="Malignance Tights",
 		--legs="Herculean Trousers",
 		feet="Malignance Boots"
 	}
@@ -251,7 +249,7 @@ function init_gear_sets()
 		ring2="Stikini Ring",
 		back="Yokaze Mantle",
 		waist="Eschan Stone",
-		legs="Mummu Kecks +2",
+		legs="Malignance Tights",
 		feet="Mochi. Kyahan +3",
 	}
 	-- any ninjutsu cast on self
@@ -297,7 +295,7 @@ function init_gear_sets()
 		ear1="Digni. Earring",
 		ear2="Hermetic Earring",
 		back="Yokaze Mantle",
-		legs="Mummu Kecks +2",
+		legs="Malignance Tights",
 		feet="Mochi. Kyahan +3",
 	})
 
@@ -327,7 +325,7 @@ function init_gear_sets()
 		--back="Shadow Mantle",
 		back="Moonbeam Cape",
 		waist="Flume Belt +1",
-		legs="Mummu Kecks +2",
+		legs="Malignance Tights",
 		feet="Danzo Sune-ate"
 	}
 
@@ -354,13 +352,15 @@ function init_gear_sets()
 	sets.defense.PDT = {
 		head="Malignance Chapeau",
 		neck="Loricate Torque +1",
+		ear1="Odnowa Earring +1",
+		ear2="Etiolation Earring",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		ring1="Patricius Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
 		waist="Flume Belt +1",
-		legs="Mummu Kecks +2",
+		legs="Malignance Tights",
 		feet="Malignance Boots"
 	}
 
@@ -370,10 +370,12 @@ function init_gear_sets()
 		neck="Loricate Torque +1",
 		ear1="Odnowa Earring +1",
 		ear2="Etiolation Earring",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
-		legs="Mummu Kecks +2",
+		legs="Malignance Tights",
 		feet="Malignance Boots"
 	})
 
@@ -423,14 +425,13 @@ function init_gear_sets()
 	sets.engaged.Innin.Acc = sets.engaged.Acc
 
 	-- Defenseive sets
-	-- TODO: add Malignance Tights and remove Loricate Torque +1
 	sets.NormalPDT = {
 		head="Malignance Chapeau",
-		neck="Loricate Torque +1",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
+		legs="Malignance Tights",
 		feet="Malignance Boots"
 	}
 	sets.AccPDT = set_combine(sets.NormalPDT,{
