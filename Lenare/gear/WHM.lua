@@ -132,7 +132,7 @@ function init_gear_sets()
 		head="Theo. Cap +2",
 		ear1="Roundel Earring",
 		body="Count's Garb",
-		hands="Dynasty Mitts",
+		hands="Inyan. Dastanas +2",
 		legs="Chironic Hose",
 		feet="Aya. Gambieras +2",
 	}
@@ -149,7 +149,7 @@ function init_gear_sets()
 		ear1="Brutal Earring",
 		ear2="Moonshade Earring",
 		body="Count's Garb",
-		hands="Dynasty Mitts",
+		hands="Aya. Manopolas +2",
 		ring1="Rajas Ring",
 		ring2="Cacoethic Ring",
 		back="Aurist's Cape +1",
@@ -313,22 +313,37 @@ function init_gear_sets()
 		head="Ebers Cap +1",
 		legs="Ebers Pant. +1"
 	})
-				
+
+	-- 378 Base
+	-- 16 merits
+	-- 110 gear
+	-- 504 Total
+	-- 39% DUR
 	sets.midcast['Enhancing Magic'] = {
-		--main="Ababinili +1",
-		-- 5 DUR
-		main="Grioavolr",
-		sub="Enki Strap",
+		-- 18
+		main="Gada",
+		sub="Genbu's Shield",
+		-- 16
 		head="Befouled Crown",
+		-- 10
 		neck="Incanter's Torque",
+		-- 5
 		--ear2="Andoaa Earring",
-		body="Telchine Chas.",
-		hands="Dynasty Mitts",
+		-- 12 9% DUR
+		body=gear.Telchine_body_pet,
+		-- 9% DUR
+		hands=gear.Telchine_hands_pet,
+		-- 5
 		ring1="Stikini Ring",
+		-- 5
 		ring2="Stikini Ring",
+		-- 10% DUR
 		waist="Embla Sash",
+		-- 9
 		back="Fi Follet Cape +1",
+		-- 22
 		legs="Piety Pantaln. +1",
+		-- 25
 		feet="Ebers Duckbills +1"
 	}
 
@@ -340,7 +355,17 @@ function init_gear_sets()
 	})
 
 	sets.midcast.Auspice = {
-		hands="Dynasty Mitts",
+		main="Gada",
+		-- 10% DUR
+		--sub="Ammurapi Shield",
+		-- 9% DUR
+		body=gear.Telchine_body_pet,
+		-- 9% DUR
+		hands=gear.Telchine_hands_pet,
+		-- 10% DUR
+		waist="Embla Sash",
+		-- 7% DUR
+		legs=gear.Telchine_legs_pet,
 		feet="Ebers Duckbills +1"
 	}
 

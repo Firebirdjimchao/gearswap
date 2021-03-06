@@ -110,7 +110,7 @@ function init_gear_sets()
 		head="Theo. Cap +1",
 		ear1="Roundel Earring",
 		body="Vrikodara Jupon",
-		hands="Dynasty Mitts",
+		hands="Inyan. Dastanas +2",
 		legs="Gyve Trousers",
 		feet="Chironic Slippers"
 	}
@@ -298,7 +298,7 @@ function init_gear_sets()
 
 	-- 378 Base
 	-- 16 merits
-	-- 110 gear
+	-- 106 gear
 	-- 504 Total
 	-- 39% DUR
 	sets.midcast['Enhancing Magic'] = {
@@ -328,9 +328,9 @@ function init_gear_sets()
 		-- 10% DUR
 		waist="Embla Sash",
 		-- 8% DUR
-		--legs=gear.Telchine_legs_pet,
+		legs=gear.Telchine_legs_pet,
 		-- 22
-		legs="Piety Pantaln. +1",
+		--legs="Piety Pantaln. +1",
 		-- 25
 		feet="Ebers Duckbills +1"
 	}

@@ -370,19 +370,34 @@ function init_gear_sets()
 
 	-- === Enhancing Magic =========================================
 	
+	-- 139 WHM sub, 144 RDM sub
+	-- 16 merits
+	-- 86 gear
+	-- 241 WHM sub, 246 RDM sub
+	-- 35% DUR
 	sets.midcast['Enhancing Magic'] = {
-		-- 5 DUR
-		main="Grioavolr",
+		-- 18
+		main="Gada",
+		sub="Genbu's Shield",
+		-- 16
 		head="Befouled Crown",
 		neck="Incanter's Torque",
 		--ear2="Andoaa Earring",
-		body="Telchine Chas.",
+		-- 12 9% DUR
+		body=gear.Telchine_body_pet,
+		-- 9% DUR
+		hands=gear.Telchine_hands_pet,
+		-- 5
 		ring1="Stikini Ring",
+		-- 5
 		ring2="Stikini Ring",
+		-- 10% DUR
 		waist="Embla Sash",
+		-- 9
 		back="Fi Follet Cape +1",
-		legs="Psycloth Lappas",
-		feet="Regal Pumps +1"		
+		-- 7% DUR
+		legs=gear.Telchine_legs_pet,
+		feet="Regal Pumps +1"
 	}
 	
 	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'],{
@@ -395,7 +410,7 @@ function init_gear_sets()
 	sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'],{
 		main="Bolelabunga",
 		sub="Genbu's Shield",
-		body="Telchine Chas."
+		body=gear.Telchine_body_pet,
 	})
 	
 	sets.midcast.RefreshSelf = set_combine(sets.midcast['Enhancing Magic'],{
