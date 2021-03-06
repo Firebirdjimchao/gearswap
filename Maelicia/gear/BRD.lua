@@ -515,7 +515,7 @@ function init_gear_sets()
 		-- 5
 		ear2="Andoaa Earring",
 		-- 12 10% DUR
-		body=Telchine_body_pet,
+		body=gear.Telchine_body_pet,
 		-- 20
 		--hands="Inyan. Dastanas +2",
 		-- 9% DUR

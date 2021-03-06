@@ -314,7 +314,7 @@ function init_gear_sets()
 		-- 5
 		ear2="Andoaa Earring",
 		-- 12 10% DUR
-		body=Telchine_body_pet,
+		body=gear.Telchine_body_pet,
 		-- 18 5% DUR
 		--hands="Dynasty Mitts",
 		-- 9% DUR
@@ -347,7 +347,7 @@ function init_gear_sets()
 		-- 10% DUR
 		sub="Ammurapi Shield",
 		-- 10% DUR
-		body=Telchine_body_pet,
+		body=gear.Telchine_body_pet,
 		-- 5% DUR
 		--hands="Dynasty Mitts",
 		-- 9% DUR

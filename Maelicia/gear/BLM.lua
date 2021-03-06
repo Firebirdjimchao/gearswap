@@ -363,7 +363,7 @@ function init_gear_sets()
 		ear1="Andoaa Earring",
 		ear2="Regal Earring",
 		-- 12 10% DUR
-		body=Telchine_body_pet,
+		body=gear.Telchine_body_pet,
 		-- 10
 		-- hands="Ayao's Gages",
 		-- 9% DUR
