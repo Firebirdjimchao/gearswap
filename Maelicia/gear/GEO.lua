@@ -177,7 +177,7 @@ function init_gear_sets()
 		ear1="Telos Earring",
 		ear2="Digni. Earring",
 		ring1="Cacoethic Ring +1",
-		ring2="Ramuh Ring +1",
+		ring2="Patricius Ring",
 		waist="Eschan Stone"
 	})
 	
@@ -279,7 +279,7 @@ function init_gear_sets()
 	
 	sets.midcast.ConserveMP = set_combine(sets.midcast.FastRecast,{
 		-- 5
-		neck="Reti Pendant",
+		--neck="Reti Pendant",
 		-- 3
 		ear1="Gifted Earring",
 		-- 5
@@ -797,8 +797,6 @@ function init_gear_sets()
 		ring1="Shadow Ring",
 		-- 10%
 		ring2="Defending Ring",
-		-- 6
-		--back="Tuilha Cape",
 		back="Tantalic Cape",
 		legs=empty,
 		feet=empty
@@ -938,7 +936,7 @@ function init_gear_sets()
 		ear2="Digni. Earring",
 		body="Jhakri Robe +2",
 		hands="Jhakri Cuffs +2",
-		ring2="Ramuh Ring +1",
+		ring2="Patricius Ring",
 		back="Aurist's Cape +1",
 		waist="Eschan Stone",
 	})

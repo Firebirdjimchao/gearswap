@@ -82,7 +82,7 @@ function init_gear_sets()
 		head="Cizin Helm",
 		-- 8%
 		--head="Sakpata's Helm",
-		ammo="Impatiens",
+		--ammo="Impatiens",
 		-- 2%
 		--ammo="Sapience Orb",
 		-- 4%

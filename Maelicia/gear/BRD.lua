@@ -199,7 +199,7 @@ function init_gear_sets()
 	sets.precast.Waltz = {
 		range="Gjallarhorn",
 		head="Inyanga Tiara +2",
-		neck="Reti Pendant",
+		--neck="Reti Pendant",
 		body="Bihu Jstcorps +1",
 		hands="Inyan. Dastanas +2",
 		ring1="Sirona's Ring",
@@ -467,8 +467,8 @@ function init_gear_sets()
 	-- 50% Total
 	sets.midcast.Cure = set_combine(sets.midcast['Healing Magic'],{
 		-- 30%
-		main=gear.Staff.Cure,
-		sub="Enki Strap",
+		main="Daybreak",
+		sub="Ammurapi Shield",
 		head="Hyksos Khat",
 		neck="Incanter's Torque",
 		ear1="Regal Earring",
@@ -750,8 +750,8 @@ function init_gear_sets()
 
 	-- Set if dual-wielding
 	sets.engaged.DualWield = set_combine(sets.engaged,{
-		ear1="Dudgeon Earring",
-		ear2="Heartseeker Earring"
+		ear1="Brutal Earring",
+		ear2="Suppanomimi"
 	})
 
 	sets.engaged.Acc = set_combine(sets.engaged,{

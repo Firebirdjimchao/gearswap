@@ -76,8 +76,8 @@ function init_gear_sets()
 	sets.buff['Sneak Attack'] = {
 		head="Pill. Bonnet +3",
 		neck="Moepapa Medal",
-		ear1="Dudgeon Earring",
-		ear2="Heartseeker Earring",
+		ear1="Sherida Earring",
+		ear2="Suppanomimi",
 		body="Meg. Cuirie +2",
 		hands="Skulk. Armlets +1",
 		ring1="Regal Ring",
@@ -91,8 +91,8 @@ function init_gear_sets()
 	sets.buff['Trick Attack'] = {
 		head="Pill. Bonnet +3",
 		neck="Moepapa Medal",
-		ear1="Dudgeon Earring",
-		ear2="Heartseeker Earring",
+		ear1="Sherida Earring",
+		ear2="Suppanomimi",
 		body="Meg. Cuirie +2",
 		hands="Pill. Armlets +3",
 		ring1="Regal Ring",
@@ -541,12 +541,16 @@ function init_gear_sets()
 		feet="Malignance Boots",
 	})
 
-	-- DT: 52% PDT: 9% MDT: 5%
+	-- DT: 50% PDT: 9% MDT: 10%
 	sets.defense.PDT = set_combine(sets.idle,{
 		-- DT 6%
 		head="Malignance Chapeau",
 		-- DT 6%
 		neck="Loricate Torque +1",
+		-- 2% MDT
+		ear1="Odnowa Earring +1",
+		-- 3% MDT
+		ear2="Etiolation Earring",
 		-- DT 9%
 		body="Malignance Tabard",
 		-- DT 5%
@@ -565,7 +569,7 @@ function init_gear_sets()
 		feet="Malignance Boots",
 	})
 
-	-- DT: 45%
+	-- DT: 50%
 	-- PDT: 9%
 	-- MDT: 10%
 	-- MDB: 29
@@ -617,13 +621,13 @@ function init_gear_sets()
 	
 	-- Normal melee group
 	-- DW needed: 49 (44 with gift)
-	-- 35 Gear DW
+	-- 33 Gear DW
 	sets.engaged = {
 		head="Plun. Bonnet +3",
 		neck="Iskur Gorget",
-		-- 7 DW (set)
-		ear1="Dudgeon Earring",
-		ear2="Heartseeker Earring",
+		ear1="Sherida Earring",
+		-- 5 DW
+		ear2="Suppanomimi",
 		-- 5 DW
 		body=gear.Adhemar_body_B,
 		-- 5 DW

@@ -78,7 +78,7 @@ function init_gear_sets()
 	-- Fast cast sets for spells
 	-- 62%/31% + 1%~3% Total (80/40 cap) + 15% (if RDM sub)
 	sets.precast.FC = {
-		ammo="Impatiens",
+		--ammo="Impatiens",
 		-- 10%
 		head="Nahtirah Hat",
 		-- 4%
@@ -1140,7 +1140,7 @@ function init_gear_sets()
 		ear1="Telos Earring",
 		ear2="Digni. Earring",
 		ring1="Cacoethic Ring +1",
-		ring2="Ramuh Ring +1",
+		ring2="Patricius Ring",
 		back="Aurist's Cape +1",
 		waist="Eschan Stone"
 	})

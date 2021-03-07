@@ -117,7 +117,7 @@ function init_gear_sets()
 	-- Fast cast sets for spells
 	
 	sets.precast.FC = {
-		ammo="Impatiens",
+		--ammo="Impatiens",
 		head=gear.Herculean_head_RA,
 		neck="Voltsurge Torque",
 		ear1="Loquacious Earring",
@@ -134,13 +134,18 @@ function init_gear_sets()
 	sets.precast.RA = {
 		ammo=gear.RAbullet,
 		head="Uk'uxkaj Cap",
-		body="Lak. Frac +1",
+		body="Oshosi Vest",
 		hands="Carmine Fin. Ga. +1",
 		ring1="Haverton Ring",
 		back="Navarch's Mantle",
 		waist="Yemaya Belt",
-		legs="Pursuer's Pants",
-		feet=gear.Adhemar_feet_D
+		-- 9% RS + 10% RS
+		--legs=gear.pursuer_legs_A,
+		-- 9% SS + 10% RS
+		legs=gear.Adhemar_legs_D,
+		--feet=gear.Adhemar_feet_D
+		-- 10% SS
+		feet="Meg. Jam. +2",
 	}
 	   
 	-- Weaponskill sets
@@ -149,8 +154,8 @@ function init_gear_sets()
 		-- STR Haste Aug
 		head="Uk'uxkaj Cap",
 		neck="Fotia Gorget",
-		ear1="Brutal Earring",
-		ear2="Moonshade Earring",
+		ear1="Moonshade Earring",
+		ear2="Brutal Earring",
 		body=gear.Adhemar_body_B,
 		hands=gear.Adhemar_hands_B,
 		ring1="Epona's Ring",
@@ -183,9 +188,9 @@ function init_gear_sets()
 		neck="Fotia Gorget",
 		ear1="Telos Earring",
 		ear2="Enervating Earring",
-		body="Pursuer's Doublet",
+		body="Nisroch Jerkin",
 		hands=gear.Herculean_hands_RA,
-		ring1="Apate Ring",
+		ring1="Ilabrat Ring",
 		ring2="Rajas Ring",
 		back="Gunslinger's Cape",
 		waist="Fotia Belt",
@@ -273,8 +278,8 @@ function init_gear_sets()
 		neck="Iskur Gorget",
 		ear1="Telos Earring",
 		ear2="Enervating Earring",
-		body="Meg. Cuirie +1",
-		hands=gear.Herculean_hands_RA,
+		body="Nisroch Jerkin",
+		hands="Malignance Gloves",
 		ring1="Haverton Ring",
 		ring2="Cacoethic Ring +1",
 		back="Gunslinger's Cape",
@@ -316,52 +321,67 @@ function init_gear_sets()
 		body="Councilor's Garb"
 	})
   
-  -- Total: 44%
-  -- <36%: use Shadow Mantle
-	-- Defense sets
+  -- DT: 50% PDT: 9% MDT: 10%
 	sets.defense.PDT = set_combine(sets.idle,{
-		head="Blistering Sallet +1",
-		-- 5%
+		-- DT 6%
+		head="Malignance Chapeau",
+		-- 2% MDT
+		ear1="Odnowa Earring +1",
+		-- 3% MDT
+		ear2="Etiolation Earring",
+		-- DT 6%
 		neck="Loricate Torque +1",
-		-- 4%
-		body="Lanun Frac +1",
-		-- 5%
+		-- DT 9%
+		body="Malignance Tabard",
+		-- DT 5%
 		hands="Malignance Gloves",
-		-- 5%
+		-- PDT 5% MDT 5%
 		ring1="Dark Ring",
-		-- 10%
+		-- DT 10%
 		ring2="Defending Ring",
-		-- 5%
+		-- DT 5%
 		back="Moonbeam Cape",
-		-- 4%
+		-- PDT 4%
 		waist="Flume Belt +1",
-		-- 2%
-		legs="Herculean Trousers",
-		-- 4%
-		feet="Lanun Boots +1"
+		-- DT 7%
+		legs="Malignance Tights",
+		-- DT 4%
+		feet="Malignance Boots",
 	})
 
-	-- MDT: 19%
+	-- DT: 50%
+	-- PDT: 9%
+	-- MDT: 10%
 	-- MDB: 29
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.defense.MDT = set_combine(sets.idle,{
-		-- 2
-		head="Blistering Sallet +1",
-		-- 8
-		neck="Inq. Bead Necklace",
-		-- 6
-		body="Lanun Frac +1",
-		-- 5% 4
+		-- DT 6% MDB 5
+		head="Malignance Chapeau",
+		-- 2% MDT
+		ear1="Odnowa Earring +1",
+		-- 3% MDT
+		ear2="Etiolation Earring",
+		-- MDB 8
+		--neck="Inq. Bead Necklace",
+		-- DT 6%
+		neck="Loricate Torque +1",
+		-- DT 9% MDB 8
+		body="Malignance Tabard",
+		-- DT 5% MDB 4
 		hands="Malignance Gloves",
-		ring1="Shadow Ring",
-		-- 10%
+		-- PDT 5% MDT 5%
+		ring1="Dark Ring",
+		--ring1="Shadow Ring",
+		-- DT 10%
 		ring2="Defending Ring",
-		-- 5%
+		-- DT 5%
 		back="Moonbeam Cape",
-		-- 5
-		legs="Herculean Trousers",
-		-- 5
-		feet="Lanun Boots +1"
+		-- PDT 4%
+		waist="Flume Belt +1",
+		-- DT: 7% MDB 7
+		legs="Malignance Tights",
+		-- DT 4% MDB 5
+		feet="Malignance Boots",
 	})
 
 	sets.Kiting = {feet="Skd. Jambeaux +1"}
@@ -402,14 +422,14 @@ function init_gear_sets()
 	})
 
 	sets.engaged.Melee.DW = set_combine(sets.engaged.Melee,{
-		ear1="Dudgeon Earring",
-		ear2="Heartseeker Earring",
+		ear1="Suppanomimi",
+		ear2="Brutal Earring",
 		ring2="Haverton Ring"
 	})
 	
 	sets.engaged.Acc.DW = set_combine(sets.engaged.Acc,{
-		ear1="Dudgeon Earring",
-		ear2="Heartseeker Earring",
+		ear1="Suppanomimi",
+		ear2="Brutal Earring",
 		ring2="Haverton Ring"
 	})
 

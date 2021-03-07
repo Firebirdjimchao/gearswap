@@ -101,7 +101,10 @@ function init_gear_sets()
 	
 	-- Fast cast sets for spells
 	
-	-- 80%/40% Total + 8% (JP) + 30% (RDM) (80/40 cap)
+	-- 30% Base RDM traits
+	-- 8% JP
+	-- 61% gear (42 needed for 80%)
+	-- (80/40 cap) Note: Quick Magic does not allow midcast sets
 	sets.precast.FC = {
 		-- 4%
 		--main="Grioavolr",
@@ -117,8 +120,8 @@ function init_gear_sets()
 		ear2="Loquac. Earring",
 		-- 15%
 		body="Viti. Tabard +3",
-		-- 7%
-		hands="Gendewitha Gages",
+		-- 5% + 3% aug
+		--hands="Leyline Gloves",
 		-- 2%
 		ring1="Prolix Ring",
 		-- 4%
@@ -130,9 +133,9 @@ function init_gear_sets()
 		-- 5%
 		waist="Embla Sash",
 		-- 7%
-		legs="Psycloth Lappas",
+		--legs="Psycloth Lappas",
 		-- 4%
-		feet="Chelona Boots"
+		--feet="Chelona Boots"
 	}
 	
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {
@@ -719,7 +722,7 @@ function init_gear_sets()
 		neck="Erra Pendant",
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
-		ring2="Stikini Ring",
+		ring2="Evanescence Ring",
 		back=gear.sucellos_mab,
 		feet=gear.Merlinic_feet_nuke,
 	})
@@ -733,6 +736,7 @@ function init_gear_sets()
 	
 	sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
 		neck="Erra Pendant",
+		ring2="Evanescence Ring",
 		waist="Fucho-no-Obi",
 	})
 	

@@ -30,7 +30,7 @@ function init_gear_sets()
 		-- 3%
 		--main=gear.FastcastStaff,
 		--sub="Enki Strap",
-		ammo="Impatiens",
+		--ammo="Impatiens",
 		-- 10%
 		head="Nahtirah Hat",
 		-- 5%
@@ -412,7 +412,7 @@ function init_gear_sets()
 		hands="Inyan. Dastanas +2",
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
-		ring2="Stikini Ring",
+		ring2="Evanescence Ring",
 	})
 
 	sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'], {
@@ -420,6 +420,7 @@ function init_gear_sets()
 	
 	sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
 		neck="Erra Pendant",
+		ring2="Evanescence Ring",
 		waist="Fucho-no-Obi",
 	})
 	

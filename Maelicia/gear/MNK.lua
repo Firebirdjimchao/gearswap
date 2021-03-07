@@ -38,7 +38,7 @@ function init_gear_sets()
 		body="Tatena. Harama. +1",
 		hands="Malignance Gloves",
 		ring2="Dark Ring",
-		back="Tuilha Cape",
+		back="Tantalic Cape",
 		waist="Luminary Sash",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
@@ -80,7 +80,7 @@ function init_gear_sets()
 	-- Fast cast sets for spells
 	
 	sets.precast.FC = {
-		ammo="Impatiens",
+		--ammo="Impatiens",
 		head=gear.Herculean_head_RA,
 		neck="Voltsurge Torque",
 		ear1="Loquac. Earring",
@@ -104,7 +104,8 @@ function init_gear_sets()
 		--ear1="Brutal Earring",
 		ear1="Sherida Earring",
 		ear2="Moonshade Earring",
-		body="Ken. Samue +1",
+		body="Tatena. Harama. +1",
+		--body="Ken. Samue +1",
 		hands=gear.Adhemar_hands_B,
 		ring1="Gere Ring",
 		ring2="Niqmaddu Ring",
@@ -126,11 +127,12 @@ function init_gear_sets()
 		waist=gear.ElementalBelt
 	})
 	sets.precast.WS.MAB = set_combine(sets.precast.WS, {
-		head=gear.Herculean_head_Magic,
+		--head=gear.Herculean_head_Magic,
 		neck="Sanctity Necklace",
 		ear1="Crematio Earring",
 		ear2="Friomisi Earring",
-		body=gear.Herculean_body_Magic,
+		--body=gear.Herculean_body_Magic,
+		body="Cohort Cloak +1",
 		hands="Leyline Gloves",
 		ring1="Acumen Ring",
 		back="Toro Cape",
@@ -143,11 +145,13 @@ function init_gear_sets()
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS["Victory Smite"]     = set_combine(sets.precast.WS, {
 		head=gear.Adhemar_head_B,
-		body="Ken. Samue +1",
+		body="Tatena. Harama. +1",
+		--body="Ken. Samue +1",
 		ring1="Gere Ring",
 		ring2="Niqmaddu Ring",
 		waist="Moonbow Belt",
-		legs="Ken. Hakama +1",
+		legs="Samnuha Tights",
+		--legs="Ken. Hakama +1",
 		back="Buquwik Cape",
 	})
 	sets.precast.WS["Victory Smite"].Acc = set_combine(sets.precast.WS.Acc, {
@@ -343,13 +347,15 @@ function init_gear_sets()
 		neck="Moonbeam Nodowa",
 		ear1="Sherida Earring",
 		ear2="Dedition Earring",
-		body="Ken. Samue +1",
+		--body="Ken. Samue +1",
+		body="Tatena. Harama. +1",
 		hands="Tatena. Gote +1",
 		ring1="Gere Ring",
 		ring2="Niqmaddu Ring",
 		back="Atheling Mantle",
 		waist="Moonbow Belt",
-		legs="Ken. Hakama +1",
+		legs="Samnuha Tights",
+		--legs="Ken. Hakama +1",
 		feet="Malignance Boots",
 	}
 	sets.engaged.SomeAcc = set_combine(sets.engaged,{

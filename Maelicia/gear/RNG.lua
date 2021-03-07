@@ -318,7 +318,7 @@ function init_gear_sets()
 		ear2="Moonshade Earring",
 		body=gear.Adhemar_body_B,
 		hands="Meg. Gloves +2",
-		ring1="Apate Ring",
+		ring1="Ilabrat Ring",
 		ring2="Rajas Ring",
 		back=gear.aug_belenus_ws,
 		waist="Fotia Belt",
@@ -350,11 +350,12 @@ function init_gear_sets()
 	
 	sets.precast.WS.MAB = set_combine(sets.precast.WS, {
 		--head=gear.Herculean_head_Magic,
-		head="Orion Beret +3",
+		--head="Orion Beret +3",
 		neck="Sanctity Necklace",
 		ear1="Crematio Earring",
 		ear2="Friomisi Earring",
-		body=gear.Herculean_body_Magic,
+		--body=gear.Herculean_body_Magic,
+		body="Cohort Cloak +1",
 		hands=gear.Carmine_hands_D,
 		--hands="Meg. Gloves +2",
 		ring1="Acumen Ring",
@@ -404,6 +405,18 @@ function init_gear_sets()
 	})
 	
 	sets.precast.WS.MABRA = set_combine(sets.precast.WS.MAB, {
+		--neck="Sanctity Necklace",
+		neck="Scout's Gorget +2",
+		ear1="Moonshade Earring",
+		body="Cohort Cloak +1",
+		ring1="Ilabrat Ring",
+		ring2="Dingir Ring",
+		back=gear.aug_belenus_ws_agi,
+		waist="Eschan Stone",
+		--waist=gear.ElementalObi,
+		legs=gear.Herculean_legs_Magic,
+		--legs="Arc. Braccae +3",
+		feet=gear.Adhemar_feet_B,
 	})
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -467,15 +480,18 @@ function init_gear_sets()
 	
 	-- 60% AGI
 	sets.precast.WS['Wildfire'] = set_combine(sets.precast.WS.MABRA, {
-		neck="Sanctity Necklace",
+		--neck="Sanctity Necklace",
+		neck="Scout's Gorget +2",
 		ear1="Moonshade Earring",
+		body="Cohort Cloak +1",
 		ring1="Ilabrat Ring",
 		ring2="Dingir Ring",
 		back=gear.aug_belenus_ws_agi,
-		--waist="Eschan Stone",
-		waist=gear.ElementalObi,
-		--legs=gear.Herculean_legs_Magic,
-		legs="Arc. Braccae +3",
+		waist="Eschan Stone",
+		--waist=gear.ElementalObi,
+		legs=gear.Herculean_legs_Magic,
+		--legs="Arc. Braccae +3",
+		feet=gear.Adhemar_feet_B,
 	})
 	sets.precast.WS['Wildfire'].MidAcc = set_combine(sets.precast.WS['Wildfire'], {
 	})
@@ -491,13 +507,15 @@ function init_gear_sets()
 		--neck="Sanctity Necklace",
 		neck="Scout's Gorget +2",
 		ear1="Moonshade Earring",
+		body="Cohort Cloak +1",
 		ring1="Ilabrat Ring",
 		ring2="Dingir Ring",
 		back=gear.aug_belenus_ws_agi,
-		--waist="Eschan Stone",
-		waist=gear.ElementalObi,
-		--legs=gear.Herculean_legs_Magic,
-		legs="Arc. Braccae +3",
+		waist="Eschan Stone",
+		--waist=gear.ElementalObi,
+		legs=gear.Herculean_legs_Magic,
+		--legs="Arc. Braccae +3",
+		feet=gear.Adhemar_feet_B,
 	})
 	sets.precast.WS['Trueflight'].MidAcc = set_combine(sets.precast.WS['Trueflight'], {
 	})
@@ -530,15 +548,6 @@ function init_gear_sets()
 	
 	-- AGI 50% STR 20%
 	sets.precast.WS['Flaming Arrow'] = set_combine(sets.precast.WS.MABRA, {
-		neck="Sanctity Necklace",
-		ear1="Moonshade Earring",
-		ring1="Dingir Ring",
-		ring2="Regal Ring",
-		back=gear.aug_belenus_ws_agi,
-		--waist="Eschan Stone",
-		waist=gear.ElementalObi,
-		--legs=gear.Herculean_legs_Magic,
-		legs="Arc. Braccae +3",
 	})
 	sets.precast.WS['Flaming Arrow'].MidAcc = set_combine(sets.precast.WS['Flaming Arrow'], {
 	})
@@ -1002,6 +1011,7 @@ function init_gear_sets()
 		body="Tatena. Harama. +1",
 		hands="Tatena. Gote +1",
 		ring1="Cacoethic Ring +1",
+		ring2="Patricius Ring",
 		waist="Eschan Stone",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
