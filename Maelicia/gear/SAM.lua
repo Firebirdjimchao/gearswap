@@ -183,8 +183,8 @@ function init_gear_sets()
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
 		back=gear.Smertrio_WS,
-		--waist="Metalsinger Belt",
-		waist="Fotia Belt",
+		waist="Metalsinger Belt",
+		--waist="Fotia Belt",
 		legs="Wakido Haidate +3",
 		feet=gear.Valorous_feet_WS,
 	})
