@@ -152,8 +152,8 @@ function init_gear_sets()
 	sets.precast.WS.MAB = set_combine(sets.precast.WS, {
 		head=gear.Valorous_head_Magic,
 		--neck="Sanctity Necklace",
-		ear1="Crematio Earring",
-		ear2="Friomisi Earring",
+		ear1="Friomisi Earring",
+		ear2="Crematio Earring",
 		body="Sacro Breastplate",
 		hands="Leyline Gloves",
 		ring1="Acumen Ring",
@@ -169,42 +169,106 @@ function init_gear_sets()
 		legs="Wakido Haidate +3",
 		feet="Wakido Sune. +3"
 	})
+
+	-- Fudo/Kasha/Gekko/Yukikaze
+	sets.precast.WS1Hit = set_combine(sets.precast.WS,{
+		ammo="Knobkierrie",
+		--head=gear.Valorous_head_WS,
+		head="Mpaca's Cap",
+		neck="Sam. Nodowa +2",
+		ear1="Thrud Earring",
+		ear2="Moonshade Earring",
+		body="Sakonji Domaru +3",
+		hands=gear.Valorous_hand_WS,
+		ring1="Niqmaddu Ring",
+		ring2="Regal Ring",
+		back=gear.Smertrio_WS,
+		--waist="Metalsinger Belt",
+		waist="Fotia Belt",
+		legs="Wakido Haidate +3",
+		feet=gear.Valorous_feet_WS,
+	})
+	sets.precast.WS1Hit.MidAcc = set_combine(sets.precast.WS1Hit,{
+	})
+	sets.precast.WS1Hit.HighAcc = set_combine(sets.precast.WS1Hit.MidAcc,{
+		ear1="Telos Earring",
+		hands="Wakido Kote +3",
+		ring2="Regal Ring",
+	})
+	sets.precast.WS1Hit.FullAcc = set_combine(sets.precast.WS1Hit.HighAcc,{
+		head="Wakido Kabuto +3",
+	})
 	
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	
 	-- 80% STR (1-hit)
-	sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {
-		head=gear.Valorous_head_WS,
-		body="Sakonji Domaru +3",
-		hands=gear.Valorous_hand_WS,
-		waist="Metalsinger Belt",
-		feet=gear.Valorous_feet_WS,
+	sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS1Hit, {
 	})
-	sets.precast.WS['Tachi: Fudo'].MidAcc = set_combine(sets.precast.WS['Tachi: Fudo'], {
-	  body="Sakonji Domaru +3",
+	sets.precast.WS['Tachi: Fudo'].MidAcc = set_combine(sets.precast.WS1Hit.MidAcc, {
 	})
-	sets.precast.WS['Tachi: Fudo'].HighAcc = set_combine(sets.precast.WS['Tachi: Fudo'], {
-		body="Sakonji Domaru +3",
-		waist="Fotia Belt",
+	sets.precast.WS['Tachi: Fudo'].HighAcc = set_combine(sets.precast.WS1Hit.HighAcc, {
 	})
-	sets.precast.WS['Tachi: Fudo'].FullAcc = set_combine(sets.precast.WS['Tachi: Fudo'], {
-		body="Sakonji Domaru +3",
-		hands="Wakido Kote +3",
-		waist="Grunfeld Rope"
+	sets.precast.WS['Tachi: Fudo'].FullAcc = set_combine(sets.precast.WS1Hit.FullAcc, {
+	})
+
+	-- 75% STR (1-hit)
+	sets.precast.WS['Tachi: Kasha'] = set_combine(sets.precast.WS1Hit, {
+	})
+	sets.precast.WS['Tachi: Kasha'].MidAcc = set_combine(sets.precast.WS1Hit.MidAcc, {
+	})
+	sets.precast.WS['Tachi: Kasha'].HighAcc = set_combine(sets.precast.WS1Hit.HighAcc, {
+	})
+	sets.precast.WS['Tachi: Kasha'].FullAcc = set_combine(sets.precast.WS1Hit.FullAcc, {
+	})
+
+	-- 75% STR (1-hit)
+	sets.precast.WS['Tachi: Gekko'] = set_combine(sets.precast.WS, {
+	})
+	sets.precast.WS['Tachi: Gekko'].MidAcc = set_combine(sets.precast.WS1Hit.MidAcc, {
+	})
+	sets.precast.WS['Tachi: Gekko'].HighAcc = set_combine(sets.precast.WS1Hit.HighAcc, {
+	})
+	sets.precast.WS['Tachi: Gekko'].FullAcc = set_combine(sets.precast.WS1Hit.FullAcc, {
+	})
+	
+	-- 75% STR (1-hit)
+	sets.precast.WS['Tachi: Yukikaze'] = set_combine(sets.precast.WS, {
+	})
+	sets.precast.WS['Tachi: Yukikaze'].MidAcc = set_combine(sets.precast.WS1Hit.MidAcc, {
+	})
+	sets.precast.WS['Tachi: Yukikaze'].HighAcc = set_combine(sets.precast.WS1Hit.HighAcc, {
+	})
+	sets.precast.WS['Tachi: Yukikaze'].FullAcc = set_combine(sets.precast.WS1Hit.FullAcc, {
 	})
 	
 	-- 73-85% STR (2-hit)
 	sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {
+		ammo="Knobkierrie",
+		--head=gear.Valorous_head_WS,
+		head="Mpaca's Cap",
+		neck="Sam. Nodowa +2",
+		ear1="Thrud Earring",
+		ear2="Moonshade Earring",
+		body="Sakonji Domaru +3",
+		hands=gear.Valorous_hand_WS,
+		ring1="Niqmaddu Ring",
+		ring2="Regal Ring",
+		back=gear.Smertrio_WS,
+		--waist="Metalsinger Belt",
+		waist="Fotia Belt",
+		legs="Wakido Haidate +3",
+		feet=gear.Valorous_feet_WS,
+		--feet="Flam. Gambieras +2",
 	})
 	sets.precast.WS['Tachi: Shoha'].MidAcc = set_combine(sets.precast.WS['Tachi: Shoha'], {
 	})
 	sets.precast.WS['Tachi: Shoha'].HighAcc = set_combine(sets.precast.WS['Tachi: Shoa'], {
-		body="Sakonji Domaru +3",
+		ear1="Telos Earring",
+		hands="Wakido Kote +3",
+		ring2="Regal Ring",
 	})
 	sets.precast.WS['Tachi: Shoha'].FullAcc = set_combine(sets.precast.WS['Tachi: Shoa'], {
-		body="Sakonji Domaru +3",
-		hands="Wakido Kote +3",
-		waist="Grunfeld Rope"
+		head="Wakido Kabuto +3",
 	})
 	
 	-- 50% STR (3-hit)
@@ -213,86 +277,87 @@ function init_gear_sets()
 	sets.precast.WS['Tachi: Rana'].MidAcc = set_combine(sets.precast.WS['Tachi: Rana'], {
 	})
 	sets.precast.WS['Tachi: Rana'].HighAcc = set_combine(sets.precast.WS['Tachi: Rana'], {
-		body="Sakonji Domaru +3",
+		ear1="Telos Earring",
+		hands="Wakido Kote +3",
+		ring2="Regal Ring",
 	})
 	sets.precast.WS['Tachi: Rana'].FullAcc = set_combine(sets.precast.WS['Tachi: Rana'], {
-		body="Sakonji Domaru +3",
+		head="Wakido Kabuto +3",
+		ear1="Telos Earring",
 		hands="Wakido Kote +3",
-		waist="Grunfeld Rope"
+		ring2="Regal Ring",
+		feet="Wakido Sune. +3"
 	})
 	
-	-- 75% STR (1-hit)
-	sets.precast.WS['Tachi: Kasha'] = set_combine(sets.precast.WS, {
-		body="Sakonji Domaru +3",
-	})
-	sets.precast.WS['Tachi: Kasha'].MidAcc = set_combine(sets.precast.WS['Tachi: Kasha'], {
-		body="Sakonji Domaru +3",
-	})
-	sets.precast.WS['Tachi: Kasha'].HighAcc = set_combine(sets.precast.WS['Tachi: Kasha'], {
-		body="Sakonji Domaru +3",
-	})
-	sets.precast.WS['Tachi: Kasha'].FullAcc = set_combine(sets.precast.WS['Tachi: Kasha'], {
-		body="Sakonji Domaru +3",
-		hands="Wakido Kote +3",
-		waist="Grunfeld Rope"
-	})
-	
-	-- 75% STR (1-hit)
-	sets.precast.WS['Tachi: Gekko'] = set_combine(sets.precast.WS, {
-		body="Sakonji Domaru +3",
-	})
-	sets.precast.WS['Tachi: Gekko'].MidAcc = set_combine(sets.precast.WS['Tachi: Gekko'], {
-		body="Sakonji Domaru +3",
-	})
-	sets.precast.WS['Tachi: Gekko'].HighAcc = set_combine(sets.precast.WS['Tachi: Gekko'], {
-		body="Sakonji Domaru +3",
-	})
-	sets.precast.WS['Tachi: Gekko'].FullAcc = set_combine(sets.precast.WS['Tachi: Gekko'], {
-		body="Sakonji Domaru +3",
-		hands="Wakido Kote +3",
-		waist="Grunfeld Rope"
-	})
-	
-	-- 75% STR (1-hit)
-	sets.precast.WS['Tachi: Yukikaze'] = set_combine(sets.precast.WS, {
-		body="Sakonji Domaru +3",
-	})
-	sets.precast.WS['Tachi: Yukikaze'].MidAcc = set_combine(sets.precast.WS['Tachi: Yukikaze'], {
-		body="Sakonji Domaru +3",
-	})
-	sets.precast.WS['Tachi: Yukikaze'].HighAcc = set_combine(sets.precast.WS['Tachi: Yukikaze'], {
-		body="Sakonji Domaru +3",
-	})
-	sets.precast.WS['Tachi: Yukikaze'].FullAcc = set_combine(sets.precast.WS['Tachi: Yukikaze'], {
-		body="Sakonji Domaru +3",
-		hands="Wakido Kote +3",
-		waist="Grunfeld Rope"
-	})
-	
-	-- 40% STR 60% CHR (1-hit)
+	-- 40% STR 60% CHR (1-hit), DEF down effect accuracy affected by MACC
 	sets.precast.WS['Tachi: Ageha'] = set_combine(sets.precast.WS, {
+		ammo="Pemphredo Tathlum",
+		head="Mpaca's Cap",
+		ear1="Hermetic Earring",
+		ear2="Digni. Earring",
+		neck="Sanctity Necklace",
 		body="Sakonji Domaru +3",
+		hands="Flam. Manopolas +2",
+		--waist="Eschan Stone",
+		ring1="Metamor. Ring +1",
+		ring2="Stikini Ring",
+		--legs="Flamma Dirs +2",
+		--feet="Flam. Gambieras +2",
 	})
 	sets.precast.WS['Tachi: Ageha'].MidAcc = set_combine(sets.precast.WS['Tachi: Ageha'], {
-		body="Sakonji Domaru +3",
 	})
 	sets.precast.WS['Tachi: Ageha'].HighAcc = set_combine(sets.precast.WS['Tachi: Ageha'], {
-		body="Sakonji Domaru +3",
 	})
 	sets.precast.WS['Tachi: Ageha'].FullAcc = set_combine(sets.precast.WS['Tachi: Ageha'], {
-		body="Sakonji Domaru +3",
-		hands="Wakido Kote +3",
-		waist="Grunfeld Rope"
 	})
 	
 	-- Magical WS
 	sets.precast.WS['Tachi: Jinpu'] = set_combine(sets.precast.WS.MAB, {
+		head="Mpaca's Cap",
+		neck="Sam. Nodowa +2",
+		ear2="Moonshade Earring",
+		hands=gear.Valorous_hand_WS,
 	})
 	sets.precast.WS['Tachi: Goten'] = set_combine(sets.precast.WS.MAB, {
 	})
 	sets.precast.WS['Tachi: Kagero'] = set_combine(sets.precast.WS.MAB, {
 	})
 	sets.precast.WS['Tachi: Koki'] = set_combine(sets.precast.WS.MAB, {
+	})
+
+	-- 100% STR, 2-hit, Damage varies with TP, WS at 1750
+	sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, {
+		ammo="Knobkierrie",
+		head="Mpaca's Cap",
+		neck="Sam. Nodowa +2",
+		ear2="Moonshade Earring",
+		body="Sakonji Domaru +3",
+		waist="Metalsinger Belt",
+		feet=gear.Valorous_feet_WS,
+	})
+	sets.precast.WS['Impulse Drive'].MidAcc = set_combine(sets.precast.WS['Impulse Drive'], {
+	})
+	sets.precast.WS['Impulse Drive'].HighAcc = set_combine(sets.precast.WS['Impulse Drive'], {
+	})
+	sets.precast.WS['Impulse Drive'].FullAcc = set_combine(sets.precast.WS['Impulse Drive'], {
+	})
+
+	-- 73%~85%STR, 4-hit, Damage varies with TP
+	sets.precast.WS['Stardiver'] = set_combine(sets.precast.WS, {
+		ammo="Knobkierrie",
+		head="Mpaca's Cap",
+		neck="Sam. Nodowa +2",
+		ear2="Moonshade Earring",
+		body="Sakonji Domaru +3",
+		waist="Fotia Belt",
+		legs="Ken. Hakama +1",
+		feet=gear.Valorous_feet_WS,
+	})
+	sets.precast.WS['Stardiver'].MidAcc = set_combine(sets.precast.WS['Stardiver'], {
+	})
+	sets.precast.WS['Stardiver'].HighAcc = set_combine(sets.precast.WS['Stardiver'], {
+	})
+	sets.precast.WS['Stardiver'].FullAcc = set_combine(sets.precast.WS['Stardiver'], {
 	})
 	
 	-- Ranged WS
@@ -445,14 +510,16 @@ function init_gear_sets()
 	
 	-- Defense sets
 
-	-- 37% DT 9% PDT 15% MDT 17 MDB (43% DT if using Khonsu)
+	-- 37% DT 16% PDT 10% MDT 17 MDB (43% DT if using Khonsu)
 	sets.defense.DT = set_combine(sets.idle,{
 		-- 6& DT
 		--sub="Khonsu",
 		-- 2% DT
 		ammo="Staunch Tathlum +1",
 		-- 5% MDT
-		head=gear.Valorous_head_WS,
+		--head=gear.Valorous_head_WS,
+		-- 7% PDT
+		head="Mpaca's Cap",
 		-- 2% MDT
 		ear1="Odnowa Earring +1",
 		-- 3% MDT
@@ -566,7 +633,7 @@ function init_gear_sets()
 	--
 	-- SAM Roll: Lucky (2) 32 STP, Eleven 40 STP, Unlucky (6) 4 STP
 	--
-	-- 54~59 gear STP + 10 (Dojikiri Yasutsuna) = total: 54~59
+	-- 62~67 gear STP + 10 (Dojikiri Yasutsuna)
 	-- Must use Duplus Grip
 	--
 	-- Gear Haste: 24%
@@ -582,7 +649,8 @@ function init_gear_sets()
 		head="Flam. Zucchetto +2",
 		-- STP 7 + 7 aug
 		neck="Sam. Nodowa +2",
-		ear1="Trux Earring",
+		-- STP 8
+		ear1="Dedition Earring",
 		-- 1 STP
 		ear2="Brutal Earring",
 		-- 12 STP 3%
