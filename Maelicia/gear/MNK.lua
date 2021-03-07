@@ -4,6 +4,8 @@ function user_setup()
 	state.HybridMode:options('Normal', 'PDT', 'Counter')
 	state.PhysicalDefenseMode:options('PDT', 'HP')
 	state.IdleMode:options('CP', 'Normal', 'Regen')
+
+	gear.Segomo_dex_da = { name="Segomo's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}}
 	
 	update_combat_form()
 	update_melee_groups()
@@ -109,7 +111,7 @@ function init_gear_sets()
 		hands=gear.Adhemar_hands_B,
 		ring1="Gere Ring",
 		ring2="Niqmaddu Ring",
-		back="Atheling Mantle",
+		back=gear.Segomo_dex_da,
 		waist="Fotia Belt",
 		legs="Hiza. Hizayoroi +2",
 		feet=gear.Adhemar_feet_B
@@ -118,7 +120,7 @@ function init_gear_sets()
 		head="Rao Kabuto +1",
 		body=gear.Adhemar_body_B,
 		hands=gear.Adhemar_hands_B,
-		back="Ground. Mantle +1",
+		back=gear.Segomo_dex_da,
 		legs="Hiza. Hizayoroi +2",
 		waist="Windbuffet Belt +1"
 	})
@@ -143,7 +145,7 @@ function init_gear_sets()
 	})
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-	sets.precast.WS["Victory Smite"]     = set_combine(sets.precast.WS, {
+	sets.precast.WS["Victory Smite"] = set_combine(sets.precast.WS, {
 		head=gear.Adhemar_head_B,
 		body="Tatena. Harama. +1",
 		--body="Ken. Samue +1",
@@ -152,18 +154,19 @@ function init_gear_sets()
 		waist="Moonbow Belt",
 		legs="Samnuha Tights",
 		--legs="Ken. Hakama +1",
-		back="Buquwik Cape",
+		back=gear.Segomo_dex_da,
 	})
 	sets.precast.WS["Victory Smite"].Acc = set_combine(sets.precast.WS.Acc, {
 	})
 	sets.precast.WS["Victory Smite"].SomeAcc = set_combine(sets.precast.WS["Victory Smite"], {})
 
-	sets.precast.WS['Shijin Spiral']     = set_combine(sets.precast.WS, {
+	sets.precast.WS['Shijin Spiral'] = set_combine(sets.precast.WS, {
 		head=gear.Rao_head_hq_B,
 		ear2="Brutal Earring",
 		neck="Caro Necklace",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
+		back=gear.Segomo_dex_da,
 		legs="Jokushu Haidate",
 		feet=gear.Rao_feet_hq_B,
 	})
@@ -173,14 +176,14 @@ function init_gear_sets()
 	sets.precast.WS['Shijin Spiral'].SomeAcc = set_combine(sets.precast.WS['Shijin Spiral'], {
 	})
 
-	sets.precast.WS['Asuran Fists']     = set_combine(sets.precast.WS, {
+	sets.precast.WS['Asuran Fists'] = set_combine(sets.precast.WS, {
 	})
 	sets.precast.WS['Asuran Fists'].Acc = set_combine(sets.precast.WS.Acc, {
 	})
 	sets.precast.WS['Asuran Fists'].SomeAcc = set_combine(sets.precast.WS['Asuran Fists'], {
 	})
 
-	sets.precast.WS["Ascetic's Fury"]     = set_combine(sets.precast.WS, {
+	sets.precast.WS["Ascetic's Fury"] = set_combine(sets.precast.WS, {
 	})
 	sets.precast.WS["Ascetic's Fury"].Acc = set_combine(sets.precast.WS.Acc, {
 	})
@@ -352,7 +355,7 @@ function init_gear_sets()
 		hands="Tatena. Gote +1",
 		ring1="Gere Ring",
 		ring2="Niqmaddu Ring",
-		back="Atheling Mantle",
+		back=gear.Segomo_dex_da,
 		waist="Moonbow Belt",
 		legs="Samnuha Tights",
 		--legs="Ken. Hakama +1",
@@ -369,7 +372,7 @@ function init_gear_sets()
 		ear1="Digni. Earring",
 		ear2="Telos Earring",
 		ring2="Cacoethic Ring +1",
-		back="Ground. Mantle +1",
+		back=gear.Segomo_dex_da,
 	})
 
 	-- Defensive melee hybrid sets
