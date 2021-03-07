@@ -4,15 +4,15 @@
 
 function user_setup()
 	state.OffenseMode:options('Normal', 'Ailments', 'Hybrid', 'Melee', 'MeleeMidAcc', 'MeleeAcc')
-	state.WeaponskillMode:options('Normal', 'MidAcc', 'Acc')
+	state.WeaponskillMode:options('Normal', 'MidAcc', 'Acc', 'PDT')
 	state.PhysicalDefenseMode:options('PDT', 'MDT', 'Ailments', 'Charm')
-	state.IdleMode:options('Regen', 'Refresh')
+	state.IdleMode:options('Normal', 'DT', 'Refresh', 'Regain', 'Regen')
 
 	state.PartyAlertMode = M('true', 'false')
 
 	--gear.aug_ogma_dt = { name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Damage taken-5%',}}
 	gear.aug_ogma_dt = { name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Magic dmg. taken-10%',}}
-	gear.aug_ogma_dex_da = { name="Ogma's cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}}
+	gear.aug_ogma_dex_da = { name="Ogma's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Damage taken-5%',}}
 	gear.aug_ogma_ws = { name="Ogma's Cape", augments={}}
 	gear.aug_ogma_fc = { name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10',}}
 
@@ -74,10 +74,9 @@ function init_gear_sets()
 	}
 
 	-- Defense sets
-	-- PDT 2% (Alber Strap)
-	--
-	-- PDT: 50% (52% with Alber Stap)
-	-- MDT: 50%
+	-- DT: 33%
+	-- PDT: 20% (22% with Alber Stap)
+	-- MDT: 21%
 	-- Eva: 295
 	-- Meva: 428
 	-- Ailment resist: 26
@@ -108,23 +107,32 @@ function init_gear_sets()
 		waist="Flume Belt +1",
 		-- DT 5%  Eva 24 Meva 69
 		--legs="Aya. Cosciales +2",
+		-- 5% PDT Eva 58 Meva 99 Ailment 10
+		--legs="Rune. Trousers +3",
 		-- PDT 7% Eva 44 Meva 107
 		legs="Eri. Leg Guards +1",
 		-- PDT 4% Eva 77 Meva 107 Ailment 15
 		feet="Ahosi Leggings",
 	}
+	-- Defense sets
+	-- DT: 24%
+	-- PDT: 18% (20% with Alber Stap)
+	-- MDT: 19%
+	-- Eva: 295
+	-- Meva: 428
 	-- Ailment resist: 47
 	sets.Ailments = set_combine(sets.DT, {
 		-- 11
 		ammo="Staunch Tathlum +1",
 		-- 5
 		ear1="Hearty Earring",
+		-- 39 Elemental Resist
 		body="Runeist's coat +3",
 		-- 6
 		hands="Erilaz Gauntlets +1",
-		-- 10
+		-- 10 5% PDT
 		legs="Rune. Trousers +3",
-		-- 15
+		-- 15 4% PDT
 		feet="Ahosi Leggings",
 	})
 	-- 24
@@ -323,6 +331,36 @@ function init_gear_sets()
 	})
 	sets.precast.WS['Dimidiation'].Acc = set_combine(sets.precast.WS['Dimidiation'].MidAcc, {
 	})
+	-- DT 21%
+	-- PDT 13%
+	-- MDT 4%
+	sets.precast.WS['Dimidiation'].PDT = set_combine(sets.precast.WS['Dimidiation'], {
+		ammo="Knobkierrie",
+		-- MDT 4%
+		head="Dampening Tam",
+		ear1="Ishvara Earring",
+		ear2="Moonshade Earring",
+		body=gear.Herculean_body_WS,
+		-- DT 6%
+		neck="Futhark Torque +1",
+		-- PDT 4%
+		hands="Meg. Gloves +2",
+		-- DT 5%
+		back=gear.aug_ogma_dex_da,
+		-- DT 10%
+		ring2="Defending Ring",
+		waist="Grunfeld Rope",
+		-- PDT 6%
+		legs="Meg. Chausses +2",
+		-- PDT 3%
+		feet="Meg. Jam. +2",
+	})
+	sets.precast.WS['Dimidiation'].MDT = set_combine(sets.precast.WS['Dimidiation'].PDT, {
+	})
+	sets.precast.WS['Dimidiation'].Ailments = set_combine(sets.precast.WS['Dimidiation'].PDT, {
+	})
+	sets.precast.WS['Dimidiation'].Charm = set_combine(sets.precast.WS['Dimidiation'].PDT, {
+	})
 		
 	sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast.WS.MAB, {
 	})
@@ -447,9 +485,23 @@ function init_gear_sets()
 		body="Councilor's Garb",
 	})
 
+	sets.idle.DT = set_combine(sets.DT, {
+	})
+
 	sets.idle.Refresh = set_combine(sets.idle, {
+		ammo="Homiliary",
+		head="Rawhide mask",
 		body="Runeist's coat +3",
 		waist="Fucho-no-obi"
+	})
+
+	sets.idle.Regain = set_combine(sets.idle, {
+		head="Turms Cap",
+	})
+
+	sets.idle.Regen = set_combine(sets.idle, {
+		neck="Bathy Choker +1",
+		ring1="Sheltered Ring",
 	})
 
 	sets.idle.PDT = set_combine(sets.DT, {
