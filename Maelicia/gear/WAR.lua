@@ -76,12 +76,10 @@ function init_gear_sets()
 	sets.precast.Waltz['Healing Waltz'] = {}
  
 	-- Sets for fast cast gear for spells
-	-- 40%/20% Total
+	-- 43%/21% Total
 	sets.precast.FC = {
-		-- 5%
-		head="Cizin Helm",
 		-- 8%
-		--head="Sakpata's Helm",
+		head="Sakpata's Helm",
 		--ammo="Impatiens",
 		-- 2%
 		--ammo="Sapience Orb",
@@ -638,7 +636,7 @@ function init_gear_sets()
 	sets.noprotect = {ring1="Sheltered Ring"}
  
 	sets.idle.Town = set_combine(sets.idle, {
-		--head=gear.Argosy_head_hq_A,
+		head="Sakpata's Helm",
 		neck="War. Beads +2",
 		ear1="Telos Earring",
 		--body="Councilor's Garb",
@@ -677,11 +675,11 @@ function init_gear_sets()
 			 
 	-- Defense sets
 	-- Total: 
-	-- 24% DT 
-	-- 27% PDT 
-	-- 25% MDT 
-	-- 30 MDB
-	-- 496 MEVA
+	-- 41% DT 
+	-- 24% PDT 
+	-- 18% MDT 
+	-- 31 MDB
+	-- 590 MEVA
 	-- <36%: use Shadow Mantle
 	sets.defense.PDT = set_combine(sets.idle,{
 		-- 3% DT
@@ -690,11 +688,17 @@ function init_gear_sets()
 		-- 7% MDT
 		-- 6 MDB
 		-- 99 MEVA
-		head="Volte Salade",
+		-- 6% Haste
+		--head="Volte Salade",
 		-- 10% DT
 		-- 8 MDB
 		-- 53 MEVA
 		--head="Hjarrandi Helm",
+		-- 7% DT
+		-- 7 MDB
+		-- 123 MEVA
+		-- 4% Haste
+		head="Sakpata's Helm",
 		-- 6% DT
 		neck="Loricate Torque +1",
 		-- 2% MDT
@@ -707,74 +711,18 @@ function init_gear_sets()
 		--body="Hjarrandi Breast.",
 		-- 12 MDB
 		-- 129 MEVA
-		body="Sacro Breastplate",
-		-- 6% PDT 
-		-- 2% MDT 
-		-- 4 MDB
-		-- 91 MEVA
-		hands="Volte Moufles",
-		-- 5% DT
-		ring1="Dark Ring",
+		-- 5% Haste
+		--body="Sacro Breastplate",
 		-- 10% DT
-		ring2="Defending Ring",
-		-- 5% DT
-		back="Moonbeam Cape",
-		-- 4% PDT
-		waist="Flume Belt +1",
-		-- 5% PDT 
-		-- 4 MDB
-		-- 100 MEVA
-		legs="Pumm. Cuisses +3",
-		-- 7% PDT
-		-- 3% MDT
-		-- 8 MDB
-		-- 137 MEVA
-		--legs="Volte Brayettes",
-		-- 4% PDT 
-		-- 6% MDT 
-		-- 6 MDB
-		-- 137 MEVA
-		feet="Volte Sollerets",
-	})
-	sets.defense.Reraise = set_combine(sets.defense.PDT,sets.Twilight,{
-	})
-	
-	-- Total: 
-	-- 24% DT 
-	-- 27% PDT 
-	-- 25% MDT 
-	-- 32 MDB
-	-- 556 MEVA
-	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
-	sets.defense.MDT = set_combine(sets.idle,{
-		-- 3% DT
-		ammo="Staunch Tathlum +1",
-		-- 3% PDT
-		-- 7% MDT
-		-- 6 MDB
-		-- 99 MEVA
-		head="Volte Salade",
-		-- 10% DT
-		-- 8 MDB
-		-- 53 MEVA
-		--head="Hjarrandi Helm",
-		-- 6% DT
-		neck="Loricate Torque +1",
-		-- 2% MDT
-		ear1="Odnowa Earring +1",
-		-- 3% MDT
-		ear2="Etiolation Earring",
-		-- 12% DT 
 		-- 10 MDB
-		-- 69 MEVA
-		--body="Hjarrandi Breast.",
-		-- 12 MDB
-		-- 129 MEVA
-		body="Sacro Breastplate",
+		-- 139 MEVA
+		-- 2% Haste
+		body="Sakpata's Breastplate",
 		-- 6% PDT 
 		-- 2% MDT 
 		-- 4 MDB
 		-- 91 MEVA
+		-- 4% Haste
 		hands="Volte Moufles",
 		-- 5% PDT
 		-- 5% MDT
@@ -798,6 +746,84 @@ function init_gear_sets()
 		-- 6% MDT 
 		-- 6 MDB
 		-- 137 MEVA
+		-- 3% Haste
+		feet="Volte Sollerets",
+	})
+	sets.defense.Reraise = set_combine(sets.defense.PDT,sets.Twilight,{
+	})
+	
+	-- Total: 
+	-- 41% DT 
+	-- 24% PDT 
+	-- 18% MDT 
+	-- 31 MDB
+	-- 590 MEVA
+	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
+	sets.defense.MDT = set_combine(sets.idle,{
+		-- 3% DT
+		ammo="Staunch Tathlum +1",
+		-- 3% PDT
+		-- 7% MDT
+		-- 6 MDB
+		-- 99 MEVA
+		-- 6% Haste
+		--head="Volte Salade",
+		-- 10% DT
+		-- 8 MDB
+		-- 53 MEVA
+		--head="Hjarrandi Helm",
+		-- 7% DT
+		-- 7 MDB
+		-- 123 MEVA
+		-- 4% Haste
+		head="Sakpata's Helm",
+		-- 6% DT
+		neck="Loricate Torque +1",
+		-- 2% MDT
+		ear1="Odnowa Earring +1",
+		-- 3% MDT
+		ear2="Etiolation Earring",
+		-- 12% DT 
+		-- 10 MDB
+		-- 69 MEVA
+		--body="Hjarrandi Breast.",
+		-- 12 MDB
+		-- 129 MEVA
+		-- 5% Haste
+		--body="Sacro Breastplate",
+		-- 10% DT
+		-- 10 MDB
+		-- 139 MEVA
+		-- 2% Haste
+		body="Sakpata's Breastplate",
+		-- 6% PDT 
+		-- 2% MDT 
+		-- 4 MDB
+		-- 91 MEVA
+		-- 4% Haste
+		hands="Volte Moufles",
+		-- 5% DT
+		ring1="Dark Ring",
+		-- 10% DT
+		ring2="Defending Ring",
+		-- 5% DT
+		back="Moonbeam Cape",
+		-- 4% PDT
+		waist="Flume Belt +1",
+		-- 5% PDT 
+		-- 4 MDB
+		-- 100 MEVA
+		legs="Pumm. Cuisses +3",
+		-- 7% PDT
+		-- 3% MDT
+		-- 8 MDB
+		-- 137 MEVA
+		--legs="Volte Brayettes",
+		-- 4% PDT 
+		-- 6% MDT 
+		-- 6 MDB
+		-- 137 MEVA
+		-- 3% Haste
 		feet="Volte Sollerets",
 	})
  
@@ -941,107 +967,102 @@ function init_gear_sets()
 		ear1="Suppanomimi",
 		waist="Reiki Yotai",
 	})
-
-	-- 37% DT 23% PDT 15% MDT 24 MDB (43% DT if using Khonsu)
+	
+	-- Total: 
+	-- 27% DT 
+	-- 25% PDT 
+	-- 6% MDT
+	-- 31 MDB
+	-- 590 MEVA
+	-- 27% Haste
+	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.engaged.PDT = set_combine(sets.engaged, {
-		-- 6% DT
-		--sub="Khonsu",
-		-- 2% DT
-		ammo="Staunch Tathlum +1",
-		-- 3 MDB
-		-- 53 MEVA
-		--head="Flam. Zucchetto +2",
-		-- 3% PDT
-		-- 7% MDT
-		-- 6 MDB
-		-- 99 MEVA
-		-- 6% Haste
-		head="Volte Salade",
+		-- 7% DT
+		-- 7 MDB
+		-- 123 MEVA
+		-- 4% Haste
+		head="Sakpata's Helm",
 		-- 10% DT
-		-- 8 MDB
-		-- 53 MEVA
-		--head="Hjarrandi Helm",
-		-- 6% DT
-		neck="Loricate Torque +1",
-		-- 12% DT 
 		-- 10 MDB
-		-- 69 MEVA
-		-- 47 ACC
-		-- 53 ATK
-		body="Hjarrandi Breast.",
+		-- 139 MEVA
+		-- 2% Haste
+		body="Sakpata's Breastplate",
 		-- 6% PDT 
 		-- 2% MDT 
 		-- 4 MDB
 		-- 91 MEVA
+		-- 4% Haste
 		hands="Volte Moufles",
-		-- 3% DT
-		--ring1="Sulevia's Ring",
-		ring1="Niqmaddu Ring",
 		-- 10% DT
 		ring2="Defending Ring",
 		-- 10% PDT
 		back=gear.Cichol_AccDA,
-		-- 7% DT
-		-- 2 MDB
-		-- 75 MEVA
-		legs="Sulevi. Cuisses +2",
-		-- 7% PDT
-		-- 3% MDT
-		-- 8 MDB
-		-- 137 MEVA
-		--legs="Volte Brayettes",
+		-- 8% Haste
+		waist="Ioskeha Belt +1",
+		-- 5% PDT 
 		-- 4 MDB
-		--feet="Pumm. Calligae +3",
+		-- 100 MEVA
+		-- 6% Haste
+		legs="Pumm. Cuisses +3",
 		-- 4% PDT 
 		-- 6% MDT 
 		-- 6 MDB
 		-- 137 MEVA
+		-- 3% Haste
 		feet="Volte Sollerets",
 	})
 	sets.engaged.AccLow.PDT = set_combine(sets.engaged.PDT, {})
-	sets.engaged.AccHigh.PDT = set_combine(sets.engaged.AccLow.PDT, {})
+	sets.engaged.AccHigh.PDT = set_combine(sets.engaged.AccLow.PDT, {
+		ear1="Telos Earring",
+		ear2="Digni. Earring",
+		ring1="Flamma Ring",
+	})
 
 	sets.engaged.MDT = set_combine(sets.engaged.PDT, {
 	})
 	sets.engaged.AccLow.MDT = set_combine(sets.engaged.MDT, {})
-	sets.engaged.AccHigh.MDT = set_combine(sets.engaged.AccLow.MDT, {})
+	sets.engaged.AccHigh.MDT = set_combine(sets.engaged.AccLow.MDT, {
+		ear1="Telos Earring",
+		ear2="Digni. Earring",
+		ring1="Flamma Ring",
+	})
 			 
 	sets.engaged.Conqueror = {}
 	sets.engaged.Conqueror.AccLow = set_combine(sets.engaged.Conqueror, {})
 	sets.engaged.Conqueror.AccHigh = set_combine(sets.engaged.Conqueror.AccLow, {})
-	sets.engaged.Conqueror.PDT = set_combine(sets.engaged.Conqueror, {})
+	sets.engaged.Conqueror.PDT = set_combine(sets.engaged.Conqueror,sets.engaged.PDT,{})
 	sets.engaged.Conqueror.AccLow.PDT = set_combine(sets.engaged.Conqueror.PDT, {})
 	sets.engaged.Conqueror.AccHigh.PDT = set_combine(sets.engaged.Conqueror.AccLow.PDT, {})
 	-- Conqueror Aftermath Lv.3 sets
 	sets.engaged.Conqueror.AM3 = {}
 	sets.engaged.Conqueror.AccLow.AM3 = set_combine(sets.engaged.Conqueror.AM3, {})
 	sets.engaged.Conqueror.AccHigh.AM3 = set_combine(sets.engaged.Conqueror.AccLow.AM3, {})
-	sets.engaged.Conqueror.PDT.AM3 = set_combine(sets.engaged.Conqueror.AM3, {})
+	sets.engaged.Conqueror.PDT.AM3 = set_combine(sets.engaged.Conqueror.AM3,sets.engaged.PDT,{})
 	sets.engaged.Conqueror.AccLow.PDT.AM3 = set_combine(sets.engaged.Conqueror.PDT.AM3, {})
 	sets.engaged.Conqueror.AccHigh.PDT.AM3 = set_combine(sets.engaged.Conqueror.AccLow.PDT.AM3, {})
 			 
 	sets.engaged.Ukonvasara = {}
 	sets.engaged.Ukonvasara.AccLow = set_combine(sets.engaged.Ukonvasara, {})
 	sets.engaged.Ukonvasara.AccHigh = set_combine(sets.engaged.Ukonvasara.AccLow, {})
-	sets.engaged.Ukonvasara.PDT = set_combine(sets.engaged.Ukonvasara, {})
+	sets.engaged.Ukonvasara.PDT = set_combine(sets.engaged.Ukonvasara,sets.engaged.PDT,{})
 	sets.engaged.Ukonvasara.AccLow.PDT = set_combine(sets.engaged.Ukonvasara.PDT, {})
 	sets.engaged.Ukonvasara.AccHigh.PDT = set_combine(sets.engaged.Ukonvasara.AccLow.PDT, {})
  
 	sets.engaged.Bravura = {}
 	sets.engaged.Bravura.AccLow = set_combine(sets.engaged.Bravura, {})
 	sets.engaged.Bravura.AccHigh = set_combine(sets.engaged.Bravura.AccLow, {})
-	sets.engaged.Bravura.PDT = set_combine(sets.engaged.Bravura, {})
+	sets.engaged.Bravura.PDT = set_combine(sets.engaged.Bravura,sets.engaged.PDT,{})
 	sets.engaged.Bravura.AccLow.PDT = set_combine(sets.engaged.Bravura.PDT, {})
 	sets.engaged.Bravura.AccHigh.PDT = set_combine(sets.engaged.Bravura.AccLow.PDT, {})
 	-- Bravura Aftermath sets, will only apply if aftermath, bravura, and hybridmode are on
-	sets.engaged.Bravura.PDT.AM = set_combine(sets.engaged.Bravura, {})
+	sets.engaged.Bravura.PDT.AM = set_combine(sets.engaged.Bravura,sets.engaged.PDT,{})
 	sets.engaged.Bravura.AccLow.PDT.AM = set_combine(sets.engaged.Bravura.PDT.AM , {})
 	sets.engaged.Bravura.AccHigh.PDT.AM = set_combine(sets.engaged.Bravura.AccLow.PDT.AM , {})
 			 
 	sets.engaged.Ragnarok = {}
 	sets.engaged.Ragnarok.AccLow = set_combine(sets.engaged.Ragnarok, {})
 	sets.engaged.Ragnarok.AccHigh = set_combine(sets.engaged.Ragnarok.AccLow, {})
-	sets.engaged.Ragnarok.PDT = set_combine(sets.engaged.Ragnarok, {})
+	sets.engaged.Ragnarok.PDT = set_combine(sets.engaged.Ragnarok,sets.engaged.PDT,{})
 	sets.engaged.Ragnarok.AccLow.PDT = set_combine(sets.engaged.Ragnarok.PDT, {})
 	sets.engaged.Ragnarok.AccHigh.PDT = set_combine(sets.engaged.Ragnarok.AccLow.PDT, {})
 
