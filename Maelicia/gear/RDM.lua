@@ -136,6 +136,8 @@ function init_gear_sets()
 		--legs="Psycloth Lappas",
 		-- 4%
 		--feet="Chelona Boots"
+		-- 8%
+		--feet="Carmine Greaves +1",
 	}
 	
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {
@@ -234,8 +236,34 @@ function init_gear_sets()
 	})
 	
 	-- Midcast Sets
-	
+	-- DT 54%
+	-- PDT 5%
+	-- MDT 5%
+	-- MDB 32
+	-- Haste 26%
 	sets.midcast.FastRecast = set_combine(sets.precast.FC,{
+		-- DT 3%
+		ammo="Staunch Tathlum +1",
+		-- DT 6% MDB 5 Haste 6%
+		head="Malignance Chapeau",
+		-- DT 6%
+		neck="Loricate Torque +1",
+		-- DT 9% MDB 8 Haste 4%
+		body="Malignance Tabard",
+		-- DT 5% MDB 4 Haste 4%
+		hands="Malignance Gloves",
+		-- PDT 5% MDT 5%
+		ring1="Dark Ring",
+		-- DT 10%
+		ring2="Defending Ring",
+		-- DT 5%
+		back="Moonbeam Cape",
+		-- DT 6% MDB 5 Haste 9%
+		legs="Aya. Cosciales +2",
+		-- DT 4% MDB 5 Haste 3%
+		feet="Malignance Boots",
+		-- MDB 3 Haste 4%
+		--feet="Carmine Greaves +1",
 	});
 	
 	sets.midcast.MACC = {

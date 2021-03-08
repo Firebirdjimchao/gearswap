@@ -105,7 +105,7 @@ function init_gear_sets()
 	-- Precast Sets
 
 	-- Fast cast sets for spells
-	-- 70%/35% Total (80/40 cap) + 15% (if RDM sub)
+	-- 71%/35% Total (80/40 cap) + 15% (if RDM sub)
 	sets.precast.FC = {
 		-- 7%
 		main="Kali",
@@ -119,7 +119,7 @@ function init_gear_sets()
 		ear1="Loquac. Earring",
 		-- 4%
 		ear2="Malignance Earring",
-		-- 13%
+		-- 14%
 		body="Inyanga Jubbah +2",
 		-- 2%
 		ring1="Prolix Ring",
@@ -138,7 +138,7 @@ function init_gear_sets()
 		-- 6%
 		legs="Aya. Cosciales +2",
 		-- 4%
-		feet="Chelona Boots"
+		--feet="Chelona Boots"
 	}
 
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {
@@ -342,16 +342,19 @@ function init_gear_sets()
 		main="Vampirism",
 		sub="Genmei Shield",
 		range=gear.ExtraSongInstrument,
-		head="Nahtirah Hat",
+		-- 12%
+		head="Fili Calot +1",
 		neck="Voltsurge Torque",
 		ear1="Loquac. Earring",
 		ear2="Malignance Earring",
-		body="Vrikodara Jupon",
+		-- 14%
+		body="Inyanga Jubbah +2",
 		hands="Gendewitha Gages",
 		back="Swith Cape",
 		waist="Embla Sash",
-		legs="Lengo Pants",
-		feet="Chelona Boots"
+		-- 6%
+		legs="Doyen Pants",
+		feet="Bihu Slippers +1"
 	}
 
 	sets.midcast['Herb Pastoral'] = set_combine(sets.midcast.ExtraSong,{})

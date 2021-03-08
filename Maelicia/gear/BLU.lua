@@ -83,7 +83,7 @@ function init_gear_sets()
 	sets.precast.Waltz['Healing Waltz'] = {}
 
 	-- Fast cast sets for spells
-	-- 54/27
+	-- 58/29
 	sets.precast.FC = {
 		--ammo="Impatiens",
 		-- 7%
@@ -110,10 +110,8 @@ function init_gear_sets()
 		waist="Witful Belt",
 		-- 7%
 		legs="Psycloth Lappas",
-		-- 4%
-		feet="Chelona Boots",
 		-- 8%
-		--feet="Carmine greaves +1",
+		feet="Carmine greaves +1",
 	}
 				
 	sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, {body="Mavi Mintan +2"})
@@ -390,12 +388,25 @@ function init_gear_sets()
 	})
 
 	sets.engaged.DW = set_combine(sets.engaged, {
+		ear1="Suppanomimi",
+		ear2="Brutal Earring",
+		ring2="Haverton Ring",
+		legs=gear.Carmine_legs_hq_D,
 	})
 
 	sets.engaged.DW.Acc = set_combine(sets.engaged, {
+		ear1="Brutal Earring",
+		ear2="Suppanomimi",
+		ring2="Haverton Ring",
+		legs=gear.Carmine_legs_hq_D,
+		feet=gear.Carmine_feet_hq_B,
 	})
 
 	sets.engaged.DW.Refresh = set_combine(sets.engaged, {
+		ear1="Suppanomimi",
+		ear2="Brutal Earring",
+		ring2="Haverton Ring",
+		legs=gear.Carmine_legs_hq_D,
 	})
 
 	sets.engaged.Learning = set_combine(sets.engaged, sets.Learning)

@@ -227,7 +227,7 @@ function init_gear_sets()
 	sets.precast.Waltz['Healing Waltz'] = {}
 
 	-- Fast cast sets for spells
-	-- 64/32
+	-- 68/34
 	sets.precast.FC = {
 		--ammo="Impatiens",
 		-- 14%
@@ -250,10 +250,8 @@ function init_gear_sets()
 		back=gear.aug_ogma_fc,
 		-- 6%
 		legs="Aya. Cosciales +2",
-		-- 4%
-		feet="Chelona Boots",
 		-- 8%
-		--feet="Carmine greaves +1",
+		feet="Carmine greaves +1",
 	}
 	sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
 		waist="Siegel Sash", 
@@ -380,8 +378,10 @@ function init_gear_sets()
 	-- Midcast sets
 	--------------------------------------
 	
+	-- 26% Haste
 	sets.midcast.FastRecast = set_combine(sets.DT, {
-		hands="Turms Mittens +1",
+		--hands="Turms Mittens +1",
+		hands="Kurys Gloves",
 		back=gear.aug_ogma_dt,
 		legs="Eri. Leg Guards +1",
 		--feet="Turms leggings",

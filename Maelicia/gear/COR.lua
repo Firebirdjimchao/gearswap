@@ -108,7 +108,7 @@ function init_gear_sets()
 		ring2="Sirona's Ring",
 		back="Tantalic Cape",
 		waist="Chaac Belt",
-		feet="Rawhide Boots"
+		feet="Malignance Boots"
 	}
 		
 	-- Don't need any special gear for Healing Waltz.
@@ -127,6 +127,7 @@ function init_gear_sets()
 		ring1="Prolix Ring",
 		ring2="Kishar Ring",
 		legs=gear.Herculean_legs_Magic,
+		feet="Carmine Greaves +1",
 	}
 	
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
@@ -172,7 +173,7 @@ function init_gear_sets()
 		ear1="Crematio Earring",
 		ear2="Friomisi Earring",
 		body=gear.Herculean_body_Magic,
-		hands=gear.Carmine_hands_D,
+		hands=gear.Carmine_hands_hq_D,
 		ring1="Acumen Ring",
 		ring2="Stikini Ring",
 		back="Gunslinger's Cape",
@@ -247,7 +248,7 @@ function init_gear_sets()
 		ear1="Crematio Earring",
 		ear2="Friomisi Earring",
 		body=gear.Herculean_body_Magic,
-		hands=gear.Carmine_hands_D,
+		hands=gear.Carmine_hands_hq_D,
 		ring1="Acumen Ring",
 		ring2="Stikini Ring",
 		back="Gunslinger's Cape",
@@ -396,41 +397,46 @@ function init_gear_sets()
 	-- Normal melee group
 	sets.engaged.Melee = {
 		ammo=gear.RAbullet,
-		head="Taeon Chapeau",
+		head="",
 		neck="Asperity Necklace",
 		ear1="Telos Earring",
 		ear2="Brutal Earring",
-		body="Thaumas Coat",
+		body=gear.Adhemar_body_B,
 		hands=gear.Adhemar_hands_B,
 		ring1="Epona's Ring",
 		ring1="Rajas Ring",
 		back="Atheling Mantle",
 		waist="Windbuffet Belt +1",
 		legs="Samnuha Tights",
-		feet="Rawhide Boots"
+		feet=gear.Carmine_feet_hq_B,
 	}
 	
 	sets.engaged.Acc = set_combine(sets.engaged.Melee,{
-		head="Whirlpool Mask",
+		head="Malignance Chapeau",
 		neck="Subtlety Spec.",
 		ear1="Telos Earring",
 		ear2="Digni. Earring",
-		body=gear.Adhemar_body_B,
-		hands=gear.Adhemar_hands_B,
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
 		ring2="Cacoethic Ring +1",
 		waist="Eschan Stone"
+		legs="Malignance Tights",
+		feet="Malignance Boots",
 	})
 
 	sets.engaged.Melee.DW = set_combine(sets.engaged.Melee,{
 		ear1="Suppanomimi",
 		ear2="Brutal Earring",
-		ring2="Haverton Ring"
+		ring2="Haverton Ring",
+		legs=gear.Carmine_legs_hq_D,
 	})
 	
 	sets.engaged.Acc.DW = set_combine(sets.engaged.Acc,{
 		ear1="Suppanomimi",
 		ear2="Brutal Earring",
-		ring2="Haverton Ring"
+		ring2="Haverton Ring",
+		legs=gear.Carmine_legs_hq_D,
+		feet=gear.Carmine_feet_hq_B,
 	})
 
 	sets.engaged.Ranged = set_combine(sets.defense.PDT,{

@@ -105,7 +105,9 @@ function define_global_sets()
 	gear.Ryuo_head_A = { name="Ryuo Somen", augments={'STR+10','DEX+10','Accuracy+15',}}
 	gear.Ryuo_hands_D = { name="Ryuo Tekko", augments={'DEX+10','Accuracy+20','"Dbl.Atk."+3',}}
 
-	gear.Carmine_hands_D = { name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}}
+	gear.Carmine_hands_hq_D = { name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}}
+	gear.Carmine_legs_hq_D = { name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}}
+	gear.Carmine_feet_hq_B = { name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}}
 
 	gear.Telchine_body_pet = { name="Telchine Chas.", augments={'Mag. Evasion+22','Pet: "Regen"+3','Enh. Mag. eff. dur. +10',}}
 	gear.Telchine_hands_pet = { name="Telchine Gloves", augments={'Mag. Evasion+21','Pet: "Regen"+3','Enh. Mag. eff. dur. +9',}}

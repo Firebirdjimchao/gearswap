@@ -101,7 +101,7 @@ function init_gear_sets()
 
 	-- Fast cast sets for spells
 
-	-- 34%
+	-- 43%
 	sets.precast.FC = {
 		-- 7%
 		head=gear.Herculean_head_RA,
@@ -113,7 +113,7 @@ function init_gear_sets()
 		ear2="Etiolation Earring",
 		-- 4% + 5%
 		body="Taeon Tabard",
-		-- 5% + 2%
+		-- 5% + 3%
 		hands="Leyline Gloves",
 		-- 2%
 		ring1="Prolix Ring",
@@ -121,6 +121,8 @@ function init_gear_sets()
 		--legs="Gyve Trousers",
 		-- 5%
 		legs=gear.Herculean_legs_Magic,
+		-- 8%
+		feet="Carmine Greaves +1",
 	}
 
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
@@ -356,7 +358,7 @@ function init_gear_sets()
 		ear2="Friomisi Earring",
 		--body=gear.Herculean_body_Magic,
 		body="Cohort Cloak +1",
-		hands=gear.Carmine_hands_D,
+		hands=gear.Carmine_hands_hq_D,
 		--hands="Meg. Gloves +2",
 		ring1="Acumen Ring",
 		ring2="Dingir Ring",
