@@ -412,10 +412,33 @@ function init_gear_sets()
 	--------------------------------------
 	
 	sets.midcast.FastRecast = set_combine(sets.precast.FC,{
-		head="Rao Kabuto +1",
+		-- 2% DT
+		ammo="Staunch Tathlum +1",
+		-- 5% MDT
+		--head=gear.Valorous_head_WS,
+		-- 7% PDT
+		head="Mpaca's Cap",
+		-- 2% MDT
+		ear1="Odnowa Earring +1",
+		-- 3% MDT
+		ear2="Etiolation Earring",
+		-- 6% DT
+		neck="Loricate Torque +1",
+		-- 10% DT 6 MDB
+		body="Tartarus Platemail",
+		-- 4% PDT 1 MDB
+		hands="Sakonji Kote +1",
+		--ring1="Niqmaddu Ring",
+		-- 5% PDT 5% MDT
+		ring1="Dark Ring",
+		-- 10% DT
 		ring2="Defending Ring",
-		back="Moonbeam Cape",
-		waist="Flume Belt +1"
+		-- 5% DT
+		back=gear.Smertrio_STP,
+		-- 8 MDB
+		legs="Ken. Hakama +1",
+		-- 4% DT 2 MDB
+		feet="Amm Greaves"
 	})
 	
 	sets.midcast.RA = {

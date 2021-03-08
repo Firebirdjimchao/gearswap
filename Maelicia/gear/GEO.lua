@@ -220,16 +220,18 @@ function init_gear_sets()
 	
 	-- Base fast recast for spells
 	sets.midcast.FastRecast = set_combine(sets.precast.FC, {
-		head="Geo. Galero +2",
-		neck="Voltsurge Torque",
-		ear1="Gifted Earring",
-		ear2="Loquacious Earring",
-		body="Zendik Robe",
+		head="Blistering Sallet +1",
+		neck="Loricate Torque +1",
+		ear1="Genmei Earring",
+		body="Shamash Robe",
 		hands="Geo. Mitaines +2",
-		back="Lifestream Cape",
-		waist="Embla Sash",
-		legs="Geomancy Pants +2",
-		feet="Regal Pumps +1"
+		ring1="Dark Ring",
+		ring2="Defending Ring",
+		back="Moonbeam Cape",
+		waist="Goading Belt",
+		legs="Gyve Trousers",
+		--feet="Azimuth Gaiters +1"
+		feet=gear.Vanya_feet_B
 	})
 	
 	sets.midcast.MACC = {
@@ -726,29 +728,36 @@ function init_gear_sets()
 	sets.idle.Encumbered = set_combine(sets.midcast.MAB,{
 	})
 
-	-- Total: 42% + 20% (PDT Staff)
+	-- DT: 47%
+	-- PDT: 22%
+	-- MDT: 10%
+	-- To cap MDT: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	-- <36%: use Shadow Mantle
 	sets.idle.PDT = set_combine(sets.idle,{
+		-- 20% DT
 		main=gear.Staff.DT,
+		-- 6% DT
 		sub="Khonsu",
-		-- 3%
+		-- 3% PDT
 		head="Blistering Sallet +1",
-		-- 6%
+		-- 6% DT
 		neck="Loricate Torque +1",
-		-- 2%
+		-- 2% PDT
 		ear1="Genmei Earring",
-		-- 10%
+		-- 10% PDT
 		body="Shamash Robe",
-		-- 1%
+		-- 2% PDT
 		hands="Geo. Mitaines +2",
-		-- 5%
+		-- 5% PDT 5% MDT
 		ring1="Dark Ring",
-		-- 10%
+		-- 10% DT
 		ring2="Defending Ring",
-		-- 5%
+		-- 5% DT
 		back="Moonbeam Cape",
+		-- 2% MDT
 		legs="Gyve Trousers",
 		--feet="Azimuth Gaiters +1"
+		-- 3% MDT
 		feet=gear.Vanya_feet_B
 	})
 			

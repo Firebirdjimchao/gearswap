@@ -161,21 +161,32 @@ function init_gear_sets()
 
 	-- Midcast Sets
 	
-	sets.midcast.FastRecast = {
-		head="Nahtirah Hat",
-		neck="Orison Locket",
-		ear1="Loquacious Earring",
-		ear2="Malignance Earring",
-		ear2="Gifted Earring",
+	sets.midcast.FastRecast = set_combine(sets.precast.FC,{
+		-- 2% DT
+		ammo="Staunch Tathlum +1",
+		-- 8 MDB 5% MDT
+		head="Inyanga Tiara +2",
+		-- 6% DT
+		neck="Loricate Torque +1",
+		-- 3% MDT
+		ear1="Etiolation Earring",
+		-- 2% MDT
+		ear2="Odnowa Earring +1",
+		-- 11 MDB 7% MDT
 		body="Inyanga Jubbah +2",
-		hands="Fanatic Gloves",
-		ring1="Prolix Ring",
+		-- 5 MDB 4% MDT
+		hands="Inyan. Dastanas +2",
+		-- 5% PDT, 5% MDT
+		ring1="Dark Ring",
+		-- 10% DT
 		ring2="Defending Ring",
-		back="Swith Cape",
-		waist="Embla Sash",
-		legs="Theo. Pant. +1",
-		feet="Regal Pumps +1"
-	}
+		-- 5% DT
+		back="Moonbeam Cape",
+		-- 9 MDB 6% MDT
+		legs="Inyanga Shalwar +2",
+		-- 8 MDB 3% MDT
+		feet="Inyan. Crackows +2"
+	})
 		
 	sets.midcast.MACC = {
 		--main=gear.MaccStaff,

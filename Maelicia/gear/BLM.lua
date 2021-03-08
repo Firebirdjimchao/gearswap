@@ -240,20 +240,16 @@ function init_gear_sets()
 	--------------------------------------
 	
 	sets.midcast.FastRecast = set_combine(sets.precast.FC,{
-		-- 5% 5RC
-		head="Nahtirah Hat",
-		ear2="Gifted Earring",
-		-- 4% 6RC
-		body="Zendik Robe",
-		-- 3%
-		hands="Amalric Gages",
+		ammo="Staunch Tathlum +1",
+		head="Blistering Sallet +1",
+		neck="Loricate Torque +1",
+		body="Shamash Robe",
+		ring1="Dark Ring",
 		ring2="Defending Ring",
-		-- 5% 2RC
-		waist="Embla Sash",
-		-- 5% 3RC
-		legs="Psycloth Lappas",
-		-- 3% 2RC ~ 1RC
-		feet="Regal Pumps +1"
+		back="Moonbeam Cape",
+		waist="Goading Belt",
+		legs="Gyve Trousers",
+		feet=gear.Vanya_feet_B
 	})
 	
 	sets.midcast.MACC = {
