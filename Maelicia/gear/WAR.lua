@@ -32,6 +32,86 @@ function file_unload()
 end
 
 function init_gear_sets()
+
+	--------------------------------------
+	-- Base sets
+	--------------------------------------
+
+	-- Total:
+	-- 41% DT
+	-- 24% PDT
+	-- 18% MDT
+	-- 31 MDB
+	-- 590 MEVA
+	-- To cap MDT: Shellra5: 23%, Shell5: 26%, Shell4: 29%
+	sets.DT = set_combine(sets.idle,{
+		-- 3% DT
+		ammo="Staunch Tathlum +1",
+		-- 3% PDT
+		-- 7% MDT
+		-- 6 MDB
+		-- 99 MEVA
+		-- 6% Haste
+		--head="Volte Salade",
+		-- 10% DT
+		-- 8 MDB
+		-- 53 MEVA
+		--head="Hjarrandi Helm",
+		-- 7% DT
+		-- 7 MDB
+		-- 123 MEVA
+		-- 4% Haste
+		head="Sakpata's Helm",
+		-- 6% DT
+		neck="Loricate Torque +1",
+		-- 2% MDT
+		ear1="Odnowa Earring +1",
+		-- 3% MDT
+		ear2="Etiolation Earring",
+		-- 12% DT 
+		-- 10 MDB
+		-- 69 MEVA
+		--body="Hjarrandi Breast.",
+		-- 12 MDB
+		-- 129 MEVA
+		-- 5% Haste
+		--body="Sacro Breastplate",
+		-- 10% DT
+		-- 10 MDB
+		-- 139 MEVA
+		-- 2% Haste
+		body="Sakpata's Breastplate",
+		-- 6% PDT
+		-- 2% MDT
+		-- 4 MDB
+		-- 91 MEVA
+		-- 4% Haste
+		hands="Volte Moufles",
+		-- 5% PDT
+		-- 5% MDT
+		ring1="Dark Ring",
+		-- 10% DT
+		ring2="Defending Ring",
+		-- 5% DT
+		back="Moonbeam Cape",
+		-- 4% PDT
+		waist="Flume Belt +1",
+		-- 5% PDT
+		-- 4 MDB
+		-- 100 MEVA
+		legs="Pumm. Cuisses +3",
+		-- 7% PDT
+		-- 3% MDT
+		-- 8 MDB
+		-- 137 MEVA
+		--legs="Volte Brayettes",
+		-- 4% PDT
+		-- 6% MDT
+		-- 6 MDB
+		-- 137 MEVA
+		-- 3% Haste
+		feet="Volte Sollerets",
+	})
 			 
 	--------------------------------------
 	-- Precast sets
@@ -461,7 +541,7 @@ function init_gear_sets()
 		ring2="Regal Ring",
 		back=gear.Cichol_StrWSD,
 		waist="Fotia Belt",
-		feet="Pumm. Calligae +3",
+		legs="Pumm. Cuisses +3",
 		feet="Pumm. Calligae +3",
 	})
 	sets.precast.WS['Raging Fists'].AccLow = set_combine(sets.precast.WS['Raging Fists'], {
@@ -593,10 +673,9 @@ function init_gear_sets()
 	--------------------------------------
  
 	-- Generic spell recast set
-	sets.midcast.FastRecast = set_combine(sets.precast.FC,{
-		ring1="Prolix Ring",
-		ring2="Defending Ring",
-		back="Moonbeam Cape",
+	-- 27% Haste
+	sets.midcast.FastRecast = set_combine(sets.precast.FC,sets.DT,{
+		waist="Ioskeha Belt +1",
 	})
 							 
 	-- Specific spells
@@ -672,159 +751,13 @@ function init_gear_sets()
 	sets.idle.CPMDT = set_combine(sets.defense.MDT,{
 		--back="Mecisto. Mantle"
 	})
-			 
-	-- Defense sets
-	-- Total: 
-	-- 41% DT 
-	-- 24% PDT 
-	-- 18% MDT 
-	-- 31 MDB
-	-- 590 MEVA
-	-- <36%: use Shadow Mantle
-	sets.defense.PDT = set_combine(sets.idle,{
-		-- 3% DT
-		ammo="Staunch Tathlum +1",
-		-- 3% PDT
-		-- 7% MDT
-		-- 6 MDB
-		-- 99 MEVA
-		-- 6% Haste
-		--head="Volte Salade",
-		-- 10% DT
-		-- 8 MDB
-		-- 53 MEVA
-		--head="Hjarrandi Helm",
-		-- 7% DT
-		-- 7 MDB
-		-- 123 MEVA
-		-- 4% Haste
-		head="Sakpata's Helm",
-		-- 6% DT
-		neck="Loricate Torque +1",
-		-- 2% MDT
-		ear1="Odnowa Earring +1",
-		-- 3% MDT
-		ear2="Etiolation Earring",
-		-- 12% DT 
-		-- 10 MDB
-		-- 69 MEVA
-		--body="Hjarrandi Breast.",
-		-- 12 MDB
-		-- 129 MEVA
-		-- 5% Haste
-		--body="Sacro Breastplate",
-		-- 10% DT
-		-- 10 MDB
-		-- 139 MEVA
-		-- 2% Haste
-		body="Sakpata's Breastplate",
-		-- 6% PDT 
-		-- 2% MDT 
-		-- 4 MDB
-		-- 91 MEVA
-		-- 4% Haste
-		hands="Volte Moufles",
-		-- 5% PDT
-		-- 5% MDT
-		ring1="Dark Ring",
-		-- 10% DT
-		ring2="Defending Ring",
-		-- 5% DT
-		back="Moonbeam Cape",
-		-- 4% PDT
-		waist="Flume Belt +1",
-		-- 5% PDT 
-		-- 4 MDB
-		-- 100 MEVA
-		legs="Pumm. Cuisses +3",
-		-- 7% PDT
-		-- 3% MDT
-		-- 8 MDB
-		-- 137 MEVA
-		--legs="Volte Brayettes",
-		-- 4% PDT 
-		-- 6% MDT 
-		-- 6 MDB
-		-- 137 MEVA
-		-- 3% Haste
-		feet="Volte Sollerets",
+
+	sets.defense.PDT = set_combine(sets.idle,sets.DT,{
 	})
 	sets.defense.Reraise = set_combine(sets.defense.PDT,sets.Twilight,{
 	})
-	
-	-- Total: 
-	-- 41% DT 
-	-- 24% PDT 
-	-- 18% MDT 
-	-- 31 MDB
-	-- 590 MEVA
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
-	sets.defense.MDT = set_combine(sets.idle,{
-		-- 3% DT
-		ammo="Staunch Tathlum +1",
-		-- 3% PDT
-		-- 7% MDT
-		-- 6 MDB
-		-- 99 MEVA
-		-- 6% Haste
-		--head="Volte Salade",
-		-- 10% DT
-		-- 8 MDB
-		-- 53 MEVA
-		--head="Hjarrandi Helm",
-		-- 7% DT
-		-- 7 MDB
-		-- 123 MEVA
-		-- 4% Haste
-		head="Sakpata's Helm",
-		-- 6% DT
-		neck="Loricate Torque +1",
-		-- 2% MDT
-		ear1="Odnowa Earring +1",
-		-- 3% MDT
-		ear2="Etiolation Earring",
-		-- 12% DT 
-		-- 10 MDB
-		-- 69 MEVA
-		--body="Hjarrandi Breast.",
-		-- 12 MDB
-		-- 129 MEVA
-		-- 5% Haste
-		--body="Sacro Breastplate",
-		-- 10% DT
-		-- 10 MDB
-		-- 139 MEVA
-		-- 2% Haste
-		body="Sakpata's Breastplate",
-		-- 6% PDT 
-		-- 2% MDT 
-		-- 4 MDB
-		-- 91 MEVA
-		-- 4% Haste
-		hands="Volte Moufles",
-		-- 5% DT
-		ring1="Dark Ring",
-		-- 10% DT
-		ring2="Defending Ring",
-		-- 5% DT
-		back="Moonbeam Cape",
-		-- 4% PDT
-		waist="Flume Belt +1",
-		-- 5% PDT 
-		-- 4 MDB
-		-- 100 MEVA
-		legs="Pumm. Cuisses +3",
-		-- 7% PDT
-		-- 3% MDT
-		-- 8 MDB
-		-- 137 MEVA
-		--legs="Volte Brayettes",
-		-- 4% PDT 
-		-- 6% MDT 
-		-- 6 MDB
-		-- 137 MEVA
-		-- 3% Haste
-		feet="Volte Sollerets",
+	sets.defense.MDT = set_combine(sets.idle,sets.DT,{
 	})
  
 	-- Gear to wear for kiting
