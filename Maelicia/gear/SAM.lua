@@ -808,35 +808,52 @@ function init_gear_sets()
 		-- 3% Hasso +2
 		feet="Wakido Sune. +3",
 	})
-	sets.engaged.PDT = set_combine(sets.engaged,sets.defense.PDT,{
+	sets.engagedPDTBase =  {
 		--sub="Utu Grip",
+		-- 2% DT
+		ammo="Staunch Tathlum +1",
+		-- 7% PDT
+		head="Mpaca's Cap",
 		-- STP 7 + 7 aug
 		neck="Sam. Nodowa +2",
+		-- 4% DT
 		body="Wakido Domaru +2",
+		ring1="Dark Ring",
+		ring2="Defending Ring",
 		back=gear.Smertrio_STP_DEX,
 		waist="Ioskeha Belt +1",
 		legs="Ken. Hakama +1",
+	}
+	sets.engaged.PDT = set_combine(sets.engaged,sets.engagedPDTBase,{
 	})
-	sets.engaged.MidAcc.PDT = set_combine(sets.engaged,MidAcc,sets.defense.PDT,{
+	sets.engaged.MidAcc.PDT = set_combine(sets.engaged,MidAcc,sets.engagedPDTBase,{
 	})
-	sets.engaged.HighAcc.PDT = set_combine(sets.engaged,HighAcc,sets.defense.PDT,{
+	sets.engaged.HighAcc.PDT = set_combine(sets.engaged,HighAcc,sets.engagedPDTBase,{
 	})
-	sets.engaged.FullAcc.PDT = set_combine(sets.engaged,FullAcc,sets.defense.PDT,{
+	sets.engaged.FullAcc.PDT = set_combine(sets.engaged,FullAcc,sets.engagedPDTBase,{
 	})
-	sets.engaged.MDT = set_combine(sets.engaged,sets.defense.MDT,{
+	sets.engagedMDTBase = {
 		--sub="Utu Grip",
+		-- 2% DT
+		ammo="Staunch Tathlum +1",
+		-- 7% PDT
+		head="Mpaca's Cap",
 		-- STP 7 + 7 aug
 		neck="Sam. Nodowa +2",
 		body="Sacro Breastplate",
+		ring1="Dark Ring",
+		ring2="Defending Ring",
 		back=gear.Smertrio_STP_DEX,
 		waist="Ioskeha Belt +1",
 		legs="Ken. Hakama +1",
+	}
+	sets.engaged.MDT = set_combine(sets.engaged,sets.engagedMDTBase,{
 	})
-	sets.engaged.MidAcc.MDT = set_combine(sets.engaged,MidAcc,sets.defense.MDT,{
+	sets.engaged.MidAcc.MDT = set_combine(sets.engaged,MidAcc,sets.engagedMDTBase,{
 	})
-	sets.engaged.HighAcc.MDT = set_combine(sets.engaged,HighAcc,{
+	sets.engaged.HighAcc.MDT = set_combine(sets.engaged,HighAcc,sets.engagedMDTBase,{
 	})
-	sets.engaged.FullAcc.MDT = set_combine(sets.engaged,FullAcc,{
+	sets.engaged.FullAcc.MDT = set_combine(sets.engaged,FullAcc,sets.engagedMDTBase,{
 	})
 	sets.engaged.Reraise = set_combine(sets.engaged,{
 		head="Twilight Helm",
