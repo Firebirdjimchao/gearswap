@@ -225,11 +225,17 @@ function init_gear_sets()
   }
 
 	-- Midcast Sets
+
+	-- 26% Haste
 	sets.midcast.FastRecast = set_combine(sets.precast.FC,{
-		--ammo="Impatiens",
-		back="Grounded Mantle +1",
-		ear1="Loquacious Earring",
-		ring1="Prolix Ring",
+		head="Malignance Chapeau",
+		neck="Loricate Torque +1",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		ring1="Dark Ring",
+		ring2="Defending Ring",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
 	})
 
 	-- MACC & skill ++ 
@@ -427,12 +433,13 @@ function init_gear_sets()
 	-- Defenseive sets
 	sets.NormalPDT = {
 		head="Malignance Chapeau",
+		neck="Loricate Torque +1",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		legs="Malignance Tights",
-		feet="Malignance Boots"
+		feet="Malignance Boots",
 	}
 	sets.AccPDT = set_combine(sets.NormalPDT,{
 	})
@@ -448,8 +455,8 @@ function init_gear_sets()
 	sets.engaged.Innin.Mid.PDT = sets.engaged.Mid.PDT
 	sets.engaged.Innin.Acc.PDT = sets.engaged.Acc.PDT
 
-	sets.engaged.HastePDT = {
-	}
+	sets.engaged.HastePDT = set_combine(sets.NormalPDT,{
+	})
 
 	-- (1 - Dual Wield %) × (1 - Haste %)  ≥  0.2
 	--

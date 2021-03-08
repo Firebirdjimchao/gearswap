@@ -622,11 +622,16 @@ function init_gear_sets()
 
 	-- Fast recast for spells
 	
+	-- 26% Haste
 	sets.midcast.FastRecast = set_combine(sets.precast.FC,{
+		head="Malignance Chapeau",
+		neck="Loricate Torque +1",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		ring1="Dark Ring",
 		ring2="Defending Ring",
-		back="Moonbeam Cape",
-		waist="Flume Belt +1",
-		feet="Herculean Boots"
+		legs="Malignance Tights",
+		feet="Malignance Boots",
 	})
 
 	sets.midcast.Utsusemi = set_combine(sets.midcast.FastRecast,{
@@ -1031,6 +1036,7 @@ function init_gear_sets()
 
 	sets.engaged.DT.MidAcc = set_combine(sets.engaged.Melee.MidAcc,{
 		head="Malignance Chapeau",
+		neck="Loricate Torque +1",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		ring1="Dark Ring",
@@ -1041,6 +1047,7 @@ function init_gear_sets()
 
 	sets.engaged.DT.HighAcc = set_combine(sets.engaged.Melee.HighAcc,{
 		head="Malignance Chapeau",
+		neck="Loricate Torque +1",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		ring1="Dark Ring",
@@ -1051,6 +1058,7 @@ function init_gear_sets()
 
 	sets.engaged.DT.FullAcc = set_combine(sets.engaged.Melee.FullAcc,{
 		head="Malignance Chapeau",
+		neck="Loricate Torque +1",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		ring1="Dark Ring",

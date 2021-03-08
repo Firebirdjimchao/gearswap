@@ -430,11 +430,15 @@ function init_gear_sets()
 	-- Midcast sets
 	--------------------------------------
 	
+	-- 26% Haste
 	sets.midcast.FastRecast = set_combine(sets.precast.FC,{
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
-		waist="Flume Belt +1",
-		feet="Herculean Boots"
+		legs="Malignance Tights",
+		feet="Malignance Boots",
 	})
 		
 	-- Specific spells
@@ -688,6 +692,7 @@ function init_gear_sets()
 	})
 	sets.engaged.PDT = set_combine(sets.engaged.Evasion,{
 		head="Malignance Chapeau",
+		neck="Loricate Torque +1",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		ring1="Dark Ring",
@@ -703,6 +708,7 @@ function init_gear_sets()
 	})
 	sets.engaged.MDT = set_combine(sets.engaged.Evasion,{
 		head="Malignance Chapeau",
+		neck="Loricate Torque +1",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		ring1="Dark Ring",

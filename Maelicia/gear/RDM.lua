@@ -1002,10 +1002,13 @@ function init_gear_sets()
 		ring1="Freke Ring",
 		ring2="Haverton Ring",
 		waist="Reiki Yotai",
+		legs=gear.Carmine_legs_hq_D,
+		feet=gear.Carmine_feet_hq_B,
 	})
 	sets.engaged.enspell.Acc = set_combine(sets.engaged.Acc, sets.engaged.enspell,{
 	})
 	sets.engaged.enspellDW.Acc = set_combine(sets.engaged.Acc, sets.engaged.enspell,sets.engaged.enspellDW,{
+		feet="Malignance Boots",
 	})
 	
 	sets.engaged.Defense = set_combine(sets.engaged,{
@@ -1015,9 +1018,57 @@ function init_gear_sets()
 		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
-		back="Moonbeam Cape",
-		waist="Flume Belt +1",
-		legs="Aya. Cosciales +2",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
+	})
+	sets.engaged.Defense.Acc = set_combine(sets.engaged.Acc,{
+		head="Malignance Chapeau",
+		neck="Loricate Torque +1",
+		body="Ayanmo Corazza +2",
+		hands="Malignance Gloves",
+		ring1="Dark Ring",
+		ring2="Defending Ring",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
+	})
+	sets.engaged.Denfense.enspell = set_combine(sets.engaged.enspell,{
+		head="Malignance Chapeau",
+		neck="Loricate Torque +1",
+		body="Ayanmo Corazza +2",
+		hands="Malignance Gloves",
+		ring1="Dark Ring",
+		ring2="Defending Ring",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
+	})
+	sets.engaged.Defense.enspellDW = set_combine(sets.engaged.enspellDW,{
+		head="Malignance Chapeau",
+		neck="Loricate Torque +1",
+		body="Ayanmo Corazza +2",
+		hands="Malignance Gloves",
+		ring1="Dark Ring",
+		ring2="Defending Ring",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
+	})
+	sets.engaged.Defense.enspell.Acc = set_combine(sets.engaged.enspell.Acc,{
+		head="Malignance Chapeau",
+		neck="Loricate Torque +1",
+		body="Ayanmo Corazza +2",
+		hands="Malignance Gloves",
+		ring1="Dark Ring",
+		ring2="Defending Ring",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
+	})
+	sets.engaged.Defense.enspellDW.Acc = set_combine(sets.engaged.enspellDW.Acc,{
+		head="Malignance Chapeau",
+		neck="Loricate Torque +1",
+		body="Ayanmo Corazza +2",
+		hands="Malignance Gloves",
+		ring1="Dark Ring",
+		ring2="Defending Ring",
+		legs="Malignance Tights",
 		feet="Malignance Boots",
 	})
 
