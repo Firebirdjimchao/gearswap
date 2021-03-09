@@ -8,7 +8,7 @@ function user_setup()
 	
 	gear.AugLifestreamIndi = { name="Lifestream Cape", augments={'Geomancy Skill +6','Indi. eff. dur. +20','Pet: Damage taken -1%',}}
 	gear.Nanto_nuke = { name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
-	gear.Nanto_luopan = { name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Pet: Damage taken -5%',}}
+	gear.Nanto_luopan = { name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Pet: "Regen"+5',}}
 	gear.default.obi_back = gear.Nanto_nuke
 
 	state.OffenseMode:options('None', 'Normal', 'MidAcc', 'Acc')
@@ -648,8 +648,8 @@ function init_gear_sets()
 		hands="Bagua Mitaines +3",
 		ring1=gear.DarkRing.physical,
 		ring2="Defending Ring",
-		--back="Moonbeam Cape",
-		back="Mecistopins Mantle",
+		back="Moonbeam Cape",
+		--back="Mecistopins Mantle",
 		waist="Fucho-no-Obi",
 		--legs="Lengo Pants",
 		legs=gear.Merlinic_legs_idle,
@@ -765,14 +765,15 @@ function init_gear_sets()
 	-- Pet DT cap: 87.5%
 	-- Luopan innate DT: 50%
 	-- Pet DT: -39% (37.5% to cap)
-	-- Pet regen: +18
+	-- Pet regen: +30
 	sets.idle.Pet = set_combine(sets.idle,{
 		-- Pet: DT 25%
 		main="Idris",
 		-- Luopan: DT 5%
 		range=gear.GeoBell,
 		-- Pet: regen +3
-		head="Azimuth Hood +1",
+		--head="Azimuth Hood +1",
+		head="Bagua Galero +3",
 		-- Pet DT: 6%
 		neck="Bagua Charm",
 		ear1="Ethereal Earring",
@@ -788,9 +789,9 @@ function init_gear_sets()
 		ring1=gear.DarkRing.physical,
 		-- DT: 10%
 		ring2="Defending Ring",
-		-- Pet: regen +10, DT 5%
-		--back=gear.Nanto_luopan,
-		back="Mecistopins Mantle",
+		-- Pet: regen +15
+		back=gear.Nanto_luopan,
+		--back="Mecistopins Mantle",
 		-- Pet: DT 1%
 		--back="Lifestream Cape",
 		-- Pet: DT 3%, regen +1
