@@ -69,11 +69,11 @@ function init_gear_sets()
 	-- Precast sets to enhance JAs
 	sets.precast.JA.Meditate = {
 		head="Wakido kabuto +3",
-		hands="Sakonji Kote +1",
+		hands="Sakonji Kote +2",
 		back="Smertrios's Mantle"
 	}
 	sets.precast.JA['Warding Circle'] = {head="Wakido kabuto +3"}
-	sets.precast.JA['Blade Bash'] = {hands="Sakonji Kote +1"}
+	sets.precast.JA['Blade Bash'] = {hands="Sakonji Kote +2"}
 	sets.precast.JA['Hasso'] = {feet="Wakido Sune. +3"}
 	
 	-- Waltz set (chr and vit)
@@ -410,7 +410,7 @@ function init_gear_sets()
 	--------------------------------------
 	-- Midcast sets
 	--------------------------------------
-	
+
 	sets.midcast.FastRecast = set_combine(sets.precast.FC,{
 		-- 2% DT
 		ammo="Staunch Tathlum +1",
@@ -426,8 +426,8 @@ function init_gear_sets()
 		neck="Loricate Torque +1",
 		-- 10% DT 6 MDB
 		body="Tartarus Platemail",
-		-- 4% PDT 1 MDB
-		hands="Sakonji Kote +1",
+		-- 5% PDT 2 MDB
+		hands="Sakonji Kote +2",
 		--ring1="Niqmaddu Ring",
 		-- 5% PDT 5% MDT
 		ring1="Dark Ring",
@@ -488,7 +488,7 @@ function init_gear_sets()
 		ear1="Odnowa Earring +1",
 		ear2="Etiolation Earring",
 		body="Sacro Breastplate",
-		hands="Sakonji Kote +1",
+		hands="Sakonji Kote +2",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
@@ -533,7 +533,7 @@ function init_gear_sets()
 	
 	-- Defense sets
 
-	-- 33% DT 22% PDT 10% MDT 27 MDB (43% DT if using Khonsu)
+	-- 33% DT 23% PDT 10% MDT 27 MDB (43% DT if using Khonsu)
 	sets.defense.DT = set_combine(sets.idle,{
 		-- 6& DT
 		--sub="Khonsu",
@@ -551,8 +551,8 @@ function init_gear_sets()
 		neck="Loricate Torque +1",
 		-- 10% DT 6 MDB
 		body="Tartarus Platemail",
-		-- 4% PDT 1 MDB
-		hands="Sakonji Kote +1",
+		-- 5% PDT 2 MDB
+		hands="Sakonji Kote +2",
 		--ring1="Niqmaddu Ring",
 		-- 5% PDT 5% MDT
 		ring1="Dark Ring",
@@ -932,7 +932,7 @@ function init_gear_sets()
 	
 	sets.buff.Sekkanoki = {hands="Kasuga Kote +1"}
 	sets.buff.Sengikori = {hands="Kas. Sune-Ate +1"}
-	sets.buff['Meikyo Shisui'] = {feet="Sakonji Sune-ate"}
+	sets.buff['Meikyo Shisui'] = {feet="Sakonji Sune-ate"} -- only works when equipped
 end
 
 -------------------------------------------------------------------------------------------------------------------
