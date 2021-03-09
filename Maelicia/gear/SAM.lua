@@ -503,7 +503,7 @@ function init_gear_sets()
 		ammo="Knobkierrie",
 		--head="Rao Kabuto +1",
 		head=gear.Valorous_head_WS,
-		neck="Moonbeam Nodowa",
+		neck="Sam. Nodowa +2",
 		--body="Councilor's Garb"
 		body="Tartarus Platemail",
 		hands="Wakido Kote +3",
@@ -533,7 +533,7 @@ function init_gear_sets()
 	
 	-- Defense sets
 
-	-- 37% DT 16% PDT 10% MDT 17 MDB (43% DT if using Khonsu)
+	-- 33% DT 22% PDT 10% MDT 27 MDB (43% DT if using Khonsu)
 	sets.defense.DT = set_combine(sets.idle,{
 		-- 6& DT
 		--sub="Khonsu",
@@ -563,7 +563,9 @@ function init_gear_sets()
 		-- 8 MDB
 		legs="Ken. Hakama +1",
 		-- 4% DT 2 MDB
-		feet="Amm Greaves"
+		--feet="Amm Greaves",
+		-- 6% PDT 12 MDB
+		feet="Mpaca's Boots",
 	})
 
 	sets.defense.PDT = set_combine(sets.defense.DT,{
@@ -664,6 +666,9 @@ function init_gear_sets()
 	-- (Hasso Gear does stack! - http://www.ffxiah.com/forum/topic/50068/does-hasso-gear-stack-now/#3211713) - Only Wakido Kote +1 and Unkai Haidate +2 didn't stack
 	-- http://www.ffxiah.com/forum/topic/41903/bushido-the-way-of-the-samurai-a-guide-v-20/49#2866879
 	--
+	-- /war base:
+	-- 1251 ACC
+	-- 1396 ATK
 	sets.engaged = {
 		--sub="Duplus Grip",
 		-- 3 STP
@@ -703,6 +708,9 @@ function init_gear_sets()
 	--
 	-- Gear Haste: 25%
 	-- JA Haste (Hasso): 10 base + 6 gear = 16%
+	-- /war base:
+	-- 1261 ACC
+	-- 1407 ATK
 	sets.engaged.MidAcc = set_combine(sets.engaged,{
 		--sub="Utu Grip",
 		-- 3 STP
@@ -721,7 +729,8 @@ function init_gear_sets()
 		-- 7 STP 4% Hasso +4
 		hands="Wakido Kote +3",
 		ring1="Niqmaddu Ring",
-		ring2="Hetairoi Ring",
+		--ring2="Hetairoi Ring",
+		ring2="Regal Ring",
 		-- 10 STP
 		back=gear.Smertrio_STP,
 		-- 8%
@@ -736,6 +745,10 @@ function init_gear_sets()
 	--
 	-- Gear Haste: 27%
 	-- JA Haste (Hasso): 10 base + 6 gear = 16%
+	--
+	-- /war base:
+	-- 1306 ACC
+	-- 1390 ATK
 	sets.engaged.HighAcc = set_combine(sets.engaged,{
 		--sub="Utu Grip",
 		-- 3 STP
@@ -778,6 +791,10 @@ function init_gear_sets()
 	--
 	-- Gear Haste: 30%
 	-- JA Haste (Hasso): 10 base + 6 gear = 16%
+	--
+	-- /war base:
+	-- 1320 ACC
+	-- 1447 ATK
 	sets.engaged.FullAcc = set_combine(sets.engaged,{
 		--sub="Utu Grip",
 		-- 3 STP
@@ -823,6 +840,8 @@ function init_gear_sets()
 		back=gear.Smertrio_STP_DEX,
 		waist="Ioskeha Belt +1",
 		legs="Ken. Hakama +1",
+		-- 6% PDT 12 MDB
+		feet="Mpaca's Boots",
 	}
 	sets.engaged.PDT = set_combine(sets.engaged,sets.engagedPDTBase,{
 	})
@@ -846,6 +865,8 @@ function init_gear_sets()
 		back=gear.Smertrio_STP_DEX,
 		waist="Ioskeha Belt +1",
 		legs="Ken. Hakama +1",
+		-- 6% PDT 12 MDB
+		feet="Mpaca's Boots",
 	}
 	sets.engaged.MDT = set_combine(sets.engaged,sets.engagedMDTBase,{
 	})
