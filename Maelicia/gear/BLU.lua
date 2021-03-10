@@ -83,7 +83,7 @@ function init_gear_sets()
 	sets.precast.Waltz['Healing Waltz'] = {}
 
 	-- Fast cast sets for spells
-	-- 58/29
+	-- 65/32
 	sets.precast.FC = {
 		--ammo="Impatiens",
 		-- 7%
@@ -104,8 +104,8 @@ function init_gear_sets()
 		ring1="Prolix Ring",
 		-- 4%
 		ring2="Kishar Ring",
-		-- 3%
-		back="Swith Cape",
+		-- 10%
+		back="Fi Follet Cape +1",
 		-- 3%
 		waist="Witful Belt",
 		-- 7%

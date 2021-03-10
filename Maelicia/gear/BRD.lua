@@ -105,7 +105,7 @@ function init_gear_sets()
 	-- Precast Sets
 
 	-- Fast cast sets for spells
-	-- 71%/35% Total (80/40 cap) + 15% (if RDM sub)
+	-- 78%/39% Total (80/40 cap) + 15% (if RDM sub)
 	sets.precast.FC = {
 		-- 7%
 		main="Kali",
@@ -127,8 +127,8 @@ function init_gear_sets()
 		ring2="Kishar Ring",
 		-- 7%
 		hands="Gendewitha Gages",
-		-- 3%
-		back="Swith Cape",
+		-- 10%
+		back="Fi Follet Cape +1",
 		-- 3%
 		--waist="Witful Belt",
 		-- 5%
@@ -176,7 +176,7 @@ function init_gear_sets()
 		-- 2% + 7% FC
 		hands="Gendewitha Gages",
 		-- 3% FC
-		back="Swith Cape",
+		back="Fi Follet Cape +1",
 		-- 5% FC
 		waist="Embla Sash",
 		-- 6%
@@ -350,7 +350,7 @@ function init_gear_sets()
 		-- 14%
 		body="Inyanga Jubbah +2",
 		hands="Gendewitha Gages",
-		back="Swith Cape",
+		back="Fi Follet Cape +1",
 		waist="Embla Sash",
 		-- 6%
 		legs="Doyen Pants",

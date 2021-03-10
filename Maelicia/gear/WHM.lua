@@ -25,7 +25,7 @@ function init_gear_sets()
 
 	-- Fast cast sets for spells
 	
-	-- 63%/31% Total (80/40 cap) + 15% (if RDM sub)
+	-- 70%/35% Total (80/40 cap) + 15% (if RDM sub)
 	sets.precast.FC = {
 		-- 3%
 		--main=gear.FastcastStaff,
@@ -47,8 +47,8 @@ function init_gear_sets()
 		ring1="Prolix Ring",
 		-- 4%
 		ring2="Kishar Ring",
-		-- 3%
-		back="Swith Cape",
+		-- 10%
+		back="Fi Follet Cape +1",
 		-- 3%
 		--waist="Witful Belt",
 		-- 5%
