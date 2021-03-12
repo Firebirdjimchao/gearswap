@@ -101,7 +101,8 @@ function init_gear_sets()
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
 		ammo="Knobkierrie",
-		head="Rao Kabuto +1",
+		--head="Rao Kabuto +1",
+		head="Mpaca's Cap",
 		neck="Fotia Gorget",
 		--ear1="Brutal Earring",
 		ear1="Sherida Earring",
@@ -117,7 +118,8 @@ function init_gear_sets()
 		feet=gear.Adhemar_feet_B
 	}
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
-		head="Rao Kabuto +1",
+		--head="Rao Kabuto +1",
+		head="Mpaca's Cap",
 		body=gear.Adhemar_body_B,
 		hands=gear.Adhemar_hands_B,
 		back=gear.Segomo_dex_da,
@@ -161,7 +163,8 @@ function init_gear_sets()
 	sets.precast.WS["Victory Smite"].SomeAcc = set_combine(sets.precast.WS["Victory Smite"], {})
 
 	sets.precast.WS['Shijin Spiral'] = set_combine(sets.precast.WS, {
-		head=gear.Rao_head_hq_B,
+		--head=gear.Rao_head_hq_B,
+		head="Mpaca's Cap",
 		ear2="Brutal Earring",
 		neck="Caro Necklace",
 		body="Malignance Tabard",
