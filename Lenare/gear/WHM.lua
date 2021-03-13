@@ -377,8 +377,10 @@ function init_gear_sets()
 		waist="Embla Sash",
 		-- 7% DUR
 		legs=gear.Telchine_legs_pet,
-		-- 5% DUR
-		feet="Theo. Duckbills +2",
+		-- 15 Auspice
+		feet="Ebers Duckbills +1"
+		-- 19 5% DUR
+		--feet="Theo. Duckbills +2",
 	}
 
 	sets.midcast.BarElement = set_combine(sets.midcast['Enhancing Magic'],{
