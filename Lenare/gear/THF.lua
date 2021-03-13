@@ -67,9 +67,9 @@ function init_gear_sets()
 		-- 3
 		hands="Plun. Armlets +1",
 		-- 2
-		--legs=gear.Herculean_legs_TA,
+		legs=gear.Herculean_legs_TA,
 		-- 3
-		feet="Skulk. Poulaines +1"
+		--feet="Skulk. Poulaines +1"
 	}
 	sets.ExtraRegen = {}
 	sets.Kiting = {
