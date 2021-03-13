@@ -56,7 +56,8 @@ function init_gear_sets()
 	sets.precast.FC = {
 		-- 4%
 		main=gear.default.fastcast_staff,
-		ammo="Impatiens",
+		sub="Enki Strap",
+		--ammo="Impatiens",
 		-- 10%
 		head="Nahtirah Hat",
 		-- 4%
@@ -104,6 +105,7 @@ function init_gear_sets()
 
 	sets.precast.FC['Healing Magic'] = set_combine(sets.precast.FC, {
 		main="Divinity",
+		sub="Culminus",
 		legs="Ebers Pant. +1"
 	})
 
@@ -254,7 +256,7 @@ function init_gear_sets()
 		feet=gear.Vanya_feet_B
 	}
 
-	-- 47% + 4% II Total + 10% gift
+	-- 47% + 7% II Total + 16% gift (23% total gift)
 	sets.midcast.Cure = set_combine(sets.midcast['Healing Magic'],{
 		-- 10% + 2% II
 		main="Queller Rod",
@@ -266,7 +268,9 @@ function init_gear_sets()
 		-- 3%
 		--ear2="Nourish. Earring +1",
 		ear2="Malignance Earring",
-		body="Ebers Bliaud +1",
+		--body="Ebers Bliaud +1",
+		-- 3% II
+		body="Kaykaus Bliaut",
 		-- 16%
 		hands=gear.Telchine_hands_cure,
 		-- 2% II
@@ -277,11 +281,16 @@ function init_gear_sets()
 		feet=gear.Vanya_feet_B
 	})
 	
-	-- 31% + 4% II Total + 10% gift + 28% Afflatus Solace (2 x 14 JP)
+	-- 15% + 6% II Total + 16% gift (23% total gift) + 40% Afflatus Solace (2 x 20 JP)
 	sets.midcast.CureSolace = set_combine(sets.midcast.Cure,{
+		-- 10% + 2% II
+		main="Queller Rod",
+		-- 2% II
+		ear1="Glorious Earring",
 		-- 14% Afflatus Solace
 		body="Ebers Bliaud +1",
-		hands="Inyan. Dastanas +2",
+		-- 2% II
+		hands="Theophany Mitts +2",
 		-- 10% Afflatus Solace
 		back="Alaunus's Cape"
 	})
@@ -316,9 +325,9 @@ function init_gear_sets()
 
 	-- 378 Base
 	-- 16 merits
-	-- 110 gear
-	-- 504 Total
-	-- 39% DUR
+	-- 122 gear
+	-- 510 Total
+	-- 44% DUR
 	sets.midcast['Enhancing Magic'] = {
 		-- 18
 		main="Gada",
@@ -344,7 +353,9 @@ function init_gear_sets()
 		-- 22
 		legs="Piety Pantaln. +1",
 		-- 25
-		feet="Ebers Duckbills +1"
+		--feet="Ebers Duckbills +1",
+		-- 19 5% DUR
+		feet="Theo. Duckbills +2",
 	}
 
 	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'],{
@@ -366,7 +377,8 @@ function init_gear_sets()
 		waist="Embla Sash",
 		-- 7% DUR
 		legs=gear.Telchine_legs_pet,
-		feet="Ebers Duckbills +1"
+		-- 5% DUR
+		feet="Theo. Duckbills +2",
 	}
 
 	sets.midcast.BarElement = set_combine(sets.midcast['Enhancing Magic'],{
