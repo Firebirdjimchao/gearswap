@@ -69,11 +69,11 @@ function init_gear_sets()
 	-- Precast sets to enhance JAs
 	sets.precast.JA.Meditate = {
 		head="Wakido kabuto +3",
-		hands="Sakonji Kote +2",
+		hands="Sakonji Kote +3",
 		back="Smertrios's Mantle"
 	}
 	sets.precast.JA['Warding Circle'] = {head="Wakido kabuto +3"}
-	sets.precast.JA['Blade Bash'] = {hands="Sakonji Kote +2"}
+	sets.precast.JA['Blade Bash'] = {hands="Sakonji Kote +3"}
 	sets.precast.JA['Hasso'] = {feet="Wakido Sune. +3"}
 	
 	-- Waltz set (chr and vit)
@@ -425,9 +425,11 @@ function init_gear_sets()
 		-- 6% DT
 		neck="Loricate Torque +1",
 		-- 10% DT 6 MDB
-		body="Tartarus Platemail",
-		-- 5% PDT 2 MDB
-		hands="Sakonji Kote +2",
+		--body="Tartarus Platemail",
+		-- 8% DT 5 MDB
+		body="Wakido Domaru +3",
+		-- 6% PDT 3 MDB
+		hands="Sakonji Kote +3",
 		--ring1="Niqmaddu Ring",
 		-- 5% PDT 5% MDT
 		ring1="Dark Ring",
@@ -488,7 +490,7 @@ function init_gear_sets()
 		ear1="Odnowa Earring +1",
 		ear2="Etiolation Earring",
 		body="Sacro Breastplate",
-		hands="Sakonji Kote +2",
+		hands="Sakonji Kote +3",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
@@ -502,11 +504,15 @@ function init_gear_sets()
 	sets.idle.Town = set_combine(sets.idle,{
 		ammo="Knobkierrie",
 		--head="Rao Kabuto +1",
-		head=gear.Valorous_head_WS,
+		--head=gear.Valorous_head_WS,
+		head="Mpaca's Cap",
 		neck="Sam. Nodowa +2",
 		--body="Councilor's Garb"
-		body="Tartarus Platemail",
-		hands="Wakido Kote +3",
+		--body="Tartarus Platemail",
+		--body="Sacro Breastplate",
+		body="Tatena. Harama. +1",
+		--hands="Wakido Kote +3",
+		hands="Tatena. Gote +1",
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
 		back=gear.Smertrio_WS,
@@ -533,7 +539,7 @@ function init_gear_sets()
 	
 	-- Defense sets
 
-	-- 33% DT 23% PDT 10% MDT 27 MDB (43% DT if using Khonsu)
+	-- 31% DT 24% PDT 10% MDT 27 MDB (43% DT if using Khonsu)
 	sets.defense.DT = set_combine(sets.idle,{
 		-- 6& DT
 		--sub="Khonsu",
@@ -550,9 +556,11 @@ function init_gear_sets()
 		-- 6% DT
 		neck="Loricate Torque +1",
 		-- 10% DT 6 MDB
-		body="Tartarus Platemail",
-		-- 5% PDT 2 MDB
-		hands="Sakonji Kote +2",
+		--body="Tartarus Platemail",
+		-- 8% DT 5 MDB
+		body="Wakido Domaru +3",
+		-- 6% PDT 3 MDB
+		hands="Sakonji Kote +3",
 		--ring1="Niqmaddu Ring",
 		-- 5% PDT 5% MDT
 		ring1="Dark Ring",
@@ -799,30 +807,30 @@ function init_gear_sets()
 		--sub="Utu Grip",
 		-- 3 STP
 		ammo="Ginsen",
-		-- 7%
+		-- 7% Haste
 		head="Wakido kabuto +3",
 		-- STP 7 + 7 aug
 		neck="Sam. Nodowa +2",
 		-- 5 STP
 		ear1="Telos Earring",
 		ear2="Digni. Earring",
-		-- 3%
-		body="Wakido Domaru +2",
+		-- 3% Haste
+		body="Wakido Domaru +3",
 		--hands=gear.Ryuo_hands_D,
-		-- 7 STP 4% Hasso +4
+		-- 7 STP 4% Haste Hasso +4
 		hands="Wakido Kote +3",
 		-- 10 STP
 		back=gear.Smertrio_STP_DEX,
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
-		-- 8%
+		-- 8% Haste
 		waist="Ioskeha Belt +1",
-		-- 9 STP 5%
+		-- 9 STP 5% Haste
 		legs="Wakido Haidate +3",
 		-- 5 STP
 		--feet=gear.Valorous_feet_TP,
 		--feet=gear.Rao_feet_hq_B,
-		-- 3% Hasso +2
+		-- 3% Haste Hasso +2
 		feet="Wakido Sune. +3",
 	})
 	sets.engagedPDTBase =  {
@@ -833,8 +841,8 @@ function init_gear_sets()
 		head="Mpaca's Cap",
 		-- STP 7 + 7 aug
 		neck="Sam. Nodowa +2",
-		-- 4% DT
-		body="Wakido Domaru +2",
+		-- 8% DT
+		body="Wakido Domaru +3",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		back=gear.Smertrio_STP_DEX,

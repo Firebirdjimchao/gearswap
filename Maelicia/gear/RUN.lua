@@ -77,8 +77,8 @@ function init_gear_sets()
 	-- DT: 33%
 	-- PDT: 20% (22% with Alber Stap)
 	-- MDT: 21%
-	-- Eva: 295
-	-- Meva: 428
+	-- Eva: 328
+	-- Meva: 483
 	-- Ailment resist: 26
 	sets.DT = {
 		-- DT 3% Ailment 11
@@ -91,7 +91,9 @@ function init_gear_sets()
 		ear1="Odnowa earring +1",
 		ear2="Ethereal earring",
 		-- DT 9% Eva 69 Meva 84
-		body="Futhark Coat +3",
+		--body="Futhark Coat +3",
+		-- DT 9% Eva 102 Meva 139
+		body="Nyame Mail",
 		-- DT 3% Eva 19 Meva 37
 		--hands="Aya. Manopolas +2",
 		-- DT 2% Eva 44 Meva 57
@@ -205,9 +207,11 @@ function init_gear_sets()
 	})
 	
 	sets.precast.JA['Lunge'] = set_combine(sets.MAB,{
+		body="Nyame Mail",
 	})
 	
 	sets.precast.JA['Swipe'] = set_combine(sets.MAB,{
+		body="Nyame Mail",
 	})
 
 	-- Waltz set (chr and vit)
