@@ -90,9 +90,11 @@ function init_gear_sets()
 		-- 17%
 		body="Maxixi Casaque +2",
 		hands="Meg. Gloves +2",
+		ring1="Dark Ring",
+		ring2="Sirona's Ring",
 		-- 5%
 		back=gear.AugMantleRev,
-		waist="Caudata Belt",
+		waist="Chaac Belt",
 		legs="Meg. Chausses +2",
 		-- 10%
 		feet="Maxixi Shoes +1"
@@ -113,12 +115,12 @@ function init_gear_sets()
 	sets.precast.Acc = {
 		--ammo="Jukukik Feather",
 		head="Malignance Chapeau",
-		ear1="Heartseeker Earring",
-		ear2="Steelflash Earring",
+		ear2="Zennaroi Earring",
 		neck="Sanctity Necklace",
 		body="Meg. Cuirie +2",
 		hands="Malignance Gloves",
-		ring2="Cacoethic Ring",
+		ring1="Cacoethic Ring",
+		ring2="Chirich Ring",
 		back=gear.Senuna_DexDa,
 		waist="Eschan Stone",
 		legs="Meg. Chausses +2",
@@ -314,10 +316,14 @@ function init_gear_sets()
 	--------------------------------------
 
 	sets.midcast.FastRecast = set_combine(sets.precast.FC,{
-		body="Mekosu. Harness",
-		back="Shadow Mantle",
-		waist="Cetl Belt",
-		feet="Maxixi Shoes +1"
+		head="Malignance Chapeau",
+		body="Meg. Cuirie +2",
+		hands="Malignance Gloves",
+		ring1=gear.DarkRing.physical,
+		ring2="Defending Ring",
+		back="Moonbeam Cape",
+		legs="Mummu Kecks +2",
+		feet="Malignance Boots",
 	});
 
 	--------------------------------------
@@ -375,7 +381,7 @@ function init_gear_sets()
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
 		legs="Mummu Kecks +2",
-		feet="Meg. Jam. +2"
+		feet="Malignance Boots",
 	})
 
 	sets.defense.MDT = set_combine(sets.idle,{
@@ -389,7 +395,7 @@ function init_gear_sets()
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
 		legs="Mummu Kecks +2",
-		feet="Meg. Jam. +2"
+		feet="Malignance Boots",
 	})
 
 	sets.Kiting = {feet="Skd. Jambeaux +1"}
@@ -406,12 +412,12 @@ function init_gear_sets()
 		ammo="Charis Feather",
 		head="Maxixi Tiara +2",
 		neck="Asperity Necklace",
-		ear1="Heartseeker Earring",
-		ear2="Dudgeon Earring",
+		ear1="Suppanomimi",
+		ear2="Sherida Earring",
 		body="Macu. Casaque +1",
 		hands="Mummu Wrists +2",
 		ring1="Rajas Ring",
-		ring2="K'ayres Ring",
+		ring2="Chirich Ring",
 		back=gear.Senuna_DexDa,
 		waist="Patentia Sash",
 		legs="Meg. Chausses +2",
@@ -423,7 +429,7 @@ function init_gear_sets()
 		neck="Defiant Collar",
 		body="Mummu Jacket +2",
 		hands="Malignance Gloves",
-		ring2="Cacoethic Ring",
+		ring1="Cacoethic Ring",
 		feet="Malignance Boots",
 	})
 	sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc,{

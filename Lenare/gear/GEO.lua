@@ -14,7 +14,7 @@ function user_setup()
 	state.OffenseMode:options('None', 'Normal', 'MidAcc', 'Acc')
 	--state.OffenseMode:options('None')
 	state.CastingMode:options('Normal', 'Resistant', 'Proc', 'Naked')
-	state.IdleMode:options('Normal', 'Encumbered', 'PDT', 'MDT', 'MDTOnca', 'CP', 'CPPDT', 'CPMDT')
+	state.IdleMode:options('Normal', 'Encumbered', 'PDT', 'MDT', 'CP', 'CPPDT', 'CPMDT')
 	state.WeaponskillMode:options('Normal', 'Acc')
 
 	state.MagicBurst = M(false, 'Magic Burst')
@@ -712,26 +712,6 @@ function init_gear_sets()
 		-- 5 3%
 		feet=gear.Vanya_feet_B
 	})
-
-	sets.idle.MDTOnca = {
-		-- 6
-		head="Azimuth Hood +1",
-		-- 6%
-		neck="Loricate Torque +1",
-		-- 3%
-		ear2="Etiolation Earring",
-		-- 12
-		body="Onca Suit",
-		hands=empty,
-		ring1="Shadow Ring",
-		-- 10%
-		ring2="Defending Ring",
-		-- 6
-		--back="Tuilha Cape",
-		back="Tantalic Cape",
-		legs=empty,
-		feet=empty
-	}
 	
 	sets.idle.CP = set_combine(sets.idle,{
 	})
@@ -838,18 +818,38 @@ function init_gear_sets()
 
 	-- Normal melee group
 	sets.engaged = {
+		-- 8% Haste
 		head="Blistering Sallet +1",
 		neck="Asperity Necklace",
-		ear1="Bladeborn Earring",
-		ear2="Steelflash Earring",
-		body="Onca Suit",
-		hands=empty,
+		ear1="Zennaroi Earring",
+		ear2="Brutal Earring",
+		body="",
+		hands="Bagua Mitaines +3",
 		ring1="Rajas Ring",
-		ring2="K'ayres Ring",
+		ring2="Chirich Ring",
 		back="Buquwik Cape",
 		waist="Cetl Belt",
 		legs=empty,
 		feet=empty
+
+
+		head="Blistering Sallet +1",
+		neck="Asperity Necklace",
+		ear1="Telos Earring",
+		ear2="Brutal Earring",
+		-- 3% Haste
+		body="Nyame Mail",
+		-- 3% Haste
+		
+		ring1="Rajas Ring",
+		ring2="Petrov Ring",
+		back="Buquwik Cape",
+		-- 5% Haste
+		waist="Goading Belt",
+		-- 2% Haste
+		legs="Jhakri Slops +2",
+		-- 3% Haste
+		feet="Bagua Sandals +3",
 	}
 	
 	sets.engaged.Acc = set_combine(sets.engaged, {

@@ -1,5 +1,5 @@
 function user_setup()
-	state.IdleMode:options('CP', 'Normal', 'Regen', 'CPPDT', 'CPMDT')
+	state.IdleMode:options('CP', 'Normal', 'StoreTP', 'Regen', 'CPPDT', 'CPMDT')
 	state.OffenseMode:options('Normal', 'MidAcc', 'HighAcc', 'FullAcc')
 	state.HybridMode:options('Normal', 'Evasion', 'PDT')
 	state.RangedMode:options('Normal', 'Acc')
@@ -79,8 +79,8 @@ function init_gear_sets()
 	sets.buff['Sneak Attack'] = {
 		head=gear.Adhemar_head_B,
 		neck="Spike Necklace",
-		ear1="Dudgeon Earring",
-		ear2="Heartseeker Earring",
+		ear1="Sherida Earring",
+		ear2="Suppanomimi",
 		body="Meg. Cuirie +2",
 		hands="Raid. Armlets +2",
 		ring1="Rajas Ring",
@@ -94,8 +94,8 @@ function init_gear_sets()
 	sets.buff['Trick Attack'] = {
 		head=gear.Adhemar_head_B,
 		neck="Spike Necklace",
-		ear1="Dudgeon Earring",
-		ear2="Heartseeker Earring",
+		ear1="Sherida Earring",
+		ear2="Suppanomimi",
 		body="Meg. Cuirie +2",
 		hands="Pillager's Armlets",
 		ring1="Garuda Ring +1",
@@ -105,7 +105,9 @@ function init_gear_sets()
 		legs="Samnuha Tights",
 		feet="Meg. Jam. +2"
 	}
-
+	sets.Behind = {
+		--body="Plunderer's Vest +3",
+	}
 
 	--------------------------------------
 	-- Precast sets
@@ -136,6 +138,7 @@ function init_gear_sets()
 		hands="Meg. Gloves +2",
 		ring1="Dark Ring",
 		ring2="Sirona's Ring",
+		waist="Chaac Belt",
 		legs="Meg. Chausses +2",
 		feet="Meg. Jam. +2"
 	}
@@ -155,6 +158,7 @@ function init_gear_sets()
 		neck="Baetyl Pendant",
 		ear1="Loquac. Earring",
 		ear2="Etiolation Earring",
+		body="Dread Jupon",
 		hands="Leyline Gloves",
 		ring1="Prolix Ring",
 		ring2="Weather. Ring",
@@ -167,7 +171,6 @@ function init_gear_sets()
 	sets.precast.RA = {
 		head="Uk'uxkaj Cap",
 		hands="Iuitl Wristband +1",
-		waist="Impulse Belt",
 		legs="Nahtirah Trousers",
 		feet="Meg. Jam. +2"
 	}
@@ -180,7 +183,7 @@ function init_gear_sets()
 		head=gear.Adhemar_head_B,
 		neck="Asperity Necklace",
 		--neck=gear.ElementalGorget,
-		ear1="Brutal Earring",
+		ear1="Sherida Earring",
 		ear2="Moonshade Earring",
 		body="Meg. Cuirie +2",
 		hands="Meg. Gloves +2",
@@ -367,11 +370,14 @@ function init_gear_sets()
 	--------------------------------------
 	
 	sets.midcast.FastRecast = set_combine(sets.precast.FC,{
-		head="Blistering Sallet +1",
-		body="Mekosu. Harness",
-		back="Shadow Mantle",
-		waist="Eschan Stone",
-		feet="Pillager's Poulaines"
+		head="Malignance Chapeau",
+		body="Meg. Cuirie +2",
+		hands="Malignance Gloves",
+		ring1="Dark Ring",
+		ring2="Defending Ring",
+		back="Moonbeam Cape",
+		legs="Mummu Kecks +2",
+		feet="Malignance Boots",
 	});
 		
 	-- Specific spells
@@ -386,8 +392,8 @@ function init_gear_sets()
 		ear2="Volley Earring",
 		body="Meg. Cuirie +2",
 		hands="Meg. Gloves +2",
-		ring1="Hajduk Ring",
-		ring2="Cacoethic Ring",
+		ring1="Cacoethic Ring",
+		ring2="Garuda Ring +1",
 		back="Libeccio Mantle",
 		legs="Meg. Chausses +2",
 		feet="Meg. Jam. +2"
@@ -413,16 +419,18 @@ function init_gear_sets()
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 
 	sets.idle = {
+		ammo="Staunch Tathlum",
 		head="Malignance Chapeau",
 		neck="Twilight Torque",
-		ear1="Dudgeon Earring",
-		ear2="Heartseeker Earring",
+		ear1="Novia Earring",
+		ear2="Etiolation Earring",
 		body="Meg. Cuirie +2",
 		hands="Malignance Gloves",
-		ring1=gear.DarkRing.physical,
+		ring1="Dark Ring",
 		ring2="Defending Ring",
-		back="Moonbeam Cape",
-		waist="Cetl Belt",
+		--back="Moonbeam Cape",
+		back="Mecisto. Mantle",
+		waist="Gishdubar Sash",
 		legs="Mummu Kecks +2",
 		feet="Skd. Jambeaux +1"
 	}
@@ -453,18 +461,18 @@ function init_gear_sets()
 
 	sets.defense.Evasion = set_combine(sets.idle,{
 		back="Canny Cape",
-		feet="Meg. Jam. +2",
+		feet="Malignance Boots",
 	})
 
 	sets.defense.PDT = set_combine(sets.idle,{
+		ammo="Staunch Tathlum",
+		back="Moonbeam Cape",
 		feet="Malignance Boots",
 	})
 
 	sets.defense.MDT = set_combine(sets.idle,{
-		head="Malignance Chapeau",
-		neck="Inq. Bead Necklace",
-		ear2="Etiolation Earring",
-		ring1="Shadow Ring",
+		ammo="Staunch Tathlum",
+		back="Moonbeam Cape",
 		feet="Malignance Boots",
 	})
 
@@ -476,12 +484,12 @@ function init_gear_sets()
 	sets.engaged = {
 		head=gear.Adhemar_head_B,
 		neck="Asperity Necklace",
-		ear1="Dudgeon Earring",
-		ear2="Heartseeker Earring",
+		ear1="Sherida Earring",
+		ear2="Suppanomimi",
 		body="Mummu Jacket +2",
 		hands="Mummu Wrists +2",
 		ring1="Rajas Ring",
-		ring2="K'ayres Ring",
+		ring2="Chirich Ring",
 		back="Canny Cape",
 		waist="Windbuffet Belt +1",
 		legs="Samnuha Tights",
@@ -493,6 +501,7 @@ function init_gear_sets()
 		feet="Mummu Gamash. +2",
 	})
 	sets.engaged.HighAcc = set_combine(sets.engaged,{
+		ammo="Honed Tathlum",
 		head="Malignance Chapeau",
 		neck="Sanctity Necklace",
 		body="Meg. Cuirie +2",
@@ -502,18 +511,20 @@ function init_gear_sets()
 		feet="Malignance Boots",
 	})
 	sets.engaged.FullAcc = set_combine(sets.engaged,{
+		ammo="Honed Tathlum",
 		head="Malignance Chapeau",
 		ear1="Zennaroi Earring",
 		body="Meg. Cuirie +2",
 		hands="Malignance Gloves",
-		ring2="Cacoethic Ring",
+		ring1="Cacoethic Ring",
 		waist="Eschan Stone",
 		legs="Meg. Chausses +2",
 		feet="Malignance Boots",
 	})
 	sets.engaged.Evasion = set_combine(sets.engaged,{
+		ammo="Amar Cluster",
 		head="Malignance Chapeau",
-		body="Mekosu. Harness",
+		body="Mummu Jacket +2",
 		hands="Malignance Gloves",
 		back="Canny Cape",
 		feet="Malignance Boots",

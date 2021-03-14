@@ -867,7 +867,7 @@ function init_gear_sets()
 		-- 4%
 		hands="Malignance Gloves",
 		ring1="Rajas Ring",
-		ring2="Cacoethic Ring",
+		ring2="Chirich Ring",
 		back="Atheling Mantle",
 		waist="Windbuffet Belt +1",
 		-- 9%
@@ -881,9 +881,10 @@ function init_gear_sets()
 	-- Haste: 27%
 	sets.engaged.Acc = set_combine(sets.engaged,{
 		ammo="Amar Cluster",
+		head="Malignance Chapeau",
 		neck="Defiant Collar",
 		ear1="Zennaroi Earring",
-		ear2="Steelflash Earring",
+		ring1="Cacoethic Ring",
 		-- 2%
 		back="Ground. Mantle +1",
 		waist="Eschan Stone",
@@ -902,7 +903,7 @@ function init_gear_sets()
 		legs="Jhakri Slops +2",
 	})
 	sets.engaged.enspellDW = set_combine(sets.engaged.enspell,{
-		--ear1="Suppanomimi",
+		ear1="Suppanomimi",
 		--ring1="Haverton Ring",
 		--waist="Reiki Yotai",
 	})
@@ -910,17 +911,30 @@ function init_gear_sets()
 	})
 	sets.engaged.enspellDW.Acc = set_combine(sets.engaged.Acc, sets.engaged.enspell,sets.engaged.enspellDW,{
 	})
-	
-	sets.engaged.Defense = set_combine(sets.engaged,{
-		head="Aya. Zucchetto +2",
+
+	sets.engaged.DefenseBase = {
+		head="Malignance Chapeau",
 		neck="Twilight Torque",
 		body="Ayanmo Corazza +2",
+		hands="Malignance Gloves",
+		back="Moonbeam Cape",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
-		back="Moonbeam Cape",
-		waist="Cetl Belt",
 		legs="Aya. Cosciales +2",
-		feet="Aya. Gambieras +2"
+		feet="Malignance Boots",
+	}
+
+	sets.engaged.Defense = set_combine(sets.engaged,sets.engaged.DefenseBase,{
+	})
+	sets.engaged.Defense.Acc = set_combine(sets.engaged.Acc,sets.engaged.DefenseBase,{
+	})
+	sets.engaged.Defense.enspell = set_combine(sets.engaged.enspell,sets.engaged.DefenseBase,{
+	})
+	sets.engaged.Defense.enspellDW = set_combine(sets.engaged.enspellDW,sets.engaged.DefenseBase,{
+	})
+	sets.engaged.Defense.enspell.Acc = set_combine(sets.engaged.enspell.Acc,sets.engaged.DefenseBase,{
+	})
+	sets.engaged.Defense.enspellDW.Acc = set_combine(sets.engaged.enspellDW.Acc,sets.engaged.DefenseBase,{
 	})
 
 end

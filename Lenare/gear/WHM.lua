@@ -190,12 +190,28 @@ function init_gear_sets()
 	-- Midcast Sets
 	
 	sets.midcast.FastRecast = set_combine(sets.precast.FC,{
-		head="Nahtirah Hat",
-		ear1="Loquacious Earring",
+		-- 1% DT
+		ammo="Staunch Tathlum",
+		-- 8 MDB 5% MDT
+		head="Inyanga Tiara +2",
+		-- 5% DT
+		neck="Twilight Torque",
+		-- 3% MDT
+		ear2="Etiolation Earring",
+		-- 11 MDB 7% MDT
 		body="Inyanga Jubbah +2",
-		back="Swith Cape",
-		waist="Embla Sash",
-		feet="Regal Pumps +1"
+		-- 5 MDB 4% MDT
+		hands="Inyan. Dastanas +2",
+		-- 5% PDT, 5% MDT
+		ring1="Dark Ring",
+		-- 10% DT
+		ring2="Defending Ring",
+		-- 5% DT
+		back="Moonbeam Cape",
+		-- 9 MDB 6% MDT
+		legs="Inyanga Shalwar +2",
+		-- 8 MDB 3% MDT
+		feet="Inyan. Crackows +2"
 	});
 
 	sets.midcast.MACC = {
@@ -256,7 +272,7 @@ function init_gear_sets()
 		feet=gear.Vanya_feet_B
 	}
 
-	-- 47% + 7% II Total + 16% gift (23% total gift)
+	-- 41% + 7% II Total + 16% gift (23% total gift)
 	sets.midcast.Cure = set_combine(sets.midcast['Healing Magic'],{
 		-- 10% + 2% II
 		main="Queller Rod",
@@ -272,7 +288,9 @@ function init_gear_sets()
 		-- 3% II
 		body="Kaykaus Bliaut",
 		-- 16%
-		hands=gear.Telchine_hands_cure,
+		--hands=gear.Telchine_hands_cure,
+		-- 10%
+		hands=gear.Telchine_hands_pet,
 		-- 2% II
 		--hands="Theophany Mitts +2",
 		waist=gear.ElementalObi,
@@ -573,8 +591,8 @@ function init_gear_sets()
 		ammo="Amar Cluster",
 		head="Aya. Zucchetto +2",
 		neck="Asperity Necklace",
-		ear1="Bladeborn Earring",
-		ear2="Steelflash Earring",
+		ear1="Brutal Earring",
+		ear2="Zennaroi Earring",
 		body="Ayanmo Corazza +2",
 		hands="Aya. Manopolas +2",
 		ring1="Rajas Ring",
