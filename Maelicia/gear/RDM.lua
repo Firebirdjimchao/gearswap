@@ -1008,7 +1008,7 @@ function init_gear_sets()
 	})
 	sets.engaged.Defense.Acc = set_combine(sets.engaged.Acc,sets.engaged.DefenseBase,{
 	})
-	sets.engaged.Denfense.enspell = set_combine(sets.engaged.enspell,sets.engaged.DefenseBase,{
+	sets.engaged.Defense.enspell = set_combine(sets.engaged.enspell,sets.engaged.DefenseBase,{
 	})
 	sets.engaged.Defense.enspellDW = set_combine(sets.engaged.enspellDW,sets.engaged.DefenseBase,{
 	})
