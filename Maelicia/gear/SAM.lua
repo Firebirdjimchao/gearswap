@@ -489,7 +489,7 @@ function init_gear_sets()
 		neck="Loricate Torque +1",
 		ear1="Odnowa Earring +1",
 		ear2="Etiolation Earring",
-		body="Sacro Breastplate",
+		body="Nyame Mail",
 		hands="Sakonji Kote +3",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
@@ -539,7 +539,7 @@ function init_gear_sets()
 	
 	-- Defense sets
 
-	-- 31% DT 24% PDT 10% MDT 27 MDB (43% DT if using Khonsu)
+	-- 32% DT 24% PDT 10% MDT 30 MDB (43% DT if using Khonsu)
 	sets.defense.DT = set_combine(sets.idle,{
 		-- 6& DT
 		--sub="Khonsu",
@@ -558,7 +558,9 @@ function init_gear_sets()
 		-- 10% DT 6 MDB
 		--body="Tartarus Platemail",
 		-- 8% DT 5 MDB
-		body="Wakido Domaru +3",
+		--body="Wakido Domaru +3",
+		-- 9% DT 8 MDB
+		body="Nyame Mail",
 		-- 6% PDT 3 MDB
 		hands="Sakonji Kote +3",
 		--ring1="Niqmaddu Ring",

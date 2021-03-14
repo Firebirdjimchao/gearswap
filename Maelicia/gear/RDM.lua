@@ -881,24 +881,6 @@ function init_gear_sets()
 	
 	sets.defense.MDT = set_combine(sets.idle.MDT,{
 	})
-
-	sets.idle.MDTOnca = {
-		-- 6% 5
-		head="Malignance Chapeau",
-		-- 5%
-		neck="Loricate Torque +1",
-		-- 3%
-		ear1="Etiolation Earring",
-		ear2="Arete del Luna",
-		-- 12
-		body="Onca Suit",
-		hands=empty,
-		-- 5%
-		back="Moonbeam Cape",
-		--back="Tantalic Cape",
-		legs=empty,
-		feet=empty
-	}
 	
 	sets.Kiting = {legs="Carmine Cuisses +1"}
 	
@@ -1010,66 +992,29 @@ function init_gear_sets()
 	sets.engaged.enspellDW.Acc = set_combine(sets.engaged.Acc, sets.engaged.enspell,sets.engaged.enspellDW,{
 		feet="Malignance Boots",
 	})
+
+	sets.engaged.DefenseBase = {
+		head="Malignance Chapeau",
+		neck="Loricate Torque +1",
+		body="Ayanmo Corazza +2",
+		hands="Malignance Gloves",
+		ring1="Dark Ring",
+		ring2="Defending Ring",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
+	}
 	
-	sets.engaged.Defense = set_combine(sets.engaged,{
-		head="Malignance Chapeau",
-		neck="Loricate Torque +1",
-		body="Ayanmo Corazza +2",
-		hands="Malignance Gloves",
-		ring1="Dark Ring",
-		ring2="Defending Ring",
-		legs="Malignance Tights",
-		feet="Malignance Boots",
+	sets.engaged.Defense = set_combine(sets.engaged,sets.engaged.DefenseBase,{
 	})
-	sets.engaged.Defense.Acc = set_combine(sets.engaged.Acc,{
-		head="Malignance Chapeau",
-		neck="Loricate Torque +1",
-		body="Ayanmo Corazza +2",
-		hands="Malignance Gloves",
-		ring1="Dark Ring",
-		ring2="Defending Ring",
-		legs="Malignance Tights",
-		feet="Malignance Boots",
+	sets.engaged.Defense.Acc = set_combine(sets.engaged.Acc,sets.engaged.DefenseBase,{
 	})
-	sets.engaged.Denfense.enspell = set_combine(sets.engaged.enspell,{
-		head="Malignance Chapeau",
-		neck="Loricate Torque +1",
-		body="Ayanmo Corazza +2",
-		hands="Malignance Gloves",
-		ring1="Dark Ring",
-		ring2="Defending Ring",
-		legs="Malignance Tights",
-		feet="Malignance Boots",
+	sets.engaged.Denfense.enspell = set_combine(sets.engaged.enspell,sets.engaged.DefenseBase,{
 	})
-	sets.engaged.Defense.enspellDW = set_combine(sets.engaged.enspellDW,{
-		head="Malignance Chapeau",
-		neck="Loricate Torque +1",
-		body="Ayanmo Corazza +2",
-		hands="Malignance Gloves",
-		ring1="Dark Ring",
-		ring2="Defending Ring",
-		legs="Malignance Tights",
-		feet="Malignance Boots",
+	sets.engaged.Defense.enspellDW = set_combine(sets.engaged.enspellDW,sets.engaged.DefenseBase,{
 	})
-	sets.engaged.Defense.enspell.Acc = set_combine(sets.engaged.enspell.Acc,{
-		head="Malignance Chapeau",
-		neck="Loricate Torque +1",
-		body="Ayanmo Corazza +2",
-		hands="Malignance Gloves",
-		ring1="Dark Ring",
-		ring2="Defending Ring",
-		legs="Malignance Tights",
-		feet="Malignance Boots",
+	sets.engaged.Defense.enspell.Acc = set_combine(sets.engaged.enspell.Acc,sets.engaged.DefenseBase,{
 	})
-	sets.engaged.Defense.enspellDW.Acc = set_combine(sets.engaged.enspellDW.Acc,{
-		head="Malignance Chapeau",
-		neck="Loricate Torque +1",
-		body="Ayanmo Corazza +2",
-		hands="Malignance Gloves",
-		ring1="Dark Ring",
-		ring2="Defending Ring",
-		legs="Malignance Tights",
-		feet="Malignance Boots",
+	sets.engaged.Defense.enspellDW.Acc = set_combine(sets.engaged.enspellDW.Acc,sets.engaged.DefenseBase,{
 	})
 
 end

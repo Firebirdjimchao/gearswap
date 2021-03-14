@@ -41,7 +41,7 @@ function user_setup()
 	state.RestingMode:options('Normal')
 	state.PhysicalDefenseMode:options('PDT')
 	state.MagicalDefenseMode:options('MDT')
-	state.IdleMode:options('CP', 'Normal', 'PDT', 'MDT', 'MDTOnca', 'CPPDT', 'CPMDT')
+	state.IdleMode:options('CP', 'Normal', 'PDT', 'MDT', 'CPPDT', 'CPMDT')
 
 	brd_daggers = S{'Taming Sari', 'Odium', 'Izhiikoh', 'Vanir Knife', 'Atoyac', 'Aphotic Kukri', 'Sabebus'}
 	pick_tp_weapon()
@@ -625,10 +625,10 @@ function init_gear_sets()
 	
 	sets.noprotect = {ring1="Sheltered Ring"}
 
-	-- DT: 21% DT
+	-- DT: 30% DT
 	-- PDT: 9%
-	-- MDT: 35%
-	-- MDB: 41 
+	-- MDT: 28%
+	-- MDB: 38
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.idle.DT = set_combine(sets.idle,{		
 		-- 20% PDT
@@ -642,7 +642,9 @@ function init_gear_sets()
 		-- 2% MDT
 		ear2="Odnowa Earring +1",
 		-- 11 MDB 7% MDT
-		body="Inyanga Jubbah +2",
+		--body="Inyanga Jubbah +2",
+		-- 8 MDB 9% DT
+		body="Nyame Mail",
 		-- 5 MDB 4% MDT
 		hands="Inyan. Dastanas +2",
 		-- 5% PDT, 5% MDT
@@ -663,24 +665,6 @@ function init_gear_sets()
 	})
 	sets.idle.MDT = set_combine(sets.idle.DT,{
 	})
-	
-	sets.idle.MDTOnca = {
-		-- 8 5%
-		head="Inyanga Tiara +2",
-		-- 6%
-		neck="Loricate Torque +1",
-		-- 3%
-		ear1="Etiolation Earring",
-		ear2="Arete del Luna",
-		-- 12
-		body="Onca Suit",
-		hands=empty,
-		-- 5%
-		back="Moonbeam Cape",
-		--back="Tantalic Cape",
-		legs=empty,
-		feet=empty
-	}
 	
 	sets.idle.CP = set_combine(sets.idle,{
 		--back="Mecistopins Mantle"
@@ -733,17 +717,13 @@ function init_gear_sets()
 		neck="Asperity Necklace",
 		ear1="Brutal Earring",
 		ear2="Telos Earring",
-		--body="Onca Suit",
 		body="Ayanmo Corazza +2",
-		--hands=empty,
 		hands="Aya. Manopolas +2",
 		ring1="Ilabrat Ring",
 		ring2="Petrov Ring",
 		back="Buquwik Cape",
 		waist="Goading Belt",
-		--legs=empty,
 		legs="Aya. Cosciales +2",
-		--feet=empty
 		feet="Aya. Gambieras +2",
 	}
 

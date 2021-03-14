@@ -6,7 +6,7 @@
 function user_setup()
 	state.OffenseMode:options('None', 'Normal', 'Acc')
 	state.CastingMode:options('Normal', 'Resistant', 'Proc', 'Naked')
-	state.IdleMode:options('CP', 'Normal', 'MP', 'Encumbered', 'PDT', 'MDT', 'MDTOnca', 'CPPDT', 'CPMDT')
+	state.IdleMode:options('CP', 'Normal', 'MP', 'Encumbered', 'PDT', 'MDT', 'CPPDT', 'CPMDT')
 	
 	state.MagicBurst = M(false, 'Magic Burst')
 	
@@ -776,57 +776,40 @@ function init_gear_sets()
 		feet=gear.Vanya_feet_B
 	})
 	
-	-- MDT: 37% + 6% (Khonsu)
-	-- MDB: 27
+	-- DT: 32% DT
+	-- PDT: 5%
+	-- MDT: 15%
+	-- MDB: 31
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.idle.MDT = set_combine(sets.idle,{
 		-- 6% DT
 		--sub="Khonsu",
-		-- 2%
+		-- 2% DT
 		ammo="Staunch Tathlum +1",
-		-- 5
-		head=gear.Merlinic_head_nuke,
-		-- 6%
+		-- 7 MDB
+		head="Arch. Petasos +3",
+		-- 6% DT
 		neck="Loricate Torque +1",
-		-- 3%
+		-- 3% MDT
 		ear1="Etiolation Earring",
-		-- 2%
+		-- 2% MDT
 		ear2="Odnowa Earring +1",
-		-- 6 1% DT 3%
-		body=gear.Vanya_body_B,
-		-- 5
+		-- 9% DT MDB 8
+		body="Nyame Mail",
+		-- 5 MDB
 		hands="Arch. Gloves +3",
-		ring1="Shadow Ring",
-		-- 10%
+		-- 5% PDT 5% MDT
+		ring1="Dark Ring",
+		-- 10% DT
 		ring2="Defending Ring",
-		-- 5%
+		-- 5% DT
 		back="Moonbeam Cape",
 		--back="Mecisto. Mantle",
-		-- 2% 6
+		-- 2% MDT 6 MDB
 		legs="Gyve Trousers",
-		-- 3% 5
+		-- 3% MDT 5 MDB
 		feet=gear.Vanya_feet_B
 	})
-	
-	sets.idle.MDTOnca = {
-		-- 2%
-		ammo="Staunch Tathlum +1",
-		-- 5
-		head=gear.Merlinic_head_nuke,
-		-- 6%
-		neck="Loricate Torque +1",
-		-- 3%
-		ear1="Etiolation Earring",
-		ear2="Arete del Luna",
-		-- 12
-		body="Onca Suit",
-		hands=empty,
-		-- 5%
-		--back="Moonbeam Cape",
-		back="Tantalic Cape",
-		legs=empty,
-		feet=empty
-	}
 	
 	sets.idle.CP = set_combine(sets.idle,{
 		--back="Mecistopins Mantle"
@@ -1116,22 +1099,31 @@ function init_gear_sets()
 	-- EG: sets.engaged.Dagger.Accuracy.Evasion
 	
 	-- Normal melee group
+	-- 24% Haste
 	sets.engaged = {
+		-- 8% Haste
 		head="Blistering Sallet +1",
 		neck="Asperity Necklace",
 		ear1="Telos Earring",
 		ear2="Brutal Earring",
-		body="Onca Suit",
-		hands=empty,
+		-- 3% Haste
+		body="Nyame Mail",
+		-- 3% Haste
+		hands="Arch. Gloves +3",
 		ring1="Rajas Ring",
 		ring2="Petrov Ring",
 		back="Buquwik Cape",
+		-- 5% Haste
 		waist="Goading Belt",
-		legs=empty,
-		feet=empty
+		-- 5% Haste
+		legs="Arch. Tonban +3",
+		feet="Jhakri Pigaches +2",
 	}
 	
+	-- 17% Haste
 	sets.engaged.Acc = set_combine(sets.engaged, {
+		-- 6% Haste
+		head="Arch. Petasos +3",
 		neck="Subtlety Spec.",
 		ear1="Telos Earring",
 		ear2="Digni. Earring",

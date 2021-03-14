@@ -15,7 +15,7 @@ function user_setup()
 	state.OffenseMode:options('None', 'Normal', 'MidAcc', 'Acc')
 	--state.OffenseMode:options('None')
 	state.CastingMode:options('Normal', 'Resistant', 'Proc', 'Naked')
-	state.IdleMode:options('Normal', 'Encumbered', 'PDT', 'MDT', 'MDTOnca', 'CP', 'CPPDT', 'CPMDT')
+	state.IdleMode:options('Normal', 'Encumbered', 'PDT', 'MDT', 'CP', 'CPPDT', 'CPMDT')
 	state.WeaponskillMode:options('Normal', 'Acc')
 
 	state.MagicBurst = M(false, 'Magic Burst')
@@ -761,55 +761,38 @@ function init_gear_sets()
 		feet=gear.Vanya_feet_B
 	})
 			
-	-- MDT: 35%
-	-- MDB: 26
+	-- DT: 51%
+	-- PDT: 0
+	-- MDT: 10%
+	-- MDB: 28
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.idle.MDT = set_combine(sets.idle,{
+		-- 20% DT
 		main=gear.Staff.DT,
+		-- 6% DT
 		sub="Khonsu",
-		-- 6
+		-- 6 MDB
 		head="Azimuth Hood +1",
-		-- 6%
+		-- 6% DT
 		neck="Loricate Torque +1",
-		-- 3%
+		-- 3% MDT
 		ear1="Etiolation Earring",
-		-- 2%
+		-- 2% MDT
 		ear2="Odnowa Earring +1",
-		-- 6 1% DT 3%
-		body=gear.Vanya_body_B,
-		-- 3
+		-- 9% DT MDB 8
+		body="Nyame Mail",
+		-- 3 MDB
 		hands="Geo. Mitaines +2",
 		ring1="Shadow Ring",
-		-- 10%
+		-- 10% DT
 		ring2="Defending Ring",
-		-- 5%
+		-- 5% DT
 		back="Moonbeam Cape",
-		-- 2% 6
+		-- 2% MDT 6 MDB
 		legs="Gyve Trousers",
-		-- 3% 5
+		-- 3% MDT 5 MDB
 		feet=gear.Vanya_feet_B
 	})
-	
-	sets.idle.MDTOnca = {
-		main=gear.Staff.DT,
-		sub="Khonsu",
-		-- 6
-		head="Azimuth Hood +1",
-		-- 6%
-		neck="Loricate Torque +1",
-		-- 3%
-		ear1="Etiolation Earring",
-		ear2="Arete del Luna",
-		-- 12
-		body="Onca Suit",
-		hands=empty,
-		ring1="Shadow Ring",
-		-- 10%
-		ring2="Defending Ring",
-		back="Tantalic Cape",
-		legs=empty,
-		feet=empty
-	}
 	
 	sets.idle.CP = set_combine(sets.idle,{
 	})
@@ -916,35 +899,40 @@ function init_gear_sets()
 	-- EG: sets.engaged.Dagger.Accuracy.Evasion
 
 	-- Normal melee group
+	-- 24% Haste
 	sets.engaged = {
-		head="Jhakri Coronal +2",
+		-- 8% Haste
+		head="Blistering Sallet +1",
 		neck="Asperity Necklace",
 		ear1="Telos Earring",
 		ear2="Brutal Earring",
-		body="Onca Suit",
-		hands=empty,
+		-- 3% Haste
+		body="Nyame Mail",
+		-- 3% Haste
+		hands="Bagua Mitaines +3",
 		ring1="Rajas Ring",
 		ring2="Petrov Ring",
 		back="Buquwik Cape",
+		-- 5% Haste
 		waist="Goading Belt",
-		legs=empty,
-		feet=empty
+		-- 2% Haste
+		legs="Jhakri Slops +2",
+		-- 3% Haste
+		feet="Bagua Sandals +3",
 	}
 
+	-- 22% Haste
 	sets.engaged.MidAcc = set_combine(sets.engaged, {
+		-- 6% Haste
+		head="Bagua Galero +3",
 		neck="Lissome Necklace",
-		body="Bagua Tunic +3",
-		hands="Bagua Mitaines +3",
 		ring1="Cacoethic Ring +1",
-		legs="Jhakri Slops +2",
-		feet="Jhakri Pigaches +2",
 	})
 	
+	-- 17% Haste
 	sets.engaged.Acc = set_combine(sets.engaged.MidAcc, {
 		neck="Subtlety Spec.",
 		ear2="Digni. Earring",
-		body="Jhakri Robe +2",
-		hands="Jhakri Cuffs +2",
 		ring2="Patricius Ring",
 		back="Aurist's Cape +1",
 		waist="Eschan Stone",

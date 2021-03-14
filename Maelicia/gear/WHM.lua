@@ -6,7 +6,7 @@
 function user_setup()
 	state.OffenseMode:options('None', 'Normal')
 	state.CastingMode:options('Normal', 'Resistant')
-	state.IdleMode:options('CP', 'Normal', 'PDT', 'MDT', 'MDTOnca', 'CPPDT', 'CPMDT')
+	state.IdleMode:options('CP', 'Normal', 'PDT', 'MDT', 'CPPDT', 'CPMDT')
 	gear.default.obi_waist = "Sacro Cord"
 
 	-- Default macro set/book
@@ -537,28 +537,6 @@ function init_gear_sets()
 	sets.idle.MDT = set_combine(sets.idle.DT,{
 	})
 	
-	sets.idle.MDTOnca = {
-		-- 20% DT
-		main=gear.Staff.DT,
-		-- 2%
-		ammo="Staunch Tathlum +1",
-		-- 8 5%
-		head="Inyanga Tiara +2",
-		-- 6%
-		neck="Loricate Torque +1",
-		-- 3%
-		ear1="Etiolation Earring",
-		ear2="Arete del Luna",
-		-- 12
-		body="Onca Suit",
-		hands=empty,
-		-- 5%
-		back="Moonbeam Cape",
-		--back="Tantalic Cape",
-		legs=empty,
-		feet=empty
-	}
-	
 	sets.idle.CP = set_combine(sets.idle,{
 		back="Mecistopins Mantle"
 	})
@@ -610,17 +588,13 @@ function init_gear_sets()
 		neck="Asperity Necklace",
 		ear1="Brutal Earring",
 		ear2="Telos Earring",
-		--body="Onca Suit",
 		body="Ayanmo Corazza +2",
-		--hands=empty,
 		hands="Aya. Manopolas +2",
 		ring1="Rajas Ring",
 		ring2="Petrov Ring",
 		back="Buquwik Cape",
 		waist="Goading Belt",
-		--legs=empty,
 		legs="Aya. Cosciales +2",
-		--feet=empty
 		feet="Aya. Gambieras +2",
 	}
 
