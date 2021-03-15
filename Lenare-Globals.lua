@@ -13,7 +13,7 @@ function define_global_sets()
 	gear.FastcastStaff = {name="Grioavolr"}
 	gear.RecastStaff = {name=""}
 	gear.Staff.Cure = {name="Arka IV"}
-	gear.Staff.HMP = {name="Chatoyant Staff"}
+	gear.Staff.HMP = {name="Contemplator +1"}
 	gear.Staff.PDT = {name="Terra's Staff"}
 	gear.Staff.DT = {name="Malignance Pole"}
 	
