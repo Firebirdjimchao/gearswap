@@ -9,7 +9,8 @@ function user_setup()
 	gear.Finale = "Gjallarhorn"
 	gear.HonorMarch = "Marsyas"
 	gear.Hymnus = "Gjallarhorn"
-	gear.Lullaby = "Gjallarhorn"
+	--gear.Lullaby = "Gjallarhorn"
+	gear.Lullaby = "Daurdabla",
 	gear.Madrigal = "Gjallarhorn"
 	gear.Mambo = "Gjallarhorn"
 	gear.March = "Gjallarhorn"
@@ -43,19 +44,21 @@ function user_setup()
 	state.MagicalDefenseMode:options('MDT')
 	state.IdleMode:options('CP', 'Normal', 'PDT', 'MDT', 'CPPDT', 'CPMDT')
 
-	brd_daggers = S{'Taming Sari', 'Odium', 'Izhiikoh', 'Vanir Knife', 'Atoyac', 'Aphotic Kukri', 'Sabebus'}
+	brd_daggers = S{'Tauret','Blur Knife +1','Taming Sari'}
 	pick_tp_weapon()
 	
 	-- Adjust this if using the Terpander (new +song instrument)
 	info.DaurdablaInstrument = gear.ExtraSongInstrument
 	-- How many extra songs we can keep from Daurdabla/Terpander
-	info.DaurdablaSongs = 1
+	info.DaurdablaSongs = 2
 	-- Whether to try to automatically use Daurdabla when an appropriate gap in current vs potential
 	-- songs appears, and you haven't specifically changed state.DaurdablaMode.
 	state.AutoDaurdabla = false
 	
 	-- Set this to false if you don't want to use custom timers.
-	state.UseCustomTimers = true
+	state.UseCustomTimers = M(true, 'Use Custom Timers')
+
+	state.WeaponLock = M(false, 'Weapon Lock')
 
 	-------------------------------------------------
 	-- Default bindings
@@ -77,9 +80,10 @@ function user_setup()
 	-- "CTRL: ^ ALT: ! Windows Key: @ Apps Key: #"
 	
 	-- Additional local binds
-	--send_command('bind ^` gs c cycle ExtraSongsMode')
-	--send_command('bind f9 gs c cycle ExtraSongsMode')
-	send_command('bind !` input /ma "Chocobo Mazurka" <me>')
+	send_command('bind ^` gs c cycle ExtraSongsMode')
+	send_command('bind f9 gs c cycle ExtraSongsMode')
+	send_command('bind !` gs c toggle WeaponLock; input /echo --- Weapons Lock ---')
+	send_command('bind @` input /ma "Chocobo Mazurka" <me>')
 
 	-- Default macro set/book
 	set_macro_page(1, 9)
@@ -90,9 +94,10 @@ end
 
 -- Called when this job file is unloaded (eg: job change)
 function job_file_unload()
-	--send_command('unbind ^`')
-	--send_command('unbind f9')
+	send_command('unbind ^`')
+	send_command('unbind f9')
 	send_command('unbind !`')
+	send_command('unbind @`')
 end
 
 
@@ -292,7 +297,7 @@ function init_gear_sets()
 		--body="Chironic Doublet",
 		body="Brioso Justau. +2",
 		--hands="Inyan. Dastanas +2",
-		hands="Brioso Cuffs +2",
+		hands="Brioso Cuffs +3",
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
 		ring2="Stikini Ring",
@@ -357,6 +362,8 @@ function init_gear_sets()
 		feet="Bihu Slippers +1"
 	}
 
+	sets.midcast.DaurdablaDummy = set_combine(sets.midcast.ExtraSong,{})
+
 	sets.midcast['Herb Pastoral'] = set_combine(sets.midcast.ExtraSong,{})
 	sets.midcast['Goblin Gavotte'] = set_combine(sets.midcast.ExtraSong,{})
 	
@@ -366,7 +373,7 @@ function init_gear_sets()
 		legs="Fili Rhingrave +1"
 	})
 
-	-- For song defbuffs (duration primary, accuracy secondary)
+	-- For song debuffs (duration primary, accuracy secondary)
 	sets.midcast.SongDebuff = set_combine(sets.midcast.MACC,{
 		range="Gjallarhorn",
 		--neck="Aoidos' Matinee",
@@ -449,7 +456,7 @@ function init_gear_sets()
 	-- debuff sets, do not use set_combine as SongDebuff and ResistantSongDebuff sets need to kick in
 	sets.midcast.Lullaby = {
 		range=gear.Lullaby,
-		hands="Brioso Cuffs +2"
+		hands="Brioso Cuffs +3"
 	}
 	sets.midcast['Magic Finale'] = {
 		range=gear.Finale,
@@ -754,6 +761,14 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for non-casting events.
 -------------------------------------------------------------------------------------------------------------------
+
+function job_state_change(stateField, newValue, oldValue)
+	if state.WeaponLock.value == true then
+		disable('main','sub','range','ammo')
+	else
+		enable('main','sub','range','ammo')
+	end
+end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
 	if spell.type == 'BardSong' then
