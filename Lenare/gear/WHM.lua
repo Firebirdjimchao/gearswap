@@ -55,7 +55,7 @@ function init_gear_sets()
 	--80%/40% Total (80/40 cap) + 15% (if RDM sub) 
 	sets.precast.FC = {
 		-- 4%
-		main=gear.default.fastcast_staff,
+		main="Grioavolr",
 		sub="Enki Strap",
 		--ammo="Impatiens",
 		-- 10%
