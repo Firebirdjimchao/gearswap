@@ -817,45 +817,36 @@ function init_gear_sets()
 	-- EG: sets.engaged.Dagger.Accuracy.Evasion
 
 	-- Normal melee group
+	-- 24% Haste
 	sets.engaged = {
 		-- 8% Haste
 		head="Blistering Sallet +1",
 		neck="Asperity Necklace",
 		ear1="Zennaroi Earring",
 		ear2="Brutal Earring",
-		body="",
+		-- 3% Haste
+		body="Bagua Tunic +3",
+		-- 3% Haste
 		hands="Bagua Mitaines +3",
 		ring1="Rajas Ring",
 		ring2="Chirich Ring",
 		back="Buquwik Cape",
-		waist="Cetl Belt",
-		legs=empty,
-		feet=empty
-
-
-		head="Blistering Sallet +1",
-		neck="Asperity Necklace",
-		ear1="Telos Earring",
-		ear2="Brutal Earring",
-		-- 3% Haste
-		body="Nyame Mail",
-		-- 3% Haste
-		
-		ring1="Rajas Ring",
-		ring2="Petrov Ring",
-		back="Buquwik Cape",
 		-- 5% Haste
-		waist="Goading Belt",
+		waist="Cetl Belt",
 		-- 2% Haste
 		legs="Jhakri Slops +2",
 		-- 3% Haste
-		feet="Bagua Sandals +3",
+		feet="Bagua Sandals +3",		
 	}
-	
-	sets.engaged.Acc = set_combine(sets.engaged, {
+
+	sets.engaged.MidAcc = set_combine(sets.engaged, {
+		head="Bagua Galero +3",
 		neck="Sanctity Necklace",
-		ear1="Zennaroi Earring",
 		ring2="Cacoethic Ring",
+	})
+	
+	sets.engaged.Acc = set_combine(sets.engaged.MidAcc {
+		ear1="Zennaroi Earring",
 		back="Aurist's Cape +1",
 		waist="Eschan Stone",
 	})
