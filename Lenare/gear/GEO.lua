@@ -15,7 +15,7 @@ function user_setup()
 	--state.OffenseMode:options('None')
 	state.CastingMode:options('Normal', 'Resistant', 'Proc', 'Naked')
 	state.IdleMode:options('Normal', 'Encumbered', 'PDT', 'MDT', 'CP', 'CPPDT', 'CPMDT')
-	state.WeaponskillMode:options('Normal', 'Acc')
+	state.WeaponskillMode:options('Normal', 'MidAcc', 'Acc')
 
 	state.MagicBurst = M(false, 'Magic Burst')
 	state.WeaponLock = M(false, 'Weapon Lock')
@@ -86,10 +86,10 @@ function init_gear_sets()
 	sets.precast.JA['Radial Arcana'] = {feet="Bagua Sandals +3"}
 	
 	-- Fast cast sets for spells
-	-- 69%/34% Total (80/40 cap) + 15% (if RDM sub)
+	-- 72%/36% Total (80/40 cap) + 15% (if RDM sub)
 	sets.precast.FC = {
-		-- 4%
-		main=gear.default.fastcast_staff,
+		-- 6%
+		main="Gada",
 		-- 10%
 		head="Nahtirah Hat",
 		-- 4%
@@ -114,7 +114,7 @@ function init_gear_sets()
 		waist="Embla Sash",
 		-- 13%
 		legs="Geomancy Pants +2",
-		-- 3% + 1%~3%
+		-- 4% + 1%~3%
 		feet="Regal Pumps +1"      
 	}
 	
@@ -185,12 +185,64 @@ function init_gear_sets()
 	})
 	
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-	
+
+	-- 30% STR 30% MND, Critical hit chance varies with TP
 	sets.precast.WS['Hexa Strike'] = set_combine(sets.precast.WS,{
 		neck=gear.ElementalGorget
+		body="Jhakri Robe +2",
+		hands="Jhakri Cuffs +2",
+		legs="Jhakri Slops +2",
+		feet="Jhakri Pigaches +2",
 	})
-	sets.precast.WS['Retribution'] = set_combine(sets.precast.WS,{
+	sets.precast.WS['Hexa Strike'].MidAcc = set_combine(sets.precast.WS.MidAcc,sets.precast.WS['Hexa Strike'],{
+	})
+	sets.precast.WS['Hexa Strike'].Acc = set_combine(sets.precast.WS.Acc,sets.precast.WS['Hexa Strike'].MidAcc,{
+	})
+	-- 73%~85% MND, Acc varies with TP
+	sets.precast.WS['Realmrazer'] = set_combine(sets.precast.WS,{
 		neck=gear.ElementalGorget
+		body="Jhakri Robe +2",
+		hands="Jhakri Cuffs +2",
+		legs="Jhakri Slops +2",
+		feet="Jhakri Pigaches +2",
+	})
+	sets.precast.WS['Realmrazer'].MidAcc = set_combine(sets.precast.WS.MidAcc,sets.precast.WS['Realmrazer'],{
+	})
+	sets.precast.WS['Realmrazer'].Acc = set_combine(sets.precast.WS.Acc,sets.precast.WS['Realmrazer'].MidAcc,{
+	})
+	-- 50% INT 50% MND, Aftermath varies with TP
+	sets.precast.WS['Exudation'] = set_combine(sets.precast.WS,{
+		neck=gear.ElementalGorget
+		body="Jhakri Robe +2",
+		hands="Jhakri Cuffs +2",
+		waist="Luminary Sash",
+		legs="Jhakri Slops +2",
+		feet="Jhakri Pigaches +2",
+	})
+	sets.precast.WS['Exudation'].MidAcc = set_combine(sets.precast.WS.MidAcc,sets.precast.WS['Exudation'],{
+	})
+	sets.precast.WS['Exudation'].Acc = set_combine(sets.precast.WS.Acc,sets.precast.WS['Exudation'].MidAcc,{
+	})
+	-- 70% MND 30% STR, Damage varies with TP
+	sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS,{
+		neck=gear.ElementalGorget
+		ear2="Moonshade Earring",
+		body="Jhakri Robe +2",
+		hands="Jhakri Cuffs +2",
+		waist="Luminary Sash",
+		legs="Jhakri Slops +2",
+		feet="Jhakri Pigaches +2",
+	})
+	sets.precast.WS['Black Halo'].MidAcc = set_combine(sets.precast.WS.MidAcc,sets.precast.WS['Black Halo'],{
+	})
+	sets.precast.WS['Black Halo'].Acc = set_combine(sets.precast.WS.Acc,sets.precast.WS['Black Halo'].MidAcc,{
+	})
+
+	sets.precast.WS['Retribution'] = set_combine(sets.precast.WS,{
+	})
+	sets.precast.WS['Retribution'].MidAcc = set_combine(sets.precast.WS.MidAcc,{
+	})
+	sets.precast.WS['Retribution'].Acc = set_combine(sets.precast.WS.Acc,{
 	})
 	
 	-- Magical WS
@@ -207,7 +259,24 @@ function init_gear_sets()
 	--------------------------------------
 	
 	-- Base fast recast for spells
+	-- 27% Haste
 	sets.midcast.FastRecast = set_combine(sets.precast.FC,{
+		-- 8% Haste
+		head="Blistering Sallet +1",
+		neck="Twilight Torque",
+		-- 3% Haste
+		body="Bagua Tunic +3",
+		-- 3% Haste
+		hands="Geo. Mitaines +2",
+		ring1=gear.DarkRing.physical,
+		ring2="Defending Ring",
+		back="Moonbeam Cape",
+		-- 5% Haste
+		waist="Cetl Belt",
+		-- 5% Haste
+		legs="Bagua Pants +3",
+		-- 3% Haste
+		feet="Bagua Sandals +3"
 	});
 	
 	sets.midcast.MACC = {
@@ -671,7 +740,7 @@ function init_gear_sets()
 		head="Blistering Sallet +1",
 		-- 5%
 		neck="Twilight Torque",
-		body="Jhakri Robe +2",
+		body="Bagua Tunic +3",
 		-- 1%
 		hands="Geo. Mitaines +2",
 		-- 4%

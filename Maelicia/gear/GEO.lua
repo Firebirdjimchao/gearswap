@@ -236,6 +236,7 @@ function init_gear_sets()
 		hands="Jhakri Cuffs +2",
 		ring2="Metamor. Ring +1",
 		back="Aurist's Cape +1",
+		waist="Luminary Sash",
 		legs="Jhakri Slops +2",
 		feet="Jhakri Pigaches +2",
 	})
@@ -251,6 +252,7 @@ function init_gear_sets()
 		hands="Jhakri Cuffs +2",
 		ring2="Metamor. Ring +1",
 		back="Aurist's Cape +1",
+		waist="Luminary Sash",
 		legs="Jhakri Slops +2",
 		feet="Jhakri Pigaches +2",
 	})
@@ -280,19 +282,25 @@ function init_gear_sets()
 	--------------------------------------
 	
 	-- Base fast recast for spells
+	-- 26% Haste
 	sets.midcast.FastRecast = set_combine(sets.precast.FC, {
+		-- 8% Haste
 		head="Blistering Sallet +1",
 		neck="Loricate Torque +1",
 		ear1="Genmei Earring",
-		body="Shamash Robe",
+		-- 3% Haste
+		body="Nyame Mail",
+		-- 3% Haste
 		hands="Geo. Mitaines +2",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
+		-- 5% Haste
 		waist="Goading Belt",
-		legs="Gyve Trousers",
-		--feet="Azimuth Gaiters +1"
-		feet=gear.Vanya_feet_B
+		-- 5% Haste
+		legs="Bagua Pants +3",
+		-- 3% Haste
+		feet="Geo. Sandals +3",		
 	})
 	
 	sets.midcast.MACC = {
