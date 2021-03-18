@@ -74,17 +74,19 @@ function init_gear_sets()
 	}
 
 	-- Defense sets
-	-- DT: 33%
-	-- PDT: 20% (22% with Alber Stap)
-	-- MDT: 21%
-	-- Eva: 328
-	-- Meva: 483
+	-- DT: 40%
+	-- PDT: 20% (22% with Alber Strap)
+	-- MDT: 17%
+	-- Eva: 378
+	-- Meva: 563
 	-- Ailment resist: 26
 	sets.DT = {
 		-- DT 3% Ailment 11
 		ammo="Staunch Tathlum +1",
 		-- MDT 4% Eva 41 Meva 43
-		head="Dampening Tam",
+		--head="Dampening Tam",
+		-- DT 7% Eva 91 Meva 123
+		head="Nyame Helm",
 		-- DT 6%
 		neck="Futhark Torque +1",
 		-- MDT 2%
@@ -117,9 +119,9 @@ function init_gear_sets()
 		feet="Ahosi Leggings",
 	}
 	-- Defense sets
-	-- DT: 24%
-	-- PDT: 18% (20% with Alber Stap)
-	-- MDT: 19%
+	-- DT: 31%
+	-- PDT: 18% (20% with Alber Strap)
+	-- MDT: 15%
 	-- Eva: 295
 	-- Meva: 428
 	-- Ailment resist: 47

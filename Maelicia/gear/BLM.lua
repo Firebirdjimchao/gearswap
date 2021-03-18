@@ -239,16 +239,25 @@ function init_gear_sets()
 	-- Midcast sets
 	--------------------------------------
 	
+	-- 25% Haste
 	sets.midcast.FastRecast = set_combine(sets.precast.FC,{
 		ammo="Staunch Tathlum +1",
-		head="Blistering Sallet +1",
+		-- 6% Haste
+		head="Nyame Helm",
+		ear2="Genmei Earring",
 		neck="Loricate Torque +1",
-		body="Shamash Robe",
+		-- 3% Haste
+		body="Nyame Mail",
+		-- 3% Haste 3% FC
+		hands="Otomi Gloves",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
+		-- 5% Haste
 		waist="Goading Belt",
+		-- 5% Haste
 		legs="Gyve Trousers",
+		-- 3% Haste
 		feet=gear.Vanya_feet_B
 	})
 	
@@ -753,50 +762,30 @@ function init_gear_sets()
 	sets.idle.Encumbered = set_combine(sets.midcast.MAB,{
 	})
 	
-	-- Total: 37% + 20% (DT Staff) + 6% (Khonsu)
-	-- <36%: use Shadow Mantle
-	sets.idle.PDT = set_combine(sets.idle,{
-		--main=gear.Staff.DT,
-		-- 6% DT
-		--sub="Khonsu",
-		-- 2%
-		ammo="Staunch Tathlum +1",
-		head="Blistering Sallet +1",
-		-- 5%
-		neck="Loricate Torque +1",
-		-- 10%
-		body="Shamash Robe",
-		-- 5%
-		ring1="Dark Ring",
-		-- 10%
-		ring2="Defending Ring",
-		-- 5%
-		back="Moonbeam Cape",
-		legs="Gyve Trousers",
-		feet=gear.Vanya_feet_B
-	})
-	
-	-- DT: 32% DT
-	-- PDT: 5%
-	-- MDT: 15%
+	-- DT: 39% DT
+	-- PDT: 7%
+	-- MDT: 11%
 	-- MDB: 31
+	-- Meva: 553
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
-	sets.idle.MDT = set_combine(sets.idle,{
+	sets.idle.PDT = set_combine(sets.idle,{
+		-- 20% DT
+		--main=gear.Staff.DT,
 		-- 6% DT
 		--sub="Khonsu",
 		-- 2% DT
 		ammo="Staunch Tathlum +1",
-		-- 7 MDB
-		head="Arch. Petasos +3",
+		-- 7% DT 5 MDB 123 Meva
+		head="Nyame Helm",
 		-- 6% DT
 		neck="Loricate Torque +1",
 		-- 3% MDT
 		ear1="Etiolation Earring",
-		-- 2% MDT
-		ear2="Odnowa Earring +1",
-		-- 9% DT MDB 8
+		-- 2% PDT
+		ear2="Genmei Earring",
+		-- 9% DT 8 MDB 139 Meva
 		body="Nyame Mail",
-		-- 5 MDB
+		-- 5 MDB 57 Meva
 		hands="Arch. Gloves +3",
 		-- 5% PDT 5% MDT
 		ring1="Dark Ring",
@@ -805,9 +794,51 @@ function init_gear_sets()
 		-- 5% DT
 		back="Moonbeam Cape",
 		--back="Mecisto. Mantle",
-		-- 2% MDT 6 MDB
-		legs="Gyve Trousers",
-		-- 3% MDT 5 MDB
+		-- 2% MDT 6 MDB 107 Meva
+		--legs="Gyve Trousers",
+		-- 8 MDB 127 Meva
+		legs="Arch. Tonban +3",
+		-- 3% MDT 5 MDB 107 Meva
+		feet=gear.Vanya_feet_B
+	})
+	
+	-- DT: 39% DT
+	-- PDT: 7%
+	-- MDT: 11%
+	-- MDB: 31
+	-- Meva: 553
+	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
+	sets.idle.MDT = set_combine(sets.idle,{
+		-- 20% DT
+		--main=gear.Staff.DT,
+		-- 6% DT
+		--sub="Khonsu",
+		-- 2% DT
+		ammo="Staunch Tathlum +1",
+		-- 7% DT 5 MDB 123 Meva
+		head="Nyame Helm",
+		-- 6% DT
+		neck="Loricate Torque +1",
+		-- 3% MDT
+		ear1="Etiolation Earring",
+		-- 2% PDT
+		ear2="Genmei Earring",
+		-- 9% DT 8 MDB 139 Meva
+		body="Nyame Mail",
+		-- 5 MDB 57 Meva
+		hands="Arch. Gloves +3",
+		-- 5% PDT 5% MDT
+		ring1="Dark Ring",
+		-- 10% DT
+		ring2="Defending Ring",
+		-- 5% DT
+		back="Moonbeam Cape",
+		--back="Mecisto. Mantle",
+		-- 2% MDT 6 MDB 107 Meva
+		--legs="Gyve Trousers",
+		-- 8 MDB 127 Meva
+		legs="Arch. Tonban +3",
+		-- 3% MDT 5 MDB 107 Meva
 		feet=gear.Vanya_feet_B
 	})
 	
