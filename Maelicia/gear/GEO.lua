@@ -16,7 +16,7 @@ function user_setup()
 	--state.OffenseMode:options('None')
 	state.CastingMode:options('Normal', 'Resistant', 'Proc', 'Naked')
 	state.IdleMode:options('Normal', 'Encumbered', 'PDT', 'MDT', 'CP', 'CPPDT', 'CPMDT')
-	state.WeaponskillMode:options('Normal', 'Acc')
+	state.WeaponskillMode:options('Normal', 'MidAcc', 'Acc')
 
 	state.MagicBurst = M(false, 'Magic Burst')
 	state.WeaponLock = M(false, 'Weapon Lock')
@@ -156,7 +156,7 @@ function init_gear_sets()
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
-		head=gear.Merlinic_head_nuke,
+		head="Nyame Helm",
 		neck="Fotia Gorget",
 		ear1="Brutal Earring",
 		ear2="Moonshade Earring",
@@ -200,9 +200,70 @@ function init_gear_sets()
 	
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	
+	-- 30% STR 30% MND, Critical hit chance varies with TP
 	sets.precast.WS['Hexa Strike'] = set_combine(sets.precast.WS,{
+		ear1="Telos Earring",
+		body="Jhakri Robe +2",
+		hands="Jhakri Cuffs +2",
+		ring2="Metamor. Ring +1",
+		back="Aurist's Cape +1",
+		legs="Jhakri Slops +2",
+		feet="Jhakri Pigaches +2",
 	})
+	sets.precast.WS['Hexa Strike'].MidAcc = set_combine(sets.precast.WS.MidAcc,sets.precast.WS['Hexa Strike'],{
+	})
+	sets.precast.WS['Hexa Strike'].Acc = set_combine(sets.precast.WS.Acc,sets.precast.WS['Hexa Strike'].MidAcc,{
+	})
+	-- 73%~85% MND, Acc varies with TP
+	sets.precast.WS['Realmrazer'] = set_combine(sets.precast.WS,{
+		ear1="Telos Earring",
+		body="Jhakri Robe +2",
+		hands="Jhakri Cuffs +2",
+		ring2="Metamor. Ring +1",
+		back="Aurist's Cape +1",
+		legs="Jhakri Slops +2",
+		feet="Jhakri Pigaches +2",
+	})
+	sets.precast.WS['Realmrazer'].MidAcc = set_combine(sets.precast.WS.MidAcc,sets.precast.WS['Realmrazer'],{
+	})
+	sets.precast.WS['Realmrazer'].Acc = set_combine(sets.precast.WS.Acc,sets.precast.WS['Realmrazer'].MidAcc,{
+	})
+	-- 50% INT 50% MND, Aftermath varies with TP
+	sets.precast.WS['Exudation'] = set_combine(sets.precast.WS,{
+		ear1="Telos Earring",
+		ear2="Regal Earring",
+		body="Jhakri Robe +2",
+		hands="Jhakri Cuffs +2",
+		ring2="Metamor. Ring +1",
+		back="Aurist's Cape +1",
+		legs="Jhakri Slops +2",
+		feet="Jhakri Pigaches +2",
+	})
+	sets.precast.WS['Exudation'].MidAcc = set_combine(sets.precast.WS.MidAcc,sets.precast.WS['Exudation'],{
+	})
+	sets.precast.WS['Exudation'].Acc = set_combine(sets.precast.WS.Acc,sets.precast.WS['Exudation'].MidAcc,{
+	})
+	-- 70% MND 30% STR, Damage varies with TP
+	sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS,{
+		ear1="Regal Earring",
+		ear2="Moonshade Earring",
+		body="Jhakri Robe +2",
+		hands="Jhakri Cuffs +2",
+		ring2="Metamor. Ring +1",
+		back="Aurist's Cape +1",
+		legs="Jhakri Slops +2",
+		feet="Jhakri Pigaches +2",
+	})
+	sets.precast.WS['Black Halo'].MidAcc = set_combine(sets.precast.WS.MidAcc,sets.precast.WS['Black Halo'],{
+	})
+	sets.precast.WS['Black Halo'].Acc = set_combine(sets.precast.WS.Acc,sets.precast.WS['Black Halo'].MidAcc,{
+	})
+
 	sets.precast.WS['Retribution'] = set_combine(sets.precast.WS,{
+	})
+	sets.precast.WS['Retribution'].MidAcc = set_combine(sets.precast.WS.MidAcc,{
+	})
+	sets.precast.WS['Retribution'].Acc = set_combine(sets.precast.WS.Acc,{
 	})
 	
 	-- Magical WS
@@ -709,7 +770,7 @@ function init_gear_sets()
 		--main="Idris",
 		sub="Genmei Shield",				
 		range=gear.GeoBell,
-		head="Amalric Coif",
+		head="Nyame Helm",
 		neck="Loricate Torque +1",
 		ear1="Etiolation Earring",
 		ear2="Odnowa Earring +1",
@@ -728,9 +789,11 @@ function init_gear_sets()
 	sets.idle.Encumbered = set_combine(sets.midcast.MAB,{
 	})
 
-	-- DT: 47%
-	-- PDT: 22%
-	-- MDT: 10%
+	-- DT: 63%
+	-- PDT: 0
+	-- MDT: 5%
+	-- MDB: 32
+	-- Meva: 573
 	-- To cap MDT: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	-- <36%: use Shadow Mantle
 	sets.idle.PDT = set_combine(sets.idle,{
@@ -738,60 +801,69 @@ function init_gear_sets()
 		main=gear.Staff.DT,
 		-- 6% DT
 		sub="Khonsu",
-		-- 3% PDT
-		head="Blistering Sallet +1",
-		-- 6% DT
-		neck="Loricate Torque +1",
-		-- 2% PDT
-		ear1="Genmei Earring",
-		-- 10% PDT
-		body="Shamash Robe",
-		-- 2% PDT
-		hands="Geo. Mitaines +2",
-		-- 5% PDT 5% MDT
-		ring1="Dark Ring",
-		-- 10% DT
-		ring2="Defending Ring",
-		-- 5% DT
-		back="Moonbeam Cape",
-		-- 2% MDT
-		legs="Gyve Trousers",
-		--feet="Azimuth Gaiters +1"
-		-- 3% MDT
-		feet=gear.Vanya_feet_B
-	})
-			
-	-- DT: 51%
-	-- PDT: 0
-	-- MDT: 10%
-	-- MDB: 28
-	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
-	sets.idle.MDT = set_combine(sets.idle,{
-		-- 20% DT
-		main=gear.Staff.DT,
-		-- 6% DT
-		sub="Khonsu",
-		-- 6 MDB
-		head="Azimuth Hood +1",
+		-- 7% DT 5 MDB 123 Meva
+		head="Nyame Helm",
 		-- 6% DT
 		neck="Loricate Torque +1",
 		-- 3% MDT
 		ear1="Etiolation Earring",
 		-- 2% MDT
 		ear2="Odnowa Earring +1",
-		-- 9% DT MDB 8
+		-- 9% DT 8 MDB 139 Meva
 		body="Nyame Mail",
-		-- 3 MDB
-		hands="Geo. Mitaines +2",
+		-- 5 MDB 57 Meva
+		hands="Bagua Mitaines +3",
 		ring1="Shadow Ring",
 		-- 10% DT
 		ring2="Defending Ring",
 		-- 5% DT
 		back="Moonbeam Cape",
-		-- 2% MDT 6 MDB
-		legs="Gyve Trousers",
-		-- 3% MDT 5 MDB
-		feet=gear.Vanya_feet_B
+		-- 2% MDT 6 MDB 107 Meva
+		--legs="Gyve Trousers",
+		-- 8 MDB 127 Meva
+		legs="Bagua Pants +3",
+		-- 3% MDT 5 MDB 107 Meva
+		--feet=gear.Vanya_feet_B
+		-- 6 MDB 127 Meva
+		feet="Geo. Sandals +3",
+	})
+			
+	-- DT: 63%
+	-- PDT: 0
+	-- MDT: 5%
+	-- MDB: 32
+	-- Meva: 573
+	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
+	sets.idle.MDT = set_combine(sets.idle,{
+		-- 20% DT
+		main=gear.Staff.DT,
+		-- 6% DT
+		sub="Khonsu",
+		-- 7% DT 5 MDB 123 Meva
+		head="Nyame Helm",
+		-- 6% DT
+		neck="Loricate Torque +1",
+		-- 3% MDT
+		ear1="Etiolation Earring",
+		-- 2% MDT
+		ear2="Odnowa Earring +1",
+		-- 9% DT 8 MDB 139 Meva
+		body="Nyame Mail",
+		-- 5 MDB 57 Meva
+		hands="Bagua Mitaines +3",
+		ring1="Shadow Ring",
+		-- 10% DT
+		ring2="Defending Ring",
+		-- 5% DT
+		back="Moonbeam Cape",
+		-- 2% MDT 6 MDB 107 Meva
+		--legs="Gyve Trousers",
+		-- 8 MDB 127 Meva
+		legs="Bagua Pants +3",
+		-- 3% MDT 5 MDB 107 Meva
+		--feet=gear.Vanya_feet_B
+		-- 6 MDB 127 Meva
+		feet="Geo. Sandals +3",
 	})
 	
 	sets.idle.CP = set_combine(sets.idle,{
@@ -806,6 +878,7 @@ function init_gear_sets()
 	sets.idle.Town = set_combine(sets.idle,{
 		main="Idris",
 		sub="Ammurapi Shield",
+		head="Nyame Helm",
 		--body="Councilor's Garb",
 		body="Shamash Robe",
 		feet="Geo. Sandals +3"

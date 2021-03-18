@@ -218,7 +218,7 @@ function init_gear_sets()
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
-		head="Blistering Sallet +1",
+		head="Nyame Helm",
 		neck="Fotia Necklace",
 		ear1="Brutal Earring",
 		ear2="Moonshade Earring",
@@ -232,7 +232,7 @@ function init_gear_sets()
 		feet="Aya. Gambieras +2",
 	}
 	sets.precast.WS.MAB = set_combine(sets.precast.WS,{
-		head=gear.Chironic_head_nuke,
+		head="Nyame Helm",
 		--neck="Sanctity Necklace",
 		ear1="Regal Earring",
 		ear2="Malignance Earring",
@@ -268,20 +268,35 @@ function init_gear_sets()
 	-- Midcast Sets
 
 	-- General set for recast times.
+	-- Haste 30%
+	-- DT 49%
+	-- PDT 5% PDT
+	-- MDT 19%
 	sets.midcast.FastRecast = set_combine(sets.precast.FC,{
-		-- 5% 5RC
-		head="Nahtirah Hat",
-		-- 2% 7RC
-		body="Inyanga Jubbah +2",
-		-- 7RC
-		hands="Gendewitha Gages",
+		-- 6% Haste 5 MDB 7% DT
+		head="Nyame Helm",
+		-- 6% DT
+		neck="Loricate Torque +1",
+		-- 3% MDT
+		ear1="Etiolation Earring",
+		-- 2% MDT
+		ear2="Odnowa Earring +1",
+		-- 3% Haste 8 MDB 9% DT
+		body="Nyame Mail",
+		-- 4% Haste 5 MDB 4% MDT
+		hands="Inyan. Dastanas +2",
+		-- 5% PDT, 5% MDT
+		ring1="Dark Ring",
+		-- 10% DT
 		ring2="Defending Ring",
-		-- 5% 2RC
-		waist="Embla Sash",
-		-- 5% 2RC
-		legs="Lengo Pants",
-		-- 3%
-		feet="Brioso Slippers +3"
+		-- 5% DT
+		back="Moonbeam Cape",
+		-- 5% Haste
+		waist="Goading Belt",
+		-- 9% Haste MDB 5 9% DT
+		legs="Aya. Cosciales +2",
+		-- 3% Haste 5 MDB 3% DT
+		feet="Aya. Gambieras +2",
 	})
 	
 	sets.midcast.MACC = {
@@ -314,7 +329,8 @@ function init_gear_sets()
 		main="Daybreak",
 		sub="Ammurapi Shield",
 		ammo="Ombre Tathlum +1",
-		head="Chironic Hat",
+		--head="Chironic Hat",
+		head="Nyame Helm",
 		neck="Sanctity Necklace",
 		ear1="Regal Earring",
 		ear2="Malignance Earring",
@@ -615,7 +631,7 @@ function init_gear_sets()
 		sub="Genmei Shield",
 		--range=gear.AllSongs,
 		range="Marsyas",
-		head="Inyanga Tiara +2",
+		head="Nyame Helm",
 		neck="Loricate Torque +1",
 		ear1="Etiolation Earring",
 		ear2="Odnowa Earring +1",
@@ -632,10 +648,10 @@ function init_gear_sets()
 	
 	sets.noprotect = {ring1="Sheltered Ring"}
 
-	-- DT: 30% DT
+	-- DT: 42% DT
 	-- PDT: 9%
-	-- MDT: 28%
-	-- MDB: 38
+	-- MDT: 19%
+	-- MDB: 31
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.idle.DT = set_combine(sets.idle,{		
 		-- 20% PDT
@@ -663,9 +679,13 @@ function init_gear_sets()
 		-- 4% PDT
 		waist="Flume Belt +1",
 		-- 9 MDB 6% MDT
-		legs="Inyanga Shalwar +2",
+		--legs="Inyanga Shalwar +2",
+		-- MDB 5 9% DT
+		legs="Aya. Cosciales +2",
 		-- 8 MDB 3% MDT
-		feet="Inyan. Crackows +2"
+		--feet="Inyan. Crackows +2",
+		-- 5 MDB 3% DT
+		feet="Aya. Gambieras +2",
 	})
 
 	sets.idle.PDT = set_combine(sets.idle.DT,{

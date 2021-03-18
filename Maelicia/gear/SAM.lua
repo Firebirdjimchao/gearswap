@@ -713,13 +713,13 @@ function init_gear_sets()
 		-- 3% Hasso +2
 		feet="Wakido Sune. +3",
 	}
-	-- 59~63 gear STP + 10 (Dojikiri Yasutsuna) = total: 69~73
+	-- 62~66 gear STP + 10 (Dojikiri Yasutsuna) = total: 72~76
 	-- Must use Utu Grip
 	--
 	-- Gear Haste: 25%
 	-- JA Haste (Hasso): 10 base + 6 gear = 16%
 	-- /war base:
-	-- 1261 ACC
+	-- 1267 ACC
 	-- 1407 ATK
 	sets.engaged.MidAcc = set_combine(sets.engaged,{
 		--sub="Utu Grip",
@@ -729,7 +729,8 @@ function init_gear_sets()
 		head="Flam. Zucchetto +2",
 		-- STP 7 + 7 aug
 		neck="Sam. Nodowa +2",
-		ear1="Trux Earring",
+		-- 3 STP
+		ear1="Cessance Earring",
 		-- 1 STP
 		ear2="Brutal Earring",
 		-- 1%
@@ -796,15 +797,15 @@ function init_gear_sets()
 		-- 3% Hasso +2
 		feet="Wakido Sune. +3",
 	})
-	-- 55 gear STP + 10 (Dojikiri Yasutsuna) = total: 65
+	-- 62 gear STP + 10 (Dojikiri Yasutsuna) = total: 72
 	-- Must use Utu Grip
 	--
 	-- Gear Haste: 30%
 	-- JA Haste (Hasso): 10 base + 6 gear = 16%
 	--
 	-- /war base:
-	-- 1320 ACC
-	-- 1447 ATK
+	-- 1334 ACC
+	-- 1446 ATK
 	sets.engaged.FullAcc = set_combine(sets.engaged,{
 		--sub="Utu Grip",
 		-- 3 STP
@@ -816,7 +817,7 @@ function init_gear_sets()
 		-- 5 STP
 		ear1="Telos Earring",
 		ear2="Digni. Earring",
-		-- 3% Haste
+		-- 9 STP 3% Haste
 		body="Wakido Domaru +3",
 		--hands=gear.Ryuo_hands_D,
 		-- 7 STP 4% Haste Hasso +4
