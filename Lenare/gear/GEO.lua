@@ -188,7 +188,7 @@ function init_gear_sets()
 
 	-- 30% STR 30% MND, Critical hit chance varies with TP
 	sets.precast.WS['Hexa Strike'] = set_combine(sets.precast.WS,{
-		neck=gear.ElementalGorget
+		neck=gear.ElementalGorget,
 		body="Jhakri Robe +2",
 		hands="Jhakri Cuffs +2",
 		legs="Jhakri Slops +2",
@@ -200,7 +200,7 @@ function init_gear_sets()
 	})
 	-- 73%~85% MND, Acc varies with TP
 	sets.precast.WS['Realmrazer'] = set_combine(sets.precast.WS,{
-		neck=gear.ElementalGorget
+		neck=gear.ElementalGorget,
 		body="Jhakri Robe +2",
 		hands="Jhakri Cuffs +2",
 		legs="Jhakri Slops +2",
@@ -212,7 +212,7 @@ function init_gear_sets()
 	})
 	-- 50% INT 50% MND, Aftermath varies with TP
 	sets.precast.WS['Exudation'] = set_combine(sets.precast.WS,{
-		neck=gear.ElementalGorget
+		neck=gear.ElementalGorget,
 		body="Jhakri Robe +2",
 		hands="Jhakri Cuffs +2",
 		waist="Luminary Sash",
@@ -225,7 +225,7 @@ function init_gear_sets()
 	})
 	-- 70% MND 30% STR, Damage varies with TP
 	sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS,{
-		neck=gear.ElementalGorget
+		neck=gear.ElementalGorget,
 		ear2="Moonshade Earring",
 		body="Jhakri Robe +2",
 		hands="Jhakri Cuffs +2",
@@ -914,7 +914,7 @@ function init_gear_sets()
 		ring2="Cacoethic Ring",
 	})
 	
-	sets.engaged.Acc = set_combine(sets.engaged.MidAcc {
+	sets.engaged.Acc = set_combine(sets.engaged.MidAcc, {
 		ear1="Zennaroi Earring",
 		back="Aurist's Cape +1",
 		waist="Eschan Stone",
