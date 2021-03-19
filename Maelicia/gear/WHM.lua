@@ -25,7 +25,7 @@ function init_gear_sets()
 
 	-- Fast cast sets for spells
 	
-	-- 70%/35% Total (80/40 cap) + 15% (if RDM sub)
+	-- 73%/36% + 1%~3% Total (80/40 cap) + 15% (if RDM sub)
 	sets.precast.FC = {
 		-- 3%
 		--main=gear.FastcastStaff,
@@ -240,15 +240,15 @@ function init_gear_sets()
 		neck="Incanter's Torque",
 		body="Ebers Bliaud +1",
 		hands="Inyan. Dastanas +2",
-		ring1="Sirona's Ring",
-		ring2="Ephedra Ring",
+		ring1="Menelaus's Ring",
+		ring2="Sirona's Ring",
 		back="Mending Cape",
 		waist="Luminary Sash",
 		legs="Piety Pantaln. +1",
 		feet=gear.Vanya_feet_B
 	}
 
-	-- 46% (+3%~4%)+ 4% II Total
+	-- 51% (+3%~4%)+ 4% II Total
 	sets.midcast.Cure = set_combine(sets.midcast['Healing Magic'],{
 		-- 10% 2% II
 		main="Queller Rod",
@@ -265,6 +265,8 @@ function init_gear_sets()
 		body="Ebers Bliaud +1",
 		-- 10%
 		hands="Telchine Gloves",
+		-- 5%
+		ring1="Menelaus's Ring",
 		waist=gear.ElementalObi,
 		legs="Ebers Pant. +1",
 		-- 5%
@@ -292,8 +294,8 @@ function init_gear_sets()
 	sets.midcast.Cursna = set_combine(sets.midcast['Healing Magic'],{
 		neck="Malison Medallion",
 		hands="Fanatic Gloves",
-		ring1="Ephedra Ring",
-		ring2="Ephedra Ring",
+		ring1="Menelaus's Ring",
+		ring2="Haoma's Ring",
 		back="Mending Cape",
 		legs="Theo. Pant. +1",
 		feet="Gende. Galosh +1"

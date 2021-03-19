@@ -319,8 +319,8 @@ function init_gear_sets()
 		neck="Incanter's Torque",
 		body="Viti. Tabard +3",
 		hands=gear.Vanya_hands_B,
-		ring1="Sirona's Ring",
-		ring2="Ephedra Ring",
+		ring1="Menelaus's Ring",
+		ring2="Sirona's Ring",
 		--legs="Carmine Cuisses +1",
 		legs="Atrophy Tights +3",
 		feet=gear.Vanya_feet_B
@@ -337,13 +337,15 @@ function init_gear_sets()
 		ear1="Malignance Earring",
 		-- 5%
 		--ear2="Roundel Earring",
-		--ear2="Novia Earring",
+		ear2="Novia Earring",
 		-- 5%
-		ear2="Mendi. Earring",
+		--ear2="Mendi. Earring",
 		-- 13%
 		--body="Vrikodara Jupon",
 		body="Viti. Tabard +3",
 		hands=gear.Vanya_hands_B,
+		-- 5%
+		ring1="Menelaus's Ring",
 		back=gear.sucellos_mnd,
 		waist="Luminary Sash",
 		-- 12%
@@ -360,8 +362,8 @@ function init_gear_sets()
 	
 	sets.midcast.Cursna = set_combine(sets.midcast['Healing Magic'],{
 		neck="Malison Medallion",
-		ring1="Ephedra Ring",
-		ring2="Ephedra Ring",
+		ring1="Menelaus's Ring",
+		ring2="Haoma's Ring",
 		feet="Gende. Galosh +1"
 	})
 

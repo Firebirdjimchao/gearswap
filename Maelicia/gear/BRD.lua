@@ -484,13 +484,13 @@ function init_gear_sets()
 		neck="Incanter's Torque",
 		body=gear.Vanya_body_B,
 		hands="Inyan. Dastanas +2",
-		ring1="Sirona's Ring",
-		ring2="Ephedra Ring",
+		ring1="Menelaus's Ring",
+		ring2="Sirona's Ring",
 		back="Altruistic Cape",
 		feet=gear.Vanya_feet_B
 	}	
 	
-	-- 50% Total
+	-- 55% Total
 	sets.midcast.Cure = set_combine(sets.midcast['Healing Magic'],{
 		-- 30%
 		main="Daybreak",
@@ -502,6 +502,8 @@ function init_gear_sets()
 		-- 13%
 		body="Vrikodara Jupon",
 		hands="Inyan. Dastanas +2",
+		-- 5%
+		ring1="Menelaus's Ring",
 		-- 8%
 		legs="Chironic Hose",
 		-- 5%
@@ -516,8 +518,8 @@ function init_gear_sets()
 	})
 	sets.midcast.Cursna = set_combine(sets.midcast['Healing Magic'],{
 		neck="Malison Medallion",
-		ring1="Ephedra Ring",
-		ring2="Ephedra Ring",
+		ring1="Menelaus's Ring",
+		ring2="Haoma's Ring",
 		feet="Gende. Galosh +1"
 	})
 	sets.midcast.CursnaSelf = set_combine(sets.midcast.Cursna,{

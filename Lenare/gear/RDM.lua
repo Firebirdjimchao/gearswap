@@ -256,7 +256,7 @@ function init_gear_sets()
 		neck="Incanter's Torque",
 		body="Viti. Tabard +3",
 		ring1="Sirona's Ring",
-		ring2="Ephedra Ring",
+		ring2="Haoma's Ring",
 		legs="Carmine Cuisses +1",
 		feet=gear.Vanya_feet_B
 	}
@@ -294,8 +294,8 @@ function init_gear_sets()
 	
 	sets.midcast.Cursna = set_combine(sets.midcast['Healing Magic'],{
 		neck="Malison Medallion",
-		ring1="Ephedra Ring",
-		ring2="Ephedra Ring",
+		ring1="Haoma's Ring",
+		ring2="Haoma's Ring",
 		feet="Gende. Galoshes"
 	})
 

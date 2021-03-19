@@ -265,7 +265,7 @@ function init_gear_sets()
 		body="Ebers Bliaud +1",
 		hands="Inyan. Dastanas +2",
 		ring1="Sirona's Ring",
-		ring2="Ephedra Ring",
+		ring2="Haoma's Ring",
 		back="Mending Cape",
 		waist="Luminary Sash",
 		legs="Piety Pantaln. +1",
@@ -326,8 +326,8 @@ function init_gear_sets()
 	sets.midcast.Cursna = set_combine(sets.midcast['Healing Magic'],{
 		neck="Malison Medallion",
 		hands="Fanatic Gloves",
-		ring1="Ephedra Ring",
-		ring2="Ephedra Ring",
+		ring1="Haoma's Ring",
+		ring2="Haoma's Ring",
 		back="Alaunus's Cape",
 		legs="Th. Pant. +3",
 		feet="Gende. Galoshes"
