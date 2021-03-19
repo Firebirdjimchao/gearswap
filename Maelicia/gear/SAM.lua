@@ -587,8 +587,6 @@ function init_gear_sets()
 	sets.defense.MDT = set_combine(sets.defense.DT,{
 		--neck="Inq. Bead Necklace",
 		body="Sacro Breastplate",
-		hands="Leyline Gloves",
-		ring1="Shadow Ring",
 	})
 	
 	sets.Kiting = {feet="Danzo Sune-ate"}
