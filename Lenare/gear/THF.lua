@@ -97,7 +97,7 @@ function init_gear_sets()
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
 		body="Meg. Cuirie +2",
-		hands="Pillager's Armlets",
+		hands="Pill. Armlets +1",
 		ring1="Garuda Ring +1",
 		ring2="Garuda Ring +1",
 		back="Canny Cape",
@@ -116,10 +116,10 @@ function init_gear_sets()
 	-- Precast sets to enhance JAs
 	sets.precast.JA['Collaborator'] = {head="Skulker's Bonnet +1"}
 	sets.precast.JA['Accomplice'] = {head="Skulker's Bonnet +1"}
-	sets.precast.JA['Flee'] = {feet="Pillager's Poulaines"}
-	sets.precast.JA['Hide'] = {body="Pillager's Vest"}
+	sets.precast.JA['Flee'] = {feet="Pill. Poulaines +1"}
+	sets.precast.JA['Hide'] = {body="Pillager's Vest +1"}
 	sets.precast.JA['Conspirator'] = {body="Skulker's Vest +1"}
-	sets.precast.JA['Steal'] = {hands="Pillager's Armlets",legs="Assassin's Culottes",feet="Pillager's Poulaines"}
+	sets.precast.JA['Steal'] = {neck="Rabbit Charm",hands="Pill. Armlets +1",legs="Assassin's Culottes",feet="Pill. Poulaines +1"}
 	sets.precast.JA['Despoil'] = {legs="Skulk. Culottes +1",feet="Skulk. Poulaines +1"}
 	sets.precast.JA['Perfect Dodge'] = {hands="Plun. Armlets +1"}
 	sets.precast.JA['Feint'] = {
