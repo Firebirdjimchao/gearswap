@@ -494,19 +494,21 @@ function init_gear_sets()
 		head=gear.Adhemar_head_B,
 		neck="Asperity Necklace",
 		ear1="Sherida Earring",
+		-- 5 DW
 		ear2="Suppanomimi",
 		body="Mummu Jacket +2",
 		hands="Mummu Wrists +2",
 		ring1="Rajas Ring",
 		ring2="Chirich Ring",
+		-- 3 DW
 		back="Canny Cape",
-		waist="Windbuffet Belt +1",
+		-- 5 DW
+		waist="Patentia Sash",
 		legs="Samnuha Tights",
-		feet="Plun. Poulaines"
+		feet="Plun. Poulaines +1"
 	}
 	sets.engaged.MidAcc = set_combine(sets.engaged,{
 		body="Meg. Cuirie +2",
-		waist="Eschan Stone",
 		feet="Mummu Gamash. +2",
 	})
 	sets.engaged.HighAcc = set_combine(sets.engaged,{
@@ -576,28 +578,27 @@ function init_gear_sets()
 	-- gs c cycle PhysicalDefenseMode + gs c cycle HybridMode
 	-- Use Sandung, Chaac Belt, or Perfect Taming Sari to cap TH at 8
 	sets.engaged.HybridTH = set_combine(sets.engaged.PDT, sets.TreasureHunter,{
-		-- DT 3%
-		--ammo="Staunch Tathlum +1",
-		ammo="Yamarang",
+		-- DT 2%
+		ammo="Staunch Tathlum",
 		-- DT 6%
 		head="Malignance Chapeau",
-		-- DT 6%
-		neck="Loricate Torque +1",
+		-- DT 5%
+		neck="Twilight Torque",
 		ear1="Sherida Earring",
 		-- MDT 3%
 		ear2="Etiolation Earring",
-		-- DT 9%
-		body="Malignance Tabard",
-		hands="Plun. Armlets +3",
-		-- DT 5%
+		-- PDT 8%
+		body="Meg. Cuirie +2",
+		hands="Plun. Armlets +1",
+		-- PDT 4% MDT 3%
 		ring1="Dark Ring",
 		-- DT 10%
 		ring2="Defending Ring",
 		-- DT 5%
 		back="Moonbeam Cape",
-		waist="Reiki Yotai",
-		-- DT 7%
-		legs="Malignance Tights",
+		waist="Patentia Sash",
+		-- DT 5%
+		legs="Mummu Kecks +2",
 		-- DT 4%
 		feet="Malignance Boots",
 	})
@@ -612,29 +613,29 @@ function init_gear_sets()
 
 	-- Normal -------
 	-- DW needed: 42 (37 with gift)
-	-- 32 Gear DW
+	-- 13 Gear DW
 	sets.engaged.Haste_15 = set_combine(sets.engaged,{
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
 	})
 	-- DW needed: 31 (26 with gift)
-	-- 32 Gear DW
+	-- 13 Gear DW
 	sets.engaged.Haste_30 = set_combine(sets.engaged,{
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
 	})
 	-- DW needed: 26 (21 with gift)
-	-- 17 Gear DW
+	-- 13 Gear DW
 	sets.engaged.Haste_35 = set_combine(sets.engaged,{
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
 		legs="Meg. Chausses +2",
 	})
 	-- DW needed: 11 (6 with gift)
-	-- 10 Gear DW
+	-- 13 Gear DW
 	sets.engaged.MaxHaste = set_combine(sets.engaged,{
 		ear1="Sherida Earring",
-		waist="Windbuffet Belt +1",
+		ear2="Suppanomimi",
 		legs="Meg. Chausses +2",
 	})
 
