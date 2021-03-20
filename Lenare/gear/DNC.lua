@@ -95,7 +95,7 @@ function init_gear_sets()
 		-- 5%
 		back=gear.AugMantleRev,
 		waist="Chaac Belt",
-		legs="Meg. Chausses +2",
+		legs="Horos Tights +3",
 		-- 10%
 		feet="Maxixi Shoes +1"
 	}
@@ -108,7 +108,7 @@ function init_gear_sets()
 	}
 
 	sets.precast.Jig = {
-		legs="Horos Tights +1",
+		legs="Horos Tights +3",
 		feet="Maxixi Shoes +1"
 	}
 
@@ -123,7 +123,7 @@ function init_gear_sets()
 		ring2="Chirich Ring",
 		back=gear.Senuna_DexDa,
 		waist="Eschan Stone",
-		legs="Meg. Chausses +2",
+		legs="Horos Tights +3",
 		feet="Malignance Boots",
 	}
 	sets.precast.Macc = {
@@ -135,7 +135,7 @@ function init_gear_sets()
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
 		waist="Eschan Stone",
-		legs="Mummu Kecks +2",
+		legs="Horos Tights +3",
 		feet="Malignance Boots",
 	}
 
@@ -193,8 +193,7 @@ function init_gear_sets()
 		ring2="Apate Ring",
 		back=gear.Senuna_DexDa,
 		waist="Windbuffet Belt +1",
-		legs="Samnuha Tights",
-		--legs=gear.Herculean_legs_WSD,
+		legs="Horos Tights +3",
 		feet="Mummu Gamash. +2",
 	}
 	sets.precast.WS.MidAcc = set_combine(sets.precast.WS, {
@@ -224,21 +223,24 @@ function init_gear_sets()
 		ring2="Arvina Ringlet +1",
 		back="Toro Cape",
 		waist="Eschan Stone",
-		--legs="Shned. Tights +1",
-		legs=gear.Herculean_legs_WSD,
+		legs="Horos Tights +3",
 		feet="Meg. Jam. +2",
 	})
 
 	-- 73~85% AGI
 	sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
 		ring1="Garuda Ring +1",
+		legs="Meg. Chausses +2",
 	})
 	sets.precast.WS['Exenterator'].MidAcc = set_combine(sets.precast.WS.MidAcc, {
 		ring1="Garuda Ring +1",
+		legs="Meg. Chausses +2",
 	})
 	sets.precast.WS['Exenterator'].HighAcc = set_combine(sets.precast.WS.HighAcc, {
+		legs="Meg. Chausses +2",
 	})
 	sets.precast.WS['Exenterator'].FullAcc = set_combine(sets.precast.WS.FullAcc, {
+		legs="Meg. Chausses +2",
 	})
 
 	-- 40% DEX / 40% STR
@@ -252,44 +254,58 @@ function init_gear_sets()
 		legs="Samnuha Tights",
 	})
 	sets.precast.WS['Pyrrhic Kleos'].HighAcc = set_combine(sets.precast.WS.HighAcc, {
+		legs="Samnuha Tights",
 	})
 	sets.precast.WS['Pyrrhic Kleos'].FullAcc = set_combine(sets.precast.WS.FullAcc, {
+		legs="Samnuha Tights",
 	})
 
 	-- 	40% CHR / 40% DEX
 	sets.precast.WS['Dancing Edge'] = set_combine(sets.precast.WS, {
+		legs="Samnuha Tights",
 	})
 	sets.precast.WS['Dancing Edge'].MidAcc = set_combine(sets.precast.WS.MidAcc, {
+		legs="Samnuha Tights",
 	})
 	sets.precast.WS['Dancing Edge'].HighAcc = set_combine(sets.precast.WS.HighAcc, {
+		legs="Samnuha Tights",
 	})
 	sets.precast.WS['Dancing Edge'].FullAcc = set_combine(sets.precast.WS.FullAcc, {
+		legs="Samnuha Tights",
 	})
 
 	-- 50% DEX
 	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
+		legs="Samnuha Tights",
 	})
 	sets.precast.WS['Evisceration'].MidAcc = set_combine(sets.precast.WS.MidAcc, {
+		legs="Samnuha Tights",
 	})
 	sets.precast.WS['Evisceration'].HighAcc = set_combine(sets.precast.WS.HighAcc, {
+		legs="Samnuha Tights",
 	})
 	sets.precast.WS['Evisceration'].FullAcc = set_combine(sets.precast.WS.FullAcc, {
+		legs="Samnuha Tights",
 	})
 
 	-- 80% DEX
 	sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
 		head="Mummu Bonnet +2",
 		hands="Mummu Wrists +2",
+		legs="Horos Tights +3",
 	})
 	sets.precast.WS["Rudra's Storm"].MidAcc = set_combine(sets.precast.WS.MidAcc, {
 		head="Mummu Bonnet +2",
 		hands="Meg. Gloves +2",
+		legs="Horos Tights +3",
 	})
 	sets.precast.WS["Rudra's Storm"].HighAcc = set_combine(sets.precast.WS.HighAcc, {
 		hands="Meg. Gloves +2",
+		legs="Horos Tights +3",
 	})
 	sets.precast.WS["Rudra's Storm"].FullAcc = set_combine(sets.precast.WS.FullAcc, {
 		hands="Meg. Gloves +2",
+		legs="Horos Tights +3",
 	})
 
 	-- 40% DEX 40% AGI
@@ -307,6 +323,7 @@ function init_gear_sets()
 	})
 
 	sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS.MAB,{
+		legs="Horos Tights +3",
 	})
 
 	sets.precast.Skillchain = {hands="Macu. Bangles +1"}
@@ -719,7 +736,7 @@ function init_gear_sets()
 
 	-- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
 	sets.buff['Saber Dance'] = {
-		legs="Horos Tights +1"
+		legs="Horos Tights +3",
 	}
 	sets.buff['Climactic Flourish'] = {
 		head="Maculele Tiara +1"
