@@ -78,7 +78,7 @@ function init_gear_sets()
 
 	sets.buff['Sneak Attack'] = {
 		head=gear.Adhemar_head_B,
-		neck="Spike Necklace",
+		neck="Caro Necklace",
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
 		body="Meg. Cuirie +2",
@@ -93,7 +93,7 @@ function init_gear_sets()
 
 	sets.buff['Trick Attack'] = {
 		head=gear.Adhemar_head_B,
-		neck="Spike Necklace",
+		neck="Marked Gorget",
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
 		body="Meg. Cuirie +2",
