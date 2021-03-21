@@ -107,8 +107,8 @@ function init_gear_sets()
 		--ear1="Brutal Earring",
 		ear1="Sherida Earring",
 		ear2="Moonshade Earring",
-		body="Tatena. Harama. +1",
-		--body="Ken. Samue +1",
+		--body="Tatena. Harama. +1",
+		body="Ken. Samue +1",
 		hands=gear.Adhemar_hands_B,
 		ring1="Gere Ring",
 		ring2="Niqmaddu Ring",
@@ -147,17 +147,18 @@ function init_gear_sets()
 	})
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
+
+	-- 80% STR, crit chance varies with TP
 	sets.precast.WS["Victory Smite"] = set_combine(sets.precast.WS, {
 		head=gear.Adhemar_head_B,
 		ear2="Odr Earring",
-		body="Tatena. Harama. +1",
-		--body="Ken. Samue +1",
+		body="Ken. Samue +1",
 		ring1="Gere Ring",
 		ring2="Niqmaddu Ring",
 		waist="Moonbow Belt",
-		legs="Samnuha Tights",
-		--legs="Ken. Hakama +1",
+		legs="Ken. Hakama +1",
 		back=gear.Segomo_dex_da,
+		feet="Mpaca's Boots",
 	})
 	sets.precast.WS["Victory Smite"].Acc = set_combine(sets.precast.WS.Acc, {
 	})
@@ -172,7 +173,7 @@ function init_gear_sets()
 		hands="Malignance Gloves",
 		back=gear.Segomo_dex_da,
 		legs="Jokushu Haidate",
-		feet=gear.Rao_feet_hq_B,
+		feet="Mpaca's Boots",
 	})
 	sets.precast.WS['Shijin Spiral'].Acc = set_combine(sets.precast.WS.Acc, {
 	})
@@ -355,15 +356,13 @@ function init_gear_sets()
 		neck="Moonbeam Nodowa",
 		ear1="Sherida Earring",
 		ear2="Dedition Earring",
-		--body="Ken. Samue +1",
-		body="Tatena. Harama. +1",
+		body="Ken. Samue +1",
 		hands="Tatena. Gote +1",
 		ring1="Gere Ring",
 		ring2="Niqmaddu Ring",
 		back=gear.Segomo_dex_da,
 		waist="Moonbow Belt",
-		legs="Samnuha Tights",
-		--legs="Ken. Hakama +1",
+		legs="Ken. Hakama +1",
 		feet="Malignance Boots",
 	}
 	sets.engaged.SomeAcc = set_combine(sets.engaged,{
