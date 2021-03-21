@@ -663,21 +663,22 @@ function init_gear_sets()
 	sets.precast.WS['Blade: Kamu'].Mid = set_combine(sets.precast.WS.Mid, sets.Kamu)
 	sets.precast.WS['Blade: Kamu'].Acc = set_combine(sets.precast.WS.Acc, sets.Kamu, {})
 	
-	-- BLADE: HI AGI 80%
+	-- BLADE: HI AGI 80%, crit rate varies with TP
 	sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {
 		ammo="Yetshila",
 		head="Mummu Bonnet +2",
 		neck="Fotia Gorget",
-		ear1="Ishvara Earring",
+		ear1="Odr Earring",
 		ear2="Moonshade Earring",
 		body="Ken. Samue +1",
 		hands="Mummu Wrists +2",
-		ring1="Gere Ring",
+		--ring1="Gere Ring",
+		ring1="Mummu Ring",
 		ring2="Regal Ring",
 		back=Andartia.AGI,
 		waist="Windbuffet Belt +1",
-		--legs="Mummu Kecks +2",
-		legs="Mochi. Hakama +3",
+		legs="Mummu Kecks +2",
+		--legs="Mochi. Hakama +3",
 		feet="Mummu Gamash. +2",
 	})
 	
@@ -689,12 +690,12 @@ function init_gear_sets()
 	sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'].Mid, {
 	})
 	
-	-- BLADE: SHUN DEX 73~80%
+	-- BLADE: SHUN DEX 73~80%, ATK varies with TP
 	sets.Shun = set_combine(sets.precast.WS, {
 		ammo="Seeth. Bomblet +1",
 		head=gear.Adhemar_head_B,
 		neck="Fotia Gorget",
-		ear1="Brutal Earring",
+		ear1="Odr Earring",
 		ear2="Moonshade Earring",
 		body="Ken. Samue +1",
 		hands=gear.Adhemar_hands_B,
@@ -711,7 +712,7 @@ function init_gear_sets()
 	sets.precast.WS['Blade: Shun'].Mid = set_combine(sets.precast.WS.Mid, sets.Shun)
 	sets.precast.WS['Blade: Shun'].Acc = set_combine(sets.precast.WS.Acc, sets.Shun)
 	
-	-- BLADE: TEN STR 30% / DEX 30%
+	-- BLADE: TEN STR 30% / DEX 30%, damage varies with TP
 	sets.Ten = set_combine(sets.precast.WS, {
 		ammo="Seeth. Bomblet +1",
 		head=gear.Adhemar_head_B,

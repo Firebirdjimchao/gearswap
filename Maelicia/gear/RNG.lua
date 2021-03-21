@@ -72,9 +72,9 @@ function init_gear_sets()
 	sets.precast.JA['Eagle Eye Shot'] = {
 		--head=gear.Adhemar_head_B,
 		head=gear.Herculean_head_RA,
-		neck="Iskur Gorget",
+		neck="Scout's Gorget +2",
 		ear1="Telos Earring",
-		ear2="Enervating Earring",
+		ear2="Odr Earring",
 		body="Nisroch Jerkin",
 		hands="Mummu Wrists +2",
 		ring1="Ilabrat Ring",
@@ -529,23 +529,24 @@ function init_gear_sets()
 	-------------------------
 	-- Archery
 
-	-- 80% DEX
+	-- 80% DEX, crit chance varies with TP
 	sets.precast.WS["Jishnu's Radiance"] = set_combine(sets.precast.WS.RA, {
 		head=gear.Adhemar_head_B,
+		ear1="Odr Earring",
 		body="Meg. Cuirie +2",
+		hands="Mummu Wrists +2",
+		ring1="Mummu Ring",
 		back=gear.aug_belenus_ws_agi,
-		legs="Arc. Braccae +3",
+		--legs="Arc. Braccae +3",
+		legs="Jokushu Haidate",
+		feet="Arcadian Socks +3",
 	})
 	sets.precast.WS["Jishnu's Radiance"].MidAcc = set_combine(sets.precast.WS["Jishnu's Radiance"], {
-		legs=gear.Herculean_legs_RA,
 	})
 	sets.precast.WS["Jishnu's Radiance"].HighAcc = set_combine(sets.precast.WS["Jishnu's Radiance"], {
-		head="Orion Beret +3",
-		feet="Meg. Jam. +2",
 	})
 	sets.precast.WS["Jishnu's Radiance"].FullAcc = set_combine(sets.precast.WS["Jishnu's Radiance"], {
 		head="Orion Beret +3",
-		legs=gear.Herculean_legs_RA,
 	})
 	
 	-- AGI 50% STR 20%
@@ -560,6 +561,7 @@ function init_gear_sets()
 
 	-- 73~85% AGI
 	sets.precast.WS['Apex Arrow'] = set_combine(sets.precast.WS.RA, {
+		neck="Scout's Gorget +2",
 		back=gear.aug_belenus_ws_agi,
 		legs="Arc. Braccae +3",
 	})
@@ -616,6 +618,69 @@ function init_gear_sets()
 	sets.precast.WS['Sanguine Blade'].FullAcc = set_combine(sets.precast.WS['Sanguine Blade'], {
 	})
 
+	-- 50% STR / 50% MND, damage varies with TP
+	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
+		head="Orion Beret +3",
+		neck="Scout's Gorget +2",
+		body=gear.Herculean_body_WS,
+		ear1="Ishvara Earring",
+		ear2="Moonshade Earring",
+		hands="Meg. Gloves +2",
+		ring1="Ilabrat Ring",
+		ring2="Regal Ring",
+		back=gear.aug_belenus_ws,
+		waist="Metalsinger Belt",
+		--waist="Sailfi Belt +1",
+		legs="Arc. Braccae +3",
+		feet="Mummu Gamash. +2",
+	})
+	sets.precast.WS['Savage Blade'].MidAcc = set_combine(sets.precast.WS['Savage Blade'], {
+	})
+	sets.precast.WS['Savage Blade'].HighAcc = set_combine(sets.precast.WS['Savage Blade'], {
+	})
+	sets.precast.WS['Savage Blade'].FullAcc = set_combine(sets.precast.WS['Savage Blade'], {
+	})
+
+	-- 50% DEX, crit rate varies with TP
+	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
+		head=gear.Adhemar_head_B,
+		body="Tatena. Harama. +1",
+		ear1="Odr Earring",
+		ear2="Moonshade Earring",
+		hands="Mummu Wrists +2",
+		ring1="Mummu Ring",
+		ring2="Regal Ring",
+		back=gear.aug_belenus_ws,
+		legs="Jokushu Haidate",
+		feet="Mummu Gamash. +2",
+	})
+	sets.precast.WS['Evisceration'].MidAcc = set_combine(sets.precast.WS['Evisceration'], {
+	})
+	sets.precast.WS['Evisceration'].HighAcc = set_combine(sets.precast.WS['Evisceration'], {
+	})
+	sets.precast.WS['Evisceration'].FullAcc = set_combine(sets.precast.WS['Evisceration'], {
+	})
+
+	-- 50% STR, acc varies with TP
+	sets.precast.WS['Decimation'] = set_combine(sets.precast.WS, {
+		head=gear.Adhemar_head_B,
+		body="Tatena. Harama. +1",
+		ear1="Sherida Earring",
+		ear2="Brutal Earring",
+		hands="Tatena. Gote +1",
+		ring1="Epona's Ring",
+		ring2="Regal Ring",
+		back=gear.aug_belenus_ws,
+		legs="Meg. Chausses +2",
+		feet="Mummu Gamash. +2",
+	})
+	sets.precast.WS['Decimation'].MidAcc = set_combine(sets.precast.WS['Decimation'], {
+	})
+	sets.precast.WS['Decimation'].HighAcc = set_combine(sets.precast.WS['Decimation'], {
+	})
+	sets.precast.WS['Decimation'].FullAcc = set_combine(sets.precast.WS['Decimation'], {
+	})
+
 	--------------------------------------
 	-- Midcast sets
 	--------------------------------------
@@ -662,20 +727,20 @@ function init_gear_sets()
 
 	-- Ranged sets
 
-	-- Gear: 74 STP
+	-- Gear: 73 STP
 	-- Perun +1: 4 STP
 	-- Nusku Shield: 3 STP
-	-- Gear Total: 81 STP
+	-- Gear Total: 80 STP
 	-- /war stat:
-	-- Base RACC 1414
-	-- Base RATK 1466
+	-- Base RACC 1428
+	-- Base RATK 1436
 	sets.midcast.RA = {
 		--head="Meghanada Visor +2",
 		head="Arcadian Beret +3",
 		-- 8 STP
-		neck="Iskur Gorget",
+		--neck="Iskur Gorget",
 		-- 7 STP
-		--neck="Scout's Gorget +2",
+		neck="Scout's Gorget +2",
 		-- 5 STP
 		ear1="Telos Earring",
 		-- 4 STP
@@ -705,13 +770,13 @@ function init_gear_sets()
 		feet="Arcadian Socks +3",
 	}
 	
-	-- Gear: 72 STP
+	-- Gear: 71 STP
 	-- Perun +1: 4 STP
 	-- Nusku Shield: 3 STP
-	-- Gear Total: 79 STP
+	-- Gear Total: 78 STP
 	-- /war stat:
-	-- Base RACC 1473
-	-- Base RATK 1389
+	-- Base RACC 1487
+	-- Base RATK 1359
 	sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA,{
 		ring1="Haverton Ring",
 		-- 4 STP
@@ -720,13 +785,13 @@ function init_gear_sets()
 		feet="Malignance Boots",
 	})
 
-	-- Gear: 78 STP
+	-- Gear: 77 STP
 	-- Perun +1: 4 STP
 	-- Nusku Shield: 3 STP
-	-- Gear Total: 85 STP
+	-- Gear Total: 84 STP
 	-- /war stat:
-	-- Base RACC 1517
-	-- Base RATK 1266
+	-- Base RACC 1531
+	-- Base RATK 1236
 	sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA,{
 		--body="Amini Caban +1",
 		-- 7 STP
@@ -743,13 +808,13 @@ function init_gear_sets()
 		feet="Malignance Boots",
 	})
 	
-	-- Gear: 35 STP
+	-- Gear: 34 STP
 	-- Perun +1: 4 STP
 	-- Nusku Shield: 3 STP
-	-- Gear Total: 42 STP
+	-- Gear Total: 41 STP
 	-- /war stat:
-	-- Base RACC 1628
-	-- Base RATK 1397
+	-- Base RACC 1642
+	-- Base RATK 1367
 	sets.midcast.RA.FullAcc = set_combine(sets.midcast.RA,{
 		head="Orion Beret +3",
 		-- 4 STP
@@ -775,6 +840,7 @@ function init_gear_sets()
 
 	sets.midcast.RA.Crit = set_combine(sets.midcast.RA.FullAcc, {
 		head=gear.Herculean_head_RA,
+		ear2="Odr Earring",
 		body="Nisroch Jerkin",
 		hands="Mummu Wrists +2",
 		ring1="Ilabrat Ring",
@@ -988,8 +1054,8 @@ function init_gear_sets()
 		body="Tatena. Harama. +1",
 		--hands=gear.Adhemar_hands_B,
 		hands="Tatena. Gote +1",
-		ring1="Ilabrat Ring",
-		ring2="Epona's Ring",
+		ring1="Epona's Ring",
+		ring2="Petrov Ring",
 		back="Atheling Mantle",
 		waist="Windbuffet Belt +1",
 		legs="Meg. Chausses +2",
@@ -1078,7 +1144,7 @@ function init_gear_sets()
 		head="Meghanada Visor +2",
 		ear1="Telos Earring",
 		ear2="Enervating Earring",
-		neck="Iskur Gorget",
+		neck="Scout's Gorget +2",
 		body="Nisroch Jerkin",
 		hands="Orion Bracers +3",
 		ring1="Haverton Ring",
