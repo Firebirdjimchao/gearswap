@@ -982,7 +982,7 @@ function customize_idle_set(idleSet)
 	if not buffactive['Protect'] then
 		idleSet = set_combine(idleSet, sets.noprotect)
 	end
-	if state.Buff.Doom then
+	if buffactive['Doom'] then
 		idleSet = set_combine(idleSet, sets.buff.Doom)
 	end
 	return idleSet
@@ -990,14 +990,14 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-	if state.Buff.Doom then
+	if buffactive['Doom'] then
 		meleeSet = set_combine(meleeSet, sets.buff.Doom)
 	end
 	return meleeSet
 end
 
 function customize_defense_set(defenseSet)    
-	if state.Buff.Doom then
+	if buffactive['Doom'] then
 		defenseSet = set_combine(defenseSet, sets.buff.Doom)
 	end
 	return defenseSet

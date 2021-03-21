@@ -322,8 +322,10 @@ function init_gear_sets()
 		ammo="Yamarang",
 	})
  
+ 	-- 80% DEX, damage varies with TP
 	sets.precast.WS['Dimidiation'] = set_combine(sets.precast.WS,{
 		head="Dampening Tam",
+		ear1="Odr Earring",
 		body=gear.Herculean_body_WS,
 		legs="Lustr. Subligar +1",
 		feet="Lustra. Leggings +1"
@@ -342,7 +344,7 @@ function init_gear_sets()
 		ammo="Knobkierrie",
 		-- MDT 4%
 		head="Dampening Tam",
-		ear1="Ishvara Earring",
+		ear1="Odr Earring",
 		ear2="Moonshade Earring",
 		body=gear.Herculean_body_WS,
 		-- DT 6%
@@ -679,10 +681,10 @@ function customize_idle_set(idleSet)
 	if not buffactive['Protect'] then
 		idleSet = set_combine(idleSet, sets.noprotect)
 	end
-	if state.Buff.Doom then
+	if buffactive['Doom'] then
 		idleSet = set_combine(idleSet, sets.buff.Doom)
 		if state.PartyAlertMode.value == 'true' then
-			if state.Buff.Doom then
+			if buffactive['Doom'] then
 				send_command('input /p <------ Doomed ---- <call14>')
 			end
 		end
@@ -692,10 +694,10 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-	if state.Buff.Doom then
+	if buffactive['Doom'] then
 		meleeSet = set_combine(meleeSet, sets.buff.Doom)
 		if state.PartyAlertMode.value == 'true' then
-			if state.Buff.Doom then
+			if buffactive['Doom'] then
 				send_command('input /p <------ Doomed ---- <call14>')
 			end
 		end
@@ -704,10 +706,10 @@ function customize_melee_set(meleeSet)
 end
 
 function customize_defense_set(defenseSet)
-	if state.Buff.Doom then
+	if buffactive['Doom'] then
 		defenseSet = set_combine(defenseSet, sets.buff.Doom)
 		if state.PartyAlertMode.value == 'true' then
-			if state.Buff.Doom then
+			if buffactive['Doom'] then
 				send_command('input /p <------ Doomed ---- <call14>')
 			end
 		end

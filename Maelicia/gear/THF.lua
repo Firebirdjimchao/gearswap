@@ -242,34 +242,45 @@ function init_gear_sets()
 	})
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
+
+	-- 73~85% AGI, duration of effect varies with TP
 	sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
+		head="Plun. Bonnet +3",
+		neck="Fotia Gorget",
 		ear2="Brutal Earring",
+		body="Plunderer's Vest +3",
+		hands="Mummu Wrists +2",
 		ring1="Regal Ring",
-		legs="Pill. Culottes +3",
+		waist="Fotia Belt",
+		legs="Meg. Chausses +2",
 		feet="Plun. Poulaines +3",
 	})
 	sets.precast.WS['Exenterator'].MidAcc = set_combine(sets.precast.WS.MidAcc, sets.precast.WS['Exenterator'], {
 	})
 	sets.precast.WS['Exenterator'].HighAcc = set_combine(sets.precast.WS.HighAcc, sets.precast.WS['Exenterator'], {
 	})
-	sets.precast.WS['Exenterator'].FullAcc = set_combine(sets.precast.WS.FullAcc, {
-		ear2="Brutal Earring",
+	sets.precast.WS['Exenterator'].FullAcc = set_combine(sets.precast.WS.FullAcc, sets.precast.WS['Exenterator'], {
 	})
 	sets.precast.WS['Exenterator'].SA = set_combine(sets.precast.WS['Exenterator'], {
 		ammo="Yetshila",
-		--hands="Skulk. Armlets +1",
 		hands="Meg. Gloves +2",
+		legs="Plun. Culottes +3",
 	})
 	sets.precast.WS['Exenterator'].TA = set_combine(sets.precast.WS['Exenterator'], {
 		ammo="Yetshila",
-		hands="Pill. Armlets +3",
+		--hands="Pill. Armlets +3",
+		hands="Meg. Gloves +2",
+		legs="Plun. Culottes +3",
 	})
 	sets.precast.WS['Exenterator'].SATA = set_combine(sets.precast.WS['Exenterator'], {
 		ammo="Yetshila",
 		--hands="Skulk. Armlets +1",
-		hands="Pill. Armlets +3",
+		--hands="Pill. Armlets +3",
+		hands="Meg. Gloves +2",
+		legs="Plun. Culottes +3",
 	})
 
+	-- 40% DEX 40% CHR, Acc varies with TP
 	sets.precast.WS['Dancing Edge'] = set_combine(sets.precast.WS, {
 		ammo="Yetshila",
 	})
@@ -277,7 +288,7 @@ function init_gear_sets()
 	})
 	sets.precast.WS['Dancing Edge'].HighAcc = set_combine(sets.precast.WS.HighAcc, sets.precast.WS['Dancing Edge'], {
 	})
-	sets.precast.WS['Dancing Edge'].FullAcc = set_combine(sets.precast.WS.FullAcc, {
+	sets.precast.WS['Dancing Edge'].FullAcc = set_combine(sets.precast.WS.FullAcc, sets.precast.WS['Dancing Edge'], {
 	})
 	sets.precast.WS['Dancing Edge'].SA = set_combine(sets.precast.WS['Dancing Edge'], {
 		ring1="Regal Ring",
@@ -300,17 +311,23 @@ function init_gear_sets()
 		hands="Pill. Armlets +3",
 		back=gear.jsecape_dex_wsd,
 		legs="Pill. Culottes +3",
+		legs="Pill. Culottes +3",
 		feet="Plun. Poulaines +3",
 	})
 
+	-- 50% DEX, Crit rate varies with TP
 	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
 		ammo="Yetshila",
+		ear1="Odr Earring",
+		body="Plunderer's Vest +3",
+		ring1="Regal Ring",
+		feet="Lustra. Leggings +1",
 	})
 	sets.precast.WS['Evisceration'].MidAcc = set_combine(sets.precast.WS.MidAcc, sets.precast.WS['Evisceration'], {
 	})
 	sets.precast.WS['Evisceration'].HighAcc = set_combine(sets.precast.WS.HighAcc, sets.precast.WS['Evisceration'], {
 	})
-	sets.precast.WS['Evisceration'].FullAcc = set_combine(sets.precast.WS.FullAcc, {
+	sets.precast.WS['Evisceration'].FullAcc = set_combine(sets.precast.WS.FullAcc, sets.precast.WS['Evisceration'], {
 	})
 	sets.precast.WS['Evisceration'].SA = set_combine(sets.precast.WS['Evisceration'], {
 		ring1="Regal Ring",
@@ -322,7 +339,8 @@ function init_gear_sets()
 	})
 	sets.precast.WS['Evisceration'].TA = set_combine(sets.precast.WS['Evisceration'], {
 		ring1="Regal Ring",
-		hands="Pill. Armlets +3",
+		--hands="Pill. Armlets +3",
+		hands="Meg. Gloves +2",
 		back=gear.jsecape_dex_wsd,
 		legs="Pill. Culottes +3",
 		feet="Plun. Poulaines +3",
@@ -330,7 +348,8 @@ function init_gear_sets()
 	sets.precast.WS['Evisceration'].SATA = set_combine(sets.precast.WS['Evisceration'], {
 		ring1="Regal Ring",
 		--hands="Skulk. Armlets +1",
-		hands="Pill. Armlets +3",
+		--hands="Pill. Armlets +3",
+		hands="Meg. Gloves +2",
 		back=gear.jsecape_dex_wsd,
 		legs="Pill. Culottes +3",
 		feet="Plun. Poulaines +3",
@@ -338,7 +357,8 @@ function init_gear_sets()
 
 	sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
 		ammo="Yamarang",
-		ear1="Ishvara Earring",
+		--ear1="Ishvara Earring",
+		ear1="Odr Earring",
 		body="Pillager's Vest +3",
 		hands="Meg. Gloves +2",
 		ring1="Regal Ring",
@@ -352,7 +372,7 @@ function init_gear_sets()
 	})
 	sets.precast.WS["Rudra's Storm"].HighAcc = set_combine(sets.precast.WS.HighAcc, sets.precast.WS["Rudra's Storm"], {
 	})
-	sets.precast.WS["Rudra's Storm"].FullAcc = set_combine(sets.precast.WS.FullAcc, {
+	sets.precast.WS["Rudra's Storm"].FullAcc = set_combine(sets.precast.WS.FullAcc, sets.precast.WS["Rudra's Storm"], {
 	})
 	sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"], {
 		ammo="Yetshila",
@@ -366,7 +386,8 @@ function init_gear_sets()
 
 	sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS, {
 		ammo="Yamarang",
-		ear1="Ishvara Earring",
+		--ear1="Ishvara Earring",
+		ear1="Odr Earring",
 		body="Pillager's Vest +3",
 		hands="Meg. Gloves +2",
 		ring1="Regal Ring",
@@ -380,7 +401,7 @@ function init_gear_sets()
 	})
 	sets.precast.WS['Shark Bite'].HighAcc = set_combine(sets.precast.WS.HighAcc, sets.precast.WS["Shark Bite"], {
 	})
-	sets.precast.WS['Shark Bite'].FullAcc = set_combine(sets.precast.WS.FullAcc, {
+	sets.precast.WS['Shark Bite'].FullAcc = set_combine(sets.precast.WS.FullAcc, sets.precast.WS["Shark Bite"], {
 	})
 	sets.precast.WS['Shark Bite'].SA = set_combine(sets.precast.WS['Shark Bite'], {
 		ammo="Yetshila",
@@ -393,8 +414,9 @@ function init_gear_sets()
 	})
 
 	sets.precast.WS['Mandalic Stab'] = set_combine(sets.precast.WS, {
-		mmo="Yamarang",
-		ear1="Ishvara Earring",
+		ammo="Yamarang",
+		--ear1="Ishvara Earring",
+		ear1="Odr Earring",
 		body="Pillager's Vest +3",
 		hands="Meg. Gloves +2",
 		ring1="Regal Ring",
@@ -408,7 +430,7 @@ function init_gear_sets()
 	})
 	sets.precast.WS['Mandalic Stab'].HighAcc = set_combine(sets.precast.WS.HighAcc, sets.precast.WS['Mandalic Stab'], {
 	})
-	sets.precast.WS['Mandalic Stab'].FullAcc = set_combine(sets.precast.WS.FullAcc, {
+	sets.precast.WS['Mandalic Stab'].FullAcc = set_combine(sets.precast.WS.FullAcc, sets.precast.WS['Mandalic Stab'], {
 	})
 	sets.precast.WS['Mandalic Stab'].SA = set_combine(sets.precast.WS['Mandalic Stab'], {
 		ammo="Yetshila",
@@ -1094,7 +1116,7 @@ function customize_idle_set(idleSet)
 	if not buffactive['Protect'] then
 		idleSet = set_combine(idleSet, sets.noprotect)
 	end
-	if state.Buff.Doom then
+	if buffactive['Doom'] then
 		idleSet = set_combine(idleSet, sets.buff.Doom)
 	end
 	return idleSet
@@ -1108,14 +1130,14 @@ function customize_melee_set(meleeSet)
 	if state.BehindMode.value == 'Normal' then
 		meleeSet = set_combine(meleeSet, sets.Behind)
 	end
-	if state.Buff.Doom then
+	if buffactive['Doom'] then
 		meleeSet = set_combine(meleeSet, sets.buff.Doom)
 	end
 	return meleeSet
 end
 
 function customize_defense_set(defenseSet)    
-	if state.Buff.Doom then
+	if buffactive['Doom'] then
 		defenseSet = set_combine(defenseSet, sets.buff.Doom)
 	end
 	return defenseSet

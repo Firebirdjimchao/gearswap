@@ -802,7 +802,7 @@ function customize_idle_set(idleSet)
 	if not buffactive['Protect'] then
 		idleSet = set_combine(idleSet, sets.noprotect)
 	end
-	if state.Buff.Doom then
+	if buffactive['Doom'] then
 		idleSet = set_combine(idleSet, sets.buff.Doom)
 	end
 	return idleSet
@@ -823,7 +823,7 @@ function customize_melee_set(meleeSet)
 		meleeSet = set_combine(meleeSet, sets.NoDW)
 	end
 	meleeSet = set_combine(meleeSet, select_ammo())
-	if state.Buff.Doom then
+	if buffactive['Doom'] then
 		meleeSet = set_combine(meleeSet, sets.buff.Doom)
 	end
 	return meleeSet
