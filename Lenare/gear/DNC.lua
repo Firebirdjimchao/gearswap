@@ -81,12 +81,14 @@ function init_gear_sets()
 
 	-- Waltz set (chr and vit)
 
-	-- 48%
+	-- 58%
 	sets.precast.Waltz = {
 		-- 11%
 		head="Horos Tiara +1",
 		-- 5%
 		ear1="Roundel Earring",
+		-- 10%
+		ear2="Sjofn Earring",
 		-- 17%
 		body="Maxixi Casaque +2",
 		hands="Meg. Gloves +2",
@@ -229,18 +231,21 @@ function init_gear_sets()
 
 	-- 73~85% AGI
 	sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
+		head=gear.Adhemar_head_B,
+		ear1="Sherida Earring",
+		ear2="Brutal Earring",
+		body="Meg. Cuirie +2",
+		hands="Meg. Gloves +2",
 		ring1="Garuda Ring +1",
+		ring2="Garuda Ring +1",
 		legs="Meg. Chausses +2",
+		feet="Meg. Jam. +2",
 	})
-	sets.precast.WS['Exenterator'].MidAcc = set_combine(sets.precast.WS.MidAcc, {
-		ring1="Garuda Ring +1",
-		legs="Meg. Chausses +2",
+	sets.precast.WS['Exenterator'].MidAcc = set_combine(sets.precast.WS.MidAcc, sets.precast.WS['Exenterator'], {
 	})
-	sets.precast.WS['Exenterator'].HighAcc = set_combine(sets.precast.WS.HighAcc, {
-		legs="Meg. Chausses +2",
+	sets.precast.WS['Exenterator'].HighAcc = set_combine(sets.precast.WS.HighAcc, sets.precast.WS['Exenterator'], {
 	})
-	sets.precast.WS['Exenterator'].FullAcc = set_combine(sets.precast.WS.FullAcc, {
-		legs="Meg. Chausses +2",
+	sets.precast.WS['Exenterator'].FullAcc = set_combine(sets.precast.WS.FullAcc, sets.precast.WS['Exenterator'], {
 	})
 
 	-- 40% DEX / 40% STR
@@ -249,77 +254,61 @@ function init_gear_sets()
 		legs="Samnuha Tights",
 		feet="Meg. Jam. +2",
 	})
-	sets.precast.WS['Pyrrhic Kleos'].MidAcc = set_combine(sets.precast.WS.MidAcc, {
-		head="Meghanada Visor +2",
-		legs="Samnuha Tights",
+	sets.precast.WS['Pyrrhic Kleos'].MidAcc = set_combine(sets.precast.WS.MidAcc, sets.precast.WS['Pyrrhic Kleos'], {
 	})
-	sets.precast.WS['Pyrrhic Kleos'].HighAcc = set_combine(sets.precast.WS.HighAcc, {
-		legs="Samnuha Tights",
+	sets.precast.WS['Pyrrhic Kleos'].HighAcc = set_combine(sets.precast.WS.HighAcc, sets.precast.WS['Pyrrhic Kleos'], {
 	})
-	sets.precast.WS['Pyrrhic Kleos'].FullAcc = set_combine(sets.precast.WS.FullAcc, {
-		legs="Samnuha Tights",
+	sets.precast.WS['Pyrrhic Kleos'].FullAcc = set_combine(sets.precast.WS.FullAcc, sets.precast.WS['Pyrrhic Kleos'], {
 	})
 
 	-- 	40% CHR / 40% DEX
 	sets.precast.WS['Dancing Edge'] = set_combine(sets.precast.WS, {
 		legs="Samnuha Tights",
 	})
-	sets.precast.WS['Dancing Edge'].MidAcc = set_combine(sets.precast.WS.MidAcc, {
-		legs="Samnuha Tights",
+	sets.precast.WS['Dancing Edge'].MidAcc = set_combine(sets.precast.WS.MidAcc, sets.precast.WS['Dancing Edge'], {
 	})
-	sets.precast.WS['Dancing Edge'].HighAcc = set_combine(sets.precast.WS.HighAcc, {
-		legs="Samnuha Tights",
+	sets.precast.WS['Dancing Edge'].HighAcc = set_combine(sets.precast.WS.HighAcc, sets.precast.WS['Dancing Edge'], {
 	})
-	sets.precast.WS['Dancing Edge'].FullAcc = set_combine(sets.precast.WS.FullAcc, {
-		legs="Samnuha Tights",
+	sets.precast.WS['Dancing Edge'].FullAcc = set_combine(sets.precast.WS.FullAcc, sets.precast.WS['Dancing Edge'], {
 	})
 
 	-- 50% DEX
 	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
+		ear1="Odr Earring",
+		hands="Mummu Wrists +2",
 		legs="Samnuha Tights",
 	})
-	sets.precast.WS['Evisceration'].MidAcc = set_combine(sets.precast.WS.MidAcc, {
-		legs="Samnuha Tights",
+	sets.precast.WS['Evisceration'].MidAcc = set_combine(sets.precast.WS.MidAcc, sets.precast.WS['Evisceration'], {
 	})
-	sets.precast.WS['Evisceration'].HighAcc = set_combine(sets.precast.WS.HighAcc, {
-		legs="Samnuha Tights",
+	sets.precast.WS['Evisceration'].HighAcc = set_combine(sets.precast.WS.HighAcc, sets.precast.WS['Evisceration'], {
 	})
-	sets.precast.WS['Evisceration'].FullAcc = set_combine(sets.precast.WS.FullAcc, {
-		legs="Samnuha Tights",
+	sets.precast.WS['Evisceration'].FullAcc = set_combine(sets.precast.WS.FullAcc, sets.precast.WS['Evisceration'], {
 	})
 
 	-- 80% DEX
 	sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
+		ear1="Odr Earring",
 		head="Mummu Bonnet +2",
-		hands="Mummu Wrists +2",
-		legs="Horos Tights +3",
-	})
-	sets.precast.WS["Rudra's Storm"].MidAcc = set_combine(sets.precast.WS.MidAcc, {
-		head="Mummu Bonnet +2",
+		--hands="Mummu Wrists +2",
 		hands="Meg. Gloves +2",
 		legs="Horos Tights +3",
 	})
-	sets.precast.WS["Rudra's Storm"].HighAcc = set_combine(sets.precast.WS.HighAcc, {
-		hands="Meg. Gloves +2",
-		legs="Horos Tights +3",
+	sets.precast.WS["Rudra's Storm"].MidAcc = set_combine(sets.precast.WS.MidAcc, sets.precast.WS["Rudra's Storm"], {
 	})
-	sets.precast.WS["Rudra's Storm"].FullAcc = set_combine(sets.precast.WS.FullAcc, {
-		hands="Meg. Gloves +2",
-		legs="Horos Tights +3",
+	sets.precast.WS["Rudra's Storm"].HighAcc = set_combine(sets.precast.WS.HighAcc, sets.precast.WS["Rudra's Storm"], {
+	})
+	sets.precast.WS["Rudra's Storm"].FullAcc = set_combine(sets.precast.WS.FullAcc, sets.precast.WS["Rudra's Storm"], {
 	})
 
 	-- 40% DEX 40% AGI
 	sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS, {
 		hands="Meg. Gloves +2",
 	})
-	sets.precast.WS['Shark Bite'].MidAcc = set_combine(sets.precast.WS.MidAcc, {
-		hands="Meg. Gloves +2",
+	sets.precast.WS['Shark Bite'].MidAcc = set_combine(sets.precast.WS.MidAcc, sets.precast.WS["Shark Bite"], {
 	})
-	sets.precast.WS['Shark Bite'].HighAcc = set_combine(sets.precast.WS.HighAcc, {
-		hands="Meg. Gloves +2",
+	sets.precast.WS['Shark Bite'].HighAcc = set_combine(sets.precast.WS.HighAcc, sets.precast.WS["Shark Bite"], {
 	})
-	sets.precast.WS['Shark Bite'].FullAcc = set_combine(sets.precast.WS.FullAcc, {
-		hands="Meg. Gloves +2",
+	sets.precast.WS['Shark Bite'].FullAcc = set_combine(sets.precast.WS.FullAcc, sets.precast.WS["Shark Bite"], {
 	})
 
 	sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS.MAB,{

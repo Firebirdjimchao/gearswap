@@ -133,6 +133,7 @@ function init_gear_sets()
 	sets.precast.Waltz = {
 		head="Theo. Cap +2",
 		ear1="Roundel Earring",
+		ear2="Sjofn Earring",
 		body="Count's Garb",
 		hands="Inyan. Dastanas +2",
 		legs="Chironic Hose",
