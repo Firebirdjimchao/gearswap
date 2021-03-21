@@ -715,7 +715,7 @@ function init_gear_sets()
 		main=gear.MainStaff,
 		sub="Khonsu",
 		ammo="Staunch Tathlum +1",
-		head="Amalric Coif",
+		head="Nyame Helm",
 		neck="Loricate Torque +1",
 		ear1="Etiolation Earring",
 		ear2="Odnowa Earring +1",
