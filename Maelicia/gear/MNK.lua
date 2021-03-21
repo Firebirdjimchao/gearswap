@@ -149,6 +149,7 @@ function init_gear_sets()
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS["Victory Smite"] = set_combine(sets.precast.WS, {
 		head=gear.Adhemar_head_B,
+		ear2="Odr Earring",
 		body="Tatena. Harama. +1",
 		--body="Ken. Samue +1",
 		ring1="Gere Ring",
@@ -165,7 +166,7 @@ function init_gear_sets()
 	sets.precast.WS['Shijin Spiral'] = set_combine(sets.precast.WS, {
 		--head=gear.Rao_head_hq_B,
 		head="Mpaca's Cap",
-		ear2="Brutal Earring",
+		ear2="Odr Earring",
 		neck="Caro Necklace",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
@@ -174,7 +175,6 @@ function init_gear_sets()
 		feet=gear.Rao_feet_hq_B,
 	})
 	sets.precast.WS['Shijin Spiral'].Acc = set_combine(sets.precast.WS.Acc, {
-		ear2="Telos Earring",
 	})
 	sets.precast.WS['Shijin Spiral'].SomeAcc = set_combine(sets.precast.WS['Shijin Spiral'], {
 	})
@@ -420,16 +420,27 @@ function init_gear_sets()
 		feet="Mel. Gaiters +1"
 	})
 
+	-- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.
+	sets.impetus_body = {body="Bhikku Cyclas +1"}
+	sets.footwork_kick_feet = {feet="Anch. Gaiters +1"}
 
 	-- Hundred Fists/Impetus melee set mods
 	sets.engaged.HF = set_combine(sets.engaged)
-	sets.engaged.HF.Impetus = set_combine(sets.engaged, {})
+	sets.engaged.HF.Impetus = set_combine(sets.engaged, {
+		body="Bhikku Cyclas +1"
+	})
 	sets.engaged.Acc.HF = set_combine(sets.engaged.Acc)
-	sets.engaged.Acc.HF.Impetus = set_combine(sets.engaged.Acc, {})
+	sets.engaged.Acc.HF.Impetus = set_combine(sets.engaged.Acc, {
+		body="Bhikku Cyclas +1"
+	})
 	sets.engaged.Counter.HF = set_combine(sets.engaged.Counter)
-	sets.engaged.Counter.HF.Impetus = set_combine(sets.engaged.Counter, {})
+	sets.engaged.Counter.HF.Impetus = set_combine(sets.engaged.Counter, {
+		body="Bhikku Cyclas +1"
+	})
 	sets.engaged.Acc.Counter.HF = set_combine(sets.engaged.Acc.Counter)
-	sets.engaged.Acc.Counter.HF.Impetus = set_combine(sets.engaged.Acc.Counter, {})
+	sets.engaged.Acc.Counter.HF.Impetus = set_combine(sets.engaged.Acc.Counter, {
+		body="Bhikku Cyclas +1"
+	})
 
 
 	-- Footwork combat form
@@ -439,10 +450,47 @@ function init_gear_sets()
 	sets.engaged.Footwork.Acc = set_combine(sets.engaged.Acc,{
 		feet="Anch. Gaiters +1"
 	})
-		
-	-- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.
-	sets.impetus_body = {body="Bhikku Cyclas +1"}
-	sets.footwork_kick_feet = {feet="Anch. Gaiters +1"}
+
+	sets.buff.Boost = {
+		waist="Ask Sash",
+	}
+end
+
+-------------------------------------------------------------------------------------------------------------------
+-- Job-specific hooks for standard casting events.
+-------------------------------------------------------------------------------------------------------------------
+
+function job_buff_change(buff, gain)
+    -- Set Footwork as combat form any time it's active and Hundred Fists is not.
+    if buff == 'Footwork' and gain and not buffactive['hundred fists'] then
+        state.CombatForm:set('Footwork')
+    elseif buff == "Hundred Fists" and not gain and buffactive.footwork then
+        state.CombatForm:set('Footwork')
+    else
+        state.CombatForm:reset()
+    end
+    
+    -- Hundred Fists and Impetus modify the custom melee groups
+    if buff == "Hundred Fists" or buff == "Impetus" then
+        classes.CustomMeleeGroups:clear()
+        
+        if (buff == "Hundred Fists" and gain) or buffactive['hundred fists'] then
+            classes.CustomMeleeGroups:append('HF')
+        end
+        
+        if (buff == "Impetus" and gain) or buffactive.impetus then
+            classes.CustomMeleeGroups:append('Impetus')
+        end
+    end
+
+    if buff == "Boost" then
+    	equip(sets.buff.Boost)
+    end
+
+    -- Update gear if any of the above changed
+    if buff == "Hundred Fists" or buff == "Impetus" or buff == "Footwork" or buff == "Boost" then
+      handle_equipping_gear(player.status)
+    end
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -470,8 +518,38 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function customize_idle_set(idleSet)
+	if player.hpp < 75 then
+		idleSet = set_combine(idleSet, sets.ExtraRegen)
+	end
 	if not buffactive['Protect'] then
 		idleSet = set_combine(idleSet, sets.noprotect)
 	end
+	if buffactive['Boost'] then
+		idleSet = set_combine(idleSet, sets.buff.Boost)
+	end
+	if buffactive['Doom'] then
+		idleSet = set_combine(idleSet, sets.buff.Doom)
+	end
 	return idleSet
+end
+
+-- Modify the default melee set after it was constructed.
+function customize_melee_set(meleeSet)
+	if buffactive['Boost'] then
+		meleeSet = set_combine(meleeSet, sets.buff.Boost)
+	end
+	if buffactive['Doom'] then
+		meleeSet = set_combine(meleeSet, sets.buff.Doom)
+	end
+	return meleeSet
+end
+
+function customize_defense_set(defenseSet)		
+	if buffactive['Boost'] then
+		defenseSet = set_combine(defenseSet, sets.buff.Boost)
+	end
+	if buffactive['Doom'] then
+		defenseSet = set_combine(defenseSet, sets.buff.Doom)
+	end
+	return defenseSet
 end
