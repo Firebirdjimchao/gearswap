@@ -26,12 +26,12 @@ function init_gear_sets()
 	-- Precast sets to enhance JAs on use
 	sets.precast.JA['Hundred Fists'] = {legs="Hes. Hose +1"}
 	sets.precast.JA['Boost'] = {hands="Anch. Gloves +1"}
-	sets.precast.JA['Dodge'] = {feet="Anch. Gaiters +1"}
+	sets.precast.JA['Dodge'] = {feet="Anch. Gaiters +2"}
 	sets.precast.JA['Focus'] = {head="Temple Crown"}
-	sets.precast.JA['Counterstance'] = {feet="Mel. Gaiters +1"}
+	sets.precast.JA['Counterstance'] = {feet="Hes. Gaiters +1"}
 	sets.precast.JA['Footwork'] = {feet="Tantra Gaiters +2"}
 	sets.precast.JA['Formless Strikes'] = {body="Hes. Cyclas +1"}
-	sets.precast.JA['Mantra'] = {feet="Mel. Gaiters +1"}
+	sets.precast.JA['Mantra'] = {feet="Hes. Gaiters +1"}
 
 	-- Chi Blast - MND
 	sets.precast.JA['Chi Blast'] = {
@@ -110,8 +110,8 @@ function init_gear_sets()
 		--body="Tatena. Harama. +1",
 		body="Ken. Samue +1",
 		hands=gear.Adhemar_hands_B,
-		ring1="Gere Ring",
-		ring2="Niqmaddu Ring",
+		ring1="Niqmaddu Ring",
+		ring2="Gere Ring",
 		back=gear.Segomo_dex_da,
 		waist="Fotia Belt",
 		legs="Hiza. Hizayoroi +2",
@@ -153,8 +153,8 @@ function init_gear_sets()
 		head=gear.Adhemar_head_B,
 		ear2="Odr Earring",
 		body="Ken. Samue +1",
-		ring1="Gere Ring",
-		ring2="Niqmaddu Ring",
+		ring1="Niqmaddu Ring",
+		ring2="Gere Ring",
 		waist="Moonbow Belt",
 		legs="Ken. Hakama +1",
 		back=gear.Segomo_dex_da,
@@ -358,8 +358,8 @@ function init_gear_sets()
 		ear2="Dedition Earring",
 		body="Ken. Samue +1",
 		hands="Tatena. Gote +1",
-		ring1="Gere Ring",
-		ring2="Niqmaddu Ring",
+		ring1="Niqmaddu Ring",
+		ring2="Gere Ring",
 		back=gear.Segomo_dex_da,
 		waist="Moonbow Belt",
 		legs="Ken. Hakama +1",
@@ -410,22 +410,54 @@ function init_gear_sets()
 		legs="Malignance Tights",
 		feet="Malignance Boots",
 	})
-	sets.engaged.Counter = set_combine(sets.engaged,{
+	sets.engaged.Counter = set_combine(sets.engaged.PDT,{
+		head="Malignance Chapeau",
+		neck="Loricate Torque +1",
+		ear1="Sherida Earring",
+		ear2="Telos Earring",
+		body="Malignance Tabard",
+		--body="Mpaca's Doublet",
+		hands="Malignance Gloves",
+		ring1="Niqmaddu Ring",
+		ring2="Defending Ring",
+		waist="Moonbow Belt",
 		legs="Anch. Hose +1",
-		feet="Mel. Gaiters +1"
+		feet="Malignance Boots",
 	})
-	sets.engaged.Acc.Counter = set_combine(sets.engaged.Acc,{
+	sets.engaged.SomeAcc.Counter = set_combine(sets.engaged.SomeAcc.PDT, sets.engaged.Counter, {
+	})
+	sets.engaged.Acc.Counter = set_combine(sets.engaged.Acc.PDT, sets.engaged.Counter, {
+	})
+	sets.engaged.Counterstance = set_combine(sets.engaged.PDT,{
+		head="Malignance Chapeau",
+		neck="Loricate Torque +1",
+		ear1="Sherida Earring",
+		ear2="Telos Earring",
+		body="Malignance Tabard",
+		--body="Mpaca's Doublet",
+		hands="Malignance Gloves",
+		ring1="Niqmaddu Ring",
+		ring2="Defending Ring",
+		waist="Moonbow Belt",
 		legs="Anch. Hose +1",
-		feet="Mel. Gaiters +1"
+		feet="Hes. Gaiters +1"
+	})
+	sets.engaged.SomeAcc.Counterstance = set_combine(sets.engaged.SomeAcc.PDT, sets.engaged.Counterstance, {
+	})
+	sets.engaged.Acc.Counterstance = set_combine(sets.engaged.Acc.PDT, sets.engaged.Counterstance, {
 	})
 
 	-- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.
 	sets.impetus_body = {body="Bhikku Cyclas +1"}
-	sets.footwork_kick_feet = {feet="Anch. Gaiters +1"}
+	sets.footwork_kick_feet = {feet="Anch. Gaiters +2"}
 
 	-- Hundred Fists/Impetus melee set mods
 	sets.engaged.HF = set_combine(sets.engaged)
 	sets.engaged.HF.Impetus = set_combine(sets.engaged, {
+		body="Bhikku Cyclas +1"
+	})
+	sets.engaged.SomeAcc.HF = set_combine(sets.engaged.SomeAcc)
+	sets.engaged.SomeAcc.HF.Impetus = set_combine(sets.engaged.SomeAcc, {
 		body="Bhikku Cyclas +1"
 	})
 	sets.engaged.Acc.HF = set_combine(sets.engaged.Acc)
@@ -436,18 +468,34 @@ function init_gear_sets()
 	sets.engaged.Counter.HF.Impetus = set_combine(sets.engaged.Counter, {
 		body="Bhikku Cyclas +1"
 	})
+	sets.engaged.SomeAcc.Counter.HF = set_combine(sets.engaged.SomeAcc.Counter)
+	sets.engaged.SomeAcc.Counter.HF.Impetus = set_combine(sets.engaged.SomeAcc.Counter, {
+		body="Bhikku Cyclas +1"
+	})
 	sets.engaged.Acc.Counter.HF = set_combine(sets.engaged.Acc.Counter)
 	sets.engaged.Acc.Counter.HF.Impetus = set_combine(sets.engaged.Acc.Counter, {
+		body="Bhikku Cyclas +1"
+	})
+	sets.engaged.Counterstance.HF = set_combine(sets.engaged.Counterstance)
+	sets.engaged.Counterstance.HF.Impetus = set_combine(sets.engaged.Counterstance, {
+		body="Bhikku Cyclas +1"
+	})
+	sets.engaged.SomeAcc.Counterstance.HF = set_combine(sets.engaged.SomeAcc.Counterstance)
+	sets.engaged.SomeAcc.Counterstance.HF.Impetus = set_combine(sets.engaged.SomeAcc.Counterstance, {
+		body="Bhikku Cyclas +1"
+	})
+	sets.engaged.Acc.Counterstance.HF = set_combine(sets.engaged.Acc.Counterstance)
+	sets.engaged.Acc.Counterstance.HF.Impetus = set_combine(sets.engaged.Acc.Counterstance, {
 		body="Bhikku Cyclas +1"
 	})
 
 
 	-- Footwork combat form
 	sets.engaged.Footwork = set_combine(sets.engaged,{
-		feet="Anch. Gaiters +1"
+		feet="Anch. Gaiters +2"
 	})
 	sets.engaged.Footwork.Acc = set_combine(sets.engaged.Acc,{
-		feet="Anch. Gaiters +1"
+		feet="Anch. Gaiters +2"
 	})
 
 	sets.buff.Boost = {
@@ -470,7 +518,7 @@ function job_buff_change(buff, gain)
     end
     
     -- Hundred Fists and Impetus modify the custom melee groups
-    if buff == "Hundred Fists" or buff == "Impetus" then
+    if buff == "Hundred Fists" or buff == "Impetus" or buff == 'Counterstance' then
         classes.CustomMeleeGroups:clear()
         
         if (buff == "Hundred Fists" and gain) or buffactive['hundred fists'] then
@@ -480,6 +528,10 @@ function job_buff_change(buff, gain)
         if (buff == "Impetus" and gain) or buffactive.impetus then
             classes.CustomMeleeGroups:append('Impetus')
         end
+
+        if (buff == "Counterstance" and gain) or buffactive['Counterstance'] then
+            classes.CustomMeleeGroups:append('Counterstance')
+        end
     end
 
     if buff == "Boost" then
@@ -487,7 +539,7 @@ function job_buff_change(buff, gain)
     end
 
     -- Update gear if any of the above changed
-    if buff == "Hundred Fists" or buff == "Impetus" or buff == "Footwork" or buff == "Boost" then
+    if buff == "Hundred Fists" or buff == "Impetus" or buff == "Footwork" or buff == "Boost" or buff == 'Counterstance' then
       handle_equipping_gear(player.status)
     end
 end
