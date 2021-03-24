@@ -286,7 +286,8 @@ function init_gear_sets()
 		hands="Jhakri Cuffs +2",
 		ring1="Metamor. Ring +1",
 		ring2="Stikini Ring",
-		back=gear.sucellos_mnd,
+		--back=gear.sucellos_mnd,
+		back="Aurist's Cape +1",
 		waist="Luminary Sash",
 		legs="Chironic Hose",
 		feet="Vitiation Boots +3",
@@ -538,6 +539,7 @@ function init_gear_sets()
 		--ring2="Stikini Ring",
 		-- Duration +10%
 		ring2="Kishar Ring",
+		-- effect +10
 		back=gear.sucellos_mnd,
 		-- 7
 		--waist="Rumination Sash",
