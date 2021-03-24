@@ -26,15 +26,6 @@ function user_setup()
 	gear.Threnody = "Gjallarhorn"
 	gear.Virelai = "Gjallarhorn"
 	
-	gear.AugRhapsode = {
-		name="Rhapsode's Cape",
-		augments={
-			"HP+18",
-			"Mag. Acc. +6",
-			"Enmity-2"
-		}
-	}
-	
 	-- Options: Override default values
 	state.CastingMode:options('Normal', 'Resistant')
 	state.OffenseMode:options('None', 'Normal')
@@ -209,7 +200,7 @@ function init_gear_sets()
 		hands="Inyan. Dastanas +2",
 		ring1="Sirona's Ring",
 		ring2="Petrov Ring",
-		back="Kumbira Cape",
+		--back="Kumbira Cape",
 		waist="Flume Belt +1",
 		legs="Inyanga Shalwar +2",
 		feet="Inyan. Crackows +2"
@@ -316,7 +307,7 @@ function init_gear_sets()
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
 		ring2="Stikini Ring",
-		back=gear.AugRhapsode,
+		back="Aurist's Cape +1",
 		waist="Eschan Stone",
 		legs="Chironic Hose",
 		--feet="Inyan. Crackows +2"
@@ -354,7 +345,6 @@ function init_gear_sets()
 		neck="Moonbow Whistle",
 		body="Fili Hongreline +1",
 		hands="Fili Manchettes +1",
-		back="Harmony Cape",
 		legs="Inyanga Shalwar +2",
 		feet="Brioso Slippers +3"
 	})
@@ -385,7 +375,6 @@ function init_gear_sets()
 	
 	-- Song-specific recast reduction
 	sets.midcast.SongRecast = set_combine(sets.midcast.FastRecast,{
-		back="Harmony Cape",
 		legs="Fili Rhingrave +1"
 	})
 
@@ -397,7 +386,6 @@ function init_gear_sets()
 		head="Inyanga Tiara +2",
 		body="Fili Hongreline +1",
 		hands="Inyan. Dastanas +2",
-		back="Kumbira Cape",
 		legs="Inyanga Shalwar +2",
 		feet="Brioso Slippers +3"
 	})
