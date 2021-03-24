@@ -966,8 +966,7 @@ function init_gear_sets()
 		ear2="Telos Earring",
 		ring1="Cacoethic Ring +1",
 		ring2="Jhakri Ring",
-		-- 2%
-		back="Ground. Mantle +1",
+		back="Aurist's Cape +1",
 		waist="Reiki Yotai",
 	})
 	sets.engaged.enspell = set_combine(sets.engaged,{
@@ -990,8 +989,11 @@ function init_gear_sets()
 		feet=gear.Carmine_feet_hq_B,
 	})
 	sets.engaged.enspell.Acc = set_combine(sets.engaged.Acc, sets.engaged.enspell,{
+		back="Aurist's Cape +1",
+		feet="Malignance Boots",
 	})
 	sets.engaged.enspellDW.Acc = set_combine(sets.engaged.Acc, sets.engaged.enspell,sets.engaged.enspellDW,{
+		back="Aurist's Cape +1",
 		feet="Malignance Boots",
 	})
 

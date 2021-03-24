@@ -318,7 +318,7 @@ function init_gear_sets()
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
 		ring2="Stikini Ring",
-		back=gear.Nanto_nuke,
+		back="Aurist's Cape +1",
 		waist="Luminary Sash",
 		legs="Geomancy Pants +2",
 		feet="Geo. Sandals +3"
@@ -442,6 +442,7 @@ function init_gear_sets()
 		hands="Telchine Gloves",
 		-- 5%
 		ring1="Menelaus's Ring",
+		back="Aurist's Cape +1",
 		-- 10%
 		legs="Gyve Trousers",
 		-- 5%
@@ -1010,6 +1011,7 @@ function init_gear_sets()
 		head="Bagua Galero +3",
 		neck="Lissome Necklace",
 		ring1="Cacoethic Ring +1",
+		back="Aurist's Cape +1",
 	})
 	
 	-- 17% Haste
@@ -1017,7 +1019,6 @@ function init_gear_sets()
 		neck="Subtlety Spec.",
 		ear2="Digni. Earring",
 		ring2="Patricius Ring",
-		back="Aurist's Cape +1",
 		waist="Eschan Stone",
 	})
 

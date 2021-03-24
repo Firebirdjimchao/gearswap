@@ -273,7 +273,7 @@ function init_gear_sets()
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
 		ring2="Stikini Ring",
-		back="Taranus's Cape",
+		back="Aurist's Cape +1",
 		waist="Eschan Stone",
 		legs="Merlinic Shalwar",
 		feet="Jhakri Pigaches +2",
@@ -332,6 +332,7 @@ function init_gear_sets()
 		hands="Telchine Gloves",
 		-- 5%
 		ring1="Menelaus's Ring",
+		back="Aurist's Cape +1",
 		-- 10%
 		legs="Gyve Trousers",
 		-- 5%

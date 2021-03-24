@@ -267,6 +267,7 @@ function init_gear_sets()
 		hands="Telchine Gloves",
 		-- 5%
 		ring1="Menelaus's Ring",
+		back="Aurist's Cape +1",
 		waist=gear.ElementalObi,
 		legs="Ebers Pant. +1",
 		-- 5%
