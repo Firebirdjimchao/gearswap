@@ -520,7 +520,7 @@ function init_gear_sets()
 		neck="Malison Medallion",
 		ring1="Menelaus's Ring",
 		ring2="Haoma's Ring",
-		feet="Gende. Galosh +1"
+		feet="Gende. Galosh. +1"
 	})
 	sets.midcast.CursnaSelf = set_combine(sets.midcast.Cursna,{
 		waist="Gishdubar Sash",
