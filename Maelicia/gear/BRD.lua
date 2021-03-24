@@ -10,7 +10,7 @@ function user_setup()
 	gear.HonorMarch = "Marsyas"
 	gear.Hymnus = "Gjallarhorn"
 	--gear.Lullaby = "Gjallarhorn"
-	gear.Lullaby = "Daurdabla",
+	gear.Lullaby = "Daurdabla"
 	gear.Madrigal = "Gjallarhorn"
 	gear.Mambo = "Gjallarhorn"
 	gear.March = "Gjallarhorn"
