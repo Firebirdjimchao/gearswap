@@ -738,7 +738,7 @@ function init_gear_sets()
 		hands="Aya. Manopolas +2",
 		ring1="Ilabrat Ring",
 		ring2="Petrov Ring",
-		back="Buquwik Cape",
+		back="Atheling Mantle",
 		waist="Goading Belt",
 		legs="Aya. Cosciales +2",
 		feet="Aya. Gambieras +2",
@@ -757,7 +757,7 @@ function init_gear_sets()
 	sets.engaged.Acc = set_combine(sets.engaged,{
 		ear2="Digni. Earring",
 		ring2="Cacoethic Ring +1",
-		back="Ground. Mantle +1"
+		back="Aurist's Cape +1"
 	})
 
 	sets.engaged.Dagger.Acc = set_combine(sets.engaged.Acc,{

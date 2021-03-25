@@ -595,7 +595,7 @@ function init_gear_sets()
 		hands="Aya. Manopolas +2",
 		ring1="Rajas Ring",
 		ring2="Petrov Ring",
-		back="Buquwik Cape",
+		back="Aurist's Cape +1",
 		waist="Goading Belt",
 		legs="Aya. Cosciales +2",
 		feet="Aya. Gambieras +2",

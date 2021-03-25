@@ -996,7 +996,7 @@ function init_gear_sets()
 		hands="Bagua Mitaines +3",
 		ring1="Rajas Ring",
 		ring2="Petrov Ring",
-		back="Buquwik Cape",
+		back="Aurist's Cape +1",
 		-- 5% Haste
 		waist="Goading Belt",
 		-- 2% Haste
