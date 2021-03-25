@@ -154,10 +154,10 @@ function init_gear_sets()
 	-- Precast sets to enhance JAs
 	sets.precast.JA['Vallation'] = {body="Runeist's coat +3",legs="Futhark Trousers +3"} 
 	sets.precast.JA['Valiance'] = sets.precast.JA['Vallation'] 
-	sets.precast.JA['Pflug'] = {feet="Runeist bottes +1"} 
+	sets.precast.JA['Pflug'] = {feet="Runeist bottes +2"} 
 	sets.precast.JA['Battuta'] = {head="Fu. Bandeau +3"}
 	sets.precast.JA['Liement'] = {body="Futhark Coat +3"}
- 	sets.precast.JA['Gambit'] = {hands="Runeist mitons +1"} 
+ 	sets.precast.JA['Gambit'] = {hands="Runeist mitons +2"} 
 	sets.precast.JA['Rayke'] = {feet="Futhark Bottes +1"} 
 	sets.precast.JA['Elemental Sforzo'] = {body="Futhark Coat +3"} 
 	sets.precast.JA['Swordplay'] = {hands="Futhark Mitons +1"} 
@@ -187,8 +187,8 @@ function init_gear_sets()
 		--ear2="Odnowa earring",
 		-- 218 HP
 		body="Runeist's coat +3",
-		-- 74 HP
-		hands="Turms Mittens +1",
+		-- 75 HP
+		hands="Runeist Mitons +2",
 		-- 60 HP
 		ring1="Ilabrat Ring",
 		-- 50 HP
@@ -201,8 +201,8 @@ function init_gear_sets()
 		--waist="Oneiros belt",
 		-- 107 HP
 		legs="Futhark Trousers +3",
-		-- 43 HP
-		feet="Runeist bottes +1"
+		-- 64 HP
+		feet="Runeist bottes +2"
 	}
 		
 	sets.precast.JA['Provoke'] = set_combine(sets.enmity,{
@@ -395,9 +395,11 @@ function init_gear_sets()
 		--feet="Turms leggings",
 	})
 
-	-- 406 (RUN: B-, Lv. 99)
+	-- 388 Base (RUN: B-, Lv. 99)
 	-- 16 (Merits)
 	-- 36 (Gifts)
+	-- 60 Gear
+	-- 500 Total
 	sets.midcast['Enhancing Magic'] = set_combine(sets.midcast.FastRecast, {
 		-- 11
 		--head="Carmine Mask +1",
@@ -405,8 +407,8 @@ function init_gear_sets()
 		neck="Incanter's Torque",
 		-- 5
 		ear1="Andoaa Earring",
-		-- 15
-		hands="Runeist Mitons +1",
+		-- 17
+		hands="Runeist Mitons +2",
 		-- 5
 		ring1="Stikini Ring",
 		-- 5
