@@ -952,8 +952,13 @@ function init_gear_sets()
 	})
 	
 	sets.idle.Regen = set_combine(sets.idle,{
+		head="Meghanada Visor +2",
+		body="Meg. Cuirie +2",
 		neck="Bathy Choker +1",
+		hands="Meg. Gloves +2",
 		ring1="Sheltered Ring",
+		legs="Meg. Chausses +2",
+		feet="Meg. Jam. +2",
 	})
 	
 	sets.idle.CP = set_combine(sets.idle,{
