@@ -542,8 +542,8 @@ function init_gear_sets()
 	-- 378 Base
 	-- 16 merits
 	-- 394 Initial
-	-- 118 gear
-	-- 512 total
+	-- 108 gear
+	-- 502 total
 	sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.MACC,{
 		-- 16
 		head="Befouled Crown",
@@ -560,7 +560,8 @@ function init_gear_sets()
 		-- 5
 		ring2="Stikini Ring",
 		-- 10
-		back="Lifestream Cape",
+		--back="Lifestream Cape",
+		back="Aurist's Cape +1",
 		-- 7
 		--waist="Rumination Sash",
 		-- 18
@@ -576,12 +577,15 @@ function init_gear_sets()
 	sets.midcast.enfeebFullSkill = set_combine(sets.midcast['Enfeebling Magic'], {
 		-- 5
 		ring1="Stikini Ring",
+		-- 10
+		back="Lifestream Cape",
 	})
 
 	-- For MND potency based enfeebs
 	sets.midcast.enfeebMND = set_combine(sets.midcast['Enfeebling Magic'], {
 		--neck="Imbodla Necklace",
 		--ring1="Stikini Ring",
+		back="Aurist's Cape +1",
 		ring1="Metamor. Ring +1",
 	})
 
@@ -590,7 +594,7 @@ function init_gear_sets()
 		head="Ea Hat",
 		--neck="Imbodla Necklace",
 		ring2="Metamor. Ring +1",
-		back=gear.Nanto_nuke,
+		back="Aurist's Cape +1",
 		legs=gear.Merlinic_legs_nuke,
 		feet="Jhakri Pigaches +2",
 	})
@@ -601,16 +605,14 @@ function init_gear_sets()
 		-- Duration +10%
 		ring1="Kishar Ring",
 		ring2="Metamor. Ring +1",
+		back="Aurist's Cape +1",
 	})
 
 	-- For enfeebs with 500 skill caps
 	-- 394 Initial
-	-- 105 gear
-	-- 504 total
+	-- 108 gear
+	-- 502 total
 	sets.midcast.enfeebSkillCap = set_combine(sets.midcast['Enfeebling Magic'], {
-		-- 5
-		ring1="Stikini Ring",
-		hands="Geo. Mitaines +2",
 	})
 
 	-- Static value (use duration+ gear)

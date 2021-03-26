@@ -293,12 +293,19 @@ function init_gear_sets()
 	})
 
 	sets.midcast.Cursna = set_combine(sets.midcast['Healing Magic'],{
+		-- +10
 		neck="Malison Medallion",
+		-- +15
 		hands="Fanatic Gloves",
+		-- +20
 		ring1="Menelaus's Ring",
+		-- +15
 		ring2="Haoma's Ring",
-		back="Mending Cape",
+		-- +25
+		back="Alaunus's Cape",
+		-- +15
 		legs="Theo. Pant. +1",
+		-- +10
 		feet="Gende. Galosh +1"
 	})
 	sets.midcast.CursnaSelf = set_combine(sets.midcast.Cursna,{

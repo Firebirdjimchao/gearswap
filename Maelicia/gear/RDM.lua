@@ -347,7 +347,7 @@ function init_gear_sets()
 		hands=gear.Vanya_hands_B,
 		-- 5%
 		ring1="Menelaus's Ring",
-		back=gear.sucellos_mnd,
+		back="Aurist's Cape +1",
 		waist="Luminary Sash",
 		-- 12%
 		legs="Atrophy Tights +3",
