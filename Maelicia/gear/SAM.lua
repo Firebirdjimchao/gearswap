@@ -10,7 +10,9 @@ function user_setup()
 	state.WeaponskillMode:options('Normal', 'MidAcc', 'HighAcc', 'FullAcc')
 	state.PhysicalDefenseMode:options('PDT', 'Reraise')
 	state.MagicalDefenseMode:options('MDT', 'Reraise')
-	state.IdleMode:options('CP', 'Normal', 'Regen', 'Reraise')
+	state.IdleMode:options('Normal', 'Regain', 'Regen', 'Reraise')
+
+	state.EnmityMode = M{['description']='Enmity Mode', 'None', 'Minus', 'Plus'}
 	
 	gear.Smertrio_STP = { name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Store TP"+10','Damage taken-5%',}}
 	gear.Smertrio_STP_DEX = { name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Damage taken-5%',}}
@@ -41,6 +43,7 @@ function user_setup()
 	send_command('bind @` input /ja "Hasso" <me>')
 	send_command('bind !` input /ja "Seigan" <me>')
 	send_command('bind ^` gs equip sets.Twilight; input /echo --- Twilight Set On ---')
+	send_command('bind ^- gs c cycle enmitymode')
 	
 	select_default_macro_book()
 
@@ -53,14 +56,93 @@ function user_unload()
 	send_command('unbind @`')
 	send_command('unbind ^`')
 	send_command('unbind !`')
+	send_command('unbind ^-')
 end
 
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
-    --------------------------------------
+  --------------------------------------
 	-- Start defining the sets
 	--------------------------------------
+
+	--------------------------------------
+	-- Base sets
+	--------------------------------------
+
+	-- 32% DT 24% PDT 10% MDT 30 MDB (43% DT if using Khonsu)
+	sets.DT = {
+		-- 6& DT
+		--sub="Khonsu",
+		-- 2% DT
+		ammo="Staunch Tathlum +1",
+		-- 5% MDT
+		--head=gear.Valorous_head_WS,
+		-- 7% PDT
+		head="Mpaca's Cap",
+		-- 2% MDT
+		ear1="Odnowa Earring +1",
+		-- 3% MDT
+		ear2="Etiolation Earring",
+		-- 6% DT
+		neck="Loricate Torque +1",
+		-- 10% DT 6 MDB
+		--body="Tartarus Platemail",
+		-- 8% DT 5 MDB
+		--body="Wakido Domaru +3",
+		-- 9% DT 8 MDB
+		body="Nyame Mail",
+		-- 6% PDT 3 MDB
+		hands="Sakonji Kote +3",
+		--ring1="Niqmaddu Ring",
+		-- 5% PDT 5% MDT
+		ring1="Dark Ring",
+		-- 10% DT
+		ring2="Defending Ring",
+		-- 5% DT
+		back=gear.Smertrio_STP,
+		-- 8 MDB
+		legs="Ken. Hakama +1",
+		-- 4% DT 2 MDB
+		--feet="Amm Greaves",
+		-- 6% PDT 12 MDB
+		feet="Mpaca's Boots",
+	}
+
+	sets.MAB = {
+		head=gear.Valorous_head_Magic,
+		--neck="Sanctity Necklace",
+		ear1="Friomisi Earring",
+		ear2="Crematio Earring",
+		body="Sacro Breastplate",
+		hands="Leyline Gloves",
+		ring1="Acumen Ring",
+		back=gear.Smertrio_WS,
+		legs="Wakido Haidate +3",
+		--feet="Founder's Greaves"
+		feet=gear.Valorous_feet_WS,
+	}
+
+	sets.Enmity.Up = {
+		-- 6 Enmity
+		head="Rabid Visor",
+		-- 10 Enmity
+		neck="Unmoving Collar +1",
+		-- 10 Enmity
+		body="Emet Harness +1",
+		-- 9 Enmity
+		hands="Kurys Gloves",
+		-- 5 Enmity
+		ring1="Supershear Ring",
+		-- 5 Enmity
+		ring2="Pernicious Ring",
+		-- 3 Enmity
+		waist="Goading Belt",
+	}
+
+	sets.Enmity.Down = {
+		--ear2="Schere Earring",
+	}
 	
 	--------------------------------------
 	-- Precast sets
@@ -75,7 +157,9 @@ function init_gear_sets()
 	sets.precast.JA['Warding Circle'] = {head="Wakido kabuto +3"}
 	sets.precast.JA['Blade Bash'] = {hands="Sakonji Kote +3"}
 	sets.precast.JA['Hasso'] = {feet="Wakido Sune. +3"}
-	
+
+	sets.precast.JA['Provoke'] = set_combine(sets.Enmity.Up, {})
+
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {
 		head="Wakido kabuto +3",
@@ -149,20 +233,9 @@ function init_gear_sets()
 		--feet=gear.Rao_feet_hq_B,
 		feet="Wakido Sune. +3",
 	})
-	sets.precast.WS.MAB = set_combine(sets.precast.WS, {
-		head=gear.Valorous_head_Magic,
-		--neck="Sanctity Necklace",
-		ear1="Friomisi Earring",
-		ear2="Crematio Earring",
-		body="Sacro Breastplate",
-		hands="Leyline Gloves",
-		ring1="Acumen Ring",
-		back=gear.Smertrio_WS,
-		legs="Wakido Haidate +3",
-		--feet="Founder's Greaves"
-		feet=gear.Valorous_feet_WS,
+	sets.precast.WS.MAB = set_combine(sets.MAB, sets.precast.WS, {
 	})
-	sets.precast.RA = set_combine(sets.precast.WS,{
+	sets.precast.WS.RA = set_combine(sets.precast.WS,{
 		ear1="Telos Earring",
 		ear2="Moonshade Earring",
 		body="Sakonji Domaru +3",
@@ -411,36 +484,7 @@ function init_gear_sets()
 	-- Midcast sets
 	--------------------------------------
 
-	sets.midcast.FastRecast = set_combine(sets.precast.FC,{
-		-- 2% DT
-		ammo="Staunch Tathlum +1",
-		-- 5% MDT
-		--head=gear.Valorous_head_WS,
-		-- 7% PDT
-		head="Mpaca's Cap",
-		-- 2% MDT
-		ear1="Odnowa Earring +1",
-		-- 3% MDT
-		ear2="Etiolation Earring",
-		-- 6% DT
-		neck="Loricate Torque +1",
-		-- 10% DT 6 MDB
-		--body="Tartarus Platemail",
-		-- 8% DT 5 MDB
-		body="Wakido Domaru +3",
-		-- 6% PDT 3 MDB
-		hands="Sakonji Kote +3",
-		--ring1="Niqmaddu Ring",
-		-- 5% PDT 5% MDT
-		ring1="Dark Ring",
-		-- 10% DT
-		ring2="Defending Ring",
-		-- 5% DT
-		back=gear.Smertrio_STP,
-		-- 8 MDB
-		legs="Ken. Hakama +1",
-		-- 4% DT 2 MDB
-		feet="Amm Greaves"
+	sets.midcast.FastRecast = set_combine(sets.precast.FC, sets.DT, {
 	})
 	
 	sets.midcast.RA = {
@@ -483,21 +527,9 @@ function init_gear_sets()
 	
 	-- Idle sets
 	
-	sets.idle = {
-		ammo="Staunch Tathlum +1",
-		head=gear.Valorous_head_WS,
-		neck="Loricate Torque +1",
-		ear1="Odnowa Earring +1",
-		ear2="Etiolation Earring",
-		body="Nyame Mail",
-		hands="Sakonji Kote +3",
-		ring1="Dark Ring",
-		ring2="Defending Ring",
-		back="Moonbeam Cape",
-		waist="Flume Belt +1",
-		legs="Valorous Hose",
+	sets.idle = set_combine(sets.DT, {
 		feet="Danzo Sune-ate"
-	}
+	})
 	
 	sets.noprotect = {ring1="Sheltered Ring"}
 	
@@ -520,11 +552,6 @@ function init_gear_sets()
 		--feet="Rao Sune-Ate +1",
 	})
 	
-	sets.idle.Weak = set_combine(sets.idle,{
-		head="Twilight Helm",
-		body="Twilight Mail",
-	})
-	
 	sets.idle.Regen = set_combine(sets.idle,{
 		head="Rao Kabuto +1",
 		neck="Bathy Choker +1",
@@ -533,49 +560,20 @@ function init_gear_sets()
 		feet="Rao Sune-Ate +1",
 	})
 
+	sets.idle.Regain = set_combine(sets.idle,{
+		head="Wakido Kabuto +3",
+	})
+
+	sets.idle.Weak = set_combine(sets.idle.Regen, sets.Twilight, {
+	})
+
 		-- Resting sets
 	sets.resting = set_combine(sets.idle.Regen,{
 	})
 	
 	-- Defense sets
 
-	-- 32% DT 24% PDT 10% MDT 30 MDB (43% DT if using Khonsu)
-	sets.defense.DT = set_combine(sets.idle,{
-		-- 6& DT
-		--sub="Khonsu",
-		-- 2% DT
-		ammo="Staunch Tathlum +1",
-		-- 5% MDT
-		--head=gear.Valorous_head_WS,
-		-- 7% PDT
-		head="Mpaca's Cap",
-		-- 2% MDT
-		ear1="Odnowa Earring +1",
-		-- 3% MDT
-		ear2="Etiolation Earring",
-		-- 6% DT
-		neck="Loricate Torque +1",
-		-- 10% DT 6 MDB
-		--body="Tartarus Platemail",
-		-- 8% DT 5 MDB
-		--body="Wakido Domaru +3",
-		-- 9% DT 8 MDB
-		body="Nyame Mail",
-		-- 6% PDT 3 MDB
-		hands="Sakonji Kote +3",
-		--ring1="Niqmaddu Ring",
-		-- 5% PDT 5% MDT
-		ring1="Dark Ring",
-		-- 10% DT
-		ring2="Defending Ring",
-		-- 5% DT
-		back=gear.Smertrio_STP,
-		-- 8 MDB
-		legs="Ken. Hakama +1",
-		-- 4% DT 2 MDB
-		--feet="Amm Greaves",
-		-- 6% PDT 12 MDB
-		feet="Mpaca's Boots",
+	sets.defense.DT = set_combine(sets.DT,{
 	})
 
 	sets.defense.PDT = set_combine(sets.defense.DT,{
@@ -689,6 +687,7 @@ function init_gear_sets()
 		ear1="Dedition Earring",
 		-- 1 STP
 		ear2="Brutal Earring",
+		--ear2="Schere Earring",
 		-- 12 STP 3%
 		--body="Kasuga Domaru +1",
 		-- STP 5~9
@@ -731,6 +730,7 @@ function init_gear_sets()
 		ear1="Cessance Earring",
 		-- 1 STP
 		ear2="Brutal Earring",
+		--ear2="Schere Earring",
 		-- 1%
 		--body="Dagon Breastplate",
 		-- STP 5~9
@@ -770,6 +770,7 @@ function init_gear_sets()
 		ear1="Telos Earring",
 		-- 1 STP
 		ear2="Brutal Earring",
+		--ear2="Schere Earring",
 		-- 1%
 		--body="Dagon Breastplate",
 		-- STP 5~9
@@ -885,21 +886,13 @@ function init_gear_sets()
 	})
 	sets.engaged.FullAcc.MDT = set_combine(sets.engaged,FullAcc,sets.engagedMDTBase,{
 	})
-	sets.engaged.Reraise = set_combine(sets.engaged,{
-		head="Twilight Helm",
-		body="Twilight Mail"
+	sets.engaged.Reraise = set_combine(sets.engaged, sets.Twilight, {
 	})
-	sets.engaged.MidAcc.Reraise = set_combine(sets.engaged.MidAcc,{
-		head="Twilight Helm",
-		body="Twilight Mail"
+	sets.engaged.MidAcc.Reraise = set_combine(sets.engaged.MidAcc, sets.Twilight, {
 	})
-	sets.engaged.HighAcc.Reraise = set_combine(sets.engaged.HighAcc,{
-		head="Twilight Helm",
-		body="Twilight Mail"
+	sets.engaged.HighAcc.Reraise = set_combine(sets.engaged.HighAcc, sets.Twilight, {
 	})
-	sets.engaged.FullAcc.Reraise = set_combine(sets.engaged.FullAcc,{
-		head="Twilight Helm",
-		body="Twilight Mail"
+	sets.engaged.FullAcc.Reraise = set_combine(sets.engaged.FullAcc, sets.Twilight, {
 	})
 	    
 	-- Melee sets for in Adoulin, which has an extra 10 Save TP for weaponskills.
@@ -990,6 +983,11 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
+	if state.EnmityMode.value == 'Down' then
+		meleeSet = set_combine(meleeSet, sets.Enmity.Down)
+	elseif state.EnmityMode.value == 'Up' then
+		meleeSet = set_combine(meleeSet, sets.Enmity.Up)
+	end
 	if buffactive['Doom'] then
 		meleeSet = set_combine(meleeSet, sets.buff.Doom)
 	end
