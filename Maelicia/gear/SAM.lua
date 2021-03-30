@@ -243,6 +243,11 @@ function init_gear_sets()
 		feet="Wakido Sune. +3"
 	})
 
+	sets.precast.WS.MaxTP = {
+		ear2="Ishvara Earring",
+		--ear1="Lugra Earring +1",
+	}
+
 	-- Fudo/Kasha/Gekko/Yukikaze
 	sets.precast.WS1Hit = set_combine(sets.precast.WS,{
 		ammo="Knobkierrie",
@@ -935,6 +940,49 @@ function init_gear_sets()
 	sets.buff.Sekkanoki = {hands="Kasuga Kote +1"}
 	sets.buff.Sengikori = {hands="Kas. Sune-Ate +1"}
 	sets.buff['Meikyo Shisui'] = {feet="Sakonji Sune-ate"} -- only works when equipped
+end
+
+-------------------------------------------------------------------------------------------------------------------
+-- Job-specific hooks for standard casting events.
+-------------------------------------------------------------------------------------------------------------------
+
+-- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
+-- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
+function job_precast(spell, action, spellMap, eventArgs)
+	if spell.type == 'WeaponSkill' then
+		if (spell.target.model_size + spell.range * 1.642276421172564) < spell.target.distance then	
+			add_to_chat(7,"--- Target "..spell.target.type.." ["..player.target.name.."] out of range of ["..spell.name.."] [ Distance: "..spell.target.distance.."] ---")
+			cancel_spell()
+		end
+
+		-- Don't gearswap for weaponskills when Defense is active and Hybrid Mode set to a specific state
+		if state.DefenseMode.value ~= 'None' and state.HybridMode ~= 'Normal' then
+			eventArgs.handled = true
+		end
+	end
+end
+
+-- Run after the default precast() is done.
+-- eventArgs is the same one used in job_precast, in case information needs to be persisted.
+function job_post_precast(spell, action, spellMap, eventArgs)
+	if spell.type:lower() == 'weaponskill' then
+		if state.Buff.Sekkanoki then
+			equip(sets.buff.Sekkanoki)
+		end
+		if state.Buff.Sengikori then
+			equip(sets.buff.Sengikori)
+		end
+		if state.Buff['Meikyo Shisui'] then
+			equip(sets.buff['Meikyo Shisui'])
+		end
+
+		if state.DefenseMode.value ~= 'None' and state.HybridMode ~= 'Normal' then
+			-- Replace Moonshade Earring if we're at cap TP
+			if player.tp >= 2750 then
+				equip(sets.precast.WS.MaxTP)
+			end
+		end
+	end
 end
 
 -------------------------------------------------------------------------------------------------------------------
