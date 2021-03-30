@@ -1053,7 +1053,7 @@ function init_gear_sets()
 	sets.engaged.Melee = set_combine(sets.engaged,{
 		head=gear.Adhemar_head_B,
 		neck="Asperity Necklace",
-		ear1="Telos Earring",
+		ear1="Sherida Earring",
 		ear2="Brutal Earring",
 		--body=gear.Adhemar_body_B,
 		body="Tatena. Harama. +1",
