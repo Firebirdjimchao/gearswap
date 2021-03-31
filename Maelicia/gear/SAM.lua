@@ -13,6 +13,7 @@ function user_setup()
 	state.IdleMode:options('Normal', 'Regain', 'Regen', 'Reraise')
 
 	state.EnmityMode = M{['description']='Enmity Mode', 'None', 'Minus', 'Plus'}
+	state.TreasureMode = M(false, 'TH')
 	
 	gear.Smertrio_STP = { name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Store TP"+10','Damage taken-5%',}}
 	gear.Smertrio_STP_DEX = { name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Damage taken-5%',}}
@@ -44,6 +45,7 @@ function user_setup()
 	send_command('bind !` input /ja "Seigan" <me>')
 	send_command('bind ^` gs equip sets.Twilight; input /echo --- Twilight Set On ---')
 	send_command('bind ^- gs c cycle enmitymode')
+	send_command('bind ^= gs c toggle TreasureMode; input /echo --- TreasureMode On ---')
 	
 	select_default_macro_book()
 
@@ -57,6 +59,7 @@ function user_unload()
 	send_command('unbind ^`')
 	send_command('unbind !`')
 	send_command('unbind ^-')
+	send_command('unbind ^=')
 end
 
 
@@ -955,6 +958,10 @@ function job_precast(spell, action, spellMap, eventArgs)
 			cancel_spell()
 		end
 
+		if state.TreasureMode.value ~= false then
+			equip(sets.sharedTH)
+		end
+
 		-- Don't gearswap for weaponskills when Defense is active and Hybrid Mode set to a specific state
 		if state.DefenseMode.value ~= 'None' and state.HybridMode ~= 'Normal' then
 			eventArgs.handled = true
@@ -1035,6 +1042,9 @@ function customize_melee_set(meleeSet)
 		meleeSet = set_combine(meleeSet, sets.Enmity.Down)
 	elseif state.EnmityMode.value == 'Up' then
 		meleeSet = set_combine(meleeSet, sets.Enmity.Up)
+	end
+	if state.TreasureMode.value ~= false then
+		meleeSet = set_combine(meleeSet, sets.sharedTH)
 	end
 	if buffactive['Doom'] then
 		meleeSet = set_combine(meleeSet, sets.buff.Doom)
