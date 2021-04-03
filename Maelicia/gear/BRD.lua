@@ -291,10 +291,10 @@ function init_gear_sets()
 	})
 	
 	sets.midcast.MACC = {
-		--main=gear.MaccStaff,
-		--sub="Enki Strap",
-		main="Daybreak",
-		sub="Ammurapi Shield",
+		main=gear.MaccStaff,
+		sub="Enki Strap",
+		--main="Daybreak",
+		--sub="Ammurapi Shield",
 		head="Chironic Hat",
 		--neck="Incanter's Torque",
 		neck="Moonbow Whistle",
@@ -380,12 +380,11 @@ function init_gear_sets()
 
 	-- For song debuffs (duration primary, accuracy secondary)
 	sets.midcast.SongDebuff = set_combine(sets.midcast.MACC,{
+		main="Kali",
 		range="Gjallarhorn",
 		--neck="Aoidos' Matinee",
 		neck="Moonbow Whistle",
-		head="Inyanga Tiara +2",
 		body="Fili Hongreline +1",
-		hands="Inyan. Dastanas +2",
 		legs="Inyanga Shalwar +2",
 		feet="Brioso Slippers +3"
 	})
@@ -395,9 +394,10 @@ function init_gear_sets()
 		range="Gjallarhorn",
 		--neck="Incanter's Torque",
 		neck="Moonbow Whistle",
+		ear1="Regal Earring",
 		body="Brioso Justau. +2",
-		legs="Chironic Hose",
-		--feet="Chironic Slippers"
+		hands="Brioso Cuffs +3",
+		legs="Inyanga Shalwar +2",
 		feet="Brioso Slippers +3"
 	})
 
@@ -580,7 +580,7 @@ function init_gear_sets()
 	sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.MACC,{
 		--neck="Incanter's Torque",
 		neck="Moonbow Whistle",
-		body="Vanya Robe",
+		--body="Vanya Robe",
 		hands="Inyan. Dastanas +2",
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
@@ -599,7 +599,7 @@ function init_gear_sets()
 	})
 	
 	sets.midcast['Divine Magic'] = set_combine(sets.midcast.MAB,{
-		body="Vanya Robe",
+		--body="Vanya Robe",
 		feet="Chironic Slippers"
 	})
 	

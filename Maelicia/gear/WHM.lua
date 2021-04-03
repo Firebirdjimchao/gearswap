@@ -210,10 +210,10 @@ function init_gear_sets()
 	}
 	
 	sets.midcast.MAB = {
-		--main=gear.MainStaff,
-		--sub="Enki Strap",
-		main="Daybreak",
-		sub="Ammurapi Shield",
+		main=gear.MaccStaff,
+		sub="Enki Strap",
+		--main="Daybreak",
+		--sub="Ammurapi Shield",
 		ammo="Ombre Tathlum +1",
 		head="Chironic Hat",
 		neck="Sanctity Necklace",

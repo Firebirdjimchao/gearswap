@@ -306,7 +306,7 @@ function init_gear_sets()
 	sets.midcast.MACC = {
 		--main="Idris",
 		--sub="Ammurapi Shield",
-		main=gear.MainStaff,
+		main=gear.MaccStaff,
 		sub="Khonsu",
 		range=gear.GeoBell,
 		head="Geo. Galero +2",

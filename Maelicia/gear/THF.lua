@@ -688,6 +688,7 @@ function init_gear_sets()
 		feet="Plun. Poulaines +3"
 	}
 
+	-- 28 Gear DW
 	sets.engaged.MidAcc = set_combine(sets.engaged,{
 		ammo="Yamarang",
 		neck="Lissome Necklace",
@@ -696,6 +697,7 @@ function init_gear_sets()
 		legs="Meg. Chausses +2",
 	})
 
+	-- 11 Gear DW
 	sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc,{
 		ear1="Digni. Earring",
 		ear2="Telos Earring",
@@ -705,6 +707,7 @@ function init_gear_sets()
 		legs="Pill. Culottes +3",
 	})
 
+	-- 11 Gear DW
 	sets.engaged.FullAcc = set_combine(sets.engaged.HighAcc, {
 		head="Pill. Bonnet +3",
 		neck="Subtlety Spec.",
@@ -715,6 +718,7 @@ function init_gear_sets()
 		feet="Malignance Boots",
 	})
 	
+	-- 6 Gear DW
 	sets.engaged.Evasion = set_combine(sets.engaged,{
 		head="Malignance Chapeau",
 		body="Malignance Tabard",
@@ -802,35 +806,42 @@ function init_gear_sets()
 
 	-- Normal -------
 	-- DW needed: 42 (37 with gift)
-	-- 32 Gear DW
+	-- 33 Gear DW
 	sets.engaged.Haste_15 = set_combine(sets.engaged,{
-		ear1="Sherida Earring",
-		ear2="Suppanomimi",
 	})
 	-- DW needed: 31 (26 with gift)
-	-- 32 Gear DW
+	-- 26 Gear DW
 	sets.engaged.Haste_30 = set_combine(sets.engaged,{
-		ear1="Sherida Earring",
-		ear2="Suppanomimi",
+		waist="Windbuffet Belt +1",
 	})
 	-- DW needed: 26 (21 with gift)
-	-- 17 Gear DW
+	-- 22 Gear DW
 	sets.engaged.Haste_35 = set_combine(sets.engaged,{
-		ear1="Sherida Earring",
+		-- 5 DW
 		ear2="Suppanomimi",
 		body="Pillager's Vest +3",
+		-- 5 DW
+		hands="Pill. Armlets +3",
+		-- 5 DW
+		ring2="Haverton Ring",
 		back=gear.jsecape_dex_crit,
+		-- 7 DW
+		waist="Reiki Yotai",
 		legs="Meg. Chausses +2",
 	})
 	-- DW needed: 11 (6 with gift)
-	-- 10 Gear DW
+	-- 6 Gear DW
 	sets.engaged.MaxHaste = set_combine(sets.engaged,{
 		ear1="Sherida Earring",
 		ear2="Telos Earring",
 		body="Pillager's Vest +3",
 		--hands=gear.Adhemar_hands_B,
-		hands="Pill. Armlets +3",
-		back=gear.jsecape_dex_crit,
+		--hands="Pill. Armlets +3",
+		hands="Malignance Gloves",
+		ring1="Gere Ring",
+		--back=gear.jsecape_dex_crit,
+		-- 6 DW
+		back=gear.jsecape_dex_dw,
 		waist="Windbuffet Belt +1",
 		legs="Meg. Chausses +2",
 	})
