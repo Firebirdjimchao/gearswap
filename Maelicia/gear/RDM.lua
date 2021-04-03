@@ -8,6 +8,7 @@ function user_setup()
 
 	state.MagicBurst = M(false, 'Magic Burst')
 	state.WeaponLock = M(false, 'Weapon Lock')
+	state.RangeLock = M(false, 'Range Lock')
 
 	gear.default.obi_waist = "Sacro Cord"
 	gear.sucellos_mab = { name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
@@ -59,6 +60,7 @@ function user_setup()
 	-- Additional local binds
 	send_command('bind @` gs c cycle MagicBurst')
 	send_command('bind !` gs c toggle WeaponLock; input /echo --- Weapons Lock ---')
+	send_command('bind ^` gs c toggle RangeLock; input /echo --- Range Lock ---')
 
 	send_command('alias rdmfulldebuff input /ma "Inundation" <t>;wait 5;input /ma "Distract II" <t>;wait 5;input /ma "Frazzle II" <t>;wait 5;input /ma "Dia III" <t>;wait 5;input /ma "Paralyze II" <t>;wait 5;input /ma "Slow II" <t>;wait 5;input /ma "Blind II" <t>;wait 5;input /ma "Poison II" <t>;wait 5;input /ma "Addle" <t>;')
 	send_command('alias rdmdddebuff input /ma "Inundation" <t>;wait 5;input /ma "Distract II" <t>;wait 5;input /ma "Dia III" <t>;wait 5;input /ma "Poison II" <t>;')
@@ -73,6 +75,7 @@ end
 function user_unload()
 	send_command('unbind @`')
 	send_command('unbind !`')
+	send_command('unbind ^`')
 end
 
 -- Define sets and vars used by this job file.
@@ -80,6 +83,12 @@ function init_gear_sets()
 	--------------------------------------
 	-- Start defining the sets
 	--------------------------------------
+
+	-- set used to lock Ullr in conjunction with RangeLock
+	sets.EnforceMACCResistant =  {
+		range="Ullr",
+		ammo=empty,
+	}
 	
 	-- Precast Sets
 	
@@ -161,11 +170,6 @@ function init_gear_sets()
 	
 	sets.precast.FC['Enfeebling Magic'] = set_combine(sets.precast.FC, {
 		head="Leth. Chappel +1"
-	})
-
-	sets.precast.FC.Impact = set_combine(sets.precast.FC, {
-		head=empty,
-		body="Twilight Cloak"
 	})
 		 
 	-- Weaponskill sets
@@ -267,11 +271,10 @@ function init_gear_sets()
 	});
 	
 	sets.midcast.MACC = {
-		--main=gear.MainStaff,
-		--main="Grioavolr",
-		--sub="Enki Strap",
-		main="Daybreak",
-		sub="Ammurapi Shield",
+		main=gear.MaccStaff,
+		sub="Enki Strap",
+		--main="Daybreak",
+		--sub="Ammurapi Shield",
 		--ammo="Regal Gem",
 		range="Ullr",
 		--head=gear.Chironic_head_nuke,
@@ -513,9 +516,9 @@ function init_gear_sets()
 	-- 77 gear
 	-- 557 total
 	sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.MACC,{
-		--main=gear.MainStaff,
-		--sub="Enki Strap",
-		range="Ullr",
+		main=gear.MaccStaff,
+		sub="Enki Strap",
+		--range="Ullr",
 		-- effect +10
 		--ammo="Regal Gem",
 		-- 26 3s x # Merit DUR
@@ -549,6 +552,13 @@ function init_gear_sets()
 		feet="Vitiation Boots +3",
 	})
 
+	sets.midcast['Enfeebling Magic'].Resistant = set_combine(sets.midcast['Enfeebling Magic'],{
+		range="Ullr",
+		-- effect +10
+		--ammo="Regal Gem",
+		ammo=empty,
+	})
+
 	-- For enfeebs with no known skill caps
 	-- 476 Initial
 	-- 108 gear
@@ -559,6 +569,8 @@ function init_gear_sets()
 		-- 5
 		ring1="Stikini Ring",
 	})
+	sets.midcast.enfeebFullSkill.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, sets.midcast.enfeebFullSkill, {
+	})
 
 	-- For MND potency based enfeebs
 	sets.midcast.enfeebMND = set_combine(sets.midcast['Enfeebling Magic'], {
@@ -566,6 +578,8 @@ function init_gear_sets()
 		head="Viti. Chapeau +3",
 		neck="Dls. Torque +1",
 		waist="Luminary Sash",
+	})
+	sets.midcast.enfeebMND.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, sets.midcast.enfeebMND, {
 	})
 
 	-- For INT potency based enfeebs
@@ -578,6 +592,8 @@ function init_gear_sets()
 		back=gear.sucellos_mab,
 		legs=gear.Merlinic_legs_nuke,
 		feet="Vitiation Boots +3",
+	})
+	sets.midcast.enfeebINT.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, sets.midcast.enfeebINT, {
 	})
 
 	-- For enfeebs with static values (use duration+ gear)
@@ -592,6 +608,8 @@ function init_gear_sets()
 		ring2="Kishar Ring",
 		feet="Vitiation Boots +3",
 	})
+	sets.midcast.enfeebStatic.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, sets.midcast.enfeebStatic, {
+	})
 
 	-- For enfeebs with 500 skill caps
 	-- 476 Initial
@@ -603,6 +621,8 @@ function init_gear_sets()
 		hands="Jhakri Cuffs +2",
 		waist="Luminary Sash",
 		feet="Vitiation Boots +3",
+	})
+	sets.midcast.enfeebSkillCap.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, sets.midcast.enfeebSkillCap, {
 	})
 
 	-- Static value (use duration+ gear)
@@ -619,6 +639,7 @@ function init_gear_sets()
 	})
 
 	sets.midcast['Dispel*'] = set_combine(sets.midcast.MACC, {
+		range="Ullr",
 		neck="Dls. Torque +1",
 	})
 
@@ -627,17 +648,23 @@ function init_gear_sets()
 	-- Highest value at +75 MND compared to enemy: About 29.2%
 	sets.midcast['Slow'] = set_combine(sets.midcast.enfeebMND, {
 	})
+	sets.midcast['Slow'].Resistant = set_combine(sets.midcast.enfeebMND.Resistant, sets.midcast['Slow'], {
+	})
 	-- MND potency mod
 	-- Lowest value at -75 MND compared to enemy: About 12.5%
 	-- Highest value at +75 MND compared to enemy: About 35.1%
 	-- *When merit level is increased by 1, the effect is increased by about 1%.
 	sets.midcast['Slow II'] = set_combine(sets.midcast.enfeebMND, {
 	})
+	sets.midcast['Slow II'].Resistant = set_combine(sets.midcast.enfeebMND.Resistant, sets.midcast['Slow II'], {
+	})
 
 	-- MND potency mod
 	-- Lowest value at -40 MND compared to enemy: 5%
 	-- Highest value at +40 MND compared to enemy: 25%
 	sets.midcast['Paralyze'] = set_combine(sets.midcast.enfeebMND, {
+	})
+	sets.midcast['Paralyze'].Resistant = set_combine(sets.midcast.enfeebMND.Resistant, sets.midcast['Paralyze'], {
 	})
 	
 	-- MND potency mod
@@ -646,21 +673,29 @@ function init_gear_sets()
 	-- *When merit level is increased by 1, the effect is increased by 1%.
 	sets.midcast['Paralyze II'] = set_combine(sets.midcast.enfeebMND, {
 	})
+	sets.midcast['Paralyze II'].Resistant = set_combine(sets.midcast.enfeebMND.Resistant, sets.midcast['Paralyze II'], {
+	})
 
 	-- MND potency mod
 	-- Magic Accuracy Penalty = min(floor(dMND/5), 20) + 20 (caps at -40 macc)
 	sets.midcast['Addle'] = set_combine(sets.midcast.enfeebMND, {
+	})
+	sets.midcast['Addle'].Resistant = set_combine(sets.midcast.enfeebMND.Resistant, sets.midcast['Addle'], {
 	})
 
 	-- MND potency mod
 	-- Magic Accuracy Penalty = min(floor(dMND/5), 20) + 50 (caps at -70 macc)
 	sets.midcast['Addle II'] = set_combine(sets.midcast.enfeebMND, {
 	})
+	sets.midcast['Addle II'].Resistant = set_combine(sets.midcast.enfeebMND.Resistant, sets.midcast['Addle II'], {
+	})
 
 	-- INT potency mod
 	-- Lowest value at -80 player INT compared to enemy INT: 5
 	-- Highest value at +120 player INT compared to enemy INT: 50
 	sets.midcast['Blind'] = set_combine(sets.midcast.enfeebINT, {
+	})
+	sets.midcast['Blind'].Resistant = set_combine(sets.midcast.enfeebINT.Resistant, sets.midcast['Blind'], {
 	})
 	
 	-- INT potency mod
@@ -673,20 +708,28 @@ function init_gear_sets()
 	-- 5 Merits: Potency = Floor(3/8)(dINT +130.7); potency caps at 19 and 94.
 	sets.midcast['Blind II'] = set_combine(sets.midcast.enfeebINT, {
 	})
+	sets.midcast['Blind II'].Resistant = set_combine(sets.midcast.enfeebINT.Resistant, sets.midcast['Blind II'], {
+	})
 
 	-- Skill mod
 	-- 500 skill cap
 	sets.midcast['Poison'] = set_combine(sets.midcast.enfeebSkillCap, {
+	})
+	sets.midcast['Poison'].Resistant = set_combine(sets.midcast.enfeebSkillCap.Resistant, sets.midcast['Poison'], {
 	})
 
 	-- Skill mod
 	-- No known cap
 	sets.midcast['Poison II'] = set_combine(sets.midcast.enfeebFullSkill, {
 	})
+	sets.midcast['Poison II'].Resistant = set_combine(sets.midcast.enfeebFullSkill.Resistant, sets.midcast['Poison II'], {
+	})
 
 	-- Skill mod
 	-- Max 3 damage/tick
 	sets.midcast['Poisonga'] = set_combine(sets.midcast.enfeebSkillCap, {
+	})
+	sets.midcast['Poisonga'].Resistant = set_combine(sets.midcast.enfeebSkillCap.Resistant, sets.midcast['Poisonga'], {
 	})
 
 	-- Distract sets --
@@ -696,9 +739,13 @@ function init_gear_sets()
 	sets.midcast['Distract'] = set_combine(sets.midcast['Enfeebling Magic'], {
 		--head="Atro. Chapeau +3",
 	})
+	sets.midcast['Distract'].Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, sets.midcast['Distract'], {
+	})
 	-- Distract II (caps 350 skill for -40 eva, -50 eva cap with MND)
 	sets.midcast['Distract II'] = set_combine(sets.midcast['Enfeebling Magic'], {
 		--head="Atro. Chapeau +3",
+	})
+	sets.midcast['Distract II'].Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, sets.midcast['Distract II'], {
 	})
 	-- Distract III (caps 610 skill for -120 eva, -130 eva cap with MND)
 	-- 476 Initial
@@ -706,6 +753,8 @@ function init_gear_sets()
 	-- 563 skill total
 	sets.midcast['Distract III'] = set_combine(sets.midcast['Enfeebling Magic'], {
 		ring1="Stikini Ring",
+	})
+	sets.midcast['Distract III'].Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, sets.midcast['Distract III'], {
 	})
 	-----------------------
 
@@ -716,9 +765,13 @@ function init_gear_sets()
 	sets.midcast['Frazzle'] = set_combine(sets.midcast['Enfeebling Magic'], {
 		head="Atro. Chapeau +3",
 	})
+	sets.midcast['Frazzle'].Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, sets.midcast['Frazzle'], {
+	})
 	-- Frazzle II (caps 365 skill for -40 meva, -50 meva cap with MND)
 	sets.midcast['Frazzle II'] = set_combine(sets.midcast['Enfeebling Magic'], {
 		head="Atro. Chapeau +3",
+	})
+	sets.midcast['Frazzle II'].Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, sets.midcast['Frazzle II'], {
 	})
 	-- Frazzle III (caps 625 skill for -120 meva, -130 meva cap with MND)
 	-- 476 Initial
@@ -727,10 +780,14 @@ function init_gear_sets()
 	sets.midcast['Frazzle III'] = set_combine(sets.midcast['Enfeebling Magic'], {
 		ring1="Stikini Ring",
 	})
+	sets.midcast['Frazzle III'].Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, sets.midcast['Frazzle III'], {
+	})
 	-----------------------
 
 	sets.midcast['Dispelga'] =  set_combine(sets.midcast.MACC,{
 		main="Daybreak",
+		range="Ullr",
+		neck="Dls. Torque +1",
 	})
 	
 	sets.midcast['Elemental Magic'] = set_combine(sets.midcast.MAB,{
@@ -1035,6 +1092,13 @@ function job_state_change(stateField, newValue, oldValue)
 	else
 		enable('main','sub','range','ammo')
 	end
+
+	if state.RangeLock.value == true then
+		equip(sets.EnforceMACCResistant)
+		disable('range','ammo')
+	else
+		enable('range','ammo')
+	end
 end
 
 -- Run after the default midcast() is done.
@@ -1042,6 +1106,10 @@ end
 function job_post_midcast(spell, action, spellMap, eventArgs)
 	if spell.skill == 'Enfeebling Magic' and state.Buff.Saboteur then
 		equip(sets.buff.Saboteur)
+
+		if spell == 'Dispel*' or state.CastingMode == 'Resistant' then
+			equip(sets.EnforceMACCResistant)
+		end
 	elseif spell.skill == 'Enhancing Magic' then
 		if not EnhancingDurationSkip:contains(spell.english) then
 			equip(sets.midcast.EnhancingDuration)
@@ -1055,8 +1123,14 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 		equip(sets.midcast.CursnaSelf)
 	elseif spellMap == 'Cure' and spell.target.type == 'SELF' then
 		equip(sets.midcast.CureSelf)
-	elseif spell.skill == 'Elemental Magic' and state.MagicBurst.value then
-		equip(sets.magic_burst)
+	elseif spell.skill == 'Elemental Magic' then
+		if state.MagicBurst.value then
+			equip(sets.magic_burst)
+		end 
+
+		if state.CastingMode == 'Resistant' then
+			equip(sets.EnforceMACCResistant)
+		end
 	end
 end
 
