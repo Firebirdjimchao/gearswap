@@ -12,6 +12,10 @@ function user_setup()
 	gear.default.weaponskill_neck = "Asperity Necklace"
 	gear.default.weaponskill_waist = "Windbuffet Belt +1"
 
+	gear.jsecape_dex_crit = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10','Damage taken-5%',}}
+	gear.jsecape_dex_dw = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dual Wield"+6','Damage taken-5%',}}
+	gear.jsecape_dex_wsd = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%',}}
+
 	gear.CannyDW = { name="Canny Cape", augments={'DEX+2','AGI+3','"Dual Wield"+3',}}
 	
 	-------------------------------------------------
@@ -85,7 +89,7 @@ function init_gear_sets()
 		hands="Skulk. Armlets +1",
 		ring1="Rajas Ring",
 		ring2="Apate Ring",
-		back="Canny Cape",
+		back=gear.jsecape_dex_crit,
 		waist="Eschan Stone",
 		legs="Samnuha Tights",
 		feet="Meg. Jam. +2"
@@ -189,7 +193,7 @@ function init_gear_sets()
 		hands="Mummu Wrists +2",
 		ring1="Rajas Ring",
 		ring2="Apate Ring",
-		back="Atheling Mantle",
+		back=gear.jsecape_dex_crit,
 		waist="Windbuffet Belt +1",
 		--legs="Samnuha Tights",
 		legs=gear.Herculean_legs_WSD,
@@ -211,7 +215,7 @@ function init_gear_sets()
 		body="Pillager's Vest +2",
 		--hands="Meg. Gloves +2",
 		hands="Pill. Armlets +2",
-		back="Canny Cape",
+		back=gear.jsecape_dex_crit,
 		waist="Eschan Stone",
 		legs="Pill. Culottes +2",
 		feet="Meg. Jam. +2",
@@ -226,7 +230,7 @@ function init_gear_sets()
 		hands="Leyline Gloves",
 		ring1="Acumen Ring",
 		ring2="Arvina Ringlet +1",
-		back="Toro Cape",
+		back=gear.jsecape_dex_wsd,
 		waist="Eschan Stone",
 		--legs="Shned. Tights +1",
 		legs=gear.Herculean_legs_WSD,
@@ -270,11 +274,15 @@ function init_gear_sets()
 	sets.precast.WS['Dancing Edge'].SA = set_combine(sets.precast.WS['Dancing Edge'], {
 		--hands="Skulk. Armlets +1",
 		hands="Meg. Gloves +2",
+		back=gear.jsecape_dex_wsd,
 	})
 	sets.precast.WS['Dancing Edge'].TA = set_combine(sets.precast.WS['Dancing Edge'], {
+		back=gear.jsecape_dex_wsd,
 	})
 	sets.precast.WS['Dancing Edge'].SATA = set_combine(sets.precast.WS['Dancing Edge'], {
 		--hands="Skulk. Armlets +1",
+		back=gear.jsecape_dex_wsd,
+
 	})
 
 	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
@@ -291,93 +299,70 @@ function init_gear_sets()
 	sets.precast.WS['Evisceration'].SA = set_combine(sets.precast.WS['Evisceration'], {
 		--hands="Skulk. Armlets +1",
 		hands="Meg. Gloves +2",
+		back=gear.jsecape_dex_wsd,
 	})
 	sets.precast.WS['Evisceration'].TA = set_combine(sets.precast.WS['Evisceration'], {
 		hands="Meg. Gloves +2",
+		back=gear.jsecape_dex_wsd,
 	})
 	sets.precast.WS['Evisceration'].SATA = set_combine(sets.precast.WS['Evisceration'], {
 		--hands="Skulk. Armlets +1",
 		hands="Meg. Gloves +2",
+		back=gear.jsecape_dex_wsd,
 	})
 
 	sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
 		ear1="Odr Earring",
 		hands="Meg. Gloves +2",
+		back=gear.jsecape_dex_wsd,
 	})
 	sets.precast.WS["Rudra's Storm"].MidAcc = set_combine(sets.precast.WS.MidAcc, sets.precast.WS["Rudra's Storm"], {
-		hands="Meg. Gloves +2",
-		back="Atheling Mantle"
 	})
 	sets.precast.WS["Rudra's Storm"].HighAcc = set_combine(sets.precast.WS.HighAcc, sets.precast.WS["Rudra's Storm"], {
-		hands="Meg. Gloves +2",
 	})
 	sets.precast.WS["Rudra's Storm"].FullAcc = set_combine(sets.precast.WS.FullAcc, sets.precast.WS["Rudra's Storm"], {
-		hands="Meg. Gloves +2",
 	})
 	sets.precast.WS["Rudra's Storm"].SA = set_combine(sets.precast.WS["Rudra's Storm"], {
-		body="Meg. Cuirie +2",
-		hands="Meg. Gloves +2"
 	})
 	sets.precast.WS["Rudra's Storm"].TA = set_combine(sets.precast.WS["Rudra's Storm"], {
-		body="Meg. Cuirie +2",
-		hands="Meg. Gloves +2",
 	})
 	sets.precast.WS["Rudra's Storm"].SATA = set_combine(sets.precast.WS["Rudra's Storm"], {
-		body="Meg. Cuirie +2",
-		hands="Meg. Gloves +2",
 	})
 
 	sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS, {
 		ear1="Odr Earring",
 		hands="Meg. Gloves +2",
+		back=gear.jsecape_dex_wsd,
 	})
 	sets.precast.WS['Shark Bite'].MidAcc = set_combine(sets.precast.WS.MidAcc, sets.precast.WS["Shark Bite"], {
-		hands="Meg. Gloves +2",
-		back="Atheling Mantle",
 	})
 	sets.precast.WS['Shark Bite'].HighAcc = set_combine(sets.precast.WS.HighAcc, sets.precast.WS["Shark Bite"], {
-		hands="Meg. Gloves +2",
 	})
 	sets.precast.WS['Shark Bite'].FullAcc = set_combine(sets.precast.WS.FullAcc, sets.precast.WS["Shark Bite"], {
-		hands="Meg. Gloves +2",
 	})
 	sets.precast.WS['Shark Bite'].SA = set_combine(sets.precast.WS['Shark Bite'], {
-		body="Meg. Cuirie +2",
-		hands="Meg. Gloves +2",
 	})
 	sets.precast.WS['Shark Bite'].TA = set_combine(sets.precast.WS['Shark Bite'], {
-		body="Meg. Cuirie +2",
-		hands="Meg. Gloves +2",
 	})
 	sets.precast.WS['Shark Bite'].SATA = set_combine(sets.precast.WS['Shark Bite'], {
-		body="Meg. Cuirie +2",
-		hands="Meg. Gloves +2",
 	})
 
 	sets.precast.WS['Mandalic Stab'] = set_combine(sets.precast.WS, {
 		ear1="Odr Earring",
 		hands="Meg. Gloves +2",
+		back=gear.jsecape_dex_wsd,
 	})
 	sets.precast.WS['Mandalic Stab'].MidAcc = set_combine(sets.precast.WS.MidAcc, sets.precast.WS['Mandalic Stab'], {
-		hands="Meg. Gloves +2",
 	})
 	sets.precast.WS['Mandalic Stab'].HighAcc = set_combine(sets.precast.WS.HighAcc, sets.precast.WS['Mandalic Stab'], {
-		hands="Meg. Gloves +2",
 	})
 	sets.precast.WS['Mandalic Stab'].FullAcc = set_combine(sets.precast.WS.FullAcc, sets.precast.WS['Mandalic Stab'], {
-		hands="Meg. Gloves +2",
 	})
 	sets.precast.WS['Mandalic Stab'].SA = set_combine(sets.precast.WS['Mandalic Stab'], { 
-		body="Meg. Cuirie +2",
-		hands="Meg. Gloves +2",
 	})
 	sets.precast.WS['Mandalic Stab'].TA = set_combine(sets.precast.WS['Mandalic Stab'], {
-		body="Meg. Cuirie +2",
-		hands="Meg. Gloves +2",
 	})
 	sets.precast.WS['Mandalic Stab'].SATA = set_combine(sets.precast.WS['Mandalic Stab'], {
-		body="Meg. Cuirie +2",
-		hands="Meg. Gloves +2",
 	})
 
 	sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS.MAB,{
@@ -518,7 +503,8 @@ function init_gear_sets()
 		ring1="Rajas Ring",
 		ring2="Chirich Ring",
 		-- 3 DW
-		back="Canny Cape",
+		--back="Canny Cape",
+		back=gear.jsecape_dex_crit,
 		-- 5 DW
 		waist="Patentia Sash",
 		legs="Samnuha Tights",
@@ -631,25 +617,25 @@ function init_gear_sets()
 
 	-- Normal -------
 	-- DW needed: 42 (37 with gift)
-	-- 13 Gear DW
+	-- 10 Gear DW
 	sets.engaged.Haste_15 = set_combine(sets.engaged,{
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
 	})
 	-- DW needed: 31 (26 with gift)
-	-- 13 Gear DW
+	-- 10 Gear DW
 	sets.engaged.Haste_30 = set_combine(sets.engaged,{
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
 	})
 	-- DW needed: 26 (21 with gift)
-	-- 13 Gear DW
+	-- 10 Gear DW
 	sets.engaged.Haste_35 = set_combine(sets.engaged,{
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
 	})
 	-- DW needed: 11 (6 with gift)
-	-- 13 Gear DW
+	-- 10 Gear DW
 	sets.engaged.MaxHaste = set_combine(sets.engaged,{
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
