@@ -73,7 +73,7 @@ function init_gear_sets()
 	-- Base sets
 	--------------------------------------
 
-	-- 32% DT 24% PDT 10% MDT 30 MDB (43% DT if using Khonsu)
+	-- 32% DT 28% PDT 10% MDT 30 MDB (43% DT if using Khonsu)
 	sets.DT = {
 		-- 6& DT
 		--sub="Khonsu",
@@ -104,6 +104,8 @@ function init_gear_sets()
 		ring2="Defending Ring",
 		-- 5% DT
 		back=gear.Smertrio_STP,
+		-- 4% PDT
+		waist="Flume Belt +1",
 		-- 8 MDB
 		legs="Ken. Hakama +1",
 		-- 4% DT 2 MDB
@@ -126,7 +128,34 @@ function init_gear_sets()
 		feet=gear.Valorous_feet_WS,
 	}
 
-	sets.Enmity.Up = {
+	sets.STP =  {
+		-- 3 STP
+		ammo="Ginsen",
+		-- 5 STP 4%
+		head="Flam. Zucchetto +2",
+		-- STP 7 + 7 aug
+		neck="Sam. Nodowa +2",
+		-- STP 8
+		ear1="Dedition Earring",
+		-- 1 STP
+		ear2="Brutal Earring",
+		-- 9 STP
+		body="Wakido Domaru +3",
+		-- 7 STP 4% Hasso +4
+		hands="Wakido Kote +3",
+		-- 5 STP
+		ring1="Flamma Ring",
+		-- 5 STP
+		ring2="Rajas Ring",
+		-- 10 STP
+		back=gear.Smertrio_STP,
+		-- 4 STP
+		waist="Reiki Yotai",
+		-- 9 STP
+		legs="Wakido Haidate +3",
+	}
+
+	sets.EnmityUp = {
 		-- 6 Enmity
 		head="Rabid Visor",
 		-- 10 Enmity
@@ -143,7 +172,7 @@ function init_gear_sets()
 		waist="Goading Belt",
 	}
 
-	sets.Enmity.Down = {
+	sets.EnmityDown = {
 		--ear2="Schere Earring",
 	}
 	
@@ -161,7 +190,10 @@ function init_gear_sets()
 	sets.precast.JA['Blade Bash'] = {hands="Sakonji Kote +3"}
 	sets.precast.JA['Hasso'] = {feet="Wakido Sune. +3"}
 
-	sets.precast.JA['Provoke'] = set_combine(sets.Enmity.Up, {})
+	sets.precast.JA['Jump'] = set_combine(sets.STP,{})
+	sets.precast.JA['High Jump'] = set_combine(sets.STP,{})
+
+	sets.precast.JA['Provoke'] = set_combine(sets.EnmityUp, {})
 
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {
@@ -1039,9 +1071,9 @@ end
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
 	if state.EnmityMode.value == 'Down' then
-		meleeSet = set_combine(meleeSet, sets.Enmity.Down)
+		meleeSet = set_combine(meleeSet, sets.EnmityDown)
 	elseif state.EnmityMode.value == 'Up' then
-		meleeSet = set_combine(meleeSet, sets.Enmity.Up)
+		meleeSet = set_combine(meleeSet, sets.EnmityUp)
 	end
 	if state.TreasureMode.value ~= false then
 		meleeSet = set_combine(meleeSet, sets.sharedTH)
