@@ -91,7 +91,8 @@ function init_gear_sets()
 		ring2="Apate Ring",
 		back=gear.jsecape_dex_crit,
 		waist="Eschan Stone",
-		legs="Samnuha Tights",
+		--legs="Samnuha Tights",
+		legs="Pill. Culottes +3",
 		feet="Meg. Jam. +2"
 	}
 
@@ -106,7 +107,8 @@ function init_gear_sets()
 		ring2="Garuda Ring +1",
 		back="Canny Cape",
 		waist="Eschan Stone",
-		legs="Samnuha Tights",
+		--legs="Samnuha Tights",
+		legs="Pill. Culottes +3",
 		feet="Meg. Jam. +2"
 	}
 	sets.Behind = {
@@ -143,7 +145,7 @@ function init_gear_sets()
 		ring1="Dark Ring",
 		ring2="Sirona's Ring",
 		waist="Chaac Belt",
-		legs="Pill. Culottes +2",
+		legs="Pill. Culottes +3",
 		feet="Meg. Jam. +2"
 	}
 		
@@ -217,7 +219,7 @@ function init_gear_sets()
 		hands="Pill. Armlets +2",
 		back=gear.jsecape_dex_crit,
 		waist="Eschan Stone",
-		legs="Pill. Culottes +2",
+		legs="Pill. Culottes +3",
 		feet="Meg. Jam. +2",
 	})
 	sets.precast.WS.MAB = set_combine(sets.precast.WS, {
@@ -288,7 +290,7 @@ function init_gear_sets()
 	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
 		ear1="Odr Earring",
 		hands="Mummu Wrists +2",
-		legs="Pill. Culottes +2",
+		legs="Pill. Culottes +3",
 	})
 	sets.precast.WS['Evisceration'].MidAcc = set_combine(sets.precast.WS.MidAcc, sets.precast.WS['Evisceration'], {
 	})
@@ -512,7 +514,7 @@ function init_gear_sets()
 	}
 	sets.engaged.MidAcc = set_combine(sets.engaged,{
 		body="Meg. Cuirie +2",
-		legs="Pill. Culottes +2",
+		legs="Pill. Culottes +3",
 		feet="Mummu Gamash. +2",
 	})
 	sets.engaged.HighAcc = set_combine(sets.engaged,{
@@ -522,7 +524,7 @@ function init_gear_sets()
 		body="Meg. Cuirie +2",
 		hands="Malignance Gloves",
 		waist="Eschan Stone",
-		legs="Pill. Culottes +2",
+		legs="Pill. Culottes +3",
 		feet="Malignance Boots",
 	})
 	sets.engaged.FullAcc = set_combine(sets.engaged,{
@@ -533,7 +535,7 @@ function init_gear_sets()
 		hands="Malignance Gloves",
 		ring1="Cacoethic Ring",
 		waist="Eschan Stone",
-		legs="Pill. Culottes +2",
+		legs="Pill. Culottes +3",
 		feet="Malignance Boots",
 	})
 	sets.engaged.Evasion = set_combine(sets.engaged,{
