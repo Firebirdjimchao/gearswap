@@ -353,6 +353,7 @@ function init_gear_sets()
 	sets.precast.WS.MAB = set_combine(sets.precast.WS, {
 		--head=gear.Herculean_head_Magic,
 		--head="Orion Beret +3",
+		head=empty,
 		neck="Sanctity Necklace",
 		ear1="Crematio Earring",
 		ear2="Friomisi Earring",
