@@ -98,7 +98,7 @@ function init_gear_sets()
 
 	sets.buff['Trick Attack'] = {
 		head="Pill. Bonnet +2",
-		neck="Marked Gorget",
+		neck="Iskur Gorget",
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
 		body="Meg. Cuirie +2",
@@ -400,7 +400,7 @@ function init_gear_sets()
 	-- Ranged gear
 	sets.midcast.RA = {
 		head="Meghanada Visor +2",
-		neck="Marked Gorget",
+		neck="Iskur Gorget",
 		ear1="Enervating Earring",
 		ear2="Volley Earring",
 		body="Meg. Cuirie +2",
