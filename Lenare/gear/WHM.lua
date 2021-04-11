@@ -134,7 +134,7 @@ function init_gear_sets()
 		head="Theo. Cap +2",
 		ear1="Roundel Earring",
 		ear2="Sjofn Earring",
-		body="Count's Garb",
+		body="Shamash Robe",
 		hands="Inyan. Dastanas +2",
 		legs="Chironic Hose",
 		feet="Aya. Gambieras +2",
@@ -151,7 +151,7 @@ function init_gear_sets()
 		--neck=gear.ElementalGorget,
 		ear1="Brutal Earring",
 		ear2="Moonshade Earring",
-		body="Count's Garb",
+		body="Ayanmo Corazza +2",
 		hands="Aya. Manopolas +2",
 		ring1="Rajas Ring",
 		ring2="Cacoethic Ring",
@@ -166,7 +166,7 @@ function init_gear_sets()
 		neck="Baetyl Pendant",
 		ear1="Friomisi Earring",
 		ear2="Malignance Earring",
-		body="Count's Garb",
+		body="Shamash Robe",
 		hands="Otomi Gloves",
 		ring1="Acumen Ring",
 		ring2="Arvina Ringlet +1",
@@ -244,7 +244,7 @@ function init_gear_sets()
 		neck="Sanctity Necklace",
 		ear1="Friomisi Earring",
 		ear2="Malignance Earring",
-		body="Count's Garb",
+		body="Shamash Robe",
 		hands="Otomi Gloves",
 		ring1="Acumen Ring",
 		ring2="Arvina Ringlet +1",
@@ -470,6 +470,14 @@ function init_gear_sets()
 		legs="Chironic Hose"
 	})
 
+	sets.midcast['Elemental Magic'] = set_combine(sets.midcast.MAB,{
+	})
+	
+	sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'],{
+	})
+
+	sets.midcast.Impact = set_combine(sets.midcast['Elemental Magic'], {head=empty,body="Twilight Cloak"})
+
 	-- Custom spell classes
 	sets.midcast.MndEnfeebles = set_combine(sets.midcast['Enfeebling Magic'],{
 	})
@@ -492,7 +500,7 @@ function init_gear_sets()
 		neck="Twilight Torque",
 		ear1="Ethereal Earring",
 		ear2="Etiolation Earring",
-		body="Piety Briault +3",
+		body="Shamash Robe",
 		hands="Inyan. Dastanas +2",
 		ring1=gear.DarkRing.physical,
 		ring2="Defending Ring",

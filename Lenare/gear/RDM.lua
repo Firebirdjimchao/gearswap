@@ -740,7 +740,8 @@ function init_gear_sets()
 	sets.idle.Town = set_combine(sets.idle,{
 		--ammo="Regal Gem",
 		neck="Dls. Torque +1",
-		body="Councilor's Garb",
+		--body="Councilor's Garb",
+		body="Shamash Robe",
 		back=gear.sucellos_mnd,
 	})
 	

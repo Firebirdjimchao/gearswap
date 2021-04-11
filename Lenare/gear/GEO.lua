@@ -730,7 +730,7 @@ function init_gear_sets()
 	sets.idle.Encumbered = set_combine(sets.midcast.MAB,{
 	})
 
-	-- Total: 34% + 20% (PDT Staff)
+	-- Total: 44% + 20% (PDT Staff)
 	-- <36%: use Shadow Mantle
 	sets.idle.PDT = set_combine(sets.idle,{
 		main=gear.Staff.DT,
@@ -740,7 +740,8 @@ function init_gear_sets()
 		head="Blistering Sallet +1",
 		-- 5%
 		neck="Twilight Torque",
-		body="Bagua Tunic +3",
+		-- 10%
+		body="Shamash Robe",
 		-- 1%
 		hands="Geo. Mitaines +2",
 		-- 4%
@@ -755,7 +756,7 @@ function init_gear_sets()
 	})
 			
 	-- MDT: 32%
-	-- MDB: 29
+	-- MDB: 27
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.idle.MDT = set_combine(sets.idle,{
 		main=gear.Staff.DT,
@@ -767,8 +768,8 @@ function init_gear_sets()
 		neck="Twilight Torque",
 		-- 3%
 		ear2="Etiolation Earring",
-		-- 8
-		body="Bagua Tunic +3",
+		-- 6
+		body="Shamash Robe",
 		-- 3
 		hands="Geo. Mitaines +2",
 		ring1="Shadow Ring",
@@ -794,7 +795,8 @@ function init_gear_sets()
 	sets.idle.Town = set_combine(sets.idle,{
 		main="Idris",
 		sub="Culminus",
-		body="Councilor's Garb"
+		--body="Councilor's Garb",
+		body="Shamash Robe",
 	})
 
 	sets.idle.Weak = set_combine(sets.idle,{
