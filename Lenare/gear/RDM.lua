@@ -11,7 +11,6 @@ function user_setup()
 
 	gear.sucellos_mab = { name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
 	gear.sucellos_mnd = { name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10',}}
-	gear.default.obi_waist = "Eschan Stone"
 	gear.default.obi_back = gear.sucellos_mab
 
 	-- list of spell that has its own sets defined below and should not default to using EnhancingDuration midcast set

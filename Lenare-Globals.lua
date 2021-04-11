@@ -52,7 +52,8 @@ function define_global_sets()
 	-- Default items for utility gear values.
 	gear.default.weaponskill_neck = "Asperity Gorget"
 	gear.default.weaponskill_waist = "Windbuffet Belt +1"
-	gear.default.obi_waist = "Eschan Stone"
+	--gear.default.obi_waist = "Eschan Stone"
+	gear.default.obi_waist = "Refoccilation Stone"
 	gear.default.obi_back = "Toro Cape"
 	gear.default.obi_ring = "Strendu Ring"
 	gear.default.fastcast_staff = gear.FastcastStaff
