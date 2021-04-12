@@ -26,7 +26,7 @@ function init_gear_sets()
 	-- Precast sets to enhance JAs on use
 	sets.precast.JA['Hundred Fists'] = {legs="Hes. Hose +1"}
 	sets.precast.JA['Boost'] = {hands="Anch. Gloves +1"}
-	sets.precast.JA['Dodge'] = {feet="Anch. Gaiters +2"}
+	sets.precast.JA['Dodge'] = {feet="Anch. Gaiters +3"}
 	sets.precast.JA['Focus'] = {head="Anchor. Crown +1"}
 	sets.precast.JA['Counterstance'] = {feet="Hes. Gaiters +1"}
 	sets.precast.JA['Footwork'] = {feet="Tantra Gaiters +2"}
@@ -160,9 +160,10 @@ function init_gear_sets()
 		back=gear.Segomo_dex_da,
 		feet="Mpaca's Boots",
 	})
-	sets.precast.WS["Victory Smite"].Acc = set_combine(sets.precast.WS.Acc, {
+	sets.precast.WS["Victory Smite"].Acc = set_combine(sets.precast.WS.Acc, sets.precast.WS["Victory Smite"], {
 	})
-	sets.precast.WS["Victory Smite"].SomeAcc = set_combine(sets.precast.WS["Victory Smite"], {})
+	sets.precast.WS["Victory Smite"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, sets.precast.WS["Victory Smite"], {
+	})
 
 	sets.precast.WS['Shijin Spiral'] = set_combine(sets.precast.WS, {
 		--head=gear.Rao_head_hq_B,
@@ -175,23 +176,35 @@ function init_gear_sets()
 		legs="Jokushu Haidate",
 		feet="Mpaca's Boots",
 	})
-	sets.precast.WS['Shijin Spiral'].Acc = set_combine(sets.precast.WS.Acc, {
+	sets.precast.WS['Shijin Spiral'].Acc = set_combine(sets.precast.WS.Acc, sets.precast.WS['Shijin Spiral'], {
 	})
-	sets.precast.WS['Shijin Spiral'].SomeAcc = set_combine(sets.precast.WS['Shijin Spiral'], {
+	sets.precast.WS['Shijin Spiral'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, sets.precast.WS['Shijin Spiral'], {
 	})
 
 	sets.precast.WS['Asuran Fists'] = set_combine(sets.precast.WS, {
 	})
-	sets.precast.WS['Asuran Fists'].Acc = set_combine(sets.precast.WS.Acc, {
+	sets.precast.WS['Asuran Fists'].Acc = set_combine(sets.precast.WS.Acc, sets.precast.WS['Asuran Fists'], {
 	})
-	sets.precast.WS['Asuran Fists'].SomeAcc = set_combine(sets.precast.WS['Asuran Fists'], {
+	sets.precast.WS['Asuran Fists'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, sets.precast.WS['Asuran Fists'], {
 	})
 
 	sets.precast.WS["Ascetic's Fury"] = set_combine(sets.precast.WS, {
 	})
-	sets.precast.WS["Ascetic's Fury"].Acc = set_combine(sets.precast.WS.Acc, {
+	sets.precast.WS["Ascetic's Fury"].Acc = set_combine(sets.precast.WS.Acc, sets.precast.WS["Ascetic's Fury"], {
 	})
-	sets.precast.WS["Ascetic's Fury"].SomeAcc = set_combine(sets.precast.WS["Ascetic's Fury"], {
+	sets.precast.WS["Ascetic's Fury"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, sets.precast.WS["Ascetic's Fury"], {
+	})
+
+	sets.precast.WS["Tornado Kick"] = set_combine(sets.precast.WS, {
+		body="Tatena. Harama. +1",
+		hands="Tatena. Gote +1",
+		waist="Moonbow Belt",
+		legs="Ken. Hakama +1",
+		feet="Anch. Gaiters +3",
+	})
+	sets.precast.WS["Tornado Kick"].Acc = set_combine(sets.precast.WS.Acc, sets.precast.WS["Tornado Kick"], {
+	})
+	sets.precast.WS["Tornado Kick"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, sets.precast.WS["Tornado Kick"], {
 	})
 
 	sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS.MAB,{
@@ -363,7 +376,7 @@ function init_gear_sets()
 		back=gear.Segomo_dex_da,
 		waist="Moonbow Belt",
 		legs="Ken. Hakama +1",
-		feet="Malignance Boots",
+		feet="Anch. Gaiters +3",
 	}
 	sets.engaged.SomeAcc = set_combine(sets.engaged,{
 		ear2="Telos Earring",
@@ -449,7 +462,7 @@ function init_gear_sets()
 
 	-- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.
 	sets.impetus_body = {body="Bhikku Cyclas +1"}
-	sets.footwork_kick_feet = {feet="Anch. Gaiters +2"}
+	sets.footwork_kick_feet = {feet="Anch. Gaiters +3"}
 
 	-- Hundred Fists/Impetus melee set mods
 	sets.engaged.HF = set_combine(sets.engaged)
@@ -492,10 +505,10 @@ function init_gear_sets()
 
 	-- Footwork combat form
 	sets.engaged.Footwork = set_combine(sets.engaged,{
-		feet="Anch. Gaiters +2"
+		feet="Anch. Gaiters +3"
 	})
 	sets.engaged.Footwork.Acc = set_combine(sets.engaged.Acc,{
-		feet="Anch. Gaiters +2"
+		feet="Anch. Gaiters +3"
 	})
 
 	sets.buff.Boost = {
