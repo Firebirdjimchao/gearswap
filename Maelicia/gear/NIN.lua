@@ -411,7 +411,7 @@ function init_gear_sets()
 
 	sets.engaged.Mid = set_combine(sets.engaged.Low, {
 		head=gear.Ryuo_head_A,
-		hands="Mummu Wrists +2",
+		hands="Tatena. Gote +1",
 	})
 
 	sets.engaged.Acc = set_combine(sets.engaged.Mid, {
@@ -475,6 +475,7 @@ function init_gear_sets()
 		head=gear.Adhemar_head_B,
 		ear2="Telos Earring",
 		body="Ken. Samue +1",
+		hands="Tatena. Gote +1",
 		ring1="Gere Ring",
 		waist="Windbuffet Belt +1",
 		legs="Samnuha Tights",
@@ -486,14 +487,17 @@ function init_gear_sets()
 	})
 	sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
 		head="Mummu Bonnet +2",
-		hands="Mummu Wrists +2",
+		--hands="Mummu Wrists +2",
+		hands="Tatena. Gote +1",
 		legs="Ken. Hakama +1",
 	})
 	sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
 		head="Malignance Chapeau",
 		ear1="Digni. Earring",
-		body="Mochi. Chainmail +3",
-		hands="Malignance Gloves",
+		--body="Mochi. Chainmail +3",
+		--hands="Malignance Gloves",
+		body="Tatena. Harama. +1",
+		hands="Tatena. Gote +1",
 		ring1="Patricius Ring",
 		ring2="Cacoethic Ring +1",
 		waist="Eschan Stone",
