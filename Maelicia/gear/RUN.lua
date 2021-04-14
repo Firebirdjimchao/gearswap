@@ -26,10 +26,8 @@ function init_gear_sets()
 	sets.enmity = {
 		-- 2 Enmity
 		--ammo="Sapience Orb",
-		-- 6 Enmity
-		head="Rabid Visor",
 		-- 8 Enmity
-		--head="Halitus helm",
+		head="Halitus helm",
 		-- 10 Enmity
 		--neck="Unmoving Collar +1",
 		-- 7 Enmity

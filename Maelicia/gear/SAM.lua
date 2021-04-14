@@ -156,8 +156,8 @@ function init_gear_sets()
 	}
 
 	sets.EnmityUp = {
-		-- 6 Enmity
-		head="Rabid Visor",
+		-- 8 Enmity
+		head="Halitus helm",
 		-- 10 Enmity
 		neck="Unmoving Collar +1",
 		-- 10 Enmity
