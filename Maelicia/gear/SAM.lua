@@ -12,7 +12,7 @@ function user_setup()
 	state.MagicalDefenseMode:options('MDT', 'Reraise')
 	state.IdleMode:options('Normal', 'Regain', 'Regen', 'Reraise')
 
-	state.EnmityMode = M{['description']='Enmity Mode', 'None', 'Minus', 'Plus'}
+	state.EnmityMode = M{['description']='Enmity Mode', 'None', 'Down', 'Up'}
 	state.TreasureMode = M(false, 'TH')
 	
 	gear.Smertrio_STP = { name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Store TP"+10','Damage taken-5%',}}
@@ -43,9 +43,9 @@ function user_setup()
 	-- Additional local binds
 	send_command('bind @` input /ja "Hasso" <me>')
 	send_command('bind !` input /ja "Seigan" <me>')
-	send_command('bind ^` gs equip sets.Twilight; input /echo --- Twilight Set On ---')
+	send_command('bind ^` gs equip sets.Twilight; input /echo --- Twilight Set equipped ---')
 	send_command('bind ^- gs c cycle enmitymode')
-	send_command('bind ^= gs c toggle TreasureMode; input /echo --- TreasureMode On ---')
+	send_command('bind ^= gs c toggle TreasureMode; input /echo --- TreasureMode ---')
 	
 	select_default_macro_book()
 

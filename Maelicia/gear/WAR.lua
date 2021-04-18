@@ -1,5 +1,5 @@
 function user_setup()
-	state.OffenseMode:options('Normal', 'AccLow', 'AccHigh', 'Crit', 'Sakpata')
+	state.OffenseMode:options('Normal', 'AccLow', 'AccHigh', 'Crit')
 	state.RangedMode:options('Normal')
 	state.HybridMode:options('Normal', 'PDT')
 	state.WeaponskillMode:options('Normal', 'AccLow', 'AccHigh')
@@ -10,6 +10,9 @@ function user_setup()
 	state.MagicalDefenseMode:options('MDT', 'Reraise')
 
 	state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi'}
+	state.EnmityMode = M{['description']='Enmity Mode', 'None', 'Down', 'Up'}
+	state.SakpataMode = M(false, 'Sakpata')
+	state.TreasureMode = M(false, 'TH')
 
 	--Augmented Gear Definitions--
 	gear.Cichol_StrWSD = { name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
@@ -21,7 +24,10 @@ function user_setup()
 	select_default_macro_book()
 
 	send_command('bind @` gs c cycle HasteMode')
-	send_command('bind ^` gs equip sets.Twilight; input /echo --- Twilight Set On ---')
+	send_command('bind ^` gs equip sets.Twilight; input /echo --- Twilight Set Equipped ---')
+	send_command('bind ^- gs c cycle enmitymode')
+	send_command('bind ^= gs c toggle TreasureMode; input /echo --- TreasureMode ---')
+	send_command('bind != gs c toggle SakpataMode; input /echo --- SakpataMode ---')
 
 	global_aliases()
 end
@@ -29,6 +35,9 @@ end
 function file_unload()
 	send_command('unbind @`')
 	send_command('unbind ^`')
+	send_command('unbind ^-')
+	send_command('unbind ^=')
+	send_command('unbind !=')
 end
 
 function init_gear_sets()
@@ -123,6 +132,46 @@ function init_gear_sets()
 		-- 2% Haste
 		feet="Sakpata's Leggings",
 	}
+
+	sets.MAB = {
+		head=gear.Valorous_head_Magic,
+		--neck="Sanctity Necklace",
+		ear1="Crematio Earring",
+		ear2="Friomisi Earring",
+		body="Sacro Breastplate",
+		hands="Leyline Gloves",
+		ring1="Acumen Ring",
+		back="Toro Cape",
+		legs="Limbo Trousers",
+		--feet="Founder's Greaves"
+		--feet=gear.Valorous_feet_WS,
+		feet="Sulev. Leggings +2",
+	}
+
+	sets.EnmityUp = {
+		-- 12 Enmity
+		head="Pummeler's Mask +3",
+		-- 10 Enmity
+		neck="Unmoving Collar +1",
+		-- 2 Enmity
+		ear1="Friomisi Earring",
+		-- 10 Enmity
+		body="Emet Harness +1",
+		-- 15 Enmity
+		--hands="Pumm. Mufflers +3",
+		-- 5 Enmity
+		ring1="Supershear Ring",
+		-- 5 Enmity
+		ring2="Pernicious Ring",
+		-- 3 Enmity
+		waist="Goading Belt",
+		-- 3 Enmity
+		feet="Hermes' Sandals",
+	}
+
+	sets.EnmityDown = {
+		ear2="Schere Earring",
+	}
 			 
 	--------------------------------------
 	-- Precast sets
@@ -155,13 +204,8 @@ function init_gear_sets()
 		back="Tantalic Cape",
 		waist="Flume Belt +1"
 	}
-	sets.precast.JA['Provoke'] = { 
-		ear1="Friomisi Earring",
-		ear2="Trux Earring", 
-		--body="Emet Harness +1",
-		body="Pumm. Lorica +3",
-		ring2="Petrov Ring",
-	}
+	sets.precast.JA['Provoke'] = set_combine(sets.EnmityUp,{ 
+	})
 				 
 	-- Sets for specific actions within spell.type
 	sets.precast.Waltz['Healing Waltz'] = {}
@@ -235,20 +279,14 @@ function init_gear_sets()
 		feet="Boii Calligae +1",
 	})
 	
-	sets.precast.WS.MAB = set_combine(sets.precast.WS,{
-		head=gear.Valorous_head_Magic,
-		--neck="Sanctity Necklace",
-		ear1="Crematio Earring",
-		ear2="Friomisi Earring",
-		body="Sacro Breastplate",
-		hands="Leyline Gloves",
-		ring1="Acumen Ring",
-		back="Toro Cape",
-		legs="Limbo Trousers",
-		--feet="Founder's Greaves"
-		--feet=gear.Valorous_feet_WS,
-		feet="Sulev. Leggings +2",
+	sets.precast.WS.MAB = set_combine(sets.precast.WS, sets.MAB, {
+		ring1="Beithir Ring",
 	})
+
+	sets.precast.WS.MaxTP = {
+		ear2="Ishvara Earring",
+		--ear1="Lugra Earring +1",
+	}
 			 
 	----- Specific weaponskill sets. -----
 
@@ -266,7 +304,8 @@ function init_gear_sets()
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
 		back=gear.Cichol_VitWSD,
-		waist="Ioskeha Belt +1",
+		--waist="Ioskeha Belt +1",
+		waist="Sailfi Belt +1",
 		legs=gear.Valorous_legs_WS,
 		--legs=gear.Odyssean_legs_WS,
 		feet="Sulev. Leggings +2",
@@ -333,7 +372,7 @@ function init_gear_sets()
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
 		back=gear.Cichol_StrWSD,
-		waist="Fotia Belt",
+		waist="Sailfi Belt +1",
 		legs=gear.Argosy_legs_hq_D,
 		--feet="Pumm. Calligae +3"
 		feet="Sulev. Leggings +2",
@@ -356,21 +395,28 @@ function init_gear_sets()
 		feet="Boii Calligae +1",
 	})
 			 
+	-- 60% STR
 	sets.precast.WS['Fell Cleave'] = set_combine(sets.precast.WS, {
+		ammo="Knobkierrie",
+		head="Agoge Mask +3",
+		ear1="Moonshade Earring",
+		ear2="Thrud Earring",
 		body="Pumm. Lorica +3",
 		hands=gear.Odyssean_hands_WS,
+		ring1="Beithir Ring",
+		ring2="Regal Ring",
+		back=gear.Cichol_StrWSD,
+		waist="Sailfi Belt +1",
+		legs=gear.Valorous_legs_WS,
 		feet="Sulev. Leggings +2",
 	})
-	sets.precast.WS['Fell Cleave'].AccLow = set_combine(sets.precast.WS.AccLow, {
-		body="Pumm. Lorica +3",
-		feet="Sulev. Leggings +2",
+	sets.precast.WS['Fell Cleave'].AccLow = set_combine(sets.precast.WS['Fell Cleave'], {
 	})
-	sets.precast.WS['Fell Cleave'].AccHigh = set_combine(sets.precast.WS.AccHigh, {
-		body="Pumm. Lorica +3",
-		feet="Sulev. Leggings +2",
+	sets.precast.WS['Fell Cleave'].AccHigh = set_combine(sets.precast.WS['Fell Cleave'], {
 	})
-	sets.precast.WS['Fell Cleave'].MS = set_combine(sets.precast.WS.MS, {
-		body="Pumm. Lorica +3",
+	sets.precast.WS['Fell Cleave'].MS = set_combine(sets.precast.WS['Fell Cleave'], {
+		ammo="Yetshila",
+		feet="Boii Calligae +1",
 	})
 
 	-- GSWORD --
@@ -491,7 +537,7 @@ function init_gear_sets()
 		ear2="Thrud Earring",
 		body="Sacro Breastplate",
 		hands=gear.Odyssean_hands_WS,
-		ring1="Niqmaddu Ring",
+		ring1="Beithir Ring",
 		ring2="Regal Ring",
 		back=gear.Cichol_StrWSD,
 		legs="Limbo Trousers",
@@ -502,6 +548,32 @@ function init_gear_sets()
 	sets.precast.WS['Cloudsplitter'].AccHigh = set_combine(sets.precast.WS['Cloudsplitter'], {
 	})
 	sets.precast.WS['Cloudsplitter'].MS = set_combine(sets.precast.WS['Cloudsplitter'], {
+	})
+
+	-- SWORD
+
+	-- 50% STR / 50% MND, Damage varies with TP
+	sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS,{
+		ammo="Knobkierrie",
+		head="Agoge Mask +3",
+		ear1="Moonshade Earring",
+		ear2="Thrud Earring",
+		body="Pumm. Lorica +3",
+		hands=gear.Odyssean_hands_WS,
+		ring1="Beithir Ring",
+		ring2="Regal Ring",
+		back=gear.Cichol_StrWSD,
+		waist="Sailfi Belt +1",
+		legs=gear.Valorous_legs_WS,
+		feet="Sulev. Leggings +2",
+	})
+	sets.precast.WS['Savage Blade'].AccLow = set_combine(sets.precast.WS['Savage Blade'], {
+	})
+	sets.precast.WS['Savage Blade'].AccHigh = set_combine(sets.precast.WS['Savage Blade'], {
+	})
+	sets.precast.WS['Savage Blade'].MS = set_combine(sets.precast.WS['Savage Blade'], {
+		ammo="Yetshila",
+		feet="Boii Calligae +1",
 	})
 	
 	sets.precast.WS['Infernal Scythe'] = set_combine(sets.precast.WS.MAB, {
@@ -538,6 +610,15 @@ function init_gear_sets()
 	sets.precast.WS['Cataclysm'].AccHigh = set_combine(sets.precast.WS['Cataclysm'], {
 	})
 	sets.precast.WS['Cataclysm'].MS = set_combine(sets.precast.WS['Cataclysm'], {
+	})
+
+	sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast.WS.MAB, {
+	})
+	sets.precast.WS['Sanguine Blade'].AccLow = set_combine(sets.precast.WS['Sanguine Blade'], {
+	})
+	sets.precast.WS['Sanguine Blade'].AccHigh = set_combine(sets.precast.WS['Sanguine Blade'], {
+	})
+	sets.precast.WS['Sanguine Blade'].MS = set_combine(sets.precast.WS['Sanguine Blade'], {
 	})
 
 	sets.precast.WS["Raging Fists"] = set_combine(sets.precast.WS,{
@@ -630,6 +711,7 @@ function init_gear_sets()
 		ear2="Thrud Earring",
 		body="Pumm. Lorica +3",
 		hands=gear.Odyssean_hands_WS,
+		ring1="Beithir Ring",
 		back=gear.Cichol_StrWSD,
 		legs=gear.Valorous_legs_WS,
 		feet="Sulev. Leggings +2",
@@ -649,6 +731,7 @@ function init_gear_sets()
 		ear2="Thrud Earring",
 		body="Pumm. Lorica +3",
 		hands=gear.Odyssean_hands_WS,
+		ring2="Beithir Ring",
 		back=gear.Cichol_StrWSD,
 		legs=gear.Valorous_legs_WS,
 		feet="Sulev. Leggings +2",
@@ -1037,17 +1120,13 @@ function init_gear_sets()
 		legs="Jokushu Haidate",
 	})
 
-	sets.engaged.Sakpata = set_combine(sets.engaged, {
+	sets.Sakpata = {
 		head="Sakpata's Helm",
 		body="Sakpata's Breastplate",
 		hands="Sakpata's Gauntlets",
 		legs="Sakpata's Cuisses",
 		feet="Sakpata's Leggings",
-	})
-	sets.engaged.AccLow.Sakpata = set_combine(sets.engaged.AccLow, sets.engaged.Sakpata, {
-	})
-	sets.engaged.AccHigh.Sakpata = set_combine(sets.engaged.AccHigh, sets.engaged.Sakpata, {
-	})
+	}
 			 
 	--------------------------------------
 	-- Custom buff sets
@@ -1070,6 +1149,47 @@ function init_gear_sets()
 	-- Mantle to use with Upheaval on Darksday
 	sets.Upheaval_shadow = {back="Shadow Mantle"}
 
+end
+
+-------------------------------------------------------------------------------------------------------------------
+-- Job-specific hooks for standard casting events.
+-------------------------------------------------------------------------------------------------------------------
+
+-- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
+-- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
+function job_precast(spell, action, spellMap, eventArgs)
+	if spell.type == 'WeaponSkill' then
+		if (spell.target.model_size + spell.range * 1.642276421172564) < spell.target.distance then	
+			add_to_chat(7,"--- Target "..spell.target.type.." ["..player.target.name.."] out of range of ["..spell.name.."] [ Distance: "..spell.target.distance.."] ---")
+			cancel_spell()
+		end
+
+		if state.TreasureMode.value ~= false then
+			equip(sets.sharedTH)
+		end
+
+		-- Don't gearswap for weaponskills when Defense is active and Hybrid Mode set to a specific state
+		if state.DefenseMode.value ~= 'None' and state.HybridMode ~= 'Normal' then
+			eventArgs.handled = true
+		end
+	end
+end
+
+-- Run after the default precast() is done.
+-- eventArgs is the same one used in job_precast, in case information needs to be persisted.
+function job_post_precast(spell, action, spellMap, eventArgs)
+	if spell.type:lower() == 'weaponskill' then
+		if state.Buff.Sekkanoki then
+			equip(sets.buff.Sekkanoki)
+		end
+
+		if state.DefenseMode.value ~= 'None' and state.HybridMode ~= 'Normal' then
+			-- Replace Moonshade Earring if we're at cap TP
+			if player.tp >= 2750 then
+				equip(sets.precast.WS.MaxTP)
+			end
+		end
+	end
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1165,8 +1285,19 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
+	if state.EnmityMode.value == 'Down' then
+		meleeSet = set_combine(meleeSet, sets.EnmityDown)
+	elseif state.EnmityMode.value == 'Up' then
+		meleeSet = set_combine(meleeSet, sets.EnmityUp)
+	end
 	if buffactive['*Madrigal'] then
 		meleeSet = set_combine(meleeSet, sets.buff.Madrigal)
+	end
+	if state.SakpataMode.value ~= false then
+		meleeSet = set_combine(meleeSet, sets.Sakpata)
+	end
+	if state.TreasureMode.value ~= false then
+		meleeSet = set_combine(meleeSet, sets.sharedTH)
 	end
 	if buffactive['Doom'] then
 		meleeSet = set_combine(meleeSet, sets.buff.Doom)
