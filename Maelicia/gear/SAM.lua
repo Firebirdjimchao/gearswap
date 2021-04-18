@@ -269,6 +269,7 @@ function init_gear_sets()
 		feet="Wakido Sune. +3",
 	})
 	sets.precast.WS.MAB = set_combine(sets.MAB, sets.precast.WS, {
+		ring2="Beithir Ring",
 	})
 	sets.precast.WS.RA = set_combine(sets.precast.WS,{
 		ear1="Telos Earring",
@@ -366,7 +367,8 @@ function init_gear_sets()
 		body="Sakonji Domaru +3",
 		hands=gear.Valorous_hand_WS,
 		ring1="Niqmaddu Ring",
-		ring2="Regal Ring",
+		--ring2="Regal Ring",
+		ring2="Beithir Ring",
 		back=gear.Smertrio_WS,
 		waist="Sailfi Belt +1",
 		legs="Wakido Haidate +3",
@@ -445,6 +447,7 @@ function init_gear_sets()
 		neck="Sam. Nodowa +2",
 		ear2="Moonshade Earring",
 		body="Sakonji Domaru +3",
+		ring2="Beithir Ring",
 		waist="Sailfi Belt +1",
 		feet=gear.Valorous_feet_WS,
 	})
