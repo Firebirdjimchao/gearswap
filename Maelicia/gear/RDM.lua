@@ -222,7 +222,7 @@ function init_gear_sets()
 		ear2="Regal Earring",
 		body="Viti. Tabard +3",
 		hands="Atrophy Gloves +3",
-		waist="Metalsinger Belt",
+		waist="Sailfi Belt +1",
 		legs="Jhakri Slops +2",
 		feet="Vitiation Boots +3",
 	})

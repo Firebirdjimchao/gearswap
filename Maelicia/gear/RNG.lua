@@ -630,8 +630,7 @@ function init_gear_sets()
 		ring1="Ilabrat Ring",
 		ring2="Regal Ring",
 		back=gear.aug_belenus_ws,
-		waist="Metalsinger Belt",
-		--waist="Sailfi Belt +1",
+		waist="Sailfi Belt +1",
 		legs="Arc. Braccae +3",
 		feet="Mummu Gamash. +2",
 	})

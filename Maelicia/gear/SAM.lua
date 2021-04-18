@@ -173,7 +173,7 @@ function init_gear_sets()
 	}
 
 	sets.EnmityDown = {
-		--ear2="Schere Earring",
+		ear2="Schere Earring",
 	}
 	
 	--------------------------------------
@@ -294,9 +294,10 @@ function init_gear_sets()
 		body="Sakonji Domaru +3",
 		hands=gear.Valorous_hand_WS,
 		ring1="Niqmaddu Ring",
-		ring2="Regal Ring",
+		--ring2="Regal Ring",
+		ring2="Beithir Ring",
 		back=gear.Smertrio_WS,
-		waist="Metalsinger Belt",
+		waist="Sailfi Belt +1",
 		--waist="Fotia Belt",
 		legs="Wakido Haidate +3",
 		feet=gear.Valorous_feet_WS,
@@ -367,8 +368,7 @@ function init_gear_sets()
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
 		back=gear.Smertrio_WS,
-		--waist="Metalsinger Belt",
-		waist="Fotia Belt",
+		waist="Sailfi Belt +1",
 		legs="Wakido Haidate +3",
 		feet=gear.Valorous_feet_WS,
 		--feet="Flam. Gambieras +2",
@@ -445,7 +445,7 @@ function init_gear_sets()
 		neck="Sam. Nodowa +2",
 		ear2="Moonshade Earring",
 		body="Sakonji Domaru +3",
-		waist="Metalsinger Belt",
+		waist="Sailfi Belt +1",
 		feet=gear.Valorous_feet_WS,
 	})
 	sets.precast.WS['Impulse Drive'].MidAcc = set_combine(sets.precast.WS['Impulse Drive'], {
@@ -588,6 +588,7 @@ function init_gear_sets()
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
 		back=gear.Smertrio_WS,
+		waist="Sailfi Belt +1",
 		legs="Wakido Haidate +3",
 		--feet="Rao Sune-Ate +1",
 	})
@@ -713,7 +714,7 @@ function init_gear_sets()
 	-- http://www.ffxiah.com/forum/topic/41903/bushido-the-way-of-the-samurai-a-guide-v-20/49#2866879
 	--
 	-- /war base:
-	-- 1251 ACC
+	-- 1234 ACC
 	-- 1396 ATK
 	sets.engaged = {
 		--sub="Duplus Grip",
@@ -740,8 +741,8 @@ function init_gear_sets()
 		ring2="Hetairoi Ring",
 		-- 10 STP
 		back=gear.Smertrio_STP,
-		-- 8%
-		waist="Ioskeha Belt +1",
+		-- 9%
+		waist="Sailfi Belt +1",
 		-- 9 STP 5% Hasso +3
 		--legs="Kasuga Haidate +1",
 		legs="Wakido Haidate +3",

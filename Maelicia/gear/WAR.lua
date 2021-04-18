@@ -1,5 +1,5 @@
 function user_setup()
-	state.OffenseMode:options('Normal', 'AccLow', 'AccHigh', 'Crit')
+	state.OffenseMode:options('Normal', 'AccLow', 'AccHigh', 'Crit', 'Sakpata')
 	state.RangedMode:options('Normal')
 	state.HybridMode:options('Normal', 'PDT')
 	state.WeaponskillMode:options('Normal', 'AccLow', 'AccHigh')
@@ -44,7 +44,7 @@ function init_gear_sets()
 	-- 31 MDB
 	-- 590 MEVA
 	-- To cap MDT: Shellra5: 23%, Shell5: 26%, Shell4: 29%
-	sets.DT = set_combine(sets.idle,{
+	sets.DT = {
 		-- 3% DT
 		ammo="Staunch Tathlum +1",
 		-- 3% PDT
@@ -81,12 +81,17 @@ function init_gear_sets()
 		-- 139 MEVA
 		-- 2% Haste
 		body="Sakpata's Breastplate",
-		-- 6% PDT
-		-- 2% MDT
+		-- 6% PDT 
+		-- 2% MDT 
 		-- 4 MDB
 		-- 91 MEVA
 		-- 4% Haste
-		hands="Volte Moufles",
+		--hands="Volte Moufles",
+		-- 8% DT 
+		-- 6 MDB
+		-- 112 MEVA
+		-- 4% Haste
+		hands="Sakpata's Gauntlets",
 		-- 5% PDT
 		-- 5% MDT
 		ring1="Dark Ring",
@@ -96,22 +101,28 @@ function init_gear_sets()
 		back="Moonbeam Cape",
 		-- 4% PDT
 		waist="Flume Belt +1",
-		-- 5% PDT
+		-- 5% PDT 
 		-- 4 MDB
 		-- 100 MEVA
-		legs="Pumm. Cuisses +3",
-		-- 7% PDT
-		-- 3% MDT
-		-- 8 MDB
-		-- 137 MEVA
-		--legs="Volte Brayettes",
-		-- 4% PDT
-		-- 6% MDT
+		-- 6% Haste
+		--legs="Pumm. Cuisses +3",
+		-- 9% DT 
+		-- 9 MDB
+		-- 150 MEVA
+		-- 4% Haste
+		legs="Sakpata's Cuisses",
+		-- 4% PDT 
+		-- 6% MDT 
 		-- 6 MDB
 		-- 137 MEVA
 		-- 3% Haste
-		feet="Volte Sollerets",
-	})
+		--feet="Volte Sollerets",
+		-- 6% DT 
+		-- 7 MDB
+		-- 150 MEVA
+		-- 2% Haste
+		feet="Sakpata's Leggings",
+	}
 			 
 	--------------------------------------
 	-- Precast sets
@@ -288,7 +299,7 @@ function init_gear_sets()
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
 		back=gear.Cichol_StrWSD,
-		waist="Ioskeha Belt +1",
+		waist="Sailfi Belt +1",
 		legs=gear.Argosy_legs_hq_D,
 		--feet="Pumm. Calligae +3",
 		--feet="Sulev. Leggings +2",
@@ -702,13 +713,16 @@ function init_gear_sets()
 		neck="Loricate Torque +1",
 		ear1="Odnowa Earring +1",
 		ear2="Etiolation Earring",
-		body="Hjarrandi Breast.",
-		hands="Volte Moufles",
+		--body="Hjarrandi Breast.",
+		body="Nyame Mail",
+		--hands="Volte Moufles",
+		hands="Sakpata's Gauntlets",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
 		waist="Flume Belt +1",
-		legs="Pumm. Cuisses +3",
+		--legs="Pumm. Cuisses +3",
+		legs="Sakpata's Cuisses",
 		feet="Hermes' Sandals"
 	}
 	
@@ -724,8 +738,9 @@ function init_gear_sets()
 		--body=gear.Argosy_body_hq_D,
 		--hands=gear.Argosy_hands_hq_D,
 		hands="Tatena. Gote +1",
-		waist="Ioskeha Belt +1",
-		legs=gear.Argosy_legs_hq_D,
+		waist="Sailfi Belt +1",
+		--legs=gear.Argosy_legs_hq_D,
+		legs="Sakpata's Cuisses",
 	})
 			 
 	sets.idle.Regen = set_combine(sets.idle,{
@@ -799,7 +814,7 @@ function init_gear_sets()
 		-- 5 STP
 		ring2="Petrov Ring",
 		back=gear.Cichol_AccDA,
-		waist="Ioskeha Belt +1",
+		waist="Sailfi Belt +1",
 		legs="Pumm. Cuisses +3",
 		-- 4 STP
 		feet="Pumm. Calligae +3"
@@ -830,6 +845,7 @@ function init_gear_sets()
 		ear2="Digni. Earring",
 		ring1="Flamma Ring",
 		ring2="Regal Ring",
+		waist="Ioskeha Belt +1",
 	})
 
 	-- Haste Mode used when Dual Wielding. See job_buff_change() below for specific conditions
@@ -902,12 +918,12 @@ function init_gear_sets()
 	})
 	
 	-- Total: 
-	-- 27% DT 
-	-- 25% PDT 
-	-- 6% MDT
-	-- 31 MDB
-	-- 590 MEVA
-	-- 27% Haste
+	-- 50% DT 
+	-- 10% PDT 
+	-- 0% MDT
+	-- 38 MDB
+	-- 674 MEVA
+	-- 24% Haste
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.engaged.PDT = set_combine(sets.engaged, {
 		-- 7% DT
@@ -925,7 +941,12 @@ function init_gear_sets()
 		-- 4 MDB
 		-- 91 MEVA
 		-- 4% Haste
-		hands="Volte Moufles",
+		--hands="Volte Moufles",
+		-- 8% DT 
+		-- 6 MDB
+		-- 112 MEVA
+		-- 4% Haste
+		hands="Sakpata's Gauntlets",
 		-- 10% DT
 		ring2="Defending Ring",
 		-- 10% PDT
@@ -936,13 +957,23 @@ function init_gear_sets()
 		-- 4 MDB
 		-- 100 MEVA
 		-- 6% Haste
-		legs="Pumm. Cuisses +3",
+		--legs="Pumm. Cuisses +3",
+		-- 9% DT 
+		-- 9 MDB
+		-- 150 MEVA
+		-- 4% Haste
+		legs="Sakpata's Cuisses",
 		-- 4% PDT 
 		-- 6% MDT 
 		-- 6 MDB
 		-- 137 MEVA
 		-- 3% Haste
-		feet="Volte Sollerets",
+		--feet="Volte Sollerets",
+		-- 6% DT 
+		-- 7 MDB
+		-- 150 MEVA
+		-- 2% Haste
+		feet="Sakpata's Leggings",
 	})
 	sets.engaged.AccLow.PDT = set_combine(sets.engaged.PDT, {})
 	sets.engaged.AccHigh.PDT = set_combine(sets.engaged.AccLow.PDT, {
@@ -1004,6 +1035,18 @@ function init_gear_sets()
 		body="Tatena. Harama. +1",
 		hands="Flam. Manopolas +2",
 		legs="Jokushu Haidate",
+	})
+
+	sets.engaged.Sakpata = set_combine(sets.engaged, {
+		head="Sakpata's Helm",
+		body="Sakpata's Breastplate",
+		hands="Sakpata's Gauntlets",
+		legs="Sakpata's Cuisses",
+		feet="Sakpata's Leggings",
+	})
+	sets.engaged.AccLow.Sakpata = set_combine(sets.engaged.AccLow, sets.engaged.Sakpata, {
+	})
+	sets.engaged.AccHigh.Sakpata = set_combine(sets.engaged.AccHigh, sets.engaged.Sakpata, {
 	})
 			 
 	--------------------------------------
