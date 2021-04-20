@@ -750,6 +750,32 @@ function init_gear_sets()
 	sets.precast.WS['Blade: Yu'] = set_combine(sets.precast.WS.MAB,{
 		back=Andartia.DEX,
 	})
+
+	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
+		ammo="Yetshila",
+		head="Mummu Bonnet +2",
+		neck="Fotia Gorget",
+		ear1="Odr Earring",
+		ear2="Moonshade Earring",
+		body="Ken. Samue +1",
+		hands="Mummu Wrists +2",
+		--ring1="Gere Ring",
+		ring1="Mummu Ring",
+		ring2="Regal Ring",
+		back=Andartia.DEX,
+		--waist="Windbuffet Belt +1",
+		waist="Fotia Belt",
+		legs="Mummu Kecks +2",
+		--legs="Mochi. Hakama +3",
+		feet="Mummu Gamash. +2",
+	})
+	sets.precast.WS['Evisceration'].Low = set_combine(sets.precast.WS['Evisceration'], {
+	})
+	sets.precast.WS['Evisceration'].Mid = set_combine(sets.precast.WS['Evisceration'], {
+	})
+	
+	sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'].Mid, {
+	})
 	
 	--------------------------------------
 	-- Custom buff sets
