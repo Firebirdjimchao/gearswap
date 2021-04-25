@@ -1157,6 +1157,8 @@ function init_gear_sets()
 	-- Mantle to use with Upheaval on Darksday
 	sets.Upheaval_shadow = {back="Shadow Mantle"}
 
+	sets.slept = {neck="Vim Torque +1"}
+
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1327,6 +1329,43 @@ function job_status_change(newStatus, oldStatus, eventArgs)
 end
 
 function job_buff_change(buff, gain)
+	if buff == "Aftermath: Lv.3" or buff == "Aftermath" then
+		classes.CustomMeleeGroups:clear()
+		if (buff == "Aftermath: Lv.3" and gain) or buffactive["Aftermath: Lv.3"] then
+			if player.equipment.main == "Conqueror" then
+				classes.CustomMeleeGroups:append('AM3')
+				if gain then
+					send_command('timers create "Aftermath: Lv.3" 180 down;wait 120;input /echo Aftermath: Lv.3 [WEARING OFF IN 60 SEC.];wait 30;input /echo Aftermath: Lv.3 [WEARING OFF IN 30 SEC.];wait 20;input /echo Aftermath: Lv.3 [WEARING OFF IN 10 SEC.]')
+				else
+					send_command('timers delete "Aftermath: Lv.3"')
+					add_to_chat(123,'AM3: [OFF]')
+				end
+			end
+		end
+		if (buff == "Aftermath" and gain) or buffactive.Aftermath then
+			if player.equipment.main == "Bravura" and state.HybridMode.value == 'PDT' then
+				classes.CustomMeleeGroups:append('AM')
+			end
+		end
+	end
+	if buff == "Aftermath: Lv.3" or buff == "Aftermath" then
+		handle_equipping_gear(player.status)
+	end
+	if buff == 'Blood Rage' and gain then
+		send_command('timers create "Blood Rage" 60 down abilities/00255.png')
+		else
+		send_command('timers delete "Blood Rage"')
+	end
+	if buff == 'Warcry' and gain then
+		send_command('timers create "Warcry" 60 down abilities/00255.png')
+		else
+		send_command('timers delete "Warcry"')
+	end
+	if buff == "sleep" and gain and player.hp > 200 and player.status == "Engaged" then
+		equip(sets.slept)
+		else
+		handle_equipping_gear(player.status)
+	end
 	-- Haste mode is only relevant for Dual Wield subjobs
 	if S{'NIN','DNC'}:contains(player.sub_job) then
 		-- This should only apply if we are truly Dual Wielding
