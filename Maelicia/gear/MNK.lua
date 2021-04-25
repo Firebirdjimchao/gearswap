@@ -195,6 +195,18 @@ function init_gear_sets()
 	sets.precast.WS["Ascetic's Fury"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, sets.precast.WS["Ascetic's Fury"], {
 	})
 
+	sets.precast.WS["Howling Fist"] = set_combine(sets.precast.WS, {
+		body="Tatena. Harama. +1",
+		hands="Tatena. Gote +1",
+		waist="Moonbow Belt",
+		legs="Ken. Hakama +1",
+		feet="Mpaca's Boots",
+	})
+	sets.precast.WS["Howling Fist"].Acc = set_combine(sets.precast.WS.Acc, sets.precast.WS["Howling Fist"], {
+	})
+	sets.precast.WS["Howling Fist"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, sets.precast.WS["Howling Fist"], {
+	})
+
 	sets.precast.WS["Tornado Kick"] = set_combine(sets.precast.WS, {
 		body="Tatena. Harama. +1",
 		hands="Tatena. Gote +1",
