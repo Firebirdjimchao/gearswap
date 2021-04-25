@@ -300,17 +300,18 @@ function init_gear_sets()
 		--ear2="Brutal Earring",
 		ear2="Thrud Earring",
 		body="Pumm. Lorica +3",
-		hands="Tatena. Gote +1",
+		hands=gear.Odyssean_hands_WS,
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
 		back=gear.Cichol_VitWSD,
-		--waist="Ioskeha Belt +1",
-		waist="Sailfi Belt +1",
+		waist="Ioskeha Belt +1",
+		--waist="Sailfi Belt +1",
 		legs=gear.Valorous_legs_WS,
 		--legs=gear.Odyssean_legs_WS,
 		feet="Sulev. Leggings +2",
 	})
 	sets.precast.WS["Upheaval"].AccLow = set_combine(sets.precast.WS['Upheaval'], {
+		hands="Tatena. Gote +1",
 		legs="Pumm. Cuisses +3",
 	})
 	sets.precast.WS["Upheaval"].AccHigh = set_combine(sets.precast.WS['Upheaval'], {
@@ -560,14 +561,17 @@ function init_gear_sets()
 		ear2="Thrud Earring",
 		body="Pumm. Lorica +3",
 		hands=gear.Odyssean_hands_WS,
-		ring1="Beithir Ring",
+		ring1="Niqmaddu Ring",
+		--ring1="Beithir Ring",
+		--ring2="Epaminonda's Ring",
 		ring2="Regal Ring",
 		back=gear.Cichol_StrWSD,
 		waist="Sailfi Belt +1",
-		legs=gear.Valorous_legs_WS,
+		legs="Pumm. Cuisses +3",
 		feet="Sulev. Leggings +2",
 	})
 	sets.precast.WS['Savage Blade'].AccLow = set_combine(sets.precast.WS['Savage Blade'], {
+		legs=gear.Valorous_legs_WS,
 	})
 	sets.precast.WS['Savage Blade'].AccHigh = set_combine(sets.precast.WS['Savage Blade'], {
 	})
@@ -730,10 +734,14 @@ function init_gear_sets()
 		ear1="Moonshade Earring",
 		ear2="Thrud Earring",
 		body="Pumm. Lorica +3",
-		hands=gear.Odyssean_hands_WS,
-		ring2="Beithir Ring",
+		--hands=gear.Odyssean_hands_WS,
+		hands=gear.Argosy_hands_hq_D,
+		ring1="Niqmaddu Ring",
+		ring2="Regal Ring",
+		--ring2="Beithir Ring",
 		back=gear.Cichol_StrWSD,
-		legs=gear.Valorous_legs_WS,
+		--legs=gear.Valorous_legs_WS,
+		legs=gear.Argosy_legs_hq_D,
 		feet="Sulev. Leggings +2",
 	})
 	sets.precast.WS["Impulse Drive"].AccLow = set_combine(sets.precast.WS["Impulse Drive"], {
