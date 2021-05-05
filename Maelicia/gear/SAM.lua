@@ -7,19 +7,19 @@ function user_setup()
 	state.OffenseMode:options('Normal', 'MidAcc', 'HighAcc', 'FullAcc')
 	state.RangedMode:options('Normal', 'MidAcc', 'HighAcc', 'FullAcc')
 	state.HybridMode:options('Normal', 'PDT', 'MDT', 'Reraise')
-	state.WeaponskillMode:options('Normal', 'MidAcc', 'HighAcc', 'FullAcc')
+	state.WeaponskillMode:options('Normal', 'MidAcc', 'HighAcc', 'FullAcc', 'PDT', 'MDT')
 	state.PhysicalDefenseMode:options('PDT', 'Reraise')
 	state.MagicalDefenseMode:options('MDT', 'Reraise')
 	state.IdleMode:options('Normal', 'Regain', 'Regen', 'Reraise')
 
 	state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi'}
 	state.EnmityMode = M{['description']='Enmity Mode', 'None', 'Down', 'Up'}
-	state.MpacaMode = M(false, 'Mpaca')
+	state.MeleeDTMode = M(false, 'PDT', 'MDT')
 	state.TreasureMode = M(false, 'TH')
 	
 	gear.Smertrio_STP = { name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Store TP"+10','Damage taken-5%',}}
 	gear.Smertrio_STP_DEX = { name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Damage taken-5%',}}
-	gear.Smertrio_WS = { name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
+	gear.Smertrio_WS = { name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Damage taken-5%',}}
 	
 	update_combat_form()
 
@@ -49,7 +49,7 @@ function user_setup()
 	send_command('bind ^` gs equip sets.Twilight; input /echo --- Twilight Set equipped ---')
 	send_command('bind ^- gs c cycle enmitymode')
 	send_command('bind ^= gs c toggle TreasureMode; input /echo --- TreasureMode ---')
-	send_command('bind != gs c toggle MpacaMode; input /echo --- MpacaMode ---')
+	send_command('bind != gs c toggle MeleeDTMode; input /echo --- MeleeDTMode ---')
 	
 	select_default_macro_book()
 
@@ -289,6 +289,22 @@ function init_gear_sets()
 		--ear1="Lugra Earring +1",
 	}
 
+	sets.precast.WS.PDTBase = {
+		head="Mpaca's Cap",
+		body="Wakido Domaru +3",
+		hands="Sakonji Kote +3",
+		ring2="Defending Ring",
+		feet="Mpaca Boots",
+	}
+
+	sets.precast.WS.MDTBase = {
+		head="Mpaca's Cap",
+		body="Wakido Domaru +3",
+		hands="Sakonji Kote +3",
+		ring2="Defending Ring",
+		legs="Ken. Hakama +1",
+	}
+
 	-- Fudo/Kasha/Gekko/Yukikaze
 	sets.precast.WS1Hit = set_combine(sets.precast.WS,{
 		ammo="Knobkierrie",
@@ -330,6 +346,10 @@ function init_gear_sets()
 	})
 	sets.precast.WS['Tachi: Fudo'].FullAcc = set_combine(sets.precast.WS1Hit.FullAcc, {
 	})
+	sets.precast.WS['Tachi: Fudo'].PDT = set_combine(sets.precast.WS1Hit.FullAcc, sets.precast.WS.PDTBase, {
+	})
+	sets.precast.WS['Tachi: Fudo'].MDT = set_combine(sets.precast.WS1Hit.FullAcc, sets.precast.WS.MDTBase, {
+	})
 
 	-- 75% STR (1-hit)
 	sets.precast.WS['Tachi: Kasha'] = set_combine(sets.precast.WS1Hit, {
@@ -339,6 +359,10 @@ function init_gear_sets()
 	sets.precast.WS['Tachi: Kasha'].HighAcc = set_combine(sets.precast.WS1Hit.HighAcc, {
 	})
 	sets.precast.WS['Tachi: Kasha'].FullAcc = set_combine(sets.precast.WS1Hit.FullAcc, {
+	})
+	sets.precast.WS['Tachi: Kasha'].PDT = set_combine(sets.precast.WS1Hit.FullAcc, sets.precast.WS.PDTBase, {
+	})
+	sets.precast.WS['Tachi: Kasha'].MDT = set_combine(sets.precast.WS1Hit.FullAcc, sets.precast.WS.MDTBase, {
 	})
 
 	-- 75% STR (1-hit)
@@ -350,6 +374,10 @@ function init_gear_sets()
 	})
 	sets.precast.WS['Tachi: Gekko'].FullAcc = set_combine(sets.precast.WS1Hit.FullAcc, {
 	})
+	sets.precast.WS['Tachi: Gekko'].PDT = set_combine(sets.precast.WS1Hit.FullAcc, sets.precast.WS.PDTBase, {
+	})
+	sets.precast.WS['Tachi: Gekko'].MDT = set_combine(sets.precast.WS1Hit.FullAcc, sets.precast.WS.MDTBase, {
+	})
 	
 	-- 75% STR (1-hit)
 	sets.precast.WS['Tachi: Yukikaze'] = set_combine(sets.precast.WS, {
@@ -359,6 +387,10 @@ function init_gear_sets()
 	sets.precast.WS['Tachi: Yukikaze'].HighAcc = set_combine(sets.precast.WS1Hit.HighAcc, {
 	})
 	sets.precast.WS['Tachi: Yukikaze'].FullAcc = set_combine(sets.precast.WS1Hit.FullAcc, {
+	})
+	sets.precast.WS['Tachi: Yukikaze'].PDT = set_combine(sets.precast.WS1Hit.FullAcc, sets.precast.WS.PDTBase, {
+	})
+	sets.precast.WS['Tachi: Yukikaze'].MDT = set_combine(sets.precast.WS1Hit.FullAcc, sets.precast.WS.MDTBase, {
 	})
 	
 	-- 73-85% STR (2-hit)
@@ -382,13 +414,17 @@ function init_gear_sets()
 	})
 	sets.precast.WS['Tachi: Shoha'].MidAcc = set_combine(sets.precast.WS['Tachi: Shoha'], {
 	})
-	sets.precast.WS['Tachi: Shoha'].HighAcc = set_combine(sets.precast.WS['Tachi: Shoa'], {
+	sets.precast.WS['Tachi: Shoha'].HighAcc = set_combine(sets.precast.WS['Tachi: Shoha'], {
 		ear1="Telos Earring",
 		hands="Wakido Kote +3",
 		ring2="Regal Ring",
 	})
-	sets.precast.WS['Tachi: Shoha'].FullAcc = set_combine(sets.precast.WS['Tachi: Shoa'], {
+	sets.precast.WS['Tachi: Shoha'].FullAcc = set_combine(sets.precast.WS['Tachi: Shoha'], {
 		head="Wakido Kabuto +3",
+	})
+	sets.precast.WS['Tachi: Shoha'].PDT = set_combine(sets.precast.WS['Tachi: Shoha'].FullAcc, sets.precast.WS.PDTBase, {
+	})
+	sets.precast.WS['Tachi: Shoha'].MDT = set_combine(sets.precast.WS['Tachi: Shoha'].FullAcc, sets.precast.WS.MDTBase, {
 	})
 	
 	-- 50% STR (3-hit)
@@ -407,6 +443,10 @@ function init_gear_sets()
 		hands="Wakido Kote +3",
 		ring2="Regal Ring",
 		feet="Wakido Sune. +3"
+	})
+	sets.precast.WS['Tachi: Rana'].PDT = set_combine(sets.precast.WS['Tachi: Rana'].FullAcc, sets.precast.WS.PDTBase, {
+	})
+	sets.precast.WS['Tachi: Rana'].MDT = set_combine(sets.precast.WS['Tachi: Rana'].FullAcc, sets.precast.WS.MDTBase, {
 	})
 	
 	-- 40% STR 60% CHR (1-hit), DEF down effect accuracy affected by MACC
@@ -430,6 +470,10 @@ function init_gear_sets()
 	})
 	sets.precast.WS['Tachi: Ageha'].FullAcc = set_combine(sets.precast.WS['Tachi: Ageha'], {
 	})
+	sets.precast.WS['Tachi: Ageha'].PDT = set_combine(sets.precast.WS['Tachi: Ageha'], sets.precast.WS.PDTBase, {
+	})
+	sets.precast.WS['Tachi: Ageha'].MDT = set_combine(sets.precast.WS['Tachi: Ageha'], sets.precast.WS.MDTBase, {
+	})
 	
 	-- Magical WS
 	sets.precast.WS['Tachi: Jinpu'] = set_combine(sets.precast.WS.MAB, {
@@ -437,6 +481,10 @@ function init_gear_sets()
 		neck="Sam. Nodowa +2",
 		ear2="Moonshade Earring",
 		hands=gear.Valorous_hand_WS,
+	})
+	sets.precast.WS['Tachi: Jinpu'].PDT = set_combine(sets.precast.WS['Tachi: Jinpu'], sets.precast.WS.PDTBase, {
+	})
+	sets.precast.WS['Tachi: Jinpu'].MDT = set_combine(sets.precast.WS['Tachi: Jinpu'], sets.precast.WS.MDTBase, {
 	})
 	sets.precast.WS['Tachi: Goten'] = set_combine(sets.precast.WS.MAB, {
 	})
@@ -1522,6 +1570,11 @@ function customize_melee_set(meleeSet)
 		meleeSet = set_combine(meleeSet, sets.EnmityDown)
 	elseif state.EnmityMode.value == 'Up' then
 		meleeSet = set_combine(meleeSet, sets.EnmityUp)
+	end
+	if state.MeleeDTMode.value == 'PDT' then
+		meleeSet = set_combine(meleeSet, sets.engagedPDTBase)
+	elseif state.MeleeDTMode.value == 'MDT' then
+		meleeSet = set_combine(meleeSet, sets.engagedMDTBase)
 	end
 	if state.TreasureMode.value ~= false then
 		meleeSet = set_combine(meleeSet, sets.sharedTH)
