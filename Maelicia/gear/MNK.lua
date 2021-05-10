@@ -5,14 +5,30 @@ function user_setup()
 	state.PhysicalDefenseMode:options('PDT', 'HP')
 	state.IdleMode:options('CP', 'Normal', 'Regen')
 
+	state.EnmityMode = M{['description']='Enmity Mode', 'None', 'Down', 'Up'}
+	state.MalignanceMode = M(false, 'Malignance')
+	state.TreasureMode = M(false, 'TH')
+
 	gear.Segomo_dex_da = { name="Segomo's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}}
+	gear.Segomo_vit_wsd = { name="Segomo's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%','Damage taken-5%',}}
 	
 	update_combat_form()
 	update_melee_groups()
+
+	send_command('bind ^- gs c cycle enmitymode')
+	send_command('bind ^= gs c toggle TreasureMode; input /echo --- TreasureMode ---')
+	send_command('bind != gs c toggle MalignanceMode; input /echo --- MalignanceMode ---')
 	
 	select_default_macro_book()
 
 	global_aliases()
+end
+
+-- Called when this job file is unloaded (eg: job change)
+function user_unload()
+	send_command('unbind ^-')
+	send_command('unbind ^=')
+	send_command('unbind !=')
 end
 
 -- Define sets and vars used by this job file.
@@ -20,6 +36,39 @@ function init_gear_sets()
 	--------------------------------------
 	-- Start defining the sets
 	--------------------------------------
+
+	--------------------------------------
+	-- Base sets
+	--------------------------------------
+
+	sets.EnmityUp = {
+		-- 8 Enmity
+		head="Halitus helm",
+		-- 10 Enmity
+		neck="Unmoving Collar +1",
+		-- 10 Enmity
+		body="Emet Harness +1",
+		-- 9 Enmity
+		hands="Kurys Gloves",
+		-- 5 Enmity
+		ring1="Supershear Ring",
+		-- 5 Enmity
+		ring2="Pernicious Ring",
+		-- 3 Enmity
+		waist="Goading Belt",
+	}
+
+	sets.EnmityDown = {
+		ear2="Schere Earring",
+	}
+
+	sets.Malignance = {
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
+	}
 	
 	-- Precast Sets
 	
@@ -50,13 +99,15 @@ function init_gear_sets()
 	sets.precast.JA['Chakra'] = {
 		ammo="Tantra Tathlum",
 		head="Rao Kabuto +1",
+		neck="Unmoving Collar +1",
 		body="Tatena. Harama. +1",
 		hands="Tatena. Gote +1",
-		ring1="Dark Ring",
-		back="Anchoret's Mantle",
+		ring1="Niqmaddu Ring",
+		ring2="Regal Ring",
+		back=gear.Segomo_vit_wsd,
 		waist="Flume Belt +1",
 		legs="Anch. Hose +1",
-		feet="Malignance Boots",
+		feet="Tatena. Sune. +1",
 	}
 
 	-- Waltz set (chr and vit)
@@ -66,7 +117,7 @@ function init_gear_sets()
 		hands="Tatena. Gote +1",
 		ring1="Dark Ring",
 		ring1="Sirona's Ring",
-		back="Anchoret's Mantle",
+		back=gear.Segomo_vit_wsd,
 		waist="Flume Belt +1",
 		legs="Anch. Hose +1",
 		feet="Malignance Boots",
@@ -198,9 +249,11 @@ function init_gear_sets()
 	sets.precast.WS["Howling Fist"] = set_combine(sets.precast.WS, {
 		body="Tatena. Harama. +1",
 		hands="Tatena. Gote +1",
+		back=gear.Segomo_vit_wsd,
 		waist="Moonbow Belt",
 		legs="Ken. Hakama +1",
-		feet="Mpaca's Boots",
+		--feet="Mpaca's Boots",
+		feet="Tatena. Sune. +1",
 	})
 	sets.precast.WS["Howling Fist"].Acc = set_combine(sets.precast.WS.Acc, sets.precast.WS["Howling Fist"], {
 	})
@@ -210,6 +263,7 @@ function init_gear_sets()
 	sets.precast.WS["Tornado Kick"] = set_combine(sets.precast.WS, {
 		body="Tatena. Harama. +1",
 		hands="Tatena. Gote +1",
+		back=gear.Segomo_vit_wsd,
 		waist="Moonbow Belt",
 		legs="Ken. Hakama +1",
 		feet="Anch. Gaiters +3",
@@ -219,7 +273,46 @@ function init_gear_sets()
 	sets.precast.WS["Tornado Kick"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, sets.precast.WS["Tornado Kick"], {
 	})
 
+	-- 30% STR / 30% INT, damage varies with TP
 	sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS.MAB,{
+		head="Pixie Hairpin +1",
+	})
+
+	-- 50% MND / 30% STR, single attack, damage varies with TP
+	sets.precast.WS["Retribution"] = set_combine(sets.precast.WS, {
+		ammo="Knobkierrie",
+		head="Mpaca's Cap",
+		--head="Hes. Crown +3",
+		neck="Fotia Gorget",
+		ear1="Ishvara Earring",
+		--hands="Anchor. Gloves +3",
+		back=gear.Segomo_vit_wsd,
+		waist="Fotia Belt",
+		legs="Hiza. Hizayoroi +2",
+	})
+	sets.precast.WS["Retribution"].Acc = set_combine(sets.precast.WS.Acc, sets.precast.WS["Retribution"], {
+	})
+	sets.precast.WS["Retribution"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, sets.precast.WS["Retribution"], {
+	})
+
+	-- 100% STR, DEF down, duration varies with TP
+	sets.precast.WS["Shell Crusher"] = set_combine(sets.precast.WS, {
+		head="Malignance Chapeau",
+		ammo="Pemphredo Tathlum",
+		neck="Sanctity Necklace",
+		ear1="Digni. Earring",
+		ear2="Hermetic Earring",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		ring1="Stikini Ring",
+		ring2="Stikini Ring",
+		waist="Luminary Sash",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
+	})
+	sets.precast.WS["Shell Crusher"].Acc = set_combine(sets.precast.WS.Acc, sets.precast.WS["Shell Crusher"], {
+	})
+	sets.precast.WS["Shell Crusher"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, sets.precast.WS["Shell Crusher"], {
 	})
 	
 	-- Midcast Sets
@@ -532,6 +625,26 @@ end
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
 
+-- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
+-- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
+function job_precast(spell, action, spellMap, eventArgs)
+    -- Don't gearswap for weaponskills when Defense is on.
+    if spell.type == 'WeaponSkill' then
+			if (spell.target.model_size + spell.range * 1.642276421172564) < spell.target.distance then	
+				add_to_chat(7,"--- Target "..spell.target.type.." ["..player.target.name.."] out of range of ["..spell.name.."] [ Distance: "..spell.target.distance.."] ---")
+				cancel_spell()
+			end
+
+			if state.TreasureMode.value ~= false then
+				equip(sets.sharedTH)
+			end
+
+    	if state.DefenseMode.current ~= 'None' then
+        eventArgs.handled = true
+      end
+    end
+end
+
 function job_buff_change(buff, gain)
     -- Set Footwork as combat form any time it's active and Hundred Fists is not.
     if buff == 'Footwork' and gain and not buffactive['hundred fists'] then
@@ -611,6 +724,17 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
+	if state.EnmityMode.value == 'Down' then
+		meleeSet = set_combine(meleeSet, sets.EnmityDown)
+	elseif state.EnmityMode.value == 'Up' then
+		meleeSet = set_combine(meleeSet, sets.EnmityUp)
+	end
+	if state.MalignanceMode.value ~= false then
+		meleeSet = set_combine(meleeSet, sets.Malignance)
+	end
+	if state.TreasureMode.value ~= false then
+		meleeSet = set_combine(meleeSet, sets.sharedTH)
+	end
 	if buffactive['Boost'] then
 		meleeSet = set_combine(meleeSet, sets.buff.Boost)
 	end
