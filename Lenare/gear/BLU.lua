@@ -85,7 +85,6 @@ function init_gear_sets()
 	-- Fast cast sets for spells
 	-- 54/27
 	sets.precast.FC = {
-		
 		-- 4%
 		neck="Baetyl Pendant",
 		-- 1%
@@ -268,7 +267,10 @@ function init_gear_sets()
 	-- Gear for learning spells: +skill and AF hands.
 	sets.Learning = {
 		ammo="Mavi Tathlum",
-		hands="Assimilator's Bazubands +1",
+		neck="Incanter's Torque",
+		hands="Assim. Bazu. +1",
+		ring1="Stikini Ring",
+		ring2="Stikini Ring",
 		back="Cornflower Cape",
 		legs="Mavi Tayt +2",
 	}
@@ -279,18 +281,18 @@ function init_gear_sets()
 		
 	-- Idle sets
 	sets.idle = {
-		head="Aya. Zucchetto +2",
+		head="Malignance Chapeau",
 		neck="Twilight Torque",
 		ear1="Novia Earring",
 		ear2="Ethereal Earring",
 		body="Jhakri Robe +2",
-		hands="Aya. Manopolas +2",
+		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
 		waist="Fucho-no-Obi",
 		legs="Carmine Cuisses +1",
-		feet="Aya. Gambieras +2",
+		feet="Malignance Boots",
 	}
 
 	-- PDT:

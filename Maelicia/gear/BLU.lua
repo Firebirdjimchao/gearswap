@@ -284,7 +284,13 @@ function init_gear_sets()
 
 	-- Gear for learning spells: +skill and AF hands.
 	sets.Learning = set_combine(sets.midcast['Blue Magic'], {
+		ammo="Mavi Tathlum",
+		neck="Incanter's Torque",
 		hands="Assim. Bazu. +1",
+		ring1="Stikini Ring",
+		ring2="Stikini Ring",
+		back="Cornflower Cape",
+		legs="Mavi Tayt +2",
 	})
 
 	sets.latent_refresh = {
@@ -300,34 +306,32 @@ function init_gear_sets()
 		ear1="Odnowa Earring +1",
 		ear2="Ethereal Earring",
 		body="Jhakri Robe +2",
-		hands="Aya. Manopolas +2",
+		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
 		waist="Flume Belt +1",
 		--legs="Lengo Pants",
-		--legs="Carmine cuisses +1",
-		legs="Blood Cuisses",
-		feet="Aya. Gambieras +2",
+		legs="Carmine cuisses +1",
+		feet="Malignance Boots",
 	}
 
-	-- PDT: 52%
-	-- MDT: 36%
+	-- DT: 52%
 	--
 	sets.idle.PDT = {
 		-- DT 2%
 		ammo="Staunch Tathlum +1",
-		-- PDT 3%
-		head="Blistering Sallet +1",
+		-- DT 6%
+		head="Malignance Chapeau",
 		-- DT 6%
 		neck="Loricate Torque +1",
 		-- MDT 2%
 		ear1="Odnowa earring +1",
 		ear2="Ethereal earring",
-		-- PDT 6%
-		body="Emet Harness +1",
-		-- DT 3%
-		hands="Aya. Manopolas +2",
+		-- DT 9%
+		body="Malignance Tabard",
+		-- DT 5%
+		hands="Malignance Gloves",
 		-- PDT 5% MDT 5%
 		ring1="Dark Ring",
 		-- DT 10%
@@ -338,15 +342,12 @@ function init_gear_sets()
 		waist="Flume Belt +1",
 		-- DT 5%
 		legs="Aya. Cosciales +2",
-		-- DT 3%
-		feet="Aya. Gambieras +2",
+		-- DT 4%
+		feet="Malignance Boots",
 	}
 
-	-- PDT: 49%
-	-- MDT: 40%
+
 	sets.idle.MDT = set_combine(sets.idle.PDT, {
-		-- MDT 4% MDB 4
-		head="Dampening Tam",
 	})
 
 	sets.idle.Town = set_combine(sets.idle, {
