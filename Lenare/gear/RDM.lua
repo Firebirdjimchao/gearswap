@@ -754,8 +754,7 @@ function init_gear_sets()
 		--sub="Enki Strap",
 		-- 2%
 		ammo="Staunch Tathlum",
-		-- 3%
-		head="Blistering Sallet +1",
+		head="Malignance Chapeau",
 		-- 5%
 		neck="Twilight Torque",
 		-- 6%
@@ -782,8 +781,7 @@ function init_gear_sets()
 	sets.idle.MDT = set_combine(sets.idle,{
 		-- 2%
 		ammo="Staunch Tathlum",
-		-- 7
-		head="Atrophy Chapeau +3",
+		head="Malignance Chapeau",
 		-- 5%
 		neck="Twilight Torque",
 		-- 3%

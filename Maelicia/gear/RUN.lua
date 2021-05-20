@@ -558,7 +558,7 @@ function init_gear_sets()
 		ear1="Telos Earring",
 		ear2="Sherida earring",
 		body=gear.Adhemar_body_B,
-		hands=gear.Adhemar_hands_B,
+		hands=gear.Adhemar_hands_hq_B,
 		ring1="Niqmaddu Ring",
 		ring2="Epona's Ring",
 		back=gear.aug_ogma_dex_da,

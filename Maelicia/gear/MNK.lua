@@ -160,7 +160,7 @@ function init_gear_sets()
 		ear2="Moonshade Earring",
 		--body="Tatena. Harama. +1",
 		body="Ken. Samue +1",
-		hands=gear.Adhemar_hands_B,
+		hands=gear.Adhemar_hands_hq_B,
 		ring1="Niqmaddu Ring",
 		ring2="Gere Ring",
 		back=gear.Segomo_dex_da,
@@ -172,7 +172,7 @@ function init_gear_sets()
 		--head="Rao Kabuto +1",
 		head="Mpaca's Cap",
 		body=gear.Adhemar_body_B,
-		hands=gear.Adhemar_hands_B,
+		hands=gear.Adhemar_hands_hq_B,
 		back=gear.Segomo_dex_da,
 		legs="Hiza. Hizayoroi +2",
 		waist="Windbuffet Belt +1"

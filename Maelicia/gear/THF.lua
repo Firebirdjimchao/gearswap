@@ -66,7 +66,8 @@ function init_gear_sets()
 
 	sets.TreasureHunter = {
 		hands="Plun. Armlets +3",
-		--feet="Skulk. Poulaines +1"
+		--feet="Skulk. Poulaines +1",
+		--feet="Volte Boots",
 	}
 	sets.ExtraRegen = {}
 	sets.Kiting = {
@@ -835,9 +836,9 @@ function init_gear_sets()
 		ear1="Sherida Earring",
 		ear2="Telos Earring",
 		body="Pillager's Vest +3",
-		--hands=gear.Adhemar_hands_B,
 		--hands="Pill. Armlets +3",
-		hands="Malignance Gloves",
+		--hands="Malignance Gloves",
+		hands=gear.Adhemar_hands_hq_B,
 		ring1="Gere Ring",
 		--back=gear.jsecape_dex_crit,
 		-- 6 DW
@@ -862,7 +863,6 @@ function init_gear_sets()
 	sets.engaged.MidAcc.MaxHaste = set_combine(sets.engaged.MidAcc,{
 		ear1="Sherida Earring",
 		ear2="Telos Earring",
-		hands="Mummu Wrists +2",
 		ring1="Gere Ring",
 		back=gear.jsecape_dex_dw,
 		waist="Windbuffet Belt +1",

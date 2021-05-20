@@ -1063,14 +1063,15 @@ function init_gear_sets()
 		ear2="Brutal Earring",
 		--body=gear.Adhemar_body_B,
 		body="Tatena. Harama. +1",
-		--hands=gear.Adhemar_hands_B,
+		--hands=gear.Adhemar_hands_hq_B,
 		hands="Tatena. Gote +1",
 		ring1="Epona's Ring",
 		ring2="Petrov Ring",
 		back="Atheling Mantle",
 		waist="Windbuffet Belt +1",
 		legs="Meg. Chausses +2",
-		feet=gear.Adhemar_feet_B
+		--feet=gear.Adhemar_feet_B,
+		feet="Tatena. Sune. +1",
 	})
 	
 	sets.engaged.Melee.MidAcc = set_combine(sets.engaged.Melee,{
@@ -1084,7 +1085,6 @@ function init_gear_sets()
 		ear2="Digni. Earring",
 		ring1="Cacoethic Ring +1",
 		legs="Malignance Tights",
-		feet="Malignance Boots",
 	})
 
 	sets.engaged.Melee.FullAcc = set_combine(sets.engaged.Melee,{
@@ -1098,7 +1098,7 @@ function init_gear_sets()
 		ring2="Patricius Ring",
 		waist="Eschan Stone",
 		legs="Malignance Tights",
-		feet="Malignance Boots",
+		feet="Tatena. Sune. +1",
 	})
 
 	sets.engaged.DT = set_combine(sets.engaged,{

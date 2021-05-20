@@ -37,6 +37,7 @@ function define_global_sets()
 	gear.Adhemar_head_B = { name="Adhemar Bonnet", augments={'STR+10','DEX+10','Attack+15',}}
 	gear.Adhemar_body_B = { name="Adhemar Jacket", augments={'STR+10','DEX+10','Attack+15',}}
 	gear.Adhemar_hands_B = { name="Adhemar Wristbands", augments={'STR+10','DEX+10','Attack+15',}}
+	gear.Adhemar_hands_hq_B = { name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}}
 	gear.Adhemar_legs_D = { name="Adhemar Kecks", augments={'AGI+10','"Rapid Shot"+10','Enmity-5',}}
 	gear.Adhemar_feet_B = { name="Adhemar Gamashes", augments={'STR+10','DEX+10','Attack+15',}}
 	gear.Adhemar_feet_C = { name="Adhemar Gamashes", augments={'AGI+10','Rng.Acc.+15','Rng.Atk.+15',}}
@@ -143,6 +144,7 @@ function define_global_sets()
 	sets.sharedTH = {
 		head="Wh. Rarab Cap +1",
 		waist="Chaac Belt",
+		feet="Volte Boots",
 	}
 
 	sets.precast.JA.Sublimination = {
