@@ -560,10 +560,16 @@ function init_gear_sets()
 	})
 
 	sets.idle.StoreTP = set_combine(sets.idle,{
-		head="Malignance Chapeau",
 		ammo="Yamarang",
+		head="Malignance Chapeau",
+		neck="Iskur Gorget",
+		ear1="Sherida Earring",
+		ear2="Dedition Earring",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
+		ring1="Rajas Ring",
+		ring2="Ilabrat Ring",
+		waist="Goading Belt",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
 	})
