@@ -77,10 +77,10 @@ function init_gear_sets()
 	sets.precast.JA['Boost'] = {hands="Anch. Gloves +1"}
 	sets.precast.JA['Dodge'] = {feet="Anch. Gaiters +3"}
 	sets.precast.JA['Focus'] = {head="Anchor. Crown +1"}
-	sets.precast.JA['Counterstance'] = {feet="Hes. Gaiters +1"}
+	sets.precast.JA['Counterstance'] = {feet="Hes. Gaiters +3"}
 	sets.precast.JA['Footwork'] = {feet="Tantra Gaiters +2"}
 	sets.precast.JA['Formless Strikes'] = {body="Hes. Cyclas +1"}
-	sets.precast.JA['Mantra'] = {feet="Hes. Gaiters +1"}
+	sets.precast.JA['Mantra'] = {feet="Hes. Gaiters +3"}
 
 	-- Chi Blast - MND
 	sets.precast.JA['Chi Blast'] = {
@@ -100,13 +100,13 @@ function init_gear_sets()
 		ammo="Tantra Tathlum",
 		head="Rao Kabuto +1",
 		neck="Unmoving Collar +1",
-		body="Tatena. Harama. +1",
-		hands="Tatena. Gote +1",
+		body="Anch. Cyclas +1",
+		hands="Hes. Gloves +2",
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
 		back=gear.Segomo_vit_wsd,
 		waist="Flume Belt +1",
-		legs="Anch. Hose +1",
+		legs="Anch. Hose +3",
 		feet="Tatena. Sune. +1",
 	}
 
@@ -119,7 +119,7 @@ function init_gear_sets()
 		ring1="Sirona's Ring",
 		back=gear.Segomo_vit_wsd,
 		waist="Flume Belt +1",
-		legs="Anch. Hose +1",
+		legs="Anch. Hose +3",
 		feet="Malignance Boots",
 	}
 		
@@ -471,7 +471,8 @@ function init_gear_sets()
 		ammo="Ginsen",
 		--head=gear.Adhemar_head_B,
 		head="Dampening Tam",
-		neck="Moonbeam Nodowa",
+		--neck="Moonbeam Nodowa",
+		neck="Mnk. Nodowa +2",
 		ear1="Sherida Earring",
 		ear2="Dedition Earring",
 		body="Ken. Samue +1",
@@ -539,7 +540,7 @@ function init_gear_sets()
 		ring1="Niqmaddu Ring",
 		ring2="Defending Ring",
 		waist="Moonbow Belt",
-		legs="Anch. Hose +1",
+		legs="Anch. Hose +3",
 		feet="Malignance Boots",
 	})
 	sets.engaged.SomeAcc.Counter = set_combine(sets.engaged.SomeAcc.PDT, sets.engaged.Counter, {
@@ -557,8 +558,8 @@ function init_gear_sets()
 		ring1="Niqmaddu Ring",
 		ring2="Defending Ring",
 		waist="Moonbow Belt",
-		legs="Anch. Hose +1",
-		feet="Hes. Gaiters +1"
+		legs="Anch. Hose +3",
+		feet="Hes. Gaiters +3"
 	})
 	sets.engaged.SomeAcc.Counterstance = set_combine(sets.engaged.SomeAcc.PDT, sets.engaged.Counterstance, {
 	})
