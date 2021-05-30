@@ -101,7 +101,7 @@ function init_gear_sets()
 		neck="Iskur Gorget",
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
-		body="Meg. Cuirie +2",
+		body="Plunderer's Vest +3",
 		hands="Pill. Armlets +2",
 		ring1="Garuda Ring +1",
 		ring2="Garuda Ring +1",
@@ -112,7 +112,7 @@ function init_gear_sets()
 		feet="Meg. Jam. +2"
 	}
 	sets.Behind = {
-		--body="Plunderer's Vest +3",
+		body="Plunderer's Vest +3",
 	}
 
 	--------------------------------------
@@ -140,7 +140,8 @@ function init_gear_sets()
 	sets.precast.Waltz = {
 		head="Pill. Bonnet +2",
 		ear1="Roundel Earring",
-		body="Pillager's Vest +2",
+		--body="Pillager's Vest +2",
+		body="Plunderer's Vest +3",
 		hands="Pill. Armlets +2",
 		ring1="Dark Ring",
 		ring2="Sirona's Ring",
@@ -191,7 +192,8 @@ function init_gear_sets()
 		--neck=gear.ElementalGorget,
 		ear1="Sherida Earring",
 		ear2="Moonshade Earring",
-		body="Meg. Cuirie +2",
+		--body="Meg. Cuirie +2",
+		body="Plunderer's Vest +3",
 		hands="Mummu Wrists +2",
 		ring1="Rajas Ring",
 		ring2="Apate Ring",
@@ -243,7 +245,7 @@ function init_gear_sets()
 		head=gear.Adhemar_head_B,
 		ear1="Sherida Earring",
 		ear2="Brutal Earring",
-		body="Meg. Cuirie +2",
+		body="Plunderer's Vest +3",
 		hands="Meg. Gloves +2",
 		ring1="Garuda Ring +1",
 		ring2="Garuda Ring +1",
@@ -289,6 +291,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
 		ear1="Odr Earring",
+		body="Plunderer's Vest +3",
 		hands="Mummu Wrists +2",
 		legs="Pill. Culottes +3",
 	})
@@ -315,6 +318,7 @@ function init_gear_sets()
 
 	sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
 		ear1="Odr Earring",
+		body="Plunderer's Vest +3",
 		hands="Meg. Gloves +2",
 		back=gear.jsecape_dex_wsd,
 	})
@@ -333,6 +337,7 @@ function init_gear_sets()
 
 	sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS, {
 		ear1="Odr Earring",
+		body="Plunderer's Vest +3",
 		hands="Meg. Gloves +2",
 		back=gear.jsecape_dex_wsd,
 	})
@@ -351,6 +356,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Mandalic Stab'] = set_combine(sets.precast.WS, {
 		ear1="Odr Earring",
+		body="Plunderer's Vest +3",
 		hands="Meg. Gloves +2",
 		back=gear.jsecape_dex_wsd,
 	})
@@ -402,7 +408,7 @@ function init_gear_sets()
 		head="Meghanada Visor +2",
 		neck="Iskur Gorget",
 		ear1="Enervating Earring",
-		ear2="Volley Earring",
+		ear2="Telos Earring",
 		body="Meg. Cuirie +2",
 		hands="Meg. Gloves +2",
 		ring1="Cacoethic Ring",
@@ -500,8 +506,9 @@ function init_gear_sets()
 		ear1="Sherida Earring",
 		-- 5 DW
 		ear2="Suppanomimi",
-		body="Mummu Jacket +2",
-		hands="Mummu Wrists +2",
+		body="Plunderer's Vest +3",
+		-- 3 DW
+		hands="Pill. Armlets +2",
 		ring1="Rajas Ring",
 		ring2="Chirich Ring",
 		-- 3 DW
@@ -520,8 +527,9 @@ function init_gear_sets()
 	sets.engaged.HighAcc = set_combine(sets.engaged,{
 		ammo="Honed Tathlum",
 		head="Malignance Chapeau",
+		ear2="Telos Earring",
 		neck="Sanctity Necklace",
-		body="Meg. Cuirie +2",
+		body="Pillager's Vest +2",
 		hands="Malignance Gloves",
 		waist="Eschan Stone",
 		legs="Pill. Culottes +3",
@@ -531,7 +539,8 @@ function init_gear_sets()
 		ammo="Honed Tathlum",
 		head="Malignance Chapeau",
 		ear1="Zennaroi Earring",
-		body="Meg. Cuirie +2",
+		ear2="Telos Earring",
+		body="Pillager's Vest +2",
 		hands="Malignance Gloves",
 		ring1="Cacoethic Ring",
 		waist="Eschan Stone",
@@ -541,7 +550,7 @@ function init_gear_sets()
 	sets.engaged.Evasion = set_combine(sets.engaged,{
 		ammo="Amar Cluster",
 		head="Malignance Chapeau",
-		body="Mummu Jacket +2",
+		body="Plunderer's Vest +3",
 		hands="Malignance Gloves",
 		back="Canny Cape",
 		feet="Malignance Boots",
@@ -619,28 +628,29 @@ function init_gear_sets()
 
 	-- Normal -------
 	-- DW needed: 42 (37 with gift)
-	-- 10 Gear DW
+	-- 13 Gear DW
 	sets.engaged.Haste_15 = set_combine(sets.engaged,{
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
 	})
 	-- DW needed: 31 (26 with gift)
-	-- 10 Gear DW
+	-- 13 Gear DW
 	sets.engaged.Haste_30 = set_combine(sets.engaged,{
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
 	})
 	-- DW needed: 26 (21 with gift)
-	-- 10 Gear DW
+	-- 13 Gear DW
 	sets.engaged.Haste_35 = set_combine(sets.engaged,{
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
 	})
 	-- DW needed: 11 (6 with gift)
-	-- 10 Gear DW
+	-- 13 Gear DW
 	sets.engaged.MaxHaste = set_combine(sets.engaged,{
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
+		--ear2="Telos Earring",
 	})
 
 	sets.engaged.MidAcc.Haste_15 = set_combine(sets.engaged.MidAcc,{

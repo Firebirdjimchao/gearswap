@@ -684,8 +684,10 @@ function init_gear_sets()
 		legs="Mummu Kecks +2",
 	})
 	sets.engaged.HighAcc.MaxHaste = set_combine(sets.engaged.HighAcc,{
+		ear1="Telos Earring",
 	})
 	sets.engaged.FullAcc.MaxHaste = set_combine(sets.engaged.FullAcc,{
+		ear1="Telos Earring",
 	})
 
 	sets.engaged.Evasion.MaxHaste = set_combine(sets.engaged.Evasion,{
