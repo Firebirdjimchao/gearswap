@@ -94,7 +94,7 @@ function init_gear_sets()
 		neck="Moepapa Medal",
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
-		body="Meg. Cuirie +2",
+		body="Plunderer's Vest +3",
 		hands="Pill. Armlets +3",
 		ring1="Regal Ring",
 		ring2="Ilabrat Ring",
