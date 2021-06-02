@@ -281,7 +281,7 @@ function init_gear_sets()
 	-- Weaponskill sets
 	sets.precast.WS = {
 		ammo="Knobkierrie",
-		head=gear.Adhemar_head_B,
+		head=gear.Adhemar_head_hq_B,
 		neck="Fotia Gorget",
 		--ear1="Brutal Earring",
 		ear1="Sherida Earring",
@@ -553,7 +553,7 @@ function init_gear_sets()
 	-- Use Duplus Grip
 	sets.engaged.Melee = {
 		ammo="Yamarang",
-		head=gear.Adhemar_head_B,
+		head=gear.Adhemar_head_hq_B,
 		neck="Anu Torque",
 		ear1="Telos Earring",
 		ear2="Sherida earring",

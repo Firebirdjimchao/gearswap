@@ -35,6 +35,7 @@ function define_global_sets()
 	gear.pursuer_feet_D = { name="Pursuer's Gaiters", augments={'Rng.Acc.+10','"Rapid Shot"+10','"Recycle"+15',}}
 	
 	gear.Adhemar_head_B = { name="Adhemar Bonnet", augments={'STR+10','DEX+10','Attack+15',}}
+	gear.Adhemar_head_hq_B = { name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}}
 	gear.Adhemar_body_B = { name="Adhemar Jacket", augments={'STR+10','DEX+10','Attack+15',}}
 	gear.Adhemar_hands_B = { name="Adhemar Wristbands", augments={'STR+10','DEX+10','Attack+15',}}
 	gear.Adhemar_hands_hq_B = { name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}}

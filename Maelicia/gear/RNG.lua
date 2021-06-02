@@ -70,7 +70,7 @@ function init_gear_sets()
 	sets.precast.JA['Sharpshot'] = {legs="Orion Braccae +3"}
 	sets.precast.JA['Unlimited Shot'] = {feet="Amini Bottillons +1"}
 	sets.precast.JA['Eagle Eye Shot'] = {
-		--head=gear.Adhemar_head_B,
+		--head=gear.Adhemar_head_hq_B,
 		head=gear.Herculean_head_RA,
 		neck="Scout's Gorget +2",
 		ear1="Telos Earring",
@@ -313,7 +313,7 @@ function init_gear_sets()
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
-		head=gear.Adhemar_head_B,
+		head=gear.Adhemar_head_hq_B,
 		neck="Fotia Gorget",
 		--ear1="Brutal Earring",
 		ear1="Sherida Earring",
@@ -536,7 +536,7 @@ function init_gear_sets()
 
 	-- 80% DEX, crit chance varies with TP
 	sets.precast.WS["Jishnu's Radiance"] = set_combine(sets.precast.WS.RA, {
-		head=gear.Adhemar_head_B,
+		head=gear.Adhemar_head_hq_B,
 		ear1="Odr Earring",
 		body="Meg. Cuirie +2",
 		hands="Mummu Wrists +2",
@@ -649,7 +649,7 @@ function init_gear_sets()
 
 	-- 50% DEX, crit rate varies with TP
 	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
-		head=gear.Adhemar_head_B,
+		head=gear.Adhemar_head_hq_B,
 		body="Tatena. Harama. +1",
 		ear1="Odr Earring",
 		ear2="Moonshade Earring",
@@ -669,7 +669,7 @@ function init_gear_sets()
 
 	-- 50% STR, acc varies with TP
 	sets.precast.WS['Decimation'] = set_combine(sets.precast.WS, {
-		head=gear.Adhemar_head_B,
+		head=gear.Adhemar_head_hq_B,
 		body="Tatena. Harama. +1",
 		ear1="Sherida Earring",
 		ear2="Brutal Earring",
@@ -1057,7 +1057,7 @@ function init_gear_sets()
 	})
 	
 	sets.engaged.Melee = set_combine(sets.engaged,{
-		head=gear.Adhemar_head_B,
+		head=gear.Adhemar_head_hq_B,
 		neck="Asperity Necklace",
 		ear1="Sherida Earring",
 		ear2="Brutal Earring",

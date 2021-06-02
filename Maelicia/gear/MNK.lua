@@ -74,7 +74,7 @@ function init_gear_sets()
 	
 	-- Precast sets to enhance JAs on use
 	sets.precast.JA['Hundred Fists'] = {legs="Hes. Hose +1"}
-	sets.precast.JA['Boost'] = {hands="Anch. Gloves +1"}
+	sets.precast.JA['Boost'] = {hands="Anch. Gloves +2"}
 	sets.precast.JA['Dodge'] = {feet="Anch. Gaiters +3"}
 	sets.precast.JA['Focus'] = {head="Anchor. Crown +1"}
 	sets.precast.JA['Counterstance'] = {feet="Hes. Gaiters +3"}
@@ -100,7 +100,7 @@ function init_gear_sets()
 		ammo="Tantra Tathlum",
 		head="Rao Kabuto +1",
 		neck="Unmoving Collar +1",
-		body="Anch. Cyclas +1",
+		body="Anch. Cyclas +2",
 		hands="Hes. Gloves +2",
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
@@ -201,7 +201,7 @@ function init_gear_sets()
 
 	-- 80% STR, crit chance varies with TP
 	sets.precast.WS["Victory Smite"] = set_combine(sets.precast.WS, {
-		head=gear.Adhemar_head_B,
+		head=gear.Adhemar_head_hq_B,
 		ear2="Odr Earring",
 		body="Ken. Samue +1",
 		ring1="Niqmaddu Ring",
@@ -285,7 +285,7 @@ function init_gear_sets()
 		--head="Hes. Crown +3",
 		neck="Fotia Gorget",
 		ear1="Ishvara Earring",
-		--hands="Anchor. Gloves +3",
+		hands="Anchor. Gloves +2",
 		back=gear.Segomo_vit_wsd,
 		waist="Fotia Belt",
 		legs="Hiza. Hizayoroi +2",
@@ -469,14 +469,13 @@ function init_gear_sets()
 	-- Normal melee sets
 	sets.engaged = {
 		ammo="Ginsen",
-		--head=gear.Adhemar_head_B,
-		head="Dampening Tam",
+		head=gear.Adhemar_head_hq_B,
 		--neck="Moonbeam Nodowa",
 		neck="Mnk. Nodowa +2",
 		ear1="Sherida Earring",
 		ear2="Dedition Earring",
 		body="Ken. Samue +1",
-		hands="Tatena. Gote +1",
+		hands=gear.Adhemar_hands_hq_B,
 		ring1="Niqmaddu Ring",
 		ring2="Gere Ring",
 		back=gear.Segomo_dex_da,
@@ -487,11 +486,13 @@ function init_gear_sets()
 	sets.engaged.SomeAcc = set_combine(sets.engaged,{
 		ear2="Telos Earring",
 		body="Tatena. Harama. +1",
+		hands="Tatena. Gote +1",
 	})
 	sets.engaged.Acc = set_combine(sets.engaged,{
 		ammo="Falcon Eye",
 		head="Malignance Chapeau",
 		body="Tatena. Harama. +1",
+		hands="Tatena. Gote +1",
 		ear1="Digni. Earring",
 		ear2="Telos Earring",
 		ring2="Cacoethic Ring +1",
