@@ -472,7 +472,7 @@ function init_gear_sets()
 	-- Delay Cap from spell + songs alone (43.75% Magic Haste cap)
 	-- DW needed: 1
 	sets.engaged.MaxHaste = set_combine(sets.engaged, {
-		head=gear.Adhemar_head_B,
+		head=gear.Adhemar_head_hq_B,
 		ear2="Telos Earring",
 		body="Ken. Samue +1",
 		hands="Tatena. Gote +1",
@@ -623,7 +623,7 @@ function init_gear_sets()
 	-- Weaponskills 
 	sets.precast.WS = {
 		ammo="Seeth. Bomblet +1",
-		head=gear.Adhemar_head_B,
+		head=gear.Adhemar_head_hq_B,
 		neck="Fotia Gorget",
 		ear1="Ishvara Earring",
 		ear2="Moonshade Earring",
@@ -697,7 +697,7 @@ function init_gear_sets()
 	-- BLADE: SHUN DEX 73~80%, ATK varies with TP
 	sets.Shun = set_combine(sets.precast.WS, {
 		ammo="Seeth. Bomblet +1",
-		head=gear.Adhemar_head_B,
+		head=gear.Adhemar_head_hq_B,
 		neck="Fotia Gorget",
 		ear1="Odr Earring",
 		ear2="Moonshade Earring",
@@ -719,7 +719,7 @@ function init_gear_sets()
 	-- BLADE: TEN STR 30% / DEX 30%, damage varies with TP
 	sets.Ten = set_combine(sets.precast.WS, {
 		ammo="Seeth. Bomblet +1",
-		head=gear.Adhemar_head_B,
+		head=gear.Adhemar_head_hq_B,
 		neck="Fotia Gorget",
 		ear1="Ishvara Earring",
 		ear2="Moonshade Earring",

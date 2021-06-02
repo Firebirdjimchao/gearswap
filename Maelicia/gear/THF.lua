@@ -319,8 +319,10 @@ function init_gear_sets()
 	-- 50% DEX, Crit rate varies with TP
 	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
 		ammo="Yetshila",
+		head=gear.Adhemar_head_hq_B,
 		ear1="Odr Earring",
 		body="Plunderer's Vest +3",
+		hands=gear.Adhemar_hands_hq_B,
 		ring1="Regal Ring",
 		feet="Lustra. Leggings +1",
 	})
@@ -674,7 +676,7 @@ function init_gear_sets()
 	-- DW needed: 49 (44 with gift)
 	-- 33 Gear DW
 	sets.engaged = {
-		head="Plun. Bonnet +3",
+		head=gear.Adhemar_head_hq_B,
 		neck="Iskur Gorget",
 		ear1="Sherida Earring",
 		-- 5 DW
@@ -706,6 +708,7 @@ function init_gear_sets()
 
 	-- 11 Gear DW
 	sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc,{
+		head="Plun. Bonnet +3",
 		ear1="Digni. Earring",
 		ear2="Telos Earring",
 		ring1="Cacoethic Ring +1",

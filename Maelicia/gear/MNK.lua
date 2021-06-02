@@ -201,7 +201,7 @@ function init_gear_sets()
 
 	-- 80% STR, crit chance varies with TP
 	sets.precast.WS["Victory Smite"] = set_combine(sets.precast.WS, {
-		head=gear.Adhemar_head_B,
+		head=gear.Adhemar_head_hq_B,
 		ear2="Odr Earring",
 		body="Ken. Samue +1",
 		ring1="Niqmaddu Ring",
@@ -469,14 +469,13 @@ function init_gear_sets()
 	-- Normal melee sets
 	sets.engaged = {
 		ammo="Ginsen",
-		--head=gear.Adhemar_head_B,
-		head="Dampening Tam",
+		head=gear.Adhemar_head_hq_B,
 		--neck="Moonbeam Nodowa",
 		neck="Mnk. Nodowa +2",
 		ear1="Sherida Earring",
 		ear2="Dedition Earring",
 		body="Ken. Samue +1",
-		hands="Tatena. Gote +1",
+		hands=gear.Adhemar_hands_hq_B,
 		ring1="Niqmaddu Ring",
 		ring2="Gere Ring",
 		back=gear.Segomo_dex_da,
@@ -487,11 +486,13 @@ function init_gear_sets()
 	sets.engaged.SomeAcc = set_combine(sets.engaged,{
 		ear2="Telos Earring",
 		body="Tatena. Harama. +1",
+		hands="Tatena. Gote +1",
 	})
 	sets.engaged.Acc = set_combine(sets.engaged,{
 		ammo="Falcon Eye",
 		head="Malignance Chapeau",
 		body="Tatena. Harama. +1",
+		hands="Tatena. Gote +1",
 		ear1="Digni. Earring",
 		ear2="Telos Earring",
 		ring2="Cacoethic Ring +1",

@@ -120,7 +120,7 @@ function init_gear_sets()
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
-		head=gear.Adhemar_head_B,
+		head=gear.Adhemar_head_hq_B,
 		neck="Fotia Gorget",
 		ear1="Ishvara Earring",
 		ear2="Moonshade Earring",
@@ -368,7 +368,7 @@ function init_gear_sets()
 		
 	-- Normal melee group
 	sets.engaged = {
-		head=gear.Adhemar_head_B,
+		head=gear.Adhemar_head_hq_B,
 		neck="Asperity Necklace",
 		ear1="Brutal Earring",
 		ear2="Suppanomimi",
