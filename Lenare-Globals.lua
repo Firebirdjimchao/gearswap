@@ -24,6 +24,8 @@ function define_global_sets()
 	
 	-- Augmented Gear
 	gear.Adhemar_head_B = { name="Adhemar Bonnet", augments={'STR+10','DEX+10','Attack+15',}}
+	gear.Adhemar_body_B = { name="Adhemar Jacket", augments={'STR+10','DEX+10','Attack+15',}}
+	gear.Adhemar_hands_B = { name="Adhemar Wristbands", augments={'STR+10','DEX+10','Attack+15',}}
 	
 	gear.Amalric_body_A = { name="Amalric Doublet", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}
 	gear.Amalric_hands_D = { name="Amalric Gages", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}  

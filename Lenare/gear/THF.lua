@@ -506,7 +506,9 @@ function init_gear_sets()
 		ear1="Sherida Earring",
 		-- 5 DW
 		ear2="Suppanomimi",
-		body="Plunderer's Vest +3",
+		--body="Plunderer's Vest +3",
+		-- 5 DW
+		body=gear.Adhemar_body_B,
 		-- 3 DW
 		hands="Pill. Armlets +2",
 		ring1="Rajas Ring",
@@ -628,19 +630,19 @@ function init_gear_sets()
 
 	-- Normal -------
 	-- DW needed: 42 (37 with gift)
-	-- 13 Gear DW
+	-- 18 Gear DW
 	sets.engaged.Haste_15 = set_combine(sets.engaged,{
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
 	})
 	-- DW needed: 31 (26 with gift)
-	-- 13 Gear DW
+	-- 18 Gear DW
 	sets.engaged.Haste_30 = set_combine(sets.engaged,{
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
 	})
 	-- DW needed: 26 (21 with gift)
-	-- 13 Gear DW
+	-- 18 Gear DW
 	sets.engaged.Haste_35 = set_combine(sets.engaged,{
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
@@ -651,6 +653,7 @@ function init_gear_sets()
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
 		--ear2="Telos Earring",
+		body="Plunderer's Vest +3",
 	})
 
 	sets.engaged.MidAcc.Haste_15 = set_combine(sets.engaged.MidAcc,{
