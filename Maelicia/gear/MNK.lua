@@ -74,7 +74,7 @@ function init_gear_sets()
 	
 	-- Precast sets to enhance JAs on use
 	sets.precast.JA['Hundred Fists'] = {legs="Hes. Hose +1"}
-	sets.precast.JA['Boost'] = {hands="Anch. Gloves +1"}
+	sets.precast.JA['Boost'] = {hands="Anch. Gloves +2"}
 	sets.precast.JA['Dodge'] = {feet="Anch. Gaiters +3"}
 	sets.precast.JA['Focus'] = {head="Anchor. Crown +1"}
 	sets.precast.JA['Counterstance'] = {feet="Hes. Gaiters +3"}
@@ -100,7 +100,7 @@ function init_gear_sets()
 		ammo="Tantra Tathlum",
 		head="Rao Kabuto +1",
 		neck="Unmoving Collar +1",
-		body="Anch. Cyclas +1",
+		body="Anch. Cyclas +2",
 		hands="Hes. Gloves +2",
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
@@ -285,7 +285,7 @@ function init_gear_sets()
 		--head="Hes. Crown +3",
 		neck="Fotia Gorget",
 		ear1="Ishvara Earring",
-		--hands="Anchor. Gloves +3",
+		hands="Anchor. Gloves +2",
 		back=gear.Segomo_vit_wsd,
 		waist="Fotia Belt",
 		legs="Hiza. Hizayoroi +2",
