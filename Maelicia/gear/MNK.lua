@@ -101,7 +101,7 @@ function init_gear_sets()
 		head="Rao Kabuto +1",
 		neck="Unmoving Collar +1",
 		body="Anch. Cyclas +2",
-		hands="Hes. Gloves +2",
+		hands="Hes. Gloves +3",
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
 		back=gear.Segomo_vit_wsd,
