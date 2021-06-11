@@ -2,12 +2,183 @@
 -- User setup functions for this job.  Recommend that these be overridden in a sidecar file.
 -------------------------------------------------------------------------------------------------------------------
 
+-- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
+function job_setup()
+	state.Buff['Burst Affinity'] = buffactive['Burst Affinity'] or false
+	state.Buff['Chain Affinity'] = buffactive['Chain Affinity'] or false
+	state.Buff.Convergence = buffactive.Convergence or false
+	state.Buff.Diffusion = buffactive.Diffusion or false
+	state.Buff.Efflux = buffactive.Efflux or false
+
+	state.Buff['Unbridled Learning'] = buffactive['Unbridled Learning'] or false
+
+
+	blue_magic_maps = {}
+
+	-- Mappings for gear sets to use for various blue magic spells.
+	-- While Str isn't listed for each, it's generally assumed as being at least
+	-- moderately signficant, even for spells with other mods.
+
+	-- Physical Spells --
+
+	-- Physical spells with no particular (or known) stat mods
+	blue_magic_maps.Physical = S{
+		'Bilgestorm'
+	}
+
+	-- Spells with heavy accuracy penalties, that need to prioritize accuracy first.
+	blue_magic_maps.PhysicalAcc = S{
+		'Heavy Strike',
+	}
+
+	-- Physical spells with Str stat mod
+	blue_magic_maps.PhysicalStr = S{
+		'Battle Dance','Bloodrake','Death Scissors','Dimensional Death',
+		'Empty Thrash','Quadrastrike','Saurian Slide','Sinker Drill','Spinal Cleave','Sweeping Gouge',
+		'Uppercut','Vertical Cleave'
+	}
+
+	-- Physical spells with Dex stat mod
+	blue_magic_maps.PhysicalDex = S{
+		'Amorphic Spikes','Asuran Claws','Barbed Crescent','Claw Cyclone','Disseverment',
+		'Foot Kick','Frenetic Rip','Goblin Rush','Hysteric Barrage','Paralyzing Triad',
+		'Seedspray','Sickle Slash','Smite of Rage','Terror Touch','Thrashing Assault',
+		'Vanity Dive'
+	}
+
+	-- Physical spells with Vit stat mod
+	blue_magic_maps.PhysicalVit = S{
+		'Body Slam','Cannonball','Delta Thrust','Glutinous Dart','Grand Slam',
+		'Power Attack','Quad. Continuum','Sprout Smack','Sub-zero Smash'
+	}
+
+	-- Physical spells with Agi stat mod
+	blue_magic_maps.PhysicalAgi = S{
+		'Benthic Typhoon','Feather Storm','Helldive','Hydro Shot','Jet Stream',
+		'Pinecone Bomb','Spiral Spin','Wild Oats'
+	}
+
+	-- Physical spells with Int stat mod
+	blue_magic_maps.PhysicalInt = S{
+		'Mandibular Bite','Queasyshroom'
+	}
+
+	-- Physical spells with Mnd stat mod
+	blue_magic_maps.PhysicalMnd = S{
+		'Ram Charge','Screwdriver','Tourbillion'
+	}
+
+	-- Physical spells with Chr stat mod
+	blue_magic_maps.PhysicalChr = S{
+		'Bludgeon'
+	}
+
+	-- Physical spells with HP stat mod
+	blue_magic_maps.PhysicalHP = S{
+		'Final Sting'
+	}
+
+	-- Magical Spells --
+
+	-- Magical spells with the typical Int mod
+	blue_magic_maps.Magical = S{
+		'Blastbomb','Blazing Bound','Bomb Toss','Cursed Sphere',
+		'Droning Whirlwind','Embalming Earth','Firespit','Foul Waters',
+		'Ice Break','Leafstorm','Maelstrom','Regurgitation','Rending Deluge',
+		'Subduction','Tem. Upheaval','Water Bomb',
+		'Searing Tempest', ' Spectral Floe', 'Silent Storm'
+	}
+
+	-- Magical spells with a primary Mnd mod
+	blue_magic_maps.MagicalMnd = S{
+		'Acrid Stream','Magic Hammer','Mind Blast', 'Scouring Spate'
+	}
+
+	-- Magical spells with a primary Chr mod
+	blue_magic_maps.MagicalChr = S{
+		'Mysterious Light'
+	}
+
+	-- Magical spells with a Vit stat mod (on top of Int)
+	blue_magic_maps.MagicalVit = S{
+		'Thermal Pulse', 'Emtomb'
+	}
+
+	-- Magical spells with a Dex stat mod (on top of Int)
+	blue_magic_maps.MagicalDex = S{
+		'Charged Whisker','Gates of Hades','Anvil Lightning'
+	}
+
+	-- Magical spells (generally debuffs) that we want to focus on magic accuracy over damage.
+	-- Add Int for damage where available, though.
+	blue_magic_maps.MagicAccuracy = S{
+		'1000 Needles','Absolute Terror','Actinic Burst','Auroral Drape','Awful Eye',
+		'Blank Gaze','Blistering Roar','Blood Drain','Blood Saber','Chaotic Eye',
+		'Cimicine Discharge','Cold Wave','Corrosive Ooze','Demoralizing Roar','Digest',
+		'Dream Flower','Enervation','Feather Tickle','Filamented Hold','Frightful Roar',
+		'Geist Wall','Hecatomb Wave','Infrasonics','Jettatura','Light of Penance',
+		'Lowing','Mind Blast','Mortal Ray','MP Drainkiss','Osmosis','Reaving Wind',
+		'Sandspin','Sandspray','Sheep Song','Soporific','Sound Blast','Stinking Gas',
+		'Sub-zero Smash','Venom Shell','Voracious Trunk','Yawn'
+	}
+
+	blue_magic_maps.MagicalDark = S{
+		'Dark Orb','Death Ray','Eyes On Me','Evryone. Grudge','Palling Salvo','Tenebral Crush'
+	}
+	blue_magic_maps.MagicalLight = S{
+		'Blinding Fulgor','Diffusion Ray','Radiant Breath','Rail Cannon','Retinal Glare'
+	}
+
+	-- Breath-based spells
+	blue_magic_maps.Breath = S{
+		'Bad Breath','Flying Hip Press','Frost Breath','Heat Breath',
+		'Hecatomb Wave','Magnetite Cloud','Poison Breath','Self-Destruct',
+		'Thunder Breath','Vapor Spray','Wind Breath'
+	}
+
+	-- Stun spells
+	blue_magic_maps.Stun = S{
+		'Blitzstrahl','Frypan','Head Butt','Sudden Lunge','Tail slap','Temporal Shift',
+		'Thunderbolt','Whirl of Rage'
+	}
+
+	-- Healing spells
+	blue_magic_maps.Healing = S{
+		'Healing Breeze','Magic Fruit','Plenilune Embrace','Pollen','Restoral','White Wind',
+		'Wild Carrot'
+	}
+
+	-- Buffs that depend on blue magic skill
+	blue_magic_maps.SkillBasedBuff = S{
+		'Barrier Tusk','Diamondhide','Magic Barrier','Metallic Body','Occultation','Plasma Charge',
+		'Pyric Bulwark','Reactor Cool',
+	}
+
+	-- Other general buffs
+	blue_magic_maps.Buff = S{
+		'Amplification','Animating Wail','Battery Charge','Carcharian Verve','Cocoon',
+		'Erratic Flutter','Exuviation','Fantod','Feather Barrier','Harden Shell',
+		'Memento Mori','Nat. Meditation','Orcish Counterstance','Refueling',
+		'Regeneration','Saline Coat','Triumphant Roar','Warm-Up','Winds of Promyvion',
+		'Zephyr Mantle'
+	}
+
+	-- Spells that require Unbridled Learning to cast.
+	unbridled_spells = S{
+		'Absolute Terror','Bilgestorm','Blistering Roar','Bloodrake','Carcharian Verve',
+		'Crashing Thunder','Droning Whirlwind','Gates of Hades','Harden Shell','Polar Roar',
+		'Pyric Bulwark','Thunderbolt','Tourbillion','Uproot', 'Mighty Guard'
+	}
+end
+
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
 	state.OffenseMode:options('Normal', 'Acc', 'Refresh', 'Learning')
 	state.WeaponskillMode:options('Normal', 'Acc')
-	state.CastingMode:options('Normal', 'Resistant')
+	state.CastingMode:options('Normal', 'Resistant', 'TH')
 	state.IdleMode:options('Normal', 'PDT', 'Learning')
+
+	gear.default.obi_waist = "Sacro Cord"
 
 	-------------------------------------------------
 	-- Default bindings
@@ -52,10 +223,10 @@ function init_gear_sets()
 	-- Start defining the sets
 	--------------------------------------
 
-	sets.buff['Burst Affinity'] = {feet="Mavi Basmak +2"}
-	sets.buff['Chain Affinity'] = {head="Mavi Kavuk +2", feet="Assimilator's Charuqs"}
-	sets.buff.Convergence = {head="Luhlaza Keffiyeh"}
-	sets.buff.Diffusion = {feet="Luhlaza Charuqs"}
+	sets.buff['Burst Affinity'] = {legs="Assim. Shalwar +1",feet="Mavi Basmak +2"}
+	sets.buff['Chain Affinity'] = {head="Mavi Kavuk +2", feet="Assim. Charuqs +1"}
+	sets.buff.Convergence = {head="Luh. Keffiyeh +1"}
+	sets.buff.Diffusion = {feet="Luhlaza Charuqs +1"}
 	sets.buff.Enchainment = {body="Luhlaza Jubbah"}
 	sets.buff.Efflux = {legs="Mavi Tayt +2"}
 
@@ -63,7 +234,7 @@ function init_gear_sets()
 	-- Precast Sets
 	
 	-- Precast sets to enhance JAs
-	sets.precast.JA['Azure Lore'] = {hands="Mirage Bazubands +2"}
+	sets.precast.JA['Azure Lore'] = {hands="Luhlaza Bazubands"}
 
 
 	-- Waltz set (chr and vit)
@@ -114,7 +285,13 @@ function init_gear_sets()
 		feet="Carmine greaves +1",
 	}
 				
-	sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, {body="Mavi Mintan +2"})
+	sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, {
+		body="Mavi Mintan +2",
+	})
+
+	sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
+		waist="Siegel Sash"
+	})
 
 			 
 	-- Weaponskill sets
@@ -143,7 +320,7 @@ function init_gear_sets()
 	sets.precast.WS.MAB = set_combine(sets.precast.WS,{
 		ammo="Pemphredo Tathlum",
 		--head="Jhakri Coronal +1",
-		head="Amalric Coif",
+		head="Nyame Helm",
 		--neck="Sanctity Necklace",
 		ear2="Friomisi Earring",
 		ear2="Regal Earring",
@@ -169,16 +346,21 @@ function init_gear_sets()
 	sets.midcast.FastRecast = set_combine(sets.precast.FC, {
 	})
 
+	sets.midcast.FastRecast['Blue Magic'] = set_combine(sets.midcast.FastRecast, {
+		hands="Hashi. Bazu. +1",
+	})
+
 	sets.midcast.MAB = {
 		ammo="Pemphredo Tathlum",
-		--head="Jhakri Coronal +1",
-		head="Amalric Coif",
+		--head="Jhakri Coronal +2",
+		head="Nyame Helm",
 		neck="Sanctity Necklace",
 		ear2="Friomisi Earring",
 		ear2="Regal Earring",
-		body="Amalric Doublet",
+		--body="Amalric Doublet",
+		body="Shamash Robe",
 		--hands="Amalric Gages",
-		hands="Jhakri Cuffs +2",
+		hands=gear.Carmine_hands_hq_D,
 		ring1="Acumen Ring",
 		ring2="Strendu Ring",
 		back=gear.ElementalCape,
@@ -186,23 +368,61 @@ function init_gear_sets()
 		legs=gear.Amalric_legs_D,
 		feet=gear.Adhemar_feet_B
 	}
+
+	sets.midcast['Enhancing Magic'] =  {
+		ammo="Pemphredo Tathlum",
+		neck="Incanter's Torque",
+		ear2="Andoaa Earring",
+		body=gear.Telchine_body_pet,
+		hands=gear.Telchine_hands_pet,
+		legs=gear.Telchine_legs_pet,
+	}
+
+	-- Static value (Use Duration+ and Potency+ gear) --
+	sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'],{
+		head="Amalric Coif",
+	})
+
+	-- Static value (Use Duration+ and Potency+ gear) --
+	sets.midcast.RefreshSelf = set_combine(sets.midcast.Refresh,{
+		waist="Gishdubar Sash",
+	})
+
+	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'],{
+		head="Amalric Coif",
+	})
 				
 	sets.midcast['Blue Magic'] = {
 		ammo="Mavi Tathlum",
+		head="Luh. Keffiyeh +1",
 		neck="Incanter's Torque",
 		body="Assim. Jubbah +1",
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
 		back="Cornflower Cape",
 		legs="Mavi Tayt +2",
+		feet="Luhlaza Charuqs +1",
 	}
 		
 	-- Physical Spells --
 	
 	sets.midcast['Blue Magic'].Physical = set_combine(sets.midcast['Blue Magic'], {
+		ammo="Ginsen",
+		head=gear.Adhemar_head_hq_B,
+		neck="Incanter's Torque",
+		ear1="Telos Earring",
+		body="Jhakri Robe +2",
+		hands="Jhakri Cuffs +2",
+		ring1="Ilabrat Ring",
+		ring2="Rajas Ring",
+		waist="Sailfi Belt +1",
+		legs="Jhakri Slops +2",
+		feet="Jhakri Pigaches +2",
 	})
 
 	sets.midcast['Blue Magic'].PhysicalAcc = set_combine(sets.midcast['Blue Magic'].Physical, {
+		waist="Grunfeld Rope",
+		legs=gear.Carmine_legs_hq_D,
 	})
 
 	sets.midcast['Blue Magic'].PhysicalStr = set_combine(sets.midcast['Blue Magic'].Physical, {
@@ -215,12 +435,16 @@ function init_gear_sets()
 	})
 
 	sets.midcast['Blue Magic'].PhysicalAgi = set_combine(sets.midcast['Blue Magic'].Physical,	{
+		hands=gear.Adhemar_hands_hq_B,
+		ring1="Ilabrat Ring",
 	})
 
 	sets.midcast['Blue Magic'].PhysicalInt = set_combine(sets.midcast['Blue Magic'].Physical,	{
+		ear2="Regal Earring",
 	})
 
 	sets.midcast['Blue Magic'].PhysicalMnd = set_combine(sets.midcast['Blue Magic'].Physical,	{
+		ear2="Regal Earring",
 	})
 
 	sets.midcast['Blue Magic'].PhysicalChr = set_combine(sets.midcast['Blue Magic'].Physical, {
@@ -236,6 +460,12 @@ function init_gear_sets()
 	})
 
 	sets.midcast['Blue Magic'].Magical.Resistant = set_combine(sets.midcast['Blue Magic'].Magical, {
+		ring1="Stikini Ring",
+		ring2="Stikini Ring",
+		waist="Sacro Cord",
+	})
+
+	sets.midcast['Blue Magic'].Magical.TH = set_combine(sets.midcast['Blue Magic'].Magical, sets.sharedTH, {
 	})
 	
 	sets.midcast['Blue Magic'].MagicalMnd = set_combine(sets.midcast['Blue Magic'].Magical, {
@@ -248,6 +478,13 @@ function init_gear_sets()
 	})
 
 	sets.midcast['Blue Magic'].MagicalDex = set_combine(sets.midcast['Blue Magic'].Magical, {
+	})
+
+	sets.midcast['Blue Magic'].MagicalDark = set_combine(sets.midcast['Blue Magic'].Magical, {
+		head="Pixie Hairpin +1",
+	})
+
+	sets.midcast['Blue Magic'].MagicalLight = set_combine(sets.midcast['Blue Magic'].Magical, {
 	})
 
 	sets.midcast['Blue Magic'].MagicAccuracy = set_combine(sets.midcast['Blue Magic'].Magical, {
@@ -271,6 +508,9 @@ function init_gear_sets()
 	sets.midcast['Blue Magic']['White Wind'] = set_combine(sets.midcast['Blue Magic'], {
 	})
 
+	sets.midcast['Blue Magic']['Bludgeon'] = set_combine(sets.precast.FC, {
+	})
+
 	sets.midcast['Blue Magic'].Healing = set_combine(sets.midcast['Blue Magic'], {
 	})
 
@@ -285,18 +525,20 @@ function init_gear_sets()
 	-- Gear for learning spells: +skill and AF hands.
 	sets.Learning = set_combine(sets.midcast['Blue Magic'], {
 		ammo="Mavi Tathlum",
+		head="Luh. Keffiyeh +1",
 		neck="Incanter's Torque",
 		hands="Assim. Bazu. +1",
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
 		back="Cornflower Cape",
 		legs="Mavi Tayt +2",
+		feet="Luhlaza Charuqs +1",
 	})
 
 	sets.latent_refresh = {
 		waist="Fucho-no-obi"
 	}
-		
+
 	-- Idle sets
 	sets.idle = {
 		ammo="Staunch Tathlum +1",
@@ -355,7 +597,6 @@ function init_gear_sets()
 
 	sets.idle.Learning = set_combine(sets.idle, sets.Learning)
 
-		
 	-- Defense sets
 	sets.defense.PDT = set_combine(sets.idle.PDT, {
 	})
@@ -365,7 +606,7 @@ function init_gear_sets()
 	sets.Kiting = {legs="Blood Cuisses"}
 
 	-- Engaged sets
-		
+
 	-- Normal melee group
 	sets.engaged = {
 		head=gear.Adhemar_head_hq_B,
@@ -414,13 +655,38 @@ function init_gear_sets()
 	sets.engaged.DW.Learning = set_combine(sets.engaged.DW, sets.Learning)
 
 
-	sets.self_healing = {}
+	sets.self_healing = {
+		waist="Gishdubar Sash",
+	}
 
 end
 
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
+
+-- Run after the default midcast() is done.
+-- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
+function job_post_midcast(spell, action, spellMap, eventArgs)
+	-- Add enhancement gear for Chain Affinity, etc.
+	if spell.skill == 'Blue Magic' then
+		for buff,active in pairs(state.Buff) do
+			if active and sets.buff[buff] then
+				equip(sets.buff[buff])
+			end
+		end
+		if spellMap == 'Healing' and spell.target.type == 'SELF' and sets.self_healing then
+			equip(sets.self_healing)
+		end
+	elseif spellMap == 'Refresh' and spell.target.type == 'SELF' then
+		equip(sets.midcast.RefreshSelf)
+	end
+
+	-- If in learning mode, keep on gear intended to help with that, regardless of action.
+	if state.OffenseMode.value == 'Learning' then
+		equip(sets.Learning)
+	end
+end
 
 
 -------------------------------------------------------------------------------------------------------------------
@@ -432,6 +698,31 @@ end
 -- User code that supplements standard library decisions.
 -------------------------------------------------------------------------------------------------------------------
 
+-- Modify the default idle set after it was constructed.
+function customize_idle_set(idleSet)
+	if player.mpp < 51 then
+		set_combine(idleSet, sets.latent_refresh)
+	end
+	if buffactive['Doom'] then
+				idleSet = set_combine(idleSet, sets.buff.Doom)
+	end
+	return idleSet
+end
+
+-- Modify the default melee set after it was constructed.
+function customize_melee_set(meleeSet)
+	if buffactive['Doom'] then
+		meleeSet = set_combine(meleeSet, sets.buff.Doom)
+	end
+	return meleeSet
+end
+
+function customize_defense_set(defenseSet)    
+	if buffactive['Doom'] then
+		defenseSet = set_combine(defenseSet, sets.buff.Doom)
+	end
+	return defenseSet
+end
 
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
@@ -446,5 +737,3 @@ function select_default_macro_book()
 		set_macro_page(1, 19)
 	end
 end
-
-
