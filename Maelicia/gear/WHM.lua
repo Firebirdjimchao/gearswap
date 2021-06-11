@@ -102,7 +102,7 @@ function init_gear_sets()
 	
 	-- Precast sets to enhance JAs
 	sets.precast.JA.Benediction = {
-		body="Piety Briault +1"
+		body="Piety Bliaut +1"
 	}
 
 	-- Waltz set (chr and vit)
@@ -395,7 +395,7 @@ function init_gear_sets()
 		main="Bolelabunga",
 		sub="Genmei Shield",
 		head="Inyanga Tiara +2",
-		body="Piety Briault +1",
+		body="Piety Bliaut +1",
 		hands="Ebers Mitts +1",
 		legs="Theo. Pant. +1"
 	})

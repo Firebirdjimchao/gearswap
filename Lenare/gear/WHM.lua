@@ -126,7 +126,7 @@ function init_gear_sets()
 	
 	-- Precast sets to enhance JAs
 	sets.precast.JA.Benediction = {
-		body="Piety Briault +3"
+		body="Piety Bliaut +3"
 	}
 
 	-- Waltz set (chr and vit)
@@ -223,7 +223,7 @@ function init_gear_sets()
 		neck="Erra Pendant",
 		ear1="Hermetic Earring",
 		ear2="Malignance Earring",
-		body="Theo. Briault +2",
+		body="Theo. Bliaut +2",
 		--hands="Inyan. Dastanas +2",
 		hands="Theophany Mitts +2",
 		ring1="Stikini Ring",
@@ -263,7 +263,7 @@ function init_gear_sets()
 		sub="Culminus",
 		head="Hyksos Khat",
 		neck="Incanter's Torque",
-		body="Ebers Bliaud +1",
+		body="Ebers Bliaut +1",
 		hands="Inyan. Dastanas +2",
 		ring1="Sirona's Ring",
 		ring2="Haoma's Ring",
@@ -285,7 +285,7 @@ function init_gear_sets()
 		-- 3%
 		--ear2="Nourish. Earring +1",
 		ear2="Malignance Earring",
-		--body="Ebers Bliaud +1",
+		--body="Ebers Bliaut +1",
 		-- 3% II
 		body="Kaykaus Bliaut",
 		-- 16%
@@ -307,7 +307,7 @@ function init_gear_sets()
 		-- 2% II
 		ear1="Glorious Earring",
 		-- 14% Afflatus Solace
-		body="Ebers Bliaud +1",
+		body="Ebers Bliaut +1",
 		-- 2% II
 		hands="Theophany Mitts +2",
 		-- 10% Afflatus Solace
@@ -404,7 +404,7 @@ function init_gear_sets()
 
 	sets.midcast.BarElement = set_combine(sets.midcast['Enhancing Magic'],{
 		head="Ebers Cap +1",
-		body="Ebers Bliaud +1",
+		body="Ebers Bliaut +1",
 		hands="Ebers Mitts +1",
 		legs="Piety Pantaln. +1",
 		feet="Ebers Duckbills +1"
@@ -414,7 +414,7 @@ function init_gear_sets()
 		main="Bolelabunga",
 		sub="Culminus",
 		head="Inyanga Tiara +2",
-		body="Piety Briault +3",
+		body="Piety Bliaut +3",
 		hands="Ebers Mitts +1",
 		legs="Th. Pant. +3"
 	})
