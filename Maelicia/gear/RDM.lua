@@ -1139,11 +1139,9 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function customize_idle_set(idleSet)
-	if pet.isvalid then
-		idleSet = set_combine(idleSet, sets.idle.Pet)
-	elseif not buffactive['Protect'] then
+	if not buffactive['Protect'] then
 		idleSet = set_combine(idleSet, sets.noprotect)
-	elseif not pet.isvalid and (player.mpp < 51) then
+	elseif (player.mpp < 51) then
 		idleSet = set_combine(idleSet, sets.latent_refresh)
 	end
 	if buffactive['Doom'] then
