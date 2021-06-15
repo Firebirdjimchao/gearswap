@@ -73,7 +73,7 @@ function init_gear_sets()
 	-- Precast Sets
 	
 	-- Precast sets to enhance JAs on use
-	sets.precast.JA['Hundred Fists'] = {legs="Hes. Hose +1"}
+	sets.precast.JA['Hundred Fists'] = {legs="Hes. Hose +3"}
 	sets.precast.JA['Boost'] = {hands="Anch. Gloves +2"}
 	sets.precast.JA['Dodge'] = {feet="Anch. Gaiters +3"}
 	sets.precast.JA['Focus'] = {head="Anchor. Crown +1"}
@@ -202,6 +202,7 @@ function init_gear_sets()
 	-- 80% STR, crit chance varies with TP
 	sets.precast.WS["Victory Smite"] = set_combine(sets.precast.WS, {
 		head=gear.Adhemar_head_hq_B,
+		neck="Mnk. Nodowa +2",
 		ear2="Odr Earring",
 		body="Ken. Samue +1",
 		ring1="Niqmaddu Ring",
@@ -220,11 +221,11 @@ function init_gear_sets()
 		--head=gear.Rao_head_hq_B,
 		head="Mpaca's Cap",
 		ear2="Odr Earring",
-		neck="Caro Necklace",
+		neck="Mnk. Nodowa +2",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		back=gear.Segomo_dex_da,
-		legs="Jokushu Haidate",
+		legs="Hes. Hose +3",
 		feet="Mpaca's Boots",
 	})
 	sets.precast.WS['Shijin Spiral'].Acc = set_combine(sets.precast.WS.Acc, sets.precast.WS['Shijin Spiral'], {
@@ -247,6 +248,7 @@ function init_gear_sets()
 	})
 
 	sets.precast.WS["Howling Fist"] = set_combine(sets.precast.WS, {
+		neck="Mnk. Nodowa +2",
 		body="Tatena. Harama. +1",
 		hands="Tatena. Gote +1",
 		back=gear.Segomo_vit_wsd,
@@ -261,6 +263,7 @@ function init_gear_sets()
 	})
 
 	sets.precast.WS["Tornado Kick"] = set_combine(sets.precast.WS, {
+		neck="Mnk. Nodowa +2",
 		body="Tatena. Harama. +1",
 		hands="Tatena. Gote +1",
 		back=gear.Segomo_vit_wsd,
@@ -470,7 +473,6 @@ function init_gear_sets()
 	sets.engaged = {
 		ammo="Ginsen",
 		head=gear.Adhemar_head_hq_B,
-		--neck="Moonbeam Nodowa",
 		neck="Mnk. Nodowa +2",
 		ear1="Sherida Earring",
 		ear2="Dedition Earring",
@@ -480,7 +482,7 @@ function init_gear_sets()
 		ring2="Gere Ring",
 		back=gear.Segomo_dex_da,
 		waist="Moonbow Belt",
-		legs="Ken. Hakama +1",
+		legs="Hes. Hose +3",
 		feet="Anch. Gaiters +3",
 	}
 	sets.engaged.SomeAcc = set_combine(sets.engaged,{
