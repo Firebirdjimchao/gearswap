@@ -223,12 +223,12 @@ function init_gear_sets()
 	-- Start defining the sets
 	--------------------------------------
 
-	sets.buff['Burst Affinity'] = {legs="Assim. Shalwar +1",feet="Mavi Basmak +2"}
-	sets.buff['Chain Affinity'] = {head="Mavi Kavuk +2", feet="Assim. Charuqs +1"}
+	sets.buff['Burst Affinity'] = {legs="Assim. Shalwar +1",feet="Hashi. Basmak +1"}
+	sets.buff['Chain Affinity'] = {head="Hashishin Kavuk +1", feet="Assim. Charuqs +1"}
 	sets.buff.Convergence = {head="Luh. Keffiyeh +1"}
 	sets.buff.Diffusion = {feet="Luhlaza Charuqs +1"}
 	sets.buff.Enchainment = {body="Luhlaza Jubbah"}
-	sets.buff.Efflux = {legs="Mavi Tayt +2"}
+	sets.buff.Efflux = {legs="Hashishin Tayt +1"}
 
 	
 	-- Precast Sets
@@ -286,7 +286,7 @@ function init_gear_sets()
 	}
 				
 	sets.precast.FC['Blue Magic'] = set_combine(sets.precast.FC, {
-		body="Mavi Mintan +2",
+		body="Hashishin Mintan +1",
 	})
 
 	sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
@@ -400,7 +400,7 @@ function init_gear_sets()
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
 		back="Cornflower Cape",
-		legs="Mavi Tayt +2",
+		legs="Hashishin Tayt +1",
 		feet="Luhlaza Charuqs +1",
 	}
 		
@@ -531,7 +531,7 @@ function init_gear_sets()
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
 		back="Cornflower Cape",
-		legs="Mavi Tayt +2",
+		legs="Hashishin Tayt +1",
 		feet="Luhlaza Charuqs +1",
 	})
 
