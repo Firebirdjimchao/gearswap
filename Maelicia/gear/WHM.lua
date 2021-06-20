@@ -406,7 +406,8 @@ function init_gear_sets()
 	})
 	
 	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'],{
-		head="Chironic Hat"
+		head="Chironic Hat",
+		hands="Regal Cuffs",
 	})
 
 	sets.midcast.Protectra = set_combine(sets.midcast['Enhancing Magic'],{
@@ -451,7 +452,8 @@ function init_gear_sets()
 		head="Befouled Crown",
 		neck="Incanter's Torque",
 		body="Vanya Robe",
-		hands="Inyan. Dastanas +2",
+		--hands="Inyan. Dastanas +2",
+		hands="Regal Cuffs",
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
 		ring2="Kishar Ring",
@@ -560,7 +562,8 @@ function init_gear_sets()
 	})
 	
 	sets.idle.Town = set_combine(sets.idle, {
-		body="Councilor's Garb"
+		body="Councilor's Garb",
+		hands="Regal Cuffs",
 	})
 	
 	sets.idle.Weak = set_combine(sets.idle,{

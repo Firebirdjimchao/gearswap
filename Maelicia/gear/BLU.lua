@@ -390,6 +390,7 @@ function init_gear_sets()
 
 	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'],{
 		head="Amalric Coif",
+		hands="Regal Cuffs",
 	})
 				
 	sets.midcast['Blue Magic'] = {
@@ -593,6 +594,8 @@ function init_gear_sets()
 	})
 
 	sets.idle.Town = set_combine(sets.idle, {
+		body="Councilor's Garb",
+		hands="Regal Cuffs",
 	})
 
 	sets.idle.Learning = set_combine(sets.idle, sets.Learning)

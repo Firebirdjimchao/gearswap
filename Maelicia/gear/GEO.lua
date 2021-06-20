@@ -519,6 +519,7 @@ function init_gear_sets()
 
 	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'],{
 		head="Amalric Coif",
+		hands="Regal Cuffs",
 	})
 
 	sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'],{
@@ -542,8 +543,8 @@ function init_gear_sets()
 	-- 378 Base
 	-- 16 merits
 	-- 394 Initial
-	-- 108 gear
-	-- 502 total
+	-- 89 gear
+	-- 483 total
 	sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.MACC,{
 		-- 16
 		head="Befouled Crown",
@@ -552,7 +553,9 @@ function init_gear_sets()
 		-- 20
 		body="Vanya Robe",
 		-- 18
-		hands="Azimuth Gloves +1",
+		--hands="Azimuth Gloves +1",
+		-- Duration +20%
+		hands="Regal Cuffs",
 		-- 5
 		--ring1="Stikini Ring",
 		-- Duration +10%
@@ -894,6 +897,7 @@ function init_gear_sets()
 		head="Nyame Helm",
 		--body="Councilor's Garb",
 		body="Shamash Robe",
+		hands="Regal Cuffs",
 		feet="Geo. Sandals +3"
 	})
 	

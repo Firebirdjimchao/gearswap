@@ -286,7 +286,7 @@ function init_gear_sets()
 		--ear2="Hermetic Earring",
 		ear2="Regal Earring",
 		body="Atrophy Tabard +3",
-		hands="Jhakri Cuffs +2",
+		hands="Regal Cuffs",
 		ring1="Metamor. Ring +1",
 		ring2="Stikini Ring",
 		--back=gear.sucellos_mnd,
@@ -485,7 +485,8 @@ function init_gear_sets()
 	})
 
 	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'],{
-		head="Chironic Hat"
+		head="Chironic Hat",
+		hands="Regal Cuffs",
 	})
 
 	-- Skill mod (500 cap)
@@ -513,8 +514,8 @@ function init_gear_sets()
 	-- 16 merits
 	-- 36 gifts
 	-- 476 Initial
-	-- 77 gear
-	-- 557 total
+	-- 58 gear
+	-- 538 total
 	sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.MACC,{
 		main=gear.MaccStaff,
 		sub="Enki Strap",
@@ -532,9 +533,9 @@ function init_gear_sets()
 		-- effect +14
 		--body="Lethargy Sayon +1",
 		-- 19, Saboteur +12
-		hands="Leth. Gantherots +1",
+		--hands="Leth. Gantherots +1",
 		-- Duration +20%
-		-- hands="Regal Cuffs",
+		hands="Regal Cuffs",
 		-- 5
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
@@ -603,7 +604,7 @@ function init_gear_sets()
 		ear1="Snotra Earring",
 		body="Atrophy Tabard +3",
 		-- Duration +20%
-		-- hands="Regal Cuffs",
+		hands="Regal Cuffs",
 		-- Duration +10%
 		ring2="Kishar Ring",
 		feet="Vitiation Boots +3",
@@ -618,7 +619,7 @@ function init_gear_sets()
 	sets.midcast.enfeebSkillCap = set_combine(sets.midcast['Enfeebling Magic'], {
 		head="Atro. Chapeau +3",
 		neck="Dls. Torque +1",
-		hands="Jhakri Cuffs +2",
+		hands="Regal Cuffs",
 		waist="Luminary Sash",
 		feet="Vitiation Boots +3",
 	})
@@ -874,6 +875,7 @@ function init_gear_sets()
 		--ammo="Regal Gem",
 		neck="Dls. Torque +1",
 		body="Councilor's Garb",
+		hands="Regal Cuffs",
 		back=gear.sucellos_mnd,
 	})
 	
@@ -981,6 +983,7 @@ function init_gear_sets()
 	sets.magic_burst.Resistant = set_combine(sets.magic_burst,{
 		sub="Enki Strap",
 		head="Jhakri Coronal +2",
+		hands="Regal Cuffs",
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
 		ring2="Stikini Ring",

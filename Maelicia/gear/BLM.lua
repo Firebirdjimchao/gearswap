@@ -403,6 +403,7 @@ function init_gear_sets()
 	
 	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'],{
 		head="Amalric Coif",
+		hands="Regal Cuffs",
 	})
 
 	sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'],{
@@ -435,10 +436,8 @@ function init_gear_sets()
 		neck="Incanter's Torque",
 		-- 21
 		body="Spaekona's Coat",
-		-- 18
-		--hands="Lurid Mitts",
-		-- 15
-		--hands="Ayao's Gages",
+		-- Duration +20%
+		hands="Regal Cuffs",
 		-- 5
 		--ring1="Stikini Ring",
 		-- Duration +10%
@@ -858,7 +857,8 @@ function init_gear_sets()
 	})
 
 	sets.idle.Town = set_combine(sets.idle, {
-		body="Councilor's Garb"
+		body="Councilor's Garb",
+		hands="Regal Cuffs",
 	})
 	
 	sets.idle.Weak = set_combine(sets.idle,{
@@ -1069,6 +1069,10 @@ function init_gear_sets()
 		-- MDmg 44
 		-- Elem 21
 		hands="Spae. Gloves +3",
+		-- INT 40
+		-- MACC 45
+		-- MB Acc +30
+		--hands="Regal Cuffs",
 		-- INT 10
 		-- MAB 8
 		ring1="Freke Ring",
