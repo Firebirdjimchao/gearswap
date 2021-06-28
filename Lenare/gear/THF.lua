@@ -67,11 +67,12 @@ function init_gear_sets()
 	-- 3 Base (8 gear cap)
 	-- 0 Gift
 	sets.TreasureHunter = {
+		-- Assuming +1 from perfect Taming Sari
 		--head="Wh. Rarab Cap +1",
-		-- 3
-		hands="Plun. Armlets +1",
+		-- 4
+		hands="Plun. Armlets +3",
 		-- 2
-		legs=gear.Herculean_legs_TA,
+		--legs=gear.Herculean_legs_TA,
 		-- 3
 		--feet="Skulk. Poulaines +1"
 	}
@@ -127,7 +128,7 @@ function init_gear_sets()
 	sets.precast.JA['Conspirator'] = {body="Skulker's Vest +1"}
 	sets.precast.JA['Steal'] = {neck="Rabbit Charm",hands="Pill. Armlets +2",legs="Assassin's Culottes",feet="Pill. Poulaines +1"}
 	sets.precast.JA['Despoil'] = {legs="Skulk. Culottes +1",feet="Skulk. Poulaines +1"}
-	sets.precast.JA['Perfect Dodge'] = {hands="Plun. Armlets +1"}
+	sets.precast.JA['Perfect Dodge'] = {hands="Plun. Armlets +3"}
 	sets.precast.JA['Feint'] = {
 		--legs="Assassin's Culottes +2"
 	}
@@ -606,7 +607,7 @@ function init_gear_sets()
 		ear2="Etiolation Earring",
 		-- PDT 8%
 		body="Meg. Cuirie +2",
-		hands="Plun. Armlets +1",
+		hands="Plun. Armlets +3",
 		-- PDT 4% MDT 3%
 		ring1="Dark Ring",
 		-- DT 10%
@@ -976,4 +977,17 @@ function customize_defense_set(defenseSet)
 		defenseSet = set_combine(defenseSet, sets.buff.Doom)
 	end
 	return defenseSet
+end
+
+-- Check for various actions that we've specified in user code as being used with TH gear.
+-- This will only ever be called if TreasureMode is not 'None'.
+-- Category and Param are as specified in the action event packet.
+function th_action_check(category, param)
+    if (category == 2) or -- any ranged attack
+        (category == 4) or -- any magic action
+        (category == 3 and param == 30) or -- Aeolian Edge
+        (category == 6 and info.default_ja_ids:contains(param)) or -- Provoke, Animated Flourish
+        (category == 14 and info.default_u_ja_ids:contains(param)) -- Quick/Box/Stutter Step, Desperate/Violent Flourish
+        then return true
+    end
 end
