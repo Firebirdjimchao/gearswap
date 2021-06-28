@@ -353,12 +353,14 @@ function init_gear_sets()
 	sets.midcast.MAB = {
 		ammo="Pemphredo Tathlum",
 		--head="Jhakri Coronal +2",
-		head="Nyame Helm",
+		--head="Nyame Helm",
+		head=empty,
 		neck="Sanctity Necklace",
 		ear2="Friomisi Earring",
 		ear2="Regal Earring",
 		--body="Amalric Doublet",
-		body="Shamash Robe",
+		--body="Shamash Robe",
+		body="Cohort Cloak +1",
 		--hands="Amalric Gages",
 		hands=gear.Carmine_hands_hq_D,
 		ring1="Acumen Ring",
@@ -458,6 +460,7 @@ function init_gear_sets()
 	-- Magical Spells --
 	
 	sets.midcast['Blue Magic'].Magical = set_combine(sets.midcast.MAB, {
+		ring1="Metamor. Ring +1",
 	})
 
 	sets.midcast['Blue Magic'].Magical.Resistant = set_combine(sets.midcast['Blue Magic'].Magical, {
@@ -483,6 +486,7 @@ function init_gear_sets()
 
 	sets.midcast['Blue Magic'].MagicalDark = set_combine(sets.midcast['Blue Magic'].Magical, {
 		head="Pixie Hairpin +1",
+		body="Shamash Robe",
 	})
 
 	sets.midcast['Blue Magic'].MagicalLight = set_combine(sets.midcast['Blue Magic'].Magical, {
@@ -513,6 +517,17 @@ function init_gear_sets()
 	})
 
 	sets.midcast['Blue Magic'].Healing = set_combine(sets.midcast['Blue Magic'], {
+		-- 5%
+		ear2="Mendi. Earring",
+		neck="Incanter's Torque",
+		-- 13%
+		body="Vrikodara Jupon",
+		-- 10%
+		hands="Telchine Gloves",
+		back="Aurist's Cape +1",
+		waist="Luminary Sash",
+		-- 10%
+		legs="Gyve Trousers",
 	})
 
 	sets.midcast['Blue Magic'].SkillBasedBuff = set_combine(sets.midcast['Blue Magic'], {
@@ -524,17 +539,9 @@ function init_gear_sets()
 	-- Sets to return to when not performing an action.
 
 	-- Gear for learning spells: +skill and AF hands.
-	sets.Learning = set_combine(sets.midcast['Blue Magic'], {
-		ammo="Mavi Tathlum",
-		head="Luh. Keffiyeh +1",
-		neck="Incanter's Torque",
+	sets.Learning = {
 		hands="Assim. Bazu. +1",
-		ring1="Stikini Ring",
-		ring2="Stikini Ring",
-		back="Cornflower Cape",
-		legs="Hashishin Tayt +1",
-		feet="Luhlaza Charuqs +1",
-	})
+	}
 
 	sets.latent_refresh = {
 		waist="Fucho-no-obi"
@@ -552,7 +559,8 @@ function init_gear_sets()
 		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
-		back="Moonbeam Cape",
+		--back="Moonbeam Cape",
+		back="Mecisto. Mantle",
 		waist="Flume Belt +1",
 		--legs="Lengo Pants",
 		legs="Carmine cuisses +1",
@@ -584,7 +592,8 @@ function init_gear_sets()
 		-- PDT 4%
 		waist="Flume Belt +1",
 		-- DT 5%
-		legs="Aya. Cosciales +2",
+		--legs="Aya. Cosciales +2",
+		legs="Carmine cuisses +1",
 		-- DT 4%
 		feet="Malignance Boots",
 	}
@@ -612,6 +621,7 @@ function init_gear_sets()
 
 	-- Normal melee group
 	sets.engaged = {
+		ammo="Ginsen",
 		head=gear.Adhemar_head_hq_B,
 		neck="Asperity Necklace",
 		ear1="Brutal Earring",
@@ -736,6 +746,8 @@ function select_default_macro_book()
 	-- Default macro set/book
 	if player.sub_job == 'DNC' then
 		set_macro_page(2, 19)
+	elseif player.sub_job == 'RDM' then
+		set_macro_page(3, 19)
 	else
 		set_macro_page(1, 19)
 	end
