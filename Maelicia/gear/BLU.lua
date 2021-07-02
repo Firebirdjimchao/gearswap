@@ -173,8 +173,8 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-	state.OffenseMode:options('Normal', 'Acc', 'Refresh', 'Learning')
-	state.WeaponskillMode:options('Normal', 'Acc')
+	state.OffenseMode:options('Normal', 'MidAcc', 'Acc', 'Refresh', 'Learning')
+	state.WeaponskillMode:options('Normal', 'MidAcc', 'Acc')
 	state.CastingMode:options('Normal', 'Resistant', 'TH')
 	state.IdleMode:options('Normal', 'PDT', 'Learning')
 
@@ -297,6 +297,7 @@ function init_gear_sets()
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
+		ammo="Ginsen",
 		head=gear.Adhemar_head_hq_B,
 		neck="Fotia Gorget",
 		ear1="Ishvara Earring",
@@ -311,20 +312,25 @@ function init_gear_sets()
 		feet=gear.Adhemar_feet_B
 	}
 
-	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
+	sets.precast.WS.MidAcc = set_combine(sets.precast.WS, {
 		ear1="Telos Earring",
 		ring1="Cacoethic Ring +1",
 		waist="Eschan Stone"
 	})
 
+	sets.precast.WS.Acc = set_combine(sets.precast.WS.MidAcc, {
+		body="Jhakri Robe +2",
+	})
+
 	sets.precast.WS.MAB = set_combine(sets.precast.WS,{
 		ammo="Pemphredo Tathlum",
-		--head="Jhakri Coronal +1",
+		--head="Jhakri Coronal +2",
 		head="Nyame Helm",
 		--neck="Sanctity Necklace",
 		ear2="Friomisi Earring",
 		ear2="Regal Earring",
-		body="Amalric Doublet",
+		body="Shamash Robe",
+		--body="Amalric Doublet",
 		--hands="Amalric Gages",
 		hands="Jhakri Cuffs +2",
 		ring1="Acumen Ring",
@@ -336,10 +342,47 @@ function init_gear_sets()
 	})
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-	sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS.MAB, {
+	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
+		ear1="Ishvara Earring",
+		ear2="Moonshade Earring",
+		body=gear.Herculean_body_WS,
+		hands="Jhakri Cuffs +2",
+		waist="Sailfi Belt +1",
+	})
+	sets.precast.WS['Savage Blade'].MidAcc = set_combine(sets.precast.WS['Savage Blade'], {
+	})
+	sets.precast.WS['Savage Blade'].Acc = set_combine(sets.precast.WS['Savage Blade'], {
+	})
+
+	sets.precast.WS['Expiacion'] = set_combine(sets.precast.WS['Savage Blade'], {
+	})
+	sets.precast.WS['Expiacion'].MidAcc = set_combine(sets.precast.WS['Savage Blade'].MidAcc, {
+	})
+	sets.precast.WS['Expiacion'].Acc = set_combine(sets.precast.WS['Savage Blade'].Acc, {
+	})
+
+	sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {
+		head="Jhakri Coronal +2",
+		neck="Fotia Gorget",
+		ear1="Brutal Earring",
+		ear2="Moonshade Earring",
+		body="Jhakri Robe +2",
+		hands="Jhakri Cuffs +2",
+		ring1="Metamor. Ring +1",
+		ring2="Epona's Ring",
+		waist="Fotia Belt",
+		legs="Jhakri Slops +2",
+		feet="Jhakri Pigaches +2",
+	})
+	sets.precast.WS['Requiescat'].MidAcc = set_combine(sets.precast.WS['Requiescat'], {
+	})
+	sets.precast.WS['Requiescat'].Acc = set_combine(sets.precast.WS['Requiescat'], {
+		ear1="Telos Earring",
+		ear2="Cessance Earring",
 	})
 
 	sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast.WS.MAB, {
+		head="Pixie Hairpin +1",
 	})
 		
 	-- Midcast Sets
@@ -636,36 +679,65 @@ function init_gear_sets()
 		feet=gear.Adhemar_feet_B
 	}
 
-	sets.engaged.Acc = set_combine(sets.engaged, {
+	sets.engaged.MidAcc = set_combine(sets.engaged, {
+		neck="Lissome Necklace",
+		ear1="Telos Earring",
+		waist="Eschan Stone",
+	})
+
+	sets.engaged.Acc = set_combine(sets.engaged.MidAcc, {
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		--hands="Malignance Gloves",
+		hands=gear.Adhemar_hands_hq_B,
+		back="Aurist's Cape +1",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
 	})
 
 	sets.engaged.Refresh = set_combine(sets.engaged, {
 	})
-
-	sets.engaged.DW = set_combine(sets.engaged, {
-		ear1="Suppanomimi",
-		ear2="Brutal Earring",
-		ring2="Haverton Ring",
-		legs=gear.Carmine_legs_hq_D,
+	sets.engaged.Refresh.MidAcc = set_combine(sets.engaged.MidAcc, {
+	})
+	sets.engaged.Refresh.Acc = set_combine(sets.engaged.Acc, {
 	})
 
-	sets.engaged.DW.Acc = set_combine(sets.engaged, {
+	sets.engaged.DW = set_combine(sets.engaged, {
 		ear1="Brutal Earring",
 		ear2="Suppanomimi",
 		ring2="Haverton Ring",
+		waist="Reiki Yotai",
+		legs=gear.Carmine_legs_hq_D,
+	})
+
+	sets.engaged.DW.MidAcc = set_combine(sets.engaged.MidAcc, {
+		ear1="Telos Earring",
+		ear2="Suppanomimi",
+		waist="Reiki Yotai",
+	})
+
+	sets.engaged.DW.Acc = set_combine(sets.engaged.Acc, {
+		ear1="Telos Earring",
+		ear2="Suppanomimi",
+		ring2="Haverton Ring",
+		waist="Reiki Yotai",
 		legs=gear.Carmine_legs_hq_D,
 		feet=gear.Carmine_feet_hq_B,
 	})
 
-	sets.engaged.DW.Refresh = set_combine(sets.engaged, {
-		ear1="Suppanomimi",
-		ear2="Brutal Earring",
-		ring2="Haverton Ring",
-		legs=gear.Carmine_legs_hq_D,
+	sets.engaged.DW.Refresh = set_combine(sets.engaged.Refresh, sets.engaged.DW, {
+	})
+	sets.engaged.DW.Refresh.MidAcc = set_combine(sets.engaged.Refresh.MidAcc, sets.engaged.DW.MidAcc, {
+	})
+	sets.engaged.DW.Refresh.Acc = set_combine(sets.engaged.Refresh.Acc, sets.engaged.DW.Acc, {
 	})
 
 	sets.engaged.Learning = set_combine(sets.engaged, sets.Learning)
 	sets.engaged.DW.Learning = set_combine(sets.engaged.DW, sets.Learning)
+	sets.engaged.MidAcc.Learning = set_combine(sets.engaged.MidAcc, sets.Learning)
+	sets.engaged.DW.MidAcc.Learning = set_combine(sets.engaged.DW.MidAcc, sets.Learning)
+	sets.engaged.Acc.Learning = set_combine(sets.engaged.Acc, sets.Learning)
+	sets.engaged.DW.Acc.Learning = set_combine(sets.engaged.DW.Acc, sets.Learning)
 
 
 	sets.self_healing = {
@@ -698,6 +770,10 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 	-- If in learning mode, keep on gear intended to help with that, regardless of action.
 	if state.OffenseMode.value == 'Learning' then
 		equip(sets.Learning)
+	end
+
+	if state.CastingMode.value == 'TH' then
+		equip(sets.sharedTH)
 	end
 end
 
