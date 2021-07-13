@@ -273,7 +273,7 @@ function init_gear_sets()
 		feet=gear.Vanya_feet_B
 	}
 
-	-- 41% + 7% II Total + 16% gift (23% total gift)
+	-- 31% + 9% II Total + 23% gift (23% total gift)
 	sets.midcast.Cure = set_combine(sets.midcast['Healing Magic'],{
 		-- 10% + 2% II
 		main="Queller Rod",
@@ -291,16 +291,16 @@ function init_gear_sets()
 		-- 16%
 		--hands=gear.Telchine_hands_cure,
 		-- 10%
-		hands=gear.Telchine_hands_pet,
+		--hands=gear.Telchine_hands_pet,
 		-- 2% II
-		--hands="Theophany Mitts +2",
+		hands="Theophany Mitts +2",
 		waist=gear.ElementalObi,
 		legs="Ebers Pant. +1",
 		-- 5%
 		feet=gear.Vanya_feet_B
 	})
 	
-	-- 15% + 6% II Total + 16% gift (23% total gift) + 40% Afflatus Solace (2 x 20 JP)
+	-- 15% + 6% II Total + 23% gift (23% total gift) + 40% Afflatus Solace (2 x 20 JP)
 	sets.midcast.CureSolace = set_combine(sets.midcast.Cure,{
 		-- 10% + 2% II
 		main="Queller Rod",
