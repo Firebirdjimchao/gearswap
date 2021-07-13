@@ -179,6 +179,8 @@ function user_setup()
 	state.IdleMode:options('Normal', 'PDT', 'Learning')
 
 	gear.default.obi_waist = "Sacro Cord"
+	gear.Rosmerta_DexSTP = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10',}}
+	gear.Rosmerta_StrWSD = { name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
 
 	-------------------------------------------------
 	-- Default bindings
@@ -225,7 +227,7 @@ function init_gear_sets()
 
 	sets.buff['Burst Affinity'] = {legs="Assim. Shalwar +1",feet="Hashi. Basmak +1"}
 	sets.buff['Chain Affinity'] = {head="Hashishin Kavuk +1", feet="Assim. Charuqs +1"}
-	sets.buff.Convergence = {head="Luh. Keffiyeh +1"}
+	sets.buff.Convergence = {head="Luh. Keffiyeh +2"}
 	sets.buff.Diffusion = {feet="Luhlaza Charuqs +1"}
 	sets.buff.Enchainment = {body="Luhlaza Jubbah"}
 	sets.buff.Efflux = {legs="Hashishin Tayt +1"}
@@ -234,7 +236,7 @@ function init_gear_sets()
 	-- Precast Sets
 	
 	-- Precast sets to enhance JAs
-	sets.precast.JA['Azure Lore'] = {hands="Luhlaza Bazubands"}
+	sets.precast.JA['Azure Lore'] = {hands="Luh. Bazubands +3"}
 
 
 	-- Waltz set (chr and vit)
@@ -306,7 +308,7 @@ function init_gear_sets()
 		hands=gear.Adhemar_hands_hq_B,
 		ring1="Ilabrat Ring",
 		ring2="Epona's Ring",
-		back="Atheling Mantle",
+		back=gear.Rosmerta_StrWSD,
 		waist="Fotia Belt",
 		legs="Samnuha Tights",
 		feet=gear.Adhemar_feet_B
@@ -335,10 +337,11 @@ function init_gear_sets()
 		hands="Jhakri Cuffs +2",
 		ring1="Acumen Ring",
 		ring2="Strendu Ring",
-		back="Toro Cape",
+		back="Cornflower Cape",
 		--waist="Yamabuki-no-Obi",
-		legs=gear.Amalric_legs_D,
+		legs="Luhlaza Shalwar +3",
 		feet=gear.Adhemar_feet_B
+		--feet="Jhakri Pigaches +2",
 	})
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -347,7 +350,9 @@ function init_gear_sets()
 		ear2="Moonshade Earring",
 		body=gear.Herculean_body_WS,
 		hands="Jhakri Cuffs +2",
+		back=gear.Rosmerta_StrWSD,
 		waist="Sailfi Belt +1",
+		legs="Luhlaza Shalwar +3",
 	})
 	sets.precast.WS['Savage Blade'].MidAcc = set_combine(sets.precast.WS['Savage Blade'], {
 	})
@@ -383,6 +388,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast.WS.MAB, {
 		head="Pixie Hairpin +1",
+		back=gear.Rosmerta_StrWSD,
 	})
 		
 	-- Midcast Sets
@@ -408,10 +414,12 @@ function init_gear_sets()
 		hands=gear.Carmine_hands_hq_D,
 		ring1="Acumen Ring",
 		ring2="Strendu Ring",
-		back=gear.ElementalCape,
+		back="Cornflower Cape",
 		waist=gear.ElementalObi,
-		legs=gear.Amalric_legs_D,
-		feet=gear.Adhemar_feet_B
+		--legs=gear.Amalric_legs_D,
+		legs="Luhlaza Shalwar +3",
+		--feet=gear.Adhemar_feet_B
+		feet="Jhakri Pigaches +2",
 	}
 
 	sets.midcast['Enhancing Magic'] =  {
@@ -440,7 +448,7 @@ function init_gear_sets()
 				
 	sets.midcast['Blue Magic'] = {
 		ammo="Mavi Tathlum",
-		head="Luh. Keffiyeh +1",
+		head="Luh. Keffiyeh +2",
 		neck="Incanter's Torque",
 		body="Assim. Jubbah +1",
 		ring1="Stikini Ring",
@@ -455,14 +463,16 @@ function init_gear_sets()
 	sets.midcast['Blue Magic'].Physical = set_combine(sets.midcast['Blue Magic'], {
 		ammo="Ginsen",
 		head=gear.Adhemar_head_hq_B,
+		--head="Luh. Keffiyeh +3",
 		neck="Incanter's Torque",
 		ear1="Telos Earring",
 		body="Jhakri Robe +2",
-		hands="Jhakri Cuffs +2",
+		hands="Luh. Bazubands +3",
 		ring1="Ilabrat Ring",
 		ring2="Rajas Ring",
+		back=gear.Rosmerta_StrWSD,
 		waist="Sailfi Belt +1",
-		legs="Jhakri Slops +2",
+		legs="Luhlaza Shalwar +3",
 		feet="Jhakri Pigaches +2",
 	})
 
@@ -545,15 +555,13 @@ function init_gear_sets()
 
 	-- Breath Spells --
 	
-	sets.midcast['Blue Magic'].Breath = set_combine(sets.midcast['Blue Magic'], {
+	sets.midcast['Blue Magic'].Breath = set_combine(sets.midcast['Blue Magic'].Magical, {
+		head="Luh. Keffiyeh +2",
 	})
 
 	-- Other Types --
 	
 	sets.midcast['Blue Magic'].Stun = set_combine(sets.midcast['Blue Magic'].MagicAccuracy, {
-	})
-			
-	sets.midcast['Blue Magic']['White Wind'] = set_combine(sets.midcast['Blue Magic'], {
 	})
 
 	sets.midcast['Blue Magic']['Bludgeon'] = set_combine(sets.precast.FC, {
@@ -571,6 +579,9 @@ function init_gear_sets()
 		waist="Luminary Sash",
 		-- 10%
 		legs="Gyve Trousers",
+	})
+
+	sets.midcast['Blue Magic']['White Wind'] = set_combine(sets.midcast['Blue Magic'].Healing, {
 	})
 
 	sets.midcast['Blue Magic'].SkillBasedBuff = set_combine(sets.midcast['Blue Magic'], {
@@ -673,7 +684,7 @@ function init_gear_sets()
 		hands=gear.Adhemar_hands_hq_B,
 		ring1="Ilabrat Ring",
 		ring2="Epona's Ring",
-		back="Atheling Mantle",
+		back=gear.Rosmerta_DexSTP,
 		waist="Windbuffet Belt +1",
 		legs="Samnuha Tights",
 		feet=gear.Adhemar_feet_B
@@ -690,7 +701,6 @@ function init_gear_sets()
 		body="Malignance Tabard",
 		--hands="Malignance Gloves",
 		hands=gear.Adhemar_hands_hq_B,
-		back="Aurist's Cape +1",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
 	})
