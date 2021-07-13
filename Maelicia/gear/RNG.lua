@@ -677,7 +677,7 @@ function init_gear_sets()
 		ring1="Epona's Ring",
 		ring2="Regal Ring",
 		back=gear.aug_belenus_ws,
-		legs="Meg. Chausses +2",
+		legs="Tatena. Haidate +1",
 		feet="Mummu Gamash. +2",
 	})
 	sets.precast.WS['Decimation'].MidAcc = set_combine(sets.precast.WS['Decimation'], {

@@ -84,7 +84,7 @@ function init_gear_sets()
 
 	-- Chi Blast - MND
 	sets.precast.JA['Chi Blast'] = {
-		head="Dampening Tam",
+		head="Hes. Crown +3", -- Penance bonus
 		neck="Phalaina Locket",
 		body="Tatena. Harama. +1",
 		hands="Malignance Gloves",
@@ -98,7 +98,7 @@ function init_gear_sets()
 	-- Chakra - VIT
 	sets.precast.JA['Chakra'] = {
 		ammo="Tantra Tathlum",
-		head="Rao Kabuto +1",
+		head="Hes. Crown +3",
 		neck="Unmoving Collar +1",
 		body="Anch. Cyclas +2",
 		hands="Hes. Gloves +3",
@@ -106,13 +106,13 @@ function init_gear_sets()
 		ring2="Regal Ring",
 		back=gear.Segomo_vit_wsd,
 		waist="Flume Belt +1",
-		legs="Anch. Hose +3",
+		legs="Tatena. Haidate +1",
 		feet="Tatena. Sune. +1",
 	}
 
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {
-		head="Malignance Chapeau",
+		head="Hes. Crown +3",
 		body="Tatena. Harama. +1",
 		hands="Tatena. Gote +1",
 		ring1="Dark Ring",
@@ -120,7 +120,7 @@ function init_gear_sets()
 		back=gear.Segomo_vit_wsd,
 		waist="Flume Belt +1",
 		legs="Anch. Hose +3",
-		feet="Malignance Boots",
+		feet="Hes. Gaiters +3"
 	}
 		
 	-- Don't need any special gear for Healing Waltz.
@@ -183,6 +183,7 @@ function init_gear_sets()
 	})
 	sets.precast.WS.MAB = set_combine(sets.precast.WS, {
 		--head=gear.Herculean_head_Magic,
+		head=empty,
 		neck="Sanctity Necklace",
 		ear1="Crematio Earring",
 		ear2="Friomisi Earring",
@@ -201,6 +202,7 @@ function init_gear_sets()
 
 	-- 80% STR, crit chance varies with TP
 	sets.precast.WS["Victory Smite"] = set_combine(sets.precast.WS, {
+		ammo="Knobkierrie",
 		head=gear.Adhemar_head_hq_B,
 		neck="Mnk. Nodowa +2",
 		ear2="Odr Earring",
@@ -217,6 +219,27 @@ function init_gear_sets()
 	sets.precast.WS["Victory Smite"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, sets.precast.WS["Victory Smite"], {
 	})
 
+	-- 30% STR / 30% DEX, damage varies with TP
+	sets.precast.WS["Raging Fists"] = set_combine(sets.precast.WS, {
+		ammo="Knobkierrie",
+		head="Mpaca's Cap",
+		neck="Mnk. Nodowa +2",
+		ear1="Sherida Earring",
+		ear2="Moonshade Earring",
+		body="Tatena. Harama +1",
+		hands=gear.Adhemar_hands_hq_B,
+		ring1="Niqmaddu Ring",
+		ring2="Gere Ring",
+		waist="Moonbow Belt",
+		legs="Tatena. Haidate +1",
+		back=gear.Segomo_dex_da,
+		feet="Mpaca's Boots",
+	})
+	sets.precast.WS["Raging Fists"].Acc = set_combine(sets.precast.WS.Acc, sets.precast.WS["Raging Fists"], {
+	})
+	sets.precast.WS["Raging Fists"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, sets.precast.WS["Raging Fists"], {
+	})
+
 	sets.precast.WS['Shijin Spiral'] = set_combine(sets.precast.WS, {
 		--head=gear.Rao_head_hq_B,
 		head="Mpaca's Cap",
@@ -225,7 +248,8 @@ function init_gear_sets()
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		back=gear.Segomo_dex_da,
-		legs="Hes. Hose +3",
+		--legs="Hes. Hose +3",
+		legs="Tatena. Haidate +1",
 		feet="Mpaca's Boots",
 	})
 	sets.precast.WS['Shijin Spiral'].Acc = set_combine(sets.precast.WS.Acc, sets.precast.WS['Shijin Spiral'], {
@@ -248,12 +272,13 @@ function init_gear_sets()
 	})
 
 	sets.precast.WS["Howling Fist"] = set_combine(sets.precast.WS, {
+		ammo="Knobkierrie",
 		neck="Mnk. Nodowa +2",
 		body="Tatena. Harama. +1",
 		hands="Tatena. Gote +1",
 		back=gear.Segomo_vit_wsd,
 		waist="Moonbow Belt",
-		legs="Ken. Hakama +1",
+		legs="Tatena. Haidate +1",
 		--feet="Mpaca's Boots",
 		feet="Tatena. Sune. +1",
 	})
@@ -268,7 +293,7 @@ function init_gear_sets()
 		hands="Tatena. Gote +1",
 		back=gear.Segomo_vit_wsd,
 		waist="Moonbow Belt",
-		legs="Ken. Hakama +1",
+		legs="Tatena. Haidate +1",
 		feet="Anch. Gaiters +3",
 	})
 	sets.precast.WS["Tornado Kick"].Acc = set_combine(sets.precast.WS.Acc, sets.precast.WS["Tornado Kick"], {
@@ -279,13 +304,14 @@ function init_gear_sets()
 	-- 30% STR / 30% INT, damage varies with TP
 	sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS.MAB,{
 		head="Pixie Hairpin +1",
+		body=gear.Herculean_body_Magic,
 	})
 
 	-- 50% MND / 30% STR, single attack, damage varies with TP
 	sets.precast.WS["Retribution"] = set_combine(sets.precast.WS, {
 		ammo="Knobkierrie",
-		head="Mpaca's Cap",
-		--head="Hes. Crown +3",
+		--head="Mpaca's Cap",
+		head="Hes. Crown +3",
 		neck="Fotia Gorget",
 		ear1="Ishvara Earring",
 		hands="Anchor. Gloves +2",
