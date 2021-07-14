@@ -422,14 +422,18 @@ function init_gear_sets()
 		feet="Jhakri Pigaches +2",
 	}
 
-	sets.midcast['Enhancing Magic'] =  {
-		ammo="Pemphredo Tathlum",
-		neck="Incanter's Torque",
-		ear2="Andoaa Earring",
+	sets.buffDuration = {
 		body=gear.Telchine_body_pet,
 		hands=gear.Telchine_hands_pet,
 		legs=gear.Telchine_legs_pet,
 	}
+
+	sets.midcast['Enhancing Magic'] = set_combine(sets.buffDuration,{
+		ammo="Pemphredo Tathlum",
+		neck="Incanter's Torque",
+		ear2="Andoaa Earring",
+	})
+
 
 	-- Static value (Use Duration+ and Potency+ gear) --
 	sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'],{
@@ -497,10 +501,12 @@ function init_gear_sets()
 
 	sets.midcast['Blue Magic'].PhysicalInt = set_combine(sets.midcast['Blue Magic'].Physical,	{
 		ear2="Regal Earring",
+		back="Aurist's Cape +1",
 	})
 
 	sets.midcast['Blue Magic'].PhysicalMnd = set_combine(sets.midcast['Blue Magic'].Physical,	{
 		ear2="Regal Earring",
+		back="Aurist's Cape +1",
 	})
 
 	sets.midcast['Blue Magic'].PhysicalChr = set_combine(sets.midcast['Blue Magic'].Physical, {
@@ -526,6 +532,7 @@ function init_gear_sets()
 	})
 	
 	sets.midcast['Blue Magic'].MagicalMnd = set_combine(sets.midcast['Blue Magic'].Magical, {
+		back="Aurist's Cape +1",
 	})
 
 	sets.midcast['Blue Magic'].MagicalChr = set_combine(sets.midcast['Blue Magic'].Magical, {
@@ -587,7 +594,7 @@ function init_gear_sets()
 	sets.midcast['Blue Magic'].SkillBasedBuff = set_combine(sets.midcast['Blue Magic'], {
 	})
 
-	sets.midcast['Blue Magic'].Buff = set_combine(sets.midcast['Blue Magic'], {
+	sets.midcast['Blue Magic'].Buff = set_combine(sets.midcast['Blue Magic'],sets.buffDuration,{
 	})
 
 	-- Sets to return to when not performing an action.
