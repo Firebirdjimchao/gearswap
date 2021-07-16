@@ -227,7 +227,7 @@ function init_gear_sets()
 
 	sets.buff['Burst Affinity'] = {legs="Assim. Shalwar +1",feet="Hashi. Basmak +1"}
 	sets.buff['Chain Affinity'] = {head="Hashishin Kavuk +1", feet="Assim. Charuqs +1"}
-	sets.buff.Convergence = {head="Luh. Keffiyeh +2"}
+	sets.buff.Convergence = {head="Luh. Keffiyeh +3"}
 	sets.buff.Diffusion = {feet="Luhlaza Charuqs +1"}
 	sets.buff.Enchainment = {body="Luhlaza Jubbah"}
 	sets.buff.Efflux = {legs="Hashishin Tayt +1"}
@@ -329,7 +329,7 @@ function init_gear_sets()
 		--head="Jhakri Coronal +2",
 		head="Nyame Helm",
 		--neck="Sanctity Necklace",
-		ear2="Friomisi Earring",
+		ear1="Friomisi Earring",
 		ear2="Regal Earring",
 		body="Shamash Robe",
 		--body="Amalric Doublet",
@@ -405,7 +405,7 @@ function init_gear_sets()
 		--head="Nyame Helm",
 		head=empty,
 		neck="Sanctity Necklace",
-		ear2="Friomisi Earring",
+		ear1="Friomisi Earring",
 		ear2="Regal Earring",
 		--body="Amalric Doublet",
 		--body="Shamash Robe",
@@ -452,7 +452,7 @@ function init_gear_sets()
 				
 	sets.midcast['Blue Magic'] = {
 		ammo="Mavi Tathlum",
-		head="Luh. Keffiyeh +2",
+		head="Luh. Keffiyeh +3",
 		neck="Incanter's Torque",
 		body="Assim. Jubbah +1",
 		ring1="Stikini Ring",
@@ -466,8 +466,7 @@ function init_gear_sets()
 	
 	sets.midcast['Blue Magic'].Physical = set_combine(sets.midcast['Blue Magic'], {
 		ammo="Ginsen",
-		head=gear.Adhemar_head_hq_B,
-		--head="Luh. Keffiyeh +3",
+		head="Luh. Keffiyeh +3",
 		neck="Incanter's Torque",
 		ear1="Telos Earring",
 		body="Jhakri Robe +2",
@@ -553,17 +552,24 @@ function init_gear_sets()
 	})
 
 	sets.midcast['Blue Magic'].MagicAccuracy = set_combine(sets.midcast['Blue Magic'].Magical, {
+		ammo="Pemphredo Tathlum",
+		head="Luh. Keffiyeh +3",
 		neck="Incanter's Torque",
+		ear1="Digni. Earring",
 		ear2="Regal Earring",
-		ring1="Stikini Ring",
+		body="Shamash Robe",
+		hands="Regal Cuffs",
+		ring1="Metamor. Ring +1",
 		ring2="Stikini Ring",
+		back="Aurist's Cape +1",
 		waist="Eschan Stone",
 	})
 
 	-- Breath Spells --
 	
 	sets.midcast['Blue Magic'].Breath = set_combine(sets.midcast['Blue Magic'].Magical, {
-		head="Luh. Keffiyeh +2",
+		ammo="Mavi Tathlum",
+		head="Luh. Keffiyeh +3",
 	})
 
 	-- Other Types --
