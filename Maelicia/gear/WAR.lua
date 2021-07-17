@@ -143,9 +143,7 @@ function init_gear_sets()
 		ring1="Acumen Ring",
 		back="Toro Cape",
 		legs="Limbo Trousers",
-		--feet="Founder's Greaves"
-		--feet=gear.Valorous_feet_WS,
-		feet="Sulev. Leggings +2",
+		feet="Nyame Sollerets",
 	}
 
 	sets.EnmityUp = {
@@ -261,6 +259,7 @@ function init_gear_sets()
 		legs=gear.Argosy_legs_hq_D,
 		--feet="Pumm. Calligae +3"
 		feet="Sulev. Leggings +2"
+		--feet="Nyame Sollerets",
 	}
 	sets.precast.WS.AccLow = set_combine(sets.precast.WS, {
 		head=gear.Argosy_head_hq_A,
@@ -309,6 +308,7 @@ function init_gear_sets()
 		legs=gear.Valorous_legs_WS,
 		--legs=gear.Odyssean_legs_WS,
 		feet="Sulev. Leggings +2",
+		--feet="Nyame Sollerets",
 	})
 	sets.precast.WS["Upheaval"].AccLow = set_combine(sets.precast.WS['Upheaval'], {
 		hands="Tatena. Gote +1",
@@ -377,6 +377,7 @@ function init_gear_sets()
 		legs=gear.Argosy_legs_hq_D,
 		--feet="Pumm. Calligae +3"
 		feet="Sulev. Leggings +2",
+		--feet="Nyame Sollerets",
 	})
 	sets.precast.WS["King's Justice"].AccLow = set_combine(sets.precast.WS["King's Justice"], {
 		head=gear.Argosy_head_hq_A,
@@ -410,6 +411,7 @@ function init_gear_sets()
 		waist="Sailfi Belt +1",
 		legs=gear.Valorous_legs_WS,
 		feet="Sulev. Leggings +2",
+		--feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Fell Cleave'].AccLow = set_combine(sets.precast.WS['Fell Cleave'], {
 	})
@@ -468,6 +470,7 @@ function init_gear_sets()
 		legs="Pumm. Cuisses +3",
 		--legs="Sulevi. Cuisses +2",
 		feet="Sulev. Leggings +2",
+		--feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Scourge'].AccLow = set_combine(sets.precast.WS['Scourge'], {
 		legs="Sulevi. Cuisses +2",
@@ -542,7 +545,7 @@ function init_gear_sets()
 		ring2="Regal Ring",
 		back=gear.Cichol_StrWSD,
 		legs="Limbo Trousers",
-		feet="Sulev. Leggings +2",
+		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Cloudsplitter'].AccLow = set_combine(sets.precast.WS['Cloudsplitter'], {
 	})
@@ -569,6 +572,7 @@ function init_gear_sets()
 		waist="Sailfi Belt +1",
 		legs="Pumm. Cuisses +3",
 		feet="Sulev. Leggings +2",
+		--feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Savage Blade'].AccLow = set_combine(sets.precast.WS['Savage Blade'], {
 		legs=gear.Valorous_legs_WS,
@@ -608,6 +612,7 @@ function init_gear_sets()
 	})
 	
 	sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS.MAB, {
+		head="Pixie Hairpin +1",
 	})
 	sets.precast.WS['Cataclysm'].AccLow = set_combine(sets.precast.WS['Cataclysm'], {
 	})
@@ -617,6 +622,7 @@ function init_gear_sets()
 	})
 
 	sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast.WS.MAB, {
+		head="Pixie Hairpin +1",
 	})
 	sets.precast.WS['Sanguine Blade'].AccLow = set_combine(sets.precast.WS['Sanguine Blade'], {
 	})
@@ -658,6 +664,7 @@ function init_gear_sets()
 		back=gear.Cichol_StrWSD,
 		legs=gear.Valorous_legs_WS,
 		feet="Sulev. Leggings +2",
+		--feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Asuran Fists'].AccLow = set_combine(sets.precast.WS['Asuran Fists'], {
 	})
@@ -719,6 +726,7 @@ function init_gear_sets()
 		back=gear.Cichol_StrWSD,
 		legs=gear.Valorous_legs_WS,
 		feet="Sulev. Leggings +2",
+		--feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Judgment'].AccLow = set_combine(sets.precast.WS['Judgment'], {
 	})
@@ -743,6 +751,7 @@ function init_gear_sets()
 		--legs=gear.Valorous_legs_WS,
 		legs=gear.Argosy_legs_hq_D,
 		feet="Sulev. Leggings +2",
+		--feet="Nyame Sollerets",
 	})
 	sets.precast.WS["Impulse Drive"].AccLow = set_combine(sets.precast.WS["Impulse Drive"], {
 	})
@@ -762,6 +771,7 @@ function init_gear_sets()
 		back=gear.Cichol_StrWSD,
 		legs=gear.Valorous_legs_WS,
 		feet="Sulev. Leggings +2",
+		--feet="Nyame Sollerets",
 	})
 	sets.precast.WS["Stardiver"].AccLow = set_combine(sets.precast.WS["Stardiver"], {
 	})

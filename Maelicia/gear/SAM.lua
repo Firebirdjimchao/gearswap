@@ -129,8 +129,7 @@ function init_gear_sets()
 		ring1="Acumen Ring",
 		back=gear.Smertrio_WS,
 		legs="Wakido Haidate +3",
-		--feet="Founder's Greaves"
-		feet=gear.Valorous_feet_WS,
+		feet="Nyame Sollerets",
 	}
 
 	sets.STP =  {
@@ -257,7 +256,7 @@ function init_gear_sets()
 		back=gear.Smertrio_WS,
 		waist="Fotia Belt",
 		legs="Wakido Haidate +3",
-		feet=gear.Valorous_feet_WS,
+		feet="Nyame Sollerets",
 	}
 	sets.precast.WS.MidAcc = set_combine(sets.precast.WS, {
 	})
@@ -275,6 +274,7 @@ function init_gear_sets()
 	})
 	sets.precast.WS.MAB = set_combine(sets.MAB, sets.precast.WS, {
 		ring2="Beithir Ring",
+		feet="Nyame Sollerets",
 	})
 	sets.precast.WS.RA = set_combine(sets.precast.WS,{
 		ear1="Telos Earring",
@@ -322,7 +322,7 @@ function init_gear_sets()
 		waist="Sailfi Belt +1",
 		--waist="Fotia Belt",
 		legs="Wakido Haidate +3",
-		feet=gear.Valorous_feet_WS,
+		feet="Nyame Sollerets",
 	})
 	sets.precast.WS1Hit.MidAcc = set_combine(sets.precast.WS1Hit,{
 	})
@@ -409,7 +409,7 @@ function init_gear_sets()
 		back=gear.Smertrio_WS,
 		waist="Sailfi Belt +1",
 		legs="Wakido Haidate +3",
-		feet=gear.Valorous_feet_WS,
+		feet="Nyame Sollerets",
 		--feet="Flam. Gambieras +2",
 	})
 	sets.precast.WS['Tachi: Shoha'].MidAcc = set_combine(sets.precast.WS['Tachi: Shoha'], {
@@ -481,6 +481,7 @@ function init_gear_sets()
 		neck="Sam. Nodowa +2",
 		ear2="Moonshade Earring",
 		hands=gear.Valorous_hand_WS,
+		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Tachi: Jinpu'].PDT = set_combine(sets.precast.WS['Tachi: Jinpu'], sets.precast.WS.PDTBase, {
 	})
@@ -502,7 +503,7 @@ function init_gear_sets()
 		body="Sakonji Domaru +3",
 		ring2="Beithir Ring",
 		waist="Sailfi Belt +1",
-		feet=gear.Valorous_feet_WS,
+		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Impulse Drive'].MidAcc = set_combine(sets.precast.WS['Impulse Drive'], {
 	})
@@ -522,7 +523,7 @@ function init_gear_sets()
 		ring2="Beithir Ring",
 		waist="Fotia Belt",
 		legs="Ken. Hakama +1",
-		feet=gear.Valorous_feet_WS,
+		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Stardiver'].MidAcc = set_combine(sets.precast.WS['Stardiver'], {
 		ring2="Regal Ring",

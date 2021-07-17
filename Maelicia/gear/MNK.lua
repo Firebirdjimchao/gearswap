@@ -166,7 +166,7 @@ function init_gear_sets()
 		back=gear.Segomo_dex_da,
 		waist="Fotia Belt",
 		legs="Hiza. Hizayoroi +2",
-		feet=gear.Adhemar_feet_B
+		feet="Nyame Sollerets",
 	}
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
 		--head="Rao Kabuto +1",
@@ -195,7 +195,7 @@ function init_gear_sets()
 		--waist="Yamabuki-no-Obi",
 		--legs="Limbo Trousers",
 		legs=gear.Herculean_legs_Magic,
-		feet="Adhemar Gamashes"
+		feet="Nyame Sollerets",
 	})
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.

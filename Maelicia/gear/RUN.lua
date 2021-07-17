@@ -68,7 +68,7 @@ function init_gear_sets()
 		back="Toro Cape",
 		waist="Eschan Stone",
 		legs=gear.Herculean_legs_Magic,
-		feet="Adhemar Gamashes"
+		feet="Nyame Sollerets",
 	}
 
 	-- Defense sets
@@ -293,7 +293,7 @@ function init_gear_sets()
 		back=gear.aug_ogma_dex_da,
 		waist="Fotia Belt",
 		legs="Meg. Chausses +2",
-		feet=gear.Adhemar_feet_B
+		feet="Nyame Sollerets",
 	}
 	sets.precast.WS.MidAcc = set_combine(sets.precast.WS, {
 		head="Meghanada Visor +2",

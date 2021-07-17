@@ -311,7 +311,7 @@ function init_gear_sets()
 		back=gear.Rosmerta_StrWSD,
 		waist="Fotia Belt",
 		legs="Samnuha Tights",
-		feet=gear.Adhemar_feet_B
+		feet="Nyame Sollerets",
 	}
 
 	sets.precast.WS.MidAcc = set_combine(sets.precast.WS, {
@@ -340,7 +340,7 @@ function init_gear_sets()
 		back="Cornflower Cape",
 		--waist="Yamabuki-no-Obi",
 		legs="Luhlaza Shalwar +3",
-		feet=gear.Adhemar_feet_B
+		feet="Nyame Sollerets",
 		--feet="Jhakri Pigaches +2",
 	})
 
@@ -353,6 +353,7 @@ function init_gear_sets()
 		back=gear.Rosmerta_StrWSD,
 		waist="Sailfi Belt +1",
 		legs="Luhlaza Shalwar +3",
+		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Savage Blade'].MidAcc = set_combine(sets.precast.WS['Savage Blade'], {
 	})
@@ -377,7 +378,8 @@ function init_gear_sets()
 		ring2="Epona's Ring",
 		waist="Fotia Belt",
 		legs="Jhakri Slops +2",
-		feet="Jhakri Pigaches +2",
+		--feet="Jhakri Pigaches +2",
+		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Requiescat'].MidAcc = set_combine(sets.precast.WS['Requiescat'], {
 	})
@@ -418,7 +420,6 @@ function init_gear_sets()
 		waist=gear.ElementalObi,
 		--legs=gear.Amalric_legs_D,
 		legs="Luhlaza Shalwar +3",
-		--feet=gear.Adhemar_feet_B
 		feet="Jhakri Pigaches +2",
 	}
 
@@ -476,7 +477,8 @@ function init_gear_sets()
 		back=gear.Rosmerta_StrWSD,
 		waist="Sailfi Belt +1",
 		legs="Luhlaza Shalwar +3",
-		feet="Jhakri Pigaches +2",
+		--feet="Jhakri Pigaches +2",
+		feet="Nyame Sollerets",
 	})
 
 	sets.midcast['Blue Magic'].PhysicalAcc = set_combine(sets.midcast['Blue Magic'].Physical, {
@@ -700,7 +702,7 @@ function init_gear_sets()
 		back=gear.Rosmerta_DexSTP,
 		waist="Windbuffet Belt +1",
 		legs="Samnuha Tights",
-		feet=gear.Adhemar_feet_B
+		feet=gear.Carmine_feet_hq_B,
 	}
 
 	sets.engaged.MidAcc = set_combine(sets.engaged, {

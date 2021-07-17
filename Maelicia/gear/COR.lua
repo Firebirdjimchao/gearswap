@@ -144,7 +144,6 @@ function init_gear_sets()
 		--legs=gear.pursuer_legs_A,
 		-- 9% SS + 10% RS
 		legs=gear.Adhemar_legs_D,
-		--feet=gear.Adhemar_feet_D
 		-- 10% SS
 		feet="Meg. Jam. +2",
 	}
@@ -164,7 +163,7 @@ function init_gear_sets()
 		back="Atheling Mantle",
 		waist="Fotia Belt",
 		legs="Samnuha Tights",
-		feet="Rawhide Boots"
+		feet="Nyame Sollerets",
 	}
 	
 	sets.precast.WS.MAB = set_combine(sets.precast.WS,{
@@ -180,7 +179,7 @@ function init_gear_sets()
 		--waist="Eschan Stone",
 		--legs="Shned. Tights +1",
 		legs=gear.Herculean_legs_Magic,
-		feet="Adhemar Gamashes"
+		feet="Nyame Sollerets",
 	})
 
 	sets.precast.WS.RA = set_combine(sets.precast.WS,{
@@ -255,7 +254,7 @@ function init_gear_sets()
 		waist="Eschan Stone",
 		--legs="Shned. Tights +1",
 		legs=gear.Herculean_legs_Magic,
-		feet="Adhemar Gamashes"
+		feet="Nyame Sollerets",
 	}
 
 	sets.midcast.CorsairShot.Acc = set_combine(sets.midcast.CorsairShot, {

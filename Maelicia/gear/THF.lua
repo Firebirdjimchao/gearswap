@@ -86,7 +86,7 @@ function init_gear_sets()
 		back=gear.jsecape_dex_dw,
 		waist="Reiki Yotai",
 		legs="Pill. Culottes +3",
-		feet=gear.Adhemar_feet_B
+		feet="Plun. Poulaines +3"
 	}
 
 	sets.buff['Trick Attack'] = {
@@ -239,7 +239,7 @@ function init_gear_sets()
 		--waist="Eschan Stone",
 		--legs="Limbo Trousers",
 		legs=gear.Herculean_legs_Magic,
-		feet=gear.Adhemar_feet_B
+		feet="Nyame Sollerets",
 	})
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -369,7 +369,8 @@ function init_gear_sets()
 		waist="Grunfeld Rope",
 		--legs="Lustr. Subligar +1",
 		legs="Plun. Culottes +3",
-		feet="Lustra. Leggings +1"
+		feet="Lustra. Leggings +1",
+		feet="Nyame Sollerets",
 	})
 	sets.precast.WS["Rudra's Storm"].MidAcc = set_combine(sets.precast.WS.MidAcc, sets.precast.WS["Rudra's Storm"], {
 		body="Plunderer's Vest +3",
@@ -404,7 +405,8 @@ function init_gear_sets()
 		waist="Grunfeld Rope",
 		--legs="Lustr. Subligar +1",
 		legs="Plun. Culottes +3",
-		feet="Lustra. Leggings +1"
+		feet="Lustra. Leggings +1",
+		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Shark Bite'].MidAcc = set_combine(sets.precast.WS.MidAcc, sets.precast.WS["Shark Bite"], {
 		body="Plunderer's Vest +3",
@@ -439,7 +441,8 @@ function init_gear_sets()
 		waist="Grunfeld Rope",
 		--legs="Lustr. Subligar +1",
 		legs="Plun. Culottes +3",
-		feet="Lustra. Leggings +1"
+		feet="Lustra. Leggings +1",
+		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Mandalic Stab'].MidAcc = set_combine(sets.precast.WS.MidAcc, sets.precast.WS['Mandalic Stab'], {
 		body="Plunderer's Vest +3",

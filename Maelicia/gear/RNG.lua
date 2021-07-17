@@ -325,7 +325,7 @@ function init_gear_sets()
 		back=gear.aug_belenus_ws,
 		waist="Fotia Belt",
 		legs="Samnuha Tights",
-		feet=gear.Adhemar_feet_B
+		feet="Nyame Sollerets",
 	}
 
 	sets.precast.WS.MaxTP = {
@@ -367,7 +367,7 @@ function init_gear_sets()
 		back=gear.aug_belenus_ws,
 		--waist="Eschan Stone",
 		legs="Gyve Trousers", -- from a purely MAB perspective, as Gyve has MAB +40, vs. Herculean_legs_Magic with MAB +30
-		feet=gear.Adhemar_feet_B
+		feet="Nyame Sollerets",
 	})
 	
 	sets.precast.WS.RA = set_combine(sets.precast.WS, {
@@ -408,6 +408,7 @@ function init_gear_sets()
 	})
 	
 	sets.precast.WS.MABRA = set_combine(sets.precast.WS.MAB, {
+		head=empty,
 		--neck="Sanctity Necklace",
 		neck="Scout's Gorget +2",
 		ear1="Moonshade Earring",
@@ -420,7 +421,7 @@ function init_gear_sets()
 		--waist=gear.ElementalObi,
 		legs=gear.Herculean_legs_Magic,
 		--legs="Arc. Braccae +3",
-		feet=gear.Adhemar_feet_B,
+		feet="Nyame Sollerets",
 	})
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -465,7 +466,8 @@ function init_gear_sets()
 		back=gear.aug_belenus_ws_ag,
 		waist="Fotia Belt",
 		legs="Arc. Braccae +3",
-		feet=gear.Herculean_feet_RA
+		--feet=gear.Herculean_feet_RA
+		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Coronach'].MidAcc = set_combine(sets.precast.WS['Coronach'], {
 		body="Arc. Jerkin +3",
@@ -497,7 +499,7 @@ function init_gear_sets()
 		--waist=gear.ElementalObi,
 		legs=gear.Herculean_legs_Magic,
 		--legs="Arc. Braccae +3",
-		feet=gear.Adhemar_feet_B,
+		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Wildfire'].MidAcc = set_combine(sets.precast.WS['Wildfire'], {
 	})
@@ -522,7 +524,7 @@ function init_gear_sets()
 		--waist=gear.ElementalObi,
 		legs=gear.Herculean_legs_Magic,
 		--legs="Arc. Braccae +3",
-		feet=gear.Adhemar_feet_B,
+		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Trueflight'].MidAcc = set_combine(sets.precast.WS['Trueflight'], {
 	})
@@ -608,14 +610,17 @@ function init_gear_sets()
 	
 	-- 50% MND / 30% STR, No SC elements so Elemental Gorget/Belt wont have an effect
 	sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast.WS.MABRA, {
+		head="Pixie Hairpin +1",
 		neck="Sanctity Necklace",
 		ear1="Moonshade Earring",
+		body=gear.Herculean_body_Magic,
 		--ring1="Ilabrat Ring",
 		ring1="Beithir Ring",
 		ring2="Regal Ring",
 		back=gear.aug_belenus_ws,
 		waist="Eschan Stone",
 		legs=gear.Herculean_legs_Magic,
+		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Sanguine Blade'].MidAcc = set_combine(sets.precast.WS['Sanguine Blade'], {
 	})
@@ -638,7 +643,7 @@ function init_gear_sets()
 		back=gear.aug_belenus_ws,
 		waist="Sailfi Belt +1",
 		legs="Arc. Braccae +3",
-		feet="Mummu Gamash. +2",
+		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Savage Blade'].MidAcc = set_combine(sets.precast.WS['Savage Blade'], {
 	})
@@ -1070,7 +1075,6 @@ function init_gear_sets()
 		back="Atheling Mantle",
 		waist="Windbuffet Belt +1",
 		legs="Meg. Chausses +2",
-		--feet=gear.Adhemar_feet_B,
 		feet="Tatena. Sune. +1",
 	})
 	

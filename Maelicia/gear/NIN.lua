@@ -291,7 +291,7 @@ function init_gear_sets()
 		ring2="Dingir Ring",
 		waist="Eschan Stone",
 		legs=gear.Herculean_legs_Magic,
-		--feet="Adhemar Gamashes",
+		--feet="Nyame Sollerets",
 		feet="Mochi. Kyahan +3",
 	}
 
@@ -657,7 +657,7 @@ function init_gear_sets()
 		back="Toro Cape",
 		--waist="Eschan Stone",
 		legs=gear.Herculean_legs_Magic,
-		feet="Adhemar Gamashes",
+		feet="Nyame Sollerets",
 	})
 	
 	sets.Kamu = set_combine(sets.precast.WS, {
@@ -730,7 +730,7 @@ function init_gear_sets()
 		back=Andartia.DEX,
 		waist="Grunfeld Rope",
 		legs="Mochi. Hakama +3",
-		feet=gear.Adhemar_feet_B,
+		feet="Nyame Sollerets",
 	})
 	
 	sets.precast.WS['Blade: Ten'] = set_combine(sets.precast.WS, sets.Ten)
