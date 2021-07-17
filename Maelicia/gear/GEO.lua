@@ -1011,10 +1011,8 @@ function init_gear_sets()
 		feet="Bagua Sandals +3",
 	}
 
-	-- 22% Haste
+	-- 24% Haste
 	sets.engaged.MidAcc = set_combine(sets.engaged, {
-		-- 6% Haste
-		head="Bagua Galero +3",
 		neck="Lissome Necklace",
 		ring1="Cacoethic Ring +1",
 		back="Aurist's Cape +1",
