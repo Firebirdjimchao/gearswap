@@ -74,19 +74,19 @@ function init_gear_sets()
 
 	-- Precast sets to enhance JAs
 
-	sets.precast.JA['No Foot Rise'] = {body="Horos Casaque"}
+	sets.precast.JA['No Foot Rise'] = {body="Horos Casaque +3"}
 
-	sets.precast.JA['Trance'] = {head="Horos Tiara +1"}
+	sets.precast.JA['Trance'] = {head="Horos Tiara +3"}
 
 
 	-- Waltz set (chr and vit)
 
-	-- 58%
+	-- 54% (50% cap)
 	sets.precast.Waltz = {
-		-- 11%
-		head="Horos Tiara +1",
+		-- 15%
+		head="Horos Tiara +3",
 		-- 5%
-		ear1="Roundel Earring",
+		--ear1="Roundel Earring",
 		-- 10%
 		ear2="Sjofn Earring",
 		-- 17%
@@ -95,11 +95,11 @@ function init_gear_sets()
 		ring1="Dark Ring",
 		ring2="Sirona's Ring",
 		-- 5%
-		back=gear.AugMantleRev,
+		--back=gear.AugMantleRev,
 		waist="Chaac Belt",
 		legs="Horos Tights +3",
-		-- 10%
-		feet="Maxixi Shoes +1"
+		-- 12%
+		feet="Maxixi Shoes +2"
 	}
 		
 	-- Don't need any special gear for Healing Waltz.
@@ -111,37 +111,47 @@ function init_gear_sets()
 
 	sets.precast.Jig = {
 		legs="Horos Tights +3",
-		feet="Maxixi Shoes +1"
+		feet="Maxixi Shoes +2",
 	}
 
 	sets.precast.Acc = {
 		--ammo="Jukukik Feather",
 		head="Malignance Chapeau",
+		--head="Maxixi Tiara +3",
+		ear1="Telos Earring",
 		ear2="Zennaroi Earring",
 		neck="Sanctity Necklace",
 		body="Meg. Cuirie +2",
 		hands="Malignance Gloves",
+		--hands="Maxixi Bangles +3",
 		ring1="Cacoethic Ring",
 		ring2="Chirich Ring",
 		back=gear.Senuna_DexDa,
 		waist="Eschan Stone",
 		legs="Horos Tights +3",
 		feet="Malignance Boots",
+		--feet="Maxixi Shoes +3",
 	}
 	sets.precast.Macc = {
 		head="Malignance Chapeau",
+		--head="Maxixi Tiara +3",
 		neck="Sanctity Necklace",
 		ear1="Hermetic Earring",
 		body="Mummu Jacket +2",
 		hands="Malignance Gloves",
+		--hands="Maxixi Bangles +3",
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
 		waist="Eschan Stone",
 		legs="Horos Tights +3",
 		feet="Malignance Boots",
+		--feet="Maxixi Shoes +3",
 	}
 
 	sets.precast.Step = set_combine(sets.precast.Acc,{
+		head="Maxixi Tiara +2",
+		hands="Maxixi Bangles +2",
+		feet="Horos T. Shoes +3",
 	})
 	sets.precast.Step['Feather Step'] = set_combine(sets.precast.Step,{
 		feet="Macu. Toe Shoes +1"
@@ -149,8 +159,7 @@ function init_gear_sets()
 
 	sets.precast.Flourish1 = {}
 	sets.precast.Flourish1['Violent Flourish'] = set_combine(sets.precast.Macc,{
-		body="Horos Casaque"
-		--body="Horos Casaque +1"
+		body="Horos Casaque +3"
 	})
 	sets.precast.Flourish1['Desperate Flourish'] = set_combine(sets.precast.Acc,{
 	})
@@ -234,7 +243,7 @@ function init_gear_sets()
 		head=gear.Adhemar_head_B,
 		ear1="Sherida Earring",
 		ear2="Brutal Earring",
-		body="Meg. Cuirie +2",
+		body="Horos Casaque +3",
 		hands="Meg. Gloves +2",
 		ring1="Garuda Ring +1",
 		ring2="Garuda Ring +1",
@@ -250,7 +259,7 @@ function init_gear_sets()
 
 	-- 40% DEX / 40% STR
 	sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, {
-		body="Meg. Cuirie +2",
+		body="Horos Casaque +3",
 		legs="Samnuha Tights",
 		feet="Meg. Jam. +2",
 	})
@@ -427,38 +436,32 @@ function init_gear_sets()
 		back=gear.Senuna_DexDa,
 		waist="Patentia Sash",
 		legs="Meg. Chausses +2",
-		feet="Macu. Toe Shoes +1",
+		feet="Horos T. Shoes +3",
 	}
 	sets.engaged.MidAcc = set_combine(sets.engaged,{
 		ammo="Honed Tathlum",
-		head="Malignance Chapeau",
+		head="Horos Tiara +3",
 		neck="Defiant Collar",
 		body="Mummu Jacket +2",
 		hands="Malignance Gloves",
 		ring1="Cacoethic Ring",
-		feet="Malignance Boots",
 	})
 	sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc,{
-		head="Malignance Chapeau",
+		head="Horos Tiara +3",
 		ear2="Zennaroi Earring",
 		hands="Malignance Gloves",
 		waist="Eschan Stone",
-		feet="Malignance Boots",
 	})
 	sets.engaged.FullAcc = set_combine(sets.engaged.HighAcc,{
 	})
 
 	sets.engaged.Evasion = set_combine(sets.engaged,{
-		body="Meg. Cuirie +2",
 	})
 	sets.engaged.MidAcc.Evasion = set_combine(sets.engaged.MidAcc,{
-		body="Meg. Cuirie +2",
 	})
 	sets.engaged.HighAcc.Evasion = set_combine(sets.engaged.HighAcc,{
-		body="Meg. Cuirie +2",
 	})
 	sets.engaged.FullAcc.Evasion = set_combine(sets.engaged.FullAcc,{
-		body="Meg. Cuirie +2",
 	})
 
 	sets.engaged.PDT = set_combine(sets.engaged.Evasion,{
@@ -671,9 +674,10 @@ function init_gear_sets()
 	sets.engaged.MaxHaste = set_combine(sets.engaged,{
 		ear1="Brutal Earring",
 		ear2="Sherida Earring",
-		body="Mummu Jacket +2",
+		body="Horos Casaque +3",
 		waist="Windbuffet Belt +1",
 		legs="Samnuha Tights",
+		feet="Horos T. Shoes +3",
 	})
 	sets.engaged.MidAcc.MaxHaste = set_combine(sets.engaged.MidAcc,{
 		ammo="Charis Feather",
