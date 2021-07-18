@@ -304,7 +304,7 @@ function init_gear_sets()
 		neck="Fotia Gorget",
 		ear1="Ishvara Earring",
 		ear2="Moonshade Earring",
-		body=gear.Adhemar_body_B,
+		body=gear.Adhemar_body_hq_B,
 		hands=gear.Adhemar_hands_hq_B,
 		ring1="Ilabrat Ring",
 		ring2="Epona's Ring",
@@ -698,7 +698,7 @@ function init_gear_sets()
 		neck="Asperity Necklace",
 		ear1="Brutal Earring",
 		ear2="Suppanomimi",
-		body=gear.Adhemar_body_B,
+		body=gear.Adhemar_body_hq_B,
 		hands=gear.Adhemar_hands_hq_B,
 		ring1="Ilabrat Ring",
 		ring2="Epona's Ring",
@@ -716,7 +716,8 @@ function init_gear_sets()
 
 	sets.engaged.Acc = set_combine(sets.engaged.MidAcc, {
 		head="Malignance Chapeau",
-		body="Malignance Tabard",
+		--body="Malignance Tabard",
+		body=gear.Adhemar_body_hq_B,
 		--hands="Malignance Gloves",
 		hands=gear.Adhemar_hands_hq_B,
 		legs="Malignance Tights",
@@ -733,6 +734,7 @@ function init_gear_sets()
 	sets.engaged.DW = set_combine(sets.engaged, {
 		ear1="Brutal Earring",
 		ear2="Suppanomimi",
+		body=gear.Adhemar_body_hq_B,
 		ring2="Haverton Ring",
 		waist="Reiki Yotai",
 		legs=gear.Carmine_legs_hq_D,

@@ -677,15 +677,15 @@ function init_gear_sets()
 	
 	-- Normal melee group
 	-- DW needed: 49 (44 with gift)
-	-- 33 Gear DW
+	-- 34 Gear DW
 	sets.engaged = {
 		head=gear.Adhemar_head_hq_B,
 		neck="Iskur Gorget",
 		ear1="Sherida Earring",
 		-- 5 DW
 		ear2="Suppanomimi",
-		-- 5 DW
-		body=gear.Adhemar_body_B,
+		-- 6 DW
+		body=gear.Adhemar_body_hq_B,
 		-- 5 DW
 		hands="Pill. Armlets +3",
 		ring1="Epona's Ring",

@@ -318,7 +318,7 @@ function init_gear_sets()
 		--ear1="Brutal Earring",
 		ear1="Sherida Earring",
 		ear2="Moonshade Earring",
-		body=gear.Adhemar_body_B,
+		body=gear.Adhemar_body_hq_B,
 		hands="Meg. Gloves +2",
 		ring1="Ilabrat Ring",
 		ring2="Rajas Ring",
@@ -343,7 +343,7 @@ function init_gear_sets()
 
 	sets.precast.WS.FullAcc = set_combine(sets.precast.WS, {
 		head="Meghanada Visor +2",
-		body=gear.Adhemar_body_B,
+		body=gear.Adhemar_body_hq_B,
 		ring1="Ilabrat Ring",
 		ring2="Regal Ring",
 		--legs="Meg. Chausses +2",
@@ -655,10 +655,10 @@ function init_gear_sets()
 	-- 50% DEX, crit rate varies with TP
 	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
 		head=gear.Adhemar_head_hq_B,
-		body="Tatena. Harama. +1",
+		body=gear.Adhemar_body_hq_B,
 		ear1="Odr Earring",
 		ear2="Moonshade Earring",
-		hands="Mummu Wrists +2",
+		hands=gear.Adhemar_hands_hq_B,
 		ring1="Mummu Ring",
 		ring2="Regal Ring",
 		back=gear.aug_belenus_ws,
@@ -1066,10 +1066,8 @@ function init_gear_sets()
 		neck="Asperity Necklace",
 		ear1="Sherida Earring",
 		ear2="Brutal Earring",
-		--body=gear.Adhemar_body_B,
-		body="Tatena. Harama. +1",
-		--hands=gear.Adhemar_hands_hq_B,
-		hands="Tatena. Gote +1",
+		body=gear.Adhemar_body_hq_B,
+		hands=gear.Adhemar_hands_hq_B,
 		ring1="Epona's Ring",
 		ring2="Petrov Ring",
 		back="Atheling Mantle",

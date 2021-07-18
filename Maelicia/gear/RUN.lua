@@ -286,7 +286,7 @@ function init_gear_sets()
 		--ear1="Brutal Earring",
 		ear1="Sherida Earring",
 		ear2="Moonshade Earring",
-		body=gear.Adhemar_body_B,
+		body=gear.Adhemar_body_hq_B,
 		hands="Meg. Gloves +2",
 		ring1="Niqmaddu Ring",
 		ring2="Epona Ring",
@@ -311,7 +311,7 @@ function init_gear_sets()
 	sets.precast.WS['Resolution'] = set_combine(sets.precast.WS,{
 	})
 	sets.precast.WS['Resolution'].MidAcc = set_combine(sets.precast.WS['Resolution'], {
-		head="Meghanada Visor +2",
+		--head="Meghanada Visor +2",
 		body="Meg. Cuirie +2",
 		ring2="Regal Ring",
 		feet="Meg. Jam. +2",
@@ -322,9 +322,13 @@ function init_gear_sets()
  
  	-- 80% DEX, damage varies with TP
 	sets.precast.WS['Dimidiation'] = set_combine(sets.precast.WS,{
+		ammo="Knobkierrie",
 		head="Dampening Tam",
 		ear1="Odr Earring",
-		body=gear.Herculean_body_WS,
+		--body=gear.Herculean_body_WS,
+		body=gear.Adhemar_body_hq_B,
+		ring2="Ilabrat Ring",
+		waist="Grunfeld Rope",
 		legs="Lustr. Subligar +1",
 		feet="Lustra. Leggings +1"
 	})
@@ -557,7 +561,7 @@ function init_gear_sets()
 		neck="Anu Torque",
 		ear1="Telos Earring",
 		ear2="Sherida earring",
-		body=gear.Adhemar_body_B,
+		body=gear.Adhemar_body_hq_B,
 		hands=gear.Adhemar_hands_hq_B,
 		ring1="Niqmaddu Ring",
 		ring2="Epona's Ring",
@@ -571,8 +575,8 @@ function init_gear_sets()
 	sets.engaged.MeleeMidAcc = set_combine(sets.engaged.Melee, {
 		head="Dampening Tam",
 		neck="Lissome Necklace",
-		body="Meg. Cuirie +2",
-		hands="Meg. Gloves +2",
+		--body="Meg. Cuirie +2",
+		--hands="Meg. Gloves +2",
 		legs="Meg. Chausses +2",
 	})
 	

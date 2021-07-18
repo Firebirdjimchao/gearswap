@@ -102,7 +102,7 @@ function init_gear_sets()
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {
 		head="Mummu Bonnet +2",
-		body=gear.Adhemar_body_B,
+		body=gear.Adhemar_body_hq_B,
 		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Sirona's Ring",
@@ -156,7 +156,7 @@ function init_gear_sets()
 		neck="Fotia Gorget",
 		ear1="Moonshade Earring",
 		ear2="Brutal Earring",
-		body=gear.Adhemar_body_B,
+		body=gear.Adhemar_body_hq_B,
 		hands=gear.Adhemar_hands_hq_B,
 		ring1="Epona's Ring",
 		ring2="Rajas Ring",
@@ -396,11 +396,11 @@ function init_gear_sets()
 	-- Normal melee group
 	sets.engaged.Melee = {
 		ammo=gear.RAbullet,
-		head="",
+		head=gear.Adhemar_head_hq_B,
 		neck="Asperity Necklace",
 		ear1="Telos Earring",
 		ear2="Brutal Earring",
-		body=gear.Adhemar_body_B,
+		body=gear.Adhemar_body_hq_B,
 		hands=gear.Adhemar_hands_hq_B,
 		ring1="Epona's Ring",
 		ring1="Rajas Ring",

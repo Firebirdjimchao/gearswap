@@ -171,7 +171,7 @@ function init_gear_sets()
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
 		--head="Rao Kabuto +1",
 		head="Mpaca's Cap",
-		body=gear.Adhemar_body_B,
+		body=gear.Adhemar_body_hq_B,
 		hands=gear.Adhemar_hands_hq_B,
 		back=gear.Segomo_dex_da,
 		legs="Hiza. Hizayoroi +2",
@@ -226,7 +226,8 @@ function init_gear_sets()
 		neck="Mnk. Nodowa +2",
 		ear1="Sherida Earring",
 		ear2="Moonshade Earring",
-		body="Tatena. Harama +1",
+		--body="Tatena. Harama +1",
+		body=gear.Adhemar_body_hq_B,
 		hands=gear.Adhemar_hands_hq_B,
 		ring1="Niqmaddu Ring",
 		ring2="Gere Ring",
