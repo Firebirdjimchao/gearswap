@@ -633,10 +633,11 @@ function init_gear_sets()
 		waist="Flume Belt +1",
 		--legs="Lengo Pants",
 		legs="Carmine cuisses +1",
-		feet="Malignance Boots",
+		--feet="Malignance Boots",
+		feet="Nyame Sollerets",
 	}
 
-	-- DT: 52%
+	-- DT: 55%
 	--
 	sets.idle.PDT = {
 		-- DT 2%
@@ -664,7 +665,9 @@ function init_gear_sets()
 		--legs="Aya. Cosciales +2",
 		legs="Carmine cuisses +1",
 		-- DT 4%
-		feet="Malignance Boots",
+		--feet="Malignance Boots",
+		-- DT 7%
+		feet="Nyame Sollerets",
 	}
 
 
