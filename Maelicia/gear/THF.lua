@@ -169,8 +169,6 @@ function init_gear_sets()
 		hands="Leyline Gloves",
 		-- 2%
 		ring1="Prolix Ring",
-		-- 3% 6H
-		--legs="Limbo Trousers",
 		-- 5% 6H
 		legs=gear.Herculean_legs_Magic,
 		-- 4H
@@ -237,8 +235,7 @@ function init_gear_sets()
 		ring1="Acumen Ring",
 		back=gear.jsecape_dex_wsd,
 		--waist="Eschan Stone",
-		--legs="Limbo Trousers",
-		legs=gear.Herculean_legs_Magic,
+		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
 	})
 

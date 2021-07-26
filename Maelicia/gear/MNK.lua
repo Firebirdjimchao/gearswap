@@ -141,7 +141,6 @@ function init_gear_sets()
 		body="Taeon Tabard",
 		hands="Leyline Gloves",
 		ring1="Prolix Ring",
-		--legs="Limbo Trousers"
 		legs=gear.Herculean_legs_Magic,
 	}
 
@@ -193,8 +192,8 @@ function init_gear_sets()
 		ring1="Acumen Ring",
 		back="Toro Cape",
 		--waist="Yamabuki-no-Obi",
-		--legs="Limbo Trousers",
-		legs=gear.Herculean_legs_Magic,
+		--legs=gear.Herculean_legs_Magic,
+		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
 	})
 

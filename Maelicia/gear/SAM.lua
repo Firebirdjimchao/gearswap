@@ -230,7 +230,7 @@ function init_gear_sets()
 		-- 2%
 		--ring2="Rahab Ring",
 		-- 3%
-		legs="Limbo Trousers"
+		--legs="Limbo Trousers",
 	}
 	
 	-- Ranged sets (snapshot)

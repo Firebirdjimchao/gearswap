@@ -142,7 +142,7 @@ function init_gear_sets()
 		hands="Leyline Gloves",
 		ring1="Acumen Ring",
 		back="Toro Cape",
-		legs="Limbo Trousers",
+		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
 	}
 
@@ -209,7 +209,7 @@ function init_gear_sets()
 	sets.precast.Waltz['Healing Waltz'] = {}
  
 	-- Sets for fast cast gear for spells
-	-- 43%/21% Total
+	-- 35%/17% Total
 	sets.precast.FC = {
 		-- 8%
 		head="Sakpata's Helm",
@@ -231,11 +231,11 @@ function init_gear_sets()
 		-- 2%
 		--ring2="Rahab Ring",
 		-- 3%
-		legs="Limbo Trousers",
+		--legs="Limbo Trousers",
 		-- 4%
 		--legs="Arjuna Breeches",
 		-- 5%
-		feet="Odyssean Greaves",
+		--feet="Odyssean Greaves",
 	}
  
 	-- Fast cast gear for specific spells or spell maps
@@ -305,8 +305,7 @@ function init_gear_sets()
 		back=gear.Cichol_VitWSD,
 		waist="Ioskeha Belt +1",
 		--waist="Sailfi Belt +1",
-		legs=gear.Valorous_legs_WS,
-		--legs=gear.Odyssean_legs_WS,
+		legs="Nyame Flanchard",
 		feet="Sulev. Leggings +2",
 		--feet="Nyame Sollerets",
 	})
@@ -409,7 +408,7 @@ function init_gear_sets()
 		ring2="Regal Ring",
 		back=gear.Cichol_StrWSD,
 		waist="Sailfi Belt +1",
-		legs=gear.Valorous_legs_WS,
+		legs="Nyame Flanchard",
 		feet="Sulev. Leggings +2",
 		--feet="Nyame Sollerets",
 	})
@@ -544,7 +543,7 @@ function init_gear_sets()
 		ring1="Beithir Ring",
 		ring2="Regal Ring",
 		back=gear.Cichol_StrWSD,
-		legs="Limbo Trousers",
+		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Cloudsplitter'].AccLow = set_combine(sets.precast.WS['Cloudsplitter'], {
@@ -570,12 +569,13 @@ function init_gear_sets()
 		ring2="Regal Ring",
 		back=gear.Cichol_StrWSD,
 		waist="Sailfi Belt +1",
-		legs="Pumm. Cuisses +3",
+		--legs="Pumm. Cuisses +3",
+		legs="Nyame Flanchard",
 		feet="Sulev. Leggings +2",
 		--feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Savage Blade'].AccLow = set_combine(sets.precast.WS['Savage Blade'], {
-		legs=gear.Valorous_legs_WS,
+		legs="Nyame Flanchard",
 	})
 	sets.precast.WS['Savage Blade'].AccHigh = set_combine(sets.precast.WS['Savage Blade'], {
 	})
@@ -662,7 +662,7 @@ function init_gear_sets()
 		body="Pumm. Lorica +3",
 		hands=gear.Odyssean_hands_WS,
 		back=gear.Cichol_StrWSD,
-		legs=gear.Valorous_legs_WS,
+		legs="Nyame Flanchard",
 		feet="Sulev. Leggings +2",
 		--feet="Nyame Sollerets",
 	})
@@ -724,7 +724,7 @@ function init_gear_sets()
 		hands=gear.Odyssean_hands_WS,
 		ring1="Beithir Ring",
 		back=gear.Cichol_StrWSD,
-		legs=gear.Valorous_legs_WS,
+		legs="Nyame Flanchard",
 		feet="Sulev. Leggings +2",
 		--feet="Nyame Sollerets",
 	})
@@ -748,7 +748,7 @@ function init_gear_sets()
 		ring2="Regal Ring",
 		--ring2="Beithir Ring",
 		back=gear.Cichol_StrWSD,
-		--legs=gear.Valorous_legs_WS,
+		--legs="Nyame Flanchard",
 		legs=gear.Argosy_legs_hq_D,
 		feet="Sulev. Leggings +2",
 		--feet="Nyame Sollerets",
@@ -769,7 +769,7 @@ function init_gear_sets()
 		body="Pumm. Lorica +3",
 		hands=gear.Odyssean_hands_WS,
 		back=gear.Cichol_StrWSD,
-		legs=gear.Valorous_legs_WS,
+		legs="Nyame Flanchard",
 		feet="Sulev. Leggings +2",
 		--feet="Nyame Sollerets",
 	})
