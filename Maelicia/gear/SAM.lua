@@ -78,43 +78,38 @@ function init_gear_sets()
 	-- Base sets
 	--------------------------------------
 
-	-- 33% DT 28% PDT 10% MDT 30 MDB (43% DT if using Khonsu)
+	-- DT: 61%
+	-- PDT: 9%
+	-- MDT: 5%
+	-- Eva: 477
+	-- Meva: 674
 	sets.DT = {
-		-- 6& DT
-		--sub="Khonsu",
-		-- 3% DT
+		-- DT 3% Ailment 11
 		ammo="Staunch Tathlum +1",
-		-- 7% PDT
-		head="Mpaca's Cap",
-		-- 2% MDT
-		ear1="Odnowa Earring +1",
-		-- 3% MDT
-		ear2="Etiolation Earring",
-		-- 6% DT
+		-- DT 7% Eva 91 Meva 123
+		head="Nyame Helm",
+		-- DT 6%
 		neck="Loricate Torque +1",
-		-- 10% DT 6 MDB
-		--body="Tartarus Platemail",
-		-- 8% DT 5 MDB
-		--body="Wakido Domaru +3",
-		-- 9% DT 8 MDB
+		-- MDT 2%
+		ear1="Odnowa earring +1",
+		-- MDT 3%
+		ear2="Etiolation Earring",
+		-- DT 9% Eva 102 Meva 139
 		body="Nyame Mail",
-		-- 6% PDT 3 MDB
-		hands="Sakonji Kote +3",
-		--ring1="Niqmaddu Ring",
-		-- 5% PDT 5% MDT
+		-- DT 7% Eva 80 Meva 112
+		hands="Nyame Gauntlets",
+		-- PDT 5% MDT 5%
 		ring1="Dark Ring",
-		-- 10% DT
+		-- DT 10%
 		ring2="Defending Ring",
 		-- 5% DT
 		back=gear.Smertrio_STP,
-		-- 4% PDT
+		-- PDT 4%
 		waist="Flume Belt +1",
-		-- 8 MDB
-		legs="Ken. Hakama +1",
-		-- 4% DT 2 MDB
-		--feet="Amm Greaves",
-		-- 6% PDT 12 MDB
-		feet="Mpaca's Boots",
+		-- DT 7% Eva 85 Meva 150
+		legs="Nyame Flanchard",
+		-- DT 7% Eva 119 Meva 150
+		feet="Nyame Sollerets",
 	}
 
 	sets.MAB = {
@@ -450,7 +445,7 @@ function init_gear_sets()
 	-- 40% STR 60% CHR (1-hit), DEF down effect accuracy affected by MACC
 	sets.precast.WS['Tachi: Ageha'] = set_combine(sets.precast.WS, {
 		ammo="Pemphredo Tathlum",
-		head="Mpaca's Cap",
+		head="Blistering Sallet +1",
 		ear1="Hermetic Earring",
 		ear2="Digni. Earring",
 		neck="Sanctity Necklace",
@@ -501,8 +496,10 @@ function init_gear_sets()
 		neck="Sam. Nodowa +2",
 		ear2="Moonshade Earring",
 		body="Sakonji Domaru +3",
+		hands="Nyame Gauntlets",
 		ring2="Beithir Ring",
 		waist="Sailfi Belt +1",
+		legs="Wakido Haidate +3",
 		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Impulse Drive'].MidAcc = set_combine(sets.precast.WS['Impulse Drive'], {
@@ -510,6 +507,26 @@ function init_gear_sets()
 	sets.precast.WS['Impulse Drive'].HighAcc = set_combine(sets.precast.WS['Impulse Drive'], {
 	})
 	sets.precast.WS['Impulse Drive'].FullAcc = set_combine(sets.precast.WS['Impulse Drive'], {
+	})
+
+	-- 40% STR/40% DEX, Damage varies with TP, WS at 1750
+	sets.precast.WS['Sonic Thrust'] = set_combine(sets.precast.WS, {
+		ammo="Knobkierrie",
+		head="Mpaca's Cap",
+		neck="Sam. Nodowa +2",
+		ear2="Moonshade Earring",
+		body="Sakonji Domaru +3",
+		hands="Nyame Gauntlets",
+		ring2="Beithir Ring",
+		waist="Sailfi Belt +1",
+		legs="Wakido Haidate +3",
+		feet="Nyame Sollerets",
+	})
+	sets.precast.WS['Sonic Thrust'].MidAcc = set_combine(sets.precast.WS['Sonic Thrust'], {
+	})
+	sets.precast.WS['Sonic Thrust'].HighAcc = set_combine(sets.precast.WS['Sonic Thrust'], {
+	})
+	sets.precast.WS['Sonic Thrust'].FullAcc = set_combine(sets.precast.WS['Sonic Thrust'], {
 	})
 
 	-- 73%~85%STR, 4-hit, Damage varies with TP
@@ -523,7 +540,7 @@ function init_gear_sets()
 		ring2="Beithir Ring",
 		waist="Fotia Belt",
 		legs="Ken. Hakama +1",
-		feet="Nyame Sollerets",
+		feet="Tatena. Sune. +1",
 	})
 	sets.precast.WS['Stardiver'].MidAcc = set_combine(sets.precast.WS['Stardiver'], {
 		ring2="Regal Ring",

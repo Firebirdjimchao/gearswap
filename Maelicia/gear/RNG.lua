@@ -1073,7 +1073,7 @@ function init_gear_sets()
 		ring2="Petrov Ring",
 		back="Atheling Mantle",
 		waist="Windbuffet Belt +1",
-		legs="Meg. Chausses +2",
+		legs="Tatena. Haidate +1",
 		feet="Tatena. Sune. +1",
 	})
 	
@@ -1087,7 +1087,7 @@ function init_gear_sets()
 		ear1="Telos Earring",
 		ear2="Digni. Earring",
 		ring1="Cacoethic Ring +1",
-		legs="Malignance Tights",
+		legs="Tatena. Haidate +1",
 	})
 
 	sets.engaged.Melee.FullAcc = set_combine(sets.engaged.Melee,{
@@ -1100,7 +1100,7 @@ function init_gear_sets()
 		ring1="Cacoethic Ring +1",
 		ring2="Patricius Ring",
 		waist="Eschan Stone",
-		legs="Malignance Tights",
+		legs="Tatena. Haidate +1",
 		feet="Tatena. Sune. +1",
 	})
 
