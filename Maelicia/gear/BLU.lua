@@ -779,6 +779,43 @@ end
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
 
+-- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
+-- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
+function job_precast(spell, action, spellMap, eventArgs)
+	-- alert for missing buffs
+	if not buffactive['Aquaveil'] then
+		add_to_chat(122,"--- [Aquaveil] x ---")
+	end
+	if not buffactive['Haste'] then
+		add_to_chat(122,"--- [Haste] x ---")
+	end
+	if not buffactive['Refresh'] then
+		add_to_chat(122,"--- [Refresh] x ---")
+	end
+	if not buffactive['Phalanx'] then
+		add_to_chat(122,"--- [Phalanx] x ---")
+	end
+	if not buffactive['Ice Spikes'] and not buffactive['Shock Spikes'] then
+		add_to_chat(122,"--- [Ice Spikes or Shock Spikes] x ---")
+	end
+	if not buffactive['Cocoon'] then
+			add_to_chat(122,"--- [Cocoon] x ---")
+	end
+	if not buffactive['Stoneskin'] then
+			add_to_chat(122,"--- [Stoneskin] x ---")
+	end
+
+	if unbridled_spells:contains(spell.english) and not state.Buff['Unbridled Learning'] then
+		eventArgs.cancel = true
+		windower.send_command('@input /ja "Unbridled Learning" <me>; wait 1.5; input /ma "'..spell.name..'" '..spell.target.name)
+	end
+
+	if state.DefenseMode.value ~= 'None' and spell.type == 'WeaponSkill' then
+		-- Don't gearswap for weaponskills when Defense is active.
+		eventArgs.handled = true
+	end
+end
+
 -- Run after the default midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
 function job_post_midcast(spell, action, spellMap, eventArgs)
