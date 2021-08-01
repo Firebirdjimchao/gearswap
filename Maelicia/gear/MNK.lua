@@ -181,18 +181,17 @@ function init_gear_sets()
 		waist=gear.ElementalBelt
 	})
 	sets.precast.WS.MAB = set_combine(sets.precast.WS, {
-		--head=gear.Herculean_head_Magic,
+		--head="Nyame Helm",
 		head=empty,
 		neck="Sanctity Necklace",
 		ear1="Crematio Earring",
 		ear2="Friomisi Earring",
 		--body=gear.Herculean_body_Magic,
 		body="Cohort Cloak +1",
-		hands="Leyline Gloves",
+		hands="Nyame Gauntlets",
 		ring1="Acumen Ring",
 		back="Toro Cape",
 		--waist="Yamabuki-no-Obi",
-		--legs=gear.Herculean_legs_Magic,
 		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
 	})

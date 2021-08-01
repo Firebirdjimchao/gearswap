@@ -56,33 +56,31 @@ function init_gear_sets()
 
 	sets.MAB = {
 		ammo="Seeth. Bomblet +1",
-		head=gear.Herculean_head_Magic,
+		head="Nyame Helm",
 		neck="Sanctity Necklace",
 		ear1="Friomisi Earring",
 		ear2="Crematio Earring",
 		body=gear.Herculean_body_Magic,
-		hands="Leyline Gloves",
+		hands=gear.Carmine_hands_hq_D,
 		ring1="Acumen Ring",
 		--ring2="Arvina Ringlet +1",
 		ring2="Mujin Band",
 		back="Toro Cape",
 		waist="Eschan Stone",
-		legs=gear.Herculean_legs_Magic,
+		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
 	}
 
 	-- Defense sets
-	-- DT: 40%
-	-- PDT: 20% (22% with Alber Strap)
-	-- MDT: 17%
-	-- Eva: 378
-	-- Meva: 563
-	-- Ailment resist: 26
+	-- DT: 56%
+	-- PDT: 9% (11% with Alber Strap)
+	-- MDT: 12%
+	-- Eva: 497
+	-- Meva: 704
+	-- Ailment resist: 11
 	sets.DT = {
 		-- DT 3% Ailment 11
 		ammo="Staunch Tathlum +1",
-		-- MDT 4% Eva 41 Meva 43
-		--head="Dampening Tam",
 		-- DT 7% Eva 91 Meva 123
 		head="Nyame Helm",
 		-- DT 6%
@@ -98,7 +96,8 @@ function init_gear_sets()
 		--hands="Aya. Manopolas +2",
 		-- DT 2% Eva 44 Meva 57
 		--hands="Kurys Gloves",
-		hands="Turms Mittens +1",
+		-- DT 7% Eva 80 Meva 112
+		hands="Nyame Gauntlets",
 		-- PDT 5% MDT 5%
 		ring1="Dark Ring",
 		-- DT 10%
@@ -107,14 +106,14 @@ function init_gear_sets()
 		back=gear.aug_ogma_dt,
 		-- PDT 4%
 		waist="Flume Belt +1",
-		-- DT 5%  Eva 24 Meva 69
-		--legs="Aya. Cosciales +2",
 		-- 5% PDT Eva 58 Meva 99 Ailment 10
 		--legs="Rune. Trousers +3",
-		-- PDT 7% Eva 44 Meva 107
-		legs="Eri. Leg Guards +1",
+		-- DT 7% Eva 85 Meva 150
+		legs="Nyame Flanchard",
 		-- PDT 4% Eva 77 Meva 107 Ailment 15
-		feet="Ahosi Leggings",
+		--feet="Ahosi Leggings",
+		-- DT 7% Eva 119 Meva 150
+		feet="Nyame Sollerets",
 	}
 	-- Defense sets
 	-- DT: 31%
@@ -138,7 +137,7 @@ function init_gear_sets()
 		feet="Ahosi Leggings",
 	})
 	-- 24
-	sets.Charm = set_combine(sets.Ailments, {
+	sets.Charm = set_combine(sets.DT, {
 		-- 9
 		neck="Unmoving Collar +1",
 		-- 15
@@ -207,11 +206,17 @@ function init_gear_sets()
 	})
 	
 	sets.precast.JA['Lunge'] = set_combine(sets.MAB,{
+		-- MBD 7%
 		body="Nyame Mail",
+		-- MBD 5%
+		hands="Nyame Gauntlets",
 	})
 	
 	sets.precast.JA['Swipe'] = set_combine(sets.MAB,{
+		-- MBD 7%
 		body="Nyame Mail",
+		-- MBD 5%
+		hands="Nyame Gauntlets",
 	})
 
 	-- Waltz set (chr and vit)
@@ -304,8 +309,12 @@ function init_gear_sets()
 	sets.precast.WS.Acc = set_combine(sets.precast.WS.MidAcc, {
 	})
 	sets.precast.WS.MAB = set_combine(sets.MAB, {
+		head="Nyame Helm",
 		neck="Fotia Gorget",
+		hands="Nyame Gauntlets",
 		--waist="Fotia Belt",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
 	})
 
 	sets.precast.WS['Resolution'] = set_combine(sets.precast.WS,{
@@ -323,32 +332,29 @@ function init_gear_sets()
  	-- 80% DEX, damage varies with TP
 	sets.precast.WS['Dimidiation'] = set_combine(sets.precast.WS,{
 		ammo="Knobkierrie",
-		head="Dampening Tam",
-		ear1="Odr Earring",
+		head="Nyame Helm",
+		neck="Fotia Gorget",
+		ear1="Sherida Earring",
+		ear2="Moonshade Earring",
 		--body=gear.Herculean_body_WS,
 		body=gear.Adhemar_body_hq_B,
-		ring2="Ilabrat Ring",
-		waist="Grunfeld Rope",
-		legs="Lustr. Subligar +1",
-		feet="Lustra. Leggings +1"
+		hands="Meg. Gloves +2",
+		ring1="Niqmaddu Ring",
+		ring2="Regal Ring",
+		back=gear.aug_ogma_dex_da,
+		waist="Sailfi Belt +1",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Dimidiation'].MidAcc = set_combine(sets.precast.WS['Dimidiation'], {
-		head="Meghanada Visor +2",
-		body="Meg. Cuirie +2",
-		ring2="Regal Ring",
 	})
 	sets.precast.WS['Dimidiation'].Acc = set_combine(sets.precast.WS['Dimidiation'].MidAcc, {
 	})
-	-- DT 21%
-	-- PDT 13%
-	-- MDT 4%
+	-- DT 43%
+	-- PDT 4%
 	sets.precast.WS['Dimidiation'].PDT = set_combine(sets.precast.WS['Dimidiation'], {
-		ammo="Knobkierrie",
-		-- MDT 4%
-		head="Dampening Tam",
-		ear1="Odr Earring",
-		ear2="Moonshade Earring",
-		body=gear.Herculean_body_WS,
+		-- DT 7%
+		head="Nyame Helm",
 		-- DT 6%
 		neck="Futhark Torque +1",
 		-- PDT 4%
@@ -357,11 +363,10 @@ function init_gear_sets()
 		back=gear.aug_ogma_dex_da,
 		-- DT 10%
 		ring2="Defending Ring",
-		waist="Grunfeld Rope",
-		-- PDT 6%
-		legs="Meg. Chausses +2",
-		-- PDT 3%
-		feet="Meg. Jam. +2",
+		-- DT 8%
+		legs="Nyame Flanchard",
+		-- DT 7%
+		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Dimidiation'].MDT = set_combine(sets.precast.WS['Dimidiation'].PDT, {
 	})
@@ -482,13 +487,13 @@ function init_gear_sets()
 		ear1="Odnowa Earring +1",
 		ear2="Ethereal Earring",
 		body="Runeist's coat +3",
-		hands="Meg. Gloves +2",
+		hands="Nyame Gauntlets",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		back=gear.aug_ogma_dt,
 		waist="Flume Belt +1",
 		legs="Carmine cuisses +1",
-		feet="Aya. Gambieras +2",
+		feet="Nyame Sollerets",
 	}
 
 	sets.noprotect = {ring1="Sheltered Ring"}
@@ -549,6 +554,7 @@ function init_gear_sets()
 	sets.engaged.Hybrid = set_combine(sets.DT, {
 		head="Fu. Bandeau +3",
 		ear2="Sherida earring",
+		hands="Turms Mittens +1",
 		back=gear.aug_ogma_dex_da,
 		waist="Ioskeha Belt +1",
 		legs="Meg. Chausses +2",
@@ -573,7 +579,6 @@ function init_gear_sets()
 
 	-- Use Utu Grip
 	sets.engaged.MeleeMidAcc = set_combine(sets.engaged.Melee, {
-		head="Dampening Tam",
 		neck="Lissome Necklace",
 		--body="Meg. Cuirie +2",
 		--hands="Meg. Gloves +2",

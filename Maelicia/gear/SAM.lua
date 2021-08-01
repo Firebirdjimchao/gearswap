@@ -78,14 +78,12 @@ function init_gear_sets()
 	-- Base sets
 	--------------------------------------
 
-	-- 32% DT 28% PDT 10% MDT 30 MDB (43% DT if using Khonsu)
+	-- 33% DT 28% PDT 10% MDT 30 MDB (43% DT if using Khonsu)
 	sets.DT = {
 		-- 6& DT
 		--sub="Khonsu",
-		-- 2% DT
+		-- 3% DT
 		ammo="Staunch Tathlum +1",
-		-- 5% MDT
-		--head=gear.Valorous_head_WS,
 		-- 7% PDT
 		head="Mpaca's Cap",
 		-- 2% MDT
@@ -120,15 +118,15 @@ function init_gear_sets()
 	}
 
 	sets.MAB = {
-		head=gear.Valorous_head_Magic,
+		head="Nyame Helm",
 		--neck="Sanctity Necklace",
 		ear1="Friomisi Earring",
 		ear2="Crematio Earring",
 		body="Sacro Breastplate",
-		hands="Leyline Gloves",
+		hands="Nyame Gauntlets",
 		ring1="Acumen Ring",
 		back=gear.Smertrio_WS,
-		legs="Wakido Haidate +3",
+		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
 	}
 
@@ -243,14 +241,12 @@ function init_gear_sets()
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
 		ammo="Knobkierrie",
-		--head=gear.Rao_head_hq_B,
-		head=gear.Valorous_head_WS,
+		head="Nyame Helm",
 		neck="Fotia Gorget",
 		ear1="Thrud Earring",
 		ear2="Moonshade Earring",
 		body="Sakonji Domaru +3",
-		--hands=gear.Valorous_hand_TP,
-		hands=gear.Valorous_hand_WS,
+		hands="Nyame Gauntlets",
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
 		back=gear.Smertrio_WS,
@@ -273,7 +269,11 @@ function init_gear_sets()
 		feet="Wakido Sune. +3",
 	})
 	sets.precast.WS.MAB = set_combine(sets.MAB, sets.precast.WS, {
+		head="Nyame Helm",
+		ring1="Crepuscular Ring",
 		ring2="Beithir Ring",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
 	})
 	sets.precast.WS.RA = set_combine(sets.precast.WS,{
@@ -308,13 +308,12 @@ function init_gear_sets()
 	-- Fudo/Kasha/Gekko/Yukikaze
 	sets.precast.WS1Hit = set_combine(sets.precast.WS,{
 		ammo="Knobkierrie",
-		--head=gear.Valorous_head_WS,
 		head="Mpaca's Cap",
 		neck="Sam. Nodowa +2",
 		ear1="Thrud Earring",
 		ear2="Moonshade Earring",
 		body="Sakonji Domaru +3",
-		hands=gear.Valorous_hand_WS,
+		hands="Nyame Gauntlets",
 		ring1="Niqmaddu Ring",
 		--ring2="Regal Ring",
 		ring2="Beithir Ring",
@@ -396,13 +395,12 @@ function init_gear_sets()
 	-- 73-85% STR (2-hit)
 	sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {
 		ammo="Knobkierrie",
-		--head=gear.Valorous_head_WS,
 		head="Mpaca's Cap",
 		neck="Sam. Nodowa +2",
 		ear1="Thrud Earring",
 		ear2="Moonshade Earring",
 		body="Sakonji Domaru +3",
-		hands=gear.Valorous_hand_WS,
+		hands="Nyame Gauntlets",
 		ring1="Niqmaddu Ring",
 		--ring2="Regal Ring",
 		ring2="Beithir Ring",
@@ -459,8 +457,8 @@ function init_gear_sets()
 		body="Sakonji Domaru +3",
 		hands="Flam. Manopolas +2",
 		--waist="Eschan Stone",
-		ring1="Metamor. Ring +1",
-		ring2="Stikini Ring",
+		ring1="Crepuscular Ring",
+		ring2="Metamor. Ring +1",
 		--legs="Flamma Dirs +2",
 		--feet="Flam. Gambieras +2",
 	})
@@ -477,10 +475,12 @@ function init_gear_sets()
 	
 	-- Magical WS
 	sets.precast.WS['Tachi: Jinpu'] = set_combine(sets.precast.WS.MAB, {
-		head="Mpaca's Cap",
+		--head="Mpaca's Cap",
+		head="Nyame Helm",
 		neck="Sam. Nodowa +2",
 		ear2="Moonshade Earring",
-		hands=gear.Valorous_hand_WS,
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Tachi: Jinpu'].PDT = set_combine(sets.precast.WS['Tachi: Jinpu'], sets.precast.WS.PDTBase, {
@@ -635,12 +635,9 @@ function init_gear_sets()
 	
 	sets.idle.Town = set_combine(sets.idle,{
 		ammo="Knobkierrie",
-		--head="Rao Kabuto +1",
-		--head=gear.Valorous_head_WS,
 		head="Mpaca's Cap",
 		neck="Sam. Nodowa +2",
 		--body="Councilor's Garb"
-		--body="Tartarus Platemail",
 		--body="Sacro Breastplate",
 		body="Tatena. Harama. +1",
 		--hands="Wakido Kote +3",
@@ -939,9 +936,6 @@ function init_gear_sets()
 		waist="Ioskeha Belt +1",
 		-- 9 STP 5% Haste
 		legs="Wakido Haidate +3",
-		-- 5 STP
-		--feet=gear.Valorous_feet_TP,
-		--feet=gear.Rao_feet_hq_B,
 		-- 3% Haste Hasso +2
 		feet="Wakido Sune. +3",
 	})

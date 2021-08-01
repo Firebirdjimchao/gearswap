@@ -214,13 +214,16 @@ function init_gear_sets()
 		ear1="Brutal Earring",
 		ear2="Moonshade Earring",
 		body="Ayanmo Corazza +2",
-		hands="Aya. Manopolas +2",
+		--hands="Aya. Manopolas +2",
+		hands="Nyame Gauntlets",
 		ring1="Ilabrat Ring",
 		ring2="Petrov Ring",
 		back="Atheling Mantle",
 		waist="Fotia Belt",
-		legs="Aya. Cosciales +2",
-		feet="Aya. Gambieras +2",
+		--legs="Aya. Cosciales +2",
+		legs="Nyame Flanchard",
+		--feet="Aya. Gambieras +2",
+		feet="Nyame Sollerets",
 	}
 	sets.precast.WS.MAB = set_combine(sets.precast.WS,{
 		head="Nyame Helm",
@@ -228,13 +231,13 @@ function init_gear_sets()
 		ear1="Regal Earring",
 		ear2="Malignance Earring",
 		body=gear.Chironic_body_nuke,
-		hands=gear.Chironic_hands_nuke,
+		hands="Nyame Gauntlets",
 		ring1="Acumen Ring",
 		ring2="Strendu Ring",
 		back="Toro Cape",
 		--waist="Eschan Stone",
-		legs=gear.Chironic_legs_nuke,
-		feet=gear.Chironic_feet_nuke
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
 	})
 	
 	-- Specific weaponskill sets.	Uses the base set if an appropriate WSMod version isn't found.
@@ -625,9 +628,9 @@ function init_gear_sets()
 		neck="Loricate Torque +1",
 		ear1="Etiolation Earring",
 		ear2="Odnowa Earring +1",
-		body="Vrikodara Jupon",
+		body="Nyame Mail",
 		--hands="Inyan. Dastanas +2",
-		hands="Aya. Manopolas +2",
+		hands="Nyame Gauntlets",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
@@ -638,10 +641,10 @@ function init_gear_sets()
 	
 	sets.noprotect = {ring1="Sheltered Ring"}
 
-	-- DT: 42% DT
+	-- DT: 45% DT
 	-- PDT: 9%
 	-- MDT: 19%
-	-- MDB: 31
+	-- MDB: 33
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.idle.DT = set_combine(sets.idle,{		
 		-- 20% PDT
@@ -671,11 +674,15 @@ function init_gear_sets()
 		-- 9 MDB 6% MDT
 		--legs="Inyanga Shalwar +2",
 		-- MDB 5 9% DT
-		legs="Aya. Cosciales +2",
+		--legs="Aya. Cosciales +2",
+		-- MDB 7 8% DT
+		legs="Nyame Flanchard",
 		-- 8 MDB 3% MDT
 		--feet="Inyan. Crackows +2",
 		-- 5 MDB 3% DT
-		feet="Aya. Gambieras +2",
+		--feet="Aya. Gambieras +2",
+		-- 5 MDB 7% DT
+		feet="Nyame Sollerets",
 	})
 
 	sets.idle.PDT = set_combine(sets.idle.DT,{

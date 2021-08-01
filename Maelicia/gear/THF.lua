@@ -153,7 +153,7 @@ function init_gear_sets()
 	
 	-- Fast cast sets for spells
 	
-	-- 35% 27% Haste
+	-- 35% 26% Haste
 	sets.precast.FC = {
 		-- 7%  8H
 		head=gear.Herculean_head_RA,
@@ -171,8 +171,8 @@ function init_gear_sets()
 		ring1="Prolix Ring",
 		-- 5% 6H
 		legs=gear.Herculean_legs_Magic,
-		-- 4H
-		feet="Herculean Boots"
+		-- 3H
+		feet="Nyame Sollerets"
 	}
 
 	sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck="Magoraga Beads"})
@@ -226,12 +226,12 @@ function init_gear_sets()
 		feet="Meg. Jam. +2",
 	})
 	sets.precast.WS.MAB = set_combine(sets.precast.WS, {
-		head=gear.Herculean_head_Magic,
+		head="Nyame Helm",
 		neck="Sanctity Necklace",
 		ear1="Crematio Earring",
 		ear2="Friomisi Earring",
 		body=gear.Herculean_body_Magic,
-		hands="Leyline Gloves",
+		hands="Nyame Gauntlets",
 		ring1="Acumen Ring",
 		back=gear.jsecape_dex_wsd,
 		--waist="Eschan Stone",

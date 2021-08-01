@@ -351,7 +351,7 @@ function init_gear_sets()
 	})
 	
 	sets.precast.WS.MAB = set_combine(sets.precast.WS, {
-		--head=gear.Herculean_head_Magic,
+		--head="Nyame Helm",
 		--head="Orion Beret +3",
 		head=empty,
 		neck="Sanctity Necklace",
@@ -361,12 +361,13 @@ function init_gear_sets()
 		body="Cohort Cloak +1",
 		hands=gear.Carmine_hands_hq_D,
 		--hands="Meg. Gloves +2",
+		--hands="Nyame Gauntlets",
 		ring1="Acumen Ring",
 		ring2="Dingir Ring",
 		--back="Toro Cape",
 		back=gear.aug_belenus_ws,
 		--waist="Eschan Stone",
-		legs="Gyve Trousers", -- from a purely MAB perspective, as Gyve has MAB +40, vs. Herculean_legs_Magic with MAB +30
+		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
 	})
 	
@@ -413,14 +414,14 @@ function init_gear_sets()
 		neck="Scout's Gorget +2",
 		ear1="Moonshade Earring",
 		body="Cohort Cloak +1",
+		hands="Nyame Gauntlets",
 		--ring1="Ilabrat Ring",
 		ring1="Beithir Ring",
 		ring2="Dingir Ring",
 		back=gear.aug_belenus_ws_agi,
 		waist="Eschan Stone",
 		--waist=gear.ElementalObi,
-		legs=gear.Herculean_legs_Magic,
-		--legs="Arc. Braccae +3",
+		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
 	})
 
@@ -466,7 +467,6 @@ function init_gear_sets()
 		back=gear.aug_belenus_ws_ag,
 		waist="Fotia Belt",
 		legs="Arc. Braccae +3",
-		--feet=gear.Herculean_feet_RA
 		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Coronach'].MidAcc = set_combine(sets.precast.WS['Coronach'], {
@@ -491,14 +491,14 @@ function init_gear_sets()
 		neck="Scout's Gorget +2",
 		ear1="Moonshade Earring",
 		body="Cohort Cloak +1",
+		hands="Nyame Gauntlets",
 		--ring1="Ilabrat Ring",
 		ring1="Beithir Ring",
 		ring2="Dingir Ring",
 		back=gear.aug_belenus_ws_agi,
 		waist="Eschan Stone",
 		--waist=gear.ElementalObi,
-		legs=gear.Herculean_legs_Magic,
-		--legs="Arc. Braccae +3",
+		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Wildfire'].MidAcc = set_combine(sets.precast.WS['Wildfire'], {
@@ -516,14 +516,14 @@ function init_gear_sets()
 		neck="Scout's Gorget +2",
 		ear1="Moonshade Earring",
 		body="Cohort Cloak +1",
+		hands="Nyame Gauntlets",
 		--ring1="Ilabrat Ring",
 		ring1="Beithir Ring",
 		ring2="Dingir Ring",
 		back=gear.aug_belenus_ws_agi,
 		waist="Eschan Stone",
 		--waist=gear.ElementalObi,
-		legs=gear.Herculean_legs_Magic,
-		--legs="Arc. Braccae +3",
+		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Trueflight'].MidAcc = set_combine(sets.precast.WS['Trueflight'], {
@@ -614,12 +614,13 @@ function init_gear_sets()
 		neck="Sanctity Necklace",
 		ear1="Moonshade Earring",
 		body=gear.Herculean_body_Magic,
+		hands="Nyame Gauntlets",
 		--ring1="Ilabrat Ring",
 		ring1="Beithir Ring",
 		ring2="Regal Ring",
 		back=gear.aug_belenus_ws,
 		waist="Eschan Stone",
-		legs=gear.Herculean_legs_Magic,
+		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Sanguine Blade'].MidAcc = set_combine(sets.precast.WS['Sanguine Blade'], {
@@ -663,7 +664,7 @@ function init_gear_sets()
 		ring2="Regal Ring",
 		back=gear.aug_belenus_ws,
 		legs="Jokushu Haidate",
-		feet="Mummu Gamash. +2",
+		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Evisceration'].MidAcc = set_combine(sets.precast.WS['Evisceration'], {
 	})

@@ -151,8 +151,7 @@ function init_gear_sets()
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
-		-- STR Haste Aug
-		head="Uk'uxkaj Cap",
+		head="Nyame Helm",
 		neck="Fotia Gorget",
 		ear1="Moonshade Earring",
 		ear2="Brutal Earring",
@@ -167,18 +166,17 @@ function init_gear_sets()
 	}
 	
 	sets.precast.WS.MAB = set_combine(sets.precast.WS,{
-		head=gear.Herculean_head_Magic,
+		head="Nyame Helm",
 		--neck="Sanctity Necklace",
 		ear1="Crematio Earring",
 		ear2="Friomisi Earring",
 		body=gear.Herculean_body_Magic,
-		hands=gear.Carmine_hands_hq_D,
+		hands="Nyame Gauntlets",
 		ring1="Acumen Ring",
 		ring2="Stikini Ring",
 		back="Gunslinger's Cape",
 		--waist="Eschan Stone",
-		--legs="Shned. Tights +1",
-		legs=gear.Herculean_legs_Magic,
+		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
 	})
 
@@ -242,7 +240,7 @@ function init_gear_sets()
 
 	sets.midcast.CorsairShot = {
 		ammo=gear.QDbullet,
-		head=gear.Herculean_head_Magic,
+		head="Nyame Helm",
 		neck="Sanctity Necklace",
 		ear1="Crematio Earring",
 		ear2="Friomisi Earring",
@@ -252,8 +250,7 @@ function init_gear_sets()
 		ring2="Stikini Ring",
 		back="Gunslinger's Cape",
 		waist="Eschan Stone",
-		--legs="Shned. Tights +1",
-		legs=gear.Herculean_legs_Magic,
+		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
 	}
 

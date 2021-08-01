@@ -134,12 +134,12 @@ function init_gear_sets()
 	}
 
 	sets.MAB = {
-		head=gear.Valorous_head_Magic,
+		head="Nyame Helm",
 		--neck="Sanctity Necklace",
 		ear1="Crematio Earring",
 		ear2="Friomisi Earring",
 		body="Sacro Breastplate",
-		hands="Leyline Gloves",
+		hands="Nyame Gauntlets",
 		ring1="Acumen Ring",
 		back="Toro Cape",
 		legs="Nyame Flanchard",
@@ -258,8 +258,7 @@ function init_gear_sets()
 		--legs="Pumm. Cuisses +3",
 		legs=gear.Argosy_legs_hq_D,
 		--feet="Pumm. Calligae +3"
-		feet="Sulev. Leggings +2"
-		--feet="Nyame Sollerets",
+		feet="Nyame Sollerets",
 	}
 	sets.precast.WS.AccLow = set_combine(sets.precast.WS, {
 		head=gear.Argosy_head_hq_A,
@@ -299,19 +298,16 @@ function init_gear_sets()
 		--ear2="Brutal Earring",
 		ear2="Thrud Earring",
 		body="Pumm. Lorica +3",
-		hands=gear.Odyssean_hands_WS,
+		hands="Nyame Gauntlets",
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
 		back=gear.Cichol_VitWSD,
 		waist="Ioskeha Belt +1",
-		--waist="Sailfi Belt +1",
 		legs="Nyame Flanchard",
-		feet="Sulev. Leggings +2",
-		--feet="Nyame Sollerets",
+		feet="Nyame Sollerets",
 	})
 	sets.precast.WS["Upheaval"].AccLow = set_combine(sets.precast.WS['Upheaval'], {
 		hands="Tatena. Gote +1",
-		legs="Pumm. Cuisses +3",
 	})
 	sets.precast.WS["Upheaval"].AccHigh = set_combine(sets.precast.WS['Upheaval'], {
 		ear1="Telos Earring",
@@ -341,7 +337,7 @@ function init_gear_sets()
 		waist="Sailfi Belt +1",
 		legs=gear.Argosy_legs_hq_D,
 		--feet="Pumm. Calligae +3",
-		--feet="Sulev. Leggings +2",
+		--feet="Nyame Sollerets",
 		feet="Boii Calligae +1",
 	})
 	sets.precast.WS["Ukko's Fury"].AccLow = set_combine(sets.precast.WS["Ukko's Fury"], {
@@ -375,8 +371,7 @@ function init_gear_sets()
 		waist="Sailfi Belt +1",
 		legs=gear.Argosy_legs_hq_D,
 		--feet="Pumm. Calligae +3"
-		feet="Sulev. Leggings +2",
-		--feet="Nyame Sollerets",
+		feet="Nyame Sollerets",
 	})
 	sets.precast.WS["King's Justice"].AccLow = set_combine(sets.precast.WS["King's Justice"], {
 		head=gear.Argosy_head_hq_A,
@@ -403,14 +398,13 @@ function init_gear_sets()
 		ear1="Moonshade Earring",
 		ear2="Thrud Earring",
 		body="Pumm. Lorica +3",
-		hands=gear.Odyssean_hands_WS,
+		hands="Nyame Gauntlets",
 		ring1="Beithir Ring",
 		ring2="Regal Ring",
 		back=gear.Cichol_StrWSD,
 		waist="Sailfi Belt +1",
 		legs="Nyame Flanchard",
-		feet="Sulev. Leggings +2",
-		--feet="Nyame Sollerets",
+		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Fell Cleave'].AccLow = set_combine(sets.precast.WS['Fell Cleave'], {
 	})
@@ -461,24 +455,20 @@ function init_gear_sets()
 		ear1="Moonshade Earring",
 		ear2="Brutal Earring",
 		body="Pumm. Lorica +3",
-		hands=gear.Odyssean_hands_WS,
+		hands="Nyame Gauntlets",
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
 		back=gear.Cichol_StrWSD,
 		waist="Fotia Belt",
-		legs="Pumm. Cuisses +3",
-		--legs="Sulevi. Cuisses +2",
-		feet="Sulev. Leggings +2",
-		--feet="Nyame Sollerets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Scourge'].AccLow = set_combine(sets.precast.WS['Scourge'], {
-		legs="Sulevi. Cuisses +2",
 	})
 	sets.precast.WS['Scourge'].AccHigh = set_combine(sets.precast.WS['Scourge'], {
 		head="Pummeler's Mask +3",
 		body="Pumm. Lorica +3",
 		back=gear.Cichol_AccDA,
-		legs="Pumm. Cuisses +3",
 	})
 	sets.precast.WS['Scourge'].MS = set_combine(sets.precast.WS['Scourge'], {
 		ammo="Yetshila",
@@ -536,10 +526,11 @@ function init_gear_sets()
 	sets.precast.WS['Cloudsplitter'] = set_combine(sets.precast.WS.MAB, {
 		ammo="Knobkierrie",
 		--head="Jumalik Helm",
-		head="Agoge Mask +3",
+		--head="Agoge Mask +3",
+		head="Nyame Helm",
 		ear2="Thrud Earring",
 		body="Sacro Breastplate",
-		hands=gear.Odyssean_hands_WS,
+		hands="Nyame Gauntlets",
 		ring1="Beithir Ring",
 		ring2="Regal Ring",
 		back=gear.Cichol_StrWSD,
@@ -562,7 +553,7 @@ function init_gear_sets()
 		ear1="Moonshade Earring",
 		ear2="Thrud Earring",
 		body="Pumm. Lorica +3",
-		hands=gear.Odyssean_hands_WS,
+		hands="Nyame Gauntlets",
 		ring1="Niqmaddu Ring",
 		--ring1="Beithir Ring",
 		--ring2="Epaminonda's Ring",
@@ -571,8 +562,7 @@ function init_gear_sets()
 		waist="Sailfi Belt +1",
 		--legs="Pumm. Cuisses +3",
 		legs="Nyame Flanchard",
-		feet="Sulev. Leggings +2",
-		--feet="Nyame Sollerets",
+		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Savage Blade'].AccLow = set_combine(sets.precast.WS['Savage Blade'], {
 		legs="Nyame Flanchard",
@@ -660,11 +650,10 @@ function init_gear_sets()
 		ear1="Moonshade Earring",
 		ear2="Thrud Earring",
 		body="Pumm. Lorica +3",
-		hands=gear.Odyssean_hands_WS,
+		hands="Nyame Gauntlets",
 		back=gear.Cichol_StrWSD,
 		legs="Nyame Flanchard",
-		feet="Sulev. Leggings +2",
-		--feet="Nyame Sollerets",
+		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Asuran Fists'].AccLow = set_combine(sets.precast.WS['Asuran Fists'], {
 	})
@@ -721,12 +710,11 @@ function init_gear_sets()
 		ear1="Moonshade Earring",
 		ear2="Thrud Earring",
 		body="Pumm. Lorica +3",
-		hands=gear.Odyssean_hands_WS,
+		hands="Nyame Gauntlets",
 		ring1="Beithir Ring",
 		back=gear.Cichol_StrWSD,
 		legs="Nyame Flanchard",
-		feet="Sulev. Leggings +2",
-		--feet="Nyame Sollerets",
+		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Judgment'].AccLow = set_combine(sets.precast.WS['Judgment'], {
 	})
@@ -742,16 +730,13 @@ function init_gear_sets()
 		ear1="Moonshade Earring",
 		ear2="Thrud Earring",
 		body="Pumm. Lorica +3",
-		--hands=gear.Odyssean_hands_WS,
 		hands=gear.Argosy_hands_hq_D,
 		ring1="Niqmaddu Ring",
 		ring2="Regal Ring",
 		--ring2="Beithir Ring",
 		back=gear.Cichol_StrWSD,
-		--legs="Nyame Flanchard",
-		legs=gear.Argosy_legs_hq_D,
-		feet="Sulev. Leggings +2",
-		--feet="Nyame Sollerets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
 	})
 	sets.precast.WS["Impulse Drive"].AccLow = set_combine(sets.precast.WS["Impulse Drive"], {
 	})
@@ -767,11 +752,10 @@ function init_gear_sets()
 		ear1="Moonshade Earring",
 		ear2="Thrud Earring",
 		body="Pumm. Lorica +3",
-		hands=gear.Odyssean_hands_WS,
+		hands="Nyame Gauntlets",
 		back=gear.Cichol_StrWSD,
 		legs="Nyame Flanchard",
-		feet="Sulev. Leggings +2",
-		--feet="Nyame Sollerets",
+		feet="Nyame Sollerets",
 	})
 	sets.precast.WS["Stardiver"].AccLow = set_combine(sets.precast.WS["Stardiver"], {
 	})
@@ -809,8 +793,7 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle = {
 		ammo="Staunch Tathlum +1",
-		--head="Volte Salade",
-		head=gear.Valorous_head_WS,
+		head="Nyame Helm",
 		neck="Loricate Torque +1",
 		ear1="Odnowa Earring +1",
 		ear2="Etiolation Earring",

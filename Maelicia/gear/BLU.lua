@@ -326,7 +326,6 @@ function init_gear_sets()
 
 	sets.precast.WS.MAB = set_combine(sets.precast.WS,{
 		ammo="Pemphredo Tathlum",
-		--head="Jhakri Coronal +2",
 		head="Nyame Helm",
 		--neck="Sanctity Necklace",
 		ear1="Friomisi Earring",
@@ -341,11 +340,11 @@ function init_gear_sets()
 		--waist="Yamabuki-no-Obi",
 		legs="Luhlaza Shalwar +3",
 		feet="Nyame Sollerets",
-		--feet="Jhakri Pigaches +2",
 	})
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
+		head="Nyame Helm",
 		ear1="Ishvara Earring",
 		ear2="Moonshade Earring",
 		body=gear.Herculean_body_WS,
@@ -455,7 +454,7 @@ function init_gear_sets()
 		ammo="Mavi Tathlum",
 		head="Luh. Keffiyeh +3",
 		neck="Incanter's Torque",
-		body="Assim. Jubbah +1",
+		body="Assim. Jubbah +2",
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
 		back="Cornflower Cape",
@@ -625,7 +624,7 @@ function init_gear_sets()
 		ear1="Odnowa Earring +1",
 		ear2="Ethereal Earring",
 		body="Jhakri Robe +2",
-		hands="Malignance Gloves",
+		hands="Nyame Gauntlets",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		--back="Moonbeam Cape",

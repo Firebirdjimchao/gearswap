@@ -135,18 +135,18 @@ function init_gear_sets()
 		feet="Aya. Gambieras +2",
 	}
 	sets.precast.WS.MAB = set_combine(sets.precast.WS,{
-		head="Chironic Hat",
+		head="Nyame Helm",
 		--neck="Sanctity Necklace",
 		ear1="Regal Earring",
 		ear2="Malignance Earring",
 		body="Shamash Robe",
-		hands=gear.Chironic_hands_nuke,
+		hands="Nyame Gauntlets",
 		ring1="Freke Ring",
 		ring2="Strendu Ring",
 		back="Toro Cape",
 		--waist="Yamabuki-no-Obi",
-		legs="Chironic Hose",
-		feet="Chironic Slippers"
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
 	})
 	
 	sets.precast.WS['Hexa Strike'] = set_combine(sets.precast.WS,{
@@ -499,8 +499,7 @@ function init_gear_sets()
 		ear1="Etiolation Earring",
 		ear2="Odnowa Earring +1",
 		body="Shamash Robe",
-		--hands="Inyan. Dastanas +2",
-		hands="Aya. Manopolas +2",
+		hands="Nyame Gauntlets",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",

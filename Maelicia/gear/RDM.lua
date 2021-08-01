@@ -182,15 +182,15 @@ function init_gear_sets()
 		body="Ayanmo Corazza +2",
 		--hands="Jhakri Cuffs +2",
 		hands="Atrophy Gloves +3",
-		ring1="Rajas Ring",
-		ring2="Petrov Ring",
+		ring1="Petrov Ring",
+		ring2="Rajas Ring",
 		back="Atheling Mantle",
 		waist="Fotia Belt",
 		legs="Jhakri Slops +2",
 		feet="Jhakri Pigaches +2"
 	}
 	sets.precast.WS.MAB = set_combine(sets.precast.WS,{
-		head=gear.Merlinic_head_nuke,
+		head="Nyame Helm",
 		--neck="Sanctity Necklace",
 		ear1="Malignance Earring",
 		ear2="Regal Earring",
@@ -200,8 +200,8 @@ function init_gear_sets()
 		ring2="Strendu Ring",
 		back=gear.sucellos_mab,
 		--waist="Yamabuki-no-Obi",
-		legs=gear.Merlinic_legs_nuke,
-		feet="Vitiation Boots +3",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
 	})
 	
 	-- Specific weaponskill sets.	Uses the base set if an appropriate WSMod version isn't found.
@@ -221,10 +221,12 @@ function init_gear_sets()
 		ear1="Moonshade Earring",
 		ear2="Regal Earring",
 		body="Viti. Tabard +3",
-		hands="Atrophy Gloves +3",
+		hands="Jhakri Cuffs +2",
+		ring1="Metamor. Ring +1",
+		ring2="Rajas Ring",
 		waist="Sailfi Belt +1",
-		legs="Jhakri Slops +2",
-		feet="Vitiation Boots +3",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Death Blossom'] = set_combine(sets.precast.WS, {
 		neck="Fotia Gorget",
@@ -862,13 +864,13 @@ function init_gear_sets()
 		ear1="Ethereal Earring",
 		ear2="Novia Earring",
 		body="Jhakri Robe +2",
-		hands="Malignance Gloves",
+		hands="Nyame Gauntlets",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
 		waist="Fucho-no-Obi",
 		legs="Carmine Cuisses +1",
-		feet="Malignance Boots",
+		feet="Nyame Sollerets",
 	}
 	
 	sets.idle.Town = set_combine(sets.idle,{
