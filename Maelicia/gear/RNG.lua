@@ -351,17 +351,13 @@ function init_gear_sets()
 	})
 	
 	sets.precast.WS.MAB = set_combine(sets.precast.WS, {
-		--head="Nyame Helm",
-		--head="Orion Beret +3",
-		head=empty,
+		head="Nyame Helm",
 		neck="Sanctity Necklace",
 		ear1="Crematio Earring",
 		ear2="Friomisi Earring",
-		--body=gear.Herculean_body_Magic,
-		body="Cohort Cloak +1",
-		hands=gear.Carmine_hands_hq_D,
+		body="Nyame Mail",
 		--hands="Meg. Gloves +2",
-		--hands="Nyame Gauntlets",
+		hands="Nyame Gauntlets",
 		ring1="Acumen Ring",
 		ring2="Dingir Ring",
 		--back="Toro Cape",
@@ -409,11 +405,11 @@ function init_gear_sets()
 	})
 	
 	sets.precast.WS.MABRA = set_combine(sets.precast.WS.MAB, {
-		head=empty,
+		head="Nyame Helm",
 		--neck="Sanctity Necklace",
 		neck="Scout's Gorget +2",
 		ear1="Moonshade Earring",
-		body="Cohort Cloak +1",
+		body="Nyame Mail",
 		hands="Nyame Gauntlets",
 		--ring1="Ilabrat Ring",
 		ring1="Beithir Ring",
@@ -458,7 +454,8 @@ function init_gear_sets()
 		neck="Scout's Gorget +2",
 		ear1="Ishvara Earring",
 		ear2="Sherida Earring",
-		body=gear.Herculean_body_RA_WS,
+		--body=gear.Herculean_body_RA_WS,
+		body="Nyame Mail",
 		hands="Meg. Gloves +2",
 		--ring1="Dingir Ring",
 		ring1="Beithir Ring",
@@ -470,11 +467,8 @@ function init_gear_sets()
 		feet="Nyame Sollerets",
 	})
 	sets.precast.WS['Coronach'].MidAcc = set_combine(sets.precast.WS['Coronach'], {
-		body="Arc. Jerkin +3",
 	})
 	sets.precast.WS['Coronach'].HighAcc = set_combine(sets.precast.WS['Coronach'], {
-		body="Arc. Jerkin +3",
-		feet="Arcadian Socks +3",
 	})
 	sets.precast.WS['Coronach'].FullAcc = set_combine(sets.precast.WS['Coronach'], {
 		--body="Orion Jerkin +3",
@@ -487,10 +481,11 @@ function init_gear_sets()
 	
 	-- 60% AGI
 	sets.precast.WS['Wildfire'] = set_combine(sets.precast.WS.MABRA, {
+		head="Nyame Helm",
 		--neck="Sanctity Necklace",
 		neck="Scout's Gorget +2",
 		ear1="Moonshade Earring",
-		body="Cohort Cloak +1",
+		body="Nyame Mail",
 		hands="Nyame Gauntlets",
 		--ring1="Ilabrat Ring",
 		ring1="Beithir Ring",
@@ -504,18 +499,23 @@ function init_gear_sets()
 	sets.precast.WS['Wildfire'].MidAcc = set_combine(sets.precast.WS['Wildfire'], {
 	})
 	sets.precast.WS['Wildfire'].HighAcc = set_combine(sets.precast.WS['Wildfire'], {
+		head=empty,
+		body="Cohort Cloak +1",
 	})
 	sets.precast.WS['Wildfire'].FullAcc = set_combine(sets.precast.WS['Wildfire'], {
+		head=empty,
+		body="Cohort Cloak +1",
 	})
 	sets.precast.WS['Wildfire'].Encumbered = set_combine(sets.midcast.RA.FullAcc,{
 	})
 	
 	-- 100% AGI
 	sets.precast.WS['Trueflight'] = set_combine(sets.precast.WS.MABRA, {
+		head="Nyame Helm",
 		--neck="Sanctity Necklace",
 		neck="Scout's Gorget +2",
 		ear1="Moonshade Earring",
-		body="Cohort Cloak +1",
+		body="Nyame Mail",
 		hands="Nyame Gauntlets",
 		--ring1="Ilabrat Ring",
 		ring1="Beithir Ring",
@@ -529,8 +529,12 @@ function init_gear_sets()
 	sets.precast.WS['Trueflight'].MidAcc = set_combine(sets.precast.WS['Trueflight'], {
 	})
 	sets.precast.WS['Trueflight'].HighAcc = set_combine(sets.precast.WS['Trueflight'], {
+		head=empty,
+		body="Cohort Cloak +1",
 	})
 	sets.precast.WS['Trueflight'].FullAcc = set_combine(sets.precast.WS['Trueflight'], {
+		head=empty,
+		body="Cohort Cloak +1",
 	})
 	
 	-------------------------
@@ -562,8 +566,12 @@ function init_gear_sets()
 	sets.precast.WS['Flaming Arrow'].MidAcc = set_combine(sets.precast.WS['Flaming Arrow'], {
 	})
 	sets.precast.WS['Flaming Arrow'].HighAcc = set_combine(sets.precast.WS['Flaming Arrow'], {
+		head=empty,
+		body="Cohort Cloak +1",
 	})
 	sets.precast.WS['Flaming Arrow'].FullAcc = set_combine(sets.precast.WS['Flaming Arrow'], {
+		head=empty,
+		body="Cohort Cloak +1",
 	})
 
 	-- 73~85% AGI
@@ -613,7 +621,7 @@ function init_gear_sets()
 		head="Pixie Hairpin +1",
 		neck="Sanctity Necklace",
 		ear1="Moonshade Earring",
-		body=gear.Herculean_body_Magic,
+		body="Nyame Mail",
 		hands="Nyame Gauntlets",
 		--ring1="Ilabrat Ring",
 		ring1="Beithir Ring",
@@ -925,39 +933,36 @@ function init_gear_sets()
 
 	-- Idle sets
 	sets.idle = {
-		head="Malignance Chapeau",
+		head="Nyame Helm",
 		neck="Loricate Torque +1",
 		ear1="Odnowa Earring +1",
 		ear2="Etiolation Earring",
-		body="Malignance Tabard",
-		hands="Malignance Gloves",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
 		waist="Flume Belt +1",
-		legs="Malignance Tights",
+		legs="Nyame Flanchard",
 		feet="Orion Socks +3",
 	}
 	
 	sets.noprotect = {ring1="Sheltered Ring"}
 	
 	sets.idle.Town = set_combine(sets.idle, {
-		--head="Orion Beret +3",
-		head="Arcadian Beret +3",
+		head="Nyame Helm",
 		neck="Scout's Gorget +2",
 		ear1="Telos Earring",
 		ear2="Enervating Earring",
-		--body="Arc. Jerkin +3",
 		--body="Councilor's Garb",
 		body="Nisroch Jerkin",
-		hands="Orion Bracers +3",
+		hands="Nyame Gauntlets",
 		ring1="Ilabrat Ring",
 		ring2="Regal Ring",
 		back=gear.aug_belenus_ws_agi,
 		waist="K. Kachina Belt +1",
-		legs="Arc. Braccae +3",
-		--feet="Orion Socks +3",
-		feet="Arcadian Socks +3",
+		legs="Carmine Cuisses +1",
+		feet="Nyame Sollerets",
 	})
 	
 	sets.idle.Weak = set_combine(sets.idle,{
@@ -986,69 +991,29 @@ function init_gear_sets()
 	})
 	
 	-- Defense sets
-	-- DT: 52%
-	-- PDT: 9%
-	-- MDT: 10%
-	sets.defense.PDT = set_combine(sets.idle,{
-		-- DT 6%
-		head="Malignance Chapeau",
+
+	-- DT: 54%
+	sets.DT = set_combine({
+		-- DT 7%
+		head="Nyame Helm",
 		-- DT 6%
 		neck="Loricate Torque +1",
-		-- MDT 2%
-		ear1="Odnowa Earring +1",
-		-- MDT 3%
-		ear2="Etiolation Earring",
 		-- DT 9%
-		body="Malignance Tabard",
-		-- DT 5%
-		hands="Malignance Gloves",
-		-- PDT 5% MDT 5%
-		ring1="Dark Ring",
+		body="Nyame Mail",
+		-- DT 7%
+		hands="Nyame Gauntlets",
 		-- DT 10%
 		ring2="Defending Ring",
-		-- DT 5%
-		back="Moonbeam Cape",
-		-- PDT 4%
-		waist="Flume Belt +1",
+		-- DT 8%
+		legs="Nyame Flanchard",
 		-- DT 7%
-		legs="Malignance Tights",
-		-- DT 4%
-		feet="Malignance Boots",
+		feet="Nyame Sollerets",
 	})
 
-	-- DT: 52%
-	-- PDT: 9%
-	-- MDT: 10%
-	-- MDB: 37
-	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
-	sets.defense.MDT = set_combine(sets.idle,{
-		-- DT 6% MDB 5
-		head="Malignance Chapeau",
-		-- MDT 2%
-		ear1="Odnowa Earring +1",
-		-- MDT 3%
-		ear2="Etiolation Earring",
-		-- MDB 8
-		--neck="Inq. Bead Necklace",
-		-- DT 6%
-		neck="Loricate Torque +1",
-		-- DT 9% MDB 8
-		body="Malignance Tabard",
-		-- DT 5% MDB 4
-		hands="Malignance Gloves",
-		-- PDT 5% MDT 5%
-		ring1="Dark Ring",
-		--ring1="Shadow Ring",
-		-- DT 10%
-		ring2="Defending Ring",
-		-- DT 5%
-		back="Moonbeam Cape",
-		-- PDT 4%
-		waist="Flume Belt +1",
-		-- DT: 7% MDB 7
-		legs="Malignance Tights",
-		-- DT 4%
-		feet="Malignance Boots",
+	sets.defense.PDT = set_combine(sets.idle, sets.DT,{
+	})
+
+	sets.defense.MDT = set_combine(sets.idle, sets.DT,{
 	})
 
 	sets.Kiting = {feet="Orion Socks +3",}

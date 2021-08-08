@@ -230,7 +230,7 @@ function init_gear_sets()
 		neck="Sanctity Necklace",
 		ear1="Crematio Earring",
 		ear2="Friomisi Earring",
-		body=gear.Herculean_body_Magic,
+		body="Nyame Mail",
 		hands="Nyame Gauntlets",
 		ring1="Acumen Ring",
 		back=gear.jsecape_dex_wsd,

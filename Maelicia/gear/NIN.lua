@@ -188,7 +188,6 @@ function init_gear_sets()
 		neck="Iskur Gorget",
 		ear1="Enervating Earring",
 		ear2="Telos Earring",
-		--body=gear.Herculean_body_RA,
 		body="Mochi. Chainmail +3",
 		--hands="Hachiya Tekko +1",
 		hands="Malignance Gloves",
@@ -242,7 +241,7 @@ function init_gear_sets()
 	sets.midcast.Ninjutsu = {
 		ammo="Yamarang",
 		--head="Hachi. Hatsu. +1",
-		head="Nyame Helm",
+		head="Mochi. Hatsuburi +3",
 		ear1="Digni. Earring",
 		ear2="Hermetic Earring",
 		neck="Incanter's Torque",
@@ -276,14 +275,12 @@ function init_gear_sets()
 	-- Nuking Ninjutsu (skill & magic attack)
 	sets.midcast.ElementalNinjutsu = {
 		ammo="Pemphredo Tathlum",
-		--head="Mummu Bonnet +2",
-		head="Nyame Helm",
-		--head="Mochi. Hatsuburi +1",
+		head="Mochi. Hatsuburi +3",
 		ear1="Friomisi Earring",
 		ear2="Crematio Earring",
 		neck="Sanctity Necklace",
 		--neck="Incanter's Torque",
-		body=gear.Herculean_body_Magic,
+		body="Nyame Mail",
 		--hands="Hattori Tekko +1",
 		hands="Nyame Gauntlets",
 		back="Toro Cape",
@@ -296,13 +293,9 @@ function init_gear_sets()
 	}
 
 	sets.midcast.ElementalNinjutsu.Resistant = set_combine(sets.midcast.ElementalNinjutsu, {
-		body="Malignance Tabard",
-		hands="Malignance Gloves",
 		ear1="Digni. Earring",
 		ear2="Hermetic Earring",
 		back="Yokaze Mantle",
-		legs="Malignance Tights",
-		feet="Mochi. Kyahan +3",
 	})
 
 	sets.magic_burst = set_combine(sets.midcast.ElementalNinjutsu, {
@@ -319,19 +312,18 @@ function init_gear_sets()
 
 	sets.idle = {
 		ammo="Staunch Tathlum +1",
-		head="Malignance Chapeau",
+		head="Nyame Helm",
 		neck="Loricate Torque +1",
 		ear1="Odnowa Earring +1",
 		ear2="Etiolation Earring",
-		--body="Mekosu. Harness",
-		body="Malignance Tabard",
-		hands="Malignance Gloves",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		--back="Shadow Mantle",
 		back="Moonbeam Cape",
 		waist="Flume Belt +1",
-		legs="Malignance Tights",
+		legs="Nyame Flanchard",
 		feet="Danzo Sune-ate"
 	}
 
@@ -356,33 +348,16 @@ function init_gear_sets()
 
 	-- Defense sets
 	sets.defense.PDT = {
-		head="Malignance Chapeau",
+		head="Nyame Helm",
 		neck="Loricate Torque +1",
-		ear1="Odnowa Earring +1",
-		ear2="Etiolation Earring",
-		body="Malignance Tabard",
-		hands="Malignance Gloves",
-		ring1="Patricius Ring",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
 		ring2="Defending Ring",
-		back="Moonbeam Cape",
-		waist="Flume Belt +1",
-		legs="Malignance Tights",
-		feet="Malignance Boots"
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
 	}
 
 	sets.defense.MDT = set_combine(sets.defense.PDT, {
-		head="Malignance Chapeau",
-		--neck="Inq. Bead Necklace",
-		neck="Loricate Torque +1",
-		ear1="Odnowa Earring +1",
-		ear2="Etiolation Earring",
-		body="Malignance Tabard",
-		hands="Malignance Gloves",
-		ring1="Dark Ring",
-		ring2="Defending Ring",
-		back="Moonbeam Cape",
-		legs="Malignance Tights",
-		feet="Malignance Boots"
 	})
 
 	sets.DayMovement = {feet="Danzo sune-ate"}
@@ -396,7 +371,8 @@ function init_gear_sets()
 		neck="Moonbeam Nodowa",
 		ear1="Brutal Earring",
 		ear2="Suppanomimi",
-		body="Mochi. Chainmail +3",
+		--body="Mochi. Chainmail +3",
+		body=gear.Adhemar_body_hq_B,
 		hands=gear.Adhemar_hands_hq_B,
 		ring1="Haverton Ring",
 		ring2="Epona's Ring",
@@ -486,7 +462,6 @@ function init_gear_sets()
 	sets.engaged.Low.MaxHaste = set_combine(sets.engaged.MaxHaste, {
 	})
 	sets.engaged.Mid.MaxHaste = set_combine(sets.engaged.Low.MaxHaste, {
-		head="Mummu Bonnet +2",
 		--hands="Mummu Wrists +2",
 		hands="Tatena. Gote +1",
 		legs="Ken. Hakama +1",
@@ -501,7 +476,8 @@ function init_gear_sets()
 		ring1="Patricius Ring",
 		ring2="Cacoethic Ring +1",
 		waist="Eschan Stone",
-		feet="Malignance Boots",
+		legs="Tatena. Haidate +1",
+		feet="Tatena. Sune. +1",
 	})
 	sets.engaged.Innin.MaxHaste	 = set_combine(sets.engaged.MaxHaste, {
 	})
@@ -523,14 +499,14 @@ function init_gear_sets()
 	-- 35% Haste 
 	-- DW needed: 16
 	sets.engaged.Haste_35 = set_combine(sets.engaged.MaxHaste, {
-		body="Mochi. Chainmail +3",
+		body="Ken. Samue +1",
 		waist="Reiki Yotai",
 		legs="Ken. Hakama +1",
 	})
 	sets.engaged.Low.Haste_35 = set_combine(sets.engaged.Low.MaxHaste, {
 	})
 	sets.engaged.Mid.Haste_35 = set_combine(sets.engaged.Mid.MaxHaste, {
-		body="Mochi. Chainmail +3",
+		body="Ken. Samue +1",
 		waist="Reiki Yotai",
 	})
 	sets.engaged.Acc.Haste_35 = set_combine(sets.engaged.Acc.MaxHaste, {
@@ -563,8 +539,6 @@ function init_gear_sets()
 	sets.engaged.Low.Haste_30 = set_combine(sets.engaged.Haste_30, {
 	})
 	sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Low.Haste_30, {
-		head="Mummu Bonnet +2",
-		hands="Mummu Wrists +2",
 	})
 	sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
 		ear1="Digni. Earring",
@@ -646,12 +620,12 @@ function init_gear_sets()
 	})
 	sets.precast.WS.MAB = set_combine(sets.precast.WS, {
 		ammo="Pemphredo Tathlum",
-		--head="Mochi. Hatsuburi +1",
+		--head="Mochi. Hatsuburi +3",
 		head="Nyame Helm",
 		--neck="Sanctity Necklace",
 		ear1="Friomisi Earring",
 		ear2="Crematio Earring",
-		body=gear.Herculean_body_Magic,
+		body="Nyame Mail",
 		hands="Nyame Gauntlets",
 		ring1="Acumen Ring",
 		ring2="Dingir Ring",
@@ -671,19 +645,19 @@ function init_gear_sets()
 	-- BLADE: HI AGI 80%, crit rate varies with TP
 	sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {
 		ammo="Yetshila",
-		head="Mummu Bonnet +2",
+		head=gear.Adhemar_head_hq_B,
 		neck="Fotia Gorget",
 		ear1="Odr Earring",
 		ear2="Moonshade Earring",
 		body="Ken. Samue +1",
 		hands="Mummu Wrists +2",
-		--ring1="Gere Ring",
-		ring1="Mummu Ring",
+		ring1="Gere Ring",
+		--ring1="Mummu Ring",
 		ring2="Regal Ring",
 		back=Andartia.AGI,
 		waist="Windbuffet Belt +1",
-		legs="Mummu Kecks +2",
-		--legs="Mochi. Hakama +3",
+		--legs="Mummu Kecks +2",
+		legs="Mochi. Hakama +3",
 		feet="Mummu Gamash. +2",
 	})
 	
@@ -720,16 +694,16 @@ function init_gear_sets()
 	-- BLADE: TEN STR 30% / DEX 30%, damage varies with TP
 	sets.Ten = set_combine(sets.precast.WS, {
 		ammo="Seeth. Bomblet +1",
-		head=gear.Adhemar_head_hq_B,
+		head="Nyame Helm",
 		neck="Fotia Gorget",
 		ear1="Ishvara Earring",
 		ear2="Moonshade Earring",
-		body=gear.Adhemar_body_hq_B,
-		hands=gear.Adhemar_hands_hq_B,
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
 		ring1="Gere Ring",
 		ring2="Regal Ring",
 		back=Andartia.DEX,
-		waist="Grunfeld Rope",
+		waist="Sailfi Belt +1",
 		legs="Mochi. Hakama +3",
 		feet="Nyame Sollerets",
 	})

@@ -138,7 +138,7 @@ function init_gear_sets()
 		--neck="Sanctity Necklace",
 		ear1="Crematio Earring",
 		ear2="Friomisi Earring",
-		body="Sacro Breastplate",
+		body="Nyame Mail",
 		hands="Nyame Gauntlets",
 		ring1="Acumen Ring",
 		back="Toro Cape",
@@ -525,11 +525,9 @@ function init_gear_sets()
 	-- 40% STR / 40% MND
 	sets.precast.WS['Cloudsplitter'] = set_combine(sets.precast.WS.MAB, {
 		ammo="Knobkierrie",
-		--head="Jumalik Helm",
-		--head="Agoge Mask +3",
 		head="Nyame Helm",
 		ear2="Thrud Earring",
-		body="Sacro Breastplate",
+		body="Nyame Mail",
 		hands="Nyame Gauntlets",
 		ring1="Beithir Ring",
 		ring2="Regal Ring",
@@ -799,14 +797,12 @@ function init_gear_sets()
 		ear2="Etiolation Earring",
 		--body="Hjarrandi Breast.",
 		body="Nyame Mail",
-		--hands="Volte Moufles",
-		hands="Sakpata's Gauntlets",
+		hands="Nyame Gauntlets",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
 		waist="Flume Belt +1",
-		--legs="Pumm. Cuisses +3",
-		legs="Sakpata's Cuisses",
+		legs="Nyame Flanchard",
 		feet="Hermes' Sandals"
 	}
 	
@@ -824,7 +820,7 @@ function init_gear_sets()
 		hands="Tatena. Gote +1",
 		waist="Sailfi Belt +1",
 		--legs=gear.Argosy_legs_hq_D,
-		legs="Sakpata's Cuisses",
+		legs="Tatena. Haidate +1",
 	})
 			 
 	sets.idle.Regen = set_combine(sets.idle,{

@@ -177,6 +177,7 @@ function user_setup()
 	state.WeaponskillMode:options('Normal', 'MidAcc', 'Acc')
 	state.CastingMode:options('Normal', 'Resistant', 'TH')
 	state.IdleMode:options('Normal', 'PDT', 'Learning')
+	state.BuffReminderMode = M('Normal', 'Full', 'None')
 
 	gear.default.obi_waist = "Sacro Cord"
 	gear.Rosmerta_DexSTP = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10',}}
@@ -330,9 +331,7 @@ function init_gear_sets()
 		--neck="Sanctity Necklace",
 		ear1="Friomisi Earring",
 		ear2="Regal Earring",
-		body="Shamash Robe",
-		--body="Amalric Doublet",
-		--hands="Amalric Gages",
+		body="Nyame Mail",
 		hands="Jhakri Cuffs +2",
 		ring1="Acumen Ring",
 		ring2="Strendu Ring",
@@ -636,22 +635,22 @@ function init_gear_sets()
 		feet="Nyame Sollerets",
 	}
 
-	-- DT: 55%
+	-- DT: 58%
 	--
 	sets.idle.PDT = {
 		-- DT 2%
 		ammo="Staunch Tathlum +1",
-		-- DT 6%
-		head="Malignance Chapeau",
+		-- DT 7%
+		head="Nyame Helm",
 		-- DT 6%
 		neck="Loricate Torque +1",
 		-- MDT 2%
 		ear1="Odnowa earring +1",
 		ear2="Ethereal earring",
 		-- DT 9%
-		body="Malignance Tabard",
-		-- DT 5%
-		hands="Malignance Gloves",
+		body="Nyame Mail",
+		-- DT 7%
+		hands="Nyame Gauntlets",
 		-- PDT 5% MDT 5%
 		ring1="Dark Ring",
 		-- DT 10%
@@ -782,27 +781,34 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
-	-- alert for missing buffs
-	if not buffactive['Aquaveil'] then
-		add_to_chat(122,"--- [Aquaveil] x ---")
-	end
-	if not buffactive['Haste'] then
-		add_to_chat(122,"--- [Haste] x ---")
-	end
-	if not buffactive['Refresh'] then
-		add_to_chat(122,"--- [Refresh] x ---")
-	end
-	if not buffactive['Phalanx'] then
-		add_to_chat(122,"--- [Phalanx] x ---")
-	end
-	if not buffactive['Ice Spikes'] and not buffactive['Shock Spikes'] then
-		add_to_chat(122,"--- [Ice Spikes or Shock Spikes] x ---")
-	end
-	if not buffactive['Cocoon'] then
-			add_to_chat(122,"--- [Cocoon] x ---")
-	end
-	if not buffactive['Stoneskin'] then
-			add_to_chat(122,"--- [Stoneskin] x ---")
+
+	if state.BuffReminderMode.value ~= 'None' then
+		-- alert for missing buffs
+		if not buffactive['Haste'] then
+			add_to_chat(122,"--- [Haste] x ---")
+		end
+		if not buffactive['Refresh'] then
+			add_to_chat(122,"--- [Refresh] x ---")
+		end
+
+		if state.BuffReminderMode.value == 'Full' then
+			if not buffactive['Aquaveil'] then
+				add_to_chat(122,"--- [Aquaveil] x ---")
+			end
+			if not buffactive['Phalanx'] then
+				add_to_chat(122,"--- [Phalanx] x ---")
+			end
+			if not buffactive['Ice Spikes'] and not buffactive['Shock Spikes'] then
+				add_to_chat(122,"--- [Ice Spikes or Shock Spikes] x ---")
+			end
+			if not buffactive['Cocoon'] then
+					add_to_chat(122,"--- [Cocoon] x ---")
+			end
+			if not buffactive['Stoneskin'] then
+					add_to_chat(122,"--- [Stoneskin] x ---")
+			end
+
+		end
 	end
 
 	if unbridled_spells:contains(spell.english) and not state.Buff['Unbridled Learning'] then

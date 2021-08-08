@@ -181,13 +181,11 @@ function init_gear_sets()
 		waist=gear.ElementalBelt
 	})
 	sets.precast.WS.MAB = set_combine(sets.precast.WS, {
-		--head="Nyame Helm",
-		head=empty,
+		head="Nyame Helm",
 		neck="Sanctity Necklace",
 		ear1="Crematio Earring",
 		ear2="Friomisi Earring",
-		--body=gear.Herculean_body_Magic,
-		body="Cohort Cloak +1",
+		body="Nyame Mail",
 		hands="Nyame Gauntlets",
 		ring1="Acumen Ring",
 		back="Toro Cape",
@@ -303,7 +301,7 @@ function init_gear_sets()
 	-- 30% STR / 30% INT, damage varies with TP
 	sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS.MAB,{
 		head="Pixie Hairpin +1",
-		body=gear.Herculean_body_Magic,
+		body="Nyame Mail",
 	})
 
 	-- 50% MND / 30% STR, single attack, damage varies with TP
@@ -366,18 +364,18 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle = {
 		ammo="Staunch Tathlum +1",
-		head="Malignance Chapeau",
+		head="Nyame Helm",
 		neck="Loricate Torque +1",
 		ear1="Odnowa Earring +1",
 		ear2="Etiolation Earring",
-		body="Malignance Tabard",
-		hands="Malignance Gloves",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		--back="Moonbeam Cape",
 		back="Mecisto. Mantle",
 		waist="Moonbow Belt",
-		legs="Malignance Tights",
+		legs="Nyame Flanchard",
 		feet="Herald's Gaiters"
 	}
 	
@@ -402,61 +400,25 @@ function init_gear_sets()
 	})
 
 
-	-- DT: 57% PDT: 5% MDT: 10%
+	-- DT: 53%
 	sets.idle.PDT = set_combine(sets.idle,{
-		-- DT 6%
-		head="Malignance Chapeau",
-		-- MDT 2%
-		ear1="Odnowa Earring +1",
-		-- MDT 3%
-		ear2="Etiolation Earring",
-		-- DT 6%
-		neck="Loricate Torque +1",
+		-- DT 7%
+		head="Nyame Helm",
 		-- DT 9%
-		body="Malignance Tabard",
-		-- DT 5%
-		hands="Malignance Gloves",
-		-- PDT 5% MDT 5%
-		ring1="Dark Ring",
+		body="Nyame Mail",
+		-- DT 7%
+		hands="Nyame Gauntlets",
 		-- DT 10%
 		ring2="Defending Ring",
 		-- DT 5%
-		back="Moonbeam Cape",
-		-- DT 5%
 		waist="Moonbow Belt",
+		-- DT 8%
+		legs="Nyame Flanchard",
 		-- DT 7%
-		legs="Malignance Tights",
-		-- DT 4%
-		feet="Malignance Boots"
+		feet="Nyame Sollerets"
 	})
 
-	-- DT: 57% PDT: 5% MDT: 10%
-	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
-	sets.idle.MDT = set_combine(sets.idle, {
-		-- DT 6%
-		head="Malignance Chapeau",
-		-- MDT 2%
-		ear1="Odnowa Earring +1",
-		-- MDT 3%
-		ear2="Etiolation Earring",
-		-- DT 6%
-		neck="Loricate Torque +1",
-		-- DT 9%
-		body="Malignance Tabard",
-		-- DT 5%
-		hands="Malignance Gloves",
-		-- PDT 5% MDT 5%
-		ring1="Dark Ring",
-		-- DT 10%
-		ring2="Defending Ring",
-		-- DT 5%
-		back="Moonbeam Cape",
-		-- DT 5%
-		waist="Moonbow Belt",
-		-- DT 7%
-		legs="Malignance Tights",
-		-- DT 4%
-		feet="Malignance Boots"
+	sets.idle.MDT = set_combine(sets.idle.PDT, {
 	})
 	
 	-- Defense sets
@@ -464,14 +426,14 @@ function init_gear_sets()
 	})
 
 	sets.defense.HP = set_combine(sets.idle, {
-		head="Malignance Chapeau",
-		body="Malignance Tabard",
-		hands="Malignance Gloves",
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
-		legs="Malignance Tights",
-		feet="Malignance Boots"
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets"
 	})
 
 	sets.defense.MDT = set_combine(sets.idle.MDT, {
