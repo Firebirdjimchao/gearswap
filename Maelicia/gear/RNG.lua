@@ -82,7 +82,6 @@ function init_gear_sets()
 		back=gear.aug_belenus_ws_agi,
 		waist="K. Kachina Belt +1",
 		legs="Arc. Braccae +3",
-		--feet=gear.Herculean_feet_RA
 		feet="Osh. Leggings +1",
 	}
 	
@@ -374,7 +373,7 @@ function init_gear_sets()
 		--ear1="Telos Earring",
 		ear1="Ishvara Earring",
 		ear2="Moonshade Earring",
-		body=gear.Herculean_body_RA_WS,
+		body="Nyame Mail",
 		hands="Meg. Gloves +2",
 		-- 5 STP
 		ring1="Ilabrat Ring",
@@ -386,7 +385,7 @@ function init_gear_sets()
 		-- 4 STP
 		--legs=gear.Herculean_legs_RA,
 		legs="Arc. Braccae +3",
-		feet=gear.Herculean_feet_RA
+		feet="Nyame Sollerets",
 	})
 	
 	sets.precast.WS.RA.MidAcc = set_combine(sets.precast.WS.RA, {
@@ -454,14 +453,13 @@ function init_gear_sets()
 		neck="Scout's Gorget +2",
 		ear1="Ishvara Earring",
 		ear2="Sherida Earring",
-		--body=gear.Herculean_body_RA_WS,
 		body="Nyame Mail",
 		hands="Meg. Gloves +2",
 		--ring1="Dingir Ring",
 		ring1="Beithir Ring",
 		ring2="Regal Ring",
 		--back=gear.aug_belenus_ws,
-		back=gear.aug_belenus_ws_ag,
+		back=gear.aug_belenus_ws_agi,
 		waist="Fotia Belt",
 		legs="Arc. Braccae +3",
 		feet="Nyame Sollerets",
@@ -597,7 +595,6 @@ function init_gear_sets()
 	sets.precast.WS['Refulgent Arrow'] = set_combine(sets.precast.WS.RA, {
 		back=gear.aug_belenus_ws,
 		legs="Arc. Braccae +3",
-		feet=gear.Herculean_feet_RA
 	})
 	sets.precast.WS['Refulgent Arrow'].MidAcc = set_combine(sets.precast.WS['Refulgent Arrow'], {
 	})
@@ -642,7 +639,7 @@ function init_gear_sets()
 	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
 		head="Orion Beret +3",
 		neck="Scout's Gorget +2",
-		body=gear.Herculean_body_WS,
+		body="Nyame Mail",
 		ear1="Ishvara Earring",
 		ear2="Moonshade Earring",
 		hands="Meg. Gloves +2",

@@ -256,7 +256,7 @@ function init_gear_sets()
 		head="Nyame Helm",
 		ear1="Regal Earring",
 		ear2="Moonshade Earring",
-		body="Jhakri Robe +2",
+		body="Nyame Mail",
 		hands="Jhakri Cuffs +2",
 		ring2="Metamor. Ring +1",
 		back="Aurist's Cape +1",

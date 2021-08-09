@@ -182,18 +182,18 @@ function init_gear_sets()
 
 	sets.precast.WS.RA = set_combine(sets.precast.WS,{
 		ammo=gear.WSbullet,
-		head="Pursuer's Beret",
+		head="Nyame Helm",
 		neck="Fotia Gorget",
 		ear1="Telos Earring",
 		ear2="Enervating Earring",
 		body="Nisroch Jerkin",
-		hands=gear.Herculean_hands_RA,
+		hands="Meghanada Gloves +2",
 		ring1="Ilabrat Ring",
 		ring2="Rajas Ring",
 		back="Gunslinger's Cape",
 		waist="Fotia Belt",
-		legs=gear.Herculean_legs_RA,
-		feet=gear.Herculean_feet_RA
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
 	})
 
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
@@ -231,7 +231,6 @@ function init_gear_sets()
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
 		waist="Flume Belt +1",
-		feet="Herculean Boots"
 	})
 	
 	-- Specific spells
@@ -282,7 +281,7 @@ function init_gear_sets()
 		back="Gunslinger's Cape",
 		waist="Eschan Stone",
 		legs=gear.Herculean_legs_RA,
-		feet=gear.Herculean_feet_RA
+		feet="Malignance Boots",
 	}
 
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {

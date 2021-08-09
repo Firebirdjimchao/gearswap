@@ -140,7 +140,6 @@ function init_gear_sets()
 		back=Andartia.DEX,
 		waist="Eschan Stone",
 		legs="Malignance Tights",
-		--legs="Herculean Trousers",
 		feet="Malignance Boots"
 	}
 	sets.midcast.Trust =  set_combine(sets.defense.Evasion,{
@@ -197,7 +196,7 @@ function init_gear_sets()
 		back="Yokaze Mantle",
 		waist="Yemaya Belt",
 		legs=gear.Herculean_legs_RA,
-		feet=gear.Herculean_feet_RA
+		feet="Malignance Boots",
 	}
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
 	})

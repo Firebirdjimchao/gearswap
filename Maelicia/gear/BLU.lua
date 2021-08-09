@@ -346,7 +346,7 @@ function init_gear_sets()
 		head="Nyame Helm",
 		ear1="Ishvara Earring",
 		ear2="Moonshade Earring",
-		body=gear.Herculean_body_WS,
+		body="Nyame Mail",
 		hands="Jhakri Cuffs +2",
 		back=gear.Rosmerta_StrWSD,
 		waist="Sailfi Belt +1",
