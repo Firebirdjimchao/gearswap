@@ -196,7 +196,7 @@ function init_gear_sets()
 		range="Aureole",
 		head="Chironic Hat",
 		neck="Incanter's Torque",
-		ear1="Digni. Earring",
+		ear1="Crep. Earring",
 		ear2="Malignance Earring",
 		body="Inyanga Jubbah +2",
 		hands="Inyan. Dastanas +2",

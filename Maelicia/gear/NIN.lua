@@ -132,7 +132,7 @@ function init_gear_sets()
 		head="Malignance Chapeau",
 		neck="Moonbeam Nodowa",
 		body="Malignance Tabard",
-		ear1="Digni. Earring",
+		ear1="Crep. Earring",
 		ear2="Telos Earring",
 		hands="Malignance Gloves",
 		ring1="Patricius Ring",
@@ -185,7 +185,7 @@ function init_gear_sets()
 	sets.midcast.RA = {
 		head=gear.Herculean_head_RA,
 		neck="Iskur Gorget",
-		ear1="Enervating Earring",
+		ear1="Crep. Earring",
 		ear2="Telos Earring",
 		body="Mochi. Chainmail +3",
 		--hands="Hachiya Tekko +1",
@@ -241,8 +241,8 @@ function init_gear_sets()
 		ammo="Yamarang",
 		--head="Hachi. Hatsu. +1",
 		head="Mochi. Hatsuburi +3",
-		ear1="Digni. Earring",
-		ear2="Hermetic Earring",
+		ear1="Crep. Earring",
+		ear2="Digni. Earring",
 		neck="Incanter's Torque",
 		body="Malignance Tabard",
 		--hands="Mochizuki Tekko +3",
@@ -292,8 +292,8 @@ function init_gear_sets()
 	}
 
 	sets.midcast.ElementalNinjutsu.Resistant = set_combine(sets.midcast.ElementalNinjutsu, {
-		ear1="Digni. Earring",
-		ear2="Hermetic Earring",
+		ear1="Crep. Earring",
+		ear2="Digni. Earring",
 		back="Yokaze Mantle",
 	})
 
@@ -467,7 +467,7 @@ function init_gear_sets()
 	})
 	sets.engaged.Acc.MaxHaste = set_combine(sets.engaged.Mid.MaxHaste, {
 		head="Malignance Chapeau",
-		ear1="Digni. Earring",
+		ear1="Crep. Earring",
 		--body="Mochi. Chainmail +3",
 		--hands="Malignance Gloves",
 		body="Tatena. Harama. +1",
@@ -540,7 +540,7 @@ function init_gear_sets()
 	sets.engaged.Mid.Haste_30 = set_combine(sets.engaged.Low.Haste_30, {
 	})
 	sets.engaged.Acc.Haste_30 = set_combine(sets.engaged.Mid.Haste_30, {
-		ear1="Digni. Earring",
+		ear1="Crep. Earring",
 	})
 
 	sets.engaged.Innin.Haste_30 = set_combine(sets.engaged.Haste_30, {

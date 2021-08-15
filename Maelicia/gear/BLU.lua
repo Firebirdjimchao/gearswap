@@ -555,7 +555,7 @@ function init_gear_sets()
 		ammo="Pemphredo Tathlum",
 		head="Luh. Keffiyeh +3",
 		neck="Incanter's Torque",
-		ear1="Digni. Earring",
+		ear1="Crep. Earring",
 		ear2="Regal Earring",
 		body="Shamash Robe",
 		hands="Regal Cuffs",

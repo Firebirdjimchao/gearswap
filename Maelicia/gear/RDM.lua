@@ -285,7 +285,7 @@ function init_gear_sets()
 		neck="Dls. Torque +1",
 		--neck="Incanter's Torque",
 		ear1="Snotra Earring",
-		--ear2="Hermetic Earring",
+		--ear2="Digni. Earring",
 		ear2="Regal Earring",
 		body="Atrophy Tabard +3",
 		hands="Regal Cuffs",
@@ -1026,7 +1026,7 @@ function init_gear_sets()
 	sets.engaged.Acc = set_combine(sets.engaged,{
 		ammo="Ginsen",
 		neck="Subtlety Spec.",
-		ear1="Digni. Earring",
+		ear1="Crep. Earring",
 		ear2="Telos Earring",
 		ring1="Cacoethic Ring +1",
 		ring2="Jhakri Ring",

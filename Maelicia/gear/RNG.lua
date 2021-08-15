@@ -328,7 +328,7 @@ function init_gear_sets()
 	}
 
 	sets.precast.WS.MaxTP = {
-		ear2="Enervating Earring",
+		ear2="Crep. Earring",
 	}
 	
 	sets.precast.WS.MidAcc = set_combine(sets.precast.WS, {
@@ -760,8 +760,8 @@ function init_gear_sets()
 		neck="Scout's Gorget +2",
 		-- 5 STP
 		ear1="Telos Earring",
-		-- 4 STP
-		--ear2="Enervating Earring",
+		-- 5 STP
+		--ear2="Crep. Earring",
 		-- 8 STP
 		ear2="Dedition Earring",
 		-- 6 STP
@@ -825,17 +825,17 @@ function init_gear_sets()
 		feet="Malignance Boots",
 	})
 	
-	-- Gear: 34 STP
+	-- Gear: 35 STP
 	-- Perun +1: 4 STP
 	-- Nusku Shield: 3 STP
-	-- Gear Total: 41 STP
+	-- Gear Total: 42 STP
 	-- /war stat:
 	-- Base RACC 1642
 	-- Base RATK 1367
 	sets.midcast.RA.FullAcc = set_combine(sets.midcast.RA,{
 		head="Orion Beret +3",
-		-- 4 STP
-		ear2="Enervating Earring",
+		-- 5 STP
+		ear2="Crep. Earring",
 		-- 8 STP
 		body="Orion Jerkin +3",
 		hands="Orion Bracers +3",
@@ -950,7 +950,7 @@ function init_gear_sets()
 		head="Nyame Helm",
 		neck="Scout's Gorget +2",
 		ear1="Telos Earring",
-		ear2="Enervating Earring",
+		ear2="Crep. Earring",
 		--body="Councilor's Garb",
 		body="Nisroch Jerkin",
 		hands="Nyame Gauntlets",
@@ -1047,7 +1047,7 @@ function init_gear_sets()
 		head="Malignance Chapeau",
 		neck="Subtlety Spec.",
 		ear1="Telos Earring",
-		ear2="Digni. Earring",
+		ear2="Crep. Earring",
 		ring1="Cacoethic Ring +1",
 		legs="Tatena. Haidate +1",
 	})
@@ -1056,7 +1056,7 @@ function init_gear_sets()
 		head="Malignance Chapeau",
 		neck="Subtlety Spec.",
 		ear1="Telos Earring",
-		ear2="Digni. Earring",
+		ear2="Crep. Earring",
 		body="Tatena. Harama. +1",
 		hands="Tatena. Gote +1",
 		ring1="Cacoethic Ring +1",
@@ -1119,7 +1119,7 @@ function init_gear_sets()
 	sets.buff.Barrage = set_combine(sets.midcast.RA.FullAcc, {
 		head="Meghanada Visor +2",
 		ear1="Telos Earring",
-		ear2="Enervating Earring",
+		ear2="Crep. Earring",
 		neck="Scout's Gorget +2",
 		body="Nisroch Jerkin",
 		hands="Orion Bracers +3",

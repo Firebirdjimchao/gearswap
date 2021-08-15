@@ -1128,7 +1128,7 @@ function init_gear_sets()
 	sets.engaged.Acc = set_combine(sets.engaged, {
 		neck="Subtlety Spec.",
 		ear1="Telos Earring",
-		ear2="Digni. Earring",
+		ear2="Crep. Earring",
 		ring1="Cacoethic Ring +1",
 		ring2="Patricius Ring",
 		back="Aurist's Cape +1",
