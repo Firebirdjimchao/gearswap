@@ -185,7 +185,7 @@ function init_gear_sets()
 		head="Nyame Helm",
 		neck="Fotia Gorget",
 		ear1="Telos Earring",
-		ear2="Enervating Earring",
+		ear2="Crep. Earring",
 		body="Nisroch Jerkin",
 		hands="Meghanada Gloves +2",
 		ring1="Ilabrat Ring",
@@ -254,8 +254,8 @@ function init_gear_sets()
 	}
 
 	sets.midcast.CorsairShot.Acc = set_combine(sets.midcast.CorsairShot, {
-		ear1="Hermetic Earring",
-		ear2="Digni. Earring",
+		ear1="Digni. Earring",
+		ear2="Crep. Earring",
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
 		ring2="Stikini Ring",
@@ -273,7 +273,7 @@ function init_gear_sets()
 		head="Pursuer's Beret",
 		neck="Iskur Gorget",
 		ear1="Telos Earring",
-		ear2="Enervating Earring",
+		ear2="Crep. Earring",
 		body="Nisroch Jerkin",
 		hands="Malignance Gloves",
 		ring1="Haverton Ring",
@@ -410,7 +410,7 @@ function init_gear_sets()
 		head="Malignance Chapeau",
 		neck="Subtlety Spec.",
 		ear1="Telos Earring",
-		ear2="Digni. Earring",
+		ear2="Crep. Earring",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		ring2="Cacoethic Ring +1",

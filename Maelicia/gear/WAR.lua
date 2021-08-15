@@ -922,7 +922,7 @@ function init_gear_sets()
 		--head="Pummeler's Mask +3",
 		--body="Pumm. Lorica +3",
 		ear1="Telos Earring",
-		ear2="Digni. Earring",
+		ear2="Crep. Earring",
 		ring1="Flamma Ring",
 		ring2="Regal Ring",
 		waist="Ioskeha Belt +1",
@@ -1058,7 +1058,7 @@ function init_gear_sets()
 	sets.engaged.AccLow.PDT = set_combine(sets.engaged.PDT, {})
 	sets.engaged.AccHigh.PDT = set_combine(sets.engaged.AccLow.PDT, {
 		ear1="Telos Earring",
-		ear2="Digni. Earring",
+		ear2="Crep. Earring",
 		ring1="Flamma Ring",
 	})
 
@@ -1067,7 +1067,7 @@ function init_gear_sets()
 	sets.engaged.AccLow.MDT = set_combine(sets.engaged.MDT, {})
 	sets.engaged.AccHigh.MDT = set_combine(sets.engaged.AccLow.MDT, {
 		ear1="Telos Earring",
-		ear2="Digni. Earring",
+		ear2="Crep. Earring",
 		ring1="Flamma Ring",
 	})
 			 

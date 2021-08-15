@@ -492,7 +492,7 @@ function init_gear_sets()
 	sets.midcast.RA = {
 		head="Meghanada Visor +2",
 		neck="Iskur Gorget",
-		ear1="Enervating Earring",
+		ear1="Crep. Earring",
 		ear2="Telos Earring",
 		body="Meg. Cuirie +2",
 		hands="Meg. Gloves +2",
@@ -709,7 +709,7 @@ function init_gear_sets()
 	-- 11 Gear DW
 	sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc,{
 		head="Plun. Bonnet +3",
-		ear1="Digni. Earring",
+		ear1="Crep. Earring",
 		ear2="Telos Earring",
 		ring1="Cacoethic Ring +1",
 		ring2="Regal Ring",
@@ -781,8 +781,8 @@ function init_gear_sets()
 	-- Use Sandung, Chaac Belt, or Perfect Taming Sari to cap TH at 8
 	sets.engaged.HybridTH = set_combine(sets.engaged.PDT, sets.TreasureHunter,{
 		-- DT 3%
-		--ammo="Staunch Tathlum +1",
-		ammo="Yamarang",
+		ammo="Crepuscular Pebble",
+		--ammo="Yamarang",
 		-- DT 6%
 		head="Malignance Chapeau",
 		-- DT 6%

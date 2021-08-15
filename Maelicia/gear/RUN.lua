@@ -552,6 +552,7 @@ function init_gear_sets()
 	})
 		
 	sets.engaged.Hybrid = set_combine(sets.DT, {
+		ammo="Crepuscular Pebble",
 		head="Fu. Bandeau +3",
 		ear2="Sherida earring",
 		hands="Turms Mittens +1",
@@ -589,7 +590,7 @@ function init_gear_sets()
 	sets.engaged.MeleeAcc = set_combine(sets.engaged.MeleeMidAcc, {
 		head="Rune. Bandeau +3",
 		neck="Subtlety Spec.",
-		ear2="Digni. Earring",
+		ear2="Crep. Earring",
 		ring1="Cacoethic ring +1",
 		ring2="Regal Ring",
 		waist="Eschan Stone",

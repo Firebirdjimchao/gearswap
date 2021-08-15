@@ -175,7 +175,7 @@ function init_gear_sets()
 	})
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
 		ear1="Telos Earring",
-		ear2="Digni. Earring",
+		ear2="Crep. Earring",
 		ring1="Cacoethic Ring +1",
 		ring2="Patricius Ring",
 		waist="Eschan Stone"
@@ -995,7 +995,7 @@ function init_gear_sets()
 	-- 17% Haste
 	sets.engaged.Acc = set_combine(sets.engaged.MidAcc, {
 		neck="Subtlety Spec.",
-		ear2="Digni. Earring",
+		ear2="Crep. Earring",
 		ring2="Patricius Ring",
 		waist="Eschan Stone",
 	})

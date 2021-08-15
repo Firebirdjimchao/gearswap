@@ -446,8 +446,8 @@ function init_gear_sets()
 	sets.precast.WS['Tachi: Ageha'] = set_combine(sets.precast.WS, {
 		ammo="Pemphredo Tathlum",
 		head="Blistering Sallet +1",
-		ear1="Hermetic Earring",
-		ear2="Digni. Earring",
+		ear1="Digni. Earring",
+		ear2="Crep. Earring",
 		neck="Sanctity Necklace",
 		body="Sakonji Domaru +3",
 		hands="Flam. Manopolas +2",
@@ -590,11 +590,11 @@ function init_gear_sets()
 	})
 	sets.precast.WS['Namas Arrow'].HighAcc = set_combine(sets.precast.WS['Namas Arrow'], {
 		ear1="Telos Earring",
-		ear2="Enervating Earring",
+		ear2="Crep. Earring",
 	})
 	sets.precast.WS['Namas Arrow'].FullAcc = set_combine(sets.precast.WS['Namas Arrow'], {
 		ear1="Telos Earring",
-		ear2="Enervating Earring",
+		ear2="Crep. Earring",
 	})
 	
 	--------------------------------------
@@ -608,7 +608,7 @@ function init_gear_sets()
 		head=gear.Rao_head_hq_B,
 		neck="Marked Gorget",
 		ear1="Telos Earring",
-		ear2="Enervating Earring",
+		ear2="Crep. Earring",
 		body="Ken. Samue +1",
 		hands="Wakido Kote +3",
 		ring1="Ilabrat Ring",
@@ -917,7 +917,7 @@ function init_gear_sets()
 		-- 3% Hasso +2
 		feet="Wakido Sune. +3",
 	})
-	-- 62 gear STP + 10 (Dojikiri Yasutsuna) = total: 72
+	-- 67 gear STP + 10 (Dojikiri Yasutsuna) = total: 77
 	-- Must use Utu Grip
 	--
 	-- Gear Haste: 30%
@@ -937,7 +937,8 @@ function init_gear_sets()
 		neck="Sam. Nodowa +2",
 		-- 5 STP
 		ear1="Telos Earring",
-		ear2="Digni. Earring",
+		-- 5 STP
+		ear2="Crep. Earring",
 		-- 9 STP 3% Haste
 		--body="Wakido Domaru +3",
 		-- STP 5~9 3% Haste
@@ -1027,8 +1028,8 @@ function init_gear_sets()
 
 	sets.engagedPDTBase =  {
 		--sub="Utu Grip",
-		-- 2% DT
-		ammo="Staunch Tathlum +1",
+		-- 3% DT
+		ammo="Crepuscular Pebble",
 		-- 7% PDT
 		head="Mpaca's Cap",
 		-- STP 7 + 7 aug
@@ -1095,8 +1096,8 @@ function init_gear_sets()
 
 	sets.engagedMDTBase = {
 		--sub="Utu Grip",
-		-- 2% DT
-		ammo="Staunch Tathlum +1",
+		-- 3% DT
+		ammo="Crepuscular Pebble",
 		-- 7% PDT
 		head="Mpaca's Cap",
 		-- STP 7 + 7 aug
