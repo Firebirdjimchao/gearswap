@@ -324,7 +324,7 @@ function init_gear_sets()
 	-- Total: 41%
   -- <36%: use Shadow Mantle
 	sets.defense.PDT = set_combine(sets.idle,{
-		ammo="Staunch Tathlum",
+		ammo="Crepuscular Pebble",
 		back="Moonbeam Cape",
 		feet="Malignance Boots",
 	})
@@ -333,7 +333,7 @@ function init_gear_sets()
 	-- MDB: 26
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.defense.MDT = set_combine(sets.idle,{
-		ammo="Staunch Tathlum",
+		ammo="Crepuscular Pebble",
 		back="Moonbeam Cape",
 		feet="Malignance Boots",
 	})

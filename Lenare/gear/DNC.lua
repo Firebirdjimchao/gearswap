@@ -356,7 +356,7 @@ function init_gear_sets()
 	sets.idle = {
 		head="Malignance Chapeau",
 		--ammo="Charis Feather",
-		ammo="Staunch Tathlum",
+		ammo="Crepuscular Pebble",
 		neck="Twilight Torque",
 		ear1="Novia Earring",
 		ear2="Etiolation Earring",
@@ -387,7 +387,7 @@ function init_gear_sets()
 	})
 
 	sets.defense.PDT = set_combine(sets.idle,{
-		ammo="Staunch Tathlum",
+		ammo="Crepuscular Pebble",
 		head="Malignance Chapeau",
 		neck="Twilight Torque",
 		body="Meg. Cuirie +2",
@@ -400,7 +400,7 @@ function init_gear_sets()
 	})
 
 	sets.defense.MDT = set_combine(sets.idle,{
-		ammo="Staunch Tathlum",
+		ammo="Crepuscular Pebble",
 		head="Malignance Chapeau",
 		ear2="Etiolation Earring",
 		neck="Twilight Torque",

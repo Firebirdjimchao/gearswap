@@ -439,7 +439,7 @@ function init_gear_sets()
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 
 	sets.idle = {
-		ammo="Staunch Tathlum",
+		ammo="Crepuscular Pebble",
 		head="Malignance Chapeau",
 		neck="Twilight Torque",
 		ear1="Novia Earring",
@@ -485,13 +485,13 @@ function init_gear_sets()
 	})
 
 	sets.defense.PDT = set_combine(sets.idle,{
-		ammo="Staunch Tathlum",
+		ammo="Crepuscular Pebble",
 		back="Moonbeam Cape",
 		feet="Malignance Boots",
 	})
 
 	sets.defense.MDT = set_combine(sets.idle,{
-		ammo="Staunch Tathlum",
+		ammo="Crepuscular Pebble",
 		back="Moonbeam Cape",
 		feet="Malignance Boots",
 	})
@@ -597,7 +597,7 @@ function init_gear_sets()
 	-- Use Sandung, Chaac Belt, or Perfect Taming Sari to cap TH at 8
 	sets.engaged.HybridTH = set_combine(sets.engaged.PDT, sets.TreasureHunter,{
 		-- DT 2%
-		ammo="Staunch Tathlum",
+		ammo="Crepuscular Pebble",
 		-- DT 6%
 		head="Malignance Chapeau",
 		-- DT 5%

@@ -192,7 +192,7 @@ function init_gear_sets()
 	
 	sets.midcast.FastRecast = set_combine(sets.precast.FC,{
 		-- 1% DT
-		ammo="Staunch Tathlum",
+		ammo="Crepuscular Pebble",
 		-- 8 MDB 5% MDT
 		head="Inyanga Tiara +2",
 		-- 5% DT
@@ -504,8 +504,8 @@ function init_gear_sets()
 		hands="Inyan. Dastanas +2",
 		ring1=gear.DarkRing.physical,
 		ring2="Defending Ring",
-		--back="Moonbeam Cape",
-		back="Mecisto. Mantle",
+		back="Moonbeam Cape",
+		--back="Mecisto. Mantle",
 		waist="Fucho-no-Obi",
 		legs="Lengo Pants",
 		feet="Herald's Gaiters"
@@ -518,7 +518,7 @@ function init_gear_sets()
 		main=gear.Staff.DT,
 		sub="Enki Strap",
 		-- 2%
-		ammo="Staunch Tathlum",
+		ammo="Crepuscular Pebble",
 		-- 3%
 		head="Blistering Sallet +1",
 		-- 5%
@@ -545,7 +545,7 @@ function init_gear_sets()
 		main=gear.Staff.DT,
 		sub="Enki Strap",
 		-- 2%
-		ammo="Staunch Tathlum",
+		ammo="Crepuscular Pebble",
 		-- 5% 8
 		head="Inyanga Tiara +2",
 		-- 5%
