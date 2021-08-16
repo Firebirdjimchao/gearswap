@@ -164,7 +164,7 @@ function init_gear_sets()
 		ring2="Gere Ring",
 		back=gear.Segomo_dex_da,
 		waist="Fotia Belt",
-		legs="Hiza. Hizayoroi +2",
+		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
 	}
 	sets.precast.WS.Acc = set_combine(sets.precast.WS, {
@@ -173,7 +173,6 @@ function init_gear_sets()
 		body=gear.Adhemar_body_hq_B,
 		hands=gear.Adhemar_hands_hq_B,
 		back=gear.Segomo_dex_da,
-		legs="Hiza. Hizayoroi +2",
 		waist="Windbuffet Belt +1"
 	})
 	sets.precast.WS.SomeAcc = set_combine(sets.precast.WS, {
@@ -314,7 +313,7 @@ function init_gear_sets()
 		hands="Anchor. Gloves +2",
 		back=gear.Segomo_vit_wsd,
 		waist="Fotia Belt",
-		legs="Hiza. Hizayoroi +2",
+		legs="Nyame Flanchard",
 	})
 	sets.precast.WS["Retribution"].Acc = set_combine(sets.precast.WS.Acc, sets.precast.WS["Retribution"], {
 	})

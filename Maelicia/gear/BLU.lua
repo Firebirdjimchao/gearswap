@@ -473,7 +473,7 @@ function init_gear_sets()
 		ring1="Ilabrat Ring",
 		ring2="Rajas Ring",
 		back=gear.Rosmerta_StrWSD,
-		waist="Sailfi Belt +1",
+		waist="Prosilio Belt +1",
 		legs="Luhlaza Shalwar +3",
 		--feet="Nyame Sollerets",
 		feet="Luhlaza Charuqs +2",
