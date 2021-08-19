@@ -277,7 +277,7 @@ function init_gear_sets()
 		back="Aurist's Cape +1",
 		waist="Eschan Stone",
 		legs="Merlinic Shalwar",
-		feet="Jhakri Pigaches +2",
+		feet="Arch. Sabots +3",
 	}
 	
 	sets.midcast.MAB = {
@@ -297,7 +297,8 @@ function init_gear_sets()
 		waist=gear.ElementalObi,
 		--legs="Merlinic Shalwar",
 		legs="Arch. Tonban +3",
-		feet=gear.Merlinic_feet_burst,
+		--feet=gear.Merlinic_feet_burst,
+		feet="Arch. Sabots +3",
 	}
 	
 	sets.midcast.ConserveMP = set_combine(sets.midcast.FastRecast,{
@@ -591,7 +592,8 @@ function init_gear_sets()
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
 		ring2="Stikini Ring",
-		feet=gear.Merlinic_feet_burst
+		--feet=gear.Merlinic_feet_burst
+		feet="Arch. Sabots +3",
 	})
 	
 	sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {
@@ -599,7 +601,8 @@ function init_gear_sets()
 		head=gear.Merlinic_head_nuke,
 		body="Spaekona's Coat +3",
 		hands="Amalric Gages",
-		feet=gear.Merlinic_feet_burst
+		--feet=gear.Merlinic_feet_burst
+		feet="Arch. Sabots +3",
 	})
 	sets.midcast['Elemental Magic'].HighTierNuke.Resistant = set_combine(sets.midcast['Elemental Magic'].Resistant, {
 		ammo="Pemphredo Tathlum",
@@ -607,7 +610,8 @@ function init_gear_sets()
 		--body="Spaekona's Coat +3",
 		body="Amalric Doublet",
 		hands="Amalric Gages",
-		feet=gear.Merlinic_feet_burst
+		--feet=gear.Merlinic_feet_burst
+		feet="Arch. Sabots +3",
 	})
 
 	sets.midcast.Impact = set_combine(sets.midcast['Elemental Magic'], {head=empty,body="Twilight Cloak"})
@@ -653,7 +657,7 @@ function init_gear_sets()
 		ring2="Stikini Ring",
 		back="Taranus's Cape",
 		legs="Arch. Tonban +3",
-		feet="Jhakri Pigaches +2",
+		feet="Arch. Sabots +3",
 	})
 
 	-- For 5k+ non-killing MB
@@ -853,12 +857,12 @@ function init_gear_sets()
 		feet="Wicce Sabots +1"
 	}
 	
-	-- Magic Burst Damage: 40% (40 cap) + 16% II
-	-- INT: 251
-	-- MACC: 259
-	-- MAB: 288
+	-- Magic Burst Damage: 43% (40 cap) + 16% II
+	-- INT: 252
+	-- MACC: 249
+	-- MAB: 301
 	-- MDmg: 20
-	-- Elem: 44
+	-- Elem: 61
 	sets.magic_burst = set_combine(sets.midcast.MAB, {
 		-- INT 4
 		-- MACC 8
@@ -888,10 +892,10 @@ function init_gear_sets()
 		-- MB 10%
 		-- INT 4
 		-- MAB 8
-		--neck="Mizu. Kubikazari",
+		neck="Mizu. Kubikazari",
 		-- MACC 10
 		-- MAB 10 
-		neck="Sanctity Necklace",
+		--neck="Sanctity Necklace",
 		-- INT 3
 		-- MACC 8
 		-- MAB 8
@@ -978,12 +982,17 @@ function init_gear_sets()
 		-- INT 33
 		-- MACC 42
 		-- MAB 39
-		feet="Jhakri Pigaches +2",
+		--feet="Jhakri Pigaches +2",
 		-- MB 4% II
 		-- MB 4%
 		-- MACC 38
 		-- MAB 27
 		--feet="Ea Pigaches",
+		-- INT 30
+		-- MACC 42
+		-- MAB 54
+		-- Elem 17
+		feet="Arch. Sabots +3",
 	})
 
 	-- Magic Burst Damage: 36% (40 cap) + 30% II
@@ -1085,6 +1094,11 @@ function init_gear_sets()
 		-- MACC 38
 		-- MAB 27
 		--feet="Ea Pigaches",
+		-- INT 30
+		-- MACC 42
+		-- MAB 54
+		-- Elem 17
+		--feet="Arch. Sabots +3",
 	})
 
 	sets.magic_burst.Death = set_combine(sets.midcast.Death, {
