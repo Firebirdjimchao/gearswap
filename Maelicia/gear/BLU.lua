@@ -229,7 +229,7 @@ function init_gear_sets()
 	sets.buff['Burst Affinity'] = {legs="Assim. Shalwar +1",feet="Hashi. Basmak +1"}
 	sets.buff['Chain Affinity'] = {head="Hashishin Kavuk +1", feet="Assim. Charuqs +1"}
 	sets.buff.Convergence = {head="Luh. Keffiyeh +3"}
-	sets.buff.Diffusion = {feet="Luhlaza Charuqs +2"}
+	sets.buff.Diffusion = {feet="Luhlaza Charuqs +3"}
 	sets.buff.Enchainment = {body="Luhlaza Jubbah +3"}
 	sets.buff.Efflux = {legs="Hashishin Tayt +1"}
 
@@ -458,7 +458,7 @@ function init_gear_sets()
 		ring2="Stikini Ring",
 		back="Cornflower Cape",
 		legs="Hashishin Tayt +1",
-		feet="Luhlaza Charuqs +2",
+		feet="Luhlaza Charuqs +3",
 	}
 		
 	-- Physical Spells --
@@ -468,6 +468,7 @@ function init_gear_sets()
 		head="Luh. Keffiyeh +3",
 		neck="Incanter's Torque",
 		ear1="Telos Earring",
+		ear2="Crep. Earring",
 		body="Luhlaza Jubbah +3",
 		hands="Luh. Bazubands +3",
 		ring1="Ilabrat Ring",
@@ -475,8 +476,7 @@ function init_gear_sets()
 		back=gear.Rosmerta_StrWSD,
 		waist="Prosilio Belt +1",
 		legs="Luhlaza Shalwar +3",
-		--feet="Nyame Sollerets",
-		feet="Luhlaza Charuqs +2",
+		feet="Luhlaza Charuqs +3",
 	})
 
 	sets.midcast['Blue Magic'].PhysicalAcc = set_combine(sets.midcast['Blue Magic'].Physical, {
