@@ -179,7 +179,7 @@ function init_gear_sets()
 	sets.precast.JA.Berserk = {
 		body="Pumm. Lorica +3",
 		back=gear.Cichol_AccDA,
-		feet="Agoge Calligae +1",
+		feet="Agoge Calligae +3",
 	}
 	sets.precast.JA['Aggressor'] = {
 		head="Pummeler's Mask +3",
@@ -194,7 +194,7 @@ function init_gear_sets()
 	}
 	sets.precast.JA['Tomahawk'] = {
 		ammo="Thr. Tomahawk",
-		feet="Agoge Calligae +1",
+		feet="Agoge Calligae +3",
 	}
 	-- Sets to apply to any actions of spell.type
 	sets.precast.Waltz = {
