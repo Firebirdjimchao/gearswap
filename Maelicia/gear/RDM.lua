@@ -279,6 +279,7 @@ function init_gear_sets()
 		--sub="Ammurapi Shield",
 		--ammo="Regal Gem",
 		range="Ullr",
+		ammo=empty,
 		--head=gear.Chironic_head_nuke,
 		--head="Viti. Chapeau +3",
 		head="Atro. Chapeau +3",
