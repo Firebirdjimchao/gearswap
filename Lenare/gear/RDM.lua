@@ -213,9 +213,10 @@ function init_gear_sets()
 	
 	sets.midcast.MACC = {
 		--main=gear.MainStaff,
-		main="Grioavolr",
+		main=gear.MaccStaff,
 		sub="Enki Strap",
 		range="Ullr",
+		ammo=empty,
 		--ammo="Regal Gem",
 		head="Atro. Chapeau +3",
 		neck="Dls. Torque +1",

@@ -9,7 +9,7 @@ function define_global_sets()
 	-- Staffs
 	gear.Staff = {}
 	gear.MainStaff = {name="Grioavolr"}
-	gear.MaccStaff = {name="Grioavolr"}
+	gear.MaccStaff = {name="Contemplator +1"}
 	gear.FastcastStaff = {name="Grioavolr"}
 	gear.RecastStaff = {name=""}
 	gear.Staff.Cure = {name="Arka IV"}
