@@ -144,6 +144,7 @@ function define_global_sets()
 	}
 
 	sets.sharedTH = {
+		ammo="Per. Lucky Egg",
 		head="Wh. Rarab Cap +1",
 		waist="Chaac Belt",
 		feet="Volte Boots",
