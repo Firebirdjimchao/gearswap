@@ -65,6 +65,7 @@ function init_gear_sets()
 	--------------------------------------
 
 	sets.TreasureHunter = {
+		ammo="Per. Lucky Egg",
 		hands="Plun. Armlets +3",
 		--feet="Skulk. Poulaines +1",
 		--feet="Volte Boots",
