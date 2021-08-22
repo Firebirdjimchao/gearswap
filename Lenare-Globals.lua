@@ -78,6 +78,12 @@ function define_global_sets()
 		feet="Chelona Boots"
 	}
 
+	sets.sharedTH = {
+		ammo="Per. Lucky Egg",
+		head="Wh. Rarab Cap +1",
+		waist="Chaac Belt",
+	}
+
 	sets.precast.JA.Sublimation = {
 		waist="Embla Sash"
 	}

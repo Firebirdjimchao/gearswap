@@ -67,6 +67,7 @@ function init_gear_sets()
 	-- 3 Base (8 gear cap)
 	-- 0 Gift
 	sets.TreasureHunter = {
+		--ammo="Per. Lucky Egg",
 		-- Assuming +1 from perfect Taming Sari
 		--head="Wh. Rarab Cap +1",
 		-- 4
