@@ -14,6 +14,9 @@ function user_setup()
 	state.CastingMode:options('Normal', 'Resistant')
 	state.TreasureMode:set('None')
 
+	LugraWSList = S{'Blade: Shun', 'Blade: Ku', 'Blade: Jin'}
+	state.CapacityMode = M(false, 'Capacity Point Mantle')
+
 	gear.RegularAmmo = 'Togakushi Shuriken'
 	--gear.RegularAmmo = 'Seki Shuriken'
 	gear.SangeAmmo = 'Happo Shuriken'
@@ -152,16 +155,12 @@ function init_gear_sets()
 	--------------------------------------
 	-- Utility Sets for rules below
 	--------------------------------------
-	sets.TreasureHunter = {
-		head="Wh. Rarab Cap +1",
-		waist="Chaac Belt",
-	}
+	sets.TreasureHunter = sets_combine(sets.sharedTH,{
+	})
 	sets.CapacityMantle = { back="Mecistopins Mantle" }
-	sets.WSDayBonus	 = { head="Gavialis Helm" }
-	sets.WSBack		 = { back="Trepidity Mantle" }
-	sets.BrutalLugra	= { ear1="Cessance Earring", ear2="Lugra Earring +1" }
-	sets.BrutalTrux	 = { ear1="Cessance Earring", ear2="Trux Earring" }
-	sets.BrutalMoon	 = { ear1="Brutal Earring", ear2="Moonshade Earring" }
+	sets.WSDayBonus	 = {}
+	sets.WSBack		 = {}
+	sets.Lugra	= { ear2="Lugra Earring +1" }
 
 	sets.RegularAmmo	= { ammo=gear.RegularAmmo }
 	sets.SangeAmmo	  = { ammo=gear.SangeAmmo }
@@ -633,6 +632,9 @@ function init_gear_sets()
 		legs="Nyame Flanchard",
 		feet="Nyame Sollerets",
 	})
+
+	sets.precast.WS.MaxTP = set_combine(sets.Lugra, {
+	})
 	
 	sets.Kamu = set_combine(sets.precast.WS, {
 	})
@@ -691,6 +693,7 @@ function init_gear_sets()
 	sets.precast.WS['Blade: Shun'].Acc = set_combine(sets.precast.WS.Acc, sets.Shun)
 	
 	-- BLADE: TEN STR 30% / DEX 30%, damage varies with TP
+	-- Gravitation
 	sets.Ten = set_combine(sets.precast.WS, {
 		ammo="Seeth. Bomblet +1",
 		head="Nyame Helm",
@@ -834,10 +837,47 @@ function customize_melee_set(meleeSet)
 	return meleeSet
 end
 
+function job_post_precast(spell, action, spellMap, eventArgs)
+	-- Ranged Attacks 
+	if spell.action_type == 'Ranged Attack' and state.OffenseMode ~= 'Acc' then
+		equip( sets.SangeAmmo )
+	end
+	-- protection for lag
+	if spell.name == 'Sange' and player.equipment.ammo == gear.RegularAmmo then
+		state.Buff.Sange = false
+		eventArgs.cancel = true
+	end
+	if spell.type == 'WeaponSkill' then
+		if spell.english == 'Aeolian Edge' and state.TreasureMode.value ~= 'None' then
+			equip(sets.TreasureHunter)
+		end
+		-- Mecistopins Mantle rule (if you kill with ws)
+		if state.CapacityMode.value then
+			equip(sets.CapacityMantle)
+		end
+		-- Swap in special ammo for WS in high Acc mode
+		if state.OffenseMode.value == 'Acc' then
+			equip(select_ws_ammo())
+		end
+		-- Lugra Earring for some WS
+		if player.tp >= 2750 then
+			equip(sets.precast.WS.MaxTP)
+		elseif LugraWSList:contains(spell.english) then
+			if world.time >= (17*60) or world.time <= (7*60) then
+				equip(sets.Lugra)
+			end
+		elseif spell.english == 'Blade: Hi' or spell.english == 'Blade: Ten' then
+			if world.time >= (17*60) or world.time <= (7*60) then
+				equip(sets.Lugra)
+			end
+		end
+	end
+end
+
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_midcast(spell, action, spellMap, eventArgs)
-    if spell.english == "Monomi: Ichi" and buffactive['Sneak'] then
-    	cast_delay(1.7)
-      send_command('@wait 1.7;cancel sneak')
-    end
+	if spell.english == "Monomi: Ichi" and buffactive['Sneak'] then
+		cast_delay(1.7)
+		send_command('@wait 1.7;cancel sneak')
+	end
 end

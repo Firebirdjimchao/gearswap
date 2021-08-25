@@ -282,8 +282,7 @@ function init_gear_sets()
 	})
 
 	sets.precast.WS.MaxTP = {
-		ear2="Ishvara Earring",
-		--ear1="Lugra Earring +1",
+		ear1="Lugra Earring +1",
 	}
 			 
 	----- Specific weaponskill sets. -----

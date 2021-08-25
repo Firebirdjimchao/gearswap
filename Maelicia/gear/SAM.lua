@@ -280,8 +280,7 @@ function init_gear_sets()
 	})
 
 	sets.precast.WS.MaxTP = {
-		ear2="Ishvara Earring",
-		--ear1="Lugra Earring +1",
+		ear2="Lugra Earring +1",
 	}
 
 	sets.precast.WS.PDTBase = {
