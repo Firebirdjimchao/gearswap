@@ -226,8 +226,8 @@ function init_gear_sets()
 	-- Start defining the sets
 	--------------------------------------
 
-	sets.buff['Burst Affinity'] = {legs="Assim. Shalwar +1",feet="Hashi. Basmak +1"}
-	sets.buff['Chain Affinity'] = {head="Hashishin Kavuk +1", feet="Assim. Charuqs +1"}
+	sets.buff['Burst Affinity'] = {legs="Assim. Shalwar +2",feet="Hashi. Basmak +1"}
+	sets.buff['Chain Affinity'] = {head="Hashishin Kavuk +1", feet="Assim. Charuqs +2"}
 	sets.buff.Convergence = {head="Luh. Keffiyeh +3"}
 	sets.buff.Diffusion = {feet="Luhlaza Charuqs +3"}
 	sets.buff.Enchainment = {body="Luhlaza Jubbah +3"}
