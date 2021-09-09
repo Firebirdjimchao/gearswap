@@ -25,6 +25,13 @@ function define_global_sets()
 	gear.MeleeTaeonLegs = { name="Taeon Tights", augments={'Accuracy+12 Attack+12','"Triple Atk."+2','STR+4',}}
 	gear.MeleeTaeonFeet = {	name="Taeon Boots",	augments={'Attack+24','"Triple Atk."+2','Crit. hit damage +1%',}}
 	gear.RATaeonFeet = { name="Taeon Boots",augments={'Rng.Acc.+19 Rng.Atk.+19','Crit.hit rate+3','STR+3 AGI+3',}}
+
+	gear.Taeon_Phalanx_body = { name="Taeon Tabard", augments={'"Fast Cast"+5','Phalanx +3',}}
+	gear.Taeon_FastCast_body = { name="Taeon Tabard", augments={'"Fast Cast"+5','Phalanx +3',}}
+	gear.Taeon_Phalanx_hands = { name="Taeon Gloves", augments={'"Fast Cast"+4','Phalanx +3',}}
+	gear.Taeon_FastCast_hands = { name="Taeon Gloves", augments={'"Fast Cast"+4','Phalanx +3',}}
+	gear.Taeon_Phalanx_legs = { name="Taeon Tights", augments={'Accuracy+12 Attack+12','"Triple Atk."+2','Phalanx +3',}}
+	gear.Taeon_Phalanx_feet = { name="Taeon Boots", augments={'Attack+24','"Triple Atk."+2','Phalanx +3',}}
 	
 	gear.rawhide_body_D = { name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}}
 	
