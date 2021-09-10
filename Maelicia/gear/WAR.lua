@@ -1181,7 +1181,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 			equip(sets.buff.Sekkanoki)
 		end
 
-		if state.DefenseMode.value ~= 'None' and state.HybridMode ~= 'Normal' then
+		if state.DefenseMode.value == 'None' and state.HybridMode == 'Normal' then
 			-- Replace Moonshade Earring if we're at cap TP
 			if player.tp >= 2750 then
 				equip(sets.precast.WS.MaxTP)
