@@ -433,6 +433,13 @@ function init_gear_sets()
 		ear2="Andoaa Earring",
 	})
 
+	sets.midcast['Phalanx'] = set_combine(sets.midcast['Enhancing Magic'], {
+		body=gear.Taeon_Phalanx_body,
+		hands=gear.Taeon_Phalanx_hands,
+		legs=gear.Taeon_Phalanx_legs,
+		feet=gear.Taeon_Phalanx_feet,
+	})
+
 
 	-- Static value (Use Duration+ and Potency+ gear) --
 	sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'],{
@@ -601,6 +608,13 @@ function init_gear_sets()
 	})
 
 	sets.midcast['Blue Magic'].Buff = set_combine(sets.midcast['Blue Magic'],sets.buffDuration,{
+	})
+
+	sets.midcast['Blue Magic']['Carcharian Verve'] = set_combine(sets.midcast['Blue Magic'], {
+		body=gear.Taeon_Phalanx_body,
+		hands=gear.Taeon_Phalanx_hands,
+		legs=gear.Taeon_Phalanx_legs,
+		feet=gear.Taeon_Phalanx_feet,
 	})
 
 	-- Sets to return to when not performing an action.
