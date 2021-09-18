@@ -1434,7 +1434,7 @@ function job_precast(spell, action, spellMap, eventArgs)
 		end
 
 		-- Don't gearswap for weaponskills when Defense is active and Hybrid Mode set to a specific state
-		if state.DefenseMode.value ~= 'None' and state.HybridMode ~= 'Normal' then
+		if state.DefenseMode.value ~= 'None' and state.HybridMode.value ~= 'Normal' then
 			eventArgs.handled = true
 		end
 	end
@@ -1454,7 +1454,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 			equip(sets.buff['Meikyo Shisui'])
 		end
 
-		if state.DefenseMode.value == 'None' and state.HybridMode == 'Normal' then
+		if state.DefenseMode.value == 'None' and state.HybridMode.value == 'Normal' then
 			-- Replace Moonshade Earring if we're at cap TP
 			if player.tp >= 2750 then
 				equip(sets.precast.WS.MaxTP)
