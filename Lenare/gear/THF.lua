@@ -83,7 +83,7 @@ function init_gear_sets()
 	}
 
 	sets.buff['Sneak Attack'] = {
-		head="Pill. Bonnet +2",
+		head="Pill. Bonnet +3",
 		neck="Caro Necklace",
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
@@ -99,7 +99,7 @@ function init_gear_sets()
 	}
 
 	sets.buff['Trick Attack'] = {
-		head="Pill. Bonnet +2",
+		head="Pill. Bonnet +3",
 		neck="Iskur Gorget",
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
@@ -140,7 +140,7 @@ function init_gear_sets()
 
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {
-		head="Pill. Bonnet +2",
+		head="Pill. Bonnet +3",
 		ear1="Roundel Earring",
 		body="Pillager's Vest +3",
 		hands="Pill. Armlets +2",
@@ -188,7 +188,7 @@ function init_gear_sets()
 	
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
-		head="Pill. Bonnet +2",
+		head="Pill. Bonnet +3",
 		neck="Asperity Necklace",
 		--neck=gear.ElementalGorget,
 		ear1="Sherida Earring",
@@ -207,7 +207,7 @@ function init_gear_sets()
 	sets.precast.WS.MidAcc = set_combine(sets.precast.WS, {
 	})
 	sets.precast.WS.HighAcc = set_combine(sets.precast.WS, {
-		head="Pill. Bonnet +2",
+		head="Pill. Bonnet +3",
 		body="Pillager's Vest +3",
 		hands="Meg. Gloves +2",
 		waist="Eschan Stone",
@@ -215,7 +215,7 @@ function init_gear_sets()
 		feet="Meg. Jam. +2",
 	})
 	sets.precast.WS.FullAcc = set_combine(sets.precast.WS, {
-		head="Pill. Bonnet +2",
+		head="Pill. Bonnet +3",
 		neck="Sanctity Necklace",
 		body="Pillager's Vest +3",
 		--hands="Meg. Gloves +2",
