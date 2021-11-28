@@ -156,7 +156,7 @@ function init_gear_sets()
 		-- 10 Enmity
 		body="Emet Harness +1",
 		-- 15 Enmity
-		--hands="Pumm. Mufflers +3",
+		hands="Pumm. Mufflers +3",
 		-- 5 Enmity
 		ring1="Supershear Ring",
 		-- 5 Enmity
@@ -191,6 +191,9 @@ function init_gear_sets()
 	}
 	sets.precast.JA['Warcry'] = {
 		head="Agoge Mask +3",
+	}
+	sets.precast.JA['Retaliation'] = {
+		hands="Pumm. Mufflers +3",
 	}
 	sets.precast.JA['Tomahawk'] = {
 		ammo="Thr. Tomahawk",
@@ -265,7 +268,7 @@ function init_gear_sets()
 		back=gear.Cichol_AccDA,
 	})
 	sets.precast.WS.AccHigh = set_combine(sets.precast.WS.AccLow, {
-		head="Pummeler's Mask +3",
+		--head="Pummeler's Mask +3",
 		body="Pumm. Lorica +3",
 		back=gear.Cichol_AccDA,
 		legs="Pumm. Cuisses +3",
