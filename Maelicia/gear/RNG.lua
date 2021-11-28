@@ -1,6 +1,6 @@
 function user_setup()
 	state.IdleMode:options('Normal', 'CP', 'Regen', 'CPPDT', 'CPMDT')
-	state.OffenseMode:options('Normal', 'FullAcc', 'DT', 'Melee', 'Encumbered')
+	state.OffenseMode:options('Normal', 'FullAcc', 'DT', 'Melee', 'MeleeMidAcc', 'MeleeHighAcc', 'MeleeFullAcc', 'Encumbered')
 	state.RangedMode:options('Normal', 'MidAcc', 'HighAcc', 'FullAcc', 'Crit')
 	state.WeaponskillMode:options('Normal', 'MidAcc', 'HighAcc', 'FullAcc')
 
@@ -1039,11 +1039,11 @@ function init_gear_sets()
 		feet="Tatena. Sune. +1",
 	})
 	
-	sets.engaged.Melee.MidAcc = set_combine(sets.engaged.Melee,{
+	sets.engaged.MeleeMidAcc = set_combine(sets.engaged.Melee,{
 		ring2="Cacoethic Ring +1",
 	})
 
-	sets.engaged.Melee.HighAcc = set_combine(sets.engaged.Melee,{
+	sets.engaged.MeleeHighAcc = set_combine(sets.engaged.Melee,{
 		head="Malignance Chapeau",
 		neck="Subtlety Spec.",
 		ear1="Telos Earring",
@@ -1052,7 +1052,7 @@ function init_gear_sets()
 		legs="Tatena. Haidate +1",
 	})
 
-	sets.engaged.Melee.FullAcc = set_combine(sets.engaged.Melee,{
+	sets.engaged.MeleeFullAcc = set_combine(sets.engaged.Melee,{
 		head="Malignance Chapeau",
 		neck="Subtlety Spec.",
 		ear1="Telos Earring",

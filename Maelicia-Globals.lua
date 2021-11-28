@@ -31,7 +31,9 @@ function define_global_sets()
 	gear.Taeon_Phalanx_hands = { name="Taeon Gloves", augments={'"Fast Cast"+4','Phalanx +3',}}
 	gear.Taeon_FastCast_hands = { name="Taeon Gloves", augments={'"Fast Cast"+4','Phalanx +3',}}
 	gear.Taeon_Phalanx_legs = { name="Taeon Tights", augments={'Accuracy+12 Attack+12','"Triple Atk."+2','Phalanx +3',}}
-	gear.Taeon_Phalanx_feet = { name="Taeon Boots", augments={'Attack+24','"Triple Atk."+2','Phalanx +3',}}
+	gear.Taeon_Phalanx_feet = { name="Taeon Boots", augments={'Attack+24','Spell interruption rate down -10%','Phalanx +3',}}
+
+	gear.Taeon_SIRD_feet = { name="Taeon Boots", augments={'Attack+24','Spell interruption rate down -10%','Phalanx +3',}}
 	
 	gear.rawhide_body_D = { name="Rawhide Vest", augments={'HP+50','"Subtle Blow"+7','"Triple Atk."+2',}}
 	
