@@ -83,11 +83,11 @@ function init_gear_sets()
 	}
 
 	sets.buff['Sneak Attack'] = {
-		head="Pill. Bonnet +2",
+		head="Pill. Bonnet +3",
 		neck="Caro Necklace",
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
-		body="Meg. Cuirie +2",
+		body="Pillager's Vest +3",
 		hands="Skulk. Armlets +1",
 		ring1="Rajas Ring",
 		ring2="Apate Ring",
@@ -99,7 +99,7 @@ function init_gear_sets()
 	}
 
 	sets.buff['Trick Attack'] = {
-		head="Pill. Bonnet +2",
+		head="Pill. Bonnet +3",
 		neck="Iskur Gorget",
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
@@ -125,7 +125,7 @@ function init_gear_sets()
 	sets.precast.JA['Collaborator'] = {head="Skulker's Bonnet +1"}
 	sets.precast.JA['Accomplice'] = {head="Skulker's Bonnet +1"}
 	sets.precast.JA['Flee'] = {feet="Pill. Poulaines +1"}
-	sets.precast.JA['Hide'] = {body="Pillager's Vest +2"}
+	sets.precast.JA['Hide'] = {body="Pillager's Vest +3"}
 	sets.precast.JA['Conspirator'] = {body="Skulker's Vest +1"}
 	sets.precast.JA['Steal'] = {neck="Rabbit Charm",hands="Pill. Armlets +2",legs="Assassin's Culottes",feet="Pill. Poulaines +1"}
 	sets.precast.JA['Despoil'] = {legs="Skulk. Culottes +1",feet="Skulk. Poulaines +1"}
@@ -140,10 +140,9 @@ function init_gear_sets()
 
 	-- Waltz set (chr and vit)
 	sets.precast.Waltz = {
-		head="Pill. Bonnet +2",
+		head="Pill. Bonnet +3",
 		ear1="Roundel Earring",
-		--body="Pillager's Vest +2",
-		body="Plunderer's Vest +3",
+		body="Pillager's Vest +3",
 		hands="Pill. Armlets +2",
 		ring1="Dark Ring",
 		ring2="Sirona's Ring",
@@ -189,13 +188,13 @@ function init_gear_sets()
 	
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
-		head="Pill. Bonnet +2",
+		head="Pill. Bonnet +3",
 		neck="Asperity Necklace",
 		--neck=gear.ElementalGorget,
 		ear1="Sherida Earring",
 		ear2="Moonshade Earring",
-		--body="Meg. Cuirie +2",
-		body="Plunderer's Vest +3",
+		--body="Plunderer's Vest +3",
+		body="Pillager's Vest +3",
 		hands="Mummu Wrists +2",
 		ring1="Rajas Ring",
 		ring2="Apate Ring",
@@ -208,17 +207,17 @@ function init_gear_sets()
 	sets.precast.WS.MidAcc = set_combine(sets.precast.WS, {
 	})
 	sets.precast.WS.HighAcc = set_combine(sets.precast.WS, {
-		head="Pill. Bonnet +2",
-		body="Pillager's Vest +2",
+		head="Pill. Bonnet +3",
+		body="Pillager's Vest +3",
 		hands="Meg. Gloves +2",
 		waist="Eschan Stone",
 		--legs="Meg. Chausses +2",
 		feet="Meg. Jam. +2",
 	})
 	sets.precast.WS.FullAcc = set_combine(sets.precast.WS, {
-		head="Pill. Bonnet +2",
+		head="Pill. Bonnet +3",
 		neck="Sanctity Necklace",
-		body="Pillager's Vest +2",
+		body="Pillager's Vest +3",
 		--hands="Meg. Gloves +2",
 		hands="Pill. Armlets +2",
 		back=gear.jsecape_dex_crit,
@@ -524,7 +523,7 @@ function init_gear_sets()
 		feet="Plun. Poulaines +1"
 	}
 	sets.engaged.MidAcc = set_combine(sets.engaged,{
-		body="Meg. Cuirie +2",
+		body="Pillager's Vest +3",
 		legs="Pill. Culottes +3",
 		feet="Mummu Gamash. +2",
 	})
@@ -533,7 +532,7 @@ function init_gear_sets()
 		head="Malignance Chapeau",
 		ear2="Telos Earring",
 		neck="Sanctity Necklace",
-		body="Pillager's Vest +2",
+		body="Pillager's Vest +3",
 		hands="Malignance Gloves",
 		waist="Eschan Stone",
 		legs="Pill. Culottes +3",
@@ -544,7 +543,7 @@ function init_gear_sets()
 		head="Malignance Chapeau",
 		ear1="Zennaroi Earring",
 		ear2="Telos Earring",
-		body="Pillager's Vest +2",
+		body="Pillager's Vest +3",
 		hands="Malignance Gloves",
 		ring1="Cacoethic Ring",
 		waist="Eschan Stone",
