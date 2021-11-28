@@ -105,7 +105,7 @@ function init_gear_sets()
 		-- MDT 10% Eva 20 Meva 30
 		back=gear.aug_ogma_dt,
 		-- PDT 4%
-		waist="Flume Belt +1",
+		waist="Audumbla Sash",
 		-- 5% PDT Eva 58 Meva 99 Ailment 10
 		--legs="Rune. Trousers +3",
 		-- DT 7% Eva 85 Meva 150
@@ -396,11 +396,27 @@ function init_gear_sets()
 	-- 26% Haste
 	sets.midcast.FastRecast = set_combine(sets.DT, {
 		--hands="Turms Mittens +1",
-		hands="Kurys Gloves",
+		--hands="Kurys Gloves",
+		hands="Nyame Gauntlets",
 		back=gear.aug_ogma_dt,
-		legs="Eri. Leg Guards +1",
+		-- SIRD 10%
+		waist="Audumbla Sash",
+		--legs="Eri. Leg Guards +1",
+		-- SIRD 20%
+		legs="Carmine cuisses +1",
 		--feet="Turms leggings",
 	})
+
+	sets.midcast.SIRD = {
+		-- SIRD 11%
+		ammo="Staunch Tathlum +1",
+		-- SIRD 10%
+		waist="Audumbla Sash",
+		-- SIRD 20%
+		legs="Carmine cuisses +1",
+		-- SIRD 10%
+		feet=gear.Taeon_SIRD_feet,
+	}
 
 	-- 388 Base (RUN: B-, Lv. 99)
 	-- 16 (Merits)
@@ -464,6 +480,10 @@ function init_gear_sets()
 	sets.midcast['Refresh'] = set_combine(sets.midcast.EnhancingDuration, {
 		waist="Gishdubar Sash"
 	})
+	sets.midcast['Aquaveil'] = set_combine(sets.midcast.EnhancingDuration, sets.midcast.SIRD,{
+		neck="Futhark Torque +1",
+		hands="Nyame Gauntlets",
+	})
 
 	sets.midcast['Healing Magic'] = set_combine(sets.enmity, {})
 	sets.midcast.Cure = set_combine(sets.midcast['Headling Magic'], {
@@ -495,7 +515,7 @@ function init_gear_sets()
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		back=gear.aug_ogma_dt,
-		waist="Flume Belt +1",
+		waist="Audumbla Sash",
 		legs="Carmine cuisses +1",
 		feet="Nyame Sollerets",
 	}
