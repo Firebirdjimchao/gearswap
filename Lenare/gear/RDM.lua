@@ -75,7 +75,7 @@ function init_gear_sets()
 		ear1="Roundel Earring",
 		ear2="Sjofn Earring",
 		body="Atrophy Tabard +3",
-		hands="Atrophy Gloves +2",
+		hands="Atrophy Gloves +3",
 		legs="Merlinic Shalwar",
 		feet="Vanya Clogs"
 	}
@@ -148,8 +148,8 @@ function init_gear_sets()
 		ear1="Moonshade Earring",
 		ear2="Sherida Earring",
 		body="Ayanmo Corazza +2",
-		hands="Jhakri Cuffs +2",
-		--hands="Atrophy Gloves +3",
+		--hands="Jhakri Cuffs +2",
+		hands="Atrophy Gloves +3",
 		ring1="Rajas Ring",
 		ring2="Cacoethic Ring",
 		back="Atheling Mantle",
@@ -188,8 +188,8 @@ function init_gear_sets()
 		neck=gear.ElementalGorget,
 		ear1="Moonshade Earring",
 		body="Viti. Tabard +3",
-		hands="Jhakri Cuffs +2",
-		--hands="Atrophy Gloves +3",
+		--hands="Jhakri Cuffs +2",
+		hands="Atrophy Gloves +3",
 		legs="Jhakri Slops +2",
 		feet="Vitiation Boots +3",
 	})
@@ -304,7 +304,7 @@ function init_gear_sets()
 		waist="Gishdubar Sash",
 	})
 	
-	-- 562 total, 103 Gear + 456 (420 base + 36 Gift), 113 DUR (93 + 20 JP) + 5 DUR (Grioavolr aug)
+	-- 562 total, 103 Gear + 456 (420 base + 36 Gift), 115 DUR (95 + 20 JP) + 5 DUR (Grioavolr aug)
 	sets.midcast['Enhancing Magic'] = {
 		-- 5 DUR
 		main="Grioavolr",
@@ -320,8 +320,8 @@ function init_gear_sets()
 		ear2="Malignance Earring",
 		-- 23 15 DUR
 		body="Viti. Tabard +3",
-		-- 18 DUR
-		hands="Atrophy Gloves +2",
+		-- 21 DUR
+		hands="Atrophy Gloves +3",
 		-- 5
 		ring1="Stikini Ring",
 		-- 5
@@ -338,7 +338,7 @@ function init_gear_sets()
 		feet="Leth. Houseaux +1"
 	}
 	
-	-- 514 total, 58 Gear + 456 (420 base + 36 Gift), 133 DUR (113 + 20 JP) + 5 DUR (Grioavolr aug)
+	-- 514 total, 58 Gear + 456 (420 base + 36 Gift), 135 DUR (115 + 20 JP) + 5 DUR (Grioavolr aug)
 	-- Using as many of Empy pieces as possible to maximize Composure bonus
 	sets.midcast.EnhancingDuration = set_combine(sets.midcast['Enhancing Magic'],{
 		-- 5 DUR
@@ -354,8 +354,8 @@ function init_gear_sets()
 		--body="Lethargy Sayon +1",
 		-- 23 15 DUR
 		body="Viti. Tabard +3",
-		-- 18 DUR
-		hands="Atrophy Gloves +2",
+		-- 21 DUR
+		hands="Atrophy Gloves +3",
 		-- 5
 		ring1="Stikini Ring",
 		-- 5
