@@ -414,7 +414,7 @@ function init_gear_sets()
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		ring2="Cacoethic Ring +1",
-		waist="Eschan Stone"
+		waist="Eschan Stone",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
 	})

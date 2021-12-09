@@ -155,7 +155,7 @@ function init_gear_sets()
 	--------------------------------------
 	-- Utility Sets for rules below
 	--------------------------------------
-	sets.TreasureHunter = sets_combine(sets.sharedTH,{
+	sets.TreasureHunter = set_combine(sets.sharedTH,{
 	})
 	sets.CapacityMantle = { back="Mecistopins Mantle" }
 	sets.WSDayBonus	 = {}
