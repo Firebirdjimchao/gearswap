@@ -188,7 +188,6 @@ function init_gear_sets()
 		ear1="Malignance Earring",
 		ear2="Regal Earring",
 		body="Bagua Tunic +3",
-		--hands="Amalric Gages",
 		hands="Jhakri Cuffs +2",
 		ring1="Freke Ring",
 		ring2="Strendu Ring",
@@ -325,9 +324,8 @@ function init_gear_sets()
 		ear2="Regal Earring",
 		body="Geomancy Tunic +2",
 		hands="Geo. Mitaines +2",
-		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
-		ring2="Stikini Ring",
+		ring2="Stikini Ring +1",
 		back="Aurist's Cape +1",
 		waist="Luminary Sash",
 		legs="Geomancy Pants +2",
@@ -335,7 +333,7 @@ function init_gear_sets()
 	}
 	
 	sets.midcast.MAB = {
-		main="Idris",
+		main="Bunzi's Rod",
 		sub="Ammurapi Shield",
 		--main=gear.MainStaff,
 		--sub="Enki Strap",
@@ -347,73 +345,78 @@ function init_gear_sets()
 		ear2="Regal Earring",
 		--body="Ea Houppelande",
 		body="Bagua Tunic +3",
-		hands="Bagua Mitaines +3",
+		--hands="Bagua Mitaines +3",
+		hands=gear.Amalric_hands_hq_D,
 		ring1="Freke Ring",
 		ring2="Strendu Ring",
 		--back=gear.ElementalCape,
 		back=gear.Nanto_nuke,
 		waist=gear.ElementalObi,
 		legs="Merlinic Shalwar",
-		--feet=gear.Merlinic_feet_burst
-		feet="Bagua Sandals +3"
+		--feet="Bagua Sandals +3"
+		feet=gear.Amalric_feet_hq_D,
 	}
 	
 	sets.midcast.ConserveMP = set_combine(sets.midcast.FastRecast,{
+		-- 3
+		head=gear.Merlinic_head_nuke,
 		-- 5
 		--neck="Reti Pendant",
 		-- 3
 		ear1="Gifted Earring",
+		-- 6
+		body=gear.Amalric_body_A,
 		-- 5
 		back="Fi Follet Cape +1",
 		-- 8
 		waist="Austerity Belt",
 		-- 5
 		legs="Lengo Pants",
-		-- 4
-		feet="Merlinic Crackows",
+		-- 7
+		feet=gear.Amalric_feet_hq_D,
 	})
 
 	-- === Geomancy =========================================
 	
-	-- 373 + 373 + 16 + 16 = 778 + with gifts (36 Geomancy, 36 Handbell) = 850 (900 to cap all spell potency)
-	-- Set total: 54
-	-- Total: 904
-	-- ConserveMP total: 25
+	-- 373 + 373 + 16 + 16 = 778 + 26 (master level) + with gifts (36 Geomancy, 36 Handbell) = 876 (900 to cap all spell potency)
+	-- Set total: 24
+	-- Total: 902
+	-- ConserveMP total: 37
 	sets.midcast.Geomancy = set_combine(sets.midcast.ConserveMP,{
 		main="Idris",
 		sub="Genmei Shield",
 		-- 18
 		range=gear.GeoBell,
 		-- 15
-		head="Azimuth Hood +1",
+		--head="Azimuth Hood +1",
+		-- ConserveMP +3
+		head=gear.Merlinic_head_nuke,
 		neck="Bagua Charm",
 		-- ConserveMP +3
 		ear1="Gifted Earring",
 		-- 16
-		body="Bagua Tunic +3",
+		--body="Bagua Tunic +3",
+		-- ConserveMP +6
+		body=gear.Amalric_body_A,
 		hands="Azimuth Gloves +1",
 		ring1="Metamor. Ring +1",
-		-- 5
-		ring2="Stikini Ring",
+		-- 8
+		ring2="Stikini Ring +1",
 		-- ConserveMP +5
 		back="Fi Follet Cape +1",
 		-- ConserveMP +8
 		waist="Austerity Belt",
 		-- ConserveMP +5
 		legs="Lengo Pants",
-		-- ConserveMP +4
-		feet="Merlinic Crackows",
+		-- ConserveMP +7
+		feet=gear.Amalric_feet_hq_D,
 	})
-	-- Set total: 54
-	-- Total: 904
-	-- ConserveMP total: 14
+	-- Set total: 24
+	-- Total: 902
+	-- ConserveMP total: 20
 	sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy,{
 		main="Idris",
 		sub="Genmei Shield",
-		-- ConserveMP +3
-		head=gear.Merlinic_head_nuke,
-		neck="Incanter's Torque",
-		ring2="Persis Ring",
 		-- +20
 		back=gear.Nanto_luopan,
 		-- +21
@@ -479,8 +482,8 @@ function init_gear_sets()
 	
 	-- 139 WHM sub, 144 RDM sub
 	-- 16 merits
-	-- 91 gear
-	-- 246 WHM sub, 251 RDM sub
+	-- 94 gear
+	-- 249 WHM sub, 254 RDM sub
 	-- 47% DUR
 	sets.midcast['Enhancing Magic'] = {
 		-- 18
@@ -502,8 +505,8 @@ function init_gear_sets()
 		hands=gear.Telchine_hands_pet,
 		-- 5
 		ring1="Stikini Ring",
-		-- 5
-		ring2="Stikini Ring",
+		-- 8
+		ring2="Stikini Ring +1",
 		-- 9
 		back="Fi Follet Cape +1",
 		-- 10% DUR
@@ -553,8 +556,8 @@ function init_gear_sets()
 	-- 378 Base
 	-- 16 merits
 	-- 394 Initial
-	-- 89 gear
-	-- 483 total
+	-- 92 gear
+	-- 486 total
 	sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.MACC,{
 		-- 16
 		head="Befouled Crown",
@@ -570,8 +573,8 @@ function init_gear_sets()
 		--ring1="Stikini Ring",
 		-- Duration +10%
 		ring1="Kishar Ring",
-		-- 5
-		ring2="Stikini Ring",
+		-- 8
+		ring2="Stikini Ring +1",
 		-- 10
 		--back="Lifestream Cape",
 		back="Aurist's Cape +1",
@@ -585,8 +588,8 @@ function init_gear_sets()
 
 	-- For enfeebs with no known skill caps
 	-- 394 Initial
-	-- 128 gear
-	-- 522 total
+	-- 131 gear
+	-- 525 total
 	sets.midcast.enfeebFullSkill = set_combine(sets.midcast['Enfeebling Magic'], {
 		-- 5
 		ring1="Stikini Ring",
@@ -597,7 +600,6 @@ function init_gear_sets()
 	-- For MND potency based enfeebs
 	sets.midcast.enfeebMND = set_combine(sets.midcast['Enfeebling Magic'], {
 		--neck="Imbodla Necklace",
-		--ring1="Stikini Ring",
 		back="Aurist's Cape +1",
 		ring1="Metamor. Ring +1",
 	})
@@ -606,7 +608,7 @@ function init_gear_sets()
 	sets.midcast.enfeebINT = set_combine(sets.midcast['Enfeebling Magic'], {
 		head="Ea Hat",
 		--neck="Imbodla Necklace",
-		ring2="Metamor. Ring +1",
+		ring1="Metamor. Ring +1",
 		back="Aurist's Cape +1",
 		legs=gear.Merlinic_legs_nuke,
 		feet="Jhakri Pigaches +2",
@@ -690,7 +692,7 @@ function init_gear_sets()
 	sets.midcast['Elemental Magic'] = set_combine(sets.midcast.MAB,{
 		--head="Geo. Galero +2",
 		head=gear.Merlinic_head_nuke,
-		hands="Amalric Gages",
+		hands=gear.Amalric_hands_hq_D,
 		--ring2="Resonance Ring",
 	})
 	
@@ -698,9 +700,10 @@ function init_gear_sets()
 		head=gear.Merlinic_head_nuke,
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
-		ring2="Stikini Ring",
+		ring2="Stikini Ring +1",
+		hands="Bagua Mitaines +3",
 		legs="Merlinic Shalwar",
-		feet=gear.Merlinic_feet_burst
+		feet="Bagua Sandals +3",
 	})
 	
 	sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {
@@ -719,9 +722,9 @@ function init_gear_sets()
 		ear1="Etiolation Earring",
 		ear2="Loquac. Earring",
 		body=empty,
-		hands="Amalric Gages",
-		ring1="Stikini Ring",
-		ring2="Persis Ring",
+		hands=empty,
+		ring1="Persis Ring",
+		ring2="Stikini Ring +1",
 		back="Moonbeam Cape",
 		waist="Luminary Sash",
 		legs=empty,
@@ -1004,8 +1007,11 @@ function init_gear_sets()
 	-- Custom buff sets
 	--------------------------------------
 
-	-- 37% (40 cap) + 24% II
+	-- 36% (40 cap) + 25% II
 	sets.magic_burst = set_combine(sets.midcast.MAB, {
+		-- 10%
+		main="Bunzi's Rod",
+		sub="Ammurapi Shield",
 		-- 6% II 6%
 		head="Ea Hat",
 		-- 10%
@@ -1016,13 +1022,16 @@ function init_gear_sets()
 		-- 8% II 8%
 		body="Ea Houppelande",
 		-- 5% II 5%
-		hands="Ea Cuffs",
+		--hands="Ea Cuffs",
+		-- 6% II
+		hands=gear.Amalric_hands_hq_D,
 		-- 5% II
 		ring1="Mujin Band",
 		-- 2%
 		ring2="Jhakri Ring",
 		-- 6%
-		feet=gear.Merlinic_feet_burst
+		--feet=gear.Merlinic_feet_burst
+		feet=gear.Amalric_feet_hq_D,
 	})
 
 end

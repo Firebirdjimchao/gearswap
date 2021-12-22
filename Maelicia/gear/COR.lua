@@ -173,7 +173,7 @@ function init_gear_sets()
 		body="Nyame Mail",
 		hands="Nyame Gauntlets",
 		ring1="Acumen Ring",
-		ring2="Stikini Ring",
+		ring2="Stikini Ring +1",
 		back="Gunslinger's Cape",
 		--waist="Eschan Stone",
 		legs="Nyame Flanchard",
@@ -246,7 +246,7 @@ function init_gear_sets()
 		body="Nyame Mail",
 		hands=gear.Carmine_hands_hq_D,
 		ring1="Acumen Ring",
-		ring2="Stikini Ring",
+		ring2="Stikini Ring +1",
 		back="Gunslinger's Cape",
 		waist="Eschan Stone",
 		legs="Nyame Flanchard",
@@ -258,7 +258,7 @@ function init_gear_sets()
 		ear2="Crep. Earring",
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
-		ring2="Stikini Ring",
+		ring2="Stikini Ring +1",
 	})
 
 	sets.midcast.CorsairShot['Light Shot'] = set_combine(sets.midcast.CorsairShot.Acc, {

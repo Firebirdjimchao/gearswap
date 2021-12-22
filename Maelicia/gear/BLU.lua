@@ -86,12 +86,12 @@ function job_setup()
 		'Droning Whirlwind','Embalming Earth','Firespit','Foul Waters',
 		'Ice Break','Leafstorm','Maelstrom','Regurgitation','Rending Deluge',
 		'Subduction','Tem. Upheaval','Water Bomb',
-		'Searing Tempest', ' Spectral Floe', 'Silent Storm'
+		'Searing Tempest','Spectral Floe','Silent Storm'
 	}
 
 	-- Magical spells with a primary Mnd mod
 	blue_magic_maps.MagicalMnd = S{
-		'Acrid Stream','Magic Hammer','Mind Blast', 'Scouring Spate'
+		'Acrid Stream','Magic Hammer','Mind Blast','Scouring Spate'
 	}
 
 	-- Magical spells with a primary Chr mod
@@ -101,7 +101,7 @@ function job_setup()
 
 	-- Magical spells with a Vit stat mod (on top of Int)
 	blue_magic_maps.MagicalVit = S{
-		'Thermal Pulse', 'Emtomb'
+		'Thermal Pulse','Emtomb'
 	}
 
 	-- Magical spells with a Dex stat mod (on top of Int)
@@ -167,7 +167,7 @@ function job_setup()
 	unbridled_spells = S{
 		'Absolute Terror','Bilgestorm','Blistering Roar','Bloodrake','Carcharian Verve',
 		'Crashing Thunder','Droning Whirlwind','Gates of Hades','Harden Shell','Polar Roar',
-		'Pyric Bulwark','Thunderbolt','Tourbillion','Uproot', 'Mighty Guard'
+		'Pyric Bulwark','Thunderbolt','Tourbillion','Uproot','Mighty Guard'
 	}
 end
 
@@ -410,15 +410,14 @@ function init_gear_sets()
 		--body="Amalric Doublet",
 		--body="Shamash Robe",
 		body="Cohort Cloak +1",
-		--hands="Amalric Gages",
-		hands=gear.Carmine_hands_hq_D,
+		hands=gear.Amalric_hands_hq_D,
 		ring1="Acumen Ring",
 		ring2="Strendu Ring",
 		back="Cornflower Cape",
 		waist=gear.ElementalObi,
 		--legs=gear.Amalric_legs_D,
 		legs="Luhlaza Shalwar +3",
-		feet="Jhakri Pigaches +2",
+		feet=gear.Amalric_feet_hq_D,
 	}
 
 	sets.buffDuration = {
@@ -462,7 +461,7 @@ function init_gear_sets()
 		neck="Incanter's Torque",
 		body="Assim. Jubbah +2",
 		ring1="Stikini Ring",
-		ring2="Stikini Ring",
+		ring2="Stikini Ring +1",
 		back="Cornflower Cape",
 		legs="Hashishin Tayt +1",
 		feet="Luhlaza Charuqs +3",
@@ -530,7 +529,7 @@ function init_gear_sets()
 
 	sets.midcast['Blue Magic'].Magical.Resistant = set_combine(sets.midcast['Blue Magic'].Magical, {
 		ring1="Stikini Ring",
-		ring2="Stikini Ring",
+		ring2="Stikini Ring +1",
 		waist="Sacro Cord",
 	})
 
@@ -567,7 +566,7 @@ function init_gear_sets()
 		body="Shamash Robe",
 		hands="Regal Cuffs",
 		ring1="Metamor. Ring +1",
-		ring2="Stikini Ring",
+		ring2="Stikini Ring +1",
 		back="Aurist's Cape +1",
 		waist="Eschan Stone",
 	})
@@ -825,10 +824,11 @@ function job_precast(spell, action, spellMap, eventArgs)
 		end
 	end
 
-	if unbridled_spells:contains(spell.english) and not state.Buff['Unbridled Learning'] then
-		eventArgs.cancel = true
-		windower.send_command('@input /ja "Unbridled Learning" <me>; wait 1.5; input /ma "'..spell.name..'" '..spell.target.name)
-	end
+-- @TODO: Figure out how to handle when Unbridled Wisdom is active
+	--if unbridled_spells:contains(spell.english) and not state.Buff['Unbridled Learning'] then
+		--eventArgs.cancel = true
+		--windower.send_command('@input /ja "Unbridled Learning" <me>; wait 1.5; input /ma "'..spell.name..'" '..spell.target.name)
+--	end
 
 	if state.DefenseMode.value ~= 'None' and spell.type == 'WeaponSkill' then
 		-- Don't gearswap for weaponskills when Defense is active.
@@ -872,6 +872,24 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements standard library decisions.
 -------------------------------------------------------------------------------------------------------------------
+
+-- Custom spell mapping.
+-- Return custom spellMap value that can override the default spell mapping.
+-- Don't return anything to allow default spell mapping to be used.
+function job_get_spell_map(spell, default_spell_map)
+    if spell.skill == 'Blue Magic' then
+        for category,spell_list in pairs(blue_magic_maps) do
+        		-- debugging statements:
+        		--add_to_chat(112, category)
+        		--table.print(spell_list)
+            if spell_list:contains(spell.english) then
+            		-- for debugging:
+            		--add_to_chat(152, spell.english)
+                return category
+            end
+        end
+    end
+end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)

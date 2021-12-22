@@ -291,7 +291,7 @@ function init_gear_sets()
 		body="Atrophy Tabard +3",
 		hands="Regal Cuffs",
 		ring1="Metamor. Ring +1",
-		ring2="Stikini Ring",
+		ring2="Stikini Ring +1",
 		--back=gear.sucellos_mnd,
 		back="Aurist's Cape +1",
 		waist="Luminary Sash",
@@ -303,7 +303,7 @@ function init_gear_sets()
 		--main=gear.MainStaff,
 		--main="Grioavolr",
 		--sub="Enki Strap",
-		main="Daybreak",
+		main="Bunzi's Rod",
 		sub="Ammurapi Shield",
 		range="Ullr",
 		--ammo="Ghastly Tathlum",
@@ -312,13 +312,15 @@ function init_gear_sets()
 		ear1="Malignance Earring",
 		ear2="Regal Earring",
 		body="Ea Houppelande",
-		hands="Jhakri Cuffs +2",
+		--hands="Jhakri Cuffs +2",
+		hands=gear.Amalric_hands_hq_D,
 		ring1="Freke Ring",
 		ring2="Strendu Ring",
 		back=gear.sucellos_mab,
 		waist=gear.ElementalObi,
 		legs=gear.Merlinic_legs_nuke,
-		feet="Vitiation Boots +3",
+		--feet="Vitiation Boots +3",
+		feet=gear.Amalric_feet_hq_D,
 	}
 	
 	sets.midcast['Healing Magic'] = {
@@ -395,8 +397,8 @@ function init_gear_sets()
 		-- 5
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
-		-- 5
-		ring2="Stikini Ring",
+		-- 8
+		ring2="Stikini Ring +1",
 		-- 20 DUR
 		back=gear.sucellos_mnd,
 		-- 10 DUR
@@ -407,7 +409,7 @@ function init_gear_sets()
 		feet="Leth. Houseaux +1"
 	}
 	
-	-- 502 total, 69 Gear + 433 (420 base + 13 Gift), 143 DUR (125 + 18 JP)
+	-- 505 total, 72 Gear + 433 (420 base + 13 Gift), 143 DUR (125 + 18 JP)
 	-- Using as many of Empy pieces as possible to maximize Composure bonus
 	sets.midcast.EnhancingDuration = set_combine(sets.midcast['Enhancing Magic'],{
 		-- 10 DUR
@@ -428,8 +430,8 @@ function init_gear_sets()
 		-- 5
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
-		-- 5
-		ring2="Stikini Ring",
+		-- 8
+		ring2="Stikini Ring +1",
 		-- 20 DUR
 		back=gear.sucellos_mnd,
 		-- 10 DUR
@@ -542,8 +544,8 @@ function init_gear_sets()
 		-- 5
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
-		-- 5
-		--ring2="Stikini Ring",
+		-- 8
+		--ring2="Stikini Ring +1",
 		-- Duration +10%
 		ring2="Kishar Ring",
 		-- effect +10
@@ -565,13 +567,13 @@ function init_gear_sets()
 
 	-- For enfeebs with no known skill caps
 	-- 476 Initial
-	-- 108 gear
-	-- 584 total
+	-- 111 gear
+	-- 587 total
 	sets.midcast.enfeebFullSkill = set_combine(sets.midcast['Enfeebling Magic'], {
 		-- 21
 		body="Atrophy Tabard +3",
-		-- 5
-		ring1="Stikini Ring",
+		-- 8
+		ring1="Stikini Ring +1",
 	})
 	sets.midcast.enfeebFullSkill.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, sets.midcast.enfeebFullSkill, {
 	})
@@ -753,10 +755,10 @@ function init_gear_sets()
 	})
 	-- Distract III (caps 610 skill for -120 eva, -130 eva cap with MND)
 	-- 476 Initial
-	-- 87 gear
-	-- 563 skill total
+	-- 90 gear
+	-- 566 skill total
 	sets.midcast['Distract III'] = set_combine(sets.midcast['Enfeebling Magic'], {
-		ring1="Stikini Ring",
+		ring1="Stikini Ring +1",
 	})
 	sets.midcast['Distract III'].Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, sets.midcast['Distract III'], {
 	})
@@ -779,10 +781,10 @@ function init_gear_sets()
 	})
 	-- Frazzle III (caps 625 skill for -120 meva, -130 meva cap with MND)
 	-- 476 Initial
-	-- 87 gear
-	-- 563 skill total
+	-- 90 gear
+	-- 566 skill total
 	sets.midcast['Frazzle III'] = set_combine(sets.midcast['Enfeebling Magic'], {
-		ring1="Stikini Ring",
+		ring1="Stikini Ring +1",
 	})
 	sets.midcast['Frazzle III'].Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, sets.midcast['Frazzle III'], {
 	})
@@ -803,7 +805,7 @@ function init_gear_sets()
 		head="Jhakri Coronal +2",
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
-		ring2="Stikini Ring",
+		ring2="Stikini Ring +1",
 	})
 	
 	sets.midcast['Divine Magic'] = set_combine(sets.midcast.MAB,{
@@ -813,7 +815,7 @@ function init_gear_sets()
 	
 	sets.midcast['Dark Magic'] = set_combine(sets.midcast.MACC,{
 		neck="Erra Pendant",
-		--ring1="Stikini Ring",
+		--ring1="Stikini Ring +1",
 		ring1="Metamor. Ring +1",
 		ring2="Evanescence Ring",
 		back=gear.sucellos_mab,
@@ -952,6 +954,7 @@ function init_gear_sets()
 	
 	sets.latent_refresh = {waist="Fucho-no-obi"}
 
+	-- 41% (40% cap), 24% II
 	sets.magic_burst = set_combine(sets.midcast.MAB, {
 		-- INT 4 MACC 8 MAB 4
 		ammo="Pemphredo Tathlum",
@@ -965,14 +968,14 @@ function init_gear_sets()
 		--body="Amalric Doublet",
 		-- 8% II 8% INT 43 MACC 42 MAB 39
 		body="Ea Houppelande",
-		-- 5% II
-		--hands="Amalric Gages",
+		-- 6% II INT 36 MACC 20 MAB 53
+		--hands=gear.Amalric_hands_hq_D,
 		-- 5% II 5% INT 35 MACC 39 MAB 30
 		hands="Ea Cuffs",
 		-- 5% II
 		ring1="Mujin Band",
 		-- 2%
-		ring2="Jhakri Ring",
+		--ring2="Jhakri Ring",
 		back=gear.sucellos_mab,
 		legs=gear.Merlinic_legs_nuke,
 		-- 4% II 4% MACC 38 MAB 27
@@ -981,6 +984,8 @@ function init_gear_sets()
 		--feet="Vitiation Boots +3"
 		-- 7% INT 44 MACC 42 MAB 39
 		feet="Jhakri Pigaches +2",
+		-- INT 21 MACC 20 MAB 52
+		--feet=gear.Amalric_feet_hq_D,
 	})
 
 	sets.magic_burst.Resistant = set_combine(sets.magic_burst,{
@@ -989,7 +994,7 @@ function init_gear_sets()
 		hands="Regal Cuffs",
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
-		ring2="Stikini Ring",
+		ring2="Stikini Ring +1",
 	})
 	
 	-- Engaged sets

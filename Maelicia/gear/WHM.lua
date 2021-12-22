@@ -202,7 +202,7 @@ function init_gear_sets()
 		hands="Inyan. Dastanas +2",
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
-		ring2="Stikini Ring",
+		ring2="Stikini Ring +1",
 		back="Aurist's Cape +1",
 		waist="Eschan Stone",
 		legs="Chironic Hose",
@@ -319,8 +319,8 @@ function init_gear_sets()
 
 	-- 378 Base
 	-- 16 merits
-	-- 106 gear
-	-- 504 Total
+	-- 109 gear
+	-- 507 Total
 	-- 39% DUR
 	sets.midcast['Enhancing Magic'] = {
 		-- 18
@@ -342,8 +342,8 @@ function init_gear_sets()
 		hands=gear.Telchine_hands_pet,
 		-- 5
 		ring1="Stikini Ring",
-		-- 5
-		ring2="Stikini Ring",
+		-- 8
+		ring2="Stikini Ring +1",
 		-- 10
 		back="Mending Cape",
 		-- 10% DUR
@@ -421,7 +421,7 @@ function init_gear_sets()
 	})
 
 	sets.midcast['Divine Magic'] = set_combine(sets.midcast.MAB,{
-		ring2="Stikini Ring",
+		ring2="Stikini Ring +1",
 		legs="Theo. Pant. +1"
 	})
 
@@ -432,7 +432,7 @@ function init_gear_sets()
 	sets.midcast['Dark Magic'] = set_combine(sets.midcast.MACC,{
 		neck="Erra Pendant",
 		hands="Inyan. Dastanas +2",
-		--ring1="Stikini Ring",
+		--ring1="Stikini Ring +1",
 		ring1="Metamor. Ring +1",
 		ring2="Evanescence Ring",
 	})
@@ -457,7 +457,7 @@ function init_gear_sets()
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
 		ring2="Kishar Ring",
-		--ring2="Stikini Ring",
+		--ring2="Stikini Ring +1",
 		--waist="Rumination Sash",
 		legs="Chironic Hose",
 		feet="Skaoi Boots",
@@ -470,7 +470,7 @@ function init_gear_sets()
 		body="Shamash Robe",
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
-		ring2="Stikini Ring",
+		ring2="Stikini Ring +1",
 	})
 			
 	sets.midcast.Impact = set_combine(sets.midcast['Elemental Magic'], {head=empty,body="Twilight Cloak"})

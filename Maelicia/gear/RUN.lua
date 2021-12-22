@@ -164,7 +164,7 @@ function init_gear_sets()
 	sets.precast.JA['Vivacious Pulse'] = {
 		head="Erilaz galea +1",
 		neck="Incanter's Torque",
-		ring1="Stikini Ring",
+		ring1="Stikini Ring +1",
 		ring2="Stikini Ring",
 		legs="Rune. Trousers +3",
 	}
@@ -421,8 +421,8 @@ function init_gear_sets()
 	-- 388 Base (RUN: B-, Lv. 99)
 	-- 16 (Merits)
 	-- 36 (Gifts)
-	-- 60 Gear
-	-- 500 Total
+	-- 63 Gear
+	-- 503 Total
 	sets.midcast['Enhancing Magic'] = set_combine(sets.midcast.FastRecast, {
 		-- 11
 		--head="Carmine Mask +1",
@@ -432,8 +432,8 @@ function init_gear_sets()
 		ear1="Andoaa Earring",
 		-- 17
 		hands="Runeist's Mitons +2",
-		-- 5
-		ring1="Stikini Ring",
+		-- 8
+		ring1="Stikini Ring +1",
 		-- 5
 		ring2="Stikini Ring",
 		-- 5

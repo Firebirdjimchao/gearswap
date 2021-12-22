@@ -204,7 +204,7 @@ function init_gear_sets()
 		body="Ken. Samue +1",
 		ring1="Niqmaddu Ring",
 		ring2="Gere Ring",
-		waist="Moonbow Belt",
+		waist="Moonbow Belt +1",
 		legs="Ken. Hakama +1",
 		back=gear.Segomo_dex_da,
 		feet="Mpaca's Boots",
@@ -226,7 +226,7 @@ function init_gear_sets()
 		hands=gear.Adhemar_hands_hq_B,
 		ring1="Niqmaddu Ring",
 		ring2="Gere Ring",
-		waist="Moonbow Belt",
+		waist="Moonbow Belt +1",
 		legs="Tatena. Haidate +1",
 		back=gear.Segomo_dex_da,
 		feet="Mpaca's Boots",
@@ -273,7 +273,7 @@ function init_gear_sets()
 		body="Tatena. Harama. +1",
 		hands="Tatena. Gote +1",
 		back=gear.Segomo_vit_wsd,
-		waist="Moonbow Belt",
+		waist="Moonbow Belt +1",
 		legs="Tatena. Haidate +1",
 		--feet="Mpaca's Boots",
 		feet="Tatena. Sune. +1",
@@ -288,7 +288,7 @@ function init_gear_sets()
 		body="Tatena. Harama. +1",
 		hands="Tatena. Gote +1",
 		back=gear.Segomo_vit_wsd,
-		waist="Moonbow Belt",
+		waist="Moonbow Belt +1",
 		legs="Tatena. Haidate +1",
 		feet="Anch. Gaiters +3",
 	})
@@ -330,7 +330,7 @@ function init_gear_sets()
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		ring1="Stikini Ring",
-		ring2="Stikini Ring",
+		ring2="Stikini Ring +1",
 		waist="Luminary Sash",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
@@ -373,7 +373,7 @@ function init_gear_sets()
 		ring2="Defending Ring",
 		--back="Moonbeam Cape",
 		back="Mecisto. Mantle",
-		waist="Moonbow Belt",
+		waist="Moonbow Belt +1",
 		legs="Nyame Flanchard",
 		feet="Herald's Gaiters"
 	}
@@ -399,7 +399,7 @@ function init_gear_sets()
 	})
 
 
-	-- DT: 53%
+	-- DT: 54%
 	sets.idle.PDT = set_combine(sets.idle,{
 		-- DT 7%
 		head="Nyame Helm",
@@ -409,8 +409,8 @@ function init_gear_sets()
 		hands="Nyame Gauntlets",
 		-- DT 10%
 		ring2="Defending Ring",
-		-- DT 5%
-		waist="Moonbow Belt",
+		-- DT 6%
+		waist="Moonbow Belt +1",
 		-- DT 8%
 		legs="Nyame Flanchard",
 		-- DT 7%
@@ -467,7 +467,7 @@ function init_gear_sets()
 		ring1="Niqmaddu Ring",
 		ring2="Gere Ring",
 		back=gear.Segomo_dex_da,
-		waist="Moonbow Belt",
+		waist="Moonbow Belt +1",
 		legs="Hes. Hose +3",
 		feet="Anch. Gaiters +3",
 	}
@@ -494,7 +494,7 @@ function init_gear_sets()
 		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
-		waist="Moonbow Belt",
+		waist="Moonbow Belt +1",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
 	})
@@ -504,7 +504,7 @@ function init_gear_sets()
 		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
-		waist="Moonbow Belt",
+		waist="Moonbow Belt +1",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
 	})
@@ -514,7 +514,7 @@ function init_gear_sets()
 		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
-		waist="Moonbow Belt",
+		waist="Moonbow Belt +1",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
 	})
@@ -528,7 +528,7 @@ function init_gear_sets()
 		hands="Malignance Gloves",
 		ring1="Niqmaddu Ring",
 		ring2="Defending Ring",
-		waist="Moonbow Belt",
+		waist="Moonbow Belt +1",
 		legs="Anch. Hose +3",
 		feet="Malignance Boots",
 	})
@@ -546,7 +546,7 @@ function init_gear_sets()
 		hands="Malignance Gloves",
 		ring1="Niqmaddu Ring",
 		ring2="Defending Ring",
-		waist="Moonbow Belt",
+		waist="Moonbow Belt +1",
 		legs="Anch. Hose +3",
 		feet="Hes. Gaiters +3"
 	})

@@ -247,7 +247,7 @@ function init_gear_sets()
 		--hands="Mochizuki Tekko +3",
 		hands="Nyame Gauntlets",
 		--ring1="Haverton Ring",
-		--ring1="Stikini Ring",
+		--ring1="Stikini Ring +1",
 		ring1="Metamor. Ring +1",
 		ring2="Crepuscular Ring",
 		back="Yokaze Mantle",

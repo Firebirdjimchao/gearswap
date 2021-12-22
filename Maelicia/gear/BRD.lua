@@ -309,7 +309,7 @@ function init_gear_sets()
 		hands="Brioso Cuffs +3",
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
-		ring2="Stikini Ring",
+		ring2="Stikini Ring +1",
 		back="Aurist's Cape +1",
 		waist="Eschan Stone",
 		legs="Chironic Hose",
@@ -519,8 +519,8 @@ function init_gear_sets()
 	
 	-- 139 WHM sub
 	-- 16 merits
-	-- 59 gear
-	-- 214 WHM sub
+	-- 62 gear
+	-- 217 WHM sub
 	-- 47% DUR
 	sets.midcast['Enhancing Magic'] = {
 		--main="Serenity",
@@ -541,8 +541,8 @@ function init_gear_sets()
 		hands=gear.Telchine_hands_pet,
 		-- 5
 		ring1="Stikini Ring",
-		-- 5
-		ring2="Stikini Ring",
+		-- 8
+		ring2="Stikini Ring +1",
 		-- 9
 		back="Fi Follet Cape +1",
 		-- 10% DUR
@@ -588,7 +588,7 @@ function init_gear_sets()
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
 		ring2="Kishar Ring",
-		--ring2="Stikini Ring",
+		--ring2="Stikini Ring +1",
 		--waist="Rumination Sash",
 		legs="Chironic Hose",
 		feet="Skaoi Boots",

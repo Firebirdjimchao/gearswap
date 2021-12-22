@@ -273,7 +273,7 @@ function init_gear_sets()
 		hands="Spae. Gloves +3",
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
-		ring2="Stikini Ring",
+		ring2="Stikini Ring +1",
 		back="Aurist's Cape +1",
 		waist="Eschan Stone",
 		legs="Merlinic Shalwar",
@@ -288,22 +288,35 @@ function init_gear_sets()
 		ear1="Malignance Earring",
 		ear2="Regal Earring",
 		body="Ea Houppelande",
-		--hands="Amalric Gages",
-		--hands="Ea Cuffs",
-		hands="Arch. Gloves +3",
+		--hands="Arch. Gloves +3",
+		hands=gear.Amalric_hands_hq_D,
 		ring1="Freke Ring",
 		ring2="Strendu Ring",
 		back=gear.ElementalCape,
 		waist=gear.ElementalObi,
 		--legs="Merlinic Shalwar",
 		legs="Arch. Tonban +3",
-		--feet=gear.Merlinic_feet_burst,
-		feet="Arch. Sabots +3",
+		--feet="Arch. Sabots +3",
+		feet=gear.Amalric_feet_hq_D,
 	}
 	
 	sets.midcast.ConserveMP = set_combine(sets.midcast.FastRecast,{
+		-- 3
+		head=gear.Merlinic_head_nuke,
+		-- 5
+		--neck="Reti Pendant",
+		-- 3
 		ear1="Gifted Earring",
+		-- 6
+		body=gear.Amalric_body_A,
+		-- 5
+		back="Fi Follet Cape +1",
+		-- 8
 		waist="Austerity Belt",
+		-- 5
+		legs="Lengo Pants",
+		-- 7
+		feet=gear.Amalric_feet_hq_D,
 	})
 
 	-- === Healing Magic =========================================
@@ -361,8 +374,8 @@ function init_gear_sets()
 	
 	-- 300 Base
 	-- 16 merits
-	-- 73 gear
-	-- 389 Total
+	-- 76 gear
+	-- 392 Total
 	-- 37% DUR
 	sets.midcast['Enhancing Magic'] = {
 		-- 16
@@ -380,8 +393,8 @@ function init_gear_sets()
 		hands=gear.Telchine_hands_pet,
 		-- 5
 		ring1="Stikini Ring",
-		-- 5
-		ring2="Stikini Ring",
+		-- 8
+		ring2="Stikini Ring +1",
 		-- 9
 		back="Fi Follet Cape +1",
 		-- 10% DUR
@@ -429,8 +442,8 @@ function init_gear_sets()
 	-- 378 Base
 	-- 16 merits
 	-- 394 Initial
-	-- 87 gear
-	-- 481 total
+	-- 90 gear
+	-- 484 total
 	sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.MACC,{
 		-- 16
 		head="Befouled Crown",
@@ -444,8 +457,8 @@ function init_gear_sets()
 		--ring1="Stikini Ring",
 		-- Duration +10%
 		ring1="Kishar Ring",
-		-- 5
-		ring2="Stikini Ring",
+		-- 8
+		ring2="Stikini Ring +1",
 		-- 7
 		--waist="Rumination Sash",
 		-- 18
@@ -456,8 +469,8 @@ function init_gear_sets()
 
 	-- For enfeebs with no known skill caps
 	-- 394 Initial
-	-- 92 gear
-	-- 486 total
+	-- 95 gear
+	-- 489 total
 	sets.midcast.enfeebFullSkill = set_combine(sets.midcast['Enfeebling Magic'], {
 		-- 5
 		ring1="Stikini Ring",
@@ -488,8 +501,8 @@ function init_gear_sets()
 
 	-- For enfeebs with 500 skill caps
 	-- 394 Initial
-	-- 92 gear
-	-- 486 total
+	-- 95 gear
+	-- 489 total
 	sets.midcast.enfeebSkillCap = set_combine(sets.midcast['Enfeebling Magic'], {
 		-- 5
 		ring1="Stikini Ring",
@@ -579,39 +592,22 @@ function init_gear_sets()
 	-- === Elemental Magic =========================================
 	
 	sets.midcast['Elemental Magic'] = set_combine(sets.midcast.MAB,{
-		head=gear.Merlinic_head_nuke,
 	})
 	
 	sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'],{
-		ammo="Pemphredo Tathlum",
-		head=gear.Merlinic_head_nuke,
-		--body="Amalric Doublet",
-		--hands="Amalric Gages",
-		body="Spaekona's Coat +3",
-		hands="Spae. Gloves +3",
-		--ring1="Stikini Ring",
+		head="Arch. Petasos +3",
+		body="Arch. Coat +3",
+		hands="Arch. Gloves +3",
 		ring1="Metamor. Ring +1",
-		ring2="Stikini Ring",
-		--feet=gear.Merlinic_feet_burst
+		ring2="Stikini Ring +1",
+		legs="Arch. Tonban +3",
 		feet="Arch. Sabots +3",
 	})
 	
 	sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {
-		ammo="Pemphredo Tathlum",
-		head=gear.Merlinic_head_nuke,
 		body="Spaekona's Coat +3",
-		hands="Amalric Gages",
-		--feet=gear.Merlinic_feet_burst
-		feet="Arch. Sabots +3",
 	})
 	sets.midcast['Elemental Magic'].HighTierNuke.Resistant = set_combine(sets.midcast['Elemental Magic'].Resistant, {
-		ammo="Pemphredo Tathlum",
-		head=gear.Merlinic_head_nuke,
-		--body="Spaekona's Coat +3",
-		body="Amalric Doublet",
-		hands="Amalric Gages",
-		--feet=gear.Merlinic_feet_burst
-		feet="Arch. Sabots +3",
 	})
 
 	sets.midcast.Impact = set_combine(sets.midcast['Elemental Magic'], {head=empty,body="Twilight Cloak"})
@@ -621,6 +617,7 @@ function init_gear_sets()
 		head="Pixie Hairpin +1",
 		--head=gear.Merlinic_head_burst,
 		--head="Ea Hat",
+		-- 10%
 		neck="Mizu. Kubikazari",
 		--neck="Sanctity Necklace",
 		--ear1="Etiolation Earring",
@@ -629,15 +626,18 @@ function init_gear_sets()
 		ear2="Regal Earring",
 		--ear2="Loquac. Earring",
 		--body="Amalric Doublet",
+		-- 8% II 8%
 		body="Ea Houppelande",
-		--hands="Amalric Gages",
+		-- 6% II
+		--hands=gear.Amalric_hands_hq_D,
 		hands="Arch. Gloves +3",
 		ring1="Mephitas's Ring +1",
+		-- 5% II
 		ring2="Mujin Band",
 		back="Bane Cape",
 		waist=gear.ElementalObi,
 		legs=gear.Amalric_legs_D,
-		feet=gear.Merlinic_feet_burst
+		feet="Arch. Sabots +3",
 	}
 	
 	sets.midcast.Comet = set_combine(sets.midcast.MAB,{
@@ -654,7 +654,7 @@ function init_gear_sets()
 		hands="Spae. Gloves +3",
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
-		ring2="Stikini Ring",
+		ring2="Stikini Ring +1",
 		back="Taranus's Cape",
 		legs="Arch. Tonban +3",
 		feet="Arch. Sabots +3",
@@ -668,9 +668,9 @@ function init_gear_sets()
 		ear1="Etiolation Earring",
 		ear2="Loquac. Earring",
 		body=empty,
-		hands="Amalric Gages",
-		ring1="Stikini Ring",
-		ring2="Persis Ring",
+		hands=gear.Amalric_hands_hq_D,
+		ring1="Persis Ring",
+		ring2="Stikini Ring +1",
 		back="Moonbeam Cape",
 		waist="Luminary Sash",
 		legs=empty,
@@ -923,12 +923,12 @@ function init_gear_sets()
 		-- MACC 42
 		-- MAB 39
 		body="Ea Houppelande",
-		-- MB 5% II
-		-- INT 34
-		-- MACC 15
-		-- MAB 38
-		-- Elem 13
-		--hands="Amalric Gages",
+		-- MB 6% II
+		-- INT 36
+		-- MACC 20
+		-- MAB 53
+		-- Elem 14
+		--hands=gear.Amalric_hands_hq_D,
 		-- MB 5% II
 		-- MB 5%
 		-- INT 35
@@ -993,6 +993,10 @@ function init_gear_sets()
 		-- MAB 54
 		-- Elem 17
 		feet="Arch. Sabots +3",
+		-- INT 21
+		-- MACC 20
+		-- MAB 52
+		--feet=gear.Amalric_feet_hq_D,
 	})
 
 	-- Magic Burst Damage: 36% (40 cap) + 30% II
@@ -1047,6 +1051,12 @@ function init_gear_sets()
 		-- MACC 45
 		-- MB Acc +30
 		--hands="Regal Cuffs",
+		-- MB 6% II
+		-- INT 36
+		-- MACC 20
+		-- MAB 53
+		-- Elem 14
+		--hands=gear.Amalric_hands_hq_D,
 		-- INT 10
 		-- MAB 8
 		ring1="Freke Ring",
@@ -1099,6 +1109,10 @@ function init_gear_sets()
 		-- MAB 54
 		-- Elem 17
 		--feet="Arch. Sabots +3",
+		-- INT 21
+		-- MACC 20
+		-- MAB 52
+		--feet=gear.Amalric_feet_hq_D,
 	})
 
 	sets.magic_burst.Death = set_combine(sets.midcast.Death, {
