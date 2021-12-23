@@ -302,10 +302,12 @@ function init_gear_sets()
 	}
 	
 	sets.midcast.MAB = {
-		main=gear.MainStaff,
+		--main=gear.MainStaff,
 		--sub="Niobid Strap",
 		--sub="Enki Strap",
-		sub="Khonsu",
+		--sub="Khonsu",
+		main="Maxentius",
+		sub="Ammurapi Shield",
 		ammo="Ghastly Tathlum",
 		head="Merlinic Hood",
 		neck="Sanctity Necklace",
@@ -345,7 +347,7 @@ function init_gear_sets()
 	-- ConserveMP total: 20
 	sets.midcast.Geomancy = set_combine(sets.midcast.ConserveMP,{
 		main="Idris",
-		sub="Culminus",
+		sub="Ammurapi Shield",
 		-- 18
 		range=gear.GeoBell,
 		-- 15
@@ -378,7 +380,7 @@ function init_gear_sets()
 	-- ConserveMP total: 6
 	sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy,{
 		main="Idris",
-		sub="Culminus",
+		sub="Ammurapi Shield",
 		-- +20
 		back=gear.AugLifestreamIndi,
 		-- +21
@@ -389,7 +391,7 @@ function init_gear_sets()
 	
 	sets.midcast['Healing Magic'] = {
 		main="Divinity",
-		sub="Genbu's Shield'",
+		sub="Ammurapi Shield'",
 		head="Hyksos Khat",
 		neck="Incanter's Torque",
 		hands="Ayao's Gages",
@@ -399,11 +401,11 @@ function init_gear_sets()
 		feet=gear.Vanya_feet_B
 	}
 	
-	-- 55% Total
+	-- 51% Total
 	sets.midcast.Cure = set_combine(sets.midcast['Healing Magic'],{
-		-- 22%
-		main="Tamaxchi",
-		sub="Genbu's Shield",
+		-- 18%
+		main="Gada",
+		sub="Ammurapi Shield",
 		head="Befouled Crown",
 		neck="Incanter's Torque",
 		ear1="Lifestorm Earring",
@@ -443,11 +445,12 @@ function init_gear_sets()
 	-- 16 merits
 	-- 86 gear
 	-- 241 WHM sub, 246 RDM sub
-	-- 35% DUR
+	-- 45% DUR
 	sets.midcast['Enhancing Magic'] = {
 		-- 18
 		main="Gada",
-		sub="Genbu's Shield",
+		-- 10 DUR
+		sub="Ammurapi Shield",
 		-- 16
 		head="Befouled Crown",
 		neck="Incanter's Torque",
@@ -491,6 +494,10 @@ function init_gear_sets()
 	})
 
 	sets.midcast.Shellra = set_combine(sets.midcast['Enhancing Magic'],{
+	})
+
+	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'],{
+		main="Vadose Rod"
 	})
 
 	-- === Enfeebling Magic =========================================
@@ -707,7 +714,7 @@ function init_gear_sets()
 	sets.idle = {
 		main="Bolelabunga",
 		--sub="Genbu's Shield",				
-		sub="Culminus",
+		sub="Ammurapi Shield",
 		range=gear.GeoBell,
 		head="Befouled Crown",
 		neck="Twilight Torque",
@@ -794,7 +801,7 @@ function init_gear_sets()
 
 	sets.idle.Town = set_combine(sets.idle,{
 		main="Idris",
-		sub="Culminus",
+		sub="Ammurapi Shield",
 		--body="Councilor's Garb",
 		body="Shamash Robe",
 	})

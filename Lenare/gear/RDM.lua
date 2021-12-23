@@ -215,8 +215,8 @@ function init_gear_sets()
 		--main=gear.MainStaff,
 		main=gear.MaccStaff,
 		sub="Enki Strap",
-		range="Ullr",
 		ammo=empty,
+		range="Ullr",
 		--ammo="Regal Gem",
 		head="Atro. Chapeau +3",
 		neck="Dls. Torque +1",
@@ -234,9 +234,11 @@ function init_gear_sets()
 	
 	sets.midcast.MAB = {
 		--main=gear.MainStaff,
-		main="Grioavolr",
+		--main="Grioavolr",
 		--sub="Niobid Strap",
-		sub="Enki Strap",
+		--sub="Enki Strap",
+		main="Maxentius",
+		sub="Ammurapi Shield",
 		ammo="Ghastly Tathlum",
 		head=gear.Merlinic_head_burst,
 		neck="Sanctity Necklace",
@@ -266,7 +268,7 @@ function init_gear_sets()
 	sets.midcast.Cure = set_combine(sets.midcast['Healing Magic'],{
 		-- 22%
 		main="Tamaxchi",
-		sub="Culminus",
+		sub="Ammurapi Shield",
 		ammo="Regal Gem",
 		head="Befouled Crown",
 		neck="Incanter's Torque",
@@ -304,13 +306,14 @@ function init_gear_sets()
 		waist="Gishdubar Sash",
 	})
 	
-	-- 562 total, 103 Gear + 456 (420 base + 36 Gift), 115 DUR (95 + 20 JP) + 5 DUR (Grioavolr aug)
+	-- 562 total, 103 Gear + 456 (420 base + 36 Gift), 120 DUR (95 + 20 JP) + 5 DUR (Grioavolr aug)
 	sets.midcast['Enhancing Magic'] = {
 		-- 5 DUR
-		main="Grioavolr",
-		sub="Enki Strap",
+		--main="Grioavolr",
+		--sub="Enki Strap",
+		main="Maxentius",
 		-- 10 DUR
-		--sub="Ammurapi Shield",
+		sub="Ammurapi Shield",
 		-- 16
 		head="Befouled Crown",
 		-- 10 
@@ -338,14 +341,15 @@ function init_gear_sets()
 		feet="Leth. Houseaux +1"
 	}
 	
-	-- 514 total, 58 Gear + 456 (420 base + 36 Gift), 135 DUR (115 + 20 JP) + 5 DUR (Grioavolr aug)
+	-- 514 total, 58 Gear + 456 (420 base + 36 Gift), 140 DUR (115 + 20 JP) + 5 DUR (Grioavolr aug)
 	-- Using as many of Empy pieces as possible to maximize Composure bonus
 	sets.midcast.EnhancingDuration = set_combine(sets.midcast['Enhancing Magic'],{
 		-- 5 DUR
-		main="Grioavolr",
-		sub="Enki Strap",
+		--main="Grioavolr",
+		--sub="Enki Strap",
+		main="Maxentius",
 		-- 10 DUR
-		--sub="Ammurapi Shield",
+		sub="Ammurapi Shield",
 		head="Leth. Chappel +1",
 		-- 10 
 		--neck="Incanter's Torque",
@@ -370,12 +374,16 @@ function init_gear_sets()
 	})
 
 	-- INT potency mod for spikes
-	-- ~104 +196 INT
+	-- ~104 +195 INT
 	sets.midcast.spikes = set_combine(sets.midcast.EnhancingDuration,{
 		-- 19 INT
-		main=gear.MainStaff,
+		--main=gear.MainStaff,
 		-- 10 INT
-		sub="Enki Strap",
+		--sub="Enki Strap",
+		-- 15 INT
+		main="Maxentius",
+		-- 13 INT
+		sub="Ammurapi Shield",
 		-- 7 INT
 		--neck="Imbodla Necklace",
 		neck="Dls. Torque +1",
@@ -409,7 +417,7 @@ function init_gear_sets()
 	-- Static value (Use Duration+ and Potency+ gear) --
 	sets.midcast.Regen = set_combine(sets.midcast.EnhancingDuration,{
 		main="Bolelabunga",
-		sub="Culminus",
+		sub="Ammurapi Shield",
 		-- 10 DUR
 		--sub="Ammurapi Shield",
 		neck="Dls. Torque +1",
@@ -447,6 +455,7 @@ function init_gear_sets()
 		--main=gear.MainStaff,
 		--sub="Enki Strap",
 		range="Ullr",
+		ammo=empty,
 		-- effect +10
 		--ammo="Regal Gem",
 		-- 26 3s x # Merit DUR
@@ -534,14 +543,17 @@ function init_gear_sets()
 
 	-- Static value (use duration+ gear)
 	sets.midcast['Dia'] = set_combine(sets.midcast.enfeebStatic, {
+		range=empty,
 		ammo="Regal Gem",
 	})
 	-- Static value (use duration+ gear)
 	sets.midcast['Dia II'] = set_combine(sets.midcast.enfeebStatic, {
+		range=empty,
 		ammo="Regal Gem",
 	})	
 	-- Static value (use duration+ gear)
 	sets.midcast['Dia III'] = set_combine(sets.midcast.enfeebStatic, {
+		range=empty,
 		ammo="Regal Gem",
 	})
 
@@ -662,6 +674,7 @@ function init_gear_sets()
 	sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'],{
 		sub="Enki Strap",
 		range="Ullr",
+		ammo=empty,
 		head="Jhakri Coronal +2",
 		body=gear.Merlinic_body_nuke,
 		ring1="Stikini Ring",
@@ -719,7 +732,7 @@ function init_gear_sets()
 	-- Idle sets
 	sets.idle = {
 		main="Bolelabunga",
-		sub="Culminus",
+		sub="Ammurapi Shield",
 		ammo="Homiliary",
 		head="Viti. Chapeau +3",
 		neck="Twilight Torque",

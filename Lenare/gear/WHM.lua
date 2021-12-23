@@ -105,7 +105,7 @@ function init_gear_sets()
 
 	sets.precast.FC['Healing Magic'] = set_combine(sets.precast.FC, {
 		main="Divinity",
-		sub="Culminus",
+		sub="Ammurapi Shield",
 		legs="Ebers Pant. +1"
 	})
 
@@ -113,7 +113,7 @@ function init_gear_sets()
 
 	sets.precast.FC.Cure = set_combine(sets.precast.FC['Healing Magic'], {
 		main="Queller Rod",
-		sub="Culminus",
+		sub="Ammurapi Shield",
 		head="Theo. Cap +2",
 		ear1="Nourish. Earring +1",
 		ear2="Mendi. Earring",
@@ -236,9 +236,11 @@ function init_gear_sets()
 	}
 	
 	sets.midcast.MAB = {
-		main=gear.MainStaff,
+		--main=gear.MainStaff,
 		--sub="Niobid Strap",
-		sub="Enki Strap",
+		--sub="Enki Strap",
+		main="Maxentius",
+		sub="Ammurapi Shield",
 		ammo="Ghastly Tathlum",
 		head="Buremte Hat",
 		neck="Sanctity Necklace",
@@ -260,7 +262,7 @@ function init_gear_sets()
 		
 	sets.midcast['Healing Magic'] = {
 		main="Divinity",
-		sub="Culminus",
+		sub="Ammurapi Shield",
 		head="Hyksos Khat",
 		neck="Incanter's Torque",
 		body="Ebers Bliaut +1",
@@ -277,7 +279,7 @@ function init_gear_sets()
 	sets.midcast.Cure = set_combine(sets.midcast['Healing Magic'],{
 		-- 10% + 2% II
 		main="Queller Rod",
-		sub="Culminus",
+		sub="Ammurapi Shield",
 		-- 16%
 		head="Ebers Cap +1",
 		-- 2% II
@@ -346,11 +348,12 @@ function init_gear_sets()
 	-- 16 merits
 	-- 122 gear
 	-- 510 Total
-	-- 44% DUR
+	-- 43% DUR
 	sets.midcast['Enhancing Magic'] = {
 		-- 18
 		main="Gada",
-		sub="Genbu's Shield",
+		-- 10% DUR
+		sub="Ammurapi Shield",
 		-- 16
 		head="Befouled Crown",
 		-- 10
@@ -384,10 +387,13 @@ function init_gear_sets()
 		legs="Haven Hose",
 	})
 
+	sets.midcast.Haste = set_combine(sets.midcast['Enhancing Magic'],{
+	})
+
 	sets.midcast.Auspice = {
 		main="Gada",
 		-- 10% DUR
-		--sub="Ammurapi Shield",
+		sub="Ammurapi Shield",
 		-- 9% DUR
 		body=gear.Telchine_body_pet,
 		-- 9% DUR
@@ -412,7 +418,7 @@ function init_gear_sets()
 				
 	sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'],{
 		main="Bolelabunga",
-		sub="Culminus",
+		sub="Ammurapi Shield",
 		head="Inyanga Tiara +2",
 		body="Piety Bliaut +3",
 		hands="Ebers Mitts +1",
@@ -494,7 +500,7 @@ function init_gear_sets()
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 	sets.idle = {
 		main="Bolelabunga",
-		sub="Culminus",
+		sub="Ammurapi Shield",
 		ammo="Homiliary",
 		head="Befouled Crown",
 		neck="Twilight Torque",
