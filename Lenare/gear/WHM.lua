@@ -134,7 +134,7 @@ function init_gear_sets()
 		head="Theo. Cap +2",
 		ear1="Roundel Earring",
 		ear2="Sjofn Earring",
-		body="Shamash Robe",
+		body="Theo. Bliaut +3",
 		hands="Inyan. Dastanas +2",
 		legs="Chironic Hose",
 		feet="Aya. Gambieras +2",
@@ -223,7 +223,7 @@ function init_gear_sets()
 		neck="Erra Pendant",
 		ear1="Hermetic Earring",
 		ear2="Malignance Earring",
-		body="Theo. Bliaut +2",
+		body="Theo. Bliaut +3",
 		--hands="Inyan. Dastanas +2",
 		hands="Theophany Mitts +2",
 		ring1="Stikini Ring",
@@ -275,7 +275,7 @@ function init_gear_sets()
 		feet=gear.Vanya_feet_B
 	}
 
-	-- 31% + 9% II Total + 23% gift (23% total gift)
+	-- 31% + 12% II Total + 23% gift (23% total gift)
 	sets.midcast.Cure = set_combine(sets.midcast['Healing Magic'],{
 		-- 10% + 2% II
 		main="Queller Rod",
@@ -289,7 +289,9 @@ function init_gear_sets()
 		ear2="Malignance Earring",
 		--body="Ebers Bliaut +1",
 		-- 3% II
-		body="Kaykaus Bliaut",
+		--body="Kaykaus Bliaut",
+		-- 6% II
+		body="Theo. Bliaut +3",
 		-- 16%
 		--hands=gear.Telchine_hands_cure,
 		-- 10%
@@ -469,6 +471,7 @@ function init_gear_sets()
 		sub="Enki Strap",
 		head="Befouled Crown",
 		neck="Incanter's Torque",
+		body="Theo. Bliaut +3",
 		ring1="Kishar Ring",
 		--ring1="Stikini Ring",
 		ring2="Stikini Ring",
