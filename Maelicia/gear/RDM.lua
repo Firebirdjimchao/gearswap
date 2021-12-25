@@ -242,14 +242,12 @@ function init_gear_sets()
 	})
 	
 	-- Midcast Sets
-	-- DT 54%
+	-- DT 51%
 	-- PDT 5%
 	-- MDT 5%
 	-- MDB 32
 	-- Haste 26%
 	sets.midcast.FastRecast = set_combine(sets.precast.FC,{
-		-- DT 3%
-		ammo="Staunch Tathlum +1",
 		-- DT 6% MDB 5 Haste 6%
 		head="Malignance Chapeau",
 		-- DT 6%
@@ -278,8 +276,8 @@ function init_gear_sets()
 		--main="Daybreak",
 		--sub="Ammurapi Shield",
 		--ammo="Regal Gem",
-		range="Ullr",
 		ammo=empty,
+		range="Ullr",
 		--head=gear.Chironic_head_nuke,
 		--head="Viti. Chapeau +3",
 		head="Atro. Chapeau +3",
@@ -330,6 +328,7 @@ function init_gear_sets()
 		hands=gear.Vanya_hands_B,
 		ring1="Menelaus's Ring",
 		ring2="Sirona's Ring",
+		waist="Luminary Sash",
 		--legs="Carmine Cuisses +1",
 		legs="Atrophy Tights +3",
 		feet=gear.Vanya_feet_B
@@ -356,7 +355,7 @@ function init_gear_sets()
 		-- 5%
 		ring1="Menelaus's Ring",
 		back="Aurist's Cape +1",
-		waist="Luminary Sash",
+		waist=gear.ElementalObi,
 		-- 12%
 		legs="Atrophy Tights +3",
 		-- 5%
@@ -519,12 +518,13 @@ function init_gear_sets()
 	-- 16 merits
 	-- 36 gifts
 	-- 476 Initial
-	-- 58 gear
-	-- 538 total
+	-- 37 gear
+	-- 517 total
 	sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.MACC,{
 		main=gear.MaccStaff,
 		sub="Enki Strap",
-		--range="Ullr",
+		range=empty,
+		range="Ullr",
 		-- effect +10
 		--ammo="Regal Gem",
 		-- 26 3s x # Merit DUR
@@ -534,9 +534,9 @@ function init_gear_sets()
 		neck="Dls. Torque +1",
 		ear1="Snotra Earring",
 		-- 21
-		body="Atrophy Tabard +3",
+		--body="Atrophy Tabard +3",
 		-- effect +14
-		--body="Lethargy Sayon +1",
+		body="Lethargy Sayon +1",
 		-- 19, Saboteur +12
 		--hands="Leth. Gantherots +1",
 		-- Duration +20%
@@ -550,6 +550,7 @@ function init_gear_sets()
 		ring2="Kishar Ring",
 		-- effect +10
 		back=gear.sucellos_mnd,
+		waist="Luminary Sash",
 		-- 7
 		--waist="Rumination Sash",
 		-- 13 Immunobreak +1
@@ -559,10 +560,13 @@ function init_gear_sets()
 	})
 
 	sets.midcast['Enfeebling Magic'].Resistant = set_combine(sets.midcast['Enfeebling Magic'],{
+		ammo=empty,
 		range="Ullr",
 		-- effect +10
 		--ammo="Regal Gem",
-		ammo=empty,
+		ear2="Regal Earring",
+		-- 21
+		body="Atrophy Tabard +3",
 	})
 
 	-- For enfeebs with no known skill caps
@@ -591,6 +595,7 @@ function init_gear_sets()
 	-- For INT potency based enfeebs
 	sets.midcast.enfeebINT = set_combine(sets.midcast['Enfeebling Magic'], {
 		neck="Dls. Torque +1",
+		body="Atrophy Tabard +3",
 		-- 10 INT
 		ring1="Freke Ring",
 		-- 6 INT
@@ -618,9 +623,9 @@ function init_gear_sets()
 	})
 
 	-- For enfeebs with 500 skill caps
-	-- 476 Initial
+	-- 476 Initial + (Master Level)
 	-- 44 gear
-	-- 520 total
+	-- 499 total
 	sets.midcast.enfeebSkillCap = set_combine(sets.midcast['Enfeebling Magic'], {
 		head="Atro. Chapeau +3",
 		neck="Dls. Torque +1",

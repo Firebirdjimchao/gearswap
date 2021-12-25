@@ -440,15 +440,17 @@ function init_gear_sets()
 		feet=gear.Vanya_feet_B
 	}
     
-	-- 58% Total
+	-- 53% Total
 	sets.midcast.Cure = set_combine(sets.midcast['Healing Magic'],{
 		-- 15%
 		main="Divinity",
 		sub="Ammurapi Shield",
 		head="Befouled Crown",
 		neck="Incanter's Torque",
-		ear1="Malignance Earring",
-		ear2="Regal Earring",
+		--ear1="Malignance Earring",
+		ear1="Regal Earring",
+		-- 5%
+		ear2="Mendi. Earring",
 		-- 13%
 		body="Vrikodara Jupon",
 		-- 10%
@@ -456,8 +458,8 @@ function init_gear_sets()
 		-- 5%
 		ring1="Menelaus's Ring",
 		back="Aurist's Cape +1",
-		-- 10%
-		legs="Gyve Trousers",
+		waist=gear.ElementalObi,
+		legs="Bagua Pants +3",
 		-- 5%
 		feet=gear.Vanya_feet_B
 	});
