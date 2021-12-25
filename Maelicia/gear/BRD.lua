@@ -168,7 +168,9 @@ function init_gear_sets()
 		-- 2%
 		--ear1="Aoidos' Earring",
 		-- 12%
-		body="Sha'ir Manteel",
+		--body="Sha'ir Manteel",
+		-- 15%
+		body="Brioso Justau. +3",
 		-- 2% + 7% FC
 		hands="Gendewitha Gages",
 		-- 3% FC
@@ -196,14 +198,14 @@ function init_gear_sets()
 		range="Gjallarhorn",
 		head="Inyanga Tiara +2",
 		--neck="Reti Pendant",
-		body="Bihu Jstcorps +1",
-		hands="Inyan. Dastanas +2",
+		body="Brioso Justau. +3",
+		hands="Brioso Cuffs +3",
 		ring1="Sirona's Ring",
 		ring2="Petrov Ring",
 		--back="Kumbira Cape",
 		waist="Flume Belt +1",
 		legs="Inyanga Shalwar +2",
-		feet="Inyan. Crackows +2"
+		feet="Brioso Slippers +3"
 	}
 			 
 	-- Weaponskill sets
@@ -213,7 +215,7 @@ function init_gear_sets()
 		neck="Fotia Necklace",
 		ear1="Brutal Earring",
 		ear2="Moonshade Earring",
-		body="Ayanmo Corazza +2",
+		body="Nyame Mail",
 		--hands="Aya. Manopolas +2",
 		hands="Nyame Gauntlets",
 		ring1="Ilabrat Ring",
@@ -230,7 +232,8 @@ function init_gear_sets()
 		--neck="Sanctity Necklace",
 		ear1="Regal Earring",
 		ear2="Malignance Earring",
-		body=gear.Chironic_body_nuke,
+		body="Nyame Mail",
+		--body=gear.Chironic_body_nuke,
 		hands="Nyame Gauntlets",
 		ring1="Acumen Ring",
 		ring2="Strendu Ring",
@@ -304,14 +307,14 @@ function init_gear_sets()
 		ear1="Regal Earring",
 		ear2="Malignance Earring",
 		--body="Chironic Doublet",
-		body="Brioso Justau. +2",
+		body="Brioso Justau. +3",
 		--hands="Inyan. Dastanas +2",
 		hands="Brioso Cuffs +3",
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
 		ring2="Stikini Ring +1",
 		back="Aurist's Cape +1",
-		waist="Eschan Stone",
+		waist="Luminary Sash",
 		legs="Chironic Hose",
 		--feet="Inyan. Crackows +2"
 		feet="Brioso Slippers +3"
@@ -361,8 +364,8 @@ function init_gear_sets()
 		neck="Voltsurge Torque",
 		ear1="Loquac. Earring",
 		ear2="Malignance Earring",
-		-- 14%
-		body="Inyanga Jubbah +2",
+		-- 15%
+		body="Brioso Justau. +3",
 		hands="Gendewitha Gages",
 		back="Fi Follet Cape +1",
 		waist="Embla Sash",
@@ -398,7 +401,7 @@ function init_gear_sets()
 		--neck="Incanter's Torque",
 		neck="Moonbow Whistle",
 		ear1="Regal Earring",
-		body="Brioso Justau. +2",
+		body="Brioso Justau. +3",
 		hands="Brioso Cuffs +3",
 		legs="Inyanga Shalwar +2",
 		feet="Brioso Slippers +3"
@@ -478,6 +481,7 @@ function init_gear_sets()
 		ring1="Menelaus's Ring",
 		ring2="Sirona's Ring",
 		back="Altruistic Cape",
+		waist="Luminary Sash",
 		feet=gear.Vanya_feet_B
 	}	
 	
@@ -495,6 +499,7 @@ function init_gear_sets()
 		hands="Inyan. Dastanas +2",
 		-- 5%
 		ring1="Menelaus's Ring",
+		waist="Luminary Sash",
 		-- 8%
 		legs="Chironic Hose",
 		-- 5%
@@ -583,7 +588,6 @@ function init_gear_sets()
 	sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.MACC,{
 		--neck="Incanter's Torque",
 		neck="Moonbow Whistle",
-		--body="Vanya Robe",
 		hands="Inyan. Dastanas +2",
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
