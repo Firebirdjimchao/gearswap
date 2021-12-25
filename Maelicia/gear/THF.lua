@@ -1050,6 +1050,16 @@ end
 -- Job-specific hooks for non-casting events.
 -------------------------------------------------------------------------------------------------------------------
 
+-- Run after the general midcast() set is constructed.
+function job_post_midcast(spell, action, spellMap, eventArgs)
+	--add_to_chat(112, state.TreasureMode.value)
+	--add_to_chat(112, spell.action_type)
+	if state.TreasureMode.value ~= 'None' and (spell.action_type == 'Ranged Attack' or spell.action_type == 'Magic') then
+		--add_to_chat(112, 'Equip TH gear')
+		equip(sets.TreasureHunter)
+	end
+end
+
 -- Called when a player gains or loses a buff.
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
@@ -1180,4 +1190,17 @@ function customize_defense_set(defenseSet)
 		defenseSet = set_combine(defenseSet, sets.buff.Doom)
 	end
 	return defenseSet
+end
+
+-- Check for various actions that we've specified in user code as being used with TH gear.
+-- This will only ever be called if TreasureMode is not 'None'.
+-- Category and Param are as specified in the action event packet.
+function th_action_check(category, param)
+	if (category == 2) or -- any ranged attack
+		(category == 4) or -- any magic action
+		(category == 3 and param == 30) or -- Aeolian Edge
+		(category == 6 and info.default_ja_ids:contains(param)) or -- Provoke, Animated Flourish
+		(category == 14 and info.default_u_ja_ids:contains(param)) -- Quick/Box/Stutter Step, Desperate/Violent Flourish
+		then return true
+	end
 end
