@@ -188,7 +188,7 @@ function init_gear_sets()
 	-- Precast sets to enhance JAs
 	
 	sets.precast.JA.Nightingale = {feet="Bihu Slippers +1"}
-	sets.precast.JA.Troubadour = {body="Bihu Jstcorps +1"}
+	sets.precast.JA.Troubadour = {body="Bihu Jstcorps. +3"}
 	sets.precast.JA['Soul Voice'] = {legs="Bihu Cannions +1"}
 
 	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {main="Daybreak"})
@@ -215,16 +215,14 @@ function init_gear_sets()
 		neck="Fotia Necklace",
 		ear1="Brutal Earring",
 		ear2="Moonshade Earring",
-		body="Nyame Mail",
-		--hands="Aya. Manopolas +2",
+		--body="Nyame Mail",
+		body="Bihu Jstcorps. +3",
 		hands="Nyame Gauntlets",
 		ring1="Ilabrat Ring",
 		ring2="Petrov Ring",
 		back="Atheling Mantle",
 		waist="Fotia Belt",
-		--legs="Aya. Cosciales +2",
 		legs="Nyame Flanchard",
-		--feet="Aya. Gambieras +2",
 		feet="Nyame Sollerets",
 	}
 	sets.precast.WS.MAB = set_combine(sets.precast.WS,{
@@ -301,7 +299,7 @@ function init_gear_sets()
 		sub="Enki Strap",
 		--main="Daybreak",
 		--sub="Ammurapi Shield",
-		head="Chironic Hat",
+		head="Bihu Roundlet +3",
 		--neck="Incanter's Torque",
 		neck="Moonbow Whistle",
 		ear1="Regal Earring",
@@ -388,6 +386,7 @@ function init_gear_sets()
 	sets.midcast.SongDebuff = set_combine(sets.midcast.MACC,{
 		main="Kali",
 		range="Gjallarhorn",
+		head="Bihu Roundlet +3",
 		--neck="Aoidos' Matinee",
 		neck="Moonbow Whistle",
 		body="Fili Hongreline +1",
@@ -398,6 +397,7 @@ function init_gear_sets()
 	-- For song defbuffs (accuracy primary, duration secondary)
 	sets.midcast.ResistantSongDebuff = set_combine(sets.midcast.MACC,{
 		range="Gjallarhorn",
+		head="Bihu Roundlet +3",
 		--neck="Incanter's Torque",
 		neck="Moonbow Whistle",
 		ear1="Regal Earring",
@@ -766,6 +766,7 @@ function init_gear_sets()
 	})
 
 	sets.engaged.Acc = set_combine(sets.engaged,{
+		body="Bihu Jstcorps. +3",
 		ear2="Crep. Earring",
 		ring2="Cacoethic Ring +1",
 		back="Aurist's Cape +1"
