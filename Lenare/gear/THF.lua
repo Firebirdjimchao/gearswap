@@ -104,7 +104,7 @@ function init_gear_sets()
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
 		body="Plunderer's Vest +3",
-		hands="Pill. Armlets +2",
+		hands="Pill. Armlets +3",
 		ring1="Garuda Ring +1",
 		ring2="Garuda Ring +1",
 		back="Canny Cape",
@@ -127,7 +127,7 @@ function init_gear_sets()
 	sets.precast.JA['Flee'] = {feet="Pill. Poulaines +1"}
 	sets.precast.JA['Hide'] = {body="Pillager's Vest +3"}
 	sets.precast.JA['Conspirator'] = {body="Skulker's Vest +1"}
-	sets.precast.JA['Steal'] = {neck="Rabbit Charm",hands="Pill. Armlets +2",legs="Assassin's Culottes",feet="Pill. Poulaines +1"}
+	sets.precast.JA['Steal'] = {neck="Rabbit Charm",hands="Pill. Armlets +3",legs="Assassin's Culottes",feet="Pill. Poulaines +1"}
 	sets.precast.JA['Despoil'] = {legs="Skulk. Culottes +1",feet="Skulk. Poulaines +1"}
 	sets.precast.JA['Perfect Dodge'] = {hands="Plun. Armlets +3"}
 	sets.precast.JA['Feint'] = {
@@ -143,7 +143,7 @@ function init_gear_sets()
 		head="Pill. Bonnet +3",
 		ear1="Roundel Earring",
 		body="Pillager's Vest +3",
-		hands="Pill. Armlets +2",
+		hands="Pill. Armlets +3",
 		ring1="Dark Ring",
 		ring2="Sirona's Ring",
 		waist="Chaac Belt",
@@ -219,7 +219,7 @@ function init_gear_sets()
 		neck="Sanctity Necklace",
 		body="Pillager's Vest +3",
 		--hands="Meg. Gloves +2",
-		hands="Pill. Armlets +2",
+		hands="Pill. Armlets +3",
 		back=gear.jsecape_dex_crit,
 		waist="Eschan Stone",
 		legs="Pill. Culottes +3",
@@ -282,10 +282,12 @@ function init_gear_sets()
 		back=gear.jsecape_dex_wsd,
 	})
 	sets.precast.WS['Dancing Edge'].TA = set_combine(sets.precast.WS['Dancing Edge'], {
+		hands="Pill. Armlets +3",
 		back=gear.jsecape_dex_wsd,
 	})
 	sets.precast.WS['Dancing Edge'].SATA = set_combine(sets.precast.WS['Dancing Edge'], {
 		--hands="Skulk. Armlets +1",
+		hands="Pill. Armlets +3",
 		back=gear.jsecape_dex_wsd,
 
 	})
@@ -510,8 +512,8 @@ function init_gear_sets()
 		--body="Plunderer's Vest +3",
 		-- 5 DW
 		body=gear.Adhemar_body_B,
-		-- 3 DW
-		hands="Pill. Armlets +2",
+		-- 5 DW
+		hands="Pill. Armlets +3",
 		ring1="Rajas Ring",
 		ring2="Chirich Ring",
 		-- 3 DW
@@ -533,7 +535,6 @@ function init_gear_sets()
 		ear2="Telos Earring",
 		neck="Sanctity Necklace",
 		body="Pillager's Vest +3",
-		hands="Malignance Gloves",
 		waist="Eschan Stone",
 		legs="Pill. Culottes +3",
 		feet="Malignance Boots",
@@ -544,7 +545,7 @@ function init_gear_sets()
 		ear1="Zennaroi Earring",
 		ear2="Telos Earring",
 		body="Pillager's Vest +3",
-		hands="Malignance Gloves",
+		hands="Pill. Armlets +3",
 		ring1="Cacoethic Ring",
 		waist="Eschan Stone",
 		legs="Pill. Culottes +3",
@@ -631,30 +632,32 @@ function init_gear_sets()
 
 	-- Normal -------
 	-- DW needed: 42 (37 with gift)
-	-- 18 Gear DW
+	-- 20 Gear DW
 	sets.engaged.Haste_15 = set_combine(sets.engaged,{
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
 	})
 	-- DW needed: 31 (26 with gift)
-	-- 18 Gear DW
+	-- 20 Gear DW
 	sets.engaged.Haste_30 = set_combine(sets.engaged,{
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
 	})
 	-- DW needed: 26 (21 with gift)
-	-- 18 Gear DW
+	-- 20 Gear DW
 	sets.engaged.Haste_35 = set_combine(sets.engaged,{
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
 	})
 	-- DW needed: 11 (6 with gift)
-	-- 13 Gear DW
+	-- 10 Gear DW
 	sets.engaged.MaxHaste = set_combine(sets.engaged,{
 		ear1="Sherida Earring",
 		ear2="Suppanomimi",
 		--ear2="Telos Earring",
 		body="Plunderer's Vest +3",
+		hands=gear.Adhemar_hands_B,
+		waist="Windbuffet Belt +1",
 	})
 
 	sets.engaged.MidAcc.Haste_15 = set_combine(sets.engaged.MidAcc,{
@@ -672,6 +675,7 @@ function init_gear_sets()
 	})
 	sets.engaged.MidAcc.MaxHaste = set_combine(sets.engaged.MidAcc,{
 		ear1="Sherida Earring",
+		body="Pillager's Vest +3",
 		waist="Windbuffet Belt +1",
 	})
 
@@ -682,6 +686,9 @@ function init_gear_sets()
 	sets.engaged.HighAcc.Haste_35 = set_combine(sets.engaged.HighAcc,{
 	})
 	sets.engaged.HighAcc.MaxHaste = set_combine(sets.engaged.HighAcc,{
+		ear1="Sherida Earring",
+		body="Pillager's Vest +3",
+		waist="Windbuffet Belt +1",
 	})
 
 	sets.engaged.FullAcc.Haste_15 = set_combine(sets.engaged.FullAcc,{
@@ -691,6 +698,9 @@ function init_gear_sets()
 	sets.engaged.FullAcc.Haste_35 = set_combine(sets.engaged.FullAcc,{
 	})
 	sets.engaged.FullAcc.MaxHaste = set_combine(sets.engaged.FullAcc,{
+		ear1="Sherida Earring",
+		body="Pillager's Vest +3",
+		waist="Windbuffet Belt +1",
 	})
 
 	-- Evasion -------
