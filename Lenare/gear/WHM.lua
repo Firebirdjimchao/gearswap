@@ -225,7 +225,7 @@ function init_gear_sets()
 		ear2="Malignance Earring",
 		body="Theo. Bliaut +3",
 		--hands="Inyan. Dastanas +2",
-		hands="Theophany Mitts +2",
+		hands="Theophany Mitts +3",
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
 		back="Aurist's Cape +1",
@@ -266,7 +266,7 @@ function init_gear_sets()
 		head="Hyksos Khat",
 		neck="Incanter's Torque",
 		body="Ebers Bliaut +1",
-		hands="Inyan. Dastanas +2",
+		hands="Theophany Mitts +3",
 		ring1="Sirona's Ring",
 		ring2="Haoma's Ring",
 		back="Mending Cape",
@@ -275,7 +275,7 @@ function init_gear_sets()
 		feet=gear.Vanya_feet_B
 	}
 
-	-- 31% + 12% II Total + 23% gift (23% total gift)
+	-- 31% + 14% II Total + 23% gift (23% total gift)
 	sets.midcast.Cure = set_combine(sets.midcast['Healing Magic'],{
 		-- 10% + 2% II
 		main="Queller Rod",
@@ -296,15 +296,15 @@ function init_gear_sets()
 		--hands=gear.Telchine_hands_cure,
 		-- 10%
 		--hands=gear.Telchine_hands_pet,
-		-- 2% II
-		hands="Theophany Mitts +2",
+		-- 4% II
+		hands="Theophany Mitts +3",
 		waist=gear.ElementalObi,
 		legs="Ebers Pant. +1",
 		-- 5%
 		feet=gear.Vanya_feet_B
 	})
 	
-	-- 15% + 6% II Total + 23% gift (23% total gift) + 40% Afflatus Solace (2 x 20 JP)
+	-- 31% + 8% II Total + 23% gift (23% total gift) + 40% Afflatus Solace (2 x 20 JP)
 	sets.midcast.CureSolace = set_combine(sets.midcast.Cure,{
 		-- 10% + 2% II
 		main="Queller Rod",
@@ -313,13 +313,15 @@ function init_gear_sets()
 		-- 14% Afflatus Solace
 		body="Ebers Bliaut +1",
 		-- 2% II
-		hands="Theophany Mitts +2",
+		hands="Theophany Mitts +3",
 		-- 10% Afflatus Solace
 		back="Alaunus's Cape"
 	})
 
 	sets.midcast.Curaga = set_combine(sets.midcast.Cure,{
-		body="Annoint. Kalasiris"
+		--body="Annoint. Kalasiris",
+		-- 6% II
+		body="Theo. Bliaut +3",
 	})
 	sets.midcast.CureSelf = set_combine(sets.midcast.Cure,{
 		waist="Gishdubar Sash",
