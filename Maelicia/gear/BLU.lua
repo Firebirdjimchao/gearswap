@@ -178,6 +178,7 @@ function user_setup()
 	state.CastingMode:options('Normal', 'Resistant', 'TH')
 	state.IdleMode:options('Normal', 'PDT', 'Learning')
 	state.BuffReminderMode = M('Normal', 'Full', 'None')
+	state.MalignanceMode = M(false, 'Malignance')
 
 	gear.default.obi_waist = "Sacro Cord"
 	gear.Rosmerta_DexSTP = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10',}}
@@ -202,9 +203,9 @@ function user_setup()
 
 	-- "CTRL: ^ ALT: ! Windows Key: @ Apps Key: #"
 
-	-- Win-`
 	send_command('bind ^` input /ja "Chain Affinity" <me>')
 	send_command('bind !` input /ja "Burst Affinity" <me>')
+	send_command('bind != gs c toggle MalignanceMode; input /echo --- MalignanceMode ---')
 
 	update_combat_form()
 	select_default_macro_book()
@@ -217,6 +218,7 @@ end
 function user_unload()
 	send_command('unbind ^`')
 	send_command('unbind !`')
+	send_command('unbind !=')
 end
 
 
@@ -233,6 +235,13 @@ function init_gear_sets()
 	sets.buff.Enchainment = {body="Luhlaza Jubbah +3"}
 	sets.buff.Efflux = {legs="Hashishin Tayt +1"}
 
+	sets.Malignance = {
+		head="Malignance Chapeau",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		legs="Malignance Tights",
+		feet="Malignance Boots",
+	}
 	
 	-- Precast Sets
 	
@@ -904,6 +913,9 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
+	if state.MalignanceMode.value ~= false then
+		meleeSet = set_combine(meleeSet, sets.Malignance)
+	end
 	if buffactive['Doom'] then
 		meleeSet = set_combine(meleeSet, sets.buff.Doom)
 	end
