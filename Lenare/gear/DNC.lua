@@ -241,7 +241,7 @@ function init_gear_sets()
 		ear1="Sherida Earring",
 		ear2="Brutal Earring",
 		body="Horos Casaque +3",
-		hands="Maxixi Bangles +3"
+		hands="Maxixi Bangles +3",
 		ring1="Garuda Ring +1",
 		ring2="Garuda Ring +1",
 		legs="Meg. Chausses +2",
@@ -295,7 +295,7 @@ function init_gear_sets()
 	sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
 		ear1="Odr Earring",
 		head="Mummu Bonnet +2",
-		hands="Maxixi Bangles +3"
+		hands="Maxixi Bangles +3",
 		legs="Horos Tights +3",
 	})
 	sets.precast.WS["Rudra's Storm"].MidAcc = set_combine(sets.precast.WS.MidAcc, sets.precast.WS["Rudra's Storm"], {
