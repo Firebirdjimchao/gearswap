@@ -122,8 +122,8 @@ function init_gear_sets()
 		ear2="Zennaroi Earring",
 		neck="Sanctity Necklace",
 		body="Meg. Cuirie +2",
-		hands="Malignance Gloves",
-		--hands="Maxixi Bangles +3",
+		--hands="Malignance Gloves",
+		hands="Maxixi Bangles +3",
 		ring1="Cacoethic Ring",
 		ring2="Chirich Ring",
 		back=gear.Senuna_DexDa,
@@ -134,23 +134,20 @@ function init_gear_sets()
 	}
 	sets.precast.Macc = {
 		head="Malignance Chapeau",
-		--head="Maxixi Tiara +3",
 		neck="Sanctity Necklace",
 		ear1="Hermetic Earring",
 		body="Mummu Jacket +2",
 		hands="Malignance Gloves",
-		--hands="Maxixi Bangles +3",
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
 		waist="Eschan Stone",
 		legs="Horos Tights +3",
 		feet="Malignance Boots",
-		--feet="Maxixi Shoes +3",
 	}
 
 	sets.precast.Step = set_combine(sets.precast.Acc,{
 		head="Maxixi Tiara +2",
-		hands="Maxixi Bangles +2",
+		hands="Maxixi Bangles +3",
 		feet="Horos T. Shoes +3",
 	})
 	sets.precast.Step['Feather Step'] = set_combine(sets.precast.Step,{
@@ -244,7 +241,7 @@ function init_gear_sets()
 		ear1="Sherida Earring",
 		ear2="Brutal Earring",
 		body="Horos Casaque +3",
-		hands="Meg. Gloves +2",
+		hands="Maxixi Bangles +3"
 		ring1="Garuda Ring +1",
 		ring2="Garuda Ring +1",
 		legs="Meg. Chausses +2",
@@ -298,8 +295,7 @@ function init_gear_sets()
 	sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
 		ear1="Odr Earring",
 		head="Mummu Bonnet +2",
-		--hands="Mummu Wrists +2",
-		hands="Meg. Gloves +2",
+		hands="Maxixi Bangles +3"
 		legs="Horos Tights +3",
 	})
 	sets.precast.WS["Rudra's Storm"].MidAcc = set_combine(sets.precast.WS.MidAcc, sets.precast.WS["Rudra's Storm"], {
@@ -311,7 +307,7 @@ function init_gear_sets()
 
 	-- 40% DEX 40% AGI
 	sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS, {
-		hands="Meg. Gloves +2",
+		hands="Maxixi Bangles +3"
 	})
 	sets.precast.WS['Shark Bite'].MidAcc = set_combine(sets.precast.WS.MidAcc, sets.precast.WS["Shark Bite"], {
 	})
@@ -321,6 +317,7 @@ function init_gear_sets()
 	})
 
 	sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS.MAB,{
+		hands="Maxixi Bangles +3",
 		legs="Horos Tights +3",
 	})
 
