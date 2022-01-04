@@ -356,7 +356,8 @@ function init_gear_sets()
 		ear1="Ishvara Earring",
 		ear2="Moonshade Earring",
 		body="Nyame Mail",
-		hands="Jhakri Cuffs +2",
+		--hands="Jhakri Cuffs +2",
+		hands="Nyame Gauntlets",
 		back=gear.Rosmerta_StrWSD,
 		waist="Sailfi Belt +1",
 		legs="Luhlaza Shalwar +3",
@@ -375,18 +376,17 @@ function init_gear_sets()
 	})
 
 	sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {
-		head="Jhakri Coronal +2",
+		head="Luh. Keffiyeh +3",
 		neck="Fotia Gorget",
 		ear1="Brutal Earring",
 		ear2="Moonshade Earring",
-		body="Jhakri Robe +2",
-		hands="Jhakri Cuffs +2",
+		body="Luhlaza Jubbah +3",
+		hands="Luh. Bazubands +3",
 		ring1="Metamor. Ring +1",
 		ring2="Epona's Ring",
 		waist="Fotia Belt",
-		legs="Jhakri Slops +2",
-		--feet="Jhakri Pigaches +2",
-		feet="Nyame Sollerets",
+		legs="Luhlaza Shalwar +3",
+		feet="Luhlaza Charuqs +3",
 	})
 	sets.precast.WS['Requiescat'].MidAcc = set_combine(sets.precast.WS['Requiescat'], {
 	})
@@ -468,7 +468,7 @@ function init_gear_sets()
 		ammo="Mavi Tathlum",
 		head="Luh. Keffiyeh +3",
 		neck="Incanter's Torque",
-		body="Assim. Jubbah +2",
+		body="Assim. Jubbah +3",
 		ring1="Stikini Ring",
 		ring2="Stikini Ring +1",
 		back="Cornflower Cape",
