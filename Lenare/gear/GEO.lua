@@ -120,6 +120,7 @@ function init_gear_sets()
 	
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {
 		ear1="Mendi. Earring",
+		hands=gear.Vanya_hands_B,
 		back="Pahtli Cape",
 		feet=gear.Vanya_feet_B
 	})
@@ -394,7 +395,8 @@ function init_gear_sets()
 		sub="Ammurapi Shield'",
 		head="Hyksos Khat",
 		neck="Incanter's Torque",
-		hands="Ayao's Gages",
+		body=gear.Vanya_body_B,
+		hands=gear.Vanya_hands_B,
 		ring1="Sirona's Ring",
 		ring2="Haoma's Ring",
 		back="Altruistic Cape",
@@ -408,7 +410,7 @@ function init_gear_sets()
 		sub="Ammurapi Shield",
 		head="Befouled Crown",
 		neck="Incanter's Torque",
-		ear1="Lifestorm Earring",
+		--ear1="Lifestorm Earring",
 		ear2="Malignance Earring",
 		-- 5%
 		--ear1="Mendi. Earring",
@@ -419,6 +421,8 @@ function init_gear_sets()
 		-- 16%
 		hands=gear.Telchine_hands_cure,
 		back="Aurist's Cape +1",
+		waist=gear.ElementalObi,
+		legs="Bagua Pants +3",
 		-- 5%
 		feet=gear.Vanya_feet_B
 	});
@@ -484,7 +488,15 @@ function init_gear_sets()
 		sub="Genbu's Shield",
 		body=gear.Telchine_body_pet,
 	})
+
+	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'],{
+		main="Vadose Rod",
+		hands="Regal Cuffs",
+	})
 	
+	sets.midcast.Refresh = set_combine(sets.midcast,Refresh,{
+		head="Amalric Coif",
+	})
 	sets.midcast.RefreshSelf = set_combine(sets.midcast['Enhancing Magic'],{
 		waist="Gishdubar Sash",
 		feet="Inspirited Boots",
@@ -496,24 +508,24 @@ function init_gear_sets()
 	sets.midcast.Shellra = set_combine(sets.midcast['Enhancing Magic'],{
 	})
 
-	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'],{
-		main="Vadose Rod"
-	})
-
 	-- === Enfeebling Magic =========================================
 
 	-- 378 Base
 	-- 16 merits
 	-- 394 Initial
-	-- 125 gear
-	-- 519 total
+	-- 107 gear
+	-- 501 total
 	sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.MACC,{
 		-- 16
 		head="Befouled Crown",
 		-- 10
 		neck="Incanter's Torque",
+		-- 20
+		body="Vanya Robe",
 		-- 18
-		hands="Azimuth Gloves +1",
+		--hands="Azimuth Gloves +1",
+		-- Duration +20%
+		hands="Regal Cuffs",
 		-- 5
 		--ring1="Stikini Ring",
 		-- Duration +10%
@@ -804,6 +816,7 @@ function init_gear_sets()
 		sub="Ammurapi Shield",
 		--body="Councilor's Garb",
 		body="Shamash Robe",
+		hands="Regal Cuffs",
 	})
 
 	sets.idle.Weak = set_combine(sets.idle,{

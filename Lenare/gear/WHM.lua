@@ -434,6 +434,11 @@ function init_gear_sets()
 		feet="Inspirited Boots",
 	})
 
+	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'],{
+		--head="Chironic Hat",
+		hands="Regal Cuffs",
+	})
+
 	sets.midcast.Protectra = set_combine(sets.midcast['Enhancing Magic'],{
 	})
 
@@ -470,14 +475,15 @@ function init_gear_sets()
 	})
 
 	sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.MACC,{
-		sub="Enki Strap",
 		head="Befouled Crown",
 		neck="Incanter's Torque",
 		body="Theo. Bliaut +3",
+		--hands="Inyan. Dastanas +2",
+		hands="Regal Cuffs",
 		ring1="Kishar Ring",
 		--ring1="Stikini Ring",
 		ring2="Stikini Ring",
-		waist="Rumination Sash",
+		--waist="Rumination Sash",
 		legs="Chironic Hose"
 	})
 
@@ -581,7 +587,8 @@ function init_gear_sets()
 	})
 	
 	sets.idle.Town = set_combine(sets.idle,{
-		body="Councilor's Garb"
+		body="Councilor's Garb",
+		hands="Regal Cuffs",
 	})
 	
 	sets.idle.Weak = set_combine(sets.idle,{

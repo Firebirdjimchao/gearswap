@@ -30,6 +30,8 @@ function define_global_sets()
 	gear.Amalric_body_A = { name="Amalric Doublet", augments={'MP+60','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}
 	gear.Amalric_hands_D = { name="Amalric Gages", augments={'INT+10','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}  
 	
+	gear.Vanya_body_B = { name="Vanya Robe", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}}
+  gear.Vanya_hands_B = { name="Vanya Cuffs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}}
 	gear.Vanya_feet_B = { name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}}
 
 	gear.Merlinic_head_burst = { name="Merlinic Hood", augments={'"Mag.Atk.Bns."+25','Magic burst dmg.+9%','CHR+8','Mag. Acc.+7',}}

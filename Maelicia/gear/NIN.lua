@@ -177,6 +177,8 @@ function init_gear_sets()
 		hands="Buremte Gloves",
 		-- 6% SS
 		ring1="Haverton Ring",
+		-- 3% SS
+		ring2="Crepuscular Ring",
 		-- 9% SS + 10% RS
 		legs=gear.Adhemar_legs_D,
 		feet="Wurrukatte Boots"
@@ -191,13 +193,14 @@ function init_gear_sets()
 		hands="Malignance Gloves",
 		ring1="Haverton Ring",
 		--ring2="Cacoethic Ring +1",
-		ring1="Dingir Ring",
+		ring2="Dingir Ring",
 		back="Yokaze Mantle",
 		waist="Yemaya Belt",
 		legs=gear.Herculean_legs_RA,
 		feet="Malignance Boots",
 	}
 	sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
+		ring2="Crepuscular Ring",
 	})
 	sets.midcast.RA.TH = set_combine(sets.midcast.RA, set.TreasureHunter)
 

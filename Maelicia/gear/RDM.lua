@@ -112,7 +112,7 @@ function init_gear_sets()
 	
 	-- 30% Base RDM traits
 	-- 8% JP
-	-- 61% gear (42 needed for 80%)
+	-- 62% gear (42 needed for 80%)
 	-- (80/40 cap) Note: Quick Magic does not allow midcast sets
 	sets.precast.FC = {
 		-- 4%
@@ -518,8 +518,8 @@ function init_gear_sets()
 	-- 16 merits
 	-- 36 gifts
 	-- 476 Initial
-	-- 37 gear
-	-- 517 total
+	-- 55 gear
+	-- 531 total
 	sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.MACC,{
 		main=gear.MaccStaff,
 		sub="Enki Strap",

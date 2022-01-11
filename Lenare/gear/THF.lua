@@ -179,6 +179,7 @@ function init_gear_sets()
 	sets.precast.RA = {
 		head="Uk'uxkaj Cap",
 		hands="Iuitl Wristband +1",
+		ring1="Crepuscular Ring",
 		legs="Nahtirah Trousers",
 		feet="Meg. Jam. +2"
 	}

@@ -200,11 +200,12 @@ function init_gear_sets()
 		ear2="Malignance Earring",
 		body="Inyanga Jubbah +2",
 		hands="Inyan. Dastanas +2",
+		--hands="Theophany Mitts +3",
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
 		ring2="Stikini Ring +1",
 		back="Aurist's Cape +1",
-		waist="Eschan Stone",
+		waist="Luminary Sash",
 		legs="Chironic Hose",
 		feet="Inyan. Crackows +2"
 	}

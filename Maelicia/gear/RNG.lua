@@ -130,8 +130,8 @@ function init_gear_sets()
 	
 	-- == Snapshot: 70% cap ==
 	-- Merits: 10%
-	-- Gear: 57% + (5% Perun +1 augments)
-	-- Total: 67% + (5% Perun +1 augments)
+	-- Gear: 60% + (5% Perun +1 augments)
+	-- Total: 70% + (5% Perun +1 augments)
 	--
 	-- == Rapid Shot ==
 	-- Merits: 5%
@@ -151,6 +151,8 @@ function init_gear_sets()
 		hands="Carmine Fin. Ga. +1",
 		-- 6% SS
 		ring1="Haverton Ring",
+		-- 3% SS
+		ring2="Crepuscular Ring",
 		-- 10% SS + 2% VS
 		back=gear.aug_belenus_snapshot,
 		-- 3% SS
@@ -165,8 +167,8 @@ function init_gear_sets()
 
 	-- == Snapshot: 70% cap ==
 	-- Merits: 10%
-	-- Gear: 54% + (5% Perun +1 augments)
-	-- Total: 64% + (5% Perun +1 augments)
+	-- Gear: 57% + (5% Perun +1 augments)
+	-- Total: 67% + (5% Perun +1 augments)
 	--
 	-- == Rapid Shot ==
 	-- Merits: 5%
@@ -191,6 +193,8 @@ function init_gear_sets()
 		hands="Carmine Fin. Ga. +1",
 		-- 6% SS
 		ring1="Haverton Ring",
+		-- 3% SS
+		ring2="Crepuscular Ring",
 		-- 10% SS + 2% VS
 		back=gear.aug_belenus_snapshot,
 		-- 3% SS
@@ -206,8 +210,8 @@ function init_gear_sets()
 	-- == Snapshot: 70% cap ==
 	-- Merits: 10%
 	-- Flurry: 15%
-	-- Gear: 47% + (5% Perun +1 augments)
-	-- Total: 72% + (5% Perun +1 augments)
+	-- Gear: 50% + (5% Perun +1 augments)
+	-- Total: 75% + (5% Perun +1 augments)
 	--
 	-- == Rapid Shot ==
 	-- Merits: 5%
@@ -233,6 +237,8 @@ function init_gear_sets()
 		hands="Carmine Fin. Ga. +1",
 		-- 6% SS
 		ring1="Haverton Ring",
+		-- 3% SS
+		ring2="Crepuscular Ring",
 		-- 10% SS + 2% VS
 		back=gear.aug_belenus_snapshot,
 		-- 5% RS
@@ -246,8 +252,8 @@ function init_gear_sets()
 	-- == Snapshot: 70% cap ==
 	-- Merits: 10%
 	-- Flurry II: 30%
-	-- Gear: 37% + (2% Perun +1 augments)
-	-- Total: 77% + (2% Perun +1 augments)
+	-- Gear: 40% + (2% Perun +1 augments)
+	-- Total: 80% + (2% Perun +1 augments)
 	--
 	-- == Rapid Shot ==
 	-- Merits: 5%
@@ -271,6 +277,8 @@ function init_gear_sets()
 		hands="Carmine Fin. Ga. +1",
 		-- 6% SS
 		ring1="Haverton Ring",
+		-- 3% SS
+		ring2="Crepuscular Ring",
 		-- 10% SS + 2% VS
 		back=gear.aug_belenus_snapshot,
 		-- 5% RS

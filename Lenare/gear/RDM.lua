@@ -85,12 +85,15 @@ function init_gear_sets()
 	
 	-- Fast cast sets for spells
 	
-	-- 83%/41% Total + 8% (JP) + 30% (RDM) (80/40 cap)
+	-- 30% Base RDM traits
+	-- 8% JP
+	-- 79% gear (42 needed for 80%)
+	-- (80/40 cap) Note: Quick Magic does not allow midcast sets
 	sets.precast.FC = {
 		-- 10%
 		--main="Emissary",
-		main="Grioavolr",
-		sub="Enki Strap",
+		--main="Grioavolr",
+		--sub="Enki Strap",
 		--ammo="Impatiens",
 		-- 16%
 		head="Atro. Chapeau +3",
@@ -116,8 +119,8 @@ function init_gear_sets()
 		waist="Embla Sash",
 		-- 7%
 		legs="Psycloth Lappas",
-		-- 4%
-		feet="Chelona Boots"
+		-- 8%
+		--feet="Carmine Greaves +1",
 	}
 	
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {
@@ -223,9 +226,9 @@ function init_gear_sets()
 		ear1="Snotra Earring",
 		ear2="Malignance Earring",
 		body="Atrophy Tabard +3",
-		hands="Jhakri Cuffs +2",
+		hands="Regal Cuffs",
 		ring1="Stikini Ring",
-		ring2="Stikini Ring",
+		ring2="Crepuscular Ring",
 		back=gear.sucellos_mnd,
 		waist="Luminary Sash",
 		legs="Chironic Hose",
@@ -259,13 +262,14 @@ function init_gear_sets()
 		head="Hyksos Khat",
 		neck="Incanter's Torque",
 		body="Viti. Tabard +3",
+		hands=gear.Vanya_hands_B,
 		ring1="Sirona's Ring",
 		ring2="Haoma's Ring",
 		legs="Carmine Cuisses +1",
 		feet=gear.Vanya_feet_B
 	}
 	
-	-- 55% Total
+	-- 49% Total
 	sets.midcast.Cure = set_combine(sets.midcast['Healing Magic'],{
 		-- 22%
 		main="Tamaxchi",
@@ -273,15 +277,16 @@ function init_gear_sets()
 		ammo="Regal Gem",
 		head="Befouled Crown",
 		neck="Incanter's Torque",
-		ear1="Lifestorm Earring",
+		--ear1="Lifestorm Earring",
 		-- 5%
-		--ear1="Mendi. Earring",
+		ear1="Mendi. Earring",
 		-- 5%
-		--ear2="Roundel Earring",
-		ear2="Malignance Earring",
+		ear2="Roundel Earring",
+		--ear2="Malignance Earring",
 		body="Viti. Tabard +3",
 		-- 16%
-		hands=gear.Telchine_hands_cure,
+		--hands=gear.Telchine_hands_cure,
+		hands=gear.Vanya_hands_B,
 		back=gear.sucellos_mnd,
 		waist="Luminary Sash",
 		-- 12%
@@ -425,6 +430,11 @@ function init_gear_sets()
 		body="Telchine Chas."
 	})
 
+	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'],{
+		head="Amalric Coif",
+		hands="Regal Cuffs",
+	})
+
 	-- Skill mod (500 cap)
 	sets.midcast['Phalanx'] = set_combine(sets.midcast.EnhancingDuration,{
 	})
@@ -450,8 +460,8 @@ function init_gear_sets()
 	-- 16 merits
 	-- 36 gifts
 	-- 476 Initial
-	-- 83 gear
-	-- 564 total
+	-- 60 gear
+	-- 536 total
 	sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.MACC,{
 		--main=gear.MainStaff,
 		--sub="Enki Strap",
@@ -467,26 +477,39 @@ function init_gear_sets()
 		--neck="Imbodla Necklace",
 		ear1="Snotra Earring",
 		-- 21
-		body="Atrophy Tabard +3",
+		--body="Atrophy Tabard +3",
 		-- effect +14
-		--body="Lethargy Sayon +1",
+		body="Lethargy Sayon +1",
 		-- 19, Saboteur +12
-		hands="Leth. Gantherots +1",
+		--hands="Leth. Gantherots +1",
 		-- Duration +20%
-		-- hands="Regal Cuffs",
+		hands="Regal Cuffs",
 		-- Duration +10%
 		ring1="Kishar Ring",
 		-- 5
 		--ring1="Stikini Ring",
 		-- 5
 		ring2="Stikini Ring",
+		-- effect +10
 		back=gear.sucellos_mnd,
 		-- 7
-		waist="Rumination Sash",
+		--waist="Rumination Sash",
+		waist="Luminary Sash",
 		-- 13 Immunobreak +1
 		legs=gear.Chironic_legs_nuke,
 		-- 16 effect +10
 		feet="Vitiation Boots +3",
+	})
+
+	sets.midcast['Enfeebling Magic'].Resistant = set_combine(sets.midcast['Enfeebling Magic'],{
+		ammo=empty,
+		range="Ullr",
+		-- effect +10
+		--ammo="Regal Gem",
+		ear2="Regal Earring",
+		-- 21
+		body="Atrophy Tabard +3",
+		ring2="Crepuscular Ring",
 	})
 
 	-- For enfeebs with no known skill caps
@@ -498,6 +521,8 @@ function init_gear_sets()
 		body="Atrophy Tabard +3",
 		-- 5
 		ring1="Stikini Ring",
+		-- 5
+		ring2="Stikini Ring",
 	})
 
 	-- For MND potency based enfeebs
@@ -524,7 +549,7 @@ function init_gear_sets()
 		ear1="Snotra Earring",
 		body="Atrophy Tabard +3",
 		-- Duration +20%
-		-- hands="Regal Cuffs",
+		hands="Regal Cuffs",
 		-- Duration +10%
 		ring1="Kishar Ring",
 		feet="Vitiation Boots +3",
@@ -537,7 +562,7 @@ function init_gear_sets()
 	sets.midcast.enfeebSkillCap = set_combine(sets.midcast['Enfeebling Magic'], {
 		head="Atro. Chapeau +3",
 		neck="Dls. Torque +1",
-		hands="Jhakri Cuffs +2",
+		hands="Regal Cuffs",
 		waist="Luminary Sash",
 		feet="Vitiation Boots +3",
 	})
@@ -756,6 +781,7 @@ function init_gear_sets()
 		neck="Dls. Torque +1",
 		--body="Councilor's Garb",
 		body="Shamash Robe",
+		hands="Regal Cuffs",
 		back=gear.sucellos_mnd,
 	})
 	
@@ -856,6 +882,7 @@ function init_gear_sets()
 		sub="Enki Strap",
 		head="Jhakri Coronal +2",
 		body=gear.Merlinic_body_nuke,
+		hands="Regal Cuffs",
 		ring1="Stikini Ring",
 		ring2="Stikini Ring",
 	})

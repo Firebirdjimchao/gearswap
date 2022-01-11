@@ -4,9 +4,9 @@
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-	state.OffenseMode:options('Melee', 'Acc', 'Ranged')
-	state.RangedMode:options('Normal', 'Acc')
-	state.WeaponskillMode:options('Normal', 'Acc', 'Att', 'Mod')
+	state.OffenseMode:options('Melee', 'MidAcc', 'HighAcc', 'FullAcc', 'Ranged')
+	state.RangedMode:options('Normal', 'MidAcc', 'HighAcc', 'FullAcc')
+	state.WeaponskillMode:options('Normal', 'MidAcc', 'HighAcc', 'FullAcc')
 	state.CastingMode:options('Normal', 'Resistant')
 	state.IdleMode:options('Normal', 'PDT', 'Refresh')
 	
@@ -208,7 +208,7 @@ function init_gear_sets()
 		waist=gear.ElementalBelt,
 	})
 
-	sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS['Last Stand'], {
+	sets.precast.WS['Last Stand'].HighAcc = set_combine(sets.precast.WS['Last Stand'], {
 		hands="Buremte Gloves"
 	})
 
@@ -256,16 +256,16 @@ function init_gear_sets()
 		--feet="Lanun Bottes +1"
 	}
 
-	sets.midcast.CorsairShot.Acc = set_combine(sets.midcast.CorsairShot, {
+	sets.midcast.CorsairShot.HighAcc = set_combine(sets.midcast.CorsairShot, {
 		ear1="Hermetic Earring",
-		ring1="Stikini Ring",
+		ring1="Crepuscular Ring",
 		ring2="Stikini Ring",
 	})
 
-	sets.midcast.CorsairShot['Light Shot'] = set_combine(sets.midcast.CorsairShot.Acc, {
+	sets.midcast.CorsairShot['Light Shot'] = set_combine(sets.midcast.CorsairShot.HighAcc, {
 	})
 
-	sets.midcast.CorsairShot['Dark Shot'] = set_combine(sets.midcast.CorsairShot.Acc, {
+	sets.midcast.CorsairShot['Dark Shot'] = set_combine(sets.midcast.CorsairShot.HighAcc, {
 	})
 
 	-- Ranged gear
@@ -277,7 +277,7 @@ function init_gear_sets()
 		ear2="Telos Earring",
 		body="Nisroch Jerkin",
 		hands="Meg. Gloves +2",
-		ring1="Arewe Ring",
+		ring1="Crepuscular Ring",
 		ring2="Hajduk Ring",
 		back=gear.pr_gunslinger,
 		waist="Kwahu Kachina Belt",
@@ -285,7 +285,7 @@ function init_gear_sets()
 		feet="Iuitl Gaiters"
 	}
 
-	sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
+	sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA, {
 		ammo=gear.RAbullet,
 		neck="Sanctity Necklace",
 		hands="Buremte Gloves"
@@ -345,7 +345,7 @@ function init_gear_sets()
 	-- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
 	-- sets if more refined versions aren't defined.
 	-- If you create a set with both offense and defense modes, the offense mode should be first.
-	-- EG: sets.engaged.Dagger.Accuracy.Evasion
+	-- EG: sets.engaged.Dagger.HighAccuracy.Evasion
 
 	-- Normal melee group
 	sets.engaged.Melee = {
@@ -364,7 +364,7 @@ function init_gear_sets()
 		feet="Mummu Gamash. +2",
 	}
 
-	sets.engaged.Acc = set_combine(sets.engaged.Melee,{
+	sets.engaged.HighAcc = set_combine(sets.engaged.Melee,{
 		head="Malignance Chapeau",
 		ear1="Zennaroi Earring",
 		neck="Sanctity Necklace",
@@ -381,7 +381,7 @@ function init_gear_sets()
 		ear2="Suppanomimi",
 	})
 
-	sets.engaged.Acc.DW = set_combine(sets.engaged.Acc,{
+	sets.engaged.HighAcc.DW = set_combine(sets.engaged.HighAcc,{
 		ear1="Zennaroi Earring",
 	})
 
@@ -399,11 +399,11 @@ function init_gear_sets()
 		legs="Mummu Kecks +2",
 		feet="Malignance Boots",
 	})
-	sets.engaged.MidAcc.PDT = set_combine(sets.engaged.PDT,{
+	sets.engaged.PDT.MidAcc = set_combine(sets.engaged.PDT,{
 	})
-	sets.engaged.HighAcc.PDT = set_combine(sets.engaged.PDT,{
+	sets.engaged.PDT.HighAcc = set_combine(sets.engaged.PDT,{
 	})
-	sets.engaged.FullAcc.PDT = set_combine(sets.engaged.PDT,{
+	sets.engaged.PDT.FullAcc = set_combine(sets.engaged.PDT,{
 	})
 
 	sets.engaged.MDT = set_combine(sets.engaged.Evasion,{
@@ -418,11 +418,11 @@ function init_gear_sets()
 		legs="Mummu Kecks +2",
 		feet="Malignance Boots",
 	})
-	sets.engaged.MidAcc.MDT = set_combine(sets.engaged.MDT,{
+	sets.engaged.MDT.MidAcc = set_combine(sets.engaged.MDT,{
 	})
-	sets.engaged.HighAcc.MDT = set_combine(sets.engaged.MDT,{
+	sets.engaged.MDT.HighAcc = set_combine(sets.engaged.MDT,{
 	})
-	sets.engaged.FullAcc.MDT = set_combine(sets.engaged.MDT,{
+	sets.engaged.MDT.FullAcc = set_combine(sets.engaged.MDT,{
 	})
 
 end

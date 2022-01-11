@@ -558,8 +558,8 @@ function init_gear_sets()
 	-- 378 Base
 	-- 16 merits
 	-- 394 Initial
-	-- 92 gear
-	-- 486 total
+	-- 93 gear
+	-- 487 total
 	sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.MACC,{
 		-- 16
 		head="Befouled Crown",
