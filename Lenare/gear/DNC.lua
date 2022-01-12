@@ -99,7 +99,7 @@ function init_gear_sets()
 		waist="Chaac Belt",
 		legs="Horos Tights +3",
 		-- 12%
-		feet="Maxixi Shoes +2"
+		feet="Maxixi Toe Shoes +2"
 	}
 		
 	-- Don't need any special gear for Healing Waltz.
@@ -111,7 +111,7 @@ function init_gear_sets()
 
 	sets.precast.Jig = {
 		legs="Horos Tights +3",
-		feet="Maxixi Shoes +2",
+		feet="Maxixi Toe Shoes +2",
 	}
 
 	sets.precast.Acc = {
@@ -130,7 +130,7 @@ function init_gear_sets()
 		waist="Eschan Stone",
 		legs="Horos Tights +3",
 		feet="Malignance Boots",
-		--feet="Maxixi Shoes +3",
+		--feet="Maxixi Toe Shoes +3",
 	}
 	sets.precast.Macc = {
 		head="Malignance Chapeau",
