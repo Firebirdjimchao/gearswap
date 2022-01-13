@@ -71,7 +71,8 @@ function init_gear_sets()
 	sets.precast.JA['Unlimited Shot'] = {feet="Amini Bottillons +1"}
 	sets.precast.JA['Eagle Eye Shot'] = {
 		--head=gear.Adhemar_head_hq_B,
-		head=gear.Herculean_head_RA,
+		--head=gear.Herculean_head_RA,
+		head="Meghanada Visor +2",
 		neck="Scout's Gorget +2",
 		ear1="Telos Earring",
 		ear2="Odr Earring",
@@ -864,7 +865,7 @@ function init_gear_sets()
 	})
 
 	sets.midcast.RA.Crit = set_combine(sets.midcast.RA.FullAcc, {
-		head=gear.Herculean_head_RA,
+		head="Meghanada Visor +2",
 		ear2="Odr Earring",
 		body="Nisroch Jerkin",
 		hands="Mummu Wrists +2",
