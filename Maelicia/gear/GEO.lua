@@ -201,6 +201,7 @@ function init_gear_sets()
 	
 	-- 30% STR 30% MND, Critical hit chance varies with TP
 	sets.precast.WS['Hexa Strike'] = set_combine(sets.precast.WS,{
+		head="Blistering Sallet +1",
 		ear1="Telos Earring",
 		body="Jhakri Robe +2",
 		hands="Jhakri Cuffs +2",

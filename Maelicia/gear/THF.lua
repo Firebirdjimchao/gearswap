@@ -318,7 +318,8 @@ function init_gear_sets()
 	-- 50% DEX, Crit rate varies with TP
 	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
 		ammo="Yetshila",
-		head=gear.Adhemar_head_hq_B,
+		--head=gear.Adhemar_head_hq_B,
+		head="Blistering Sallet +1",
 		ear1="Odr Earring",
 		body="Plunderer's Vest +3",
 		hands=gear.Adhemar_hands_hq_B,
@@ -332,6 +333,7 @@ function init_gear_sets()
 	sets.precast.WS['Evisceration'].FullAcc = set_combine(sets.precast.WS.FullAcc, sets.precast.WS['Evisceration'], {
 	})
 	sets.precast.WS['Evisceration'].SA = set_combine(sets.precast.WS['Evisceration'], {
+		head=gear.Adhemar_head_hq_B,
 		ring1="Regal Ring",
 		--hands="Skulk. Armlets +1",
 		hands="Meg. Gloves +2",
@@ -340,6 +342,7 @@ function init_gear_sets()
 		feet="Plun. Poulaines +3",
 	})
 	sets.precast.WS['Evisceration'].TA = set_combine(sets.precast.WS['Evisceration'], {
+		head=gear.Adhemar_head_hq_B,
 		ring1="Regal Ring",
 		--hands="Pill. Armlets +3",
 		hands="Meg. Gloves +2",
@@ -348,6 +351,7 @@ function init_gear_sets()
 		feet="Plun. Poulaines +3",
 	})
 	sets.precast.WS['Evisceration'].SATA = set_combine(sets.precast.WS['Evisceration'], {
+		head=gear.Adhemar_head_hq_B,
 		ring1="Regal Ring",
 		--hands="Skulk. Armlets +1",
 		--hands="Pill. Armlets +3",

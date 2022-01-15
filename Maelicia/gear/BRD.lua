@@ -243,6 +243,7 @@ function init_gear_sets()
 	
 	-- Specific weaponskill sets.	Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
+		head="Blistering Sallet +1",
 	})
 	sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
 	})

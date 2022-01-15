@@ -679,7 +679,8 @@ function init_gear_sets()
 		head=gear.Adhemar_head_hq_B,
 		neck="Fotia Gorget",
 		ear1="Odr Earring",
-		ear2="Moonshade Earring",
+		--ear2="Moonshade Earring",
+		ear2="Lugra Earring +1",
 		body="Ken. Samue +1",
 		hands=gear.Adhemar_hands_hq_B,
 		ring1="Gere Ring",
@@ -720,6 +721,25 @@ function init_gear_sets()
 	})
 	sets.precast.WS['Blade: Ten'].Acc = set_combine(sets.precast.WS['Blade: Ten'].Mid, {
 	})
+
+	-- BLADE: KU STR 30% / DEX 30%, acc varies with TP
+	sets.precast.WS['Blade: Ku'] = set_combine(sets.precast.WS, {
+		ammo="Seeth. Bomblet +1",
+		head="Blistering Sallet +1",
+		--head=gear.Adhemar_head_hq_B,
+		neck="Fotia Gorget",
+		ear1="Odr Earring",
+		ear2="Moonshade Earring",
+		body="Malignance Tabard",
+		hands="Malignance Gloves",
+		--hands="Mochizuki Tekko +3",
+		ring1="Gere Ring",
+		ring2="Regal Ring",
+		back=Andartia.DEX,
+		waist="Fotia Belt",
+		legs="Tatena. Haidate +1",
+		feet="Mochi. Kyahan +3",
+	})
 	
 	sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS.MAB, {
 	})
@@ -733,12 +753,12 @@ function init_gear_sets()
 
 	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
 		ammo="Yetshila",
-		head="Mummu Bonnet +2",
+		head=gear.Adhemar_head_hq_B,
 		neck="Fotia Gorget",
 		ear1="Odr Earring",
 		ear2="Moonshade Earring",
 		body="Ken. Samue +1",
-		hands="Mummu Wrists +2",
+		hands=gear.Adhemar_hands_hq_B,
 		--ring1="Gere Ring",
 		ring1="Mummu Ring",
 		ring2="Regal Ring",
