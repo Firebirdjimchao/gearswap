@@ -8,6 +8,7 @@ function user_setup()
 
 	state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi'}
 	state.BehindMode = M{['description']='Behind Mode', 'None', 'Normal'}
+	state.WeaponLock = M(false, 'Weapon Lock')
 	
 	gear.default.weaponskill_neck = "Asperity Necklace"
 	gear.default.weaponskill_waist = "Windbuffet Belt +1"
@@ -40,9 +41,10 @@ function user_setup()
 	-- Additional local binds
 	send_command('bind ^` input /ja "Flee" <me>')
 	send_command('bind ^= gs c cycle treasuremode')
+	send_command('bind != gs c cycle BehindMode')
 	send_command('bind !- gs c cycle targetmode')
 	send_command('bind @` gs c cycle HasteMode')
-	send_command('bind !` gs c cycle BehindMode')
+	send_command('bind !` gs c toggle WeaponLock; input /echo --- Weapons Lock ---')
 
 	global_aliases()
 	
@@ -53,6 +55,7 @@ end
 function user_unload()
 	send_command('unbind ^`')
 	send_command('unbind ^=')
+	send_command('unbind !=')
 	send_command('unbind !-')
 	send_command('unbind @`')
 	send_command('unbind !`')
@@ -857,6 +860,14 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for non-casting events.
 -------------------------------------------------------------------------------------------------------------------
+
+function job_state_change(stateField, newValue, oldValue)
+	if state.WeaponLock.value == true then
+		disable('main','sub','range','ammo')
+	else
+		enable('main','sub','range','ammo')
+	end
+end
 
 -- Run after the general midcast() set is constructed.
 function job_post_midcast(spell, action, spellMap, eventArgs)
