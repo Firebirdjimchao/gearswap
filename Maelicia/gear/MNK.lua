@@ -1,6 +1,6 @@
 function user_setup()
-	state.OffenseMode:options('Normal', 'SomeAcc', 'Acc', 'Fodder')
-	state.WeaponskillMode:options('Normal', 'SomeAcc', 'Acc', 'Fodder')
+	state.OffenseMode:options('Normal', 'MidAcc', 'Acc')
+	state.WeaponskillMode:options('Normal', 'MidAcc', 'Acc')
 	state.HybridMode:options('Normal', 'PDT', 'Counter')
 	state.PhysicalDefenseMode:options('PDT', 'HP')
 	state.IdleMode:options('CP', 'Normal', 'Regen')
@@ -175,7 +175,7 @@ function init_gear_sets()
 		back=gear.Segomo_dex_da,
 		waist="Windbuffet Belt +1"
 	})
-	sets.precast.WS.SomeAcc = set_combine(sets.precast.WS, {
+	sets.precast.WS.MidAcc = set_combine(sets.precast.WS, {
 		neck=gear.ElementalGorget,
 		waist=gear.ElementalBelt
 	})
@@ -211,7 +211,7 @@ function init_gear_sets()
 	})
 	sets.precast.WS["Victory Smite"].Acc = set_combine(sets.precast.WS.Acc, sets.precast.WS["Victory Smite"], {
 	})
-	sets.precast.WS["Victory Smite"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, sets.precast.WS["Victory Smite"], {
+	sets.precast.WS["Victory Smite"].MidAcc = set_combine(sets.precast.WS.MidAcc, sets.precast.WS["Victory Smite"], {
 	})
 
 	-- 30% STR / 30% DEX, damage varies with TP
@@ -233,7 +233,7 @@ function init_gear_sets()
 	})
 	sets.precast.WS["Raging Fists"].Acc = set_combine(sets.precast.WS.Acc, sets.precast.WS["Raging Fists"], {
 	})
-	sets.precast.WS["Raging Fists"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, sets.precast.WS["Raging Fists"], {
+	sets.precast.WS["Raging Fists"].MidAcc = set_combine(sets.precast.WS.MidAcc, sets.precast.WS["Raging Fists"], {
 	})
 
 	sets.precast.WS['Shijin Spiral'] = set_combine(sets.precast.WS, {
@@ -250,21 +250,21 @@ function init_gear_sets()
 	})
 	sets.precast.WS['Shijin Spiral'].Acc = set_combine(sets.precast.WS.Acc, sets.precast.WS['Shijin Spiral'], {
 	})
-	sets.precast.WS['Shijin Spiral'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, sets.precast.WS['Shijin Spiral'], {
+	sets.precast.WS['Shijin Spiral'].MidAcc = set_combine(sets.precast.WS.MidAcc, sets.precast.WS['Shijin Spiral'], {
 	})
 
 	sets.precast.WS['Asuran Fists'] = set_combine(sets.precast.WS, {
 	})
 	sets.precast.WS['Asuran Fists'].Acc = set_combine(sets.precast.WS.Acc, sets.precast.WS['Asuran Fists'], {
 	})
-	sets.precast.WS['Asuran Fists'].SomeAcc = set_combine(sets.precast.WS.SomeAcc, sets.precast.WS['Asuran Fists'], {
+	sets.precast.WS['Asuran Fists'].MidAcc = set_combine(sets.precast.WS.MidAcc, sets.precast.WS['Asuran Fists'], {
 	})
 
 	sets.precast.WS["Ascetic's Fury"] = set_combine(sets.precast.WS, {
 	})
 	sets.precast.WS["Ascetic's Fury"].Acc = set_combine(sets.precast.WS.Acc, sets.precast.WS["Ascetic's Fury"], {
 	})
-	sets.precast.WS["Ascetic's Fury"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, sets.precast.WS["Ascetic's Fury"], {
+	sets.precast.WS["Ascetic's Fury"].MidAcc = set_combine(sets.precast.WS.MidAcc, sets.precast.WS["Ascetic's Fury"], {
 	})
 
 	sets.precast.WS["Howling Fist"] = set_combine(sets.precast.WS, {
@@ -280,7 +280,7 @@ function init_gear_sets()
 	})
 	sets.precast.WS["Howling Fist"].Acc = set_combine(sets.precast.WS.Acc, sets.precast.WS["Howling Fist"], {
 	})
-	sets.precast.WS["Howling Fist"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, sets.precast.WS["Howling Fist"], {
+	sets.precast.WS["Howling Fist"].MidAcc = set_combine(sets.precast.WS.MidAcc, sets.precast.WS["Howling Fist"], {
 	})
 
 	sets.precast.WS["Tornado Kick"] = set_combine(sets.precast.WS, {
@@ -294,7 +294,7 @@ function init_gear_sets()
 	})
 	sets.precast.WS["Tornado Kick"].Acc = set_combine(sets.precast.WS.Acc, sets.precast.WS["Tornado Kick"], {
 	})
-	sets.precast.WS["Tornado Kick"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, sets.precast.WS["Tornado Kick"], {
+	sets.precast.WS["Tornado Kick"].MidAcc = set_combine(sets.precast.WS.MidAcc, sets.precast.WS["Tornado Kick"], {
 	})
 
 	-- 30% STR / 30% INT, damage varies with TP
@@ -317,7 +317,7 @@ function init_gear_sets()
 	})
 	sets.precast.WS["Retribution"].Acc = set_combine(sets.precast.WS.Acc, sets.precast.WS["Retribution"], {
 	})
-	sets.precast.WS["Retribution"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, sets.precast.WS["Retribution"], {
+	sets.precast.WS["Retribution"].MidAcc = set_combine(sets.precast.WS.MidAcc, sets.precast.WS["Retribution"], {
 	})
 
 	-- 100% STR, DEF down, duration varies with TP
@@ -337,7 +337,7 @@ function init_gear_sets()
 	})
 	sets.precast.WS["Shell Crusher"].Acc = set_combine(sets.precast.WS.Acc, sets.precast.WS["Shell Crusher"], {
 	})
-	sets.precast.WS["Shell Crusher"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, sets.precast.WS["Shell Crusher"], {
+	sets.precast.WS["Shell Crusher"].MidAcc = set_combine(sets.precast.WS.MidAcc, sets.precast.WS["Shell Crusher"], {
 	})
 	
 	-- Midcast Sets
@@ -448,6 +448,10 @@ function init_gear_sets()
 		ring1="Sheltered Ring"
 	})
 
+	-- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.
+	sets.impetus_body = {body="Bhikku Cyclas +1"}
+	sets.footwork_kick_feet = {feet="Anch. Gaiters +3"}
+
 	-- Engaged sets
 
 	-- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
@@ -471,10 +475,14 @@ function init_gear_sets()
 		legs="Hes. Hose +3",
 		feet="Anch. Gaiters +3",
 	}
-	sets.engaged.SomeAcc = set_combine(sets.engaged,{
+	sets.engaged.Impetus = set_combine(sets.engaged, sets.impetus_body, {
+	})
+	sets.engaged.MidAcc = set_combine(sets.engaged,{
 		ear2="Telos Earring",
 		body="Tatena. Harama. +1",
 		hands="Tatena. Gote +1",
+	})
+	sets.engaged.MidAcc.Impetus = set_combine(sets.engaged.MidAcc, sets.impetus_body, {
 	})
 	sets.engaged.Acc = set_combine(sets.engaged,{
 		ammo="Falcon Eye",
@@ -485,6 +493,8 @@ function init_gear_sets()
 		ear2="Telos Earring",
 		ring2="Cacoethic Ring +1",
 		back=gear.Segomo_dex_da,
+	})
+	sets.engaged.Acc.Impetus = set_combine(sets.engaged.Acc, sets.impetus_body, {
 	})
 
 	-- Defensive melee hybrid sets
@@ -498,7 +508,7 @@ function init_gear_sets()
 		legs="Malignance Tights",
 		feet="Malignance Boots",
 	})
-	sets.engaged.SomeAcc.PDT = set_combine(sets.engaged.SomeAcc,{
+	sets.engaged.MidAcc.PDT = set_combine(sets.engaged.MidAcc,{
 		head="Malignance Chapeau",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
@@ -532,7 +542,7 @@ function init_gear_sets()
 		legs="Anch. Hose +3",
 		feet="Malignance Boots",
 	})
-	sets.engaged.SomeAcc.Counter = set_combine(sets.engaged.SomeAcc.PDT, sets.engaged.Counter, {
+	sets.engaged.MidAcc.Counter = set_combine(sets.engaged.MidAcc.PDT, sets.engaged.Counter, {
 	})
 	sets.engaged.Acc.Counter = set_combine(sets.engaged.Acc.PDT, sets.engaged.Counter, {
 	})
@@ -550,60 +560,45 @@ function init_gear_sets()
 		legs="Anch. Hose +3",
 		feet="Hes. Gaiters +3"
 	})
-	sets.engaged.SomeAcc.Counterstance = set_combine(sets.engaged.SomeAcc.PDT, sets.engaged.Counterstance, {
+	sets.engaged.MidAcc.Counterstance = set_combine(sets.engaged.MidAcc.PDT, sets.engaged.Counterstance, {
 	})
 	sets.engaged.Acc.Counterstance = set_combine(sets.engaged.Acc.PDT, sets.engaged.Counterstance, {
 	})
 
-	-- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.
-	sets.impetus_body = {body="Bhikku Cyclas +1"}
-	sets.footwork_kick_feet = {feet="Anch. Gaiters +3"}
-
 	-- Hundred Fists/Impetus melee set mods
 	sets.engaged.HF = set_combine(sets.engaged)
-	sets.engaged.HF.Impetus = set_combine(sets.engaged, {
-		body="Bhikku Cyclas +1"
+	sets.engaged.HF.Impetus = set_combine(sets.engaged, sets.impetus_body, {
 	})
-	sets.engaged.SomeAcc.HF = set_combine(sets.engaged.SomeAcc)
-	sets.engaged.SomeAcc.HF.Impetus = set_combine(sets.engaged.SomeAcc, {
-		body="Bhikku Cyclas +1"
+	sets.engaged.MidAcc.HF = set_combine(sets.engaged.MidAcc)
+	sets.engaged.MidAcc.HF.Impetus = set_combine(sets.engaged.MidAcc, sets.impetus_body, {
 	})
 	sets.engaged.Acc.HF = set_combine(sets.engaged.Acc)
-	sets.engaged.Acc.HF.Impetus = set_combine(sets.engaged.Acc, {
-		body="Bhikku Cyclas +1"
+	sets.engaged.Acc.HF.Impetus = set_combine(sets.engaged.Acc, sets.impetus_body, {
 	})
 	sets.engaged.Counter.HF = set_combine(sets.engaged.Counter)
-	sets.engaged.Counter.HF.Impetus = set_combine(sets.engaged.Counter, {
-		body="Bhikku Cyclas +1"
+	sets.engaged.Counter.HF.Impetus = set_combine(sets.engaged.Counter, sets.impetus_body, {
 	})
-	sets.engaged.SomeAcc.Counter.HF = set_combine(sets.engaged.SomeAcc.Counter)
-	sets.engaged.SomeAcc.Counter.HF.Impetus = set_combine(sets.engaged.SomeAcc.Counter, {
-		body="Bhikku Cyclas +1"
+	sets.engaged.MidAcc.Counter.HF = set_combine(sets.engaged.MidAcc.Counter)
+	sets.engaged.MidAcc.Counter.HF.Impetus = set_combine(sets.engaged.MidAcc.Counter, sets.impetus_body, {
 	})
 	sets.engaged.Acc.Counter.HF = set_combine(sets.engaged.Acc.Counter)
-	sets.engaged.Acc.Counter.HF.Impetus = set_combine(sets.engaged.Acc.Counter, {
-		body="Bhikku Cyclas +1"
+	sets.engaged.Acc.Counter.HF.Impetus = set_combine(sets.engaged.Acc.Counter, sets.impetus_body, {
 	})
 	sets.engaged.Counterstance.HF = set_combine(sets.engaged.Counterstance)
-	sets.engaged.Counterstance.HF.Impetus = set_combine(sets.engaged.Counterstance, {
-		body="Bhikku Cyclas +1"
+	sets.engaged.Counterstance.HF.Impetus = set_combine(sets.engaged.Counterstance, sets.impetus_body, {
 	})
-	sets.engaged.SomeAcc.Counterstance.HF = set_combine(sets.engaged.SomeAcc.Counterstance)
-	sets.engaged.SomeAcc.Counterstance.HF.Impetus = set_combine(sets.engaged.SomeAcc.Counterstance, {
-		body="Bhikku Cyclas +1"
+	sets.engaged.MidAcc.Counterstance.HF = set_combine(sets.engaged.MidAcc.Counterstance)
+	sets.engaged.MidAcc.Counterstance.HF.Impetus = set_combine(sets.engaged.MidAcc.Counterstance, sets.impetus_body, {
 	})
 	sets.engaged.Acc.Counterstance.HF = set_combine(sets.engaged.Acc.Counterstance)
-	sets.engaged.Acc.Counterstance.HF.Impetus = set_combine(sets.engaged.Acc.Counterstance, {
-		body="Bhikku Cyclas +1"
+	sets.engaged.Acc.Counterstance.HF.Impetus = set_combine(sets.engaged.Acc.Counterstance, sets.impetus_body, {
 	})
 
 
 	-- Footwork combat form
-	sets.engaged.Footwork = set_combine(sets.engaged,{
-		feet="Anch. Gaiters +3"
+	sets.engaged.Footwork = set_combine(sets.engaged, sets.footwork_kick_feet, {
 	})
-	sets.engaged.Footwork.Acc = set_combine(sets.engaged.Acc,{
-		feet="Anch. Gaiters +3"
+	sets.engaged.Footwork.Acc = set_combine(sets.engaged.Acc, sets.footwork_kick_feet, {
 	})
 
 	sets.buff.Boost = {
@@ -618,58 +613,82 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
-    -- Don't gearswap for weaponskills when Defense is on.
-    if spell.type == 'WeaponSkill' then
-			if (spell.target.model_size + spell.range * 1.642276421172564) < spell.target.distance then	
-				add_to_chat(7,"--- Target "..spell.target.type.." ["..player.target.name.."] out of range of ["..spell.name.."] [ Distance: "..spell.target.distance.."] ---")
-				cancel_spell()
-			end
+	-- Don't gearswap for weaponskills when Defense is on.
+	if spell.type == 'WeaponSkill' then
+		if (spell.target.model_size + spell.range * 1.642276421172564) < spell.target.distance then	
+			add_to_chat(7,"--- Target "..spell.target.type.." ["..player.target.name.."] out of range of ["..spell.name.."] [ Distance: "..spell.target.distance.."] ---")
+			cancel_spell()
+		end
 
-			if state.TreasureMode.value ~= false then
-				equip(sets.sharedTH)
-			end
+		if state.TreasureMode.value ~= false then
+			equip(sets.sharedTH)
+		end
 
-    	if state.DefenseMode.current ~= 'None' then
-        eventArgs.handled = true
-      end
-    end
+		if state.DefenseMode.current ~= 'None' then
+			eventArgs.handled = true
+		end
+	end
+end
+
+-- Run after the general precast() is done.
+function job_post_precast(spell, action, spellMap, eventArgs)
+	if spell.type == 'WeaponSkill' and state.DefenseMode.current ~= 'None' then
+		if state.Buff.Impetus and (spell.english == "Ascetic's Fury" or spell.english == "Victory Smite") then
+			-- Need 6 hits at capped dDex, or 9 hits if dDex is uncapped, for Tantra to tie or win.
+			if (state.OffenseMode.current == 'Normal' and info.impetus_hit_count > 5) or (info.impetus_hit_count > 8) then
+				equip(sets.impetus_body)
+			end
+		elseif state.Buff.Footwork and (spell.english == "Dragon's Kick" or spell.english == "Tornado Kick") then
+			equip(sets.footwork_kick_feet)
+		end
+
+		-- Replace Moonshade Earring if we're at cap TP
+		if player.tp == 3000 then
+			equip(sets.precast.MaxTP)
+		end
+	end
 end
 
 function job_buff_change(buff, gain)
-    -- Set Footwork as combat form any time it's active and Hundred Fists is not.
-    if buff == 'Footwork' and gain and not buffactive['hundred fists'] then
-        state.CombatForm:set('Footwork')
-    elseif buff == "Hundred Fists" and not gain and buffactive.footwork then
-        state.CombatForm:set('Footwork')
-    else
-        state.CombatForm:reset()
-    end
-    
-    -- Hundred Fists and Impetus modify the custom melee groups
-    if buff == "Hundred Fists" or buff == "Impetus" or buff == 'Counterstance' then
-        classes.CustomMeleeGroups:clear()
-        
-        if (buff == "Hundred Fists" and gain) or buffactive['hundred fists'] then
-            classes.CustomMeleeGroups:append('HF')
-        end
-        
-        if (buff == "Impetus" and gain) or buffactive.impetus then
-            classes.CustomMeleeGroups:append('Impetus')
-        end
+	-- debugging
+	--add_to_chat(112,"buff: " .. buff)
+	--add_to_chat(112,"gain: " .. tostring(gain))
+	--add_to_chat(112, "player.status: " .. player.status)
 
-        if (buff == "Counterstance" and gain) or buffactive['Counterstance'] then
-            classes.CustomMeleeGroups:append('Counterstance')
-        end
-    end
+	-- Set Footwork as combat form any time it's active and Hundred Fists is not.
+	if buff == 'Footwork' and gain and not buffactive['hundred fists'] then
+		state.CombatForm:set('Footwork')
+	elseif buff == "Hundred Fists" and not gain and buffactive.footwork then
+		state.CombatForm:set('Footwork')
+	else
+		state.CombatForm:reset()
+	end
 
-    if buff == "Boost" then
-    	equip(sets.buff.Boost)
-    end
+	-- Hundred Fists and Impetus modify the custom melee groups
+	if buff == "Hundred Fists" or buff == "Impetus" or buff == 'Counterstance' then
+		classes.CustomMeleeGroups:clear()
 
-    -- Update gear if any of the above changed
-    if buff == "Hundred Fists" or buff == "Impetus" or buff == "Footwork" or buff == "Boost" or buff == 'Counterstance' then
-      handle_equipping_gear(player.status)
-    end
+		if (buff == "Hundred Fists" and gain) or buffactive['hundred fists'] then
+			classes.CustomMeleeGroups:append('HF')
+		end
+
+		if (buff == "Impetus" and gain) or buffactive.impetus then
+			classes.CustomMeleeGroups:append('Impetus')
+		end
+
+		if (buff == "Counterstance" and gain) or buffactive['Counterstance'] then
+			classes.CustomMeleeGroups:append('Counterstance')
+		end
+	end
+
+	if buff == "Boost" then
+		equip(sets.buff.Boost)
+	end
+
+	-- Update gear if any of the above changed
+	if buff == "Hundred Fists" or buff == "Impetus" or buff == "Footwork" or buff == "Boost" or buff == 'Counterstance' then
+		handle_equipping_gear(player.status)
+	end
 end
 
 -------------------------------------------------------------------------------------------------------------------
