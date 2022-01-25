@@ -18,9 +18,36 @@ function user_setup()
 
 	select_default_macro_book()
 
+	-------------------------------------------------
+	-- Default bindings
+	--
+	-- F9 - Cycle Offense Mode (the offensive half of all 'hybrid' melee modes).
+	-- Ctrl-F9 - Cycle Hybrid Mode (the defensive half of all 'hybrid' melee modes).
+	-- Alt-F9 - Cycle Ranged Mode.
+	-- Win-F9 - Cycle Weaponskill Mode.
+	-- F10 - Activate emergency Physical Defense Mode. Replaces Magical Defense Mode, if that was active.
+	-- F11 - Activate emergency Magical Defense Mode. Replaces Physical Defense Mode, if that was active.
+	-- Ctrl-F10 - Cycle type of Physical Defense Mode in use.
+	-- Alt-F12 - Turns off any emergency defense mode.
+	-- Alt-F10 - Toggles Kiting Mode.
+	-- Ctrl-F11 - Cycle Casting Mode.
+	-- F12 - Update currently equipped gear, and report current status.
+	-- Ctrl-F12 - Cycle Idle Mode.
+	-------------------------------------------------
+
+	-- "CTRL: ^ ALT: ! Windows Key: @ Apps Key: #"
+
+	-- Additional local binds
+	send_command("bind != gs equip sets.midcast['Phalanx']; input /echo --- Phalanx set on ---")
+
 	global_aliases()
 end
 
+-- Called when this job file is unloaded (eg: job change)
+function user_unload()
+	send_command('unbind ^=')
+	send_command('unbind !=')
+end
 
 function init_gear_sets()
 	sets.enmity = {
