@@ -59,8 +59,8 @@ function user_setup()
 
 	-- Additional local binds
 	send_command('bind @` gs c cycle MagicBurst')
-	send_command('bind !` gs c toggle WeaponLock; input /echo --- Weapons Lock ---')
-	send_command('bind ^` gs c toggle RangeLock; input /echo --- Range Lock ---')
+	send_command('bind !` gs c toggle WeaponLock; input /echo --- Weapons locked, RangeLock needs to be set via CTRL+` ---')
+	send_command('bind ^` gs c toggle RangeLock; input /echo --- Range locked, WeaponLock needs to be set via ALT+` ---')
 
 	send_command('alias rdmfulldebuff input /ma "Inundation" <t>;wait 5;input /ma "Distract II" <t>;wait 5;input /ma "Frazzle II" <t>;wait 5;input /ma "Dia III" <t>;wait 5;input /ma "Paralyze II" <t>;wait 5;input /ma "Slow II" <t>;wait 5;input /ma "Blind II" <t>;wait 5;input /ma "Poison II" <t>;wait 5;input /ma "Addle" <t>;')
 	send_command('alias rdmdddebuff input /ma "Inundation" <t>;wait 5;input /ma "Distract II" <t>;wait 5;input /ma "Dia III" <t>;wait 5;input /ma "Poison II" <t>;')
