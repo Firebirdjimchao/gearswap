@@ -1,8 +1,8 @@
 function user_setup()
 	state.OffenseMode:options('Normal', 'MidAcc', 'Acc')
 	state.WeaponskillMode:options('Normal', 'MidAcc', 'Acc')
-	state.HybridMode:options('Normal', 'PDT', 'Counter')
-	state.PhysicalDefenseMode:options('PDT', 'HP')
+	state.HybridMode:options('Normal', 'Mpaca', 'PDT', 'Counter')
+	state.PhysicalDefenseMode:options('Mpaca', 'PDT', 'HP')
 	state.IdleMode:options('CP', 'Normal', 'Regen')
 
 	state.EnmityMode = M{['description']='Enmity Mode', 'None', 'Down', 'Up'}
@@ -14,6 +14,25 @@ function user_setup()
 	
 	update_combat_form()
 	update_melee_groups()
+
+	-------------------------------------------------
+	-- Default bindings
+	--
+	-- F9 - Cycle Offense Mode (the offensive half of all 'hybrid' melee modes).
+	-- Ctrl-F9 - Cycle Hybrid Mode (the defensive half of all 'hybrid' melee modes).
+	-- Alt-F9 - Cycle Ranged Mode.
+	-- Win-F9 - Cycle Weaponskill Mode.
+	-- F10 - Activate emergency Physical Defense Mode. Replaces Magical Defense Mode, if that was active.
+	-- F11 - Activate emergency Magical Defense Mode. Replaces Physical Defense Mode, if that was active.
+	-- Ctrl-F10 - Cycle type of Physical Defense Mode in use.
+	-- Alt-F12 - Turns off any emergency defense mode.
+	-- Alt-F10 - Toggles Kiting Mode.
+	-- Ctrl-F11 - Cycle Casting Mode.
+	-- F12 - Update currently equipped gear, and report current status.
+	-- Ctrl-F12 - Cycle Idle Mode.
+	-------------------------------------------------
+	
+	-- "CTRL: ^ ALT: ! Windows Key: @ Apps Key: #"
 
 	send_command('bind ^- gs c cycle enmitymode')
 	send_command('bind ^= gs c toggle TreasureMode; input /echo --- TreasureMode ---')
@@ -497,6 +516,25 @@ function init_gear_sets()
 	sets.engaged.Acc.Impetus = set_combine(sets.engaged.Acc, sets.impetus_body, {
 	})
 
+	sets.engaged.Mpaca = set_combine(sets.engaged, {
+		head="Ken. Jinpachi +1",
+		ear2="Schere Earring",
+		body="Mpaca's Doublet",
+		hands="Mpaca's Gloves",
+		legs="Mpaca's Hose",
+		feet="Malignance Boots",
+	})
+	sets.engaged.MidAcc.Mpaca = set_combine(sets.engaged.Mpaca, {
+	})
+	sets.engaged.Acc.Mpaca = set_combine(sets.engaged.Mpaca, {
+	})
+	sets.engaged.Mpaca.Impetus = set_combine(sets.engaged.Mpaca, sets.impetus_body, {
+	})
+	sets.engaged.MidAcc.Mpaca.Impetus = set_combine(sets.engaged.MidAcc.Mpaca, sets.impetus_body, {
+	})
+	sets.engaged.Acc.Mpaca.Impetus = set_combine(sets.engaged.Acc.Mpaca, sets.impetus_body, {
+	})
+
 	-- Defensive melee hybrid sets
 	sets.engaged.PDT = set_combine(sets.engaged,{
 		head="Malignance Chapeau",
@@ -533,8 +571,7 @@ function init_gear_sets()
 		neck="Loricate Torque +1",
 		ear1="Sherida Earring",
 		ear2="Telos Earring",
-		body="Malignance Tabard",
-		--body="Mpaca's Doublet",
+		body="Mpaca's Doublet",
 		hands="Malignance Gloves",
 		ring1="Niqmaddu Ring",
 		ring2="Defending Ring",
@@ -551,8 +588,7 @@ function init_gear_sets()
 		neck="Loricate Torque +1",
 		ear1="Sherida Earring",
 		ear2="Telos Earring",
-		body="Malignance Tabard",
-		--body="Mpaca's Doublet",
+		body="Mpaca's Doublet",
 		hands="Malignance Gloves",
 		ring1="Niqmaddu Ring",
 		ring2="Defending Ring",
