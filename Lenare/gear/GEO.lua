@@ -86,7 +86,7 @@ function init_gear_sets()
 	sets.precast.JA['Radial Arcana'] = {feet="Bagua Sandals +3"}
 	
 	-- Fast cast sets for spells
-	-- 72%/36% Total (80/40 cap) + 15% (if RDM sub)
+	-- 75%/38% Total (80/40 cap) + 15% (if RDM sub)
 	sets.precast.FC = {
 		-- 6%
 		main="Gada",
@@ -98,8 +98,8 @@ function init_gear_sets()
 		ear1="Loquacious Earring",
 		-- 4%
 		ear2="Malignance Earring",
-		-- 5%
-		body="Vanir Cotehardie",
+		-- 8%
+		body="Shango Robe",
 		-- 3%
 		hands="Otomi Gloves",
 		-- 4%
