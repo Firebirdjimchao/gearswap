@@ -179,6 +179,7 @@ function user_setup()
 	state.IdleMode:options('Normal', 'PDT', 'Learning')
 	state.BuffReminderMode = M('Normal', 'Full', 'None')
 	state.MalignanceMode = M(false, 'Malignance')
+	state.RangeLock = M(false, 'Range Lock')
 
 	gear.default.obi_waist = "Sacro Cord"
 	gear.Rosmerta_DexSTP = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10',}}
@@ -203,9 +204,10 @@ function user_setup()
 
 	-- "CTRL: ^ ALT: ! Windows Key: @ Apps Key: #"
 
-	send_command('bind ^` input /ja "Chain Affinity" <me>')
-	send_command('bind !` input /ja "Burst Affinity" <me>')
+	--send_command('bind ^` input /ja "Chain Affinity" <me>')
+	--send_command('bind !` input /ja "Burst Affinity" <me>')
 	send_command('bind != gs c toggle MalignanceMode; input /echo --- MalignanceMode ---')
+	send_command('bind ^` gs c toggle RangeLock; input /echo --- Range lock ---')
 
 	update_combat_form()
 	select_default_macro_book()
@@ -217,7 +219,7 @@ end
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
 	send_command('unbind ^`')
-	send_command('unbind !`')
+	--send_command('unbind !`')
 	send_command('unbind !=')
 end
 
@@ -872,6 +874,20 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 	end
 end
 
+
+function job_state_change(stateField, newValue, oldValue)
+	--if state.WeaponLock.value == true then
+		--disable('main','sub','range','ammo')
+	--else
+		--enable('main','sub','range','ammo')
+	--end
+
+	if state.RangeLock.value == true then
+		disable('range','ammo')
+	else
+		enable('range','ammo')
+	end
+end
 
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for non-casting events.
