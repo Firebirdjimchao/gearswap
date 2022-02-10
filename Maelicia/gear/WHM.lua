@@ -9,6 +9,8 @@ function user_setup()
 	state.IdleMode:options('CP', 'Normal', 'PDT', 'MDT', 'CPPDT', 'CPMDT')
 	gear.default.obi_waist = "Sacro Cord"
 
+	state.WeaponLock = M(false, 'Weapon Lock')
+
 	-- Default macro set/book
 	set_macro_page(1, 2)
 
@@ -25,16 +27,16 @@ function init_gear_sets()
 
 	-- Fast cast sets for spells
 	
-	-- 73%/36% + 1%~3% Total (80/40 cap) + 15% (if RDM sub)
+	-- 79%/39% + 1%~3% Total (80/40 cap) + 15% (if RDM sub)
 	sets.precast.FC = {
-		-- 3%
-		--main=gear.FastcastStaff,
-		--sub="Enki Strap",
+		-- 6%
+		main="Gada",
+		sub="Genmei Shield",
 		--ammo="Impatiens",
 		-- 10%
 		head="Nahtirah Hat",
-		-- 5%
-		neck="Orison Locket",
+		-- 4%
+		neck="Voltsurge Torque",
 		-- 2%
 		ear1="Loquacious Earring",
 		-- 4%
@@ -47,7 +49,7 @@ function init_gear_sets()
 		ring1="Prolix Ring",
 		-- 4%
 		ring2="Kishar Ring",
-		-- 10%
+		-- 8%
 		back="Fi Follet Cape +1",
 		-- 3%
 		--waist="Witful Belt",
@@ -61,19 +63,23 @@ function init_gear_sets()
 		feet="Regal Pumps +1"
 	}
 	
+	-- Cannot exceed 80/40 FC cap in combination with FC
 	sets.precast.FC['Healing Magic'] = set_combine(sets.precast.FC, {
+		-- 13%
 		legs="Ebers Pant. +1"
 	})
 	
+	-- Cannot exceed 80/40 FC cap in combination with FC
 	sets.precast.FC.Cure = set_combine(sets.precast.FC['Healing Magic'], {
 		main="Queller Rod",
-		sub="Ammurapi Shield",
+		sub="Genmei Shield",
 		head="Theo. Cap +1",
+		-- 5%
 		ear1="Mendi. Earring",
 		ear2="Nourish. Earring +1",
-		back="Pahtli Cape",
-		waist="Acerbic Sash +1",
+		-- 13%
 		legs="Ebers Pant. +1",
+		-- 7%
 		feet=gear.Vanya_feet_B
 	})
 	
@@ -191,7 +197,7 @@ function init_gear_sets()
 	sets.midcast.MACC = {
 		--main=gear.MaccStaff,
 		--sub="Enki Strap",
-		main="Daybreak",
+		main="Bunzi's Rod",
 		sub="Ammurapi Shield",
 		range="Aureole",
 		head="Chironic Hat",
@@ -211,10 +217,11 @@ function init_gear_sets()
 	}
 	
 	sets.midcast.MAB = {
-		main=gear.MaccStaff,
-		sub="Enki Strap",
+		--main=gear.MaccStaff,
+		--sub="Enki Strap",
 		--main="Daybreak",
-		--sub="Ammurapi Shield",
+		main="Bunzi's Rod",
+		sub="Ammurapi Shield",
 		ammo="Ombre Tathlum +1",
 		head="Chironic Hat",
 		neck="Sanctity Necklace",
@@ -245,7 +252,7 @@ function init_gear_sets()
 		ring2="Sirona's Ring",
 		back="Mending Cape",
 		waist="Luminary Sash",
-		legs="Piety Pantaln. +1",
+		legs="Piety Pantaln. +3",
 		feet=gear.Vanya_feet_B
 	}
 
@@ -275,7 +282,12 @@ function init_gear_sets()
 		feet=gear.Vanya_feet_B
 	})
 	
+	-- 51% (+3%~4%)+ 4% II Total + 4% Afflatus Solace (2 x 2 JP)
 	sets.midcast.CureSolace = set_combine(sets.midcast.Cure,{
+		-- 14% Afflatus Solace
+		body="Ebers Bliaud +1",
+		-- 10% Afflatus Solace
+		back="Alaunus's Cape"
 	})
 
 	sets.midcast.Curaga = set_combine(sets.midcast.Cure,{
@@ -351,8 +363,8 @@ function init_gear_sets()
 		waist="Embla Sash",
 		-- 8% DUR
 		legs=gear.Telchine_legs_pet,
-		-- 22
-		--legs="Piety Pantaln. +1",
+		-- 26
+		--legs="Piety Pantaln. +3",
 		-- 25
 		feet="Ebers Duckbills +1"
 	}
@@ -388,7 +400,7 @@ function init_gear_sets()
 		head="Ebers Cap +1",
 		body="Ebers Bliaud +1",
 		hands="Ebers Mitts +1",
-		legs="Piety Pantaln. +1",
+		legs="Piety Pantaln. +3",
 		feet="Ebers Duckbills +1"
 	})
 				
@@ -413,12 +425,10 @@ function init_gear_sets()
 
 	sets.midcast.Protectra = set_combine(sets.midcast['Enhancing Magic'],{
 		ring1="Sheltered Ring",
-		feet="Piety Duckbills +1"
 	})
 
 	sets.midcast.Shellra = set_combine(sets.midcast['Enhancing Magic'],{
 		ring1="Sheltered Ring",
-		legs="Piety Pantaln. +1"
 	})
 
 	sets.midcast['Divine Magic'] = set_combine(sets.midcast.MAB,{
@@ -427,7 +437,8 @@ function init_gear_sets()
 	})
 
 	sets.midcast.Banish = set_combine(sets.midcast['Divine Magic'],{
-		hands="Fanatic Gloves",
+		--hands="Fanatic Gloves",
+		hands="Piety Mitts +3",
 	})
 
 	sets.midcast['Dark Magic'] = set_combine(sets.midcast.MACC,{
@@ -622,6 +633,14 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
+
+function job_state_change(stateField, newValue, oldValue)
+	if state.WeaponLock.value == true then
+		disable('main','sub','range','ammo')
+	else
+		enable('main','sub','range','ammo')
+	end
+end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
 	-- Apply Divine Caress boosting items as highest priority over other gear, if applicable.

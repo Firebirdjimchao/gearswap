@@ -122,12 +122,15 @@ function init_gear_sets()
 		feet="Regal Pumps +1"
 	}
 	
+	-- Cannot exceed 80/40 FC cap in combination with FC
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {
+		-- 5%
 		ear2="Mendi. Earring",
-		back="Pahtli Cape",
+		-- 7%
 		hands=gear.Vanya_hands_B,
-		waist="Acerbic Sash +1",
+		-- 15%
 		legs="Doyen Pants",
+		-- 7%
 		feet=gear.Vanya_feet_B
 	})
 	

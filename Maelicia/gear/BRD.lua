@@ -101,7 +101,7 @@ function init_gear_sets()
 	-- Precast Sets
 
 	-- Fast cast sets for spells
-	-- 78%/39% Total (80/40 cap) + 15% (if RDM sub)
+	-- 73%/36% Total (80/40 cap) + 15% (if RDM sub)
 	sets.precast.FC = {
 		-- 7%
 		main="Kali",
@@ -123,7 +123,7 @@ function init_gear_sets()
 		ring2="Kishar Ring",
 		-- 7%
 		hands="Gendewitha Gages",
-		-- 10%
+		-- 8%
 		back="Fi Follet Cape +1",
 		-- 3%
 		--waist="Witful Belt",
@@ -137,11 +137,13 @@ function init_gear_sets()
 		--feet="Chelona Boots"
 	}
 
+-- Cannot exceed 80/40 FC cap in combination with FC
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {
+		-- 5%
 		ear1="Mendi. Earring",
-		back="Pahtli Cape",
-		waist="Acerbic Sash +1",
+		-- 15%
 		legs="Doyen Pants",
+		-- 7%
 		feet=gear.Vanya_feet_B
 	})
 
@@ -155,7 +157,8 @@ function init_gear_sets()
 		legs="Doyen Pants",
 	})
 
-	-- Total:47%/28% (cap 80/40) + 24% FC gear + 15% (if RDM sub)
+	-- Total:47%/28% (cap 80/40)
+	-- Cannot exceed 80/40 FC cap in combination with FC
 	sets.precast.FC.BardSong = set_combine(sets.precast.FC,{
 		-- 7% FC
 		main="Kali",
@@ -163,20 +166,10 @@ function init_gear_sets()
 		--range="Gjallarhorn",
 		-- 12%
 		head="Fili Calot +1",
-		-- 3%
-		neck="Aoidos' Matinee",
-		-- 2%
-		--ear1="Aoidos' Earring",
-		-- 12%
-		--body="Sha'ir Manteel",
 		-- 15%
 		body="Brioso Justau. +3",
 		-- 2% + 7% FC
 		hands="Gendewitha Gages",
-		-- 3% FC
-		back="Fi Follet Cape +1",
-		-- 5% FC
-		waist="Embla Sash",
 		-- 6%
 		legs="Doyen Pants",
 		-- 8%
