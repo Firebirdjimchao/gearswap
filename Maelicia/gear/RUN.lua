@@ -303,10 +303,11 @@ function init_gear_sets()
 	sets.precast.FC['Healing Magic'] = set_combine(sets.precast.FC, {
 	})
 
+	-- Cannot exceed 80/40 FC cap in combination with FC
 	sets.precast.FC.Cure = set_combine(sets.precast.FC['Healing Magic'], {
+		-- 5%
 		ear2="Mendi. Earring",
-		back="Pahtli Cape",
-		waist="Acerbic Sash +1",
+		-- 15%
 		legs="Doyen Pants",
 	})
 

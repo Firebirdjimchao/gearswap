@@ -123,7 +123,7 @@ function init_gear_sets()
 		head="Atro. Chapeau +3",
 		-- 4%
 		neck="Voltsurge Torque", 
-		-- 4 %
+		-- 4%
 		ear1="Malignance Earring",
 		-- 2%
 		ear2="Loquac. Earring",
@@ -149,10 +149,8 @@ function init_gear_sets()
 		--feet="Carmine Greaves +1",
 	}
 	
+	-- Cannot exceed 80/40 FC cap in combination with FC
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {
-		ear2="Mendi. Earring",
-		back="Pahtli Cape",
-		feet=gear.Vanya_feet_B
 	})
 	
 	sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty,body="Twilight Cloak"})

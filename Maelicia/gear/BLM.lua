@@ -76,7 +76,7 @@ function init_gear_sets()
 	-- Fast cast sets for spells
 	
 	-- Fast cast sets for spells
-	-- 69%/34% + 1%~3% Total (80/40 cap) + 15% (if RDM sub)
+	-- 67%/33% + 1%~3% Total (80/40 cap) + 15% (if RDM sub)
 	sets.precast.FC = {
 		--ammo="Impatiens",
 		-- 10%
@@ -95,7 +95,7 @@ function init_gear_sets()
 		ring1="Kishar Ring",
 		-- 2%
 		ring2="Prolix Ring",
-		-- 10%
+		-- 8%
 		back="Fi Follet Cape +1",
 		-- 3%
 		--waist="Witful Belt",
@@ -107,12 +107,15 @@ function init_gear_sets()
 		feet="Regal Pumps +1"
 	}
 	
+	-- Cannot exceed 80/40 FC cap in combination with FC
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {
+		-- 5%
 		ear2="Mendi. Earring",
-		back="Pahtli Cape",
+		-- 7%
 		hands=gear.Vanya_hands_B,
-		waist="Acerbic Sash +1",
+		-- 15%
 		legs="Doyen Pants",
+		-- 7%
 		feet=gear.Vanya_feet_B
 	})
 	
