@@ -52,11 +52,11 @@ function init_gear_sets()
 
 	-- Fast cast sets for spells
 	
-	--80%/40% Total (80/40 cap) + 15% (if RDM sub) 
+	--80%/40% Total (80/40 cap) + 15% (if RDM sub)
 	sets.precast.FC = {
 		-- 4%
-		main="Grioavolr",
-		sub="Enki Strap",
+		--main="Grioavolr",
+		--sub="Enki Strap",
 		--ammo="Impatiens",
 		-- 10%
 		head="Nahtirah Hat",
@@ -86,7 +86,7 @@ function init_gear_sets()
 		--legs="Lengo Pants",
 		-- 6%
 		legs="Aya. Cosciales +2",
-		-- 3% + 1%~3%
+		-- 4% + 1%~3%
 		feet="Regal Pumps +1"
 	}
 	
@@ -510,7 +510,7 @@ function init_gear_sets()
 
 	-- Idle sets (default idle set not needed since the other three are defined, but leaving for testing purposes)
 	sets.idle = {
-		main="Bolelabunga",
+		main="Queller Rod",
 		sub="Ammurapi Shield",
 		ammo="Homiliary",
 		head="Befouled Crown",
