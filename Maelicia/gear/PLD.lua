@@ -9,6 +9,7 @@ function job_setup()
 	state.MP = M(false, "Mana Mode")
 	state.Weapon = M(false, "Weapon Lock")
 	state.Neck = M(false, "Neck Mode")
+	state.TreasureMode = M(false, 'TH')
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -38,6 +39,9 @@ function user_setup()
 	send_command('bind @w gs c toggle Weapon') --Windowkey'W'
 	send_command('bind @t gs c toggle Twilight') --Windowkey'T'
 	send_command('bind @n gs c toggle Neck') --Windowkey'N'
+
+	state.ExtraDefenseMode = M{['description']='Extra Defense Mode', 'None', 'MP', 'Knockback', 'MP_Knockback'}
+	state.EquipShield = M(false, 'Equip Shield w/Defense')
 	--send_command('lua l gearinfo')
  
 	select_default_macro_book()
@@ -68,6 +72,10 @@ function user_unload()
 	send_command('unbind @w')
 	send_command('unbind @t')
 	send_command('unbind @n')
+	send_command('unbind ^f11')
+	send_command('unbind !f11')
+	send_command('unbind @f10')
+	send_command('unbind @f11')
 	send_command('gs enable all')   
 end
 
@@ -122,7 +130,7 @@ function init_gear_sets()
 	}
 	 
 	sets.precast.JA['Invincible'] = set_combine(sets.Enmity, {legs="Caballarius breeches +1"})
-	sets.precast.JA['Shield Bash'] = set_combine(sets.Enmity, {sub="Aegis", --ear1="Knightly earring"})   
+	sets.precast.JA['Shield Bash'] = set_combine(sets.Enmity, {sub="Aegis", ear1="Knightly earring"})   
 	sets.precast.JA['Holy Circle'] = set_combine(sets.Enmity, {feet="Reverence leggings +1"})
 	sets.precast.JA['Sentinel'] = set_combine(sets.Enmity, {})
 	sets.precast.JA['Cover'] = set_combine(sets.Enmity, {head="Reverence coronet +1"})
@@ -420,7 +428,7 @@ function init_gear_sets()
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
-		waist="Flume Belt",
+		waist="Flume Belt +1",
 		legs="Carmine Cuisses +1",
 		feet="Nyame Sollerets",
 	}
@@ -431,7 +439,7 @@ function init_gear_sets()
 	})
 	
 	sets.idle.Pulling = set_combine(sets.idle, {
-		ammo="Eluder's Sachet",
+		--ammo="Eluder's Sachet",
 		head="Sakpata's Helm",
 		neck="Unmoving Collar +1",
 		body="Sakpata's Plate",
@@ -439,11 +447,11 @@ function init_gear_sets()
 		ring1="Warden's Ring",
 		ring2="Fortified Ring",
 		-- ring2="Gelatinous Ring +1",
-		back="Moonlight Cape",
-		waist="Carrier's Sash",
+		back="Moonbeam Cape",
+		--waist="Carrier's Sash",
 		legs="Sakpata's Cuisses",
-		feet="Sakpata's Leggings"
-	}
+		feet="Sakpata's Leggings",
+	})
  
 	sets.idle.Eva = set_combine(sets.idle, {
 		head="Nyame Helm", --30
@@ -451,7 +459,7 @@ function init_gear_sets()
 		hands="Nyame Gauntlets", --30
 		legs="Nyame Flanchard", --30
 		feet="Nyame Sollerets", --30    
-	}
+	})
 		 
 	sets.idle.Town = set_combine(sets.idle, {
 		body="Councilor's Garb",
@@ -468,22 +476,6 @@ function init_gear_sets()
 	-- This is a Set that would only be used when you are NOT Dual Wielding.
 	-- There are no haste parameters set for this build, because you wouldn't be juggling DW gear, you would always use the same gear, other than Damage Taken and Accuracy sets which ARE included below.
 	sets.engaged = sets.idle.Pulling
-	
-	-- sets.engaged = {
-		-- ammo="Aurgelmir Orb +1",
-		-- Head="Sakpata's Helm", --7
-		-- Body="Sakpata's Breastplate", --10
-		-- Hands="Sakpata's Gauntlets", --8
-		-- Legs="Sakpata's Cuisses", --9
-		-- Feet="Sakpata's Leggings", --6
-		-- neck="Combatant's Torque",
-		-- waist="Sailfi Belt +1",
-		-- ear1="Cessance Earring",
-		-- ear2="Brutal Earring",
-		-- Ring1="Moonlight Ring",
-		-- Ring2="Hetairoi Ring",
-		-- back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10',}},
-	-- }
  
 	------------------------------------------------------------------------------------------------
 	-------------------------------------- Dual Wield Sets -----------------------------------------
@@ -548,11 +540,13 @@ function init_gear_sets()
 	------------------------------------------------------------------------------------------------
 	-- Define three tiers of Defense Taken.  These sets are cycled with the F10 Button.
 	sets.engaged.DT1 = { -- 48%
-		--ammo="Aurgelmir Orb +1",
+		--ammo="Ginsen",
+		ammo="Coiste Bodhar",
 		head="Sakpata's Helm", --7
 		ear1="Telos Earring",
 		ear2="Brutal Earring",
-		neck="Vim Torque +1",
+		--neck="Vim Torque +1",
+		neck="Lissome Necklace",
 		body="Sakpata's Breastplate", --10
 		hands="Sakpata's Gauntlets", --8
 		ring1="Hetairoi Ring",      
@@ -563,37 +557,23 @@ function init_gear_sets()
 		feet="Sakpata's Leggings", --6
 	} --40 
 		 
-	sets.engaged.DT2 = {
-		--ammo="Aurgelmir Orb +1",
-		head="Sakpata's Helm", --7
-		neck="Asperity Necklace",
-		ear1="Telos Earring",
-		ear2="Brutal Earring",
-		body="Sakpata's Breastplate", --10
-		hands="Sakpata's Gauntlets", --8
-		ring1="Hetairoi Ring",
+	sets.engaged.DT2 = set_combine(sets.engaged.DT1, {
 		ring2="Defending Ring", --10
-		--back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10',}},
-		waist="Sailfi Belt +1", 
-		legs="Sakpata's Cuisses", --9
-		feet="Sakpata's Leggings", --6
-	} --50DT
+	}) --50DT
  
-	sets.engaged.DT3 = { --10 Set Bonus
+	sets.engaged.DT3 = set_combine(sets.engaged.DT2, { --10 Set Bonus
 		--ammo="Amar Cluster",
 		head="Souveran Schaller +1",
-		neck="Decimus Torque",
-		ear1="Odnowa Earring",
 		ear2="Odnowa Earring +1",
 		body="Souveran Cuirass +1", --10DT
 		hands="Souveran Handschuhs +1", --4DT
-		ring1="Vocane Ring", --7DT Moonlight?
+		ring1="Dark Ring",
 		ring2="Defending Ring", --10DT
 		--back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10',}},
-		waist="Sarissaphoroi Belt",
+		--waist="Sarissaphoroi Belt",
 		legs="Souveran Diechlings +1", --4DT
 		feet="Souveran Schuhs +1", --5DT
-	} --50DT
+	}) --50DT
  
 	-- Shield Base
 	sets.engaged.LOW = set_combine(sets.engaged, sets.engaged.DT1)
@@ -1023,17 +1003,21 @@ end
 -- Automatically loads a Macro Set by: (Pallet,Book)
 function select_default_macro_book()
 	if player.sub_job == 'BLU' then
-		set_macro_page(1, 8)
+		set_macro_page(1, 5)
 	elseif player.sub_job == 'RUN' then
-		set_macro_page(2, 8)        
+		set_macro_page(2, 5)
 	elseif player.sub_job == 'WAR' then
-		set_macro_page(3, 8)        
+		set_macro_page(3, 5)
+	elseif player.sub_job == 'DRK' then
+		set_macro_page(4, 5)
 	elseif player.sub_job == 'DNC' then
-		set_macro_page(9, 8)
+		set_macro_page(5, 5)
 	elseif player.sub_job == 'NIN' then
-		set_macro_page(10, 8)
+		set_macro_page(6, 5)
+	elseif player.sub_job == 'SAM' then
+		set_macro_page(7, 5)
 	else
-		set_macro_page(1, 8)
+		set_macro_page(1, 5)
 	end
 end
  
