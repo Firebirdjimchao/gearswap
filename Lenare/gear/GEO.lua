@@ -338,14 +338,15 @@ function init_gear_sets()
 	})
 	
 	-- === Geomancy =========================================
-	
-	-- 373 + 373 + 16 + 16 = 778 base (900 to cap all spell potency)
-	-- 23 Geomancy Gift
-	-- 23 Handbell Gift
-	-- 824 Subtotal
-	-- Set total: 76
-	-- Total: 900
-	-- ConserveMP total: 20
+
+	-- 373 + 373 + 16 + 16 = 778 base
+	-- 72 Gifts (36 Geomancy, 36 Handbell)
+	-- 0 (master level Geomancy)
+	-- 0 (master level Handbell)
+	-- Subtotal: 850
+	-- Set total: 60
+	-- Total: 910 (900 to cap all spell potency)
+	-- ConserveMP total: 26
 	sets.midcast.Geomancy = set_combine(sets.midcast.ConserveMP,{
 		main="Idris",
 		sub="Ammurapi Shield",
@@ -358,7 +359,9 @@ function init_gear_sets()
 		ear1="Mendi. Earring",
 		ear2="Etiolation Earring",
 		-- 16
-		body="Bagua Tunic +3",
+		--body="Bagua Tunic +3",
+		-- ConserveMP +6
+		body=gear.Amalric_body_A,
 		-- 17
 		hands="Geo. Mitaines +2",
 		-- 5
