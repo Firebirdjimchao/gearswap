@@ -580,6 +580,8 @@ function init_gear_sets()
 		ring2="Stikini Ring +1",
 		back="Aurist's Cape +1",
 		waist="Eschan Stone",
+		legs="Assim. Shalwar +2",
+		feet="Luhlaza Charuqs +3",
 	})
 
 	-- Breath Spells --
