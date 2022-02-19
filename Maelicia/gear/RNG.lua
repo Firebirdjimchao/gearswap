@@ -646,6 +646,28 @@ function init_gear_sets()
 		--feet="Orion Socks +3",
 		feet="Meg. Jam. +2",
 	})
+
+	-- 40% STR / 40% AGI
+	sets.precast.WS['Namas Arrow'] = set_combine(sets.precast.WS.RA, {
+		head="Orion Beret +3",
+		neck="Scout's Gorget +2",
+		body="Nyame Mail",
+		hands="Meg. Gloves +2",
+		--ring1="Dingir Ring",
+		ring1="Beithir Ring",
+		ring2="Regal Ring",
+		--back=gear.aug_belenus_ws,
+		back=gear.aug_belenus_ws_agi,
+		waist="Fotia Belt",
+		legs="Arc. Braccae +3",
+		feet="Nyame Sollerets",
+	})
+	sets.precast.WS['Namas Arrow'].MidAcc = set_combine(sets.precast.WS['Namas Arrow'], {
+	})
+	sets.precast.WS['Namas Arrow'].HighAcc = set_combine(sets.precast.WS['Namas Arrow'], {
+	})
+	sets.precast.WS['Namas Arrow'].FullAcc = set_combine(sets.precast.WS['Namas Arrow'], {
+	})
 	
 	----------------------------
 	-- Others
