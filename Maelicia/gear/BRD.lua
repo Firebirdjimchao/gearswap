@@ -157,14 +157,14 @@ function init_gear_sets()
 		legs="Doyen Pants",
 	})
 
-	-- Total:47%/28% (cap 80/40)
-	-- Cannot exceed 80/40 FC cap in combination with FC
+	-- Total:45% (caps at 50%)
+	-- Song Spellcasting Time stacks with FC
 	sets.precast.FC.BardSong = set_combine(sets.precast.FC,{
 		-- 7% FC
 		main="Kali",
 		sub="Genmei Shield",
 		--range="Gjallarhorn",
-		-- 12%
+		-- 14%
 		head="Fili Calot +1",
 		-- 15%
 		body="Brioso Justau. +3",
