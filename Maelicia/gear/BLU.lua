@@ -545,6 +545,11 @@ function init_gear_sets()
 	})
 
 	sets.midcast['Blue Magic'].Magical.TH = set_combine(sets.midcast['Blue Magic'].Magical, sets.sharedTH, {
+		ammo="Per. Lucky Egg",
+		head="Wh. Rarab Cap +1",
+		body="Shamash Robe",
+		waist="Chaac Belt",
+		feet="Volte Boots",
 	})
 	
 	sets.midcast['Blue Magic'].MagicalMnd = set_combine(sets.midcast['Blue Magic'].Magical, {
@@ -711,7 +716,7 @@ function init_gear_sets()
 	sets.defense.MDT = set_combine(sets.idle.MDT, {
 	})
 
-	sets.Kiting = {legs="Blood Cuisses"}
+	sets.Kiting = {legs="Carmine cuisses +1",}
 
 	-- Engaged sets
 
