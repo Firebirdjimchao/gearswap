@@ -229,6 +229,36 @@ function init_gear_sets()
 				 
 	-- Sets for specific actions within spell.type
 	sets.precast.Waltz['Healing Waltz'] = {}
+
+	-- DA/TA/Store TP
+	sets.precast.JA['Jump'] = {
+		-- 3% DA
+		ammo="Coiste Bodhar",
+		-- 5% TA
+		head="Flam. Zucchetto +2",
+		-- 7% DA
+		neck="War. Beads +2",
+		body=gear.Argosy_body_hq_D,
+		hands="Crusher Gauntlets",
+		-- 4% QA
+		ring1="Niqmaddu Ring",
+		-- 1% DA 5 STP
+		--ring2="Petrov Ring",
+		-- 2% TA
+		ring2="Hetairoi Ring",
+		-- 10% DA
+		back=gear.Cichol_AccDA,
+		-- 9% DA
+		waist="Ioskeha Belt +1",
+		-- 11% DA
+		legs="Pumm. Cuisses +3",
+		-- 9% DA
+		feet="Pumm. Calligae +3",
+	}
+	sets.precast.JA['High Jump'] = set_combine(sets.precast.JA['Jump'], {
+	})
+	sets.precast.JA['Super Jump'] = set_combine(sets.precast.JA['Jump'], {
+	})
  
 	-- Sets for fast cast gear for spells
 	-- 35%/17% Total

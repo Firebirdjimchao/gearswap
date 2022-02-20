@@ -187,8 +187,32 @@ function init_gear_sets()
 	sets.precast.JA['Blade Bash'] = {hands="Sakonji Kote +3"}
 	sets.precast.JA['Hasso'] = {feet="Wakido Sune. +3"}
 
-	sets.precast.JA['Jump'] = set_combine(sets.STP,{})
-	sets.precast.JA['High Jump'] = set_combine(sets.STP,{})
+	-- DA/TA/Store TP
+	sets.precast.JA['Jump'] = set_combine(sets.STP,{
+		-- 3% DA
+		ammo="Coiste Bodhar",
+		-- 5% TA
+		head="Flam. Zucchetto +2",
+		-- 5% TA
+		body="Tatena. Harama +3",
+		hands="Crusher Gauntlets",
+		-- 4% QA
+		ring1="Niqmaddu Ring",
+		-- 1% DA 5 STP
+		--ring2="Petrov Ring",
+		-- 2% TA
+		ring2="Hetairoi Ring",
+		-- 9% DA
+		waist="Ioskeha Belt +1",
+		-- 3% TA
+		legs="Tatena. Haidate +1",
+		-- 3% TA
+		feet="Tatena. Sune. +1",
+	})
+	sets.precast.JA['High Jump'] = set_combine(sets.precast.JA['Jump'], {
+	})
+	sets.precast.JA['Super Jump'] = set_combine(sets.precast.JA['Jump'], {
+	})
 
 	sets.precast.JA['Provoke'] = set_combine(sets.EnmityUp, {})
 

@@ -99,6 +99,34 @@ function init_gear_sets()
 		feet="Arcadian Socks +3",
 	}
 
+	-- DA/TA/Store TP
+	sets.precast.JA['Jump'] = {
+		-- 4% TA
+		head=gear.Adhemar_head_hq_B,
+		-- 1% DA
+		neck="Lissome Necklace",
+		-- 5% TA
+		body="Tatena. Harama. +1",
+		-- 4% TA
+		hands=gear.Adhemar_hands_hq_B,
+		-- 3% DA 3% TA
+		ring1="Epona's Ring",
+		-- 2% TA
+		ring2="Hetairoi Ring",
+		-- 10% DA
+		back=gear.Cichol_AccDA,
+		-- 5% DA 2% TA
+		waist="Sailfi Belt +1",
+		-- 3% TA
+		legs="Tatena. Haidate +1",
+		-- 3% TA
+		feet="Tatena. Sune. +1",
+	}
+	sets.precast.JA['High Jump'] = set_combine(sets.precast.JA['Jump'], {
+	})
+	sets.precast.JA['Super Jump'] = set_combine(sets.precast.JA['Jump'], {
+	})
+
 	-- Fast cast sets for spells
 
 	-- 43%
@@ -618,12 +646,34 @@ function init_gear_sets()
 		--feet="Orion Socks +3",
 		feet="Meg. Jam. +2",
 	})
+
+	-- 40% STR / 40% AGI
+	sets.precast.WS['Namas Arrow'] = set_combine(sets.precast.WS.RA, {
+		head="Orion Beret +3",
+		neck="Scout's Gorget +2",
+		body="Nyame Mail",
+		hands="Meg. Gloves +2",
+		--ring1="Dingir Ring",
+		ring1="Beithir Ring",
+		ring2="Regal Ring",
+		--back=gear.aug_belenus_ws,
+		back=gear.aug_belenus_ws_agi,
+		waist="Fotia Belt",
+		legs="Arc. Braccae +3",
+		feet="Nyame Sollerets",
+	})
+	sets.precast.WS['Namas Arrow'].MidAcc = set_combine(sets.precast.WS['Namas Arrow'], {
+	})
+	sets.precast.WS['Namas Arrow'].HighAcc = set_combine(sets.precast.WS['Namas Arrow'], {
+	})
+	sets.precast.WS['Namas Arrow'].FullAcc = set_combine(sets.precast.WS['Namas Arrow'], {
+	})
 	
 	----------------------------
 	-- Others
 	
 	-- 50% MND / 30% STR, No SC elements so Elemental Gorget/Belt wont have an effect
-	sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast.WS.MABRA, {
+	sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast.WS.MAB, {
 		head="Pixie Hairpin +1",
 		neck="Sanctity Necklace",
 		ear1="Moonshade Earring",
@@ -685,6 +735,15 @@ function init_gear_sets()
 	sets.precast.WS['Evisceration'].HighAcc = set_combine(sets.precast.WS['Evisceration'], {
 	})
 	sets.precast.WS['Evisceration'].FullAcc = set_combine(sets.precast.WS['Evisceration'], {
+	})
+
+	sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS.MAB, {
+	})
+	sets.precast.WS['Aeolian Edge'].MidAcc = set_combine(sets.precast.WS['Aeolian Edge'], {
+	})
+	sets.precast.WS['Aeolian Edge'].HighAcc = set_combine(sets.precast.WS['Aeolian Edge'], {
+	})
+	sets.precast.WS['Aeolian Edge'].FullAcc = set_combine(sets.precast.WS['Aeolian Edge'], {
 	})
 
 	-- 50% STR, acc varies with TP

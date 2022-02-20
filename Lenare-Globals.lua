@@ -48,6 +48,8 @@ function define_global_sets()
 	gear.Herculean_legs_TA = { name="Herculean Trousers", augments={'AGI+3','CHR+6','"Treasure Hunter"+2','Mag. Acc.+8 "Mag.Atk.Bns."+8',}}
 	gear.Herculean_legs_WSD = { name="Herculean Trousers", augments={'Phys. dmg. taken -4%','STR+13','Weapon skill damage +6%','Accuracy+6 Attack+6',}}
 
+	gear.Carmine_legs_hq_D = { name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}}
+
 	gear.Telchine_body_pet = { name="Telchine Chas.", augments={'Mag. Evasion+21','Pet: "Regen"+3','Enh. Mag. eff. dur. +9',}}
 	gear.Telchine_hands_cure = { name="Telchine Gloves", augments={'"Cure" potency +6%',}}
 	gear.Telchine_hands_pet = { name="Telchine Gloves", augments={'Mag. Evasion+22','Pet: "Regen"+3','Enh. Mag. eff. dur. +9',}}
