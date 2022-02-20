@@ -384,11 +384,11 @@ function init_gear_sets()
 	
 	-- 373 + 373 + 16 + 16 = 778 base
 	-- 72 Gifts (36 Geomancy, 36 Handbell)
-	-- 19 (master level Geomancy)
-	-- 18 (master level Handbell)
-	-- Subtotal: 887
+	-- 24 (master level Geomancy)
+	-- 24 (master level Handbell)
+	-- Subtotal: 898
 	-- Set total: 18
-	-- Total: 905 (900 to cap all spell potency)
+	-- Total: 916 (900 to cap all spell potency)
 	-- ConserveMP total: 37
 	sets.midcast.Geomancy = set_combine(sets.midcast.ConserveMP,{
 		main="Idris",
