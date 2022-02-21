@@ -13,7 +13,7 @@ function job_setup()
 	state.EngagedDT = M(false, 'Engaged Damage Taken Mode')
 
 	-- buffactive table cannot distinguish between different tiers of buffs, use toggle to manually set
-	state.HasteTier = M('Haste', 'Haste II')
+	state.HasteMode = M('Normal', 'Hi')
 	state.FlurryTier = M('Flurry', 'Flurry II')
 end
 
@@ -60,6 +60,7 @@ function user_setup()
 
 	-- "CTRL: ^ ALT: ! Windows Key: @ Apps Key: #"
 
+	send_command('bind @` gs c cycle HasteMode') --WindowKey'A'
 	send_command('bind @f gs c cycle FlurryTier') --WindowKey'F'
 
 	send_command('bind @c gs c toggle CP') --WindowKey'C'
@@ -75,6 +76,7 @@ end
 
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
+	send_command('unbind @`')
 	send_command('unbind @f')
 
 	send_command('unbind @c')
@@ -138,10 +140,10 @@ function init_gear_sets()
 		body="Tatena. Harama. +1",
 		-- 4% TA
 		hands=gear.Adhemar_hands_hq_B,
-		-- 3% DA 3% TA
-		ring1="Epona's Ring",
 		-- 2% TA
-		ring2="Hetairoi Ring",
+		ring1="Hetairoi Ring",
+		-- 3% DA 3% TA
+		ring2="Epona's Ring",
 		-- 10% DA
 		back=gear.Cichol_AccDA,
 		-- 5% DA 2% TA
@@ -782,8 +784,8 @@ function init_gear_sets()
 		ear1="Sherida Earring",
 		ear2="Brutal Earring",
 		hands="Tatena. Gote +1",
-		ring1="Epona's Ring",
-		ring2="Regal Ring",
+		ring1="Regal Ring",
+		ring2="Epona's Ring",
 		back=gear.aug_belenus_ws,
 		legs="Tatena. Haidate +1",
 		feet="Mummu Gamash. +2",
@@ -1128,8 +1130,8 @@ function init_gear_sets()
 		ear2="Brutal Earring",
 		body=gear.Adhemar_body_hq_B,
 		hands=gear.Adhemar_hands_hq_B,
-		ring1="Epona's Ring",
-		ring2="Petrov Ring",
+		ring1="Petrov Ring",
+		ring2="Epona's Ring",
 		back="Atheling Mantle",
 		waist="Windbuffet Belt +1",
 		legs="Tatena. Haidate +1",
@@ -1207,6 +1209,152 @@ function init_gear_sets()
 	})
 	
 	sets.engaged.Encumbered = set_combine(sets.midcast.RA.HighAcc,{
+	})
+
+	-- Haste Mode used when Dual Wielding. See job_buff_change() below for specific conditions
+	-- /NIN, Dual Wield 3, 49DW needed to cap
+	-- /DNC, Dual Wield 2, 59DW needed to cap (57DW with Haste Samba)
+	sets.engaged.Melee.Haste_0 = set_combine(sets.engaged.Melee,{
+		-- 5
+		ear1="Suppanomimi",
+		-- 6
+		body=gear.Adhemar_body_hq_B,
+		-- 6
+		ring1="Haverton Ring",
+		-- 6
+		legs=gear.Carmine_legs_hq_D,
+	})
+	-- /NIN, Dual Wield 3, 42DW needed to cap
+	-- /DNC, Dual Wield 2, 52DW needed to cap (45DW with Haste Samba)
+	sets.engaged.Melee.Haste_15 = set_combine(sets.engaged.Melee,{
+		-- 5
+		ear1="Suppanomimi",
+		-- 6
+		body=gear.Adhemar_body_hq_B,
+		-- 6
+		ring1="Haverton Ring",
+		-- 6
+		legs=gear.Carmine_legs_hq_D,
+	})
+	-- /NIN, Dual Wield 3, 31DW needed to cap
+	-- /DNC, Dual Wield 2, 41DW needed to cap (35DW with Haste Samba)
+	sets.engaged.Melee.Haste_30 = set_combine(sets.engaged.Melee,{
+		-- 5
+		ear1="Suppanomimi",
+		-- 6
+		body=gear.Adhemar_body_hq_B,
+		-- 6
+		ring1="Haverton Ring",
+		-- 6
+		legs=gear.Carmine_legs_hq_D,
+	})
+	-- /NIN, Dual Wield 3, 26DW needed to cap
+	-- /DNC, Dual Wield 2, 36DW(?) needed to cap (29DW? with Haste Samba)
+	sets.engaged.Melee.Haste_35 = set_combine(sets.engaged.Melee,{
+		-- 5
+		ear1="Suppanomimi",
+		-- 6
+		body=gear.Adhemar_body_hq_B,
+		-- 6
+		ring1="Haverton Ring",
+		-- 6
+		legs=gear.Carmine_legs_hq_D,
+	})
+	-- /NIN, Dual Wield 3, 11DW needed to cap
+	-- /DNC, Dual Wield 2, 21DW needed to cap (9DW with Haste Samba)
+	sets.engaged.Melee.MaxHaste = set_combine(sets.engaged.Melee,{
+		ear1="Suppanomimi",
+		ring1="Haverton Ring",
+	})
+
+	sets.engaged.MeleeMidAcc.Haste_0 = set_combine(sets.engaged.MeleeMidAcc,{
+		-- 5
+		ear1="Suppanomimi",
+		-- 6
+		body=gear.Adhemar_body_hq_B,
+		-- 6
+		ring1="Haverton Ring",
+		-- 6
+		legs=gear.Carmine_legs_hq_D,
+	})
+	sets.engaged.MeleeMidAcc.Haste_15 = set_combine(sets.engaged.MeleeMidAcc,{
+		-- 5
+		ear1="Suppanomimi",
+		-- 6
+		body=gear.Adhemar_body_hq_B,
+		-- 6
+		ring1="Haverton Ring",
+		-- 6
+		legs=gear.Carmine_legs_hq_D,
+	})
+	sets.engaged.MeleeMidAcc.Haste_30 = set_combine(sets.engaged.MeleeMidAcc,{
+		-- 5
+		ear1="Suppanomimi",
+		-- 6
+		body=gear.Adhemar_body_hq_B,
+		-- 6
+		ring1="Haverton Ring",
+		-- 6
+		legs=gear.Carmine_legs_hq_D,
+	})
+	sets.engaged.MeleeMidAcc.Haste_35 = set_combine(sets.engaged.MeleeMidAcc,{
+		-- 5
+		ear1="Suppanomimi",
+		-- 6
+		body=gear.Adhemar_body_hq_B,
+		-- 6
+		ring1="Haverton Ring",
+		-- 6
+		legs=gear.Carmine_legs_hq_D,
+	})
+	sets.engaged.MeleeMidAcc.MaxHaste = set_combine(sets.engaged.MeleeMidAcc,{
+		ear1="Suppanomimi",
+		ring1="Haverton Ring",
+	})
+
+	sets.engaged.MeleeHighAcc.Haste_0 = set_combine(sets.engaged.MeleeHighAcc,{
+		-- 5
+		ear1="Suppanomimi",
+		-- 6
+		body=gear.Adhemar_body_hq_B,
+		-- 6
+		ring1="Haverton Ring",
+		-- 6
+		legs=gear.Carmine_legs_hq_D,
+	})
+	sets.engaged.MeleeHighAcc.Haste_15 = set_combine(sets.engaged.MeleeHighAcc,{
+		-- 5
+		ear1="Suppanomimi",
+		-- 6
+		body=gear.Adhemar_body_hq_B,
+		-- 6
+		ring1="Haverton Ring",
+		-- 6
+		legs=gear.Carmine_legs_hq_D,
+	})
+	sets.engaged.MeleeHighAcc.Haste_30 = set_combine(sets.engaged.MeleeHighAcc,{
+		-- 5
+		ear1="Suppanomimi",
+		-- 6
+		body=gear.Adhemar_body_hq_B,
+		-- 6
+		ring1="Haverton Ring",
+		-- 6
+		legs=gear.Carmine_legs_hq_D,
+	})
+	sets.engaged.MeleeHighAcc.Haste_35 = set_combine(sets.engaged.MeleeHighAcc,{
+		-- 5
+		ear1="Suppanomimi",
+		-- 6
+		body=gear.Adhemar_body_hq_B,
+		-- 6
+		ring1="Haverton Ring",
+		-- 6
+		legs=gear.Carmine_legs_hq_D,
+	})
+	sets.engaged.MeleeHighAcc.MaxHaste = set_combine(sets.engaged.MeleeHighAcc,{
+		ear1="Suppanomimi",
+		ring1="Haverton Ring",
 	})
 
 	--------------------------------------
@@ -1384,7 +1532,23 @@ function job_buff_change(buff, gain)
 		else
 			enable('body')
 		end
-	elseif buff == "doom" then
+	end
+
+	-- Haste mode is only relevant for Dual Wield subjobs
+	if S{'NIN','DNC'}:contains(player.sub_job) then
+		-- This should only apply if we are truly Dual Wielding
+		if not S{'grip','strap','shield'}:contains(player.equipment.sub:lower()) then
+			-- If we gain or lose any haste buffs, adjust which gear set we target.
+			if S{'haste', 'march', 'mighty guard', 'embrava', 'haste samba', 'geo-haste', 'indi-haste'}:contains(buff:lower()) then
+				determine_haste_group()
+				if not midaction() then
+					handle_equipping_gear(player.status)
+				end
+			end
+		end
+	end
+
+	if buff == "doom" then
 		if gain then
 			equip(sets.buff.Doom)
 			send_command('@input /echo ==== Doomed. ====')
@@ -1394,6 +1558,7 @@ function job_buff_change(buff, gain)
 			handle_equipping_gear(player.status)
 		end
 	end
+
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1411,6 +1576,70 @@ function select_default_macro_book()
 		set_macro_page(3, 10)
 	else
 		set_macro_page(1, 10)
+	end
+end
+
+function determine_haste_group()
+
+	classes.CustomMeleeGroups:clear()
+	-- assuming +4 for marches (ghorn has +5)
+	-- Haste (white magic) 15%
+	-- Haste Samba (Sub) 5%
+	-- Haste (Merited DNC) 10% (never account for this)
+	-- Victory March +0/+3/+4/+5    9.4/14%/15.6%/17.1% +0
+	-- Advancing March +0/+3/+4/+5  6.3/10.9%/12.5%/14%  +0
+	-- Embrava 30% with 500 enhancing skill
+	-- Mighty Guard - 15%
+	-- buffactive[580] = geo haste
+	-- buffactive[33] = regular haste
+	-- buffactive[604] = mighty guard
+	-- state.HasteMode = toggle for when you know Haste II is being cast on you
+	-- Hi = Haste II is being cast. This is clunky to use when both haste II and haste I are being cast
+	if state.HasteMode.value == 'Hi' then
+		if ( ( (buffactive[33] or buffactive[580] or buffactive.embrava) and (buffactive.march or buffactive[604]) ) or
+			( buffactive[33] and (buffactive[580] or buffactive.embrava) ) or
+			( buffactive.march == 2 and buffactive[604] ) ) then
+			add_to_chat(8, '-------------Max-Haste Mode Enabled--------------')
+			classes.CustomMeleeGroups:append('MaxHaste')
+		elseif ( (buffactive[33] or buffactive.march == 2 or buffactive[580]) and buffactive['haste samba'] ) then
+			add_to_chat(8, '-------------Haste 35%-------------')
+			classes.CustomMeleeGroups:append('Haste_35')
+		elseif ( ( buffactive[580] or buffactive[33] or buffactive.march == 2 ) or
+			( buffactive.march == 1 and buffactive[604] ) ) then
+			add_to_chat(8, '-------------Haste 30%-------------')
+			classes.CustomMeleeGroups:append('Haste_30')
+		elseif ( buffactive.march == 1 or buffactive[604] ) then
+			add_to_chat(8, '-------------Haste 15%-------------')
+			classes.CustomMeleeGroups:append('Haste_15')
+		else
+			add_to_chat(8, '-------------Haste 0%-------------')
+			classes.CustomMeleeGroups:append('Haste_0')
+		end
+	else
+		if ( buffactive[580] and ( buffactive.march or buffactive[33] or buffactive.embrava or buffactive[604]) ) or  -- geo haste + anything
+			( buffactive.embrava and (buffactive.march or buffactive[33] or buffactive[604]) ) or  -- embrava + anything
+			( buffactive.march == 2 and (buffactive[33] or buffactive[604]) ) or  -- two marches + anything
+			( buffactive[33] and buffactive[604] and buffactive.march ) then -- haste + mighty guard + any marches
+			add_to_chat(8, '-------------Max Haste Mode Enabled--------------')
+			classes.CustomMeleeGroups:append('MaxHaste')
+		elseif ( (buffactive[604] or buffactive[33]) and buffactive['haste samba'] and buffactive.march == 1) or -- MG or haste + samba with 1 march
+			( buffactive.march == 2 and buffactive['haste samba'] ) or
+			( buffactive[580] and buffactive['haste samba'] ) then 
+			add_to_chat(8, '-------------Haste 35%-------------')
+			classes.CustomMeleeGroups:append('Haste_35')
+		elseif ( buffactive.march == 2 ) or -- two marches from ghorn
+			( (buffactive[33] or buffactive[604]) and buffactive.march == 1 ) or  -- MG or haste + 1 march
+			( buffactive[580] ) or  -- geo haste
+			( buffactive[33] and buffactive[604] ) then  -- haste with MG
+			add_to_chat(8, '-------------Haste 30%-------------')
+			classes.CustomMeleeGroups:append('Haste_30')
+		elseif buffactive[33] or buffactive[604] or buffactive.march == 1 then
+			add_to_chat(8, '-------------Haste 15%-------------')
+			classes.CustomMeleeGroups:append('Haste_15')
+		else
+			add_to_chat(8, '-------------Haste 0%-------------')
+			classes.CustomMeleeGroups:append('Haste_0')
+		end
 	end
 end
 
@@ -1458,6 +1687,13 @@ function customize_idle_set(idleSet)
 end
 
 function customize_melee_set(meleeSet)
+	if S{'NIN','DNC'}:contains(player.sub_job) then
+		-- This should only apply if we are truly Dual Wielding
+		if not S{'grip','strap','shield'}:contains(player.equipment.sub:lower()) then
+			determine_haste_group()
+		end
+	end
+
 	if state.CP.current == 'on' then
 		equip(sets.CP)
 		disable('back')
