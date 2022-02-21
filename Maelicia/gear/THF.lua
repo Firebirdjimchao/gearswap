@@ -779,15 +779,19 @@ function init_gear_sets()
 	})
 	sets.engaged.FullAcc.Evasion = set_combine(sets.engaged.FullAcc,sets.engaged.Evasion,{
 	})
-	sets.engaged.PDT = set_combine(sets.engaged.Evasion,{
+
+	sets.engaged.DT = {
 		head="Malignance Chapeau",
-		neck="Loricate Torque +1",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		legs="Malignance Tights",
 		feet="Malignance Boots",
+	}
+
+	sets.engaged.PDT = set_combine(sets.engaged.Evasion,sets.engaged.DT,{
+		neck="Loricate Torque +1",
 	})
 	sets.engaged.MidAcc.PDT = set_combine(sets.engaged.PDT,{
 	})
@@ -795,15 +799,8 @@ function init_gear_sets()
 	})
 	sets.engaged.FullAcc.PDT = set_combine(sets.engaged.HighAcc.PDT,{
 	})
-	sets.engaged.MDT = set_combine(sets.engaged.Evasion,{
-		head="Malignance Chapeau",
+	sets.engaged.MDT = set_combine(sets.engaged.Evasion,sets.engaged.DT,{
 		neck="Loricate Torque +1",
-		body="Malignance Tabard",
-		hands="Malignance Gloves",
-		ring1="Dark Ring",
-		ring2="Defending Ring",
-		legs="Malignance Tights",
-		feet="Malignance Boots",
 	})
 	sets.engaged.MidAcc.MDT = set_combine(sets.engaged.MDT,{
 	})
