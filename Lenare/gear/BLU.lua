@@ -12,6 +12,12 @@ function job_setup()
 
 	state.Buff['Unbridled Learning'] = buffactive['Unbridled Learning'] or false
 
+	state.CP = M(false, "Capacity Points Mode")
+	state.Warp = M(false, "Warp Mode")
+	state.Weapon = M(false, "Weapon Lock")
+	state.Neck = M(false, "Neck Mode")
+	state.TreasureMode = M(false, 'TH')
+	state.EngagedDT = M(false, 'Engaged Damage Taken Mode')
 
 	blue_magic_maps = {}
 
@@ -175,13 +181,11 @@ end
 function user_setup()
 	state.OffenseMode:options('Normal', 'MidAcc', 'Acc', 'Refresh', 'Learning')
 	state.WeaponskillMode:options('Normal', 'MidAcc', 'Acc')
-	state.CastingMode:options('Normal', 'Resistant', 'TH')
+	state.CastingMode:options('Normal', 'Resistant')
 	state.IdleMode:options('Normal', 'PDT', 'Learning')
 	state.BuffReminderMode = M('Normal', 'Full', 'None')
-	state.MalignanceMode = M(false, 'Malignance')
-	state.RangeLock = M(false, 'Range Lock')
 
-	gear.default.obi_waist = "Sacro Cord"
+	gear.default.obi_waist = "Eschan Stone"
 	gear.Rosmerta_DexSTP = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10',}}
 	gear.Rosmerta_StrWSD = { name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
 
@@ -204,10 +208,15 @@ function user_setup()
 
 	-- "CTRL: ^ ALT: ! Windows Key: @ Apps Key: #"
 
-	--send_command('bind ^` input /ja "Chain Affinity" <me>')
-	--send_command('bind !` input /ja "Burst Affinity" <me>')
-	send_command('bind != gs c toggle MalignanceMode; input /echo --- MalignanceMode ---')
-	send_command('bind ^` gs c toggle RangeLock; input /echo --- Range lock ---')
+	send_command('bind @b gs c cycle BuffReminderMode') --WindowKey'B'
+	send_command("bind @p gs equip sets.TaeonPhalanx; input /echo --- Phalanx set on ---") -- WindowKey'P'
+
+	send_command('bind @c gs c toggle CP') --WindowKey'C'
+	send_command('bind @e gs c toggle EngagedDT') --Windowkey'E'
+	send_command('bind @h gs c toggle TreasureMode') --Windowkey'H'
+	send_command('bind @n gs c toggle Neck') --Windowkey'N'
+	send_command('bind @r gs c toggle Warp') --Windowkey'R'
+	send_command('bind @w gs c toggle Weapon') --Windowkey'W'
 
 	update_combat_form()
 	select_default_macro_book()
@@ -218,9 +227,15 @@ end
 
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
-	send_command('unbind ^`')
-	--send_command('unbind !`')
-	send_command('unbind !=')
+	send_command('unbind @b')
+	send_command('unbind @p')
+
+	send_command('unbind @c')
+	send_command('unbind @e')
+	send_command('unbind @h')
+	send_command('unbind @n')
+	send_command('unbind @r')
+	send_command('unbind @w')
 end
 
 
@@ -322,6 +337,10 @@ function init_gear_sets()
 		waist="Windbuffet Belt +1",
 		legs="Samnuha Tights",
 		feet="Nyame Sollerets",
+	}
+
+	sets.precast.WS.MaxTP = {
+		ear2="Odr. Earring",
 	}
 
 	sets.precast.WS.MidAcc = set_combine(sets.precast.WS, {
@@ -761,6 +780,12 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
+	if spell.type == 'WeaponSkill' then
+		if (spell.target.model_size + spell.range * 1.642276421172564) < spell.target.distance then	
+			add_to_chat(7,"--- Target "..spell.target.type.." ["..player.target.name.."] out of range of ["..spell.name.."] [ Distance: "..spell.target.distance.."] ---")
+			cancel_spell()
+		end
+	end
 
 	if state.BuffReminderMode.value ~= 'None' then
 		-- alert for missing buffs
@@ -803,6 +828,16 @@ function job_precast(spell, action, spellMap, eventArgs)
 	end
 end
 
+-- Run after the general precast() is done.
+function job_post_precast(spell, action, spellMap, eventArgs)
+	if spell.type == 'WeaponSkill' and state.DefenseMode.current ~= 'None' then        
+		-- Replace Moonshade Earring if we're at cap TP
+		if player.tp >= 2750 then
+			equip(sets.precast.WS.MaxTP)
+		end
+	end
+end
+
 -- Run after the default midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
 function job_post_midcast(spell, action, spellMap, eventArgs)
@@ -825,23 +860,34 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 		equip(sets.Learning)
 	end
 
-	if state.CastingMode.value == 'TH' then
-		equip(sets.sharedTH)
+	if state.TreasureMode.value ~= false and spell.target.type ~= 'SELF' then
+		equip(sets.midcast['Blue Magic'].Magical.TH)
 	end
 end
 
 
 function job_state_change(stateField, newValue, oldValue)
-	--if state.WeaponLock.value == true then
-		--disable('main','sub','range','ammo')
-	--else
-		--enable('main','sub','range','ammo')
-	--end
-
-	if state.RangeLock.value == true then
-		disable('range','ammo')
+	if state.Weapon.value == true then
+		disable('main','sub','range','ammo')
 	else
-		enable('range','ammo')
+		enable('main','sub','range','ammo')
+	end
+end
+
+function job_buff_change(buff, gain)
+	if state.Buff[buff] ~= nil then
+		state.Buff[buff] = gain
+	end
+
+	if buff == "doom" then
+		if gain then
+			equip(sets.buff.Doom)
+			send_command('@input /echo ==== Doomed. ====')
+			disable()
+		else
+			enable()
+			handle_equipping_gear(player.status)
+		end
 	end
 end
 
@@ -874,31 +920,89 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
+	if state.CP.current == 'on' then
+		equip(sets.CP)
+		disable('back')
+	else
+		enable('back')
+	end
+
+	if state.Warp.current == 'on' then
+		equip(sets.Warp)
+		disable('ring1')
+		disable('ring2')
+	else
+		enable('ring1')
+		enable('ring2')
+	end
+
+	if state.Weapon.current == 'on' then
+		disable('Main')
+		disable('Sub')
+	else
+		enable('Main')
+		enable('Sub')
+	end
+
+	if state.Neck.current == 'on' then
+		equip(sets.Neck)
+		disable('Neck')
+	else
+		enable('Neck')
+	end
+
 	if player.mpp < 51 then
-		set_combine(idleSet, sets.latent_refresh)
+		idleSet = set_combine(idleSet, sets.latent_refresh)
 	end
-	if buffactive['Doom'] then
-				idleSet = set_combine(idleSet, sets.buff.Doom)
+
+	if not buffactive['Protect'] then
+		idleSet = set_combine(idleSet, sets.noprotect)
 	end
+
 	return idleSet
 end
 
--- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-	if state.MalignanceMode.value ~= false then
-		meleeSet = set_combine(meleeSet, sets.Malignance)
+	if state.CP.current == 'on' then
+		equip(sets.CP)
+		disable('back')
+	else
+		enable('back')
 	end
-	if buffactive['Doom'] then
-		meleeSet = set_combine(meleeSet, sets.buff.Doom)
-	end
-	return meleeSet
-end
 
-function customize_defense_set(defenseSet)    
-	if buffactive['Doom'] then
-		defenseSet = set_combine(defenseSet, sets.buff.Doom)
+	if state.Warp.current == 'on' then
+		equip(sets.Warp)
+		disable('ring1')
+		disable('ring2')
+	else
+		enable('ring1')
+		enable('ring2')
 	end
-	return defenseSet
+
+	if state.Weapon.current == 'on' then
+		disable('Main')
+		disable('Sub')
+	else
+		enable('Main')
+		enable('Sub')
+	end
+
+	if state.Neck.current == 'on' then
+		equip(sets.Neck)
+		disable('Neck')
+	else
+		enable('Neck')
+	end
+
+	if state.EngagedDT.current == 'on' then
+		meleeSet = set_combine(meleeSet, sets.engaged.DT)
+	end
+
+	if state.TreasureMode.current == 'on' then
+		meleeSet = set_combine(meleeSet, sets.midcast['Blue Magic'].Magical.TH)
+	end
+
+	return meleeSet
 end
 
 -------------------------------------------------------------------------------------------------------------------
