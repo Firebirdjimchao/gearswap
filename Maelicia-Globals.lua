@@ -160,6 +160,12 @@ function define_global_sets()
 		waist="Chaac Belt",
 		feet="Volte Boots",
 	}
+	sets.TaeonPhalanx = {
+		body=gear.Taeon_Phalanx_body,
+		hands=gear.Taeon_Phalanx_hands,
+		legs=gear.Taeon_Phalanx_legs,
+		feet=gear.Taeon_Phalanx_feet,
+	}
 
 	sets.precast.JA.Sublimination = {
 		waist="Embla Sash"

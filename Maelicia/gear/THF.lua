@@ -61,6 +61,7 @@ function user_setup()
 	-- Additional local binds
 	send_command('bind @` gs c cycle HasteMode') --WindowKey'A'
 	send_command('bind @b gs c cycle BehindMode') --WindowKey'B'
+	send_command("bind @p gs equip sets.TaeonPhalanx; input /echo --- Phalanx set on ---") -- WindowKey'P'
 
 	send_command('bind @c gs c toggle CP') --WindowKey'C'
 	send_command('bind @e gs c toggle EngagedDT') --Windowkey'E'
@@ -78,6 +79,7 @@ end
 function user_unload()
 	send_command('unbind @`')
 	send_command('unbind @b')
+	send_command('unbind @p')
 
 	send_command('unbind @c')
 	send_command('unbind @e')

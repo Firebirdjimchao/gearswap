@@ -62,6 +62,7 @@ function user_setup()
 
 	send_command('bind @` gs c cycle HasteMode') --WindowKey'A'
 	send_command('bind @f gs c cycle FlurryTier') --WindowKey'F'
+	send_command("bind @p gs equip sets.TaeonPhalanx; input /echo --- Phalanx set on ---") -- WindowKey'P'
 
 	send_command('bind @c gs c toggle CP') --WindowKey'C'
 	send_command('bind @e gs c toggle EngagedDT') --Windowkey'E'
@@ -78,6 +79,7 @@ end
 function user_unload()
 	send_command('unbind @`')
 	send_command('unbind @f')
+	send_command('unbind @p')
 
 	send_command('unbind @c')
 	send_command('unbind @e')

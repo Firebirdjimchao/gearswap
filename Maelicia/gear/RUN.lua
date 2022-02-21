@@ -524,12 +524,8 @@ function init_gear_sets()
 	sets.midcast.BarElement = set_combine(sets.midcast['Enhancing Magic'], {
 	})
 	
-	sets.midcast['Phalanx'] = set_combine(sets.midcast['Enhancing Magic'], {
+	sets.midcast['Phalanx'] = set_combine(sets.midcast['Enhancing Magic'], sets.TaeonPhalanx, {
 		head="Fu. Bandeau +3",
-		body=gear.Taeon_Phalanx_body,
-		hands=gear.Taeon_Phalanx_hands,
-		legs=gear.Taeon_Phalanx_legs,
-		feet=gear.Taeon_Phalanx_feet,
 	})
 		
 	sets.midcast['Stoneskin'] = set_combine(sets.midcast['Enhancing Magic'], {

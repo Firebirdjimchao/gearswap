@@ -87,6 +87,8 @@ function define_global_sets()
 		head="Wh. Rarab Cap +1",
 		waist="Chaac Belt",
 	}
+	sets.TaeonPhalanx = {
+	}
 
 	sets.precast.JA.Sublimation = {
 		waist="Embla Sash"
