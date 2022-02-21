@@ -1,3 +1,24 @@
+-- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
+function job_setup()
+	state.Buff['Sneak Attack'] = buffactive['sneak attack'] or false
+	state.Buff['Trick Attack'] = buffactive['trick attack'] or false
+	state.Buff['Feint'] = buffactive['feint'] or false
+
+	include('Mote-TreasureHunter')
+
+	-- For th_action_check():
+	-- JA IDs for actions that always have TH: Provoke, Animated Flourish
+	info.default_ja_ids = S{35, 204}
+	-- Unblinkable JA IDs for actions that always have TH: Quick/Box/Stutter Step, Desperate/Violent Flourish
+	info.default_u_ja_ids = S{201, 202, 203, 205, 207}
+
+	state.CP = M(false, "Capacity Points Mode")
+	state.Warp = M(false, "Warp Mode")
+	state.Weapon = M(false, "Weapon Lock")
+	state.Neck = M(false, "Neck Mode")
+	state.EngagedDT = M(false, 'Engaged Damage Taken Mode')
+end
+
 function user_setup()
 	state.IdleMode:options('CP', 'Normal', 'StoreTP', 'Regen', 'CPPDT', 'CPMDT')
 	state.OffenseMode:options('Normal', 'MidAcc', 'HighAcc', 'FullAcc')
@@ -8,7 +29,6 @@ function user_setup()
 
 	state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi'}
 	state.BehindMode = M{['description']='Behind Mode', 'None', 'Normal'}
-	state.WeaponLock = M(false, 'Weapon Lock')
 	
 	gear.default.weaponskill_neck = "Asperity Necklace"
 	gear.default.weaponskill_waist = "Windbuffet Belt +1"
@@ -39,12 +59,15 @@ function user_setup()
 	-- "CTRL: ^ ALT: ! Windows Key: @ Apps Key: #"
 	
 	-- Additional local binds
-	send_command('bind ^` input /ja "Flee" <me>')
-	send_command('bind ^= gs c cycle treasuremode')
-	send_command('bind != gs c cycle BehindMode')
-	send_command('bind !- gs c cycle targetmode')
-	send_command('bind @` gs c cycle HasteMode')
-	send_command('bind !` gs c toggle WeaponLock; input /echo --- Weapons Lock ---')
+	send_command('bind @` gs c cycle HasteMode') --WindowKey'A'
+	send_command('bind @b gs c cycle BehindMode') --WindowKey'B'
+
+	send_command('bind @c gs c toggle CP') --WindowKey'C'
+	send_command('bind @e gs c toggle EngagedDT') --Windowkey'E'
+	send_command('bind @h gs c cycle TreasureMode') --Windowkey'H'
+	send_command('bind @n gs c toggle Neck') --Windowkey'N'
+	send_command('bind @r gs c toggle Warp') --Windowkey'R'
+	send_command('bind @w gs c toggle Weapon') --Windowkey'W'
 
 	global_aliases()
 	
@@ -53,12 +76,15 @@ end
 
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
-	send_command('unbind ^`')
-	send_command('unbind ^=')
-	send_command('unbind !=')
-	send_command('unbind !-')
 	send_command('unbind @`')
-	send_command('unbind !`')
+	send_command('unbind @b')
+
+	send_command('unbind @c')
+	send_command('unbind @e')
+	send_command('unbind @h')
+	send_command('unbind @n')
+	send_command('unbind @r')
+	send_command('unbind @w')
 end
 
 -- Define sets and vars used by this job file.
@@ -569,16 +595,21 @@ function init_gear_sets()
 	})
 	sets.engaged.FullAcc.Evasion = set_combine(sets.engaged.FullAcc,{
 	})
-	sets.engaged.PDT = set_combine(sets.engaged.Evasion,{
+
+	sets.engaged.DT = {
 		head="Malignance Chapeau",
-		neck="Twilight Torque",
 		body="Meg. Cuirie +2",
+		--body="Malignance Tabard",
 		hands="Malignance Gloves",
 		ring1="Dark Ring",
-		ring2="Dark Ring",
-		back="Shadow Mantle",
+		ring2="Defending Ring",
 		legs="Meg. Chausses +2",
+		--legs="Malignance Tights",
 		feet="Malignance Boots",
+	}
+
+	sets.engaged.PDT = set_combine(sets.engaged.Evasion,sets.engaged.DT,{
+		neck="Twilight Torque",
 	})
 	sets.engaged.MidAcc.PDT = set_combine(sets.engaged.PDT,{
 	})
@@ -586,8 +617,7 @@ function init_gear_sets()
 	})
 	sets.engaged.FullAcc.PDT = set_combine(sets.engaged.HighAcc.PDT,{
 	})
-	sets.engaged.MDT = set_combine(sets.engaged.Evasion,{
-		head="Malignance Chapeau",
+	sets.engaged.MDT = set_combine(sets.engaged.Evasion,sets.engaged.DT,{
 		ear2="Etiolation Earring",
 		ring1="Shadow Ring",
 	})
@@ -862,7 +892,7 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_state_change(stateField, newValue, oldValue)
-	if state.WeaponLock.value == true then
+	if state.Weapon.value == true then
 		disable('main','sub','range','ammo')
 	else
 		enable('main','sub','range','ammo')
@@ -894,6 +924,17 @@ function job_buff_change(buff, gain)
 		determine_haste_group()
 		if not midaction() then
 				handle_equipping_gear(player.status)
+		end
+	end
+
+	if buff == "doom" then
+		if gain then
+			equip(sets.buff.Doom)
+			send_command('@input /echo ==== Doomed. ====')
+			disable()
+		else
+			enable()
+			handle_equipping_gear(player.status)
 		end
 	end
 end
@@ -981,34 +1022,73 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function customize_idle_set(idleSet)
+	if state.CP.current == 'on' then
+		equip(sets.CP)
+		disable('back')
+	else
+		enable('back')
+	end
+
+	if state.Warp.current == 'on' then
+		equip(sets.Warp)
+		disable('ring1')
+		disable('ring2')
+	else
+		enable('ring1')
+		enable('ring2')
+	end
+
+	if state.Neck.current == 'on' then
+		equip(sets.Neck)
+		disable('Neck')
+	else
+		enable('Neck')
+	end
+
 	if not buffactive['Protect'] then
 		idleSet = set_combine(idleSet, sets.noprotect)
 	end
-	if buffactive['Doom'] then
-		idleSet = set_combine(idleSet, sets.buff.Doom)
-	end
+
 	return idleSet
 end
 
--- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-	if state.TreasureMode.value == 'Fulltime' then
-		meleeSet = set_combine(meleeSet, sets.TreasureHunter)
-	end
 	if state.BehindMode.value == 'Normal' then
 		meleeSet = set_combine(meleeSet, sets.Behind)
 	end
-	if buffactive['Doom'] then
-		meleeSet = set_combine(meleeSet, sets.buff.Doom)
-	end
-	return meleeSet
-end
 
-function customize_defense_set(defenseSet)    
-	if buffactive['Doom'] then
-		defenseSet = set_combine(defenseSet, sets.buff.Doom)
+	if state.CP.current == 'on' then
+		equip(sets.CP)
+		disable('back')
+	else
+		enable('back')
 	end
-	return defenseSet
+
+	if state.Warp.current == 'on' then
+		equip(sets.Warp)
+		disable('ring1')
+		disable('ring2')
+	else
+		enable('ring1')
+		enable('ring2')
+	end
+
+	if state.Neck.current == 'on' then
+		equip(sets.Neck)
+		disable('Neck')
+	else
+		enable('Neck')
+	end
+
+	if state.EngagedDT.current == 'on' then
+		meleeSet = set_combine(meleeSet, sets.engaged.DT)
+	end
+
+	if state.TreasureMode.value == 'Fulltime' then
+		meleeSet = set_combine(meleeSet, sets.TreasureHunter)
+	end
+
+	return meleeSet
 end
 
 -- Check for various actions that we've specified in user code as being used with TH gear.
