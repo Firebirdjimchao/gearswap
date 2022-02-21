@@ -60,13 +60,13 @@ function user_setup()
 
 	-- "CTRL: ^ ALT: ! Windows Key: @ Apps Key: #"
 
+	send_command('bind @f gs c cycle FlurryTier') --WindowKey'F'
+
 	send_command('bind @c gs c toggle CP') --WindowKey'C'
 	send_command('bind @e gs c toggle EngagedDT') --Windowkey'E'
-	send_command('bind @f gs c cycle FlurryTier') --WindowKey'F'
-	send_command('bind @h gs c cycle HasteTier') --WindowKey'H'
+	send_command('bind @h gs c toggle TreasureMode') --Windowkey'H'
 	send_command('bind @n gs c toggle Neck') --Windowkey'N'
 	send_command('bind @r gs c toggle Warp') --Windowkey'R'
-	send_command('bind @t gs c toggle TreasureMode') --Windowkey'T'
 	send_command('bind @w gs c toggle Weapon') --Windowkey'W'
 
 	global_aliases()
@@ -76,12 +76,12 @@ end
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
 	send_command('unbind @f')
+
 	send_command('unbind @c')
 	send_command('unbind @e')
 	send_command('unbind @h')
 	send_command('unbind @n')
 	send_command('unbind @r')
-	send_command('unbind @t')
 	send_command('unbind @w')
 end
 
@@ -1304,8 +1304,8 @@ function job_precast(spell, action, spellMap, eventArgs)
 	end
 
 	if state.TreasureMode.value ~= false then
-			equip(sets.sharedTH)
-		end
+		equip(sets.sharedTH)
+	end
 	
 	if state.DefenseMode.value ~= 'None' and spell.type == 'WeaponSkill' then
 		-- Don't gearswap for weaponskills when Defense is active.

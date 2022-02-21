@@ -1,3 +1,26 @@
+-- Setup vars that are user-independent.
+function job_setup()
+	-- Table of entries
+	rune_timers = T{}
+	-- entry = rune, index, expires
+	
+	if player.main_job_level >= 65 then
+		max_runes = 3
+	elseif player.main_job_level >= 35 then
+		max_runes = 2
+	elseif player.main_job_level >= 5 then
+		max_runes = 1
+	else
+		max_runes = 0
+	end
+
+	state.CP = M(false, "Capacity Points Mode")
+	state.Warp = M(false, "Warp Mode")
+	state.Neck = M(false, "Neck Mode")
+	state.TreasureMode = M(false, 'TH')
+	state.EngagedDT = M(false, 'Engaged Damage Taken Mode')
+end
+
 -------------------------------------------------------------------------------------------------------------------
 -- User setup functions for this job.  Recommend that these be overridden in a sidecar file.
 -------------------------------------------------------------------------------------------------------------------
@@ -38,15 +61,24 @@ function user_setup()
 	-- "CTRL: ^ ALT: ! Windows Key: @ Apps Key: #"
 
 	-- Additional local binds
-	send_command("bind != gs equip sets.midcast['Phalanx']; input /echo --- Phalanx set on ---")
+	send_command("bind @p gs equip sets.midcast['Phalanx']; input /echo --- Phalanx set on ---") -- WindowKey'P'
+
+	send_command('bind @c gs c toggle CP') --WindowKey'C'
+	send_command('bind @h gs c toggle TreasureMode') --Windowkey'H'
+	send_command('bind @n gs c toggle Neck') --Windowkey'N'
+	send_command('bind @r gs c toggle Warp') --Windowkey'R'
 
 	global_aliases()
 end
 
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
-	send_command('unbind ^=')
-	send_command('unbind !=')
+	send_command('unbind @p')
+
+	send_command('unbind @c')
+	send_command('unbind @h')
+	send_command('unbind @n')
+	send_command('unbind @r')
 end
 
 function init_gear_sets()
@@ -181,7 +213,7 @@ function init_gear_sets()
 	sets.precast.JA['Pflug'] = {feet="Runeist's Boots +2"} 
 	sets.precast.JA['Battuta'] = {head="Fu. Bandeau +3"}
 	sets.precast.JA['Liement'] = {body="Futhark Coat +3"}
- 	sets.precast.JA['Gambit'] = {hands="Runeist's Mitons +2"} 
+	sets.precast.JA['Gambit'] = {hands="Runeist's Mitons +2"} 
 	sets.precast.JA['Rayke'] = {feet="Futhark Boots +1"} 
 	sets.precast.JA['Elemental Sforzo'] = {body="Futhark Coat +3"} 
 	sets.precast.JA['Swordplay'] = {hands="Futhark Mitons +1"} 
@@ -328,6 +360,10 @@ function init_gear_sets()
 		legs="Meg. Chausses +2",
 		feet="Nyame Sollerets",
 	}
+	sets.precast.WS.MaxTP = {
+		--ear2="Crep. Earring",
+		ear2="Ishvara Earring",
+	}
 	sets.precast.WS.MidAcc = set_combine(sets.precast.WS, {
 		head="Meghanada Visor +2",
 		body="Meg. Cuirie +2",
@@ -358,7 +394,7 @@ function init_gear_sets()
 		ammo="Yamarang",
 	})
  
- 	-- 80% DEX, damage varies with TP
+	-- 80% DEX, damage varies with TP
 	sets.precast.WS['Dimidiation'] = set_combine(sets.precast.WS,{
 		ammo="Knobkierrie",
 		head="Nyame Helm",
@@ -519,11 +555,11 @@ function init_gear_sets()
 		body="Vrikodara Jupon",
 	})
 
- 	sets.midcast['Divine Magic'] = set_combine(sets.enmity, {})
- 	sets.midcast['Elemental Magic'] = set_combine(sets.enmity, {})
- 	sets.midcast['Enfeebing Magic'] = set_combine(sets.enmity, {})
- 	sets.midcast['Dark Magic'] = set_combine(sets.enmity, {})
- 	sets.midcast['Foil'] = set_combine(sets.enmity, {})
+	sets.midcast['Divine Magic'] = set_combine(sets.enmity, {})
+	sets.midcast['Elemental Magic'] = set_combine(sets.enmity, {})
+	sets.midcast['Enfeebing Magic'] = set_combine(sets.enmity, {})
+	sets.midcast['Dark Magic'] = set_combine(sets.enmity, {})
+	sets.midcast['Foil'] = set_combine(sets.enmity, {})
 	sets.midcast['Blue Magic'] = set_combine(sets.enmity, {})
 	sets.midcast['Wild Carrot'] = set_combine(sets.midcast.Cure, {})
 
@@ -577,7 +613,7 @@ function init_gear_sets()
 	})
 	sets.idle.MDT = set_combine(sets.DT, {
 	})
-				   
+					 
 	sets.defense.PDT = set_combine(sets.DT, {
 	})
 	sets.defense.MDT = set_combine(sets.DT, {
@@ -663,6 +699,13 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
+	if spell.type == 'WeaponSkill' then
+		if (spell.target.model_size + spell.range * 1.642276421172564) < spell.target.distance then	
+			add_to_chat(7,"--- Target "..spell.target.type.." ["..player.target.name.."] out of range of ["..spell.name.."] [ Distance: "..spell.target.distance.."] ---")
+			cancel_spell()
+		end
+	end
+
 	-- alert for missing buffs
 	if state.OffenseMode.value == 'Normal' or
 		state.OffenseMode.value == 'Ailments' or
@@ -704,10 +747,44 @@ function job_precast(spell, action, spellMap, eventArgs)
 	if not buffactive['Multi Strikes'] then
 		add_to_chat(122,"--- [Temper] x ---")
 	end
+
+	if state.TreasureMode.value ~= false then
+		equip(sets.sharedTH)
+	end
 	
 	if state.DefenseMode.value ~= 'None' and spell.type == 'WeaponSkill' then
 		-- Don't gearswap for weaponskills when Defense is active.
 		eventArgs.handled = true
+	end
+end
+
+-- Run after the general precast() is done.
+function job_post_precast(spell, action, spellMap, eventArgs)
+	if spell.type == 'WeaponSkill' and state.DefenseMode.current ~= 'None' then        
+		-- Replace Moonshade Earring if we're at cap TP
+		if player.tp >= 2750 then
+			equip(sets.precast.WS.MaxTP)
+		end
+	end
+end
+
+-------------------------------------------------------------------------------------------------------------------
+-- Job-specific hooks for non-casting events.
+-------------------------------------------------------------------------------------------------------------------
+
+-- Called when a player gains or loses a buff.
+-- buff == buff gained or lost
+-- gain == true if the buff was gained, false if it was lost.
+function job_buff_change(buff, gain)
+	if buff == "doom" then
+		if gain then
+			equip(sets.buff.Doom)
+			send_command('@input /p <------ Doomed ---- <call14>')
+			disable()
+		else
+			enable()
+			handle_equipping_gear(player.status)
+		end
 	end
 end
 
@@ -740,41 +817,63 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function customize_idle_set(idleSet)
+	if state.CP.current == 'on' then
+		equip(sets.CP)
+		disable('back')
+	else
+		enable('back')
+	end
+
+	if state.Warp.current == 'on' then
+		equip(sets.Warp)
+		disable('ring1')
+		disable('ring2')
+	else
+		enable('ring1')
+		enable('ring2')
+	end
+
+	if state.Neck.current == 'on' then
+		equip(sets.Neck)
+		disable('Neck')
+	else
+		enable('Neck')
+	end
+
 	if not buffactive['Protect'] then
 		idleSet = set_combine(idleSet, sets.noprotect)
 	end
-	if buffactive['Doom'] then
-		idleSet = set_combine(idleSet, sets.buff.Doom)
-		if state.PartyAlertMode.value == 'true' then
-			if buffactive['Doom'] then
-				send_command('input /p <------ Doomed ---- <call14>')
-			end
-		end
-	end
+
 	return idleSet
 end
 
--- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-	if buffactive['Doom'] then
-		meleeSet = set_combine(meleeSet, sets.buff.Doom)
-		if state.PartyAlertMode.value == 'true' then
-			if buffactive['Doom'] then
-				send_command('input /p <------ Doomed ---- <call14>')
-			end
-		end
+	if state.CP.current == 'on' then
+		equip(sets.CP)
+		disable('back')
+	else
+		enable('back')
 	end
-	return meleeSet
-end
 
-function customize_defense_set(defenseSet)
-	if buffactive['Doom'] then
-		defenseSet = set_combine(defenseSet, sets.buff.Doom)
-		if state.PartyAlertMode.value == 'true' then
-			if buffactive['Doom'] then
-				send_command('input /p <------ Doomed ---- <call14>')
-			end
-		end
+	if state.Warp.current == 'on' then
+		equip(sets.Warp)
+		disable('ring1')
+		disable('ring2')
+	else
+		enable('ring1')
+		enable('ring2')
 	end
-	return defenseSet
+
+	if state.Neck.current == 'on' then
+		equip(sets.Neck)
+		disable('Neck')
+	else
+		enable('Neck')
+	end
+
+	if state.TreasureMode.current == 'on' then
+		meleeSet = set_combine(meleeSet, sets.sharedTH)
+	end
+
+	return meleeSet
 end
