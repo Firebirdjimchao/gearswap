@@ -980,6 +980,11 @@ function init_gear_sets()
 	})
 
 	-- Haste Mode used when Dual Wielding. See job_buff_change() below for specific conditions
+	sets.engaged.Haste_0 = set_combine(sets.engaged,{
+		ear1="Suppanomimi",
+		ring2="Haverton Ring",
+		waist="Reiki Yotai",
+	})
 	sets.engaged.Haste_15 = set_combine(sets.engaged,{
 		ear1="Suppanomimi",
 		ring2="Haverton Ring",
@@ -1000,6 +1005,12 @@ function init_gear_sets()
 		waist="Reiki Yotai",
 	})
 
+	sets.engaged.AccLow.Haste_0 = set_combine(sets.engaged.AccLow,{
+		ammo="Seeth. Bomblet +1",
+		ear1="Suppanomimi",
+		ring2="Haverton Ring",
+		waist="Reiki Yotai",
+	})
 	sets.engaged.AccLow.Haste_15 = set_combine(sets.engaged.AccLow,{
 		ammo="Seeth. Bomblet +1",
 		ear1="Suppanomimi",
@@ -1024,6 +1035,12 @@ function init_gear_sets()
 		waist="Reiki Yotai",
 	})
 
+	sets.engaged.AccHigh.Haste_0 = set_combine(sets.engaged.AccHigh,{
+		ammo="Seeth. Bomblet +1",
+		ear1="Suppanomimi",
+		ring2="Haverton Ring",
+		waist="Reiki Yotai",
+	})
 	sets.engaged.AccHigh.Haste_15 = set_combine(sets.engaged.AccHigh,{
 		ammo="Seeth. Bomblet +1",
 		ear1="Suppanomimi",
@@ -1292,6 +1309,9 @@ function determine_haste_group()
 		elseif ( buffactive.march == 1 or buffactive[604] ) then
 			add_to_chat(8, '-------------Haste 15%-------------')
 			classes.CustomMeleeGroups:append('Haste_15')
+		else
+			add_to_chat(8, '-------------Haste 0%-------------')
+			classes.CustomMeleeGroups:append('Haste_0')
 		end
 	else
 		if ( buffactive[580] and ( buffactive.march or buffactive[33] or buffactive.embrava or buffactive[604]) ) or  -- geo haste + anything
@@ -1314,6 +1334,9 @@ function determine_haste_group()
 		elseif buffactive[33] or buffactive[604] or buffactive.march == 1 then
 			add_to_chat(8, '-------------Haste 15%-------------')
 			classes.CustomMeleeGroups:append('Haste_15')
+		else
+			add_to_chat(8, '-------------Haste 0%-------------')
+			classes.CustomMeleeGroups:append('Haste_0')
 		end
 	end
 
