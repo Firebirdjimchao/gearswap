@@ -836,6 +836,10 @@ function customize_idle_set(idleSet)
 		enable('Neck')
 	end
 
+	if player.mpp < 51 then
+		idleSet = set_combine(idleSet, sets.latent_refresh)
+	end
+
 	if not buffactive['Protect'] then
 		idleSet = set_combine(idleSet, sets.noprotect)
 	end
