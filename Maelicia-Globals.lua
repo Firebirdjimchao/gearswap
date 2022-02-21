@@ -187,6 +187,9 @@ function define_global_sets()
 		hands="Temachtiani Gloves"
 	}
 
+	------------------------------------------------------------------------------------------------
+	---------------------------------------- Special Sets ------------------------------------------
+	------------------------------------------------------------------------------------------------
 	sets.reive = {
 		--neck="Ygna's Resolve +1"
 	}
@@ -196,7 +199,10 @@ function define_global_sets()
 		ring2="Saida Ring",
 		waist="Gishdubar Sash",
 	}
-
+	sets.Warp = {ring1="Dim. Ring (Mea)",ring2="Warp Ring"}
+	sets.CP = {back="Mecisto. Mantle"}
+	sets.Neck = {Neck=""} --Locks Dynamis Neck for Rank Point Farming
+	sets.Weapon = {}
 end
 
 function user_customize_melee_set(meleeSet)

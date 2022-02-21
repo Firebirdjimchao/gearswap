@@ -1,11 +1,27 @@
+-- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
+function job_setup()
+	state.Buff.Barrage = buffactive.Barrage or false
+	state.Buff.Camouflage = buffactive.Camouflage or false
+	state.Buff['Unlimited Shot'] = buffactive['Unlimited Shot'] or false
+	state.Buff.Overkill = buffactive.Overkill or false
+
+	state.CP = M(false, "Capacity Points Mode")
+	state.Warp = M(false, "Warp Mode")
+	state.Weapon = M(false, "Weapon Lock")
+	state.Neck = M(false, "Neck Mode")
+	state.TreasureMode = M(false, 'TH')
+	state.EngagedDT = M(false, 'Engaged Damage Taken Mode')
+
+	-- buffactive table cannot distinguish between different tiers of buffs, use toggle to manually set
+	state.HasteTier = M('Haste', 'Haste II')
+	state.FlurryTier = M('Flurry', 'Flurry II')
+end
+
 function user_setup()
 	state.IdleMode:options('Normal', 'CP', 'Regen', 'CPPDT', 'CPMDT')
 	state.OffenseMode:options('Normal', 'FullAcc', 'DT', 'Melee', 'MeleeMidAcc', 'MeleeHighAcc', 'MeleeFullAcc', 'Encumbered')
 	state.RangedMode:options('Normal', 'MidAcc', 'HighAcc', 'FullAcc', 'Crit')
-	state.WeaponskillMode:options('Normal', 'MidAcc', 'HighAcc', 'FullAcc')
-
-	-- buffactive table cannot distinguish between different tiers of buffs, use toggle to manually set
-	state.FlurryTier = M('Flurry', 'Flurry II')
+	state.WeaponskillMode:options('Normal', 'MidAcc', 'HighAcc', 'FullAcc')	
 
 	gear.default.weaponskill_neck = "Fotia Gorget"
 	gear.default.weaponskill_waist = "Fotia Belt"
@@ -15,8 +31,8 @@ function user_setup()
 	gear.aug_belenus_ws = { name="Belenus's Cape", augments={'STR+20','Rng.Acc.+20 Rng.Atk.+20','STR+10','Weapon skill damage +10%',}}
 	gear.aug_belenus_ws_agi = { name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}}
 
-	DefaultAmmo = {['Yoichinoyumi'] = "Achiyalabopa arrow", ['Annihilator'] = "Chrono bullet", ['Fail-Not'] = "Chrono arrow", ['Fomalhaut'] = "Chrono bullet"}
-	U_Shot_Ammo = {['Yoichinoyumi'] = "Achiyalabopa arrow", ['Annihilator'] = "Chrono bullet", ['Fail-Not'] = "Chrono arrow", ['Fomalhaut'] = "Chrono bullet"}
+	DefaultAmmo = {['Yoichinoyumi'] = "Chrono arrow", ['Annihilator'] = "Chrono bullet", ['Fail-Not'] = "Chrono arrow", ['Fomalhaut'] = "Chrono bullet"}
+	U_Shot_Ammo = {['Yoichinoyumi'] = "Chrono arrow", ['Annihilator'] = "Chrono bullet", ['Fail-Not'] = "Chrono arrow", ['Fomalhaut'] = "Chrono bullet"}
 	--gear.RAbullet = "Eradicating bullet"
 	--gear.MAbullet = "Silver Bullet"
 	--gear.MAbullet = "Bullet"
@@ -44,8 +60,14 @@ function user_setup()
 
 	-- "CTRL: ^ ALT: ! Windows Key: @ Apps Key: #"
 
-	-- Win-`
-	send_command('bind @` gs c cycle FlurryTier')
+	send_command('bind @c gs c toggle CP') --WindowKey'C'
+	send_command('bind @e gs c toggle EngagedDT') --Windowkey'E'
+	send_command('bind @f gs c cycle FlurryTier') --WindowKey'F'
+	send_command('bind @h gs c cycle HasteTier') --WindowKey'H'
+	send_command('bind @n gs c toggle Neck') --Windowkey'N'
+	send_command('bind @r gs c toggle Warp') --Windowkey'R'
+	send_command('bind @t gs c toggle TreasureMode') --Windowkey'T'
+	send_command('bind @w gs c toggle Weapon') --Windowkey'W'
 
 	global_aliases()
 end
@@ -53,7 +75,14 @@ end
 
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
-	send_command('unbind @`')
+	send_command('unbind @f')
+	send_command('unbind @c')
+	send_command('unbind @e')
+	send_command('unbind @h')
+	send_command('unbind @n')
+	send_command('unbind @r')
+	send_command('unbind @t')
+	send_command('unbind @w')
 end
 
 -- Set up all gear sets.
@@ -63,7 +92,7 @@ function init_gear_sets()
 	--------------------------------------
 
 	-- Precast sets to enhance JAs
-	sets.precast.JA['Bounty Shot'] = {hands="Amini Glove. +1"}
+	sets.precast.JA['Bounty Shot'] = set_combine(sets.sharedTH,{hands="Amini Glove. +1"})
 	sets.precast.JA['Camouflage'] = {body="Orion Jerkin +3"}
 	sets.precast.JA['Scavenge'] = {feet="Orion Socks +3"}
 	sets.precast.JA['Shadowbind'] = {hands="Orion Bracers +3"}
@@ -1134,7 +1163,7 @@ function init_gear_sets()
 		feet="Tatena. Sune. +1",
 	})
 
-	sets.engaged.DT = set_combine(sets.engaged,{
+	sets.engaged.DT = set_combine(sets.engaged.Melee,{
 		head="Malignance Chapeau",
 		body="Malignance Tabard",
 		hands="Malignance Gloves",
@@ -1273,6 +1302,10 @@ function job_precast(spell, action, spellMap, eventArgs)
 		(spell.type == 'WeaponSkill' and (spell.skill == 'Marksmanship' or spell.skill == 'Archery')) then
 		check_ammo(spell, action, spellMap, eventArgs)
 	end
+
+	if state.TreasureMode.value ~= false then
+			equip(sets.sharedTH)
+		end
 	
 	if state.DefenseMode.value ~= 'None' and spell.type == 'WeaponSkill' then
 		-- Don't gearswap for weaponskills when Defense is active.
@@ -1330,6 +1363,36 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 				equip(sets.buff.Doubleshot[state.RangedMode.current])
 			end
 		end
+		if state.TreasureMode.current == 'on' then
+			equip(sets.sharedTH)
+		end
+	end
+end
+
+-------------------------------------------------------------------------------------------------------------------
+-- Job-specific hooks for non-casting events.
+-------------------------------------------------------------------------------------------------------------------
+
+-- Called when a player gains or loses a buff.
+-- buff == buff gained or lost
+-- gain == true if the buff was gained, false if it was lost.
+function job_buff_change(buff, gain)
+	if buff == "Camouflage" then
+		if gain then
+			equip(sets.buff.Camouflage)
+			disable('body')
+		else
+			enable('body')
+		end
+	elseif buff == "doom" then
+		if gain then
+			equip(sets.buff.Doom)
+			send_command('@input /echo ==== Doomed. ====')
+			disable()
+		else
+			enable()
+			handle_equipping_gear(player.status)
+		end
 	end
 end
 
@@ -1356,26 +1419,83 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function customize_idle_set(idleSet)
+	if state.CP.current == 'on' then
+		equip(sets.CP)
+		disable('back')
+	else
+		enable('back')
+	end
+
+	if state.Warp.current == 'on' then
+		equip(sets.Warp)
+		disable('ring1')
+		disable('ring2')
+	else
+		enable('ring1')
+		enable('ring2')
+	end
+
+	if state.Weapon.current == 'on' then
+		disable('Main')
+		disable('Sub')
+	else
+		enable('Main')
+		enable('Sub')
+	end
+
+	if state.Neck.current == 'on' then
+		equip(sets.Neck)
+		disable('Neck')
+	else
+		enable('Neck')
+	end
+
 	if not buffactive['Protect'] then
 		idleSet = set_combine(idleSet, sets.noprotect)
 	end
-	if buffactive['Doom'] then
-		idleSet = set_combine(idleSet, sets.buff.Doom)
-	end
+
 	return idleSet
 end
 
--- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-	if buffactive['Doom'] then
-		meleeSet = set_combine(meleeSet, sets.buff.Doom)
+	if state.CP.current == 'on' then
+		equip(sets.CP)
+		disable('back')
+	else
+		enable('back')
 	end
-	return meleeSet
-end
 
-function customize_defense_set(defenseSet)    
-	if buffactive['Doom'] then
-		defenseSet = set_combine(defenseSet, sets.buff.Doom)
+	if state.Warp.current == 'on' then
+		equip(sets.Warp)
+		disable('ring1')
+		disable('ring2')
+	else
+		enable('ring1')
+		enable('ring2')
 	end
-	return defenseSet
+
+	if state.Weapon.current == 'on' then
+		disable('Main')
+		disable('Sub')
+	else
+		enable('Main')
+		enable('Sub')
+	end
+
+	if state.Neck.current == 'on' then
+		equip(sets.Neck)
+		disable('Neck')
+	else
+		enable('Neck')
+	end
+
+	if state.EngagedDT.current == 'on' then
+		meleeSet = set_combine(meleeSet, sets.engaged.DT)
+	end
+
+	if state.TreasureMode.current == 'on' then
+		meleeSet = set_combine(meleeSet, sets.sharedTH)
+	end
+
+	return meleeSet
 end
