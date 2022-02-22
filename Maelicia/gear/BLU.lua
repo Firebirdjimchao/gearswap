@@ -756,6 +756,9 @@ function init_gear_sets()
 		feet=gear.Carmine_feet_hq_B,
 	}
 
+	sets.engaged.DT = set_combine(sets.engaged,sets.Malignance,{
+	})
+
 	sets.engaged.MidAcc = set_combine(sets.engaged, {
 		neck="Lissome Necklace",
 		ear1="Telos Earring",

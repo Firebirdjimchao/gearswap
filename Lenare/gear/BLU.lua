@@ -254,9 +254,9 @@ function init_gear_sets()
 
 	sets.Malignance = {
 		head="Malignance Chapeau",
-		body="Malignance Tabard",
+		--body="Malignance Tabard",
 		hands="Malignance Gloves",
-		legs="Malignance Tights",
+		--legs="Malignance Tights",
 		feet="Malignance Boots",
 	}
 	
@@ -712,6 +712,9 @@ function init_gear_sets()
 		legs="Samnuha Tights",
 		feet="Luhlaza Charuqs +2",
 	}
+
+	sets.engaged.DT = set_combine(sets.engaged,sets.Malignance,{
+	})
 
 	sets.engaged.MidAcc = set_combine(sets.engaged, {
 		neck="Lissome Necklace",
