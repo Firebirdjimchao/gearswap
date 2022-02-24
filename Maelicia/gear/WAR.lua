@@ -1,3 +1,22 @@
+-- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
+function job_setup()
+	state.Buff['Aftermath'] = buffactive['Aftermath: Lv.1'] or
+	buffactive['Aftermath: Lv.2'] or
+	buffactive['Aftermath: Lv.3'] or false
+	state.Buff['Mighty Strikes'] = buffactive['Mighty Strikes'] or false
+
+	state.CP = M(false, "Capacity Points Mode")
+	state.Warp = M(false, "Warp Mode")
+	state.Weapon = M(false, "Weapon Lock")
+	state.Neck = M(false, "Neck Mode")
+	state.TreasureMode = M(false, 'TH')
+	state.Twilight = M(false, 'Twilight')
+	state.EngagedDT = M(false, 'Engaged Damage Taken Mode')
+	state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi'}
+	state.EnmityMode = M{['description']='Enmity Mode', 'None', 'Down', 'Up'}
+
+end
+
 function user_setup()
 	state.OffenseMode:options('Normal', 'AccLow', 'AccHigh', 'Crit')
 	state.RangedMode:options('Normal')
@@ -8,11 +27,6 @@ function user_setup()
 	state.RestingMode:options('Normal')
 	state.PhysicalDefenseMode:options('PDT', 'Reraise')
 	state.MagicalDefenseMode:options('MDT', 'Reraise')
-
-	state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi'}
-	state.EnmityMode = M{['description']='Enmity Mode', 'None', 'Down', 'Up'}
-	state.SakpataMode = M(false, 'Sakpata')
-	state.TreasureMode = M(false, 'TH')
 
 	--Augmented Gear Definitions--
 	gear.Cichol_StrWSD = { name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
@@ -42,21 +56,31 @@ function user_setup()
 
 	-- "CTRL: ^ ALT: ! Windows Key: @ Apps Key: #"
 
-	send_command('bind @` gs c cycle HasteMode')
-	send_command('bind ^` gs equip sets.Twilight; input /echo --- Twilight Set Equipped ---')
-	send_command('bind ^- gs c cycle enmitymode')
-	send_command('bind ^= gs c toggle TreasureMode; input /echo --- TreasureMode ---')
-	send_command('bind != gs c toggle SakpataMode; input /echo --- SakpataMode ---')
+	send_command('bind @` gs c cycle HasteMode') --WindowKey'`'
+	send_command('bind @= gs c cycle enmitymode') --WindowKey'='
+	send_command('bind @t gs c toggle Twilight') --WindowKey'T'
+
+	send_command('bind @c gs c toggle CP') --WindowKey'C'
+	send_command('bind @e gs c toggle EngagedDT') --Windowkey'E'
+	send_command('bind @h gs c toggle TreasureMode') --Windowkey'H'
+	send_command('bind @n gs c toggle Neck') --Windowkey'N'
+	send_command('bind @r gs c toggle Warp') --Windowkey'R'
+	send_command('bind @w gs c toggle Weapon') --Windowkey'W'
 
 	global_aliases()
 end
 
 function file_unload()
 	send_command('unbind @`')
-	send_command('unbind ^`')
-	send_command('unbind ^-')
-	send_command('unbind ^=')
-	send_command('unbind !=')
+	send_command('unbind @=')
+	send_command('unbind @t')
+
+	send_command('unbind @c')
+	send_command('unbind @e')
+	send_command('unbind @h')
+	send_command('unbind @n')
+	send_command('unbind @r')
+	send_command('unbind @w')
 end
 
 function init_gear_sets()
@@ -834,11 +858,6 @@ function init_gear_sets()
 	-- Resting sets
 	sets.resting = {}
 
-	sets.Twilight = {
-		head="Twilight Helm",
-		body="Twilight Mail"
-	}
-
 	-- Idle sets
 	sets.idle = {
 		ammo="Staunch Tathlum +1",
@@ -1347,42 +1366,101 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function customize_idle_set(idleSet)
+	if state.CP.current == 'on' then
+		equip(sets.CP)
+		disable('back')
+	else
+		enable('back')
+	end
+
+	if state.Warp.current == 'on' then
+		equip(sets.Warp)
+		disable('ring1','ring2')
+	else
+		enable('ring1','ring2')
+	end
+
+	if state.Weapon.current == 'on' then
+		disable('Main','Sub')
+	else
+		enable('Main','Sub')
+	end
+
+	if state.Neck.current == 'on' then
+		equip(sets.Neck)
+		disable('Neck')
+	else
+		enable('Neck')
+	end
+
+	if state.TreasureMode.current == 'on' then
+		idleSet = set_combine(idleSet, sets.sharedTH)
+	end
+
 	if not buffactive['Protect'] then
 		idleSet = set_combine(idleSet, sets.noprotect)
 	end
-	if buffactive['Doom'] then
-		idleSet = set_combine(idleSet, sets.buff.Doom)
+
+	if state.Twilight.current == 'on' then
+		equip(sets.Twilight)
+		disable('head','body')
+	else
+		enable('head','body')
 	end
+
 	return idleSet
 end
 
--- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
+	if S{'NIN','DNC'}:contains(player.sub_job) then
+		-- This should only apply if we are truly Dual Wielding
+		if not S{'grip','strap','shield'}:contains(player.equipment.sub:lower()) then
+			determine_haste_group()
+		end
+	end
+
 	if state.EnmityMode.value == 'Down' then
 		meleeSet = set_combine(meleeSet, sets.EnmityDown)
 	elseif state.EnmityMode.value == 'Up' then
 		meleeSet = set_combine(meleeSet, sets.EnmityUp)
 	end
-	if buffactive['*Madrigal'] then
-		meleeSet = set_combine(meleeSet, sets.buff.Madrigal)
+
+	if state.CP.current == 'on' then
+		equip(sets.CP)
+		disable('back')
+	else
+		enable('back')
 	end
-	if state.SakpataMode.value ~= false then
-		meleeSet = set_combine(meleeSet, sets.Sakpata)
+
+	if state.Warp.current == 'on' then
+		equip(sets.Warp)
+		disable('ring1','ring2')
+	else
+		enable('ring1','ring2')
 	end
-	if state.TreasureMode.value ~= false then
+
+	if state.Weapon.current == 'on' then
+		disable('Main','Sub')
+	else
+		enable('Main','Sub')
+	end
+
+	if state.Neck.current == 'on' then
+		equip(sets.Neck)
+		disable('Neck')
+	else
+		enable('Neck')
+	end
+
+	if state.EngagedDT.current == 'on' then
+		meleeSet = set_combine(meleeSet, sets.engaged.DT)
+	end
+
+	if state.TreasureMode.current == 'on' then
 		meleeSet = set_combine(meleeSet, sets.sharedTH)
 	end
-	if buffactive['Doom'] then
-		meleeSet = set_combine(meleeSet, sets.buff.Doom)
-	end
-	return meleeSet
-end
 
-function customize_defense_set(defenseSet)		
-	if buffactive['Doom'] then
-		defenseSet = set_combine(defenseSet, sets.buff.Doom)
-	end
-	return defenseSet
+	return meleeSet
 end
 
 -- Called when the player's status changes.
@@ -1424,7 +1502,7 @@ function job_buff_change(buff, gain)
 		else
 		send_command('timers delete "Warcry"')
 	end
-	if buff == "sleep" and gain and player.hp > 200 and player.status == "Engaged" then
+	if buff == "sleep" and gain and player.hp > 200 then
 		equip(sets.slept)
 		else
 		handle_equipping_gear(player.status)
@@ -1440,6 +1518,25 @@ function job_buff_change(buff, gain)
 					handle_equipping_gear(player.status)
 				end
 			end
+		end
+	end
+
+	if buffactive['*Madrigal'] then
+		if gain then
+			equip(sets.buff.Madrigal)
+		else
+			handle_equipping_gear(player.status)
+		end
+	end
+
+	if buff == "doom" then
+		if gain then
+			equip(sets.buff.Doom)
+			send_command('@input /echo ==== Doomed. ====')
+			disable()
+		else
+			enable()
+			handle_equipping_gear(player.status)
 		end
 	end
 end
