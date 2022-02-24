@@ -614,9 +614,9 @@ function init_gear_sets()
 	-- Sets to return to when not performing an action.
 
 	-- Gear for learning spells: +skill and AF hands.
-	sets.Learning = set_combine(sets.midcast['Blue Magic'], {
+	sets.Learning = {
 		hands="Assim. Bazu. +2",
-	})
+	}
 
 	sets.latent_refresh = {
 		waist="Fucho-no-obi"
