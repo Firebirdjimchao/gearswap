@@ -209,6 +209,10 @@ function define_global_sets()
 	sets.CP = {back="Mecisto. Mantle"}
 	sets.Neck = {Neck=""} --Locks Dynamis Neck for Rank Point Farming
 	sets.Weapon = {}
+	sets.Twilight = {
+		head="Twilight Helm",
+		body="Twilight Mail"
+	}
 end
 
 function user_customize_melee_set(meleeSet)
