@@ -778,37 +778,29 @@ function customize_idle_set(idleSet)
 	 
 	if state.Warp.current == 'on' then
 		equip(sets.Warp)
-		disable('ring1')
-		disable('ring2')
+		disable('ring1','ring2')
 	else
-		enable('ring1')
-		enable('ring2')
+		enable('ring1','ring2')
 	end 
 	 
 	if state.MP.current == 'on' then
 		equip(sets.MP)
-		disable('Waist')
-		disable('Ear1')
-		disable('back')
+		disable('waist','ear1','back')
 	else
-		enable('Waist')
-		enable('Ear1')
-		enable('back')
+		enable('waist','ear1','back')
 	end
 	 
 	if state.Weapon.current == 'on' then
-		disable('Main')
-		disable('Sub')
+		disable('main','sub')
 	else
-		enable('Main')
-		enable('Sub')
+		enable('main','sub')
 	end 
 	 
 	if state.Neck.current == 'on' then
 		equip(sets.Neck)    
-		disable('Neck')
+		disable('neck')
 	else
-		enable('Neck')
+		enable('neck')
 	end
 	
 	if state.ShieldMode.value == 'Aegis' then
@@ -836,35 +828,29 @@ function customize_melee_set(meleeSet)
 	 
 	if state.Warp.current == 'on' then
 		equip(sets.Warp)
-		disable('ring1')
-		disable('ring2')
+		disable('ring1','ring2')
 	else
-		enable('ring1')
-		enable('ring2')
+		enable('ring1','ring2')
 	end 
 	 
 	if state.MP.current == 'on' then
 		equip(sets.MP)
-		disable('Waist')
-		disable('Ear1')
-		disable('back')
+		disable('waist','ear1','back')
 	else
-		enable('Waist')
-		enable('Ear1')
-		enable('back')
+		enable('waist','ear1','back')
 	end
 	 
 	if state.Weapon.current == 'on' then
-		disable('Main')
+		disable('main')
 	else
-		enable('Main')
+		enable('main')
 	end
 	 
 	if state.Neck.current == 'on' then
 		equip(sets.Neck)    
-		disable('Neck')
+		disable('neck')
 	else
-		enable('Neck')
+		enable('neck')
 	end 
 	
 	if state.ShieldMode.value == 'Aegis' then

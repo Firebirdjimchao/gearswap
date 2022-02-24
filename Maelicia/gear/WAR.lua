@@ -1381,16 +1381,16 @@ function customize_idle_set(idleSet)
 	end
 
 	if state.Weapon.current == 'on' then
-		disable('Main','Sub')
+		disable('main','sub')
 	else
-		enable('Main','Sub')
+		enable('main','sub')
 	end
 
 	if state.Neck.current == 'on' then
 		equip(sets.Neck)
-		disable('Neck')
+		disable('neck')
 	else
-		enable('Neck')
+		enable('neck')
 	end
 
 	if state.TreasureMode.current == 'on' then
@@ -1440,16 +1440,16 @@ function customize_melee_set(meleeSet)
 	end
 
 	if state.Weapon.current == 'on' then
-		disable('Main','Sub')
+		disable('main','sub')
 	else
-		enable('Main','Sub')
+		enable('main','sub')
 	end
 
 	if state.Neck.current == 'on' then
 		equip(sets.Neck)
-		disable('Neck')
+		disable('neck')
 	else
-		enable('Neck')
+		enable('neck')
 	end
 
 	if state.EngagedDT.current == 'on' then

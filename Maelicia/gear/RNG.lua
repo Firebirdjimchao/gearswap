@@ -1659,26 +1659,22 @@ function customize_idle_set(idleSet)
 
 	if state.Warp.current == 'on' then
 		equip(sets.Warp)
-		disable('ring1')
-		disable('ring2')
+		disable('ring1','ring2')
 	else
-		enable('ring1')
-		enable('ring2')
+		enable('ring1','ring2')
 	end
 
 	if state.Weapon.current == 'on' then
-		disable('Main')
-		disable('Sub')
+		disable('main','sub')
 	else
-		enable('Main')
-		enable('Sub')
+		enable('main','sub')
 	end
 
 	if state.Neck.current == 'on' then
 		equip(sets.Neck)
-		disable('Neck')
+		disable('neck')
 	else
-		enable('Neck')
+		enable('neck')
 	end
 
 	if not buffactive['Protect'] then
@@ -1705,26 +1701,22 @@ function customize_melee_set(meleeSet)
 
 	if state.Warp.current == 'on' then
 		equip(sets.Warp)
-		disable('ring1')
-		disable('ring2')
+		disable('ring1','ring2')
 	else
-		enable('ring1')
-		enable('ring2')
+		enable('ring1','ring2')
 	end
 
 	if state.Weapon.current == 'on' then
-		disable('Main')
-		disable('Sub')
+		disable('main','sub')
 	else
-		enable('Main')
-		enable('Sub')
+		enable('main','sub')
 	end
 
 	if state.Neck.current == 'on' then
 		equip(sets.Neck)
-		disable('Neck')
+		disable('neck')
 	else
-		enable('Neck')
+		enable('neck')
 	end
 
 	if state.EngagedDT.current == 'on' then
