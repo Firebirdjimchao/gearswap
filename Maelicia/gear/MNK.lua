@@ -1,13 +1,27 @@
+-- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
+function job_setup()
+	state.Buff.Footwork = buffactive.Footwork or false
+	state.Buff.Impetus = buffactive.Impetus or false
+
+	state.FootworkWS = M(false, 'Footwork on WS')
+	state.CP = M(false, "Capacity Points Mode")
+	state.Warp = M(false, "Warp Mode")
+	state.Weapon = M(false, "Weapon Lock")
+	state.Neck = M(false, "Neck Mode")
+	state.TreasureMode = M(false, 'TH')
+	state.EngagedDT = M(false, 'Engaged Damage Taken Mode')
+	state.EnmityMode = M{['description']='Enmity Mode', 'None', 'Down', 'Up'}
+
+	info.impetus_hit_count = 0
+	windower.raw_register_event('action', on_action_for_impetus)
+end
+
 function user_setup()
 	state.OffenseMode:options('Normal', 'MidAcc', 'Acc')
 	state.WeaponskillMode:options('Normal', 'MidAcc', 'Acc')
 	state.HybridMode:options('Normal', 'Mpaca', 'PDT', 'Counter')
 	state.PhysicalDefenseMode:options('Mpaca', 'PDT', 'HP')
 	state.IdleMode:options('CP', 'Normal', 'Regen')
-
-	state.EnmityMode = M{['description']='Enmity Mode', 'None', 'Down', 'Up'}
-	state.MalignanceMode = M(false, 'Malignance')
-	state.TreasureMode = M(false, 'TH')
 
 	gear.Segomo_dex_da = { name="Segomo's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}}
 	gear.Segomo_vit_wsd = { name="Segomo's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%','Damage taken-5%',}}
@@ -34,9 +48,14 @@ function user_setup()
 	
 	-- "CTRL: ^ ALT: ! Windows Key: @ Apps Key: #"
 
-	send_command('bind ^- gs c cycle enmitymode')
-	send_command('bind ^= gs c toggle TreasureMode; input /echo --- TreasureMode ---')
-	send_command('bind != gs c toggle MalignanceMode; input /echo --- MalignanceMode ---')
+	send_command("bind @p gs equip sets.TaeonPhalanx; input /echo --- Phalanx set on ---") -- WindowKey'P'
+
+	send_command('bind @c gs c toggle CP') --WindowKey'C'
+	send_command('bind @e gs c toggle EngagedDT') --Windowkey'E'
+	send_command('bind @h gs c toggle TreasureMode') --Windowkey'H'
+	send_command('bind @n gs c toggle Neck') --Windowkey'N'
+	send_command('bind @r gs c toggle Warp') --Windowkey'R'
+	send_command('bind @w gs c toggle Weapon') --Windowkey'W'
 	
 	select_default_macro_book()
 
@@ -45,9 +64,14 @@ end
 
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
-	send_command('unbind ^-')
-	send_command('unbind ^=')
-	send_command('unbind !=')
+	send_command('unbind @p')
+
+	send_command('unbind @c')
+	send_command('unbind @e')
+	send_command('unbind @h')
+	send_command('unbind @n')
+	send_command('unbind @r')
+	send_command('unbind @w')
 end
 
 -- Define sets and vars used by this job file.
@@ -718,12 +742,28 @@ function job_buff_change(buff, gain)
 	end
 
 	if buff == "Boost" then
-		equip(sets.buff.Boost)
+		if gain then
+			equip(sets.buff.Boost)
+			disable('waist')
+		else
+			enable('waist')
+		end
 	end
 
 	-- Update gear if any of the above changed
 	if buff == "Hundred Fists" or buff == "Impetus" or buff == "Footwork" or buff == "Boost" or buff == 'Counterstance' then
 		handle_equipping_gear(player.status)
+	end
+
+	if buff == "doom" then
+		if gain then
+			equip(sets.buff.Doom)
+			send_command('@input /echo ==== Doomed. ====')
+			disable()
+		else
+			enable()
+			handle_equipping_gear(player.status)
+		end
 	end
 end
 
@@ -752,49 +792,81 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function customize_idle_set(idleSet)
-	if player.hpp < 75 then
-		idleSet = set_combine(idleSet, sets.ExtraRegen)
+	if state.CP.current == 'on' then
+		equip(sets.CP)
+		disable('back')
+	else
+		enable('back')
 	end
+
+	if state.Warp.current == 'on' then
+		equip(sets.Warp)
+		disable('ring1','ring2')
+	else
+		enable('ring1','ring2')
+	end
+
+	if state.Weapon.current == 'on' then
+		disable('main','sub')
+	else
+		enable('main','sub')
+	end
+
+	if state.Neck.current == 'on' then
+		equip(sets.Neck)
+		disable('neck')
+	else
+		enable('neck')
+	end
+
 	if not buffactive['Protect'] then
 		idleSet = set_combine(idleSet, sets.noprotect)
 	end
-	if buffactive['Boost'] then
-		idleSet = set_combine(idleSet, sets.buff.Boost)
-	end
-	if buffactive['Doom'] then
-		idleSet = set_combine(idleSet, sets.buff.Doom)
-	end
+
 	return idleSet
 end
 
--- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
 	if state.EnmityMode.value == 'Down' then
 		meleeSet = set_combine(meleeSet, sets.EnmityDown)
 	elseif state.EnmityMode.value == 'Up' then
 		meleeSet = set_combine(meleeSet, sets.EnmityUp)
 	end
-	if state.MalignanceMode.value ~= false then
-		meleeSet = set_combine(meleeSet, sets.Malignance)
+
+	if state.CP.current == 'on' then
+		equip(sets.CP)
+		disable('back')
+	else
+		enable('back')
 	end
-	if state.TreasureMode.value ~= false then
+
+	if state.Warp.current == 'on' then
+		equip(sets.Warp)
+		disable('ring1','ring2')
+	else
+		enable('ring1','ring2')
+	end
+
+	if state.Weapon.current == 'on' then
+		disable('main','sub')
+	else
+		enable('main','sub')
+	end
+
+	if state.Neck.current == 'on' then
+		equip(sets.Neck)
+		disable('neck')
+	else
+		enable('neck')
+	end
+
+	if state.EngagedDT.current == 'on' then
+		meleeSet = set_combine(meleeSet, sets.engaged.Mpaca)
+	end
+
+	if state.TreasureMode.current == 'on' then
 		meleeSet = set_combine(meleeSet, sets.sharedTH)
 	end
-	if buffactive['Boost'] then
-		meleeSet = set_combine(meleeSet, sets.buff.Boost)
-	end
-	if buffactive['Doom'] then
-		meleeSet = set_combine(meleeSet, sets.buff.Doom)
-	end
-	return meleeSet
-end
 
-function customize_defense_set(defenseSet)		
-	if buffactive['Boost'] then
-		defenseSet = set_combine(defenseSet, sets.buff.Boost)
-	end
-	if buffactive['Doom'] then
-		defenseSet = set_combine(defenseSet, sets.buff.Doom)
-	end
-	return defenseSet
+	return meleeSet
 end
