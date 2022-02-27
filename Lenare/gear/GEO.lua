@@ -264,7 +264,7 @@ function init_gear_sets()
 	sets.midcast.FastRecast = set_combine(sets.precast.FC,{
 		-- 8% Haste
 		head="Blistering Sallet +1",
-		neck="Twilight Torque",
+		neck="Loricate Torque +1",
 		-- 3% Haste
 		body="Bagua Tunic +3",
 		-- 3% Haste
@@ -732,7 +732,7 @@ function init_gear_sets()
 		sub="Ammurapi Shield",
 		range=gear.GeoBell,
 		head="Befouled Crown",
-		neck="Twilight Torque",
+		neck="Loricate Torque +1",
 		ear1="Ethereal Earring",
 		ear2="Novia Earring",
 		body="Jhakri Robe +2",
@@ -761,7 +761,7 @@ function init_gear_sets()
 		-- 3%
 		head="Blistering Sallet +1",
 		-- 5%
-		neck="Twilight Torque",
+		neck="Loricate Torque +1",
 		-- 10%
 		body="Shamash Robe",
 		-- 1%
@@ -787,7 +787,7 @@ function init_gear_sets()
 		-- 5
 		head="Geo. Galero +2",
 		-- 5%
-		neck="Twilight Torque",
+		neck="Loricate Torque +1",
 		-- 3%
 		ear2="Etiolation Earring",
 		-- 6

@@ -627,7 +627,7 @@ function init_gear_sets()
 		ammo="Crepuscular Pebble",
 		--ammo="Homiliary",
 		head="Malignance Chapeau",
-		neck="Twilight Torque",
+		neck="Loricate Torque +1",
 		ear1="Odnowa Earring +1",
 		ear2="Ethereal Earring",
 		body="Jhakri Robe +2",
@@ -652,7 +652,7 @@ function init_gear_sets()
 		-- DT 6%
 		head="Malignance Chapeau",
 		-- DT 5%
-		neck="Twilight Torque",
+		neck="Loricate Torque +1",
 		-- MDT 2%
 		ear1="Odnowa earring +1",
 		ear2="Ethereal earring",

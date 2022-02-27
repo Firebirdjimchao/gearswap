@@ -761,7 +761,7 @@ function init_gear_sets()
 		sub="Ammurapi Shield",
 		ammo="Homiliary",
 		head="Viti. Chapeau +3",
-		neck="Twilight Torque",
+		neck="Loricate Torque +1",
 		ear1="Ethereal Earring",
 		ear2="Novia Earring",
 		body="Jhakri Robe +2",
@@ -797,7 +797,7 @@ function init_gear_sets()
 		ammo="Crepuscular Pebble",
 		head="Malignance Chapeau",
 		-- 5%
-		neck="Twilight Torque",
+		neck="Loricate Torque +1",
 		-- 6%
 		body="Ayanmo Corazza +2",
 		-- 5%
@@ -824,7 +824,7 @@ function init_gear_sets()
 		ammo="Crepuscular Pebble",
 		head="Malignance Chapeau",
 		-- 5%
-		neck="Twilight Torque",
+		neck="Loricate Torque +1",
 		-- 3%
 		ear2="Etiolation Earring",
 		-- 7
@@ -955,7 +955,7 @@ function init_gear_sets()
 
 	sets.engaged.DefenseBase = {
 		head="Malignance Chapeau",
-		neck="Twilight Torque",
+		neck="Loricate Torque +1",
 		body="Ayanmo Corazza +2",
 		hands="Malignance Gloves",
 		back="Moonbeam Cape",

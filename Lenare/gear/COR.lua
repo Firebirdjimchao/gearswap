@@ -301,7 +301,7 @@ function init_gear_sets()
 	sets.idle = {
 		ammo=gear.RAbullet,
 		head="Malignance Chapeau",
-		neck="Twilight Torque",
+		neck="Loricate Torque +1",
 		ear1="Novia Earring",
 		ear2="Etiolation Earring",
 		body="Meg. Cuirie +2",
@@ -390,7 +390,7 @@ function init_gear_sets()
 
 	sets.engaged.PDT = set_combine(sets.engaged.Evasion,{
 		head="Malignance Chapeau",
-		neck="Twilight Torque",
+		neck="Loricate Torque +1",
 		body="Meg. Cuirie +2",
 		hands="Malignance Gloves",
 		ring1="Dark Ring",
@@ -408,7 +408,7 @@ function init_gear_sets()
 
 	sets.engaged.MDT = set_combine(sets.engaged.Evasion,{
 		head="Malignance Chapeau",
-		neck="Twilight Torque",
+		neck="Loricate Torque +1",
 		ear2="Etiolation Earring",
 		body="Meg. Cuirie +2",
 		hands="Malignance Gloves",

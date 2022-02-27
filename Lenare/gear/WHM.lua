@@ -195,8 +195,8 @@ function init_gear_sets()
 		ammo="Crepuscular Pebble",
 		-- 8 MDB 5% MDT
 		head="Inyanga Tiara +2",
-		-- 5% DT
-		neck="Twilight Torque",
+		-- 6% DT
+		neck="Loricate Torque +1",
 		-- 3% MDT
 		ear2="Etiolation Earring",
 		-- 11 MDB 7% MDT
@@ -514,7 +514,7 @@ function init_gear_sets()
 		sub="Ammurapi Shield",
 		ammo="Homiliary",
 		head="Befouled Crown",
-		neck="Twilight Torque",
+		neck="Loricate Torque +1",
 		ear1="Ethereal Earring",
 		ear2="Etiolation Earring",
 		body="Shamash Robe",
@@ -539,7 +539,7 @@ function init_gear_sets()
 		-- 3%
 		head="Blistering Sallet +1",
 		-- 5%
-		neck="Twilight Torque",
+		neck="Loricate Torque +1",
 		ear1="Ethereal Earring",
 		ear2="Etiolation Earring",
 		-- 6%
@@ -566,7 +566,7 @@ function init_gear_sets()
 		-- 5% 8
 		head="Inyanga Tiara +2",
 		-- 5%
-		neck="Twilight Torque",
+		neck="Loricate Torque +1",
 		ear1="Ethereal Earring",
 		-- 3%
 		ear2="Etiolation Earring",

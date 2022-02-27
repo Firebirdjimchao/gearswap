@@ -475,7 +475,7 @@ function init_gear_sets()
 	sets.idle = {
 		ammo="Crepuscular Pebble",
 		head="Malignance Chapeau",
-		neck="Twilight Torque",
+		neck="Loricate Torque +1",
 		ear1="Novia Earring",
 		ear2="Etiolation Earring",
 		body="Meg. Cuirie +2",
@@ -611,7 +611,7 @@ function init_gear_sets()
 	}
 
 	sets.engaged.PDT = set_combine(sets.engaged.Evasion,sets.engaged.DT,{
-		neck="Twilight Torque",
+		neck="Loricate Torque +1",
 	})
 	sets.engaged.MidAcc.PDT = set_combine(sets.engaged.PDT,{
 	})
@@ -638,7 +638,7 @@ function init_gear_sets()
 		-- DT 6%
 		head="Malignance Chapeau",
 		-- DT 5%
-		neck="Twilight Torque",
+		neck="Loricate Torque +1",
 		ear1="Sherida Earring",
 		-- MDT 3%
 		ear2="Etiolation Earring",
