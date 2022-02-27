@@ -867,7 +867,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 		equip(sets.Learning)
 	end
 
-	if state.TreasureMode.value ~= false and spell.target.type ~= 'SELF' then
+	if state.TreasureMode.value ~= false and spell.target.type ~= 'SELF' and spell.target.type ~= 'PLAYER' then
 		equip(sets.midcast['Blue Magic'].Magical.TH)
 	end
 end
