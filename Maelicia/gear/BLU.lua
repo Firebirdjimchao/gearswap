@@ -756,6 +756,8 @@ function init_gear_sets()
 		feet=gear.Carmine_feet_hq_B,
 	}
 
+	sets.engaged.TH = set_combine(sets.engaged,sets.sharedTH,{
+	})
 	sets.engaged.DT = set_combine(sets.engaged,sets.Malignance,{
 	})
 
@@ -1045,7 +1047,7 @@ function customize_melee_set(meleeSet)
 	end
 
 	if state.TreasureMode.current == 'on' then
-		meleeSet = set_combine(meleeSet, sets.midcast['Blue Magic'].Magical.TH)
+		meleeSet = set_combine(meleeSet, sets.engaged.TH)
 	end
 
 	return meleeSet
