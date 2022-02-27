@@ -213,6 +213,14 @@ function init_gear_sets()
 	sets.EnmityDown = {
 		ear2="Schere Earring",
 	}
+
+	sets.Sakpata = {
+		head="Sakpata's Helm",
+		body="Sakpata's Breastplate",
+		hands="Sakpata's Gauntlets",
+		legs="Sakpata's Cuisses",
+		feet="Sakpata's Leggings",
+	}
 			 
 	--------------------------------------
 	-- Precast sets
@@ -946,7 +954,9 @@ function init_gear_sets()
 	-- Gear: 36 STP
 	sets.engaged = set_combine(sets.idle,{
 		-- 3 STP
-		ammo="Ginsen",
+		--ammo="Ginsen",
+		-- 3 STP
+		ammo="Coiste Bodhar",
 		-- 6 STP
 		head="Flam. Zucchetto +2",
 		-- 3 STP
@@ -989,6 +999,7 @@ function init_gear_sets()
 	})
 	-- Use Utu Grip
 	sets.engaged.AccHigh = set_combine(sets.engaged.AccLow, {
+		ammo="Seeth. Bomblet +1",
 		--head="Pummeler's Mask +3",
 		--body="Pumm. Lorica +3",
 		ear1="Telos Earring",
@@ -1083,6 +1094,9 @@ function init_gear_sets()
 		ear1="Suppanomimi",
 		waist="Reiki Yotai",
 	})
+
+	sets.engaged.DT = set_combine(sets.Sakpata,{
+	})
 	
 	-- Total: 
 	-- 50% DT 
@@ -1115,7 +1129,7 @@ function init_gear_sets()
 		-- 4% Haste
 		hands="Sakpata's Gauntlets",
 		-- 10% DT
-		ring2="Defending Ring",
+		--ring2="Defending Ring",
 		-- 10% PDT
 		back=gear.Cichol_AccDA,
 		-- 8% Haste
@@ -1203,14 +1217,6 @@ function init_gear_sets()
 		hands="Flam. Manopolas +2",
 		legs="Jokushu Haidate",
 	})
-
-	sets.Sakpata = {
-		head="Sakpata's Helm",
-		body="Sakpata's Breastplate",
-		hands="Sakpata's Gauntlets",
-		legs="Sakpata's Cuisses",
-		feet="Sakpata's Leggings",
-	}
 			 
 	--------------------------------------
 	-- Custom buff sets
@@ -1366,6 +1372,12 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function customize_idle_set(idleSet)
+	if state.EnmityMode.value == 'Down' then
+		idleSet = set_combine(idleSet, sets.EnmityDown)
+	elseif state.EnmityMode.value == 'Up' then
+		idleSet = set_combine(idleSet, sets.EnmityUp)
+	end
+
 	if state.CP.current == 'on' then
 		equip(sets.CP)
 		disable('back')
