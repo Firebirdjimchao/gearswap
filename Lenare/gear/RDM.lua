@@ -1,3 +1,16 @@
+-- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
+function job_setup()
+	state.Buff.Saboteur = buffactive.saboteur or false
+
+	state.CP = M(false, "Capacity Points Mode")
+	state.Warp = M(false, "Warp Mode")
+	state.Weapon = M(false, "Weapon Lock")
+	state.Neck = M(false, "Neck Mode")
+	state.TreasureMode = M(false, 'TH')
+	state.EngagedDT = M(false, 'Engaged Damage Taken Mode')
+end
+
+
 function user_setup()
 
 	state.OffenseMode:options('None', 'Normal', 'Acc', 'enspell','enspellDW','enspell.Acc','enspellDW.Acc')
@@ -7,7 +20,7 @@ function user_setup()
 	state.IdleMode:options('Normal', 'PDT', 'MDT')
 
 	state.MagicBurst = M(false, 'Magic Burst')
-	state.WeaponLock = M(false, 'Weapon Lock')
+	state.RangeLock = M(false, 'Range Lock')
 
 	gear.sucellos_mab = { name="Sucellos's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}}
 	gear.sucellos_mnd = { name="Sucellos's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10',}}
@@ -39,8 +52,15 @@ function user_setup()
 	-- "CTRL: ^ ALT: ! Windows Key: @ Apps Key: #"
 
 	-- Additional local binds
-	send_command('bind @` gs c cycle MagicBurst')
-	send_command('bind !` gs c toggle WeaponLock; input /echo --- Weapons Lock ---')
+	send_command('bind @` gs c toggle MagicBurst') --WindowKey'`'
+	send_command('bind @b gs c toggle RangeLock') --WindowKey'B' for Bow
+
+	send_command('bind @c gs c toggle CP') --WindowKey'C'
+	send_command('bind @e gs c toggle EngagedDT') --Windowkey'E'
+	send_command('bind @h gs c toggle TreasureMode') --Windowkey'H'
+	send_command('bind @n gs c toggle Neck') --Windowkey'N'
+	send_command('bind @r gs c toggle Warp') --Windowkey'R'
+	send_command('bind @w gs c toggle Weapon') --Windowkey'W'
 
 	send_command('alias rdmfulldebuff input /ma "Inundation" <t>;wait 5;input /ma "Distract III" <t>;wait 5;input /ma "Frazzle III" <t>;wait 5;input /ma "Dia III" <t>;wait 5;input /ma "Paralyze II" <t>;wait 5;input /ma "Slow II" <t>;wait 5;input /ma "Blind II" <t>;wait 5;input /ma "Poison II" <t>;wait 5;input /ma "Addle II" <t>;')
 	send_command('alias rdmdddebuff input /ma "Inundation" <t>;wait 5;input /ma "Distract III" <t>;wait 5;input /ma "Dia III" <t>;wait 5;input /ma "Poison II" <t>;')
@@ -54,7 +74,14 @@ end
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
 	send_command('unbind @`')
-	send_command('unbind !`')
+	send_command('unbind @b')
+
+	send_command('unbind @c')
+	send_command('unbind @e')
+	send_command('unbind @h')
+	send_command('unbind @n')
+	send_command('unbind @r')
+	send_command('unbind @w')
 end
 
 -- Define sets and vars used by this job file.
@@ -62,6 +89,20 @@ function init_gear_sets()
 	--------------------------------------
 	-- Start defining the sets
 	--------------------------------------
+
+	-- set used to lock Ullr in conjunction with RangeLock
+	sets.EnforceMACCResistant =  {
+		range="Ullr",
+		ammo=empty,
+	}
+
+	sets.Malignance = {
+		head="Malignance Chapeau",
+		--body="Malignance Tabard",
+		hands="Malignance Gloves",
+		--legs="Malignance Tights",
+		feet="Malignance Boots",
+	}
 	
 	-- Precast Sets
 	
@@ -130,7 +171,9 @@ function init_gear_sets()
 	})
 	
 	sets.precast.FC.Impact = set_combine(sets.precast.FC, {head=empty,body="Twilight Cloak"})
-	
+
+	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {main="Daybreak"})
+
 	sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
 		waist="Siegel Sash"
 	})
@@ -215,7 +258,6 @@ function init_gear_sets()
 	});
 	
 	sets.midcast.MACC = {
-		--main=gear.MainStaff,
 		main=gear.MaccStaff,
 		sub="Enki Strap",
 		ammo=empty,
@@ -463,8 +505,8 @@ function init_gear_sets()
 	-- 60 gear
 	-- 536 total
 	sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast.MACC,{
-		--main=gear.MainStaff,
-		--sub="Enki Strap",
+		main=gear.MaccStaff,
+		sub="Enki Strap",
 		range="Ullr",
 		ammo=empty,
 		-- effect +10
@@ -566,6 +608,8 @@ function init_gear_sets()
 		waist="Luminary Sash",
 		feet="Vitiation Boots +3",
 	})
+	sets.midcast.enfeebSkillCap.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, sets.midcast.enfeebSkillCap, {
+	})
 
 	-- Static value (use duration+ gear)
 	sets.midcast['Dia'] = set_combine(sets.midcast.enfeebStatic, {
@@ -584,6 +628,8 @@ function init_gear_sets()
 	})
 
 	sets.midcast['Dispel*'] = set_combine(sets.midcast.MACC, {
+		range="Ullr",
+		ammo=empty,
 		neck="Dls. Torque +1",
 	})
 
@@ -592,17 +638,23 @@ function init_gear_sets()
 	-- Highest value at +75 MND compared to enemy: About 29.2%
 	sets.midcast['Slow'] = set_combine(sets.midcast.enfeebMND, {
 	})
+	sets.midcast['Slow'].Resistant = set_combine(sets.midcast.enfeebMND.Resistant, sets.midcast['Slow'], {
+	})
 	-- MND potency mod
 	-- Lowest value at -75 MND compared to enemy: About 12.5%
 	-- Highest value at +75 MND compared to enemy: About 35.1%
 	-- *When merit level is increased by 1, the effect is increased by about 1%.
 	sets.midcast['Slow II'] = set_combine(sets.midcast.enfeebMND, {
 	})
+	sets.midcast['Slow II'].Resistant = set_combine(sets.midcast.enfeebMND.Resistant, sets.midcast['Slow II'], {
+	})
 
 	-- MND potency mod
 	-- Lowest value at -40 MND compared to enemy: 5%
 	-- Highest value at +40 MND compared to enemy: 25%
 	sets.midcast['Paralyze'] = set_combine(sets.midcast.enfeebMND, {
+	})
+	sets.midcast['Paralyze'].Resistant = set_combine(sets.midcast.enfeebMND.Resistant, sets.midcast['Paralyze'], {
 	})
 	
 	-- MND potency mod
@@ -611,21 +663,29 @@ function init_gear_sets()
 	-- *When merit level is increased by 1, the effect is increased by 1%.
 	sets.midcast['Paralyze II'] = set_combine(sets.midcast.enfeebMND, {
 	})
+	sets.midcast['Paralyze II'].Resistant = set_combine(sets.midcast.enfeebMND.Resistant, sets.midcast['Paralyze II'], {
+	})
 
 	-- MND potency mod
 	-- Magic Accuracy Penalty = min(floor(dMND/5), 20) + 20 (caps at -40 macc)
 	sets.midcast['Addle'] = set_combine(sets.midcast.enfeebMND, {
+	})
+	sets.midcast['Addle'].Resistant = set_combine(sets.midcast.enfeebMND.Resistant, sets.midcast['Addle'], {
 	})
 
 	-- MND potency mod
 	-- Magic Accuracy Penalty = min(floor(dMND/5), 20) + 50 (caps at -70 macc)
 	sets.midcast['Addle II'] = set_combine(sets.midcast.enfeebMND, {
 	})
+	sets.midcast['Addle II'].Resistant = set_combine(sets.midcast.enfeebMND.Resistant, sets.midcast['Addle II'], {
+	})
 
 	-- INT potency mod
 	-- Lowest value at -80 player INT compared to enemy INT: 5
 	-- Highest value at +120 player INT compared to enemy INT: 50
 	sets.midcast['Blind'] = set_combine(sets.midcast.enfeebINT, {
+	})
+	sets.midcast['Blind'].Resistant = set_combine(sets.midcast.enfeebINT.Resistant, sets.midcast['Blind'], {
 	})
 	
 	-- INT potency mod
@@ -638,20 +698,28 @@ function init_gear_sets()
 	-- 5 Merits: Potency = Floor(3/8)(dINT +130.7); potency caps at 19 and 94.
 	sets.midcast['Blind II'] = set_combine(sets.midcast.enfeebINT, {
 	})
+	sets.midcast['Blind II'].Resistant = set_combine(sets.midcast.enfeebINT.Resistant, sets.midcast['Blind II'], {
+	})
 
 	-- Skill mod
 	-- 500 skill cap
 	sets.midcast['Poison'] = set_combine(sets.midcast.enfeebSkillCap, {
+	})
+	sets.midcast['Poison'].Resistant = set_combine(sets.midcast.enfeebSkillCap.Resistant, sets.midcast['Poison'], {
 	})
 
 	-- Skill mod
 	-- No known cap
 	sets.midcast['Poison II'] = set_combine(sets.midcast.enfeebFullSkill, {
 	})
+	sets.midcast['Poison II'].Resistant = set_combine(sets.midcast.enfeebFullSkill.Resistant, sets.midcast['Poison II'], {
+	})
 
 	-- Skill mod
 	-- Max 3 damage/tick
 	sets.midcast['Poisonga'] = set_combine(sets.midcast.enfeebSkillCap, {
+	})
+	sets.midcast['Poisonga'].Resistant = set_combine(sets.midcast.enfeebSkillCap.Resistant, sets.midcast['Poisonga'], {
 	})
 
 	-- Distract sets --
@@ -661,9 +729,13 @@ function init_gear_sets()
 	sets.midcast['Distract'] = set_combine(sets.midcast['Enfeebling Magic'], {
 		head="Atro. Chapeau +3",
 	})
+	sets.midcast['Distract'].Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, sets.midcast['Distract'], {
+	})
 	-- Distract II (caps 350 skill for -40 eva, -50 eva cap with MND)
 	sets.midcast['Distract II'] = set_combine(sets.midcast['Enfeebling Magic'], {
 		head="Atro. Chapeau +3",
+	})
+	sets.midcast['Distract II'].Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, sets.midcast['Distract II'], {
 	})
 	-- Distract III (caps 610 skill for -120 eva, -130 eva cap with MND)
 	-- 476 Initial
@@ -671,6 +743,8 @@ function init_gear_sets()
 	-- 563 skill total
 	sets.midcast['Distract III'] = set_combine(sets.midcast['Enfeebling Magic'], {
 		ring1="Stikini Ring",
+	})
+	sets.midcast['Distract III'].Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, sets.midcast['Distract III'], {
 	})
 	-----------------------
 
@@ -681,9 +755,13 @@ function init_gear_sets()
 	sets.midcast['Frazzle'] = set_combine(sets.midcast['Enfeebling Magic'], {
 		head="Atro. Chapeau +3",
 	})
+	sets.midcast['Frazzle'].Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, sets.midcast['Frazzle'], {
+	})
 	-- Frazzle II (caps 365 skill for -40 meva, -50 meva cap with MND)
 	sets.midcast['Frazzle II'] = set_combine(sets.midcast['Enfeebling Magic'], {
 		head="Atro. Chapeau +3",
+	})
+	sets.midcast['Frazzle II'].Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, sets.midcast['Frazzle II'], {
 	})
 	-- Frazzle III (caps 625 skill for -120 meva, -130 meva cap with MND)
 	-- 476 Initial
@@ -692,7 +770,15 @@ function init_gear_sets()
 	sets.midcast['Frazzle III'] = set_combine(sets.midcast['Enfeebling Magic'], {
 		ring1="Stikini Ring",
 	})
+	sets.midcast['Frazzle III'].Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, sets.midcast['Frazzle III'], {
+	})
 	-----------------------
+
+	sets.midcast['Dispelga'] =  set_combine(sets.midcast.MACC,{
+		main="Daybreak",
+		range="Ullr",
+		neck="Dls. Torque +1",
+	})
 	
 	sets.midcast['Elemental Magic'] = set_combine(sets.midcast.MAB,{
 	})
@@ -932,7 +1018,7 @@ function init_gear_sets()
 	})
 
 	sets.engaged.enspell = set_combine(sets.engaged,{
-		range="Ullr",
+		--range="Ullr",
 		head="Umuthi Hat",
 		neck="Sanctity Necklace",
 		body="Ayanmo Corazza +2",
@@ -953,17 +1039,13 @@ function init_gear_sets()
 	sets.engaged.enspellDW.Acc = set_combine(sets.engaged.Acc, sets.engaged.enspell,sets.engaged.enspellDW,{
 	})
 
-	sets.engaged.DefenseBase = {
-		head="Malignance Chapeau",
+	sets.engaged.DefenseBase = set_combine(sets.Malignance,{
 		neck="Loricate Torque +1",
 		body="Ayanmo Corazza +2",
-		hands="Malignance Gloves",
-		back="Moonbeam Cape",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		legs="Aya. Cosciales +2",
-		feet="Malignance Boots",
-	}
+	})
 
 	sets.engaged.Defense = set_combine(sets.engaged,sets.engaged.DefenseBase,{
 	})
@@ -978,6 +1060,13 @@ function init_gear_sets()
 	sets.engaged.Defense.enspellDW.Acc = set_combine(sets.engaged.enspellDW.Acc,sets.engaged.DefenseBase,{
 	})
 
+	-- not combining these with any specific engaged sets so it can 
+	-- automatically combine with whichever current engaged set you are using
+	sets.engaged.TH = set_combine(sets.sharedTH,{
+	})
+	sets.engaged.DT = set_combine(sets.Malignance,{
+	})
+
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -985,10 +1074,28 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_state_change(stateField, newValue, oldValue)
-	if state.WeaponLock.value == true then
+	if state.Weapon.value == true then
 		disable('main','sub','range','ammo')
 	else
 		enable('main','sub','range','ammo')
+	end
+
+	if state.RangeLock.value == true then
+		equip(sets.EnforceMACCResistant)
+		disable('range','ammo')
+	elseif state.Weapon.value ~= true then
+		enable('range','ammo')
+	end
+end
+
+-- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
+-- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
+function job_precast(spell, action, spellMap, eventArgs)
+	if spell.type == 'WeaponSkill' then
+		if (spell.target.model_size + spell.range * 1.642276421172564) < spell.target.distance then	
+			add_to_chat(7,"--- Target "..spell.target.type.." ["..player.target.name.."] out of range of ["..spell.name.."] [ Distance: "..spell.target.distance.."] ---")
+			cancel_spell()
+		end
 	end
 end
 
@@ -997,6 +1104,10 @@ end
 function job_post_midcast(spell, action, spellMap, eventArgs)
 	if spell.skill == 'Enfeebling Magic' and state.Buff.Saboteur then
 		equip(sets.buff.Saboteur)
+
+		if spell == 'Dispel*' or state.CastingMode == 'Resistant' then
+			equip(sets.EnforceMACCResistant)
+		end
 	elseif spell.skill == 'Enhancing Magic' then
 		if not EnhancingDurationSkip:contains(spell.english) then
 			equip(sets.midcast.EnhancingDuration)
@@ -1010,40 +1121,121 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 		equip(sets.midcast.CursnaSelf)
 	elseif spellMap == 'Cure' and spell.target.type == 'SELF' then
 		equip(sets.midcast.CureSelf)
-	elseif spell.skill == 'Elemental Magic' and state.MagicBurst.value then
-		equip(sets.magic_burst)
+	elseif spell.skill == 'Elemental Magic' then
+		if state.MagicBurst.value then
+			equip(sets.magic_burst)
+		end 
+
+		if state.CastingMode == 'Resistant' then
+			equip(sets.EnforceMACCResistant)
+		end
 	end
+
+	if state.TreasureMode.value ~= false and spell.target.type ~= 'SELF' and spell.target.type ~= 'PLAYER' then
+		equip(sets.sharedTH)
+	end
+end
+
+-------------------------------------------------------------------------------------------------------------------
+-- Job-specific hooks for non-casting events.
+-------------------------------------------------------------------------------------------------------------------
+
+-- Called when a player gains or loses a buff.
+-- buff == buff gained or lost
+-- gain == true if the buff was gained, false if it was lost.
+function job_buff_change(buff, gain)
+	if buff == "doom" then
+		if gain then
+			equip(sets.buff.Doom)
+			send_command('@input /echo ==== Doomed. ====')
+			disable()
+		else
+			enable()
+			handle_equipping_gear(player.status)
+		end
+	end
+
 end
 
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements standard library decisions.
 -------------------------------------------------------------------------------------------------------------------
 
+-- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-	if pet.isvalid then
-		idleSet = set_combine(idleSet, sets.idle.Pet)
-	elseif not buffactive['Protect'] then
-		idleSet = set_combine(idleSet, sets.noprotect)
-	elseif not pet.isvalid and (player.mpp < 51) then
+	if state.CP.current == 'on' then
+		equip(sets.CP)
+		disable('back')
+	else
+		enable('back')
+	end
+
+	if state.Warp.current == 'on' then
+		equip(sets.Warp)
+		disable('ring1','ring2')
+	else
+		enable('ring1','ring2')
+	end
+
+	if state.Weapon.current == 'on' then
+		disable('main','sub')
+	else
+		enable('main','sub')
+	end
+
+	if state.Neck.current == 'on' then
+		equip(sets.Neck)
+		disable('neck')
+	else
+		enable('neck')
+	end
+
+	if player.mpp < 51 then
 		idleSet = set_combine(idleSet, sets.latent_refresh)
 	end
-	if buffactive['Doom'] then
-		idleSet = set_combine(idleSet, sets.buff.Doom)
+
+	if not buffactive['Protect'] then
+		idleSet = set_combine(idleSet, sets.noprotect)
 	end
+
 	return idleSet
 end
 
--- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-	if buffactive['Doom'] then
-		meleeSet = set_combine(meleeSet, sets.buff.Doom)
+	if state.CP.current == 'on' then
+		equip(sets.CP)
+		disable('back')
+	else
+		enable('back')
 	end
-	return meleeSet
-end
 
-function customize_defense_set(defenseSet)    
-	if buffactive['Doom'] then
-		defenseSet = set_combine(defenseSet, sets.buff.Doom)
+	if state.Warp.current == 'on' then
+		equip(sets.Warp)
+		disable('ring1','ring2')
+	else
+		enable('ring1','ring2')
 	end
-	return defenseSet
+
+	if state.Weapon.current == 'on' then
+		disable('main','sub')
+	else
+		enable('main','sub')
+	end
+
+	if state.Neck.current == 'on' then
+		equip(sets.Neck)
+		disable('neck')
+	else
+		enable('neck')
+	end
+
+	if state.EngagedDT.current == 'on' then
+		meleeSet = set_combine(meleeSet, sets.engaged.DT)
+	end
+
+	if state.TreasureMode.current == 'on' then
+		meleeSet = set_combine(meleeSet, sets.engaged.TH)
+	end
+
+	return meleeSet
 end
