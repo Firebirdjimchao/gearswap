@@ -14,6 +14,7 @@ function job_setup()
 	state.EngagedDT = M(false, 'Engaged Damage Taken Mode')
 	state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi'}
 	state.EnmityMode = M{['description']='Enmity Mode', 'None', 'Down', 'Up'}
+	state.VimTorque = M(false,'Vim Torque Mode')
 
 end
 
@@ -59,6 +60,7 @@ function user_setup()
 	send_command('bind @` gs c cycle HasteMode') --WindowKey'`'
 	send_command('bind @= gs c cycle enmitymode') --WindowKey'='
 	send_command('bind @t gs c toggle Twilight') --WindowKey'T'
+	send_command('bind @v gs c toggle VimTorque') --WindowKey'V'
 
 	send_command('bind @c gs c toggle CP') --WindowKey'C'
 	send_command('bind @e gs c toggle EngagedDT') --Windowkey'E'
@@ -74,6 +76,7 @@ function file_unload()
 	send_command('unbind @`')
 	send_command('unbind @=')
 	send_command('unbind @t')
+	send_command('unbind @v')
 
 	send_command('unbind @c')
 	send_command('unbind @e')
@@ -220,6 +223,10 @@ function init_gear_sets()
 		hands="Sakpata's Gauntlets",
 		legs="Sakpata's Cuisses",
 		feet="Sakpata's Leggings",
+	}
+
+	sets.VimTorque = {
+		neck="Vim Torque +1",
 	}
 			 
 	--------------------------------------
@@ -1238,9 +1245,6 @@ function init_gear_sets()
 	
 	-- Mantle to use with Upheaval on Darksday
 	sets.Upheaval_shadow = {back="Shadow Mantle"}
-
-	sets.slept = {neck="Vim Torque +1"}
-
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1413,6 +1417,12 @@ function customize_idle_set(idleSet)
 		idleSet = set_combine(idleSet, sets.noprotect)
 	end
 
+	if player.hp > 200 then
+		if state.VimTorque.current == 'on' then
+			idleSet = set_combine(idleSet, sets.VimTorque)
+		end
+	end
+
 	if state.Twilight.current == 'on' then
 		equip(sets.Twilight)
 		disable('head','body')
@@ -1455,6 +1465,12 @@ function customize_melee_set(meleeSet)
 		disable('main','sub')
 	else
 		enable('main','sub')
+	end
+
+	if player.hp > 200 then
+		if state.VimTorque.current == 'on' then
+			meleeSet = set_combine(meleeSet, sets.VimTorque)
+		end
 	end
 
 	if state.Neck.current == 'on' then
@@ -1515,8 +1531,10 @@ function job_buff_change(buff, gain)
 		send_command('timers delete "Warcry"')
 	end
 	if buff == "sleep" and gain and player.hp > 200 then
-		equip(sets.slept)
-		else
+		equip(sets.VimTorque)
+		disable('neck')
+	else
+		enable('neck')
 		handle_equipping_gear(player.status)
 	end
 	-- Haste mode is only relevant for Dual Wield subjobs
