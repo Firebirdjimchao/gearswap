@@ -756,9 +756,11 @@ function init_gear_sets()
 		feet=gear.Carmine_feet_hq_B,
 	}
 
-	sets.engaged.TH = set_combine(sets.engaged,sets.sharedTH,{
+	-- not combining these with any specific engaged sets so it can 
+	-- automatically combine with whichever current engaged set you are using
+	sets.engaged.TH = set_combine(sets.sharedTH,{
 	})
-	sets.engaged.DT = set_combine(sets.engaged,sets.Malignance,{
+	sets.engaged.DT = set_combine(sets.Malignance,{
 	})
 
 	sets.engaged.MidAcc = set_combine(sets.engaged, {
