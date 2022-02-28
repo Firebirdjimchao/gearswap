@@ -657,7 +657,7 @@ function init_gear_sets()
 
 	-- Gear for learning spells: +skill and AF hands.
 	sets.Learning = {
-		hands="Assim. Bazu. +1",
+		hands="Assim. Bazu. +2",
 	}
 
 	sets.latent_refresh = {

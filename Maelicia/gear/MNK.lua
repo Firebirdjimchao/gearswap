@@ -119,7 +119,7 @@ function init_gear_sets()
 	sets.precast.JA['Hundred Fists'] = {legs="Hes. Hose +3"}
 	sets.precast.JA['Boost'] = {hands="Anch. Gloves +2"}
 	sets.precast.JA['Dodge'] = {feet="Anch. Gaiters +3"}
-	sets.precast.JA['Focus'] = {head="Anchor. Crown +1"}
+	sets.precast.JA['Focus'] = {head="Anchor. Crown +2"}
 	sets.precast.JA['Counterstance'] = {feet="Hes. Gaiters +3"}
 	sets.precast.JA['Footwork'] = {feet="Tantra Gaiters +2"}
 	sets.precast.JA['Formless Strikes'] = {body="Hes. Cyclas +1"}
