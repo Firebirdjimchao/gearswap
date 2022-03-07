@@ -48,6 +48,7 @@ function user_setup()
 	
 	-- "CTRL: ^ ALT: ! Windows Key: @ Apps Key: #"
 
+	send_command('bind @= gs c cycle enmitymode') --WindowKey'='
 	send_command("bind @p gs equip sets.TaeonPhalanx; input /echo --- Phalanx set on ---") -- WindowKey'P'
 
 	send_command('bind @c gs c toggle CP') --WindowKey'C'
@@ -64,6 +65,7 @@ end
 
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
+	send_command('unbind @=')
 	send_command('unbind @p')
 
 	send_command('unbind @c')
@@ -140,7 +142,7 @@ function init_gear_sets()
 
 	-- Chakra - VIT
 	sets.precast.JA['Chakra'] = {
-		ammo="Tantra Tathlum",
+		ammo="Crepuscular Pebble",
 		head="Hes. Crown +3",
 		neck="Unmoving Collar +1",
 		body="Anch. Cyclas +2",
