@@ -426,6 +426,7 @@ function init_gear_sets()
 	sets.noprotect = {ring1="Sheltered Ring"}
 
 	sets.idle.Town = set_combine(sets.idle, {
+		neck="Mnk. Nodowa +2",
 		body="Councilor's Garb"
 	})
 	

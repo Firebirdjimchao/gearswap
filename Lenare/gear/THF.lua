@@ -228,7 +228,7 @@ function init_gear_sets()
 		--body="Plunderer's Vest +3",
 		body="Pillager's Vest +3",
 		hands="Mummu Wrists +2",
-		ring1="Rajas Ring",
+		ring1="Epona's Ring",
 		ring2="Apate Ring",
 		back=gear.jsecape_dex_crit,
 		waist="Windbuffet Belt +1",
@@ -328,6 +328,7 @@ function init_gear_sets()
 		ear1="Odr Earring",
 		body="Plunderer's Vest +3",
 		hands="Mummu Wrists +2",
+		ring2="Mummu Ring",
 		legs="Pill. Culottes +3",
 	})
 	sets.precast.WS['Evisceration'].MidAcc = set_combine(sets.precast.WS.MidAcc, sets.precast.WS['Evisceration'], {
@@ -546,7 +547,7 @@ function init_gear_sets()
 		body=gear.Adhemar_body_B,
 		-- 5 DW
 		hands="Pill. Armlets +3",
-		ring1="Rajas Ring",
+		ring1="Epona's Ring",
 		ring2="Chirich Ring",
 		-- 3 DW
 		--back="Canny Cape",

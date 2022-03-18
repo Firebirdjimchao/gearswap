@@ -395,10 +395,12 @@ function init_gear_sets()
 
 	sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {
 		head="Luh. Keffiyeh +2",
+		neck="Shadow Gorget",
 		ear1="Brutal Earring",
 		ear2="Moonshade Earring",
 		body="Luhlaza Jubbah +2",
 		hands="Luh. Bazubands +2",
+		waist="Shadow Belt",
 		legs="Luhlaza Shalwar +2",
 		feet="Luhlaza Charuqs +2",
 	})
@@ -706,7 +708,7 @@ function init_gear_sets()
 		body=gear.Adhemar_body_B,
 		hands=gear.Adhemar_hands_B,
 		ring1="Petrov Ring",
-		ring2="Chirich Ring",
+		ring2="Epona's Ring",
 		back="Atheling Mantle",
 		waist="Windbuffet Belt +1",
 		legs="Samnuha Tights",
