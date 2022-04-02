@@ -12,6 +12,12 @@ function job_setup()
 	state.CurrentStep = M{['description']='Current Step', 'Main', 'Alt'}
 	state.SkillchainPending = M(false, 'Skillchain Pending')
 
+	state.CP = M(false, "Capacity Points Mode")
+	state.Warp = M(false, "Warp Mode")
+	state.Weapon = M(false, "Weapon Lock")
+	state.Neck = M(false, "Neck Mode")
+	state.EngagedDT = M(false, 'Engaged Damage Taken Mode')
+
 	determine_haste_group()
 end
 
@@ -21,12 +27,11 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
+	state.IdleMode:options('CP', 'Normal', 'StoreTP', 'Regen')
 	state.OffenseMode:options('Normal', 'MidAcc', 'HighAcc', 'FullAcc')
 	state.HybridMode:options('Normal', 'Evasion', 'PDT')
 	state.WeaponskillMode:options('Normal', 'MidAcc', 'HighAcc', 'FullAcc')
 	state.PhysicalDefenseMode:options('Evasion', 'PDT')
-
-	state.HasteMode = M('Normal', 'Hi')
 
 	gear.default.weaponskill_neck = "Asperity Necklace"
 	gear.default.weaponskill_waist = "Windbuffet Belt +1"
@@ -41,14 +46,41 @@ function user_setup()
 	}
 	gear.Senuna_DexDa = { name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10',}}
 
+	-------------------------------------------------
+	-- Default bindings
+	--
+	-- F9 - Cycle Offense Mode (the offensive half of all 'hybrid' melee modes).
+	-- Ctrl-F9 - Cycle Hybrid Mode (the defensive half of all 'hybrid' melee modes).
+	-- Alt-F9 - Cycle Ranged Mode.
+	-- Win-F9 - Cycle Weaponskill Mode.
+	-- F10 - Activate emergency Physical Defense Mode. Replaces Magical Defense Mode, if that was active.
+	-- F11 - Activate emergency Magical Defense Mode. Replaces Physical Defense Mode, if that was active.
+	-- Ctrl-F10 - Cycle type of Physical Defense Mode in use.
+	-- Alt-F12 - Turns off any emergency defense mode.
+	-- Alt-F10 - Toggles Kiting Mode.
+	-- Ctrl-F11 - Cycle Casting Mode.
+	-- F12 - Update currently equipped gear, and report current status.
+	-- Ctrl-F12 - Cycle Idle Mode.
+	-------------------------------------------------
+	
+	-- "CTRL: ^ ALT: ! Windows Key: @ Apps Key: #"
+
 	-- Additional local binds
-	send_command('bind ^= gs c cycle mainstep')
-	send_command('bind != gs c cycle altstep')
-	send_command('bind ^- gs c toggle selectsteptarget')
-	send_command('bind !- gs c toggle usealtstep')
-	send_command('bind ^` input /ja "Chocobo Jig" <me>')
-	send_command('bind !` input /ja "Chocobo Jig II" <me>')
-	send_command('bind @` gs c cycle HasteMode')
+	send_command('bind @` gs c cycle HasteMode') --WindowKey'A'
+	send_command("bind @p gs equip sets.TaeonPhalanx; input /echo --- Phalanx set on ---") -- WindowKey'P'
+	send_command('bind ^= gs c cycle mainstep') -- CTRL '='
+	send_command('bind != gs c cycle altstep') -- ALT '='
+	send_command('bind ^- gs c toggle selectsteptarget') -- CTRL '-'
+	send_command('bind !- gs c toggle usealtstep') -- ALT '-'
+	send_command('bind ^` input /ja "Chocobo Jig" <me>') -- CTRL '`'
+	send_command('bind !` input /ja "Chocobo Jig II" <me>') -- ALT '`'
+
+	send_command('bind @c gs c toggle CP') --WindowKey'C'
+	send_command('bind @e gs c toggle EngagedDT') --Windowkey'E'
+	send_command('bind @h gs c cycle TreasureMode') --Windowkey'H'
+	send_command('bind @n gs c toggle Neck') --Windowkey'N'
+	send_command('bind @r gs c toggle Warp') --Windowkey'R'
+	send_command('bind @w gs c toggle Weapon') --Windowkey'W'
 
 	select_default_macro_book()
 
@@ -57,13 +89,22 @@ end
 
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
+	send_command('unbind @`')
+	send_command('unbind @b')
+	send_command('unbind @p')
 	send_command('unbind ^`')
 	send_command('unbind !`')
 	send_command('unbind ^=')
 	send_command('unbind !=')
 	send_command('unbind ^-')
 	send_command('unbind !-')
-	send_command('unbind @`')
+
+	send_command('unbind @c')
+	send_command('unbind @e')
+	send_command('unbind @h')
+	send_command('unbind @n')
+	send_command('unbind @r')
+	send_command('unbind @w')
 end
 
 -- Define sets and vars used by this job file.
@@ -374,6 +415,16 @@ function init_gear_sets()
 	})
 
 	sets.idle.Weak = set_combine(sets.idle,{
+	})
+
+	sets.idle.Regen = set_combine(sets.idle,{
+		head="Meghanada Visor +2",
+		body="Meg. Cuirie +2",
+		neck="Bathy Choker",
+		hands="Meg. Gloves +2",
+		ring1="Sheltered Ring",
+		legs="Meg. Chausses +2",
+		feet="Meg. Jam. +2",
 	})
 
 	-- Defense sets
@@ -739,6 +790,24 @@ end
 -- Job-specific hooks for non-casting events.
 -------------------------------------------------------------------------------------------------------------------
 
+function job_state_change(stateField, newValue, oldValue)
+	if state.Weapon.value == true then
+		disable('main','sub','range','ammo')
+	else
+		enable('main','sub','range','ammo')
+	end
+end
+
+function job_precast(spell, action, spellMap, eventArgs)
+	--auto_presto(spell)
+	if spell.type == 'WeaponSkill' then
+		if (spell.target.model_size + spell.range * 1.642276421172564) < spell.target.distance then	
+			add_to_chat(7,"--- Target "..spell.target.type.." ["..player.target.name.."] out of range of ["..spell.name.."] [ Distance: "..spell.target.distance.."] ---")
+			cancel_spell()
+		end
+	end
+end
+
 -- Called when a player gains or loses a buff.
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
@@ -753,6 +822,21 @@ function job_buff_change(buff, gain)
 	if S{'haste', 'march', 'mighty guard', 'embrava', 'haste samba', 'geo-haste', 'indi-haste'}:contains(buff:lower()) then
 		determine_haste_group()
 		if not midaction() then
+			handle_equipping_gear(player.status)
+		end
+	elseif buff == 'Saber Dance' or buff == 'Climactic Flourish' then
+		if gain and not midaction() then
+			handle_equipping_gear(player.status)
+		end
+	end
+
+	if buff == "doom" then
+		if gain then
+			equip(sets.buff.Doom)
+			send_command('@input /echo ==== Doomed. ====')
+			disable()
+		else
+			enable()
 			handle_equipping_gear(player.status)
 		end
 	end
@@ -839,26 +923,73 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function customize_idle_set(idleSet)
+	if state.CP.current == 'on' then
+		equip(sets.CP)
+		disable('back')
+	else
+		enable('back')
+	end
+
+	if state.Warp.current == 'on' then
+		equip(sets.Warp)
+		disable('ring1','ring2')
+	else
+		enable('ring1','ring2')
+	end
+
+	if state.Neck.current == 'on' then
+		equip(sets.Neck)
+		disable('neck')
+	else
+		enable('neck')
+	end
+
 	if not buffactive['Protect'] then
 		idleSet = set_combine(idleSet, sets.noprotect)
 	end
-	if buffactive['Doom'] then
-		idleSet = set_combine(idleSet, sets.buff.Doom)
-	end
+
 	return idleSet
 end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-	if buffactive['Doom'] then
-		meleeSet = set_combine(meleeSet, sets.buff.Doom)
+	if state.DefenseMode.value ~= 'None' then
+		if buffactive['saber dance'] then
+			meleeSet = set_combine(meleeSet, sets.buff['Saber Dance'])
+		end
+		if state.Buff['Climactic Flourish'] then
+			meleeSet = set_combine(meleeSet, sets.buff['Climactic Flourish'])
+		end
 	end
-	return meleeSet
-end
 
-function customize_defense_set(defenseSet)    
-	if buffactive['Doom'] then
-		defenseSet = set_combine(defenseSet, sets.buff.Doom)
+	if state.CP.current == 'on' then
+		equip(sets.CP)
+		disable('back')
+	else
+		enable('back')
 	end
-	return defenseSet
+
+	if state.Warp.current == 'on' then
+		equip(sets.Warp)
+		disable('ring1','ring2')
+	else
+		enable('ring1','ring2')
+	end
+
+	if state.Neck.current == 'on' then
+		equip(sets.Neck)
+		disable('neck')
+	else
+		enable('neck')
+	end
+
+	if state.EngagedDT.current == 'on' then
+		meleeSet = set_combine(meleeSet, sets.engaged.DT)
+	end
+
+	if state.TreasureMode.current == 'on' then
+		meleeSet = set_combine(meleeSet, sets.sharedTH)
+	end
+
+	return meleeSet
 end
