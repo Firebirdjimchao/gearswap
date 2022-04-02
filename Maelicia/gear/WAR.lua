@@ -15,6 +15,7 @@ function job_setup()
 	state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi'}
 	state.EnmityMode = M{['description']='Enmity Mode', 'None', 'Down', 'Up'}
 	state.VimTorque = M(false,'Vim Torque Mode')
+	state.SubtleBlow = M(false,'Subtle Blow Mode')
 
 end
 
@@ -67,6 +68,7 @@ function user_setup()
 	send_command('bind @h gs c toggle TreasureMode') --Windowkey'H'
 	send_command('bind @n gs c toggle Neck') --Windowkey'N'
 	send_command('bind @r gs c toggle Warp') --Windowkey'R'
+	send_command('bind @s gs c toggle SubtleBlow') --Windowkey'S'
 	send_command('bind @w gs c toggle Weapon') --Windowkey'W'
 
 	global_aliases()
@@ -1104,6 +1106,20 @@ function init_gear_sets()
 
 	sets.engaged.DT = set_combine(sets.Sakpata,{
 	})
+
+	sets.engaged.SubtleBlow = set_combine(sets.engaged.DT,{
+		ammo="Coiste Bodhar",
+		head="Nyame Helm",
+		ear1="Digni. Earring",
+		ear2="Crepuscular Earring",
+		neck="Bathy Choker +1",
+		body="Dagon Breastplate",
+		ring1="Niqmaddu Ring",
+		ring2="Chirich Ring +1",
+		back=gear.Cichol_AccDA,
+		legs="Nyame Flanchard",
+		feet="Sakpata's Leggings",
+	})
 	
 	-- Total: 
 	-- 50% DT 
@@ -1301,6 +1317,8 @@ function select_default_macro_book()
 		set_macro_page(2, 1)
 	elseif player.sub_job == 'SAM' then
 		set_macro_page(3, 1)
+	elseif player.sub_job == 'DRG' then
+		set_macro_page(4, 1)
 	else
 		set_macro_page(2, 1)
 	end
@@ -1482,6 +1500,10 @@ function customize_melee_set(meleeSet)
 
 	if state.EngagedDT.current == 'on' then
 		meleeSet = set_combine(meleeSet, sets.engaged.DT)
+	end
+
+	if state.SubtleBlow.current == 'on' then
+		meleeSet = set_combine(meleeSet, sets.engaged.SubtleBlow)
 	end
 
 	if state.TreasureMode.current == 'on' then
