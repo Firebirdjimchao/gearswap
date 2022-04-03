@@ -332,8 +332,7 @@ function init_gear_sets()
 		hands="Jhakri Cuffs +2",
 		ring1="Ilabrat Ring",
 		ring2="Epona's Ring",
-		--back=gear.Rosmerta_StrWSD,
-		back="Atheling Mantle",
+		back=gear.Rosmerta_StrWSD,
 		waist="Windbuffet Belt +1",
 		legs="Samnuha Tights",
 		feet="Nyame Sollerets",
@@ -377,7 +376,7 @@ function init_gear_sets()
 		ear2="Moonshade Earring",
 		body="Assim. Jubbah +2",
 		hands="Jhakri Cuffs +2",
-		--back=gear.Rosmerta_StrWSD,
+		back=gear.Rosmerta_StrWSD,
 		legs="Luhlaza Shalwar +2",
 		feet="Nyame Sollerets",
 	})
@@ -412,6 +411,7 @@ function init_gear_sets()
 	})
 
 	sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast.WS.MAB, {
+		back=gear.Rosmerta_StrWSD,
 	})
 		
 	-- Midcast Sets
@@ -490,7 +490,7 @@ function init_gear_sets()
 		hands="Luh. Bazubands +2",
 		ring1="Petrov Ring",
 		ring2="Rajas Ring",
-		back="Atheling Mantle",
+		back=gear.Rosmerta_StrWSD,
 		legs="Luhlaza Shalwar +2",
 		feet="Luhlaza Charuqs +2",
 	})
@@ -709,7 +709,7 @@ function init_gear_sets()
 		hands=gear.Adhemar_hands_B,
 		ring1="Petrov Ring",
 		ring2="Epona's Ring",
-		back="Atheling Mantle",
+		back=gear.Rosmerta_DexSTP,
 		waist="Windbuffet Belt +1",
 		legs="Samnuha Tights",
 		feet="Luhlaza Charuqs +2",
