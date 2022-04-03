@@ -31,9 +31,10 @@ function user_setup()
 	state.MagicalDefenseMode:options('MDT', 'Reraise')
 
 	--Augmented Gear Definitions--
-	gear.Cichol_StrWSD = { name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
-	gear.Cichol_VitWSD = { name="Cichol's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%',}}
+	gear.Cichol_StrWSD = { name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+	gear.Cichol_VitWSD = { name="Cichol's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 	gear.Cichol_AccDA = { name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
+	gear.Cichol_DexSTP = { name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}
  
 	update_combat_weapon()
 	update_melee_groups()
@@ -1116,7 +1117,7 @@ function init_gear_sets()
 		body="Dagon Breastplate",
 		ring1="Niqmaddu Ring",
 		ring2="Chirich Ring +1",
-		back=gear.Cichol_AccDA,
+		back=gear.Cichol_DexSTP,
 		legs="Nyame Flanchard",
 		feet="Sakpata's Leggings",
 	})
