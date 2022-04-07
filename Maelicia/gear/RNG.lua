@@ -30,6 +30,7 @@ function user_setup()
 	gear.aug_belenus_snapshot = { name="Belenus's Cape", augments={'"Snapshot"+10',}}
 	gear.aug_belenus_ws = { name="Belenus's Cape", augments={'STR+20','Rng.Acc.+20 Rng.Atk.+20','STR+10','Weapon skill damage +10%',}}
 	gear.aug_belenus_ws_agi = { name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%',}}
+	gear.aug_belenus_agi_crit = { name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Crit.hit rate+10',}}
 
 	DefaultAmmo = {['Yoichinoyumi'] = "Chrono arrow", ['Annihilator'] = "Chrono bullet", ['Fail-Not'] = "Chrono arrow", ['Fomalhaut'] = "Chrono bullet"}
 	U_Shot_Ammo = {['Yoichinoyumi'] = "Chrono arrow", ['Annihilator'] = "Chrono bullet", ['Fail-Not'] = "Chrono arrow", ['Fomalhaut'] = "Chrono bullet"}
@@ -963,8 +964,9 @@ function init_gear_sets()
 		hands="Mummu Wrists +2",
 		ring1="Ilabrat Ring",
 		ring2="Mummu Ring",
-		legs="Mummu Kecks +2",
+		back=gear.aug_belenus_agi_crit,
 		waist="K. Kachina Belt +1",
+		legs="Mummu Kecks +2",
 		feet="Osh. Leggings +1",
 	})
 
@@ -1386,9 +1388,9 @@ function init_gear_sets()
 	sets.buff.Barrage.Phaosphaelia = set_combine(sets.buff.Barrage.Archery, {
 	})
 	sets.buff.Camouflage = {body="Orion Jerkin +3"}	
-	sets.buff.ArmaAftermath = {
-		body="Nisroch Jerkin",
-	}
+	sets.buff.ArmaAftermath = set_combine(sets.midcast.RA.Crit, {
+		legs="Darraigner's Brais",
+	})
 	sets.buff.ArmaAftermath.MidAcc = set_combine(sets.buff.ArmaAftermath, {
 	})
 	sets.buff.ArmaAftermath.HighAcc = set_combine(sets.buff.ArmaAftermath, {
