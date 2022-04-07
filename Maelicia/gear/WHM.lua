@@ -2,19 +2,66 @@
 -- User setup functions for this job. Recommend that these be overridden in a sidecar file.
 -------------------------------------------------------------------------------------------------------------------
 
+function job_setup()
+	state.Buff['Afflatus Solace'] = buffactive['Afflatus Solace'] or false
+	state.Buff['Afflatus Misery'] = buffactive['Afflatus Misery'] or false
+
+	state.CP = M(false, "Capacity Points Mode")
+	state.Warp = M(false, "Warp Mode")
+	state.Weapon = M(false, "Weapon Lock")
+	state.Neck = M(false, "Neck Mode")
+	state.TreasureMode = M(false, 'TH')
+	state.EngagedDT = M(false, 'Engaged Damage Taken Mode')
+end
+
 -- Setup vars that are user-dependent. Can override this function in a sidecar file.
 function user_setup()
 	state.OffenseMode:options('None', 'Normal')
 	state.CastingMode:options('Normal', 'Resistant')
-	state.IdleMode:options('CP', 'Normal', 'PDT', 'MDT', 'CPPDT', 'CPMDT')
+	state.IdleMode:options('Normal', 'PDT', 'MDT')
 	gear.default.obi_waist = "Sacro Cord"
-
-	state.WeaponLock = M(false, 'Weapon Lock')
 
 	-- Default macro set/book
 	set_macro_page(1, 2)
 
+	-------------------------------------------------
+	-- Default bindings
+	--
+	-- F9 - Cycle Offense Mode (the offensive half of all 'hybrid' melee modes).
+	-- Ctrl-F9 - Cycle Hybrid Mode (the defensive half of all 'hybrid' melee modes).
+	-- Alt-F9 - Cycle Ranged Mode.
+	-- Win-F9 - Cycle Weaponskill Mode.
+	-- F10 - Activate emergency Physical Defense Mode. Replaces Magical Defense Mode, if that was active.
+	-- F11 - Activate emergency Magical Defense Mode. Replaces Physical Defense Mode, if that was active.
+	-- Ctrl-F10 - Cycle type of Physical Defense Mode in use.
+	-- Alt-F12 - Turns off any emergency defense mode.
+	-- Alt-F10 - Toggles Kiting Mode.
+	-- Ctrl-F11 - Cycle Casting Mode.
+	-- F12 - Update currently equipped gear, and report current status.
+	-- Ctrl-F12 - Cycle Idle Mode.
+	-------------------------------------------------
+
+	-- "CTRL: ^ ALT: ! Windows Key: @ Apps Key: #"
+
+	-- Additional local binds
+	send_command('bind @c gs c toggle CP') --WindowKey'C'
+	send_command('bind @e gs c toggle EngagedDT') --Windowkey'E'
+	send_command('bind @h gs c toggle TreasureMode') --Windowkey'H'
+	send_command('bind @n gs c toggle Neck') --Windowkey'N'
+	send_command('bind @r gs c toggle Warp') --Windowkey'R'
+	send_command('bind @w gs c toggle Weapon') --Windowkey'W'
+
 	global_aliases()
+end
+
+-- Called when this job file is unloaded (eg: job change)
+function user_unload()
+	send_command('unbind @c')
+	send_command('unbind @e')
+	send_command('unbind @h')
+	send_command('unbind @n')
+	send_command('unbind @r')
+	send_command('unbind @w')
 end
 
 -- Define sets and vars used by this job file.
@@ -22,6 +69,14 @@ function init_gear_sets()
 	--------------------------------------
 	-- Start defining the sets
 	--------------------------------------
+
+	sets.Nyame = {
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+	}
 
 	-- Precast Sets
 
@@ -560,18 +615,6 @@ function init_gear_sets()
 	sets.idle.MDT = set_combine(sets.idle.DT,{
 	})
 	
-	sets.idle.CP = set_combine(sets.idle,{
-		back="Mecistopins Mantle"
-	})
-	
-	sets.idle.CPPDT = set_combine(sets.idle.PDT,{
-		back="Mecistopins Mantle"
-	})
-	
-	sets.idle.CPMDT = set_combine(sets.idle.MDT,{
-		back="Mecistopins Mantle"
-	})
-	
 	sets.idle.Town = set_combine(sets.idle, {
 		body="Councilor's Garb",
 		hands="Regal Cuffs",
@@ -628,6 +671,13 @@ function init_gear_sets()
 		back="Mending Cape"
 	}
 
+	-- not combining these with any specific engaged sets so it can 
+	-- automatically combine with whichever current engaged set you are using
+	sets.engaged.TH = set_combine(sets.sharedTH,{
+	})
+	sets.engaged.DT = set_combine(sets.Nyame,{
+	})
+
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -658,32 +708,104 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 end
 
 -------------------------------------------------------------------------------------------------------------------
+-- Job-specific hooks for non-casting events.
+-------------------------------------------------------------------------------------------------------------------
+
+-- Called when a player gains or loses a buff.
+-- buff == buff gained or lost
+-- gain == true if the buff was gained, false if it was lost.
+function job_buff_change(buff, gain)
+	if buff == "doom" then
+		if gain then
+			equip(sets.buff.Doom)
+			send_command('@input /echo ==== Doomed. ====')
+			disable()
+		else
+			enable()
+			handle_equipping_gear(player.status)
+		end
+	end
+
+end
+
+-------------------------------------------------------------------------------------------------------------------
 -- User code that supplements standard library decisions.
 -------------------------------------------------------------------------------------------------------------------
 
 function customize_idle_set(idleSet)
-	if not buffactive['Protect'] then
-		idleSet = set_combine(idleSet, sets.noprotect)
-	elseif player.mpp < 51 then
+	if state.CP.current == 'on' then
+		equip(sets.CP)
+		disable('back')
+	else
+		enable('back')
+	end
+
+	if state.Warp.current == 'on' then
+		equip(sets.Warp)
+		disable('ring1','ring2')
+	else
+		enable('ring1','ring2')
+	end
+
+	if state.Weapon.current == 'on' then
+		disable('main','sub')
+	else
+		enable('main','sub')
+	end
+
+	if state.Neck.current == 'on' then
+		equip(sets.Neck)
+		disable('neck')
+	else
+		enable('neck')
+	end
+
+	if player.mpp < 51 then
 		idleSet = set_combine(idleSet, sets.latent_refresh)
 	end
-	if buffactive['Doom'] then
-		idleSet = set_combine(idleSet, sets.buff.Doom)
+
+	if not buffactive['Protect'] then
+		idleSet = set_combine(idleSet, sets.noprotect)
 	end
+
 	return idleSet
 end
 
--- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-	if buffactive['Doom'] then
-		meleeSet = set_combine(meleeSet, sets.buff.Doom)
+	if state.CP.current == 'on' then
+		equip(sets.CP)
+		disable('back')
+	else
+		enable('back')
 	end
-	return meleeSet
-end
 
-function customize_defense_set(defenseSet)		
-	if buffactive['Doom'] then
-		defenseSet = set_combine(defenseSet, sets.buff.Doom)
+	if state.Warp.current == 'on' then
+		equip(sets.Warp)
+		disable('ring1','ring2')
+	else
+		enable('ring1','ring2')
 	end
-	return defenseSet
+
+	if state.Weapon.current == 'on' then
+		disable('main','sub')
+	else
+		enable('main','sub')
+	end
+
+	if state.Neck.current == 'on' then
+		equip(sets.Neck)
+		disable('neck')
+	else
+		enable('neck')
+	end
+
+	if state.EngagedDT.current == 'on' then
+		meleeSet = set_combine(meleeSet, sets.engaged.DT)
+	end
+
+	if state.TreasureMode.current == 'on' then
+		meleeSet = set_combine(meleeSet, sets.engaged.TH)
+	end
+
+	return meleeSet
 end
