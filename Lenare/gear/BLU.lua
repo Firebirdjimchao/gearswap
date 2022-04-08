@@ -249,7 +249,7 @@ function init_gear_sets()
 	sets.buff['Chain Affinity'] = {head="Mavi Kavuk +2", feet="Assim. Charuqs +2"}
 	sets.buff.Convergence = {head="Luh. Keffiyeh +2"}
 	sets.buff.Diffusion = {feet="Luhlaza Charuqs +2"}
-	sets.buff.Enchainment = {body="Luhlaza Jubbah +2"}
+	sets.buff.Enchainment = {body="Luhlaza Jubbah +3"}
 	sets.buff.Efflux = {legs="Mavi Tayt +2"}
 
 	sets.Malignance = {
@@ -282,7 +282,7 @@ function init_gear_sets()
 	sets.precast.Waltz['Healing Waltz'] = {}
 
 	-- Fast cast sets for spells
-	-- 44/22
+	-- 45/22
 	sets.precast.FC = {
 		--ammo="Impatiens",
 		-- 7%
@@ -295,8 +295,8 @@ function init_gear_sets()
 		ear1="Loquac. Earring",
 		-- 1%
 		ear2="Etiolation Earring",
-		-- 8%
-		body="Luhlaza Jubbah +2",
+		-- 9%
+		body="Luhlaza Jubbah +3",
 		-- 5% + 1%
 		hands="Leyline Gloves",
 		-- 4%
@@ -335,7 +335,7 @@ function init_gear_sets()
 		back=gear.Rosmerta_StrWSD,
 		waist="Windbuffet Belt +1",
 		legs="Samnuha Tights",
-		feet="Nyame Sollerets",
+		feet="Luhlaza Charuqs +2",
 	}
 
 	sets.precast.WS.MaxTP = {
@@ -378,7 +378,7 @@ function init_gear_sets()
 		hands="Jhakri Cuffs +2",
 		back=gear.Rosmerta_StrWSD,
 		legs="Luhlaza Shalwar +2",
-		feet="Nyame Sollerets",
+		feet="Luhlaza Charuqs +2",
 	})
 	sets.precast.WS['Savage Blade'].MidAcc = set_combine(sets.precast.WS['Savage Blade'], {
 	})
@@ -397,7 +397,7 @@ function init_gear_sets()
 		neck="Shadow Gorget",
 		ear1="Brutal Earring",
 		ear2="Moonshade Earring",
-		body="Luhlaza Jubbah +2",
+		body="Luhlaza Jubbah +3",
 		hands="Luh. Bazubands +2",
 		waist="Shadow Belt",
 		legs="Luhlaza Shalwar +2",
