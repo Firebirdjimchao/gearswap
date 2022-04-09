@@ -685,7 +685,7 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_state_change(stateField, newValue, oldValue)
-	if state.WeaponLock.value == true then
+	if state.Weapon.value == true then
 		disable('main','sub','range','ammo')
 	else
 		enable('main','sub','range','ammo')
