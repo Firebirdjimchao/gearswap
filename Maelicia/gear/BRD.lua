@@ -1,3 +1,19 @@
+function job_setup()
+	state.ExtraSongsMode = M{['description']='Extra Songs', 'None', 'Dummy', 'FullLength'}
+
+	state.Buff['Pianissimo'] = buffactive['pianissimo'] or false
+
+	state.CP = M(false, "Capacity Points Mode")
+	state.Warp = M(false, "Warp Mode")
+	state.Weapon = M(false, "Weapon Lock")
+	state.Neck = M(false, "Neck Mode")
+	state.TreasureMode = M(false, 'TH')
+	state.EngagedDT = M(false, 'Engaged Damage Taken Mode')
+
+	-- For tracking current recast timers via the Timers plugin.
+	custom_timers = {}
+end
+
 function user_setup()
 	gear.ExtraSongInstrument = "Daurdabla"	
 	gear.AllSongs = "Gjallarhorn"
@@ -35,7 +51,9 @@ function user_setup()
 	state.MagicalDefenseMode:options('MDT')
 	state.IdleMode:options('CP', 'Normal', 'PDT', 'MDT', 'CPPDT', 'CPMDT')
 
-	brd_daggers = S{'Tauret','Blur Knife +1','Taming Sari'}
+	gear.IntarabusMACC = { name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10',}}
+
+	brd_daggers = S{'Carnwenhan','Tauret','Blur Knife +1','Taming Sari'}
 	pick_tp_weapon()
 	
 	-- Adjust this if using the Terpander (new +song instrument)
@@ -47,9 +65,7 @@ function user_setup()
 	state.AutoDaurdabla = false
 	
 	-- Set this to false if you don't want to use custom timers.
-	state.UseCustomTimers = M(true, 'Use Custom Timers')
-
-	state.WeaponLock = M(false, 'Weapon Lock')
+	state.UseCustomTimers = M(true, 'Use Custom Timers')	
 
 	-------------------------------------------------
 	-- Default bindings
@@ -71,10 +87,15 @@ function user_setup()
 	-- "CTRL: ^ ALT: ! Windows Key: @ Apps Key: #"
 	
 	-- Additional local binds
-	send_command('bind ^` gs c cycle ExtraSongsMode')
-	send_command('bind f9 gs c cycle ExtraSongsMode')
-	send_command('bind !` gs c toggle WeaponLock; input /echo --- Weapons Lock ---')
-	send_command('bind @` input /ma "Chocobo Mazurka" <me>')
+	send_command('bind @d gs c cycle ExtraSongsMode') -- WindowKey'D' for dummy
+	send_command('bind @m input /recast "Chocobo Mazurka"; input /ma "Chocobo Mazurka" <stpt>') -- WindowKey'M'
+
+	send_command('bind @c gs c toggle CP') --WindowKey'C'
+	send_command('bind @e gs c toggle EngagedDT') --Windowkey'E'
+	send_command('bind @h gs c cycle TreasureMode') --Windowkey'H'
+	send_command('bind @n gs c toggle Neck') --Windowkey'N'
+	send_command('bind @r gs c toggle Warp') --Windowkey'R'
+	send_command('bind @w gs c toggle Weapon') --Windowkey'W'
 
 	-- Default macro set/book
 	set_macro_page(1, 9)
@@ -85,10 +106,15 @@ end
 
 -- Called when this job file is unloaded (eg: job change)
 function job_file_unload()
-	send_command('unbind ^`')
-	send_command('unbind f9')
-	send_command('unbind !`')
-	send_command('unbind @`')
+	send_command('unbind @d')
+	send_command('unbind @m')
+	
+	send_command('unbind @c')
+	send_command('unbind @e')
+	send_command('unbind @h')
+	send_command('unbind @n')
+	send_command('unbind @r')
+	send_command('unbind @w')
 end
 
 
@@ -101,7 +127,7 @@ function init_gear_sets()
 	-- Precast Sets
 
 	-- Fast cast sets for spells
-	-- 73%/36% Total (80/40 cap) + 15% (if RDM sub)
+	-- 75%/37% Total (80/40 cap) + 15% (if RDM sub)
 	sets.precast.FC = {
 		-- 7%
 		main="Kali",
@@ -123,8 +149,8 @@ function init_gear_sets()
 		ring2="Kishar Ring",
 		-- 7%
 		hands="Gendewitha Gages",
-		-- 8%
-		back="Fi Follet Cape +1",
+		-- 10%
+		back=gear.IntarabusMACC,
 		-- 3%
 		--waist="Witful Belt",
 		-- 5%
@@ -157,7 +183,7 @@ function init_gear_sets()
 		legs="Doyen Pants",
 	})
 
-	-- Total:45% (caps at 50%)
+	-- Total:47% (caps at 50%)
 	-- Song Spellcasting Time stacks with FC
 	sets.precast.FC.BardSong = set_combine(sets.precast.FC,{
 		-- 7% FC
@@ -172,17 +198,17 @@ function init_gear_sets()
 		hands="Gendewitha Gages",
 		-- 6%
 		legs="Doyen Pants",
-		-- 8%
-		feet="Bihu Slippers +1"
+		-- 10%
+		feet="Bihu Slippers +3"
 	})
 	
 	sets.precast.FC.Daurdabla = set_combine(sets.precast.FC.BardSong, {range=info.DaurdablaInstrument})
 	
 	-- Precast sets to enhance JAs
 	
-	sets.precast.JA.Nightingale = {feet="Bihu Slippers +1"}
+	sets.precast.JA.Nightingale = {feet="Bihu Slippers +3"}
 	sets.precast.JA.Troubadour = {body="Bihu Jstcorps. +3"}
-	sets.precast.JA['Soul Voice'] = {legs="Bihu Cannions +1"}
+	sets.precast.JA['Soul Voice'] = {legs="Bihu Cannions +3"}
 
 	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {main="Daybreak"})
 
@@ -237,10 +263,22 @@ function init_gear_sets()
 	-- Specific weaponskill sets.	Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
 		head="Blistering Sallet +1",
+		ear1="Odr Earring",
 	})
 	sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
 	})
 	sets.precast.WS['Mordant Rime'] = set_combine(sets.precast.WS, {
+	})
+
+	sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
+		head="Nyame Helm",
+		ear1="Ishvara Earring",
+		body="Bihu Jstcorps. +3",
+		hands="Nyame Gauntlets",
+		ring2="Metamor. Ring +1",
+		waist="Sailfi Belt +1",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
 	})
 	
 	-- Magical WS
@@ -305,9 +343,10 @@ function init_gear_sets()
 		--ring1="Stikini Ring",
 		ring1="Metamor. Ring +1",
 		ring2="Stikini Ring +1",
-		back="Aurist's Cape +1",
+		back=gear.IntarabusMACC,
 		waist="Luminary Sash",
-		legs="Chironic Hose",
+		--legs="Chironic Hose",
+		legs="Bihu Cannions +3",
 		--feet="Inyan. Crackows +2"
 		feet="Brioso Slippers +3"
 	}
@@ -335,7 +374,7 @@ function init_gear_sets()
 
 	-- For song buffs (duration and AF3 set bonus)
 	sets.midcast.SongEffect = set_combine(sets.midcast.FastRecast,{
-		main="Kali",
+		main="Carnwenhan",
 		range="Gjallarhorn",
 		head="Fili Calot +1",
 		ear2="Darkside Earring",
@@ -348,7 +387,7 @@ function init_gear_sets()
 	})
 	
 	sets.midcast.ExtraSong = {
-		main="Vampirism",
+		main="Bunzi's Rod",
 		sub="Genmei Shield",
 		range=gear.ExtraSongInstrument,
 		-- 12%
@@ -363,7 +402,7 @@ function init_gear_sets()
 		waist="Embla Sash",
 		-- 6%
 		legs="Doyen Pants",
-		feet="Bihu Slippers +1"
+		feet="Bihu Slippers +3"
 	}
 
 	sets.midcast.DaurdablaDummy = set_combine(sets.midcast.ExtraSong,{})
@@ -378,7 +417,7 @@ function init_gear_sets()
 
 	-- For song debuffs (duration primary, accuracy secondary)
 	sets.midcast.SongDebuff = set_combine(sets.midcast.MACC,{
-		main="Kali",
+		main="Carnwenhan",
 		range="Gjallarhorn",
 		head="Bihu Roundlet +3",
 		--neck="Aoidos' Matinee",
@@ -744,7 +783,7 @@ function init_gear_sets()
 		ring1="Ilabrat Ring",
 		ring2="Petrov Ring",
 		back="Atheling Mantle",
-		waist="Goading Belt",
+		waist="Windbuffet Belt +1",
 		legs="Aya. Cosciales +2",
 		feet="Aya. Gambieras +2",
 	}
@@ -756,33 +795,68 @@ function init_gear_sets()
 	-- Set if dual-wielding
 	sets.engaged.DualWield = set_combine(sets.engaged,{
 		ear1="Brutal Earring",
-		ear2="Suppanomimi"
+		ear2="Suppanomimi",
+		waist="Reiki Yotai",
 	})
 
 	sets.engaged.Acc = set_combine(sets.engaged,{
 		body="Bihu Jstcorps. +3",
 		ear2="Crep. Earring",
 		ring2="Cacoethic Ring +1",
-		back="Aurist's Cape +1"
+		back="Aurist's Cape +1",
+		legs="Bihu Cannions +3",
 	})
 
 	sets.engaged.Dagger.Acc = set_combine(sets.engaged.Acc,{
 	})
 
 	sets.engaged.DualWield.Acc = set_combine(sets.engaged.Acc,{
+		ear1="Crep. Earring",
+		ear2="Suppanomimi",
+		waist="Reiki Yotai",
 	})
+
+	sets.engaged.DT = {
+		-- DT 7%
+		head="Nyame Helm",
+		-- DT 9%
+		body="Nyame Mail",
+		-- DT 7%
+		hands="Nyame Gauntlets",
+		-- DT 8%
+		legs="Nyame Flanchard",
+		-- DT 7%
+		feet="Nyame Sollerets",
+	}
 	
 end
 
 -------------------------------------------------------------------------------------------------------------------
--- Job-specific hooks for non-casting events.
+-- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
 
-function job_state_change(stateField, newValue, oldValue)
-	if state.WeaponLock.value == true then
-		disable('main','sub','range','ammo')
-	else
-		enable('main','sub','range','ammo')
+-- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
+-- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
+function job_precast(spell, action, spellMap, eventArgs)
+	if spell.type == 'BardSong' then
+		-- Auto-Pianissimo
+		if ((spell.target.type == 'PLAYER' and not spell.target.charmed) or (spell.target.type == 'NPC' and spell.target.in_party)) and
+			not state.Buff['Pianissimo'] then
+
+			local spell_recasts = windower.ffxi.get_spell_recasts()
+			if spell_recasts[spell.recast_id] < 2 then
+				send_command('@input /ja "Pianissimo" <me>; wait 1.5; input /ma "'..spell.name..'" '..spell.target.name)
+				eventArgs.cancel = true
+				return
+			end
+		end
+	end
+
+	if spell.type == 'WeaponSkill' then
+		if (spell.target.model_size + spell.range * 1.642276421172564) < spell.target.distance then	
+			add_to_chat(7,"--- Target "..spell.target.type.." ["..player.target.name.."] out of range of ["..spell.name.."] [ Distance: "..spell.target.distance.."] ---")
+			cancel_spell()
+		end
 	end
 end
 
@@ -804,32 +878,194 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 end
 
 -------------------------------------------------------------------------------------------------------------------
+-- Job-specific hooks for non-casting events.
+-------------------------------------------------------------------------------------------------------------------
+
+function job_state_change(stateField, newValue, oldValue)
+	if state.Weapon.value == true then
+		disable('main','sub','range','ammo')
+	else
+		enable('main','sub','range','ammo')
+	end
+end
+
+-- Called when a player gains or loses a buff.
+-- buff == buff gained or lost
+-- gain == true if the buff was gained, false if it was lost.
+function job_buff_change(buff, gain)
+	if state.Buff[buff] ~= nil then
+		if not midaction() then
+			handle_equipping_gear(player.status)
+		end
+	end
+
+	-- Haste mode is only relevant for Dual Wield subjobs
+	if S{'NIN','DNC'}:contains(player.sub_job) then
+		-- This should only apply if we are truly Dual Wielding
+		if not S{'grip','strap','shield'}:contains(player.equipment.sub:lower()) then
+			-- If we gain or lose any haste buffs, adjust which gear set we target.
+			if S{'haste', 'march', 'mighty guard', 'embrava', 'haste samba', 'geo-haste', 'indi-haste'}:contains(buff:lower()) then
+				determine_haste_group()
+				if not midaction() then
+					handle_equipping_gear(player.status)
+				end
+			end
+		end
+	end
+
+	if buff == "doom" then
+		if gain then
+			equip(sets.buff.Doom)
+			send_command('@input /echo ==== Doomed. ====')
+			disable()
+		else
+			enable()
+			handle_equipping_gear(player.status)
+		end
+	end
+end
+
+-------------------------------------------------------------------------------------------------------------------
+-- Utility functions specific to this job.
+-------------------------------------------------------------------------------------------------------------------
+
+function determine_haste_group()
+
+	classes.CustomMeleeGroups:clear()
+	-- assuming +4 for marches (ghorn has +5)
+	-- Haste (white magic) 15%
+	-- Haste Samba (Sub) 5%
+	-- Haste (Merited DNC) 10% (never account for this)
+	-- Victory March +0/+3/+4/+5    9.4/14%/15.6%/17.1% +0
+	-- Advancing March +0/+3/+4/+5  6.3/10.9%/12.5%/14%  +0
+	-- Embrava 30% with 500 enhancing skill
+	-- Mighty Guard - 15%
+	-- buffactive[580] = geo haste
+	-- buffactive[33] = regular haste
+	-- buffactive[604] = mighty guard
+	-- state.HasteMode = toggle for when you know Haste II is being cast on you
+	-- Hi = Haste II is being cast. This is clunky to use when both haste II and haste I are being cast
+	if state.HasteMode.value == 'Hi' then
+		if ( ( (buffactive[33] or buffactive[580] or buffactive.embrava) and (buffactive.march or buffactive[604]) ) or
+			( buffactive[33] and (buffactive[580] or buffactive.embrava) ) or
+			( buffactive.march == 2 and buffactive[604] ) ) then
+			add_to_chat(8, '-------------Max-Haste Mode Enabled--------------')
+			classes.CustomMeleeGroups:append('MaxHaste')
+		elseif ( (buffactive[33] or buffactive.march == 2 or buffactive[580]) and buffactive['haste samba'] ) then
+			add_to_chat(8, '-------------Haste 35%-------------')
+			classes.CustomMeleeGroups:append('Haste_35')
+		elseif ( ( buffactive[580] or buffactive[33] or buffactive.march == 2 ) or
+			( buffactive.march == 1 and buffactive[604] ) ) then
+			add_to_chat(8, '-------------Haste 30%-------------')
+			classes.CustomMeleeGroups:append('Haste_30')
+		elseif ( buffactive.march == 1 or buffactive[604] ) then
+			add_to_chat(8, '-------------Haste 15%-------------')
+			classes.CustomMeleeGroups:append('Haste_15')
+		end
+	else
+		if ( buffactive[580] and ( buffactive.march or buffactive[33] or buffactive.embrava or buffactive[604]) ) or  -- geo haste + anything
+			( buffactive.embrava and (buffactive.march or buffactive[33] or buffactive[604]) ) or  -- embrava + anything
+			( buffactive.march == 2 and (buffactive[33] or buffactive[604]) ) or  -- two marches + anything
+			( buffactive[33] and buffactive[604] and buffactive.march ) then -- haste + mighty guard + any marches
+			add_to_chat(8, '-------------Max Haste Mode Enabled--------------')
+			classes.CustomMeleeGroups:append('MaxHaste')
+		elseif ( (buffactive[604] or buffactive[33]) and buffactive['haste samba'] and buffactive.march == 1) or -- MG or haste + samba with 1 march
+			( buffactive.march == 2 and buffactive['haste samba'] ) or
+			( buffactive[580] and buffactive['haste samba'] ) then 
+			add_to_chat(8, '-------------Haste 35%-------------')
+			classes.CustomMeleeGroups:append('Haste_35')
+		elseif ( buffactive.march == 2 ) or -- two marches from ghorn
+			( (buffactive[33] or buffactive[604]) and buffactive.march == 1 ) or  -- MG or haste + 1 march
+			( buffactive[580] ) or  -- geo haste
+			( buffactive[33] and buffactive[604] ) then  -- haste with MG
+			add_to_chat(8, '-------------Haste 30%-------------')
+			classes.CustomMeleeGroups:append('Haste_30')
+		elseif buffactive[33] or buffactive[604] or buffactive.march == 1 then
+			add_to_chat(8, '-------------Haste 15%-------------')
+			classes.CustomMeleeGroups:append('Haste_15')
+		end
+	end
+end
+
+-------------------------------------------------------------------------------------------------------------------
 -- User code that supplements standard library decisions.
 -------------------------------------------------------------------------------------------------------------------
 
 function customize_idle_set(idleSet)
-	if pet.isvalid then
-			idleSet = set_combine(idleSet, sets.idle.Pet)
-	elseif not buffactive['Protect'] then
-			idleSet = set_combine(idleSet, sets.noprotect)
-		end
-	if buffactive['Doom'] then
-			idleSet = set_combine(idleSet, sets.buff.Doom)
+	if state.CP.current == 'on' then
+		equip(sets.CP)
+		disable('back')
+	else
+		enable('back')
 	end
+
+	if state.Warp.current == 'on' then
+		equip(sets.Warp)
+		disable('ring1','ring2')
+	else
+		enable('ring1','ring2')
+	end
+
+	if state.Neck.current == 'on' then
+		equip(sets.Neck)
+		disable('neck')
+	else
+		enable('neck')
+	end
+
+	if player.mpp < 51 then
+		idleSet = set_combine(idleSet, sets.latent_refresh)
+	end
+
+	if not buffactive['Protect'] then
+		idleSet = set_combine(idleSet, sets.noprotect)
+	end
+
 	return idleSet
 end
 
--- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-	if buffactive['Doom'] then
-		meleeSet = set_combine(meleeSet, sets.buff.Doom)
+	if S{'NIN','DNC'}:contains(player.sub_job) then
+		-- This should only apply if we are truly Dual Wielding
+		if not S{'grip','strap','shield'}:contains(player.equipment.sub:lower()) then
+			determine_haste_group()
+		end
 	end
-	return meleeSet
-end
 
-function customize_defense_set(defenseSet)    
-	if buffactive['Doom'] then
-		defenseSet = set_combine(defenseSet, sets.buff.Doom)
+	if state.CP.current == 'on' then
+		equip(sets.CP)
+		disable('back')
+	else
+		enable('back')
 	end
-	return defenseSet
+
+	if state.Warp.current == 'on' then
+		equip(sets.Warp)
+		disable('ring1','ring2')
+	else
+		enable('ring1','ring2')
+	end
+
+	if state.Weapon.current == 'on' then
+		disable('main','sub')
+	else
+		enable('main','sub')
+	end
+
+	if state.Neck.current == 'on' then
+		equip(sets.Neck)
+		disable('neck')
+	else
+		enable('neck')
+	end
+
+	if state.EngagedDT.current == 'on' then
+		meleeSet = set_combine(meleeSet, sets.engaged.DT)
+	end
+
+	if state.TreasureMode.current == 'on' then
+		meleeSet = set_combine(meleeSet, sets.sharedTH)
+	end
+
+	return meleeSet
 end
