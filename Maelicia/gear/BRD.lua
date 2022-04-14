@@ -5,7 +5,7 @@ function job_setup()
 
 	state.CP = M(false, "Capacity Points Mode")
 	state.Warp = M(false, "Warp Mode")
-	state.Weapon = M(false, "Weapon Lock")
+	state.Weapon = M{['description']='Weapon Lock', false, 'Main + Sub', 'Range + Ammo', 'Full'}
 	state.Neck = M(false, "Neck Mode")
 	state.TreasureMode = M(false, 'TH')
 	state.EngagedDT = M(false, 'Engaged Damage Taken Mode')
@@ -95,7 +95,7 @@ function user_setup()
 	send_command('bind @h gs c cycle TreasureMode') --Windowkey'H'
 	send_command('bind @n gs c toggle Neck') --Windowkey'N'
 	send_command('bind @r gs c toggle Warp') --Windowkey'R'
-	send_command('bind @w gs c toggle Weapon') --Windowkey'W'
+	send_command('bind @w gs c cycle Weapon') --Windowkey'W'
 
 	-- Default macro set/book
 	set_macro_page(1, 9)
@@ -882,7 +882,11 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_state_change(stateField, newValue, oldValue)
-	if state.Weapon.value == true then
+	if state.Weapon.value == 'Main + Sub' then
+		disable('main','sub')
+	elseif state.Weapon.value == 'Range + Ammo' then
+		disable('range','ammo')
+	elseif state.Weapon.value == 'Full' then
 		disable('main','sub','range','ammo')
 	else
 		enable('main','sub','range','ammo')
