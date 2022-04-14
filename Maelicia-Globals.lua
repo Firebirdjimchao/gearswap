@@ -211,7 +211,7 @@ function define_global_sets()
 	sets.Weapon = {}
 	sets.Twilight = {
 		head="Twilight Helm",
-		body="Twilight Mail"
+		body="Crepuscular Mail"
 	}
 end
 

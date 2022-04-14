@@ -659,11 +659,6 @@ function init_gear_sets()
 	})
 	
 	-- Sets to return to when not performing an action.
-
-	sets.Twilight = {
-		head="Twilight Helm",
-		body="Twilight Mail"
-	}
 	
 	-- Idle sets
 	
