@@ -61,7 +61,7 @@ function user_setup()
 
 	-- "CTRL: ^ ALT: ! Windows Key: @ Apps Key: #"
 
-	send_command('bind @` gs c cycle HasteMode') --WindowKey'A'
+	send_command('bind @` gs c cycle HasteMode') --WindowKey'`'
 	send_command('bind @f gs c cycle FlurryTier') --WindowKey'F'
 	send_command("bind @p gs equip sets.TaeonPhalanx; input /echo --- Phalanx set on ---") -- WindowKey'P'
 
