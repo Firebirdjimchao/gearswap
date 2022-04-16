@@ -1050,10 +1050,14 @@ function customize_melee_set(meleeSet)
 		enable('ring1','ring2')
 	end
 
-	if state.Weapon.current == 'on' then
+	if state.Weapon.value == 'Main + Sub' then
 		disable('main','sub')
+	elseif state.Weapon.value == 'Range + Ammo' then
+		disable('range','ammo')
+	elseif state.Weapon.value == 'Full' then
+		disable('main','sub','range','ammo')
 	else
-		enable('main','sub')
+		enable('main','sub','range','ammo')
 	end
 
 	if state.Neck.current == 'on' then
