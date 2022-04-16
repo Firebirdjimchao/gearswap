@@ -593,9 +593,12 @@ function init_gear_sets()
 		range="Ullr",
 		-- effect +10
 		--ammo="Regal Gem",
+		head="Atrophy Chapeau +3",
 		ear2="Regal Earring",
 		-- 21
 		body="Atrophy Tabard +3",
+		ring2="Stikini Ring +1",
+		back="Aurist's Cape +1",
 	})
 
 	-- For enfeebs with no known skill caps
@@ -618,7 +621,7 @@ function init_gear_sets()
 		neck="Dls. Torque +1",
 		waist="Luminary Sash",
 	})
-	sets.midcast.enfeebMND.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, sets.midcast.enfeebMND, {
+	sets.midcast.enfeebMND.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, {
 	})
 
 	-- For INT potency based enfeebs
@@ -633,7 +636,7 @@ function init_gear_sets()
 		legs=gear.Merlinic_legs_nuke,
 		feet="Vitiation Boots +3",
 	})
-	sets.midcast.enfeebINT.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, sets.midcast.enfeebINT, {
+	sets.midcast.enfeebINT.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, {
 	})
 
 	-- For enfeebs with static values (use duration+ gear)
