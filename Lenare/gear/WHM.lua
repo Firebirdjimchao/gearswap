@@ -625,7 +625,7 @@ function init_gear_sets()
 	})
 
 	sets.idle.Regen = set_combine(sets.idle,{
-		neck="Bathy Choker",
+		neck="Bathy Choker +1",
 		ring1="Sheltered Ring"
 	})
 		
