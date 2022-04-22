@@ -1,3 +1,15 @@
+function job_setup()
+	indi_timer = ''
+	indi_duration = 180
+
+	state.CP = M(false, "Capacity Points Mode")
+	state.Warp = M(false, "Warp Mode")
+	state.Weapon = M(false, "Weapon Lock")
+	state.Neck = M(false, "Neck Mode")
+	state.TreasureMode = M(false, 'TH')
+	state.EngagedDT = M(false, 'Engaged Damage Taken Mode')
+end
+
 -------------------------------------------------------------------------------------------------------------------
 -- User setup functions for this job.  Recommend that these be overridden in a sidecar file.
 -------------------------------------------------------------------------------------------------------------------
@@ -50,7 +62,13 @@ function user_setup()
 	
 	send_command('bind @` gs c cycle MagicBurst')
 	send_command('bind ^` input /ma Stun <stnpc>; input /echo ------ Stun <t> -----')
-	send_command('bind !` gs c toggle WeaponLock; input /echo --- Weapons Lock ---')
+	
+	send_command('bind @c gs c toggle CP') --WindowKey'C'
+	send_command('bind @e gs c toggle EngagedDT') --Windowkey'E'
+	send_command('bind @h gs c toggle TreasureMode') --Windowkey'H'
+	send_command('bind @n gs c toggle Neck') --Windowkey'N'
+	send_command('bind @r gs c toggle Warp') --Windowkey'R'
+	send_command('bind @w gs c toggle Weapon') --Windowkey'W'
 
 	-- Default macro set/book
 	set_macro_page(1, 13)
@@ -62,7 +80,13 @@ end
 function user_unload()
   send_command('unbind @`')
   send_command('unbind ^`')
-  send_command('unbind !`')
+  
+  send_command('unbind @c')
+	send_command('unbind @e')
+	send_command('unbind @h')
+	send_command('unbind @n')
+	send_command('unbind @r')
+	send_command('unbind @w')
 end
 
 -- Define sets and vars used by this job file.
@@ -1050,13 +1074,42 @@ end
 -- Job-specific hooks for non-casting events.
 -------------------------------------------------------------------------------------------------------------------
 
+-- Called when a player gains or loses a buff.
+-- buff == buff gained or lost
+-- gain == true if the buff was gained, false if it was lost.
+function job_buff_change(buff, gain)
+	if player.indi and not classes.CustomIdleGroups:contains('Indi')then
+		classes.CustomIdleGroups:append('Indi')
+		handle_equipping_gear(player.status)
+	elseif classes.CustomIdleGroups:contains('Indi') and not player.indi then
+		classes.CustomIdleGroups:clear()
+		handle_equipping_gear(player.status)
+	end
+
+	if buff == "doom" then
+		if gain then
+			equip(sets.buff.Doom)
+			send_command('@input /echo ==== Doomed. ====')
+			disable()
+		else
+			enable()
+			handle_equipping_gear(player.status)
+		end
+	end
+
+end
+
 function job_state_change(stateField, newValue, oldValue)
-	if state.WeaponLock.value == true then
+	if state.Weapon.value == true then
 		disable('main','sub','range','ammo')
 	else
 		enable('main','sub','range','ammo')
 	end
 end
+
+-------------------------------------------------------------------------------------------------------------------
+-- Job-specific hooks for standard casting events.
+-------------------------------------------------------------------------------------------------------------------
 
 function job_get_spell_map(spell, default_spell_map)
 	if spell.action_type == 'Magic' then
@@ -1080,6 +1133,15 @@ function job_get_spell_map(spell, default_spell_map)
 	end
 end
 
+function job_precast(spell, action, spellMap, eventArgs)
+	if spell.type == 'WeaponSkill' then
+		if (spell.target.model_size + spell.range * 1.642276421172564) < spell.target.distance then	
+			add_to_chat(7,"--- Target "..spell.target.type.." ["..player.target.name.."] out of range of ["..spell.name.."] [ Distance: "..spell.target.distance.."] ---")
+			cancel_spell()
+		end
+	end
+end
+
 function job_post_midcast(spell, action, spellMap, eventArgs)
 	if spell.skill == 'Enhancing Magic' then
 		if spellMap == 'Refresh' and spell.target.type == 'SELF' then
@@ -1092,37 +1154,95 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 	elseif spell.skill == 'Elemental Magic' and state.MagicBurst.value then
 		equip(sets.magic_burst)
 	end
+
+	if state.TreasureMode.value ~= false and spell.target.type ~= 'SELF' and spell.target.type ~= 'PLAYER' then
+		equip(sets.sharedTH)
+	end
 end
 
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements standard library decisions.
 -------------------------------------------------------------------------------------------------------------------
 
+-- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
 	if pet.isvalid then
 		idleSet = set_combine(idleSet, sets.idle.Pet)
-	elseif not buffactive['Protect'] then
-		idleSet = set_combine(idleSet, sets.noprotect)
-	elseif not pet.isvalid and (player.mpp < 51) then
+	end
+
+	if state.CP.current == 'on' then
+		equip(sets.CP)
+		disable('back')
+	else
+		enable('back')
+	end
+
+	if state.Warp.current == 'on' then
+		equip(sets.Warp)
+		disable('ring1','ring2')
+	else
+		enable('ring1','ring2')
+	end
+
+	if state.Weapon.current == 'on' then
+		disable('main','sub')
+	else
+		enable('main','sub')
+	end
+
+	if state.Neck.current == 'on' then
+		equip(sets.Neck)
+		disable('neck')
+	else
+		enable('neck')
+	end
+
+	if player.mpp < 51 then
 		idleSet = set_combine(idleSet, sets.latent_refresh)
 	end
-	if buffactive['Doom'] then
-		idleSet = set_combine(idleSet, sets.buff.Doom)
+
+	if not buffactive['Protect'] then
+		idleSet = set_combine(idleSet, sets.noprotect)
 	end
+
 	return idleSet
 end
 
--- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-	if buffactive['Doom'] then
-		meleeSet = set_combine(meleeSet, sets.buff.Doom)
+	if state.CP.current == 'on' then
+		equip(sets.CP)
+		disable('back')
+	else
+		enable('back')
 	end
-	return meleeSet
-end
 
-function customize_defense_set(defenseSet)    
-	if buffactive['Doom'] then
-		defenseSet = set_combine(defenseSet, sets.buff.Doom)
+	if state.Warp.current == 'on' then
+		equip(sets.Warp)
+		disable('ring1','ring2')
+	else
+		enable('ring1','ring2')
 	end
-	return defenseSet
+
+	if state.Weapon.current == 'on' then
+		disable('main','sub')
+	else
+		enable('main','sub')
+	end
+
+	if state.Neck.current == 'on' then
+		equip(sets.Neck)
+		disable('neck')
+	else
+		enable('neck')
+	end
+
+	if state.EngagedDT.current == 'on' then
+		meleeSet = set_combine(meleeSet, sets.engaged.DT)
+	end
+
+	if state.TreasureMode.current == 'on' then
+		meleeSet = set_combine(meleeSet, sets.engaged.TH)
+	end
+
+	return meleeSet
 end
