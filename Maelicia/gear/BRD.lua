@@ -53,6 +53,8 @@ function user_setup()
 
 	gear.IntarabusMACC = { name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10',}}
 
+	state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi'}
+
 	brd_daggers = S{'Carnwenhan','Tauret','Blur Knife +1','Taming Sari'}
 	pick_tp_weapon()
 	
@@ -740,6 +742,7 @@ function init_gear_sets()
 	})
 
 	sets.idle.Town = set_combine(sets.idle, {
+		main="Carnwenhan",
 		body="Councilor's Garb"
 	})
 	
