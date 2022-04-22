@@ -365,7 +365,7 @@ function init_gear_sets()
 		ring2="Jhakri Ring",
 		back="Toro Cape",
 		waist="Eschan Stone",
-		legs="Luhlaza Shalwar +2",
+		legs="Luhlaza Shalwar +3",
 		feet="Jhakri Pigaches +2",
 	})
 
@@ -377,7 +377,7 @@ function init_gear_sets()
 		body="Assim. Jubbah +2",
 		hands="Jhakri Cuffs +2",
 		back=gear.Rosmerta_StrWSD,
-		legs="Luhlaza Shalwar +2",
+		legs="Luhlaza Shalwar +3",
 		feet="Luhlaza Charuqs +2",
 	})
 	sets.precast.WS['Savage Blade'].MidAcc = set_combine(sets.precast.WS['Savage Blade'], {
@@ -434,7 +434,7 @@ function init_gear_sets()
 		ring2="Jhakri Ring",
 		back="Toro Cape",
 		waist="Eschan Stone",
-		legs="Luhlaza Shalwar +2",
+		legs="Luhlaza Shalwar +3",
 		feet="Jhakri Pigaches +2",
 	}
 
@@ -486,12 +486,12 @@ function init_gear_sets()
 		head="Luh. Keffiyeh +2",
 		neck="Incanter's Torque",
 		ear1="Telos Earring",
-		body="Luhlaza Jubbah +2",
+		body="Luhlaza Jubbah +3",
 		hands="Luh. Bazubands +2",
 		ring1="Petrov Ring",
 		ring2="Rajas Ring",
 		back=gear.Rosmerta_StrWSD,
-		legs="Luhlaza Shalwar +2",
+		legs="Luhlaza Shalwar +3",
 		feet="Luhlaza Charuqs +2",
 	})
 
@@ -732,7 +732,7 @@ function init_gear_sets()
 		head="Malignance Chapeau",
 		body="Assim. Jubbah +2",
 		hands="Malignance Gloves",
-		legs="Luhlaza Shalwar +2",
+		legs="Luhlaza Shalwar +3",
 		feet="Malignance Boots",
 	})
 
