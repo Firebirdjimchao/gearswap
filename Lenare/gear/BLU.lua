@@ -645,8 +645,8 @@ function init_gear_sets()
 		feet="Malignance Boots",
 	}
 
-	-- DT: 38%
-	-- PDT: 14%
+	-- DT: 47%
+	-- PDT: 4%
 	-- MDT: 5%
 	sets.idle.PDT = {
 		-- DT 3%
@@ -658,8 +658,8 @@ function init_gear_sets()
 		-- MDT 2%
 		ear1="Odnowa earring +1",
 		ear2="Ethereal earring",
-		-- PDT 10%
-		body="Shamash Robe",
+		-- DT 9%
+		body="Nyame Mail",
 		-- DT 5%
 		hands="Malignance Gloves",
 		-- PDT 4% MDT 3%
@@ -720,6 +720,8 @@ function init_gear_sets()
 	sets.engaged.TH = set_combine(sets.sharedTH,{
 	})
 	sets.engaged.DT = set_combine(sets.Malignance,{
+		body="Nyame Mail",
+		legs="Nyame Flanchard",
 	})
 
 	sets.engaged.MidAcc = set_combine(sets.engaged, {

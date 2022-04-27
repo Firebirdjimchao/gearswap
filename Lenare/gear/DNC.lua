@@ -398,14 +398,14 @@ function init_gear_sets()
 		neck="Loricate Torque +1",
 		ear1="Novia Earring",
 		ear2="Etiolation Earring",
-		body="Meg. Cuirie +2",
+		body="Nyame Mail",
 		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		--back="Moonbeam Cape",
 		back="Mecisto. Mantle",
 		waist="Gishdubar Sash",
-		legs="Mummu Kecks +2",
+		legs="Nyame Flanchard",
 		feet="Skd. Jambeaux +1"
 	}
 
@@ -438,12 +438,12 @@ function init_gear_sets()
 		ammo="Crepuscular Pebble",
 		head="Malignance Chapeau",
 		neck="Loricate Torque +1",
-		body="Meg. Cuirie +2",
+		body="Nyame Mail",
 		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
-		legs="Mummu Kecks +2",
+		legs="Nyame Flanchard",
 		feet="Malignance Boots",
 	})
 
@@ -452,12 +452,12 @@ function init_gear_sets()
 		head="Malignance Chapeau",
 		ear2="Etiolation Earring",
 		neck="Loricate Torque +1",
-		body="Meg. Cuirie +2",
+		body="Nyame Mail",
 		hands="Malignance Gloves",
 		ring1="Shadow Ring",
 		ring2="Defending Ring",
 		back="Moonbeam Cape",
-		legs="Mummu Kecks +2",
+		legs="Nyame Flanchard",
 		feet="Malignance Boots",
 	})
 
@@ -776,6 +776,15 @@ function init_gear_sets()
 	})
 	sets.engaged.FullAcc.MDT.MaxHaste = set_combine(sets.engaged.FullAcc.MDT,{
 	})
+	sets.engaged.DT = {
+		head="Malignance Chapeau",
+		body="Nyame Mail",
+		--body="Malignance Tabard",
+		hands="Malignance Gloves",
+		legs="Nyame Flanchard",
+		--legs="Malignance Tights",
+		feet="Malignance Boots",
+	}
 
 	-- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
 	sets.buff['Saber Dance'] = {

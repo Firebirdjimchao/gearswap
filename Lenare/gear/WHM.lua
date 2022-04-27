@@ -70,14 +70,6 @@ function init_gear_sets()
 	-- Start defining the sets
 	--------------------------------------
 
-	sets.Nyame = {
-		head="Nyame Helm",
-		body="Nyame Mail",
-		hands="Nyame Gauntlets",
-		legs="Nyame Flanchard",
-		feet="Nyame Sollerets",
-	}
-
 	-- Precast Sets
 
 	-- Fast cast sets for spells
@@ -572,8 +564,8 @@ function init_gear_sets()
 		neck="Loricate Torque +1",
 		ear1="Ethereal Earring",
 		ear2="Etiolation Earring",
-		-- 6%
-		body="Ayanmo Corazza +2",
+		-- 9%
+		body="Nyame Mail",
 		hands="Inyan. Dastanas +2",
 		-- 4%
 		ring1=gear.DarkRing.physical,

@@ -874,7 +874,7 @@ function init_gear_sets()
 	sets.idle.Weak = set_combine(sets.idle,{
 	})
 	
-	-- Total: 50% + 20% (PDT Staff)
+	-- Total: 53% + 20% (PDT Staff)
 	-- <36%: use Shadow Mantle
 	sets.idle.PDT = set_combine(sets.idle,{
 		--main=gear.Staff.PDT,
@@ -884,8 +884,8 @@ function init_gear_sets()
 		head="Malignance Chapeau",
 		-- 5%
 		neck="Loricate Torque +1",
-		-- 6%
-		body="Ayanmo Corazza +2",
+		-- 9%
+		body="Nyame Mail",
 		-- 5%
 		hands="Malignance Gloves",
 		-- 4%
@@ -902,8 +902,8 @@ function init_gear_sets()
 		feet="Malignance Boots",
 	})
 	
-	-- MDT: 49%
-	-- MDB: 27
+	-- MDT: 52%
+	-- MDB: 29
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.idle.MDT = set_combine(sets.idle,{
 		-- 2%
@@ -915,8 +915,8 @@ function init_gear_sets()
 		ear2="Etiolation Earring",
 		-- 7
 		--body="Atrophy Tabard +3",
-		-- 6% 6
-		body="Ayanmo Corazza +2",
+		-- 9% 8
+		body="Nyame Mail",
 		-- 4 5%
 		hands="Malignance Gloves",
 		-- 3%
@@ -1065,6 +1065,8 @@ function init_gear_sets()
 	sets.engaged.TH = set_combine(sets.sharedTH,{
 	})
 	sets.engaged.DT = set_combine(sets.Malignance,{
+		body="Nyame Mail",
+		legs="Nyame Flanchard",
 	})
 
 end

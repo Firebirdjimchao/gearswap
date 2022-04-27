@@ -479,14 +479,14 @@ function init_gear_sets()
 		neck="Loricate Torque +1",
 		ear1="Novia Earring",
 		ear2="Etiolation Earring",
-		body="Meg. Cuirie +2",
+		body="Nyame Mail",
 		hands="Malignance Gloves",
 		ring1="Dark Ring",
 		ring2="Defending Ring",
 		--back="Moonbeam Cape",
 		back="Mecisto. Mantle",
 		waist="Gishdubar Sash",
-		legs="Mummu Kecks +2",
+		legs="Nyame Flanchard",
 		feet="Skd. Jambeaux +1"
 	}
 
@@ -608,12 +608,10 @@ function init_gear_sets()
 
 	sets.engaged.DT = {
 		head="Malignance Chapeau",
-		body="Meg. Cuirie +2",
+		body="Nyame Mail",
 		--body="Malignance Tabard",
 		hands="Malignance Gloves",
-		ring1="Dark Ring",
-		ring2="Defending Ring",
-		legs="Meg. Chausses +2",
+		legs="Nyame Flanchard",
 		--legs="Malignance Tights",
 		feet="Malignance Boots",
 	}
@@ -645,13 +643,13 @@ function init_gear_sets()
 		ammo="Crepuscular Pebble",
 		-- DT 6%
 		head="Malignance Chapeau",
-		-- DT 5%
+		-- DT 6%
 		neck="Loricate Torque +1",
 		ear1="Sherida Earring",
 		-- MDT 3%
 		ear2="Etiolation Earring",
-		-- PDT 8%
-		body="Meg. Cuirie +2",
+		-- DT 9%
+		body="Nyame Mail",
 		hands="Plun. Armlets +3",
 		-- PDT 4% MDT 3%
 		ring1="Dark Ring",
@@ -660,8 +658,8 @@ function init_gear_sets()
 		-- DT 5%
 		back="Moonbeam Cape",
 		waist="Patentia Sash",
-		-- DT 5%
-		legs="Mummu Kecks +2",
+		-- DT 8%
+		legs="Nyame Flanchard",
 		-- DT 4%
 		feet="Malignance Boots",
 	})
