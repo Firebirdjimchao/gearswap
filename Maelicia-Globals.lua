@@ -166,6 +166,13 @@ function define_global_sets()
 		legs=gear.Taeon_Phalanx_legs,
 		feet=gear.Taeon_Phalanx_feet,
 	}
+	sets.Nyame = {
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+	}
 
 	sets.precast.JA.Sublimination = {
 		waist="Embla Sash"

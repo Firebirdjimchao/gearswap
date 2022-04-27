@@ -797,12 +797,14 @@ function init_gear_sets()
 		-- 5%
 		back="Moonbeam Cape",
 		--back="Mecistopins Mantle",
-		legs="Bagua Pants +3",
+		-- 8% DT
+		legs="Nyame Flanchard",
 		feet="Geo. Sandals +2"
 	})
-			
-	-- MDT: 32%
-	-- MDB: 27
+	
+	-- DT: 44%		
+	-- MDT: 6%
+	-- MDB: 28
 	-- To cap: Shellra5: 23%, Shell5: 26%, Shell4: 29%
 	sets.idle.MDT = set_combine(sets.idle,{
 		main=gear.Staff.DT,
@@ -810,22 +812,22 @@ function init_gear_sets()
 		sub="Khonsu",
 		-- 5
 		head="Geo. Galero +2",
-		-- 5%
+		-- 6% DT
 		neck="Loricate Torque +1",
-		-- 3%
+		-- 3% MDT
 		ear2="Etiolation Earring",
-		-- 6
-		body="Shamash Robe",
+		-- 9% DT 8
+		body="Nyame Mail",
 		-- 3
 		hands="Geo. Mitaines +2",
 		ring1="Shadow Ring",
-		-- 10%
+		-- 10% DT
 		ring2="Defending Ring",
-		-- 5%
+		-- 5% DT
 		back="Moonbeam Cape",
-		-- 8
-		legs="Bagua Pants +3",
-		-- 5 3%
+		-- 8% DT 7
+		legs="Nyame Flanchard",
+		-- 3% MDT 5
 		feet=gear.Vanya_feet_B
 	})
 	
@@ -967,6 +969,10 @@ function init_gear_sets()
 		ear1="Zennaroi Earring",
 		back="Aurist's Cape +1",
 		waist="Eschan Stone",
+	})
+	sets.engaged.TH = set_combine(sets.sharedTH,{
+	})
+	sets.engaged.DT = set_combine(sets.Nyame,{
 	})
 
 	--------------------------------------

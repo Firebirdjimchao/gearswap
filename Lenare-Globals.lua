@@ -89,6 +89,13 @@ function define_global_sets()
 	}
 	sets.TaeonPhalanx = {
 	}
+	sets.Nyame = {
+		head="Nyame Helm",
+		body="Nyame Mail",
+		hands="Nyame Gauntlets",
+		legs="Nyame Flanchard",
+		feet="Nyame Sollerets",
+	}
 
 	sets.precast.JA.Sublimation = {
 		waist="Embla Sash"

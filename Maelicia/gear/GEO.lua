@@ -1036,6 +1036,10 @@ function init_gear_sets()
 		ring2="Patricius Ring",
 		waist="Eschan Stone",
 	})
+	sets.engaged.TH = set_combine(sets.sharedTH,{
+	})
+	sets.engaged.DT = set_combine(sets.Nyame,{
+	})
 
 	--------------------------------------
 	-- Custom buff sets
