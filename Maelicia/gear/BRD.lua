@@ -5,7 +5,7 @@ function job_setup()
 
 	state.CP = M(false, "Capacity Points Mode")
 	state.Warp = M(false, "Warp Mode")
-	state.Weapon = M{['description']='Weapon Lock', false, 'Main + Sub', 'Range + Ammo', 'Full'}
+	state.Weapon = M{['description']='Weapon Lock', 'Normal', 'Main + Sub', 'Range + Ammo', 'Full'}
 	state.Neck = M(false, "Neck Mode")
 	state.TreasureMode = M(false, 'TH')
 	state.EngagedDT = M(false, 'Engaged Damage Taken Mode')
@@ -420,6 +420,7 @@ function init_gear_sets()
 	-- For song debuffs (duration primary, accuracy secondary)
 	sets.midcast.SongDebuff = set_combine(sets.midcast.MACC,{
 		main="Carnwenhan",
+		sub="Ammurapi Shield",
 		range="Gjallarhorn",
 		head="Bihu Roundlet +3",
 		--neck="Aoidos' Matinee",
@@ -431,6 +432,8 @@ function init_gear_sets()
 
 	-- For song defbuffs (accuracy primary, duration secondary)
 	sets.midcast.ResistantSongDebuff = set_combine(sets.midcast.MACC,{
+		main=gear.MaccStaff,
+		sub="Enki Strap",
 		range="Gjallarhorn",
 		head="Bihu Roundlet +3",
 		--neck="Incanter's Torque",
