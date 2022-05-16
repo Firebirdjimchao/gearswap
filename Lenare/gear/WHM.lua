@@ -457,6 +457,7 @@ function init_gear_sets()
 	})
 
 	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'],{
+		main="Vadose Rod"
 		--head="Chironic Hat",
 		hands="Regal Cuffs",
 	})
@@ -465,10 +466,6 @@ function init_gear_sets()
 	})
 
 	sets.midcast.Shellra = set_combine(sets.midcast['Enhancing Magic'],{
-	})
-	
-	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'],{
-		main="Vadose Rod"
 	})
 
 	sets.midcast.Erase = set_combine(sets.midcast['Enhancing Magic'],{
