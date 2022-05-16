@@ -486,6 +486,10 @@ function init_gear_sets()
 		ring1="Sheltered Ring",
 	})
 
+	sets.midcast.Erase = set_combine(sets.midcast['Enhancing Magic'],{
+		neck="Cleric's Torque",
+	})
+
 	sets.midcast['Divine Magic'] = set_combine(sets.midcast.MAB,{
 		ring2="Stikini Ring +1",
 		legs="Theo. Pant. +1"
