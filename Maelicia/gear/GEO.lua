@@ -347,7 +347,7 @@ function init_gear_sets()
 		sub="Khonsu",
 		range=gear.GeoBell,
 		head="Geo. Galero +2",
-		neck="Bagua Charm",
+		neck="Bagua Charm +2",
 		ear1="Malignance Earring",
 		ear2="Regal Earring",
 		body="Geomancy Tunic +2",
@@ -423,7 +423,7 @@ function init_gear_sets()
 		--head="Azimuth Hood +1",
 		-- ConserveMP +3
 		head=gear.Merlinic_head_nuke,
-		neck="Bagua Charm",
+		neck="Bagua Charm +2",
 		-- ConserveMP +3
 		ear1="Gifted Earring",
 		-- 16
@@ -942,8 +942,8 @@ function init_gear_sets()
 		-- Pet: regen +3
 		--head="Azimuth Hood +1",
 		head="Bagua Galero +3",
-		-- Pet: DT 6%
-		neck="Bagua Charm",
+		-- Pet: DT Absorb 10%
+		neck="Bagua Charm +2",
 		ear1="Etiolation Earring",
 		ear2="Ethereal Earring",
 		-- Pet: regen +3
