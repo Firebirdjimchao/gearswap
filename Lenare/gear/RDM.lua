@@ -282,7 +282,7 @@ function init_gear_sets()
 		--main="Grioavolr",
 		--sub="Niobid Strap",
 		--sub="Enki Strap",
-		main="Maxentius",
+		main="Septoptic +1",
 		sub="Ammurapi Shield",
 		range="Ullr",
 		--ammo="Ghastly Tathlum",
@@ -359,7 +359,7 @@ function init_gear_sets()
 		-- 5 DUR
 		--main="Grioavolr",
 		--sub="Enki Strap",
-		main="Maxentius",
+		main="Septoptic +1",
 		-- 10 DUR
 		sub="Ammurapi Shield",
 		-- 16
@@ -395,7 +395,7 @@ function init_gear_sets()
 		-- 5 DUR
 		--main="Grioavolr",
 		--sub="Enki Strap",
-		main="Maxentius",
+		main="Septoptic +1",
 		-- 10 DUR
 		sub="Ammurapi Shield",
 		head="Leth. Chappel +1",

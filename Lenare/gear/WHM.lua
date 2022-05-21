@@ -261,7 +261,7 @@ function init_gear_sets()
 		--main=gear.MainStaff,
 		--sub="Niobid Strap",
 		--sub="Enki Strap",
-		main="Maxentius",
+		main="Septoptic +1",
 		sub="Ammurapi Shield",
 		ammo="Ghastly Tathlum",
 		head="Buremte Hat",

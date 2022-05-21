@@ -331,7 +331,7 @@ function init_gear_sets()
 		--sub="Niobid Strap",
 		--sub="Enki Strap",
 		--sub="Khonsu",
-		main="Maxentius",
+		main="Septoptic +1",
 		sub="Ammurapi Shield",
 		ammo="Ghastly Tathlum",
 		head="Merlinic Hood",
