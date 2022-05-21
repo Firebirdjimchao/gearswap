@@ -19,18 +19,18 @@ function user_setup()
 	gear.AllSongs = "Gjallarhorn"
 	gear.Ballad = "Gjallarhorn"
 	gear.Carol = "Gjallarhorn"
-	gear.Dirge = "Gjallarhorn"
+	gear.Dirge = "Marsyas"
 	gear.Elegy = "Gjallarhorn"
 	gear.Etude = "Gjallarhorn"
 	gear.Finale = "Gjallarhorn"
 	gear.HonorMarch = "Marsyas"
-	gear.Hymnus = "Gjallarhorn"
-	--gear.Lullaby = "Gjallarhorn"
+	gear.Hymnus = "Marsyas"
+	gear.FoeLullaby = "Gjallarhorn"
 	gear.Lullaby = "Daurdabla"
 	gear.Madrigal = "Gjallarhorn"
 	gear.Mambo = "Gjallarhorn"
 	gear.March = "Gjallarhorn"
-	gear.Mazurka = "Gjallarhorn"
+	gear.Mazurka = "Marsyas"
 	gear.Minne = "Gjallarhorn"
 	gear.Minuet = "Gjallarhorn"
 	gear.Nocturne = "Gjallarhorn"
@@ -484,12 +484,14 @@ function init_gear_sets()
 	})
 	sets.midcast.Minne = set_combine(sets.midcast.SongEffect,{
 		range=gear.Minne,
+		legs="Mou. Seraweels +1",
 	})
 	sets.midcast.Carol = set_combine(sets.midcast.SongEffect,{
 		range=gear.Carol,
 		head="Fili Calot +1",
 		body="Fili Hongreline +1",
-		hands="Fili Manchettes +1",
+		--hands="Fili Manchettes +1",
+		hands="Mousai Gages +1",
 		legs="Fili Rhingrave +1",
 		feet="Fili Cothurnes +1"
 	})
@@ -506,8 +508,19 @@ function init_gear_sets()
 		range=gear.Lullaby,
 		hands="Brioso Cuffs +3"
 	}
+	sets.midcast['Foe Lullaby*'] = {
+		range=gear.FoeLullaby,
+	}
 	sets.midcast['Magic Finale'] = {
 		range=gear.Finale,
+	}
+	sets.midcast.Etude = {
+		range=gear.Etude,
+		head="Mousai Turban +1",
+	}
+	sets.midcast.Threnody = {
+		range=gear.Threnody,
+		head="Mou. Manteel +1",
 	}
 
 	-- Other general spells and classes.
