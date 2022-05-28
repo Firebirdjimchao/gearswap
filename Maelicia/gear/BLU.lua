@@ -594,7 +594,7 @@ function init_gear_sets()
 
 	sets.midcast['Blue Magic'].MagicAccuracy = set_combine(sets.midcast['Blue Magic'].Magical, {
 		ammo="Pemphredo Tathlum",
-		head="Luh. Keffiyeh +3",
+		head="Assim. Keffiyeh +2",
 		neck="Incanter's Torque",
 		ear1="Crep. Earring",
 		ear2="Regal Earring",
