@@ -316,7 +316,8 @@ function init_gear_sets()
 		--ear2="Digni. Earring",
 		ear2="Regal Earring",
 		body="Atrophy Tabard +3",
-		hands="Regal Cuffs",
+		hands=gear.Kaykaus_hands_hq_A,
+		--hands="Regal Cuffs",
 		ring1="Metamor. Ring +1",
 		ring2="Stikini Ring +1",
 		--back=gear.sucellos_mnd,
@@ -597,6 +598,7 @@ function init_gear_sets()
 		ear2="Regal Earring",
 		-- 21
 		body="Atrophy Tabard +3",
+		hands=gear.Kaykaus_hands_hq_A,
 		ring2="Stikini Ring +1",
 		back="Aurist's Cape +1",
 	})

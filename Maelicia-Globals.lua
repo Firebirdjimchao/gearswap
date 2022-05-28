@@ -73,6 +73,8 @@ function define_global_sets()
 	gear.Argosy_legs_hq_D = { name="Argosy Breeches +1", augments={'STR+12','Attack+25','"Store TP"+6',}}
 	gear.Argosy_feet_hq_A = { name="Argosy Sollerets +1", augments={'STR+12','DEX+12','Attack+20',}}
 
+	gear.Kaykaus_hands_hq_A = { name="Kaykaus Cuffs +1", augments={'MP+80','MND+12','Mag. Acc.+20',}}
+
 	gear.Odyssean_hands_WS = { name="Odyssean Gauntlets", augments={'Attack+16','Weapon skill damage +5%','Accuracy+14',}}
 	
 	gear.Herculean_head_Magic = { name="Herculean Helm", augments={'Mag. Acc.+16 "Mag.Atk.Bns."+16','Weapon skill damage +1%','MND+1','"Mag.Atk.Bns."+15',}}

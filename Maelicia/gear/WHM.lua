@@ -311,7 +311,7 @@ function init_gear_sets()
 		feet=gear.Vanya_feet_B
 	}
 
-	-- 51% (+3%~4%)+ 4% II Total
+	-- 52% (+3%~4%)+ 4% II Total
 	sets.midcast.Cure = set_combine(sets.midcast['Healing Magic'],{
 		-- 10% 2% II
 		main="Queller Rod",
@@ -326,8 +326,8 @@ function init_gear_sets()
 		-- 3% Unity: 3%~4%
 		ear2="Nourish. Earring +1",
 		body="Ebers Bliaud +1",
-		-- 10%
-		hands="Telchine Gloves",
+		-- 11%
+		hands=gear.Kaykaus_hands_hq_A,
 		-- 5%
 		ring1="Menelaus's Ring",
 		back="Aurist's Cape +1",
@@ -337,7 +337,7 @@ function init_gear_sets()
 		feet=gear.Vanya_feet_B
 	})
 	
-	-- 51% (+3%~4%)+ 4% II Total + 4% Afflatus Solace (2 x 2 JP)
+	-- 52% (+3%~4%)+ 4% II Total + 4% Afflatus Solace (2 x 2 JP)
 	sets.midcast.CureSolace = set_combine(sets.midcast.Cure,{
 		-- 14% Afflatus Solace
 		body="Ebers Bliaud +1",
