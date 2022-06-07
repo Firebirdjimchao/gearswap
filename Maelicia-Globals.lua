@@ -157,9 +157,11 @@ function define_global_sets()
 	}
 
 	sets.sharedTH = {
-		ammo="Per. Lucky Egg",
-		head="Wh. Rarab Cap +1",
+		--ammo="Per. Lucky Egg",
+		--head="Wh. Rarab Cap +1",
+		hands="Volte Bracers",
 		waist="Chaac Belt",
+		legs="Volte Hose",
 		feet="Volte Boots",
 	}
 	sets.TaeonPhalanx = {
