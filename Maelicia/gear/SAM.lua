@@ -2,6 +2,26 @@
 -- User setup functions for this job.  Recommend that these be overridden in a sidecar file.
 -------------------------------------------------------------------------------------------------------------------
 
+function job_setup()
+	state.Buff.Hasso = buffactive.Hasso or false
+	state.Buff.Seigan = buffactive.Seigan or false
+	state.Buff.Sekkanoki = buffactive.Sekkanoki or false
+	state.Buff.Sengikori = buffactive.Sengikori or false
+	state.Buff['Meikyo Shisui'] = buffactive['Meikyo Shisui'] or false
+
+	state.CP = M(false, "Capacity Points Mode")
+	state.Warp = M(false, "Warp Mode")
+	state.Weapon = M(false, "Weapon Lock")
+	state.Neck = M(false, "Neck Mode")
+	state.TreasureMode = M(false, 'TH')
+	state.Twilight = M(false, 'Twilight')
+	state.EngagedDT = M(false, 'Engaged Damage Taken Mode')
+	state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi'}
+	state.EnmityMode = M{['description']='Enmity Mode', 'None', 'Down', 'Up'}
+	state.VimTorque = M(false,'Vim Torque Mode')
+	state.SubtleBlow = M(false,'Subtle Blow Mode')
+end
+
 -- Setup vars that are user-dependent.
 function user_setup()
 	state.OffenseMode:options('Normal', 'MidAcc', 'HighAcc', 'FullAcc')
@@ -12,10 +32,8 @@ function user_setup()
 	state.MagicalDefenseMode:options('MDT', 'Reraise')
 	state.IdleMode:options('Normal', 'Regain', 'Regen', 'Reraise')
 
-	state.HasteMode = M{['description']='Haste Mode', 'Normal', 'Hi'}
-	state.EnmityMode = M{['description']='Enmity Mode', 'None', 'Down', 'Up'}
+	
 	state.MeleeDTMode = M(false, 'PDT', 'MDT')
-	state.TreasureMode = M(false, 'TH')
 	
 	gear.Smertrio_STP = { name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Store TP"+10','Damage taken-5%',}}
 	gear.Smertrio_STP_DEX = { name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Damage taken-5%',}}
@@ -41,15 +59,20 @@ function user_setup()
 	-------------------------------------------------
 	
 	-- "CTRL: ^ ALT: ! Windows Key: @ Apps Key: #"
-	
-	-- Additional local binds
+
 	--send_command('bind @` input /ja "Hasso" <me>')
-	send_command('bind @` gs c cycle HasteMode')
-	send_command('bind !` input /ja "Seigan" <me>')
-	send_command('bind ^` gs equip sets.Twilight; input /echo --- Twilight Set equipped ---')
-	send_command('bind ^- gs c cycle enmitymode')
-	send_command('bind ^= gs c toggle TreasureMode; input /echo --- TreasureMode ---')
-	send_command('bind != gs c toggle MeleeDTMode; input /echo --- MeleeDTMode ---')
+	send_command('bind @` gs c cycle HasteMode') --WindowKey'`'
+	send_command('bind @= gs c cycle enmitymode') --WindowKey'='
+	send_command('bind @t gs c toggle Twilight') --WindowKey'T'
+	send_command('bind @v gs c toggle VimTorque') --WindowKey'V'
+
+	send_command('bind @c gs c toggle CP') --WindowKey'C'
+	send_command('bind @e gs c toggle EngagedDT') --Windowkey'E'
+	send_command('bind @h gs c toggle TreasureMode') --Windowkey'H'
+	send_command('bind @n gs c toggle Neck') --Windowkey'N'
+	send_command('bind @r gs c toggle Warp') --Windowkey'R'
+	send_command('bind @s gs c toggle SubtleBlow') --Windowkey'S'
+	send_command('bind @w gs c toggle Weapon') --Windowkey'W'
 	
 	select_default_macro_book()
 
@@ -60,11 +83,16 @@ end
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
 	send_command('unbind @`')
-	send_command('unbind ^`')
-	send_command('unbind !`')
-	send_command('unbind ^-')
-	send_command('unbind ^=')
-	send_command('unbind !=')
+	send_command('unbind @=')
+	send_command('unbind @t')
+	send_command('unbind @v')
+
+	send_command('unbind @c')
+	send_command('unbind @e')
+	send_command('unbind @h')
+	send_command('unbind @n')
+	send_command('unbind @r')
+	send_command('unbind @w')
 end
 
 
@@ -1428,6 +1456,11 @@ function init_gear_sets()
 	})
 	sets.engaged.Adoulin.FullAcc.Reraise.MaxHasteHasso = set_combine(sets.engaged.Adoulin.FullAcc.Reraise.MaxHaste,{
 	})
+
+	sets.engaged.DT = set_combine(sets.engagedMDTBase,{
+	})
+	sets.engaged.SubtleBlow = set_combine(sets.engaged.DT,{
+	})
 	
 	sets.buff.Sekkanoki = {hands="Kasuga Kote +1"}
 	sets.buff.Sengikori = {hands="Kas. Sune-Ate +1"}
@@ -1471,6 +1504,10 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 		end
 		if state.Buff['Meikyo Shisui'] then
 			equip(sets.buff['Meikyo Shisui'])
+		end
+
+		if state.TreasureMode.value ~= false then
+			equip(sets.sharedTH)
 		end
 
 		if state.DefenseMode.value == 'None' and state.HybridMode.value == 'Normal' then
@@ -1586,12 +1623,60 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function customize_idle_set(idleSet)
+	if state.EnmityMode.value == 'Down' then
+		idleSet = set_combine(idleSet, sets.EnmityDown)
+	elseif state.EnmityMode.value == 'Up' then
+		idleSet = set_combine(idleSet, sets.EnmityUp)
+	end
+
+	if state.CP.current == 'on' then
+		equip(sets.CP)
+		disable('back')
+	else
+		enable('back')
+	end
+
+	if state.Warp.current == 'on' then
+		equip(sets.Warp)
+		disable('ring1','ring2')
+	else
+		enable('ring1','ring2')
+	end
+
+	if state.Weapon.current == 'on' then
+		disable('main','sub')
+	else
+		enable('main','sub')
+	end
+
+	if state.Neck.current == 'on' then
+		equip(sets.Neck)
+		disable('neck')
+	else
+		enable('neck')
+	end
+
+	if state.TreasureMode.current == 'on' then
+		idleSet = set_combine(idleSet, sets.sharedTH)
+	end
+
 	if not buffactive['Protect'] then
 		idleSet = set_combine(idleSet, sets.noprotect)
 	end
-	if buffactive['Doom'] then
-		idleSet = set_combine(idleSet, sets.buff.Doom)
+
+	if player.hp > 200 then
+		if state.VimTorque.current == 'on' then
+			idleSet = set_combine(idleSet, sets.VimTorque)
+		end
 	end
+
+	if state.Twilight.current == 'on' then
+		equip(sets.Twilight)
+		disable('head','body')
+	else
+		enable('head','body')
+	end
+
 	return idleSet
 end
 
@@ -1602,17 +1687,52 @@ function customize_melee_set(meleeSet)
 	elseif state.EnmityMode.value == 'Up' then
 		meleeSet = set_combine(meleeSet, sets.EnmityUp)
 	end
-	if state.MeleeDTMode.value == 'PDT' then
-		meleeSet = set_combine(meleeSet, sets.engagedPDTBase)
-	elseif state.MeleeDTMode.value == 'MDT' then
-		meleeSet = set_combine(meleeSet, sets.engagedMDTBase)
+
+	if state.CP.current == 'on' then
+		equip(sets.CP)
+		disable('back')
+	else
+		enable('back')
 	end
-	if state.TreasureMode.value ~= false then
+
+	if state.Warp.current == 'on' then
+		equip(sets.Warp)
+		disable('ring1','ring2')
+	else
+		enable('ring1','ring2')
+	end
+
+	if state.Weapon.current == 'on' then
+		disable('main','sub')
+	else
+		enable('main','sub')
+	end
+
+	if player.hp > 200 then
+		if state.VimTorque.current == 'on' then
+			meleeSet = set_combine(meleeSet, sets.VimTorque)
+		end
+	end
+
+	if state.Neck.current == 'on' then
+		equip(sets.Neck)
+		disable('neck')
+	else
+		enable('neck')
+	end
+
+	if state.EngagedDT.current == 'on' then
+		meleeSet = set_combine(meleeSet, sets.engaged.DT)
+	end
+
+	if state.SubtleBlow.current == 'on' then
+		meleeSet = set_combine(meleeSet, sets.engaged.SubtleBlow)
+	end
+
+	if state.TreasureMode.current == 'on' then
 		meleeSet = set_combine(meleeSet, sets.sharedTH)
 	end
-	if buffactive['Doom'] then
-		meleeSet = set_combine(meleeSet, sets.buff.Doom)
-	end
+
 	return meleeSet
 end
 
@@ -1674,5 +1794,15 @@ function job_buff_change(buff, gain)
 		equip(sets.slept)
 		else
 		handle_equipping_gear(player.status)
+	end
+	if buff == "doom" then
+		if gain then
+			equip(sets.buff.Doom)
+			send_command('@input /echo ==== Doomed. ====')
+			disable()
+		else
+			enable()
+			handle_equipping_gear(player.status)
+		end
 	end
 end
