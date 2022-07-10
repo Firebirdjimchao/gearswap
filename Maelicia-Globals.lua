@@ -159,8 +159,9 @@ function define_global_sets()
 	sets.sharedTH = {
 		--ammo="Per. Lucky Egg",
 		--head="Wh. Rarab Cap +1",
+		head="Volte Cap",
 		hands="Volte Bracers",
-		waist="Chaac Belt",
+		--waist="Chaac Belt",
 		legs="Volte Hose",
 		feet="Volte Boots",
 	}
