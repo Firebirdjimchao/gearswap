@@ -457,7 +457,7 @@ function init_gear_sets()
 	})
 
 	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'],{
-		main="Vadose Rod"
+		main="Vadose Rod",
 		--head="Chironic Hat",
 		hands="Regal Cuffs",
 	})
