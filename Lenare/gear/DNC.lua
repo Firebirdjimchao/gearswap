@@ -16,6 +16,7 @@ function job_setup()
 	state.Warp = M(false, "Warp Mode")
 	state.Weapon = M(false, "Weapon Lock")
 	state.Neck = M(false, "Neck Mode")
+	state.TreasureMode = M(false, 'TH')
 	state.EngagedDT = M(false, 'Engaged Damage Taken Mode')
 
 	determine_haste_group()
